@@ -1,0 +1,8 @@
+case_id,candidate_disease,ham10000_label,output_file,evidence_hit_rate,unsupported_claim_rate,path_consistency,evidence_coverage,overall_result,notes
+CASE_001,基底细胞癌,bcc,outputs/kg_rag_case_001_bcc.md,high,low,consistent,high,pass,用户观察中的珍珠样结节、表面血管和面部部位均能在知识图谱证据中找到对应路径
+CASE_002,黑色素瘤,mel,outputs/kg_rag_case_002_melanoma.md,high,low,consistent,high,pass,用户观察中的形态不对称、边界不规则和颜色不均均能对应到黑色素瘤 ABCDE 相关证据
+CASE_003,黑色素细胞痣,nv,outputs/kg_rag_case_003_nevus.md,high,low,consistent,high,pass,用户观察中的色素性斑片、对称性较好和边界较规则均能与良性色素性皮损证据对应
+CASE_004,光化性角化病/表皮内癌,akiec,outputs/kg_rag_case_004_akiec.md,medium,low,consistent,medium,pass,粗糙鳞屑性斑片和日晒暴露部位具有明确证据支持，但用户观察中第三项独立证据较少
+CASE_005,良性角化样病变,bkl,outputs/kg_rag_case_005_bkl.md,medium,low,consistent,medium,pass,蜡样或疣状表现和边界清楚可对应到脂溢性角化病及日光性黑子相关证据，但该类别内部病变构成较宽泛
+CASE_006,皮肤纤维瘤,df,outputs/kg_rag_case_006_df.md,high,low,consistent,medium,pass,坚实小结节和下肢部位能够支持皮肤纤维瘤解释，但仍需皮肤镜或病理进一步确认
+CASE_007,血管性皮损,vasc,outputs/kg_rag_case_007_vasc.md,high,low,consistent,high,pass,红色或紫红色血管样表现与血管性皮损的红色紫色丘疹、小腔隙和红色团块证据对应较好

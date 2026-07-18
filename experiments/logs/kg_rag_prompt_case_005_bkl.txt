@@ -1,0 +1,149 @@
+一、任务说明
+你是一名医学知识图谱辅助解释助手。请结合用户观察结果与下方知识图谱证据，对候选疾病进行谨慎、可追溯的解释。你的回答仅用于健康信息参考，不构成医学诊断。
+
+二、用户输入/观察结果
+- 候选疾病：良性角化样病变
+- 用户观察：患者皮损表现为蜡样或疣状斑块，边界较清楚。
+
+三、知识图谱证据上下文
+## 候选疾病
+- 良性角化样病变 / Benign Keratosis-like Lesion（DIS_005）
+
+## 主要皮损表现
+- 证据路径：良性角化样病变 — 表现为 — 蜡样或疣状表面
+  evidence_text：脂溢性角化病可表现为光滑、蜡样或疣状表面。
+  source：DermNet - Seborrhoeic Keratosis (SRC_012, Website)
+- 证据路径：良性角化样病变 — 表现为 — 贴附样丘疹或斑块
+  evidence_text：脂溢性角化病常呈贴附在皮肤表面的外观。
+  source：DermNet - Seborrhoeic Keratosis (SRC_012, Website)
+- 证据路径：良性角化样病变 — 表现为 — 边界清楚的扁平色素斑
+  evidence_text：日光性黑子是常见的良性扁平色素性皮损，多见于日光暴露皮肤。
+  source：DermNet - Solar Lentigo (SRC_017, Website)
+- 证据路径：良性角化样病变 — 表现为 — 粟丘疹样囊肿
+  evidence_text：脂溢性角化病皮肤镜下可见粟丘疹样囊肿。
+  source：DermNet - Dermoscopy of Seborrhoeic Keratosis (SRC_018, Website)
+- 证据路径：良性角化样病变 — 表现为 — 裂隙或脑回样结构
+  evidence_text：脂溢性角化病皮肤镜下可见裂隙、嵴状结构或脑回样表面。
+  source：DermNet - Dermoscopy of Seborrhoeic Keratosis (SRC_018, Website)
+- 证据路径：良性角化样病变 — 表现为 — 炎性红色或色素性薄斑/斑块
+  evidence_text：扁平苔藓样角化病可表现为小的炎性斑疹或薄的色素性斑块。
+  source：DermNet - Lichenoid Keratosis (SRC_019, Website)
+
+## 常见部位
+- 证据路径：良性角化样病变 — 常见于 — 日光暴露部位
+  evidence_text：日光性黑子主要发生在日光暴露皮肤。
+  source：DermNet - Solar Lentigo (SRC_017, Website)
+- 证据路径：良性角化样病变 — 常见于 — 躯干
+  evidence_text：扁平苔藓样角化病最常见于上躯干，其次为远端上肢。
+  source：DermNet - Lichenoid Keratosis (SRC_019, Website)
+
+## 伴随症状
+- 证据路径：良性角化样病变 — 伴随症状 — 无明显症状
+  evidence_text：日光性黑子通常无症状，不引起瘙痒或疼痛。
+  source：DermNet - Solar Lentigo (SRC_017, Website)
+- 证据路径：良性角化样病变 — 伴随症状 — 瘙痒
+  evidence_text：扁平苔藓样角化病通常无症状，但也可出现瘙痒或轻微刺痛。
+  source：DermNet - Lichenoid Keratosis (SRC_019, Website)
+
+## 建议检查
+- 证据路径：良性角化样病变 — 建议检查 — 皮肤镜检查
+  evidence_text：皮肤镜有助于区分脂溢性角化病与基底细胞癌、黑色素瘤等病变。
+  source：DermNet - Dermoscopy of Seborrhoeic Keratosis (SRC_018, Website)
+- 证据路径：良性角化样病变 — 建议检查 — 组织病理检查
+  evidence_text：当临床检查和皮肤镜不能区分扁平苔藓样角化病与其他孤立性红斑性病变时，需要皮肤活检。
+  source：DermNet - Lichenoid Keratosis (SRC_019, Website)
+
+## 鉴别诊断
+- 证据路径：良性角化样病变 — 鉴别诊断 — 黑色素瘤
+  evidence_text：脂溢性角化病有时可与黑色素瘤等黑色素细胞性病变相似，临床和皮肤镜鉴别并非总是容易。
+  source：DermNet - Dermoscopy of Seborrhoeic Keratosis (SRC_018, Website)
+- 证据路径：良性角化样病变 — 鉴别诊断 — 基底细胞癌
+  evidence_text：皮肤镜有助于区分脂溢性角化病与基底细胞癌和黑色素瘤。
+  source：DermNet - Dermoscopy of Seborrhoeic Keratosis (SRC_018, Website)
+- 证据路径：良性角化样病变 — 鉴别诊断 — 光化性角化病/表皮内癌
+  evidence_text：脂溢性角化病有时可与鳞状细胞癌、基底细胞癌或黑色素瘤等皮肤癌相似。
+  source：DermNet - Seborrhoeic Keratosis (SRC_012, Website)
+
+## 风险提示
+- 证据路径：良性角化样病变 — 风险提示 — 通常为良性，但可与皮肤恶性肿瘤相似
+  evidence_text：脂溢性角化病不是癌前肿瘤，但有时难以与皮肤癌区分。
+  source：DermNet - Seborrhoeic Keratosis (SRC_012, Website)
+
+## 就医建议
+- 证据路径：良性角化样病变 — 就医建议 — 建议皮肤科评估，诊断不明确或形态异常时进一步检查
+  evidence_text：若诊断存在疑问，可进行皮肤镜随访；无法区分时需要活检。
+  source：DermNet - Lichenoid Keratosis (SRC_019, Website)
+
+## 证据来源
+- DermNet - Seborrhoeic Keratosis (SRC_012, Website)
+- DermNet - Solar Lentigo (SRC_017, Website)
+- DermNet - Dermoscopy of Seborrhoeic Keratosis (SRC_018, Website)
+- DermNet - Lichenoid Keratosis (SRC_019, Website)
+
+四、生成要求
+1. 只能基于给定的知识图谱证据生成解释，不得使用证据上下文之外的信息补充结论。
+2. 不允许编造未在证据中出现的医学结论；证据不足时必须明确说明“给定证据不足”。
+3. 不得给出处方、药物剂量或具体用药方案。
+4. 不得替代医生诊断，不得将候选疾病表述为已经确诊。
+5. 输出内容必须体现“用户观察结果”与“知识图谱证据”之间的对应关系。
+6. 每条支持证据必须尽量对应到知识图谱中的证据路径、evidence_text 或 source。
+7. 如果某一项内容在知识图谱证据中没有直接依据，必须标注为“给定证据不足”。
+8. 回答应保持谨慎，使用“可能支持”“提示需要考虑”“建议进一步评估”等表述，避免绝对化诊断。
+
+五、输出格式约束
+请严格按照以下固定格式输出，不要增加或删除一级栏目：
+
+候选疾病：
+- 中文名称：
+- 英文名称：
+- 疾病 ID：
+- 结论表述：
+
+用户观察与证据匹配：
+- 观察 1：
+  - 匹配情况：
+  - 对应证据路径：
+  - evidence_text：
+  - source：
+- 观察 2：
+  - 匹配情况：
+  - 对应证据路径：
+  - evidence_text：
+  - source：
+- 观察 3：
+  - 匹配情况：
+  - 对应证据路径：
+  - evidence_text：
+  - source：
+
+支持证据：
+1.
+   - 证据路径：
+   - evidence_text：
+   - source：
+2.
+   - 证据路径：
+   - evidence_text：
+   - source：
+
+鉴别诊断：
+- 需要鉴别的疾病或病变：
+- 对应证据路径：
+- evidence_text：
+- source：
+
+风险提示：
+- 风险说明：
+- 对应证据路径：
+- evidence_text：
+- source：
+
+就医建议：
+- 建议内容：
+- 对应证据路径：
+- evidence_text：
+- source：
+
+证据不足说明：
+- 给定证据不足的内容：
+- 原因说明：

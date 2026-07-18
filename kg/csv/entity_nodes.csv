@@ -1,0 +1,80 @@
+﻿id,entity_type,name_cn,name_en,alias,source,note
+DIS_001,Disease,黑色素瘤,Melanoma,mel,HAM10000,对应 HAM10000 标签 mel
+DIS_002,Disease,黑色素细胞痣,Melanocytic Nevus,nv,HAM10000,对应 HAM10000 标签 nv
+DIS_003,Disease,基底细胞癌,Basal Cell Carcinoma,bcc,HAM10000,对应 HAM10000 标签 bcc
+DIS_004,Disease,光化性角化病/表皮内癌,Actinic Keratosis / Intraepithelial Carcinoma,akiec,HAM10000,对应 HAM10000 标签 akiec
+DIS_005,Disease,良性角化样病变,Benign Keratosis-like Lesion,bkl,HAM10000,对应 HAM10000 标签 bkl
+DIS_006,Disease,皮肤纤维瘤,Dermatofibroma,df,HAM10000,对应 HAM10000 标签 df
+DIS_007,Disease,血管性皮损,Vascular Lesion,vasc,HAM10000,对应 HAM10000 标签 vasc
+LF_001,LesionFeature,边界不规则,Irregular Border,irregular margin,DermNet - ABCDEFG of melanoma,黑色素瘤相关皮损特征
+LF_002,LesionFeature,颜色不均,Color Variegation,multiple colors,DermNet - ABCDEFG of melanoma,黑色素瘤相关皮损特征
+LF_003,LesionFeature,形态不对称,Asymmetry,asymmetric lesion,DermNet - ABCDEFG of melanoma,黑色素瘤相关皮损特征
+LF_004,LesionFeature,直径增大,Enlarged Diameter,diameter enlargement,DermNet - ABCDEFG of melanoma,黑色素瘤相关皮损特征
+LF_005,LesionFeature,结构不规则,Irregular Structure,irregular pattern,DermNet - Dermoscopy / Melanoma,黑色素瘤相关皮损特征
+LF_006,LesionFeature,色素均匀,Uniform Pigmentation,uniform pigment pattern,DermNet - Benign Melanocytic Lesions,黑色素细胞痣相关皮损特征
+LF_007,LesionFeature,边界清楚,Well-defined Border,well-demarcated border,DermNet - Benign Melanocytic Lesions,黑色素细胞痣相关皮损特征
+LF_008,LesionFeature,棕色或黑色斑疹/丘疹,Brown or Black Macule/Papule,pigmented mole,DermNet - Melanocytic Naevus,黑色素细胞痣相关皮损特征
+LF_009,LesionFeature,对称性较好,Symmetric Appearance,symmetry,DermNet - Benign Melanocytic Lesions,黑色素细胞痣相关皮损特征
+LF_010,LesionFeature,珍珠样结节,Pearly Nodule,shiny or pearly nodule,DermNet - Basal Cell Carcinoma,基底细胞癌典型皮损特征
+LF_011,LesionFeature,表面毛细血管扩张,Surface Telangiectasia,visible blood vessels; telangiectasia,DermNet - Basal Cell Carcinoma,基底细胞癌典型皮损特征
+LF_012,LesionFeature,边缘隆起或卷曲,Rolled Border,rolled edge,DermNet - Basal Cell Carcinoma,基底细胞癌典型皮损特征
+LF_013,LesionFeature,中央凹陷或溃疡,Central Depression or Ulceration,ulceration,DermNet - Basal Cell Carcinoma,基底细胞癌典型皮损特征
+LF_014,LesionFeature,缓慢生长的结节或斑块,Slowly Growing Nodule or Plaque,slow-growing plaque,DermNet - Basal Cell Carcinoma Dermoscopy,基底细胞癌临床表现
+LF_015,LesionFeature,粗糙鳞屑性斑片,Rough Scaly Patch,rough scaly patch,DermNet - Actinic Keratosis,光化性角化病/表皮内癌相关皮损特征
+LF_016,LesionFeature,白色或黄色角化性表面,White or Yellow Keratotic Surface,scaly; warty; horny surface,DermNet - Actinic Keratosis,光化性角化病相关皮损特征
+LF_017,LesionFeature,红色或粉红色斑片/斑块,Red or Pink Patch/Plaque,erythematous plaque,DermNet - Intraepidermal Squamous Cell Carcinoma,表皮内癌相关皮损特征
+LF_018,LesionFeature,不规则鳞屑性斑块,Irregular Scaly Plaque,irregular scaly plaque,DermNet - Intraepidermal Squamous Cell Carcinoma,表皮内癌相关皮损特征
+LF_019,LesionFeature,草莓样皮肤镜模式,Strawberry Pattern,strawberry pattern,DermNet - Actinic Keratosis Dermoscopy,光化性角化病皮肤镜特征
+LF_020,LesionFeature,蜡样或疣状表面,Waxy or Warty Surface,waxy or warty surface,DermNet - Seborrhoeic Keratosis,良性角化样病变相关皮损特征
+LF_021,LesionFeature,贴附样丘疹或斑块,Stuck-on Papule or Plaque,stuck-on lesion,DermNet - Seborrhoeic Keratosis,脂溢性角化病典型皮损特征
+LF_022,LesionFeature,边界清楚的扁平色素斑,Well-demarcated Flat Pigmented Patch,flat circumscribed pigmented patch,DermNet - Solar Lentigo,日光性黑子相关皮损特征
+LF_023,LesionFeature,粟丘疹样囊肿,Milia-like Cysts,milia-like cysts,DermNet - Dermoscopy of Seborrhoeic Keratosis,脂溢性角化病皮肤镜特征
+LF_024,LesionFeature,裂隙或脑回样结构,Fissures or Cerebriform Ridges,fissures; ridges; cerebriform pattern,DermNet - Dermoscopy of Seborrhoeic Keratosis,脂溢性角化病皮肤镜特征
+LF_025,LesionFeature,炎性红色或色素性薄斑/斑块,Inflamed Red or Pigmented Macule/Plaque,lichenoid keratosis plaque,DermNet - Lichenoid Keratosis,扁平苔藓样角化病相关皮损特征
+LF_026,LesionFeature,坚实丘疹或结节,Firm Papule or Nodule,firm papule; firm nodule,DermNet - Dermatofibroma,皮肤纤维瘤典型皮损特征
+LF_027,LesionFeature,捏压凹陷征,Dimple Sign,dimple sign; pinch sign,DermNet - Dermatofibroma,皮肤纤维瘤典型体征
+LF_028,LesionFeature,中央白色瘢痕样区域,Central White Scar-like Area,central white area,DermNet - Dermatofibroma,皮肤纤维瘤皮肤镜特征
+LF_029,LesionFeature,周围淡色素网,Peripheral Faint Pigment Network,faint pigment network,DermNet - Dermoscopy of Other Non-melanocytic Lesions,皮肤纤维瘤皮肤镜特征
+LF_030,LesionFeature,红色、蓝色或紫色丘疹,"Red, Blue, or Purple Papule",red blue purple papule,DermNet - Cherry Angioma,血管性皮损相关皮损特征
+LF_031,LesionFeature,红色或紫色小腔隙,Red or Purple Lacunes,red or purple lacunes,DermNet - Dermoscopy of Other Non-melanocytic Lesions,血管性皮损皮肤镜特征
+LF_032,LesionFeature,边界清楚的红色团块,Well-circumscribed Red Clods,red clods,HAM10000 Scientific Data,血管瘤类皮损皮肤镜特征
+LF_033,LesionFeature,快速生长的红色肉芽样结节,Rapidly Growing Red Fleshy Nodule,rapidly growing red nodule,DermNet - Pyogenic Granuloma,化脓性肉芽肿相关皮损特征
+LF_034,LesionFeature,白色领圈样边缘,White Collarette,white collarette,DermNet - Pyogenic Granuloma,化脓性肉芽肿皮肤镜特征
+LF_035,LesionFeature,溃疡或结痂表面,Ulcerated or Crusted Surface,ulcerated crusted surface,DermNet - Pyogenic Granuloma,化脓性肉芽肿相关皮损特征
+SITE_001,AnatomicalSite,躯干,Trunk,torso,DermNet - Melanoma,黑色素瘤可能涉及部位
+SITE_002,AnatomicalSite,下肢,Lower Extremity,leg,DermNet - Melanoma,黑色素瘤可能涉及部位
+SITE_003,AnatomicalSite,背部,Back,back,DermNet - Melanoma,黑色素瘤常见部位
+SITE_004,AnatomicalSite,全身皮肤,Any Skin Site,any skin site,DermNet - Melanocytic Naevus,黑色素细胞痣可发生部位
+SITE_005,AnatomicalSite,面部,Face,facial area,DermNet - Basal Cell Carcinoma,基底细胞癌常见部位
+SITE_006,AnatomicalSite,日光暴露部位,Sun-exposed Areas,chronically UV-exposed skin,DermNet - Actinic Keratosis,光化性角化病常见部位
+SITE_007,AnatomicalSite,手背,Dorsum of Hand,back of the hand,DermNet - Actinic Keratosis,光化性角化病常见部位
+SITE_008,AnatomicalSite,手指,Fingers,fingers,DermNet - Pyogenic Granuloma,化脓性肉芽肿常见部位
+SYM_001,Symptom,出血,Bleeding,bleeding lesion,DermNet - Melanoma,皮损变化或异常表现
+SYM_002,Symptom,瘙痒,Pruritus,itching,DermNet - Melanoma,伴随症状
+SYM_003,Symptom,无明显症状,No Obvious Symptoms,asymptomatic,DermNet - Melanocytic Naevus,黑色素细胞痣通常为良性皮损，异常变化时需评估
+SYM_004,Symptom,触痛,Tenderness,tender lesion,DermNet - Actinic Keratosis Dermoscopy,光化性角化病可能伴随症状
+EXAM_001,Examination,皮肤镜检查,Dermoscopy,dermatoscopy,DermNet - Melanoma / Dermoscopy,辅助检查方式
+EXAM_002,Examination,组织病理检查,Histopathological Examination,biopsy pathology,AAD - Melanoma clinical guideline,确认诊断相关检查
+RW_001,RiskWarning,存在恶性风险，需进一步评估,Potential Malignancy Risk; Further Evaluation Needed,malignant risk,DermNet - Melanoma,风险提示节点
+RW_002,RiskWarning,通常为良性，形态变化时需警惕,Usually Benign; Changes Need Attention,benign but monitor changes,DermNet - Melanocytic Naevus,风险提示节点
+RW_003,RiskWarning,属于皮肤恶性肿瘤，需进一步评估,Malignant Skin Cancer; Further Evaluation Needed,locally invasive skin cancer,DermNet - Basal Cell Carcinoma,风险提示节点
+RW_004,RiskWarning,具有癌前病变或表皮内癌相关风险,Precancerous or Intraepidermal Carcinoma-related Risk,precancerous lesion,DermNet - Actinic Keratosis,风险提示节点
+RW_005,RiskWarning,通常为良性，但可与皮肤恶性肿瘤相似,Usually Benign; May Mimic Skin Malignancy,benign but may mimic malignancy,DermNet - Seborrhoeic Keratosis,风险提示节点
+RW_006,RiskWarning,通常为良性，但不典型变化需进一步评估,Usually Benign; Atypical Changes Need Further Evaluation,benign but atypical features need evaluation,DermNet - Dermatofibroma,风险提示节点
+RW_007,RiskWarning,通常为良性血管性病变，但易出血或诊断不明确时需进一步评估,Usually Benign Vascular Lesion; Further Evaluation Needed if Bleeding or Uncertain,benign vascular lesion but bleeding or uncertain,DermNet - Cherry Angioma,风险提示节点
+ADV_001,MedicalAdvice,建议皮肤科就诊，必要时行病理活检,Dermatology Consultation Recommended; Biopsy If Necessary,seek dermatology consultation,AAD - Melanoma clinical guideline,就医建议节点
+ADV_002,MedicalAdvice,建议观察皮损变化，出现快速增大、颜色改变或出血时就诊,"Monitor Changes; Seek Dermatology Care if Rapid Growth, Colour Change, or Bleeding Occurs",monitor mole changes,DermNet - Melanocytic Naevus,就医建议节点
+ADV_003,MedicalAdvice,建议皮肤科评估，必要时行活检明确诊断,Dermatology Evaluation Recommended; Biopsy If Necessary,dermatology consultation,AAD - Basal Cell Carcinoma Guideline,就医建议节点
+ADV_004,MedicalAdvice,建议皮肤科评估，疑似进展或诊断不明确时行进一步检查,Dermatology Evaluation Recommended; Further Examination if Progression or Diagnostic Uncertainty Exists,dermatology evaluation,AAD - Actinic Keratosis Guideline,就医建议节点
+ADV_005,MedicalAdvice,建议皮肤科评估，诊断不明确或形态异常时进一步检查,Dermatology Evaluation Recommended; Further Examination if Atypical or Uncertain,dermatology evaluation,DermNet - Lichenoid Keratosis,就医建议节点
+ADV_006,MedicalAdvice,典型皮损可观察，诊断不明确或出现异常变化时建议皮肤科评估,Observation for Typical Lesions; Dermatology Evaluation if Uncertain or Atypical,dermatology evaluation,DermNet - Dermatofibroma,就医建议节点
+ADV_007,MedicalAdvice,建议皮肤科评估，快速生长、反复出血或诊断不明确时进一步检查,"Dermatology Evaluation Recommended if Rapid Growth, Recurrent Bleeding, or Diagnostic Uncertainty Exists",dermatology evaluation,DermNet - Pyogenic Granuloma,就医建议节点
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,

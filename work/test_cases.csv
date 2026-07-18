@@ -1,0 +1,8 @@
+case_id,candidate_disease,disease_id,ham10000_label,user_observation,expected_key_evidence,output_file,status
+CASE_001,基底细胞癌,DIS_003,bcc,患者皮损表现为珍珠样结节，表面可见血管，位于面部。,珍珠样结节；表面毛细血管扩张；面部,outputs/kg_rag_case_001_bcc.md,done
+CASE_002,黑色素瘤,DIS_001,mel,患者皮损表现为形态不对称，边界不规则，颜色不均。,形态不对称；边界不规则；颜色不均,,done
+CASE_003,黑色素细胞痣,DIS_002,nv,患者皮损表现为色素性斑片，整体较对称，边界相对规则。,色素性斑片；对称；边界规则,,done
+CASE_004,光化性角化病/表皮内癌,DIS_004,akiec,患者皮损表现为粗糙鳞屑性斑片，位于日晒暴露部位。,粗糙鳞屑性斑片；日晒暴露部位；癌前风险,,done
+CASE_005,良性角化样病变,DIS_005,bkl,患者皮损表现为蜡样或疣状斑块，边界较清楚。,蜡样斑块；疣状斑块；边界清楚,,done
+CASE_006,皮肤纤维瘤,DIS_006,df,患者皮损表现为坚实小结节，常见于下肢。,坚实小结节；下肢；良性病变,,done
+CASE_007,血管性皮损,DIS_007,vasc,患者皮损表现为红色或紫红色血管样皮损。,红色皮损；紫红色皮损；血管样表现,,done

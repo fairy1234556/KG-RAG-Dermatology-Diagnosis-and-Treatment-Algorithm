@@ -1,0 +1,141 @@
+一、任务说明
+你是一名医学知识图谱辅助解释助手。请结合用户观察结果与下方知识图谱证据，对候选疾病进行谨慎、可追溯的解释。你的回答仅用于健康信息参考，不构成医学诊断。
+
+二、用户输入/观察结果
+- 候选疾病：皮肤纤维瘤
+- 用户观察：患者皮损表现为坚实小结节，常见于下肢。
+
+三、知识图谱证据上下文
+## 候选疾病
+- 皮肤纤维瘤 / Dermatofibroma（DIS_006）
+
+## 主要皮损表现
+- 证据路径：皮肤纤维瘤 — 表现为 — 坚实丘疹或结节
+  evidence_text：皮肤纤维瘤通常表现为单发、坚实的丘疹或结节。
+  source：DermNet - Dermatofibroma (SRC_020, Website)
+- 证据路径：皮肤纤维瘤 — 表现为 — 捏压凹陷征
+  evidence_text：捏压皮损时，表面皮肤可出现凹陷，即捏压凹陷征。
+  source：DermNet - Dermatofibroma (SRC_020, Website)
+- 证据路径：皮肤纤维瘤 — 表现为 — 中央白色瘢痕样区域
+  evidence_text：皮肤纤维瘤最常见的皮肤镜模式是中央白色区域伴周围淡色素网。
+  source：DermNet - Dermatofibroma (SRC_020, Website)
+- 证据路径：皮肤纤维瘤 — 表现为 — 周围淡色素网
+  evidence_text：皮肤纤维瘤皮肤镜下可见淡色素网或假性色素网围绕中央苍白无结构区域。
+  source：DermNet - Dermoscopy of Other Non-melanocytic Lesions (SRC_021, Website)
+
+## 常见部位
+- 证据路径：皮肤纤维瘤 — 常见于 — 下肢
+  evidence_text：皮肤纤维瘤是常见良性纤维性结节，通常见于小腿皮肤。
+  source：DermNet - Dermatofibroma (SRC_020, Website)
+- 证据路径：皮肤纤维瘤 — 常见于 — 全身皮肤
+  evidence_text：皮肤纤维瘤可发生于身体任何皮肤部位。
+  source：DermNet - Dermatofibroma (SRC_020, Website)
+
+## 伴随症状
+- 证据路径：皮肤纤维瘤 — 伴随症状 — 无明显症状
+  evidence_text：皮肤纤维瘤通常不引起症状。
+  source：DermNet - Dermatofibroma (SRC_020, Website)
+- 证据路径：皮肤纤维瘤 — 伴随症状 — 触痛
+  evidence_text：皮肤纤维瘤有时可出现疼痛或触痛。
+  source：DermNet - Dermatofibroma (SRC_020, Website)
+- 证据路径：皮肤纤维瘤 — 伴随症状 — 瘙痒
+  evidence_text：皮肤纤维瘤有时可出现瘙痒。
+  source：DermNet - Dermatofibroma (SRC_020, Website)
+
+## 建议检查
+- 证据路径：皮肤纤维瘤 — 建议检查 — 皮肤镜检查
+  evidence_text：皮肤纤维瘤通常可通过临床表现诊断，并可由皮肤镜辅助支持。
+  source：DermNet - Dermatofibroma (SRC_020, Website)
+- 证据路径：皮肤纤维瘤 — 建议检查 — 组织病理检查
+  evidence_text：若存在近期增大、溃疡或皮肤镜下结构和颜色不对称等不典型特征，可进行诊断性切除或皮肤活检。
+  source：DermNet - Dermatofibroma (SRC_020, Website)
+
+## 鉴别诊断
+- 证据路径：皮肤纤维瘤 — 鉴别诊断 — 黑色素瘤
+  evidence_text：皮肤纤维瘤有时可能被误认为隆突性皮肤纤维肉瘤或硬化性黑色素瘤。
+  source：DermNet - Dermatofibroma (SRC_020, Website)
+- 证据路径：皮肤纤维瘤 — 鉴别诊断 — 黑色素细胞痣
+  evidence_text：皮肤镜有助于区分色素性非黑色素细胞病变与良性或恶性黑色素细胞病变。
+  source：DermNet - Dermoscopy of Other Non-melanocytic Lesions (SRC_021, Website)
+
+## 风险提示
+- 证据路径：皮肤纤维瘤 — 风险提示 — 通常为良性，但不典型变化需进一步评估
+  evidence_text：皮肤纤维瘤不会发展为癌，但偶尔可与其他肿瘤相混淆。
+  source：DermNet - Dermatofibroma (SRC_020, Website)
+
+## 就医建议
+- 证据路径：皮肤纤维瘤 — 就医建议 — 典型皮损可观察，诊断不明确或出现异常变化时建议皮肤科评估
+  evidence_text：皮肤纤维瘤通常无害，典型病例一般仅需解释和观察；若造成困扰或诊断不明确，可进一步处理。
+  source：DermNet - Dermatofibroma (SRC_020, Website)
+
+## 证据来源
+- DermNet - Dermatofibroma (SRC_020, Website)
+- DermNet - Dermoscopy of Other Non-melanocytic Lesions (SRC_021, Website)
+
+四、生成要求
+1. 只能基于给定的知识图谱证据生成解释，不得使用证据上下文之外的信息补充结论。
+2. 不允许编造未在证据中出现的医学结论；证据不足时必须明确说明“给定证据不足”。
+3. 不得给出处方、药物剂量或具体用药方案。
+4. 不得替代医生诊断，不得将候选疾病表述为已经确诊。
+5. 输出内容必须体现“用户观察结果”与“知识图谱证据”之间的对应关系。
+6. 每条支持证据必须尽量对应到知识图谱中的证据路径、evidence_text 或 source。
+7. 如果某一项内容在知识图谱证据中没有直接依据，必须标注为“给定证据不足”。
+8. 回答应保持谨慎，使用“可能支持”“提示需要考虑”“建议进一步评估”等表述，避免绝对化诊断。
+
+五、输出格式约束
+请严格按照以下固定格式输出，不要增加或删除一级栏目：
+
+候选疾病：
+- 中文名称：
+- 英文名称：
+- 疾病 ID：
+- 结论表述：
+
+用户观察与证据匹配：
+- 观察 1：
+  - 匹配情况：
+  - 对应证据路径：
+  - evidence_text：
+  - source：
+- 观察 2：
+  - 匹配情况：
+  - 对应证据路径：
+  - evidence_text：
+  - source：
+- 观察 3：
+  - 匹配情况：
+  - 对应证据路径：
+  - evidence_text：
+  - source：
+
+支持证据：
+1.
+   - 证据路径：
+   - evidence_text：
+   - source：
+2.
+   - 证据路径：
+   - evidence_text：
+   - source：
+
+鉴别诊断：
+- 需要鉴别的疾病或病变：
+- 对应证据路径：
+- evidence_text：
+- source：
+
+风险提示：
+- 风险说明：
+- 对应证据路径：
+- evidence_text：
+- source：
+
+就医建议：
+- 建议内容：
+- 对应证据路径：
+- evidence_text：
+- source：
+
+证据不足说明：
+- 给定证据不足的内容：
+- 原因说明：

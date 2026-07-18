@@ -1,0 +1,153 @@
+一、任务说明
+你是一名医学知识图谱辅助解释助手。请结合用户观察结果与下方知识图谱证据，对候选疾病进行谨慎、可追溯的解释。你的回答仅用于健康信息参考，不构成医学诊断。
+
+二、用户输入/观察结果
+- 候选疾病：血管性皮损
+- 用户观察：患者皮损表现为红色或紫红色血管样皮损。
+
+三、知识图谱证据上下文
+## 候选疾病
+- 血管性皮损 / Vascular Lesion（DIS_007）
+
+## 主要皮损表现
+- 证据路径：血管性皮损 — 表现为 — 红色、蓝色或紫色丘疹
+  evidence_text：樱桃样血管瘤可表现为无症状、质地较坚实的红色、蓝色或紫色丘疹。
+  source：DermNet - Cherry Angioma (SRC_022, Website)
+- 证据路径：血管性皮损 — 表现为 — 红色或紫色小腔隙
+  evidence_text：血管瘤或血管性皮损在皮肤镜下可表现为广泛红蓝色小腔隙。
+  source：DermNet - Dermoscopy of Other Non-melanocytic Lesions (SRC_021, Website)
+- 证据路径：血管性皮损 — 表现为 — 边界清楚的红色团块
+  evidence_text：HAM10000 中血管瘤类皮损在皮肤镜下可表现为红色或紫色、实性且边界清楚的 red clods 或 lacunes。
+  source：HAM10000 Scientific Data (SRC_023, Article)
+- 证据路径：血管性皮损 — 表现为 — 快速生长的红色肉芽样结节
+  evidence_text：化脓性肉芽肿可表现为数周内快速生长的无痛性红色肉芽样结节。
+  source：DermNet - Pyogenic Granuloma (SRC_024, Website)
+- 证据路径：血管性皮损 — 表现为 — 白色领圈样边缘
+  evidence_text：化脓性肉芽肿在皮肤镜下可见明显角化性边缘或白色领圈样结构。
+  source：DermNet - Pyogenic Granuloma (SRC_024, Website)
+- 证据路径：血管性皮损 — 表现为 — 溃疡或结痂表面
+  evidence_text：化脓性肉芽肿表面可发生溃疡、结痂或疣状改变。
+  source：DermNet - Pyogenic Granuloma (SRC_024, Website)
+
+## 常见部位
+- 证据路径：血管性皮损 — 常见于 — 全身皮肤
+  evidence_text：樱桃样血管瘤通常散在分布于身体皮肤表面。
+  source：DermNet - Cherry Angioma (SRC_022, Website)
+- 证据路径：血管性皮损 — 常见于 — 躯干
+  evidence_text：樱桃样血管瘤是常见的良性红色、蓝色或紫色皮损，常见于躯干。
+  source：DermNet - Common Skin Lesions (SRC_025, Website)
+- 证据路径：血管性皮损 — 常见于 — 手指
+  evidence_text：化脓性肉芽肿最常见的受累部位包括手指和面部。
+  source：DermNet - Pyogenic Granuloma (SRC_024, Website)
+- 证据路径：血管性皮损 — 常见于 — 面部
+  evidence_text：化脓性肉芽肿最常见的受累部位包括手指和面部。
+  source：DermNet - Pyogenic Granuloma (SRC_024, Website)
+
+## 伴随症状
+- 证据路径：血管性皮损 — 伴随症状 — 无明显症状
+  evidence_text：樱桃样血管瘤通常为无症状皮损。
+  source：DermNet - Cherry Angioma (SRC_022, Website)
+- 证据路径：血管性皮损 — 伴随症状 — 出血
+  evidence_text：化脓性肉芽肿轻微外伤后容易出血。
+  source：DermNet - Pyogenic Granuloma (SRC_024, Website)
+
+## 建议检查
+- 证据路径：血管性皮损 — 建议检查 — 皮肤镜检查
+  evidence_text：樱桃样血管瘤通常可临床诊断，皮肤镜下具有红色团块或小叶样模式。
+  source：DermNet - Cherry Angioma (SRC_022, Website)
+- 证据路径：血管性皮损 — 建议检查 — 组织病理检查
+  evidence_text：当诊断存在疑问时，化脓性肉芽肿可在治疗或切除后提交组织学检查。
+  source：DermNet - Pyogenic Granuloma (SRC_024, Website)
+
+## 鉴别诊断
+- 证据路径：血管性皮损 — 鉴别诊断 — 黑色素瘤
+  evidence_text：无色素或低色素黑色素瘤是化脓性肉芽肿重要的鉴别诊断，皮肤镜下也可能有相似特征。
+  source：DermNet - Pyogenic Granuloma (SRC_024, Website)
+- 证据路径：血管性皮损 — 鉴别诊断 — 基底细胞癌
+  evidence_text：樱桃样血管瘤偶尔可能与结节型基底细胞癌混淆。
+  source：DermNet - Cherry Angioma (SRC_022, Website)
+
+## 风险提示
+- 证据路径：血管性皮损 — 风险提示 — 通常为良性血管性病变，但易出血或诊断不明确时需进一步评估
+  evidence_text：樱桃样血管瘤通常无害，但有时需排除类似的恶性皮损；化脓性肉芽肿可反复或大量出血。
+  source：DermNet - Cherry Angioma (SRC_022, Website)
+
+## 就医建议
+- 证据路径：血管性皮损 — 就医建议 — 建议皮肤科评估，快速生长、反复出血或诊断不明确时进一步检查
+  evidence_text：快速生长、反复出血或诊断不明确的血管性皮损应进一步评估，必要时进行组织学检查。
+  source：DermNet - Pyogenic Granuloma (SRC_024, Website)
+
+## 证据来源
+- DermNet - Cherry Angioma (SRC_022, Website)
+- DermNet - Dermoscopy of Other Non-melanocytic Lesions (SRC_021, Website)
+- HAM10000 Scientific Data (SRC_023, Article)
+- DermNet - Pyogenic Granuloma (SRC_024, Website)
+- DermNet - Common Skin Lesions (SRC_025, Website)
+
+四、生成要求
+1. 只能基于给定的知识图谱证据生成解释，不得使用证据上下文之外的信息补充结论。
+2. 不允许编造未在证据中出现的医学结论；证据不足时必须明确说明“给定证据不足”。
+3. 不得给出处方、药物剂量或具体用药方案。
+4. 不得替代医生诊断，不得将候选疾病表述为已经确诊。
+5. 输出内容必须体现“用户观察结果”与“知识图谱证据”之间的对应关系。
+6. 每条支持证据必须尽量对应到知识图谱中的证据路径、evidence_text 或 source。
+7. 如果某一项内容在知识图谱证据中没有直接依据，必须标注为“给定证据不足”。
+8. 回答应保持谨慎，使用“可能支持”“提示需要考虑”“建议进一步评估”等表述，避免绝对化诊断。
+
+五、输出格式约束
+请严格按照以下固定格式输出，不要增加或删除一级栏目：
+
+候选疾病：
+- 中文名称：
+- 英文名称：
+- 疾病 ID：
+- 结论表述：
+
+用户观察与证据匹配：
+- 观察 1：
+  - 匹配情况：
+  - 对应证据路径：
+  - evidence_text：
+  - source：
+- 观察 2：
+  - 匹配情况：
+  - 对应证据路径：
+  - evidence_text：
+  - source：
+- 观察 3：
+  - 匹配情况：
+  - 对应证据路径：
+  - evidence_text：
+  - source：
+
+支持证据：
+1.
+   - 证据路径：
+   - evidence_text：
+   - source：
+2.
+   - 证据路径：
+   - evidence_text：
+   - source：
+
+鉴别诊断：
+- 需要鉴别的疾病或病变：
+- 对应证据路径：
+- evidence_text：
+- source：
+
+风险提示：
+- 风险说明：
+- 对应证据路径：
+- evidence_text：
+- source：
+
+就医建议：
+- 建议内容：
+- 对应证据路径：
+- evidence_text：
+- source：
+
+证据不足说明：
+- 给定证据不足的内容：
+- 原因说明：

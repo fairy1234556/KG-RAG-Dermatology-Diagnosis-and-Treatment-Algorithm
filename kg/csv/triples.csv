@@ -1,0 +1,103 @@
+﻿triple_id,head_id,head_cn,head_type,relation_cn,relation_en,tail_id,tail_cn,tail_type,source,evidence_text,note
+TRI_001,DIS_001,黑色素瘤,Disease,表现为,has_manifestation,LF_001,边界不规则,LesionFeature,DermNet - ABCDEFG of melanoma,ABCDE 特征包括 Border irregularity，可支持“边界不规则”。,黑色素瘤皮损特征
+TRI_002,DIS_001,黑色素瘤,Disease,表现为,has_manifestation,LF_002,颜色不均,LesionFeature,DermNet - ABCDEFG of melanoma,ABCDE 特征包括 Colour variability / Change，可支持“颜色不均”。,黑色素瘤皮损特征
+TRI_003,DIS_001,黑色素瘤,Disease,表现为,has_manifestation,LF_003,形态不对称,LesionFeature,DermNet - ABCDEFG of melanoma,ABCDE 特征包括 Asymmetry，可支持“形态不对称”。,黑色素瘤皮损特征
+TRI_004,DIS_001,黑色素瘤,Disease,表现为,has_manifestation,LF_004,直径增大,LesionFeature,DermNet - ABCDEFG of melanoma,ABCDE 特征包括 Diameter / Evolving，可支持“直径增大或变化”。,黑色素瘤皮损特征
+TRI_005,DIS_001,黑色素瘤,Disease,表现为,has_manifestation,LF_005,结构不规则,LesionFeature,DermNet - Dermoscopy / Melanoma,黑色素瘤评估中可出现不规则色素或异常皮肤镜结构。,黑色素瘤皮损特征
+TRI_006,DIS_001,黑色素瘤,Disease,常见于,commonly_occurs_at,SITE_003,背部,AnatomicalSite,DermNet - Melanoma,黑色素瘤可发生在身体任何部位，男性常见于背部，女性常见于腿部。,常见发病部位
+TRI_007,DIS_001,黑色素瘤,Disease,伴随症状,has_symptom,SYM_001,出血,Symptom,DermNet - Melanoma,黑色素瘤早期可表现为异常痣或斑点，并可能出现瘙痒或出血。,皮损异常变化
+TRI_008,DIS_001,黑色素瘤,Disease,建议检查,recommended_examination,EXAM_001,皮肤镜检查,Examination,DermNet - Dermoscopy / Melanoma,皮肤镜可用于黑色素瘤相关皮损评估。,辅助检查方式
+TRI_009,DIS_001,黑色素瘤,Disease,建议检查,recommended_examination,EXAM_002,组织病理检查,Examination,AAD - Melanoma clinical guideline,活检可提供组织病理信息，用于优化黑色素瘤诊断并指导后续管理。,确认诊断相关检查
+TRI_010,DIS_001,黑色素瘤,Disease,鉴别诊断,differential_diagnosis,DIS_002,黑色素细胞痣,Disease,DermNet - Atypical naevi / Superficial spreading melanoma,黑色素瘤早期可能类似黑色素细胞痣，部分情况下很难与非典型痣区分。,易混淆疾病
+TRI_011,DIS_001,黑色素瘤,Disease,风险提示,has_risk_warning,RW_001,存在恶性风险，需进一步评估,RiskWarning,DermNet - Melanoma,黑色素瘤是潜在严重的皮肤癌，需进行进一步评估。,风险提示
+TRI_012,DIS_001,黑色素瘤,Disease,就医建议,has_medical_advice,ADV_001,建议皮肤科就诊，必要时行病理活检,MedicalAdvice,AAD - Melanoma clinical guideline,疑似黑色素瘤时，活检获得的组织病理信息有助于诊断和后续管理。,非处方性就医建议
+TRI_013,DIS_001,黑色素瘤,Disease,常见于,commonly_occurs_at,SITE_002,下肢,AnatomicalSite,DermNet - Melanoma,黑色素瘤可发生在身体任何部位，男性常见于背部，女性常见于腿部。,常见发病部位
+TRI_014,DIS_001,黑色素瘤,Disease,伴随症状,has_symptom,SYM_002,瘙痒,Symptom,DermNet - Melanoma,黑色素瘤早期可表现为异常痣或斑点，并可能出现瘙痒或出血。,皮损异常变化
+TRI_015,DIS_002,黑色素细胞痣,Disease,表现为,has_manifestation,LF_006,色素均匀,LesionFeature,DermNet - Benign Melanocytic Lesions,单一颜色或均匀色素模式的皮损几乎总是良性的。,黑色素细胞痣皮损特征
+TRI_016,DIS_002,黑色素细胞痣,Disease,表现为,has_manifestation,LF_007,边界清楚,LesionFeature,DermNet - Benign Melanocytic Lesions,良性色素性皮损通常表现为较规则、较清楚的边界。,黑色素细胞痣皮损特征
+TRI_017,DIS_002,黑色素细胞痣,Disease,表现为,has_manifestation,LF_008,棕色或黑色斑疹/丘疹,LesionFeature,DermNet - Melanocytic Naevus,棕色或黑色黑色素细胞痣含有黑色素，也可称为色素痣。,黑色素细胞痣皮损特征
+TRI_018,DIS_002,黑色素细胞痣,Disease,表现为,has_manifestation,LF_009,对称性较好,LesionFeature,DermNet - Benign Melanocytic Lesions,良性色素性皮损通常具有较一致的结构和外观。,黑色素细胞痣皮损特征
+TRI_019,DIS_002,黑色素细胞痣,Disease,常见于,commonly_occurs_at,SITE_004,全身皮肤,AnatomicalSite,DermNet - Melanocytic Naevus,黑色素细胞痣可发生在身体任何部位。,可发生部位
+TRI_020,DIS_002,黑色素细胞痣,Disease,建议检查,recommended_examination,EXAM_001,皮肤镜检查,Examination,DermNet - Melanocytic Naevi: New Classification,皮肤镜常可根据色素数量和分布对不同类型黑色素细胞痣进行诊断。,辅助检查方式
+TRI_021,DIS_002,黑色素细胞痣,Disease,鉴别诊断,differential_diagnosis,DIS_001,黑色素瘤,Disease,DermNet - Melanocytic Naevi: New Classification,皮肤镜可帮助识别与其他痣不同的“丑小鸭”病变，并提示黑色素瘤可能。,与黑色素瘤鉴别
+TRI_022,DIS_002,黑色素细胞痣,Disease,风险提示,has_risk_warning,RW_002,通常为良性，形态变化时需警惕,RiskWarning,DermNet - Melanocytic Naevus,黑色素细胞痣是一种常见良性皮损。,风险提示
+TRI_023,DIS_002,黑色素细胞痣,Disease,就医建议,has_medical_advice,ADV_002,建议观察皮损变化，出现快速增大、颜色改变或出血时就诊,MedicalAdvice,DermNet - Melanocytic Naevus,皮损变化、颜色改变或异常表现时应进一步评估。,非处方性就医建议
+TRI_024,DIS_002,黑色素细胞痣,Disease,伴随症状,has_symptom,SYM_003,无明显症状,Symptom,DermNet - Melanocytic Naevus,黑色素细胞痣通常为良性皮损；若出现大小、形状、结构、颜色变化，或出血、结痂、瘙痒等情况，应进一步评估。,良性色素痣通常无明显症状，异常变化需关注
+TRI_025,DIS_003,基底细胞癌,Disease,表现为,has_manifestation,LF_010,珍珠样结节,LesionFeature,DermNet - Basal Cell Carcinoma,结节型基底细胞癌可表现为光亮或珍珠样结节。,基底细胞癌皮损特征
+TRI_026,DIS_003,基底细胞癌,Disease,表现为,has_manifestation,LF_011,表面毛细血管扩张,LesionFeature,DermNet - Basal Cell Carcinoma,基底细胞癌表面可见血管穿过。,基底细胞癌皮损特征
+TRI_027,DIS_003,基底细胞癌,Disease,表现为,has_manifestation,LF_012,边缘隆起或卷曲,LesionFeature,DermNet - Basal Cell Carcinoma,基底细胞癌可出现中央凹陷或溃疡，使边缘呈卷曲样。,基底细胞癌皮损特征
+TRI_028,DIS_003,基底细胞癌,Disease,表现为,has_manifestation,LF_013,中央凹陷或溃疡,LesionFeature,DermNet - Basal Cell Carcinoma,基底细胞癌可有中央凹陷或溃疡。,基底细胞癌皮损特征
+TRI_029,DIS_003,基底细胞癌,Disease,表现为,has_manifestation,LF_014,缓慢生长的结节或斑块,LesionFeature,DermNet - Basal Cell Carcinoma Dermoscopy,基底细胞癌的临床特征包括缓慢生长的不规则结节或斑块。,基底细胞癌临床表现
+TRI_030,DIS_003,基底细胞癌,Disease,常见于,commonly_occurs_at,SITE_005,面部,AnatomicalSite,DermNet - Basal Cell Carcinoma,结节型基底细胞癌是面部常见的 BCC 类型。,常见发病部位
+TRI_031,DIS_003,基底细胞癌,Disease,伴随症状,has_symptom,SYM_001,出血,Symptom,DermNet - Basal Cell Carcinoma Dermoscopy,基底细胞癌可出现自发性出血、糜烂或溃疡。,皮损异常表现
+TRI_032,DIS_003,基底细胞癌,Disease,建议检查,recommended_examination,EXAM_001,皮肤镜检查,Examination,DermNet - Basal Cell Carcinoma Dermoscopy,皮肤镜有助于区分色素性基底细胞癌和其他色素性皮损。,辅助检查方式
+TRI_033,DIS_003,基底细胞癌,Disease,建议检查,recommended_examination,EXAM_002,组织病理检查,Examination,AAD - Basal Cell Carcinoma Guideline,活检用于获得支持准确诊断和管理的组织标本。,确认诊断相关检查
+TRI_034,DIS_003,基底细胞癌,Disease,鉴别诊断,differential_diagnosis,DIS_005,良性角化样病变,Disease,DermNet - Seborrhoeic Keratosis,脂溢性角化病有时可类似基底细胞癌、鳞状细胞癌或黑色素瘤。,易混淆疾病
+TRI_035,DIS_003,基底细胞癌,Disease,鉴别诊断,differential_diagnosis,DIS_001,黑色素瘤,Disease,DermNet - Basal Cell Carcinoma Dermoscopy,皮肤镜有助于区分色素性基底细胞癌和其他色素性皮损。,色素性皮损鉴别
+TRI_036,DIS_003,基底细胞癌,Disease,风险提示,has_risk_warning,RW_003,属于皮肤恶性肿瘤，需进一步评估,RiskWarning,DermNet - Basal Cell Carcinoma,基底细胞癌是常见的局部侵袭性角质形成细胞癌。,风险提示
+TRI_037,DIS_003,基底细胞癌,Disease,就医建议,has_medical_advice,ADV_003,建议皮肤科评估，必要时行活检明确诊断,MedicalAdvice,AAD - Basal Cell Carcinoma Guideline,活检有助于准确诊断和后续管理。,非处方性就医建议
+TRI_038,DIS_004,光化性角化病/表皮内癌,Disease,表现为,has_manifestation,LF_015,粗糙鳞屑性斑片,LesionFeature,DermNet - Actinic Keratosis,光化性角化病是发生在日光损伤皮肤上的癌前性鳞屑性皮损。,光化性角化病/表皮内癌皮损特征
+TRI_039,DIS_004,光化性角化病/表皮内癌,Disease,表现为,has_manifestation,LF_016,白色或黄色角化性表面,LesionFeature,DermNet - Actinic Keratosis,光化性角化病可表现为白色或黄色、鳞屑性、疣状或角化性表面。,光化性角化病皮损特征
+TRI_040,DIS_004,光化性角化病/表皮内癌,Disease,表现为,has_manifestation,LF_017,红色或粉红色斑片/斑块,LesionFeature,DermNet - Intraepidermal Squamous Cell Carcinoma,表皮内鳞状细胞癌可表现为橙红色或棕色的不规则鳞屑性斑块。,表皮内癌皮损特征
+TRI_041,DIS_004,光化性角化病/表皮内癌,Disease,表现为,has_manifestation,LF_018,不规则鳞屑性斑块,LesionFeature,DermNet - Intraepidermal Squamous Cell Carcinoma,表皮内鳞状细胞癌表现为一个或多个不规则鳞屑性斑块。,表皮内癌皮损特征
+TRI_042,DIS_004,光化性角化病/表皮内癌,Disease,表现为,has_manifestation,LF_019,草莓样皮肤镜模式,LesionFeature,DermNet - Actinic Keratosis Dermoscopy,面部非色素性光化性角化病在皮肤镜下可表现为草莓样模式。,皮肤镜表现
+TRI_043,DIS_004,光化性角化病/表皮内癌,Disease,常见于,commonly_occurs_at,SITE_006,日光暴露部位,AnatomicalSite,DermNet - Actinic Keratosis,光化性角化病常见于反复日光暴露部位。,常见发病部位
+TRI_044,DIS_004,光化性角化病/表皮内癌,Disease,常见于,commonly_occurs_at,SITE_005,面部,AnatomicalSite,DermNet - Actinic Keratosis,光化性角化病常见于面部、耳部、手背等日光暴露部位。,常见发病部位
+TRI_045,DIS_004,光化性角化病/表皮内癌,Disease,常见于,commonly_occurs_at,SITE_007,手背,AnatomicalSite,DermNet - Actinic Keratosis,光化性角化病常见于手背和面部等反复日光暴露部位。,常见发病部位
+TRI_046,DIS_004,光化性角化病/表皮内癌,Disease,伴随症状,has_symptom,SYM_004,触痛,Symptom,DermNet - Actinic Keratosis Dermoscopy,光化性角化病可伴有触痛。,可能伴随症状
+TRI_047,DIS_004,光化性角化病/表皮内癌,Disease,建议检查,recommended_examination,EXAM_001,皮肤镜检查,Examination,DermNet - Actinic Keratosis Dermoscopy,光化性角化病可结合临床和皮肤镜特征进行诊断。,辅助检查方式
+TRI_048,DIS_004,光化性角化病/表皮内癌,Disease,建议检查,recommended_examination,EXAM_002,组织病理检查,Examination,DermNet - Intraepidermal Squamous Cell Carcinoma,表皮内鳞状细胞癌可通过活检确认诊断，组织学显示表皮全层异型增生。,确认诊断相关检查
+TRI_049,DIS_004,光化性角化病/表皮内癌,Disease,鉴别诊断,differential_diagnosis,DIS_003,基底细胞癌,Disease,DermNet - Actinic Keratosis Dermoscopy,光化性角化病有时难以与其他皮损区分，需要结合临床和皮肤镜特征判断。,易混淆疾病
+TRI_050,DIS_004,光化性角化病/表皮内癌,Disease,鉴别诊断,differential_diagnosis,DIS_005,良性角化样病变,Disease,DermNet - Seborrhoeic Keratosis,脂溢性角化病有时可类似基底细胞癌、鳞状细胞癌或黑色素瘤等皮肤癌。,易混淆疾病
+TRI_051,DIS_004,光化性角化病/表皮内癌,Disease,风险提示,has_risk_warning,RW_004,具有癌前病变或表皮内癌相关风险,RiskWarning,DermNet - Actinic Keratosis,光化性角化病具有癌前性质，皮肤鳞状细胞癌可由光化性角化病发展而来。,风险提示
+TRI_052,DIS_004,光化性角化病/表皮内癌,Disease,就医建议,has_medical_advice,ADV_004,建议皮肤科评估，疑似进展或诊断不明确时行进一步检查,MedicalAdvice,AAD - Actinic Keratosis Guideline,AAD 指南针对光化性角化病管理提供循证治疗建议，且 AK 可进展为角质形成细胞癌。,非处方性就医建议
+TRI_053,DIS_005,良性角化样病变,Disease,表现为,has_manifestation,LF_020,蜡样或疣状表面,LesionFeature,DermNet - Seborrhoeic Keratosis,脂溢性角化病可表现为光滑、蜡样或疣状表面。,良性角化样病变皮损特征
+TRI_054,DIS_005,良性角化样病变,Disease,表现为,has_manifestation,LF_021,贴附样丘疹或斑块,LesionFeature,DermNet - Seborrhoeic Keratosis,脂溢性角化病常呈贴附在皮肤表面的外观。,脂溢性角化病典型表现
+TRI_055,DIS_005,良性角化样病变,Disease,表现为,has_manifestation,LF_022,边界清楚的扁平色素斑,LesionFeature,DermNet - Solar Lentigo,日光性黑子是常见的良性扁平色素性皮损，多见于日光暴露皮肤。,日光性黑子相关表现
+TRI_056,DIS_005,良性角化样病变,Disease,表现为,has_manifestation,LF_023,粟丘疹样囊肿,LesionFeature,DermNet - Dermoscopy of Seborrhoeic Keratosis,脂溢性角化病皮肤镜下可见粟丘疹样囊肿。,皮肤镜表现
+TRI_057,DIS_005,良性角化样病变,Disease,表现为,has_manifestation,LF_024,裂隙或脑回样结构,LesionFeature,DermNet - Dermoscopy of Seborrhoeic Keratosis,脂溢性角化病皮肤镜下可见裂隙、嵴状结构或脑回样表面。,皮肤镜表现
+TRI_058,DIS_005,良性角化样病变,Disease,表现为,has_manifestation,LF_025,炎性红色或色素性薄斑/斑块,LesionFeature,DermNet - Lichenoid Keratosis,扁平苔藓样角化病可表现为小的炎性斑疹或薄的色素性斑块。,扁平苔藓样角化病表现
+TRI_059,DIS_005,良性角化样病变,Disease,常见于,commonly_occurs_at,SITE_006,日光暴露部位,AnatomicalSite,DermNet - Solar Lentigo,日光性黑子主要发生在日光暴露皮肤。,常见发病部位
+TRI_060,DIS_005,良性角化样病变,Disease,常见于,commonly_occurs_at,SITE_001,躯干,AnatomicalSite,DermNet - Lichenoid Keratosis,扁平苔藓样角化病最常见于上躯干，其次为远端上肢。,常见发病部位
+TRI_061,DIS_005,良性角化样病变,Disease,伴随症状,has_symptom,SYM_003,无明显症状,Symptom,DermNet - Solar Lentigo,日光性黑子通常无症状，不引起瘙痒或疼痛。,常见症状表现
+TRI_062,DIS_005,良性角化样病变,Disease,伴随症状,has_symptom,SYM_002,瘙痒,Symptom,DermNet - Lichenoid Keratosis,扁平苔藓样角化病通常无症状，但也可出现瘙痒或轻微刺痛。,可能伴随症状
+TRI_063,DIS_005,良性角化样病变,Disease,建议检查,recommended_examination,EXAM_001,皮肤镜检查,Examination,DermNet - Dermoscopy of Seborrhoeic Keratosis,皮肤镜有助于区分脂溢性角化病与基底细胞癌、黑色素瘤等病变。,辅助检查方式
+TRI_064,DIS_005,良性角化样病变,Disease,建议检查,recommended_examination,EXAM_002,组织病理检查,Examination,DermNet - Lichenoid Keratosis,当临床检查和皮肤镜不能区分扁平苔藓样角化病与其他孤立性红斑性病变时，需要皮肤活检。,确认诊断相关检查
+TRI_065,DIS_005,良性角化样病变,Disease,鉴别诊断,differential_diagnosis,DIS_001,黑色素瘤,Disease,DermNet - Dermoscopy of Seborrhoeic Keratosis,脂溢性角化病有时可与黑色素瘤等黑色素细胞性病变相似，临床和皮肤镜鉴别并非总是容易。,易混淆疾病
+TRI_066,DIS_005,良性角化样病变,Disease,鉴别诊断,differential_diagnosis,DIS_003,基底细胞癌,Disease,DermNet - Dermoscopy of Seborrhoeic Keratosis,皮肤镜有助于区分脂溢性角化病与基底细胞癌和黑色素瘤。,易混淆疾病
+TRI_067,DIS_005,良性角化样病变,Disease,鉴别诊断,differential_diagnosis,DIS_004,光化性角化病/表皮内癌,Disease,DermNet - Seborrhoeic Keratosis,脂溢性角化病有时可与鳞状细胞癌、基底细胞癌或黑色素瘤等皮肤癌相似。,易混淆疾病
+TRI_068,DIS_005,良性角化样病变,Disease,风险提示,has_risk_warning,RW_005,通常为良性，但可与皮肤恶性肿瘤相似,RiskWarning,DermNet - Seborrhoeic Keratosis,脂溢性角化病不是癌前肿瘤，但有时难以与皮肤癌区分。,风险提示
+TRI_069,DIS_005,良性角化样病变,Disease,就医建议,has_medical_advice,ADV_005,建议皮肤科评估，诊断不明确或形态异常时进一步检查,MedicalAdvice,DermNet - Lichenoid Keratosis,若诊断存在疑问，可进行皮肤镜随访；无法区分时需要活检。,非处方性就医建议
+TRI_070,DIS_006,皮肤纤维瘤,Disease,表现为,has_manifestation,LF_026,坚实丘疹或结节,LesionFeature,DermNet - Dermatofibroma,皮肤纤维瘤通常表现为单发、坚实的丘疹或结节。,皮肤纤维瘤皮损特征
+TRI_071,DIS_006,皮肤纤维瘤,Disease,表现为,has_manifestation,LF_027,捏压凹陷征,LesionFeature,DermNet - Dermatofibroma,捏压皮损时，表面皮肤可出现凹陷，即捏压凹陷征。,皮肤纤维瘤典型体征
+TRI_072,DIS_006,皮肤纤维瘤,Disease,表现为,has_manifestation,LF_028,中央白色瘢痕样区域,LesionFeature,DermNet - Dermatofibroma,皮肤纤维瘤最常见的皮肤镜模式是中央白色区域伴周围淡色素网。,皮肤镜表现
+TRI_073,DIS_006,皮肤纤维瘤,Disease,表现为,has_manifestation,LF_029,周围淡色素网,LesionFeature,DermNet - Dermoscopy of Other Non-melanocytic Lesions,皮肤纤维瘤皮肤镜下可见淡色素网或假性色素网围绕中央苍白无结构区域。,皮肤镜表现
+TRI_074,DIS_006,皮肤纤维瘤,Disease,常见于,commonly_occurs_at,SITE_002,下肢,AnatomicalSite,DermNet - Dermatofibroma,皮肤纤维瘤是常见良性纤维性结节，通常见于小腿皮肤。,常见发病部位
+TRI_075,DIS_006,皮肤纤维瘤,Disease,常见于,commonly_occurs_at,SITE_004,全身皮肤,AnatomicalSite,DermNet - Dermatofibroma,皮肤纤维瘤可发生于身体任何皮肤部位。,可发生部位
+TRI_076,DIS_006,皮肤纤维瘤,Disease,伴随症状,has_symptom,SYM_003,无明显症状,Symptom,DermNet - Dermatofibroma,皮肤纤维瘤通常不引起症状。,常见症状表现
+TRI_077,DIS_006,皮肤纤维瘤,Disease,伴随症状,has_symptom,SYM_004,触痛,Symptom,DermNet - Dermatofibroma,皮肤纤维瘤有时可出现疼痛或触痛。,可能伴随症状
+TRI_078,DIS_006,皮肤纤维瘤,Disease,伴随症状,has_symptom,SYM_002,瘙痒,Symptom,DermNet - Dermatofibroma,皮肤纤维瘤有时可出现瘙痒。,可能伴随症状
+TRI_079,DIS_006,皮肤纤维瘤,Disease,建议检查,recommended_examination,EXAM_001,皮肤镜检查,Examination,DermNet - Dermatofibroma,皮肤纤维瘤通常可通过临床表现诊断，并可由皮肤镜辅助支持。,辅助检查方式
+TRI_080,DIS_006,皮肤纤维瘤,Disease,建议检查,recommended_examination,EXAM_002,组织病理检查,Examination,DermNet - Dermatofibroma,若存在近期增大、溃疡或皮肤镜下结构和颜色不对称等不典型特征，可进行诊断性切除或皮肤活检。,确认诊断相关检查
+TRI_081,DIS_006,皮肤纤维瘤,Disease,鉴别诊断,differential_diagnosis,DIS_001,黑色素瘤,Disease,DermNet - Dermatofibroma,皮肤纤维瘤有时可能被误认为隆突性皮肤纤维肉瘤或硬化性黑色素瘤。,易混淆疾病
+TRI_082,DIS_006,皮肤纤维瘤,Disease,鉴别诊断,differential_diagnosis,DIS_002,黑色素细胞痣,Disease,DermNet - Dermoscopy of Other Non-melanocytic Lesions,皮肤镜有助于区分色素性非黑色素细胞病变与良性或恶性黑色素细胞病变。,色素性皮损鉴别
+TRI_083,DIS_006,皮肤纤维瘤,Disease,风险提示,has_risk_warning,RW_006,通常为良性，但不典型变化需进一步评估,RiskWarning,DermNet - Dermatofibroma,皮肤纤维瘤不会发展为癌，但偶尔可与其他肿瘤相混淆。,风险提示
+TRI_084,DIS_006,皮肤纤维瘤,Disease,就医建议,has_medical_advice,ADV_006,典型皮损可观察，诊断不明确或出现异常变化时建议皮肤科评估,MedicalAdvice,DermNet - Dermatofibroma,皮肤纤维瘤通常无害，典型病例一般仅需解释和观察；若造成困扰或诊断不明确，可进一步处理。,非处方性就医建议
+TRI_085,DIS_007,血管性皮损,Disease,表现为,has_manifestation,LF_030,红色、蓝色或紫色丘疹,LesionFeature,DermNet - Cherry Angioma,樱桃样血管瘤可表现为无症状、质地较坚实的红色、蓝色或紫色丘疹。,血管性皮损临床表现
+TRI_086,DIS_007,血管性皮损,Disease,表现为,has_manifestation,LF_031,红色或紫色小腔隙,LesionFeature,DermNet - Dermoscopy of Other Non-melanocytic Lesions,血管瘤或血管性皮损在皮肤镜下可表现为广泛红蓝色小腔隙。,皮肤镜表现
+TRI_087,DIS_007,血管性皮损,Disease,表现为,has_manifestation,LF_032,边界清楚的红色团块,LesionFeature,HAM10000 Scientific Data,HAM10000 中血管瘤类皮损在皮肤镜下可表现为红色或紫色、实性且边界清楚的 red clods 或 lacunes。,皮肤镜表现
+TRI_088,DIS_007,血管性皮损,Disease,表现为,has_manifestation,LF_033,快速生长的红色肉芽样结节,LesionFeature,DermNet - Pyogenic Granuloma,化脓性肉芽肿可表现为数周内快速生长的无痛性红色肉芽样结节。,化脓性肉芽肿相关表现
+TRI_089,DIS_007,血管性皮损,Disease,表现为,has_manifestation,LF_034,白色领圈样边缘,LesionFeature,DermNet - Pyogenic Granuloma,化脓性肉芽肿在皮肤镜下可见明显角化性边缘或白色领圈样结构。,皮肤镜表现
+TRI_090,DIS_007,血管性皮损,Disease,表现为,has_manifestation,LF_035,溃疡或结痂表面,LesionFeature,DermNet - Pyogenic Granuloma,化脓性肉芽肿表面可发生溃疡、结痂或疣状改变。,皮损表面改变
+TRI_091,DIS_007,血管性皮损,Disease,常见于,commonly_occurs_at,SITE_004,全身皮肤,AnatomicalSite,DermNet - Cherry Angioma,樱桃样血管瘤通常散在分布于身体皮肤表面。,可发生部位
+TRI_092,DIS_007,血管性皮损,Disease,常见于,commonly_occurs_at,SITE_001,躯干,AnatomicalSite,DermNet - Common Skin Lesions,樱桃样血管瘤是常见的良性红色、蓝色或紫色皮损，常见于躯干。,常见发病部位
+TRI_093,DIS_007,血管性皮损,Disease,常见于,commonly_occurs_at,SITE_008,手指,AnatomicalSite,DermNet - Pyogenic Granuloma,化脓性肉芽肿最常见的受累部位包括手指和面部。,常见发病部位
+TRI_094,DIS_007,血管性皮损,Disease,常见于,commonly_occurs_at,SITE_005,面部,AnatomicalSite,DermNet - Pyogenic Granuloma,化脓性肉芽肿最常见的受累部位包括手指和面部。,常见发病部位
+TRI_095,DIS_007,血管性皮损,Disease,伴随症状,has_symptom,SYM_003,无明显症状,Symptom,DermNet - Cherry Angioma,樱桃样血管瘤通常为无症状皮损。,常见症状表现
+TRI_096,DIS_007,血管性皮损,Disease,伴随症状,has_symptom,SYM_001,出血,Symptom,DermNet - Pyogenic Granuloma,化脓性肉芽肿轻微外伤后容易出血。,可能伴随症状
+TRI_097,DIS_007,血管性皮损,Disease,建议检查,recommended_examination,EXAM_001,皮肤镜检查,Examination,DermNet - Cherry Angioma,樱桃样血管瘤通常可临床诊断，皮肤镜下具有红色团块或小叶样模式。,辅助检查方式
+TRI_098,DIS_007,血管性皮损,Disease,建议检查,recommended_examination,EXAM_002,组织病理检查,Examination,DermNet - Pyogenic Granuloma,当诊断存在疑问时，化脓性肉芽肿可在治疗或切除后提交组织学检查。,确认诊断相关检查
+TRI_099,DIS_007,血管性皮损,Disease,鉴别诊断,differential_diagnosis,DIS_001,黑色素瘤,Disease,DermNet - Pyogenic Granuloma,无色素或低色素黑色素瘤是化脓性肉芽肿重要的鉴别诊断，皮肤镜下也可能有相似特征。,易混淆疾病
+TRI_100,DIS_007,血管性皮损,Disease,鉴别诊断,differential_diagnosis,DIS_003,基底细胞癌,Disease,DermNet - Cherry Angioma,樱桃样血管瘤偶尔可能与结节型基底细胞癌混淆。,易混淆疾病
+TRI_101,DIS_007,血管性皮损,Disease,风险提示,has_risk_warning,RW_007,通常为良性血管性病变，但易出血或诊断不明确时需进一步评估,RiskWarning,DermNet - Cherry Angioma,樱桃样血管瘤通常无害，但有时需排除类似的恶性皮损；化脓性肉芽肿可反复或大量出血。,风险提示
+TRI_102,DIS_007,血管性皮损,Disease,就医建议,has_medical_advice,ADV_007,建议皮肤科评估，快速生长、反复出血或诊断不明确时进一步检查,MedicalAdvice,DermNet - Pyogenic Granuloma,快速生长、反复出血或诊断不明确的血管性皮损应进一步评估，必要时进行组织学检查。,非处方性就医建议
