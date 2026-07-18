@@ -72,3 +72,23 @@
 │
 └── README.md
 ```
+
+## 4. V1.0 前后端演示
+
+第二阶段新增 `frontend/`，用于展示中文角色入口、医生工作台、患者健康咨询、知识图谱查询和 KG-RAG 辅助解释页面。
+
+后端启动：
+
+```bash
+uvicorn backend.app.main:app --reload
+```
+
+前端启动：
+
+```bash
+cd frontend
+npm install
+npm run dev
+```
+
+前端业务请求统一使用 `/api`，由 Vite 开发代理转发至 `http://127.0.0.1:8000`。当前为演示模式，真实病例保存、医生审核、真实大模型调用、图像分类和 Grad-CAM 暂未接入。
