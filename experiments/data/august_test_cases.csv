@@ -1,0 +1,8 @@
+case_id,true_label,candidate_disease,observation_text,lesion_features,anatomical_site,symptoms,difficulty_level,case_type,source_type,notes
+CASE_001,bcc,基底细胞癌,患者面部出现光亮的珍珠样结节，表面可见细小血管。,珍珠样结节;表面毛细血管扩张,面部,,easy,supportive,constructed,典型支持型样例
+CASE_002,mel,黑色素瘤,皮损形态不对称，边界不规则，并可见多种颜色。,形态不对称;边界不规则;颜色不均,,,easy,supportive,constructed,典型黑色素瘤样例
+CASE_003,nv,黑色素细胞痣,皮损整体较对称，边界规则，颜色相对均匀。,形态对称;边界规则;颜色均匀,,,easy,supportive,constructed,典型色素痣样例
+CASE_004,akiec,光化性角化病/表皮内癌,日光暴露部位出现粗糙并伴有鳞屑的红色斑片。,粗糙斑片;鳞屑,面部,,medium,supportive,constructed,日光暴露相关样例
+CASE_005,bcc,基底细胞癌,患者背部出现颜色较深的斑块，边界欠规则。,色素性斑块;边界欠规则,背部,,hard,partial_support,constructed,部分支持且部位不典型
+CASE_006,mel,黑色素瘤,皮损颜色均匀，边界规则，但近期出现轻微增大。,颜色均匀;边界规则;近期增大,,,hard,conflicting,constructed,包含支持与冲突特征
+CASE_007,vasc,血管性皮损,皮损呈红色，但没有提供形态、部位和变化情况。,红色,,,hard,insufficient,constructed,证据不足样例
