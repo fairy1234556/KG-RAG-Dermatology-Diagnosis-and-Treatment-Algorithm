@@ -1,0 +1,41 @@
+version: "1.0"
+
+relation_weights:
+  has_manifestation: 1.50
+  commonly_occurs_at: 1.00
+  has_symptom: 0.90
+  differential_diagnosis: 0.80
+  recommended_examination: 0.60
+  has_risk_warning: 0.30
+  has_medical_advice: 0.20
+
+score_weights:
+  entity_match: 2.00
+  disease_match: 1.00
+
+path_length_penalties:
+  hop_1: 0.00
+  hop_2: 0.35
+
+retrieval:
+  default_top_k: 5
+  max_hops: 2
+
+second_hop_expansion:
+  enabled: true
+  first_hop_relations:
+    - differential_diagnosis
+  second_hop_relations:
+    - has_manifestation
+    - commonly_occurs_at
+    - has_symptom
+    - recommended_examination
+
+entity_type_priorities:
+  LesionFeature: 1
+  AnatomicalSite: 2
+  Symptom: 3
+  Disease: 4
+  Examination: 5
+  RiskWarning: 6
+  MedicalAdvice: 7
