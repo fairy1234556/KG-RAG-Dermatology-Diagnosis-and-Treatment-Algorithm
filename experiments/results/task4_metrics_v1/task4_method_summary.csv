@@ -1,0 +1,4 @@
+﻿method,case_count,successful_case_count,run_success_rate,average_expected_concept_coverage,source_traceability_rate,evidence_path_traceability_rate,average_source_count,average_evidence_path_count,average_evidence_path_completeness,average_safety_completeness,average_generated_claim_count,average_prompt_tokens,average_completion_tokens,average_total_tokens,average_response_time_ms,median_response_time_ms,average_wall_time_ms,average_coverage_per_1000_tokens
+llm,7,7,1.0,0.964286,0.0,0.0,0.0,0.0,,1.0,19.857143,594.571429,537.571429,1132.142857,12855.714286,13346.0,12856.285714,0.860217
+rag,7,7,1.0,0.75,1.0,0.0,3.571429,0.0,,0.964286,14.285714,935.714286,493.714286,1429.428571,9679.571429,9696.0,9684.0,0.520812
+kg_rag,7,7,1.0,0.878571,1.0,1.0,3.0,5.0,1.0,1.0,18.428571,1532.142857,613.571429,2145.714286,12332.857143,12592.0,12337.285714,0.409393

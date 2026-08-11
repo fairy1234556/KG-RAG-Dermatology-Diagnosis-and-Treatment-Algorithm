@@ -1,0 +1,290 @@
+{
+  "experiment_id": "TASK4_CASE_NV_001_20260730_153407",
+  "task": "three_method_baseline_comparison",
+  "experiment_status": "success",
+  "started_at": "2026-07-30T15:33:32+08:00",
+  "finished_at": "2026-07-30T15:34:07+08:00",
+  "total_wall_time_ms": 35031,
+  "case": {
+    "case_id": "CASE_NV_001",
+    "candidate_disease": "黑色素细胞痣",
+    "user_observation": "患者皮肤上有一枚长期存在的棕色小斑，形状较规则，边界清楚，近期无明显变化。"
+  },
+  "experiment_settings": {
+    "method_order": [
+      "llm",
+      "rag",
+      "kg_rag"
+    ],
+    "rag_top_k": 5,
+    "kg_rag_top_k": 5,
+    "kg_rag_max_hops": 2,
+    "shared_llm_client": true,
+    "llm_config_path": "configs/llm_config.yaml",
+    "llm_config_sha256": "fc8182b88daaaa12da8b912ea872ffb445c12a3905d6fe28f851fea348ad967b"
+  },
+  "git": {
+    "branch": "phase-3-kg-rag-v1",
+    "commit": "2733c4fcdcacbd93b3e5f23a6fb40b7ae07489ee",
+    "working_tree_dirty": true,
+    "working_tree_status": [
+      "M .env.example",
+      " M .gitignore",
+      " M rag/schemas.py",
+      "?? configs/llm_config.yaml",
+      "?? experiments/cases/",
+      "?? experiments/results/",
+      "?? experiments/run_task4_batch.py",
+      "?? experiments/run_three_method_comparison.py",
+      "?? experiments/validate_baseline_llm.py",
+      "?? experiments/validate_baseline_rag.py",
+      "?? experiments/validate_kg_rag_pipeline.py",
+      "?? experiments/validate_task4_cases.py",
+      "?? experiments/validate_text_retriever.py",
+      "?? rag/baseline_common.py",
+      "?? rag/baseline_llm.py",
+      "?? rag/baseline_rag.py",
+      "?? rag/data/",
+      "?? rag/evidence_corpus.py",
+      "?? rag/kg_rag_pipeline.py",
+      "?? rag/llm_client.py",
+      "?? rag/text_retriever.py",
+      "?? requirements.txt"
+    ]
+  },
+  "fairness_check": {
+    "passed": true,
+    "checks": {
+      "all_use_unified_schema": true,
+      "same_case_input": true,
+      "method_order_correct": true,
+      "same_model_for_successful_runs": true,
+      "same_prompt_version_for_successful_runs": true,
+      "shared_client_instance": true
+    },
+    "successful_model_names": [
+      "qwen3.7-plus-2026-05-26"
+    ],
+    "successful_prompt_versions": [
+      "baseline_v1"
+    ]
+  },
+  "method_results": [
+    {
+      "method": "llm",
+      "started_at": "2026-07-30T15:33:32+08:00",
+      "wall_time_ms": 13347,
+      "result": {
+        "case_id": "CASE_NV_001",
+        "method": "llm",
+        "candidate_disease": "黑色素细胞痣",
+        "user_observation": "患者皮肤上有一枚长期存在的棕色小斑，形状较规则，边界清楚，近期无明显变化。",
+        "observation_match": [
+          "用户描述的‘长期存在’、‘形状较规则’、‘边界清楚’以及‘近期无明显变化’的特征，符合良性黑色素细胞痣常见的临床表现。",
+          "棕色小斑的颜色特征与黑色素细胞痣中色素沉着的典型表现一致。"
+        ],
+        "supporting_evidence": [
+          "根据一般医学知识，良性黑色素细胞痣通常表现为边界清晰、对称、颜色均匀且长期稳定的色素性皮损。",
+          "ABCDE原则（不对称、边界不规则、颜色不均、直径过大、演变）常用于评估色素性病变，用户描述的病灶缺乏这些恶性警示特征。"
+        ],
+        "differential_diagnosis": [
+          "脂溢性角化病（老年斑）：常见于中老年人，表现为褐色或黑色斑块，表面可能略显粗糙。",
+          "雀斑样痣：表现为边界清楚的褐色斑点，通常与日晒有关，长期稳定。",
+          "早期黑色素瘤：虽然用户描述特征偏向良性，但任何色素性病变均需警惕恶性变化的可能性，需专业鉴别。"
+        ],
+        "evidence_paths": [],
+        "risk_warning": [
+          "尽管目前描述符合良性特征，但自我观察可能存在偏差，不能完全排除恶性病变的早期微小变化。",
+          "若病灶出现快速增大、颜色改变、出血、瘙痒或边界变得模糊，应立即就医。"
+        ],
+        "medical_advice": [
+          "建议定期（如每3-6个月）对病灶进行拍照记录，以便对比观察是否有形态或颜色的变化。",
+          "建议前往皮肤科进行专业皮肤镜检查，以获得更准确的评估。",
+          "避免自行抠抓或使用非处方药物处理该部位，以免刺激病灶或干扰后续医生判断。"
+        ],
+        "evidence_gap": [
+          "本方法未接入外部可追溯证据，所有解释基于模型内部的一般医学知识库。",
+          "缺乏皮肤镜图像、病理活检结果或专业医生的体格检查数据，无法进行确诊。",
+          "未提供患者的年龄、家族史、日晒史等背景信息，这些因素可能影响风险评估。",
+          "纯 LLM 基线未接入外部检索证据，回答中的医学内容不具备本次运行级别的来源追溯能力。"
+        ],
+        "sources": [],
+        "disclaimer": "本结果仅用于健康信息参考和辅助决策，不构成医学诊断，也不能替代医生面诊、皮肤镜检查或组织病理检查。",
+        "model_name": "qwen3.7-plus-2026-05-26",
+        "prompt_version": "baseline_v1",
+        "response_time_ms": 13346,
+        "token_usage": {
+          "prompt_tokens": 595,
+          "completion_tokens": 469,
+          "total_tokens": 1064
+        },
+        "run_status": "success",
+        "error_message": ""
+      }
+    },
+    {
+      "method": "rag",
+      "started_at": "2026-07-30T15:33:45+08:00",
+      "wall_time_ms": 9067,
+      "result": {
+        "case_id": "CASE_NV_001",
+        "method": "rag",
+        "candidate_disease": "黑色素细胞痣",
+        "user_observation": "患者皮肤上有一枚长期存在的棕色小斑，形状较规则，边界清楚，近期无明显变化。",
+        "observation_match": [
+          "用户观察到的“棕色小斑”与黑色素细胞痣含有黑色素的特征相符",
+          "用户观察到的“形状较规则，边界清楚”符合良性色素性皮损通常表现为较规则、较清楚边界的描述"
+        ],
+        "supporting_evidence": [
+          "根据DOC_0015，棕色或黑色黑色素细胞痣含有黑色素，也可称为色素痣",
+          "根据DOC_0014，良性色素性皮损通常表现为较规则、较清楚的边界",
+          "根据DOC_0022，黑色素细胞痣通常为良性皮损"
+        ],
+        "differential_diagnosis": [
+          "表皮内鳞状细胞癌：可表现为棕色的不规则鳞屑性斑块（DOC_0037），但用户描述的皮损边界清楚且规则，与此典型表现存在差异，仍需鉴别"
+        ],
+        "evidence_paths": [],
+        "risk_warning": [
+          "若皮损出现大小、形状、结构、颜色变化，或出血、结痂、瘙痒等情况，应进一步评估（DOC_0022）"
+        ],
+        "medical_advice": [
+          "建议定期观察皮损是否有形态或颜色的变化",
+          "如有疑虑或发现上述风险警示中的变化，建议前往皮肤科进行专业检查"
+        ],
+        "evidence_gap": [
+          "检索文本未提供关于皮损具体尺寸、表面是否隆起、是否有毛发等详细形态学信息",
+          "检索文本未提供皮肤镜检查的具体图像或特征描述以辅助确诊",
+          "缺乏患者年龄、家族史或个人日晒史等背景信息"
+        ],
+        "sources": [
+          "DermNet - Benign Melanocytic Lesions",
+          "DermNet - Melanocytic Naevus",
+          "HAM10000 Scientific Data",
+          "DermNet - Intraepidermal Squamous Cell Carcinoma"
+        ],
+        "disclaimer": "本结果仅用于健康信息参考和辅助决策，不构成医学诊断，也不能替代医生面诊、皮肤镜检查或组织病理检查。",
+        "model_name": "qwen3.7-plus-2026-05-26",
+        "prompt_version": "baseline_v1",
+        "response_time_ms": 9063,
+        "token_usage": {
+          "prompt_tokens": 965,
+          "completion_tokens": 463,
+          "total_tokens": 1428
+        },
+        "run_status": "success",
+        "error_message": ""
+      }
+    },
+    {
+      "method": "kg_rag",
+      "started_at": "2026-07-30T15:33:54+08:00",
+      "wall_time_ms": 12598,
+      "result": {
+        "case_id": "CASE_NV_001",
+        "method": "kg_rag",
+        "candidate_disease": "黑色素细胞痣",
+        "user_observation": "患者皮肤上有一枚长期存在的棕色小斑，形状较规则，边界清楚，近期无明显变化。",
+        "observation_match": [
+          "用户观察到的'边界清楚'特征与黑色素细胞痣的典型临床表现相符，知识图谱证据显示良性色素性皮损通常表现为较规则、较清楚的边界。",
+          "用户描述的'棕色小斑'与黑色素细胞痣含有黑色素、表现为棕色或黑色斑疹/丘疹的特征一致。",
+          "用户提到的'形状较规则'与黑色素细胞痣通常具有较好对称性和一致结构的特征相吻合。"
+        ],
+        "supporting_evidence": [
+          "根据DermNet资料，良性色素性皮损（如黑色素细胞痣）通常表现为较规则、较清楚的边界（证据链 Rank 1）。",
+          "单一颜色或均匀色素模式的皮损几乎总是良性的，这与用户描述的'棕色小斑'且无明显变化的情况在逻辑上支持良性病变的可能性（证据链 Rank 2）。",
+          "黑色素细胞痣含有黑色素，临床常表现为棕色或黑色斑疹或丘疹（证据链 Rank 3）。",
+          "良性色素性皮损通常具有较一致的结构和外观，即对称性较好（证据链 Rank 4）。"
+        ],
+        "differential_diagnosis": [
+          "需与黑色素瘤进行鉴别，特别是当皮损出现边界不规则、不对称或颜色不均时（证据链 Rank 5 提示边界不规则是黑色素瘤的ABCDE特征之一）。",
+          "其他良性色素性病变也可能表现为类似的棕色斑点，需结合皮肤镜检查进一步区分。"
+        ],
+        "evidence_paths": [
+          {
+            "head_entity": "黑色素细胞痣",
+            "relation": "表现为",
+            "tail_entity": "边界清楚",
+            "evidence_text": "良性色素性皮损通常表现为较规则、较清楚的边界。",
+            "source_id": "TRI_016",
+            "source_name": "DermNet - Benign Melanocytic Lesions",
+            "score": 4.42
+          },
+          {
+            "head_entity": "黑色素细胞痣",
+            "relation": "表现为",
+            "tail_entity": "色素均匀",
+            "evidence_text": "单一颜色或均匀色素模式的皮损几乎总是良性的。",
+            "source_id": "TRI_015",
+            "source_name": "DermNet - Benign Melanocytic Lesions",
+            "score": 2.5
+          },
+          {
+            "head_entity": "黑色素细胞痣",
+            "relation": "表现为",
+            "tail_entity": "棕色或黑色斑疹/丘疹",
+            "evidence_text": "棕色或黑色黑色素细胞痣含有黑色素，也可称为色素痣。",
+            "source_id": "TRI_017",
+            "source_name": "DermNet - Melanocytic Naevus",
+            "score": 2.5
+          },
+          {
+            "head_entity": "黑色素细胞痣",
+            "relation": "表现为",
+            "tail_entity": "对称性较好",
+            "evidence_text": "良性色素性皮损通常具有较一致的结构和外观。",
+            "source_id": "TRI_018",
+            "source_name": "DermNet - Benign Melanocytic Lesions",
+            "score": 2.5
+          },
+          {
+            "head_entity": "黑色素细胞痣",
+            "relation": "鉴别诊断 → 表现为",
+            "tail_entity": "边界不规则",
+            "evidence_text": "皮肤镜可帮助识别与其他痣不同的“丑小鸭”病变，并提示黑色素瘤可能。；ABCDE 特征包括 Border irregularity，可支持“边界不规则”。",
+            "source_id": "TRI_021；TRI_001",
+            "source_name": "DermNet - Melanocytic Naevi: New Classification；DermNet - ABCDEFG of melanoma",
+            "score": 2.05
+          }
+        ],
+        "risk_warning": [
+          "虽然当前观察到的特征（边界清楚、形状规则、无变化）倾向于良性，但任何色素性皮损若出现大小、形状、颜色改变或出血、瘙痒等症状，均需警惕恶性转变风险。",
+          "仅凭肉眼观察无法完全排除恶性病变，尤其是早期黑色素瘤可能模拟良性痣的外观。"
+        ],
+        "medical_advice": [
+          "建议定期自我观察皮损变化，注意ABCDE原则（不对称、边界、颜色、直径、演变）。",
+          "若发现皮损近期有增大、颜色改变、边界变得模糊或不规则，应及时前往皮肤科就诊。",
+          "可考虑进行皮肤镜检查以获取更详细的皮损结构信息，辅助医生判断。"
+        ],
+        "evidence_gap": [
+          "缺乏皮损的具体尺寸数据，无法评估是否符合直径大于6mm的风险标准。",
+          "缺乏皮肤镜下的微观结构证据（如色素网、球状体等），无法从组织学层面确认性质。",
+          "缺乏患者家族史、个人日晒史或既往皮肤病变史等背景信息。",
+          "未提供皮损是否隆起、表面是否有毛发或角化等其他形态学细节。"
+        ],
+        "sources": [
+          "DermNet - Benign Melanocytic Lesions",
+          "DermNet - Melanocytic Naevus",
+          "DermNet - Melanocytic Naevi: New Classification",
+          "DermNet - ABCDEFG of melanoma"
+        ],
+        "disclaimer": "本结果仅用于健康信息参考和辅助决策，不构成医学诊断，也不能替代医生面诊、皮肤镜检查或组织病理检查。",
+        "model_name": "qwen3.7-plus-2026-05-26",
+        "prompt_version": "baseline_v1",
+        "response_time_ms": 12592,
+        "token_usage": {
+          "prompt_tokens": 1520,
+          "completion_tokens": 663,
+          "total_tokens": 2183
+        },
+        "run_status": "success",
+        "error_message": ""
+      }
+    }
+  ],
+  "summary": {
+    "method_count": 3,
+    "success_count": 3,
+    "failed_count": 0,
+    "total_tokens": 4675
+  }
+}

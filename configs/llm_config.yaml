@@ -1,0 +1,19 @@
+ version: "1.0"
+
+client:
+  timeout_seconds: 60
+  max_retries: 2
+
+generation:
+  temperature: 0.1
+  max_completion_tokens: 800
+  stream: false
+  enable_thinking: false
+  seed: 42
+
+experiment:
+  provider: "aliyun_bailian"
+  api_protocol: "openai_chat_completions"
+  prompt_version: "baseline_v1"
+  record_latency: true
+  record_token_usage: true

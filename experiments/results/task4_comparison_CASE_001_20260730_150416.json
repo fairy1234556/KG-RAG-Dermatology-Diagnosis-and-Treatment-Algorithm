@@ -1,0 +1,295 @@
+{
+  "experiment_id": "TASK4_CASE_001_20260730_150452",
+  "task": "three_method_baseline_comparison",
+  "experiment_status": "success",
+  "started_at": "2026-07-30T15:04:16+08:00",
+  "finished_at": "2026-07-30T15:04:52+08:00",
+  "total_wall_time_ms": 35807,
+  "case": {
+    "case_id": "CASE_001",
+    "candidate_disease": "基底细胞癌",
+    "user_observation": "患者面部出现光亮的珍珠样结节，表面可见细小血管。"
+  },
+  "experiment_settings": {
+    "method_order": [
+      "llm",
+      "rag",
+      "kg_rag"
+    ],
+    "rag_top_k": 5,
+    "kg_rag_top_k": 5,
+    "kg_rag_max_hops": 2,
+    "shared_llm_client": true,
+    "llm_config_path": "configs/llm_config.yaml",
+    "llm_config_sha256": "fc8182b88daaaa12da8b912ea872ffb445c12a3905d6fe28f851fea348ad967b"
+  },
+  "git": {
+    "branch": "phase-3-kg-rag-v1",
+    "commit": "2733c4fcdcacbd93b3e5f23a6fb40b7ae07489ee",
+    "working_tree_dirty": true,
+    "working_tree_status": [
+      "M .env.example",
+      " M .gitignore",
+      " M rag/schemas.py",
+      "?? configs/llm_config.yaml",
+      "?? experiments/run_three_method_comparison.py",
+      "?? experiments/validate_baseline_llm.py",
+      "?? experiments/validate_baseline_rag.py",
+      "?? experiments/validate_kg_rag_pipeline.py",
+      "?? experiments/validate_text_retriever.py",
+      "?? rag/baseline_common.py",
+      "?? rag/baseline_llm.py",
+      "?? rag/baseline_rag.py",
+      "?? rag/data/",
+      "?? rag/evidence_corpus.py",
+      "?? rag/kg_rag_pipeline.py",
+      "?? rag/llm_client.py",
+      "?? rag/text_retriever.py",
+      "?? requirements.txt"
+    ]
+  },
+  "fairness_check": {
+    "passed": true,
+    "checks": {
+      "all_use_unified_schema": true,
+      "same_case_input": true,
+      "method_order_correct": true,
+      "same_model_for_successful_runs": true,
+      "same_prompt_version_for_successful_runs": true,
+      "shared_client_instance": true
+    },
+    "successful_model_names": [
+      "qwen3.7-plus-2026-05-26"
+    ],
+    "successful_prompt_versions": [
+      "baseline_v1"
+    ]
+  },
+  "method_results": [
+    {
+      "method": "llm",
+      "started_at": "2026-07-30T15:04:16+08:00",
+      "wall_time_ms": 13621,
+      "result": {
+        "case_id": "CASE_001",
+        "method": "llm",
+        "candidate_disease": "基底细胞癌",
+        "user_observation": "患者面部出现光亮的珍珠样结节，表面可见细小血管。",
+        "observation_match": [
+          "用户描述的“光亮的珍珠样结节”是基底细胞癌（特别是结节型）的典型临床特征之一。",
+          "用户提到的“表面可见细小血管”对应医学上描述的毛细血管扩张，这也是基底细胞癌的常见体征。",
+          "病变位于面部，符合基底细胞癌好发于日光暴露部位（如头颈部）的分布特点。"
+        ],
+        "supporting_evidence": [
+          "根据一般医学知识，结节型基底细胞癌常表现为半透明、珍珠色或蜡样的隆起性结节。",
+          "一般医学文献指出，肿瘤表面的毛细血管扩张（telangiectasia）是由于肿瘤生长导致周围血管受压或新生血管形成所致，是辅助诊断的重要视觉线索。",
+          "长期紫外线暴露是基底细胞癌的主要风险因素，面部作为高暴露区域，发病率相对较高。"
+        ],
+        "differential_diagnosis": [
+          "皮脂腺增生：也可表现为面部黄色或珍珠色小丘疹，但通常中央有脐凹，且无明显的毛细血管扩张。",
+          "毛囊炎或痤疮囊肿：可能表现为结节，但通常伴有炎症反应（红肿热痛），且病程较短。",
+          "扁平疣或寻常疣：病毒性感染引起的增生，表面通常粗糙，不具备珍珠样光泽。",
+          "无色素性黑色素瘤：虽然较少见，但某些黑色素瘤可能缺乏色素，表现为粉红色或肉色结节，需通过病理鉴别。"
+        ],
+        "evidence_paths": [],
+        "risk_warning": [
+          "基底细胞癌虽转移风险极低，但具有局部侵袭性，若不及时治疗可能破坏周围组织（如软骨、骨骼）。",
+          "仅凭外观观察无法确诊，存在误诊风险，延误治疗可能导致病灶扩大，增加后续手术修复难度。",
+          "任何持续存在、逐渐增大或容易出血的皮肤新生物都应引起重视。"
+        ],
+        "medical_advice": [
+          "建议尽快前往正规医院皮肤科就诊，由专业医生进行肉眼及皮肤镜检查。",
+          "确诊通常需要依靠皮肤活检（病理组织学检查），这是区分基底细胞癌与其他良性病变的金标准。",
+          "在就医前，注意保护患处避免外伤、抓挠或自行挤压，以免引起感染或出血。",
+          "记录病变出现的时间、变化速度以及是否有出血、结痂等伴随症状，以便向医生提供详细病史。"
+        ],
+        "evidence_gap": [
+          "本方法没有接入外部可追溯证据，所有解释基于模型内部训练数据中的一般医学知识。",
+          "缺乏患者的年龄、性别、既往日晒史、家族史等关键背景信息。",
+          "缺乏病变的具体持续时间、生长速度、是否有溃疡或出血史等动态变化信息。",
+          "缺乏皮肤镜检查结果或病理活检结果，无法进行确诊。",
+          "纯 LLM 基线未接入外部检索证据，回答中的医学内容不具备本次运行级别的来源追溯能力。"
+        ],
+        "sources": [],
+        "disclaimer": "本结果仅用于健康信息参考和辅助决策，不构成医学诊断，也不能替代医生面诊、皮肤镜检查或组织病理检查。",
+        "model_name": "qwen3.7-plus-2026-05-26",
+        "prompt_version": "baseline_v1",
+        "response_time_ms": 13620,
+        "token_usage": {
+          "prompt_tokens": 587,
+          "completion_tokens": 631,
+          "total_tokens": 1218
+        },
+        "run_status": "success",
+        "error_message": ""
+      }
+    },
+    {
+      "method": "rag",
+      "started_at": "2026-07-30T15:04:30+08:00",
+      "wall_time_ms": 9980,
+      "result": {
+        "case_id": "CASE_001",
+        "method": "rag",
+        "candidate_disease": "基底细胞癌",
+        "user_observation": "患者面部出现光亮的珍珠样结节，表面可见细小血管。",
+        "observation_match": [
+          "用户观察到的'光亮的珍珠样结节'与检索证据中描述的结节型基底细胞癌表现一致",
+          "用户观察到的'表面可见细小血管'与检索证据中描述的基底细胞癌表面可见血管穿过的特征相符",
+          "用户观察到的病变部位为'面部'，与检索证据中指出的结节型基底细胞癌是面部常见类型相符"
+        ],
+        "supporting_evidence": [
+          "根据DOC_0023，结节型基底细胞癌可表现为光亮或珍珠样结节",
+          "根据DOC_0024，基底细胞癌表面可见血管穿过",
+          "根据DOC_0028，结节型基底细胞癌是面部常见的BCC类型"
+        ],
+        "differential_diagnosis": [
+          "樱桃样血管瘤：根据DOC_0096，偶尔可能与结节型基底细胞癌混淆"
+        ],
+        "evidence_paths": [],
+        "risk_warning": [
+          "根据DOC_0029，基底细胞癌可能出现自发性出血、糜烂或溃疡，需警惕病情进展"
+        ],
+        "medical_advice": [
+          "建议前往皮肤科进行专业皮肤镜检查以明确诊断",
+          "建议记录皮损变化，如出现出血、糜烂或溃疡应及时就医",
+          "避免自行挤压或处理皮损，以免引起感染或延误诊断"
+        ],
+        "evidence_gap": [
+          "缺乏患者年龄、日晒史、家族史等风险因素信息",
+          "缺乏皮损持续时间、生长速度及是否有瘙痒或疼痛等症状描述",
+          "缺乏皮肤镜下的具体结构特征（如蓝灰色卵圆形巢、叶状区域等）以进一步辅助鉴别",
+          "未提供病理活检结果，无法确诊"
+        ],
+        "sources": [
+          "DermNet - Basal Cell Carcinoma",
+          "DermNet - Cherry Angioma",
+          "DermNet - Basal Cell Carcinoma Dermoscopy"
+        ],
+        "disclaimer": "本结果仅用于健康信息参考和辅助决策，不构成医学诊断，也不能替代医生面诊、皮肤镜检查或组织病理检查。",
+        "model_name": "qwen3.7-plus-2026-05-26",
+        "prompt_version": "baseline_v1",
+        "response_time_ms": 9975,
+        "token_usage": {
+          "prompt_tokens": 898,
+          "completion_tokens": 480,
+          "total_tokens": 1378
+        },
+        "run_status": "success",
+        "error_message": ""
+      }
+    },
+    {
+      "method": "kg_rag",
+      "started_at": "2026-07-30T15:04:40+08:00",
+      "wall_time_ms": 12180,
+      "result": {
+        "case_id": "CASE_001",
+        "method": "kg_rag",
+        "candidate_disease": "基底细胞癌",
+        "user_observation": "患者面部出现光亮的珍珠样结节，表面可见细小血管。",
+        "observation_match": [
+          "用户观察到的“珍珠样结节”与基底细胞癌的典型临床表现“珍珠样结节”直接匹配。",
+          "用户观察到的“表面可见细小血管”与基底细胞癌的常见体征“表面毛细血管扩张”直接匹配。",
+          "病变部位“面部”是基底细胞癌（特别是结节型）的高发区域，与疾病常见部位相符。"
+        ],
+        "supporting_evidence": [
+          "根据DermNet资料，结节型基底细胞癌可表现为光亮或珍珠样结节（证据链PATH_TRI_025）。",
+          "根据DermNet资料，基底细胞癌表面可见血管穿过，即表面毛细血管扩张（证据链PATH_TRI_026）。",
+          "根据DermNet资料，结节型基底细胞癌是面部常见的BCC类型（证据链PATH_TRI_030）。"
+        ],
+        "differential_diagnosis": [
+          "皮脂腺增生：常表现为面部黄色或肤色小丘疹，中央可有脐凹，易与早期基底细胞癌混淆。",
+          "毛囊炎或痤疮囊肿：炎症性结节可能伴有红肿，但通常缺乏珍珠样光泽和特征性毛细血管扩张。",
+          "无色素性黑色素瘤：少数黑色素瘤可能不呈现典型黑色，需通过皮肤镜或病理检查排除。",
+          "角化棘皮瘤：生长迅速，中央常有角质栓，需与基底细胞癌鉴别。"
+        ],
+        "evidence_paths": [
+          {
+            "head_entity": "基底细胞癌",
+            "relation": "表现为",
+            "tail_entity": "珍珠样结节",
+            "evidence_text": "结节型基底细胞癌可表现为光亮或珍珠样结节。",
+            "source_id": "TRI_025",
+            "source_name": "DermNet - Basal Cell Carcinoma",
+            "score": 4.42
+          },
+          {
+            "head_entity": "基底细胞癌",
+            "relation": "表现为",
+            "tail_entity": "表面毛细血管扩张",
+            "evidence_text": "基底细胞癌表面可见血管穿过。",
+            "source_id": "TRI_026",
+            "source_name": "DermNet - Basal Cell Carcinoma",
+            "score": 4.34
+          },
+          {
+            "head_entity": "基底细胞癌",
+            "relation": "常见于",
+            "tail_entity": "面部",
+            "evidence_text": "结节型基底细胞癌是面部常见的 BCC 类型。",
+            "source_id": "TRI_030",
+            "source_name": "DermNet - Basal Cell Carcinoma",
+            "score": 3.92
+          },
+          {
+            "head_entity": "基底细胞癌",
+            "relation": "表现为",
+            "tail_entity": "边缘隆起或卷曲",
+            "evidence_text": "基底细胞癌可出现中央凹陷或溃疡，使边缘呈卷曲样。",
+            "source_id": "TRI_027",
+            "source_name": "DermNet - Basal Cell Carcinoma",
+            "score": 2.5
+          },
+          {
+            "head_entity": "基底细胞癌",
+            "relation": "表现为",
+            "tail_entity": "中央凹陷或溃疡",
+            "evidence_text": "基底细胞癌可有中央凹陷或溃疡。",
+            "source_id": "TRI_028",
+            "source_name": "DermNet - Basal Cell Carcinoma",
+            "score": 2.5
+          }
+        ],
+        "risk_warning": [
+          "基底细胞癌虽转移风险较低，但具有局部侵袭性，若不及时处理可能导致周围组织破坏。",
+          "面部病变影响美观及功能，早期干预有助于减少手术范围及瘢痕形成。",
+          "仅凭外观观察无法确诊，存在误诊风险，必须经由专业医生评估。"
+        ],
+        "medical_advice": [
+          "建议尽快前往皮肤科就诊，进行专业的皮肤镜检查以评估病变结构。",
+          "遵医嘱考虑进行皮肤活检（病理检查），这是确诊基底细胞癌的金标准。",
+          "在就医前，注意保护患处避免外伤、摩擦或自行挤压，并记录病变大小变化。",
+          "日常注意面部防晒，减少紫外线对皮肤的进一步损伤。"
+        ],
+        "evidence_gap": [
+          "缺乏病变持续时间及生长速度的信息，无法判断其动态变化特征。",
+          "未提供患者是否有长期日晒史、放射线暴露史或免疫抑制病史等风险因素。",
+          "缺乏皮肤镜下的具体微观结构描述（如蓝灰色卵圆形巢、叶状结构等）。",
+          "未提及病变是否有出血、结痂、溃疡或疼痛瘙痒等伴随症状。",
+          "缺乏既往皮肤病史或家族皮肤肿瘤史信息。"
+        ],
+        "sources": [
+          "DermNet - Basal Cell Carcinoma"
+        ],
+        "disclaimer": "本结果仅用于健康信息参考和辅助决策，不构成医学诊断，也不能替代医生面诊、皮肤镜检查或组织病理检查。",
+        "model_name": "qwen3.7-plus-2026-05-26",
+        "prompt_version": "baseline_v1",
+        "response_time_ms": 12174,
+        "token_usage": {
+          "prompt_tokens": 1495,
+          "completion_tokens": 636,
+          "total_tokens": 2131
+        },
+        "run_status": "success",
+        "error_message": ""
+      }
+    }
+  ],
+  "summary": {
+    "method_count": 3,
+    "success_count": 3,
+    "failed_count": 0,
+    "total_tokens": 4727
+  }
+}

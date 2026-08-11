@@ -1,0 +1,885 @@
+﻿claim_id,case_id,method,source_field,claim_type_cn,claim_text,prefilter_status,candidate_rank,evidence_ref,evidence_type,evidence_text,source_names,retrieval_score,prefilter_score,prefilter_quality,token_recall,token_jaccard,character_bigram_recall,reference_match,source_match,entity_match,disease_match,relation_match
+CASE_BCC_001__llm__observation_match__001,CASE_BCC_001,llm,observation_match,观察匹配陈述,用户描述的“光亮的珍珠样结节”与基底细胞癌常见的半透明或蜡样光泽外观相符,no_external_evidence,,,,,,,,,,,,,,,,
+CASE_BCC_001__llm__observation_match__002,CASE_BCC_001,llm,observation_match,观察匹配陈述,用户描述的“表面可见细小血管”对应基底细胞癌典型的毛细血管扩张征象,no_external_evidence,,,,,,,,,,,,,,,,
+CASE_BCC_001__llm__supporting_evidence__001,CASE_BCC_001,llm,supporting_evidence,支持性医学陈述,根据一般医学知识，结节型基底细胞癌常表现为面部出现的珍珠状、半透明丘疹或结节,no_external_evidence,,,,,,,,,,,,,,,,
+CASE_BCC_001__llm__supporting_evidence__002,CASE_BCC_001,llm,supporting_evidence,支持性医学陈述,一般医学知识指出，病变表面出现树枝状或细小的毛细血管扩张是基底细胞癌的重要临床特征之一,no_external_evidence,,,,,,,,,,,,,,,,
+CASE_BCC_001__llm__differential_diagnosis__001,CASE_BCC_001,llm,differential_diagnosis,鉴别诊断陈述,皮脂腺增生,no_external_evidence,,,,,,,,,,,,,,,,
+CASE_BCC_001__llm__differential_diagnosis__002,CASE_BCC_001,llm,differential_diagnosis,鉴别诊断陈述,无色素性黑色素瘤,no_external_evidence,,,,,,,,,,,,,,,,
+CASE_BCC_001__llm__differential_diagnosis__003,CASE_BCC_001,llm,differential_diagnosis,鉴别诊断陈述,纤维乳头瘤,no_external_evidence,,,,,,,,,,,,,,,,
+CASE_BCC_001__llm__differential_diagnosis__004,CASE_BCC_001,llm,differential_diagnosis,鉴别诊断陈述,寻常疣,no_external_evidence,,,,,,,,,,,,,,,,
+CASE_BCC_001__llm__risk_warning__001,CASE_BCC_001,llm,risk_warning,风险医学陈述,基底细胞癌虽转移风险较低，但具有局部侵袭性，若不及时处理可能导致周围组织破坏,no_external_evidence,,,,,,,,,,,,,,,,
+CASE_BCC_001__llm__risk_warning__002,CASE_BCC_001,llm,risk_warning,风险医学陈述,面部病变可能影响美观及功能，需警惕病变快速增大、出血或溃疡形成,no_external_evidence,,,,,,,,,,,,,,,,
+CASE_BCC_001__llm__medical_advice__001,CASE_BCC_001,llm,medical_advice,医疗建议,建议尽快前往皮肤科就诊，由专业医生进行肉眼检查及皮肤镜检查,not_applicable,,,,,,,,,,,,,,,,
+CASE_BCC_001__llm__medical_advice__002,CASE_BCC_001,llm,medical_advice,医疗建议,如有必要，医生可能会建议进行皮肤活检以明确病理诊断,not_applicable,,,,,,,,,,,,,,,,
+CASE_BCC_001__llm__medical_advice__003,CASE_BCC_001,llm,medical_advice,医疗建议,在确诊前，注意防晒，避免搔抓或刺激病变部位，并记录病变大小和形态的变化,not_applicable,,,,,,,,,,,,,,,,
+CASE_BCC_001__llm__evidence_gap__001,CASE_BCC_001,llm,evidence_gap,证据缺口说明,本方法未接入外部可追溯证据，所有解释基于模型内部的一般医学知识,not_applicable,,,,,,,,,,,,,,,,
+CASE_BCC_001__llm__evidence_gap__002,CASE_BCC_001,llm,evidence_gap,证据缺口说明,缺乏患者的年龄、病史、病变持续时间、是否有溃疡或出血等关键临床信息,not_applicable,,,,,,,,,,,,,,,,
+CASE_BCC_001__llm__evidence_gap__003,CASE_BCC_001,llm,evidence_gap,证据缺口说明,缺乏皮肤镜检查结果或组织病理学检查报告，无法确诊,not_applicable,,,,,,,,,,,,,,,,
+CASE_BCC_001__llm__evidence_gap__004,CASE_BCC_001,llm,evidence_gap,证据缺口说明,纯 LLM 基线未接入外部检索证据，回答中的医学内容不具备本次运行级别的来源追溯能力。,not_applicable,,,,,,,,,,,,,,,,
+CASE_BCC_001__rag__observation_match__001,CASE_BCC_001,rag,observation_match,观察匹配陈述,用户观察到的“光亮的珍珠样结节”与检索证据中描述的结节型基底细胞癌表现一致,candidate_generated,1,DOC_0023,retrieved_text_document,结节型基底细胞癌可表现为光亮或珍珠样结节。,DermNet - Basal Cell Carcinoma,63.671704,0.422977,moderate,0.435484,0.380282,0.363636,False,False,False,True,False
+CASE_BCC_001__rag__observation_match__001,CASE_BCC_001,rag,observation_match,观察匹配陈述,用户观察到的“光亮的珍珠样结节”与检索证据中描述的结节型基底细胞癌表现一致,candidate_generated,2,DOC_0096,retrieved_text_document,樱桃样血管瘤偶尔可能与结节型基底细胞癌混淆。,DermNet - Cherry Angioma,30.78378,0.291637,weak,0.274194,0.197674,0.212121,False,False,False,True,False
+CASE_BCC_001__rag__observation_match__001,CASE_BCC_001,rag,observation_match,观察匹配陈述,用户观察到的“光亮的珍珠样结节”与检索证据中描述的结节型基底细胞癌表现一致,candidate_generated,3,DOC_0028,retrieved_text_document,结节型基底细胞癌是面部常见的 BCC 类型。,DermNet - Basal Cell Carcinoma,36.759728,0.287755,weak,0.258065,0.210526,0.212121,False,False,False,True,False
+CASE_BCC_001__rag__observation_match__002,CASE_BCC_001,rag,observation_match,观察匹配陈述,用户观察到的“表面可见细小血管”与检索证据中描述的基底细胞癌表面可见血管穿过相符,candidate_generated,1,DOC_0024,retrieved_text_document,基底细胞癌表面可见血管穿过。,DermNet - Basal Cell Carcinoma,43.848071,0.418629,moderate,0.409836,0.409836,0.363636,False,False,False,True,False
+CASE_BCC_001__rag__observation_match__002,CASE_BCC_001,rag,observation_match,观察匹配陈述,用户观察到的“表面可见细小血管”与检索证据中描述的基底细胞癌表面可见血管穿过相符,candidate_generated,2,DOC_0096,retrieved_text_document,樱桃样血管瘤偶尔可能与结节型基底细胞癌混淆。,DermNet - Cherry Angioma,30.78378,0.253924,weak,0.229508,0.159091,0.151515,False,False,False,True,False
+CASE_BCC_001__rag__observation_match__002,CASE_BCC_001,rag,observation_match,观察匹配陈述,用户观察到的“表面可见细小血管”与检索证据中描述的基底细胞癌表面可见血管穿过相符,candidate_generated,3,DOC_0028,retrieved_text_document,结节型基底细胞癌是面部常见的 BCC 类型。,DermNet - Basal Cell Carcinoma,36.759728,0.233311,weak,0.196721,0.151899,0.121212,False,False,False,True,False
+CASE_BCC_001__rag__observation_match__003,CASE_BCC_001,rag,observation_match,观察匹配陈述,用户观察到的病变部位为面部，与检索证据中指出的结节型基底细胞癌常见于面部相符,candidate_generated,1,DOC_0028,retrieved_text_document,结节型基底细胞癌是面部常见的 BCC 类型。,DermNet - Basal Cell Carcinoma,36.759728,0.341439,moderate,0.328358,0.293333,0.257143,False,False,False,True,False
+CASE_BCC_001__rag__observation_match__003,CASE_BCC_001,rag,observation_match,观察匹配陈述,用户观察到的病变部位为面部，与检索证据中指出的结节型基底细胞癌常见于面部相符,candidate_generated,2,DOC_0023,retrieved_text_document,结节型基底细胞癌可表现为光亮或珍珠样结节。,DermNet - Basal Cell Carcinoma,63.671704,0.272304,weak,0.238806,0.183908,0.2,False,False,False,True,False
+CASE_BCC_001__rag__observation_match__003,CASE_BCC_001,rag,observation_match,观察匹配陈述,用户观察到的病变部位为面部，与检索证据中指出的结节型基底细胞癌常见于面部相符,candidate_generated,3,DOC_0096,retrieved_text_document,樱桃样血管瘤偶尔可能与结节型基底细胞癌混淆。,DermNet - Cherry Angioma,30.78378,0.270305,weak,0.238806,0.173913,0.2,False,False,False,True,False
+CASE_BCC_001__rag__supporting_evidence__001,CASE_BCC_001,rag,supporting_evidence,支持性医学陈述,根据DOC_0023，结节型基底细胞癌可表现为光亮或珍珠样结节,candidate_generated,1,DOC_0023,retrieved_text_document,结节型基底细胞癌可表现为光亮或珍珠样结节。,DermNet - Basal Cell Carcinoma,63.671704,1.0,strong,0.9,0.9,0.666667,True,False,False,True,False
+CASE_BCC_001__rag__supporting_evidence__001,CASE_BCC_001,rag,supporting_evidence,支持性医学陈述,根据DOC_0023，结节型基底细胞癌可表现为光亮或珍珠样结节,candidate_generated,2,DOC_0096,retrieved_text_document,樱桃样血管瘤偶尔可能与结节型基底细胞癌混淆。,DermNet - Cherry Angioma,30.78378,0.374977,moderate,0.425,0.265625,0.259259,False,False,False,True,False
+CASE_BCC_001__rag__supporting_evidence__001,CASE_BCC_001,rag,supporting_evidence,支持性医学陈述,根据DOC_0023，结节型基底细胞癌可表现为光亮或珍珠样结节,candidate_generated,3,DOC_0028,retrieved_text_document,结节型基底细胞癌是面部常见的 BCC 类型。,DermNet - Basal Cell Carcinoma,36.759728,0.356397,moderate,0.375,0.272727,0.259259,False,False,False,True,False
+CASE_BCC_001__rag__supporting_evidence__002,CASE_BCC_001,rag,supporting_evidence,支持性医学陈述,根据DOC_0024，基底细胞癌表面可见血管穿过,candidate_generated,1,DOC_0024,retrieved_text_document,基底细胞癌表面可见血管穿过。,DermNet - Basal Cell Carcinoma,43.848071,0.981527,strong,0.862069,0.862069,0.571429,True,False,False,True,False
+CASE_BCC_001__rag__supporting_evidence__002,CASE_BCC_001,rag,supporting_evidence,支持性医学陈述,根据DOC_0024，基底细胞癌表面可见血管穿过,candidate_generated,2,DOC_0096,retrieved_text_document,樱桃样血管瘤偶尔可能与结节型基底细胞癌混淆。,DermNet - Cherry Angioma,30.78378,0.372543,moderate,0.448276,0.22807,0.238095,False,False,False,True,False
+CASE_BCC_001__rag__supporting_evidence__002,CASE_BCC_001,rag,supporting_evidence,支持性医学陈述,根据DOC_0024，基底细胞癌表面可见血管穿过,candidate_generated,3,DOC_0028,retrieved_text_document,结节型基底细胞癌是面部常见的 BCC 类型。,DermNet - Basal Cell Carcinoma,36.759728,0.335653,moderate,0.37931,0.229167,0.190476,False,False,False,True,False
+CASE_BCC_001__rag__supporting_evidence__003,CASE_BCC_001,rag,supporting_evidence,支持性医学陈述,根据DOC_0028，结节型基底细胞癌是面部常见的BCC类型,candidate_generated,1,DOC_0028,retrieved_text_document,结节型基底细胞癌是面部常见的 BCC 类型。,DermNet - Basal Cell Carcinoma,36.759728,1.0,strong,0.882353,0.882353,0.666667,True,False,False,True,False
+CASE_BCC_001__rag__supporting_evidence__003,CASE_BCC_001,rag,supporting_evidence,支持性医学陈述,根据DOC_0028，结节型基底细胞癌是面部常见的BCC类型,candidate_generated,2,DOC_0023,retrieved_text_document,结节型基底细胞癌可表现为光亮或珍珠样结节。,DermNet - Basal Cell Carcinoma,63.671704,0.382868,moderate,0.441176,0.272727,0.259259,False,False,False,True,False
+CASE_BCC_001__rag__supporting_evidence__003,CASE_BCC_001,rag,supporting_evidence,支持性医学陈述,根据DOC_0028，结节型基底细胞癌是面部常见的BCC类型,candidate_generated,3,DOC_0096,retrieved_text_document,樱桃样血管瘤偶尔可能与结节型基底细胞癌混淆。,DermNet - Cherry Angioma,30.78378,0.378322,moderate,0.441176,0.25,0.259259,False,False,False,True,False
+CASE_BCC_001__rag__differential_diagnosis__001,CASE_BCC_001,rag,differential_diagnosis,鉴别诊断陈述,樱桃样血管瘤：根据DOC_0096，偶尔可能与结节型基底细胞癌混淆,candidate_generated,1,DOC_0096,retrieved_text_document,樱桃样血管瘤偶尔可能与结节型基底细胞癌混淆。,DermNet - Cherry Angioma,30.78378,1.0,strong,0.909091,0.888889,0.655172,True,False,False,True,False
+CASE_BCC_001__rag__differential_diagnosis__001,CASE_BCC_001,rag,differential_diagnosis,鉴别诊断陈述,樱桃样血管瘤：根据DOC_0096，偶尔可能与结节型基底细胞癌混淆,candidate_generated,2,DOC_0023,retrieved_text_document,结节型基底细胞癌可表现为光亮或珍珠样结节。,DermNet - Basal Cell Carcinoma,63.671704,0.35679,moderate,0.386364,0.269841,0.241379,False,False,False,True,False
+CASE_BCC_001__rag__differential_diagnosis__001,CASE_BCC_001,rag,differential_diagnosis,鉴别诊断陈述,樱桃样血管瘤：根据DOC_0096，偶尔可能与结节型基底细胞癌混淆,candidate_generated,3,DOC_0028,retrieved_text_document,结节型基底细胞癌是面部常见的 BCC 类型。,DermNet - Basal Cell Carcinoma,36.759728,0.335487,moderate,0.340909,0.254237,0.241379,False,False,False,True,False
+CASE_BCC_001__rag__risk_warning__001,CASE_BCC_001,rag,risk_warning,风险医学陈述,根据DOC_0029，基底细胞癌可能出现自发性出血、糜烂或溃疡，需警惕病情进展,candidate_generated,1,DOC_0029,retrieved_text_document,基底细胞癌可出现自发性出血、糜烂或溃疡。,DermNet - Basal Cell Carcinoma Dermoscopy,26.497186,0.811026,strong,0.615385,0.603774,0.470588,True,False,False,True,False
+CASE_BCC_001__rag__risk_warning__001,CASE_BCC_001,rag,risk_warning,风险医学陈述,根据DOC_0029，基底细胞癌可能出现自发性出血、糜烂或溃疡，需警惕病情进展,candidate_generated,2,DOC_0023,retrieved_text_document,结节型基底细胞癌可表现为光亮或珍珠样结节。,DermNet - Basal Cell Carcinoma,63.671704,0.264078,weak,0.25,0.173333,0.147059,False,False,False,True,False
+CASE_BCC_001__rag__risk_warning__001,CASE_BCC_001,rag,risk_warning,风险医学陈述,根据DOC_0029，基底细胞癌可能出现自发性出血、糜烂或溃疡，需警惕病情进展,candidate_generated,3,DOC_0096,retrieved_text_document,樱桃样血管瘤偶尔可能与结节型基底细胞癌混淆。,DermNet - Cherry Angioma,30.78378,0.261912,weak,0.25,0.1625,0.147059,False,False,False,True,False
+CASE_BCC_001__rag__medical_advice__001,CASE_BCC_001,rag,medical_advice,医疗建议,建议前往皮肤科进行专业面诊以明确诊断,not_applicable,,,,,,,,,,,,,,,,
+CASE_BCC_001__rag__medical_advice__002,CASE_BCC_001,rag,medical_advice,医疗建议,建议进行皮肤镜检查或组织病理学检查以确诊,not_applicable,,,,,,,,,,,,,,,,
+CASE_BCC_001__rag__medical_advice__003,CASE_BCC_001,rag,medical_advice,医疗建议,注意观察皮损是否有出血、糜烂或快速增大等变化并记录,not_applicable,,,,,,,,,,,,,,,,
+CASE_BCC_001__rag__evidence_gap__001,CASE_BCC_001,rag,evidence_gap,证据缺口说明,缺乏患者年龄、性别及长期日晒史等风险因素信息,not_applicable,,,,,,,,,,,,,,,,
+CASE_BCC_001__rag__evidence_gap__002,CASE_BCC_001,rag,evidence_gap,证据缺口说明,缺乏皮损持续时间、生长速度及是否有疼痛或瘙痒等症状描述,not_applicable,,,,,,,,,,,,,,,,
+CASE_BCC_001__rag__evidence_gap__003,CASE_BCC_001,rag,evidence_gap,证据缺口说明,缺乏皮肤镜具体特征（如蓝灰色卵圆形巢、叶状结构等）的专业检查结果,not_applicable,,,,,,,,,,,,,,,,
+CASE_BCC_001__rag__evidence_gap__004,CASE_BCC_001,rag,evidence_gap,证据缺口说明,缺乏组织病理学活检结果这一确诊金标准,not_applicable,,,,,,,,,,,,,,,,
+CASE_BCC_001__kg_rag__observation_match__001,CASE_BCC_001,kg_rag,observation_match,观察匹配陈述,用户观察到的'珍珠样结节'与基底细胞癌的典型临床表现'珍珠样结节'直接匹配。,candidate_generated,1,PATH_TRI_025,ranked_kg_evidence_path,"基底细胞癌 → 表现为 → 珍珠样结节
+结节型基底细胞癌可表现为光亮或珍珠样结节。",DermNet - Basal Cell Carcinoma,4.42,0.604527,strong,0.431373,0.338462,0.321429,False,False,True,True,False
+CASE_BCC_001__kg_rag__observation_match__001,CASE_BCC_001,kg_rag,observation_match,观察匹配陈述,用户观察到的'珍珠样结节'与基底细胞癌的典型临床表现'珍珠样结节'直接匹配。,candidate_generated,2,PATH_TRI_030,ranked_kg_evidence_path,"基底细胞癌 → 常见于 → 面部
+结节型基底细胞癌是面部常见的 BCC 类型。",DermNet - Basal Cell Carcinoma,3.92,0.486098,moderate,0.27451,0.202899,0.178571,False,False,True,True,False
+CASE_BCC_001__kg_rag__observation_match__001,CASE_BCC_001,kg_rag,observation_match,观察匹配陈述,用户观察到的'珍珠样结节'与基底细胞癌的典型临床表现'珍珠样结节'直接匹配。,candidate_generated,3,PATH_TRI_027,ranked_kg_evidence_path,"基底细胞癌 → 表现为 → 边缘隆起或卷曲
+基底细胞癌可出现中央凹陷或溃疡，使边缘呈卷曲样。",DermNet - Basal Cell Carcinoma,2.5,0.466564,moderate,0.254902,0.144444,0.178571,False,False,True,True,False
+CASE_BCC_001__kg_rag__observation_match__002,CASE_BCC_001,kg_rag,observation_match,观察匹配陈述,用户观察到的'表面可见细小血管'与基底细胞癌的常见体征'表面毛细血管扩张'相匹配。,candidate_generated,1,PATH_TRI_026,ranked_kg_evidence_path,"基底细胞癌 → 表现为 → 表面毛细血管扩张
+基底细胞癌表面可见血管穿过。",DermNet - Basal Cell Carcinoma,4.34,0.648859,strong,0.473684,0.402985,0.393939,False,False,True,True,False
+CASE_BCC_001__kg_rag__observation_match__002,CASE_BCC_001,kg_rag,observation_match,观察匹配陈述,用户观察到的'表面可见细小血管'与基底细胞癌的常见体征'表面毛细血管扩张'相匹配。,candidate_generated,2,PATH_TRI_030,ranked_kg_evidence_path,"基底细胞癌 → 常见于 → 面部
+结节型基底细胞癌是面部常见的 BCC 类型。",DermNet - Basal Cell Carcinoma,3.92,0.465882,moderate,0.245614,0.186667,0.151515,False,False,True,True,False
+CASE_BCC_001__kg_rag__observation_match__002,CASE_BCC_001,kg_rag,observation_match,观察匹配陈述,用户观察到的'表面可见细小血管'与基底细胞癌的常见体征'表面毛细血管扩张'相匹配。,candidate_generated,3,PATH_TRI_028,ranked_kg_evidence_path,"基底细胞癌 → 表现为 → 中央凹陷或溃疡
+基底细胞癌可有中央凹陷或溃疡。",DermNet - Basal Cell Carcinoma,2.5,0.429641,moderate,0.192982,0.141026,0.121212,False,False,True,True,False
+CASE_BCC_001__kg_rag__observation_match__003,CASE_BCC_001,kg_rag,observation_match,观察匹配陈述,病变部位'面部'是基底细胞癌（特别是结节型）的好发部位，符合疾病分布特征。,candidate_generated,1,PATH_TRI_030,ranked_kg_evidence_path,"基底细胞癌 → 常见于 → 面部
+结节型基底细胞癌是面部常见的 BCC 类型。",DermNet - Basal Cell Carcinoma,3.92,0.564668,strong,0.387755,0.306452,0.241379,False,False,True,True,False
+CASE_BCC_001__kg_rag__observation_match__003,CASE_BCC_001,kg_rag,observation_match,观察匹配陈述,病变部位'面部'是基底细胞癌（特别是结节型）的好发部位，符合疾病分布特征。,candidate_generated,2,PATH_TRI_025,ranked_kg_evidence_path,"基底细胞癌 → 表现为 → 珍珠样结节
+结节型基底细胞癌可表现为光亮或珍珠样结节。",DermNet - Basal Cell Carcinoma,4.42,0.495102,moderate,0.285714,0.197183,0.206897,False,False,True,True,False
+CASE_BCC_001__kg_rag__observation_match__003,CASE_BCC_001,kg_rag,observation_match,观察匹配陈述,病变部位'面部'是基底细胞癌（特别是结节型）的好发部位，符合疾病分布特征。,candidate_generated,3,PATH_TRI_026,ranked_kg_evidence_path,"基底细胞癌 → 表现为 → 表面毛细血管扩张
+基底细胞癌表面可见血管穿过。",DermNet - Basal Cell Carcinoma,4.34,0.435535,moderate,0.204082,0.131579,0.137931,False,False,True,True,False
+CASE_BCC_001__kg_rag__supporting_evidence__001,CASE_BCC_001,kg_rag,supporting_evidence,支持性医学陈述,根据DermNet资料，结节型基底细胞癌可表现为光亮或珍珠样结节（证据链PATH_TRI_025）。,candidate_generated,1,PATH_TRI_025,ranked_kg_evidence_path,"基底细胞癌 → 表现为 → 珍珠样结节
+结节型基底细胞癌可表现为光亮或珍珠样结节。",DermNet - Basal Cell Carcinoma,4.42,1.0,strong,0.75,0.75,0.428571,True,False,True,True,True
+CASE_BCC_001__kg_rag__supporting_evidence__001,CASE_BCC_001,kg_rag,supporting_evidence,支持性医学陈述,根据DermNet资料，结节型基底细胞癌可表现为光亮或珍珠样结节（证据链PATH_TRI_025）。,candidate_generated,2,PATH_TRI_028,ranked_kg_evidence_path,"基底细胞癌 → 表现为 → 中央凹陷或溃疡
+基底细胞癌可有中央凹陷或溃疡。",DermNet - Basal Cell Carcinoma,2.5,0.578968,strong,0.354167,0.269841,0.166667,False,False,True,True,True
+CASE_BCC_001__kg_rag__supporting_evidence__001,CASE_BCC_001,kg_rag,supporting_evidence,支持性医学陈述,根据DermNet资料，结节型基底细胞癌可表现为光亮或珍珠样结节（证据链PATH_TRI_025）。,candidate_generated,3,PATH_TRI_027,ranked_kg_evidence_path,"基底细胞癌 → 表现为 → 边缘隆起或卷曲
+基底细胞癌可出现中央凹陷或溃疡，使边缘呈卷曲样。",DermNet - Basal Cell Carcinoma,2.5,0.577236,strong,0.375,0.219512,0.166667,False,False,True,True,True
+CASE_BCC_001__kg_rag__supporting_evidence__002,CASE_BCC_001,kg_rag,supporting_evidence,支持性医学陈述,根据DermNet资料，基底细胞癌表面可见血管穿过，即表面毛细血管扩张（证据链PATH_TRI_026）。,candidate_generated,1,PATH_TRI_026,ranked_kg_evidence_path,"基底细胞癌 → 表现为 → 表面毛细血管扩张
+基底细胞癌表面可见血管穿过。",DermNet - Basal Cell Carcinoma,4.34,1.0,strong,0.702128,0.647059,0.395349,True,False,True,True,False
+CASE_BCC_001__kg_rag__supporting_evidence__002,CASE_BCC_001,kg_rag,supporting_evidence,支持性医学陈述,根据DermNet资料，基底细胞癌表面可见血管穿过，即表面毛细血管扩张（证据链PATH_TRI_026）。,candidate_generated,2,PATH_TRI_028,ranked_kg_evidence_path,"基底细胞癌 → 表现为 → 中央凹陷或溃疡
+基底细胞癌可有中央凹陷或溃疡。",DermNet - Basal Cell Carcinoma,2.5,0.449226,moderate,0.234043,0.161765,0.116279,False,False,True,True,False
+CASE_BCC_001__kg_rag__supporting_evidence__002,CASE_BCC_001,kg_rag,supporting_evidence,支持性医学陈述,根据DermNet资料，基底细胞癌表面可见血管穿过，即表面毛细血管扩张（证据链PATH_TRI_026）。,candidate_generated,3,PATH_TRI_025,ranked_kg_evidence_path,"基底细胞癌 → 表现为 → 珍珠样结节
+结节型基底细胞癌可表现为光亮或珍珠样结节。",DermNet - Basal Cell Carcinoma,4.42,0.447428,moderate,0.234043,0.152778,0.116279,False,False,True,True,False
+CASE_BCC_001__kg_rag__supporting_evidence__003,CASE_BCC_001,kg_rag,supporting_evidence,支持性医学陈述,根据DermNet资料，结节型基底细胞癌是面部常见的BCC类型（证据链PATH_TRI_030）。,candidate_generated,1,PATH_TRI_030,ranked_kg_evidence_path,"基底细胞癌 → 常见于 → 面部
+结节型基底细胞癌是面部常见的 BCC 类型。",DermNet - Basal Cell Carcinoma,3.92,1.0,strong,0.714286,0.681818,0.428571,True,False,True,True,False
+CASE_BCC_001__kg_rag__supporting_evidence__003,CASE_BCC_001,kg_rag,supporting_evidence,支持性医学陈述,根据DermNet资料，结节型基底细胞癌是面部常见的BCC类型（证据链PATH_TRI_030）。,candidate_generated,2,PATH_TRI_025,ranked_kg_evidence_path,"基底细胞癌 → 表现为 → 珍珠样结节
+结节型基底细胞癌可表现为光亮或珍珠样结节。",DermNet - Basal Cell Carcinoma,4.42,0.52381,moderate,0.357143,0.238095,0.166667,False,False,True,True,False
+CASE_BCC_001__kg_rag__supporting_evidence__003,CASE_BCC_001,kg_rag,supporting_evidence,支持性医学陈述,根据DermNet资料，结节型基底细胞癌是面部常见的BCC类型（证据链PATH_TRI_030）。,candidate_generated,3,PATH_TRI_026,ranked_kg_evidence_path,"基底细胞癌 → 表现为 → 表面毛细血管扩张
+基底细胞癌表面可见血管穿过。",DermNet - Basal Cell Carcinoma,4.34,0.456162,moderate,0.261905,0.161765,0.095238,False,False,True,True,False
+CASE_BCC_001__kg_rag__differential_diagnosis__001,CASE_BCC_001,kg_rag,differential_diagnosis,鉴别诊断陈述,皮脂腺增生：常表现为面部黄色或肤色小丘疹，中央可有脐凹，需与早期基底细胞癌鉴别。,candidate_generated,1,PATH_TRI_028,ranked_kg_evidence_path,"基底细胞癌 → 表现为 → 中央凹陷或溃疡
+基底细胞癌可有中央凹陷或溃疡。",DermNet - Basal Cell Carcinoma,2.5,0.5842,strong,0.328358,0.285714,0.228571,False,False,True,True,True
+CASE_BCC_001__kg_rag__differential_diagnosis__001,CASE_BCC_001,kg_rag,differential_diagnosis,鉴别诊断陈述,皮脂腺增生：常表现为面部黄色或肤色小丘疹，中央可有脐凹，需与早期基底细胞癌鉴别。,candidate_generated,2,PATH_TRI_027,ranked_kg_evidence_path,"基底细胞癌 → 表现为 → 边缘隆起或卷曲
+基底细胞癌可出现中央凹陷或溃疡，使边缘呈卷曲样。",DermNet - Basal Cell Carcinoma,2.5,0.549807,moderate,0.298507,0.20202,0.2,False,False,True,True,True
+CASE_BCC_001__kg_rag__differential_diagnosis__001,CASE_BCC_001,kg_rag,differential_diagnosis,鉴别诊断陈述,皮脂腺增生：常表现为面部黄色或肤色小丘疹，中央可有脐凹，需与早期基底细胞癌鉴别。,candidate_generated,3,PATH_TRI_025,ranked_kg_evidence_path,"基底细胞癌 → 表现为 → 珍珠样结节
+结节型基底细胞癌可表现为光亮或珍珠样结节。",DermNet - Basal Cell Carcinoma,4.42,0.51659,moderate,0.238806,0.183908,0.171429,False,False,True,True,True
+CASE_BCC_001__kg_rag__differential_diagnosis__002,CASE_BCC_001,kg_rag,differential_diagnosis,鉴别诊断陈述,纤维性丘疹：良性皮肤肿瘤，通常表现为坚实、肤色的圆顶状丘疹。,candidate_generated,1,PATH_TRI_028,ranked_kg_evidence_path,"基底细胞癌 → 表现为 → 中央凹陷或溃疡
+基底细胞癌可有中央凹陷或溃疡。",DermNet - Basal Cell Carcinoma,2.5,0.127464,weak,0.116279,0.071429,0.083333,False,False,False,False,True
+CASE_BCC_001__kg_rag__differential_diagnosis__002,CASE_BCC_001,kg_rag,differential_diagnosis,鉴别诊断陈述,纤维性丘疹：良性皮肤肿瘤，通常表现为坚实、肤色的圆顶状丘疹。,candidate_generated,2,PATH_TRI_025,ranked_kg_evidence_path,"基底细胞癌 → 表现为 → 珍珠样结节
+结节型基底细胞癌可表现为光亮或珍珠样结节。",DermNet - Basal Cell Carcinoma,4.42,0.126692,weak,0.116279,0.067568,0.083333,False,False,False,False,True
+CASE_BCC_001__kg_rag__differential_diagnosis__002,CASE_BCC_001,kg_rag,differential_diagnosis,鉴别诊断陈述,纤维性丘疹：良性皮肤肿瘤，通常表现为坚实、肤色的圆顶状丘疹。,candidate_generated,3,PATH_TRI_026,ranked_kg_evidence_path,"基底细胞癌 → 表现为 → 表面毛细血管扩张
+基底细胞癌表面可见血管穿过。",DermNet - Basal Cell Carcinoma,4.34,0.126512,weak,0.116279,0.066667,0.083333,False,False,False,False,True
+CASE_BCC_001__kg_rag__differential_diagnosis__003,CASE_BCC_001,kg_rag,differential_diagnosis,鉴别诊断陈述,无色素性黑色素瘤：虽然较少见，但可能表现为粉红色或红色结节，需通过病理检查排除。,candidate_generated,1,PATH_TRI_025,ranked_kg_evidence_path,"基底细胞癌 → 表现为 → 珍珠样结节
+结节型基底细胞癌可表现为光亮或珍珠样结节。",DermNet - Basal Cell Carcinoma,4.42,0.156744,weak,0.163934,0.114943,0.090909,False,False,False,False,True
+CASE_BCC_001__kg_rag__differential_diagnosis__003,CASE_BCC_001,kg_rag,differential_diagnosis,鉴别诊断陈述,无色素性黑色素瘤：虽然较少见，但可能表现为粉红色或红色结节，需通过病理检查排除。,candidate_generated,2,PATH_TRI_026,ranked_kg_evidence_path,"基底细胞癌 → 表现为 → 表面毛细血管扩张
+基底细胞癌表面可见血管穿过。",DermNet - Basal Cell Carcinoma,4.34,0.132358,weak,0.131148,0.088889,0.060606,False,False,False,False,True
+CASE_BCC_001__kg_rag__differential_diagnosis__003,CASE_BCC_001,kg_rag,differential_diagnosis,鉴别诊断陈述,无色素性黑色素瘤：虽然较少见，但可能表现为粉红色或红色结节，需通过病理检查排除。,candidate_generated,3,PATH_TRI_028,ranked_kg_evidence_path,"基底细胞癌 → 表现为 → 中央凹陷或溃疡
+基底细胞癌可有中央凹陷或溃疡。",DermNet - Basal Cell Carcinoma,2.5,0.124302,weak,0.114754,0.081395,0.060606,False,False,False,False,True
+CASE_BCC_001__kg_rag__risk_warning__001,CASE_BCC_001,kg_rag,risk_warning,风险医学陈述,基底细胞癌虽转移风险低，但具有局部侵袭性，若不及时处理可能导致组织破坏和毁容。,candidate_generated,1,PATH_TRI_028,ranked_kg_evidence_path,"基底细胞癌 → 表现为 → 中央凹陷或溃疡
+基底细胞癌可有中央凹陷或溃疡。",DermNet - Basal Cell Carcinoma,2.5,0.41107,moderate,0.15942,0.122222,0.114286,False,False,True,True,False
+CASE_BCC_001__kg_rag__risk_warning__001,CASE_BCC_001,kg_rag,risk_warning,风险医学陈述,基底细胞癌虽转移风险低，但具有局部侵袭性，若不及时处理可能导致组织破坏和毁容。,candidate_generated,2,PATH_TRI_030,ranked_kg_evidence_path,"基底细胞癌 → 常见于 → 面部
+结节型基底细胞癌是面部常见的 BCC 类型。",DermNet - Basal Cell Carcinoma,3.92,0.402806,moderate,0.144928,0.10989,0.114286,False,False,True,True,False
+CASE_BCC_001__kg_rag__risk_warning__001,CASE_BCC_001,kg_rag,risk_warning,风险医学陈述,基底细胞癌虽转移风险低，但具有局部侵袭性，若不及时处理可能导致组织破坏和毁容。,candidate_generated,3,PATH_TRI_025,ranked_kg_evidence_path,"基底细胞癌 → 表现为 → 珍珠样结节
+结节型基底细胞癌可表现为光亮或珍珠样结节。",DermNet - Basal Cell Carcinoma,4.42,0.401881,moderate,0.144928,0.105263,0.114286,False,False,True,True,False
+CASE_BCC_001__kg_rag__risk_warning__002,CASE_BCC_001,kg_rag,risk_warning,风险医学陈述,仅凭外观观察无法确诊，必须通过组织病理学检查才能最终确认性质。,candidate_generated,1,PATH_TRI_026,ranked_kg_evidence_path,"基底细胞癌 → 表现为 → 表面毛细血管扩张
+基底细胞癌表面可见血管穿过。",DermNet - Basal Cell Carcinoma,4.34,0.00963,weak,0.018519,0.011111,0.0,False,False,False,False,False
+CASE_BCC_001__kg_rag__risk_warning__002,CASE_BCC_001,kg_rag,risk_warning,风险医学陈述,仅凭外观观察无法确诊，必须通过组织病理学检查才能最终确认性质。,candidate_generated,2,PATH_TRI_025,ranked_kg_evidence_path,"基底细胞癌 → 表现为 → 珍珠样结节
+结节型基底细胞癌可表现为光亮或珍珠样结节。",DermNet - Basal Cell Carcinoma,4.42,0.0,none,0.0,0.0,0.0,False,False,False,False,False
+CASE_BCC_001__kg_rag__risk_warning__002,CASE_BCC_001,kg_rag,risk_warning,风险医学陈述,仅凭外观观察无法确诊，必须通过组织病理学检查才能最终确认性质。,candidate_generated,3,PATH_TRI_030,ranked_kg_evidence_path,"基底细胞癌 → 常见于 → 面部
+结节型基底细胞癌是面部常见的 BCC 类型。",DermNet - Basal Cell Carcinoma,3.92,0.0,none,0.0,0.0,0.0,False,False,False,False,False
+CASE_BCC_001__kg_rag__medical_advice__001,CASE_BCC_001,kg_rag,medical_advice,医疗建议,建议尽快前往皮肤科就诊，由专业医生进行皮肤镜检查。,not_applicable,,,,,,,,,,,,,,,,
+CASE_BCC_001__kg_rag__medical_advice__002,CASE_BCC_001,kg_rag,medical_advice,医疗建议,遵医嘱进行皮肤活检或切除活检，以获取病理诊断结果。,not_applicable,,,,,,,,,,,,,,,,
+CASE_BCC_001__kg_rag__medical_advice__003,CASE_BCC_001,kg_rag,medical_advice,医疗建议,在确诊前，注意保护患处，避免搔抓、挤压或自行用药，以免干扰后续检查或导致感染。,not_applicable,,,,,,,,,,,,,,,,
+CASE_BCC_001__kg_rag__evidence_gap__001,CASE_BCC_001,kg_rag,evidence_gap,证据缺口说明,缺乏病变持续时间、生长速度及是否有出血、结痂或溃疡病史的信息。,not_applicable,,,,,,,,,,,,,,,,
+CASE_BCC_001__kg_rag__evidence_gap__002,CASE_BCC_001,kg_rag,evidence_gap,证据缺口说明,未提供患者年龄、日晒史、免疫状态或家族皮肤癌病史等风险因素。,not_applicable,,,,,,,,,,,,,,,,
+CASE_BCC_001__kg_rag__evidence_gap__003,CASE_BCC_001,kg_rag,evidence_gap,证据缺口说明,缺乏皮肤镜下的具体结构特征（如蓝灰色卵圆形巢、叶状区域等）描述。,not_applicable,,,,,,,,,,,,,,,,
+CASE_BCC_001__kg_rag__evidence_gap__004,CASE_BCC_001,kg_rag,evidence_gap,证据缺口说明,未提及是否伴有疼痛、瘙痒或其他自觉症状。,not_applicable,,,,,,,,,,,,,,,,
+CASE_MEL_001__llm__observation_match__001,CASE_MEL_001,llm,observation_match,观察匹配陈述,用户描述的皮损形态不对称（Asymmetry）与黑色素瘤的典型特征相符,no_external_evidence,,,,,,,,,,,,,,,,
+CASE_MEL_001__llm__observation_match__002,CASE_MEL_001,llm,observation_match,观察匹配陈述,边界不规则（Border irregularity）是黑色素瘤的重要临床指征之一,no_external_evidence,,,,,,,,,,,,,,,,
+CASE_MEL_001__llm__observation_match__003,CASE_MEL_001,llm,observation_match,观察匹配陈述,颜色深浅不一（Color variation）符合黑色素瘤多色性的表现,no_external_evidence,,,,,,,,,,,,,,,,
+CASE_MEL_001__llm__observation_match__004,CASE_MEL_001,llm,observation_match,观察匹配陈述,近期有增大趋势（Evolution/Diameter change）提示病变处于动态变化中，属于高风险信号,no_external_evidence,,,,,,,,,,,,,,,,
+CASE_MEL_001__llm__supporting_evidence__001,CASE_MEL_001,llm,supporting_evidence,支持性医学陈述,根据一般医学知识，黑色素瘤的临床筛查常参考ABCDE原则，即不对称性、边界不规则、颜色改变、直径较大及演变过程,no_external_evidence,,,,,,,,,,,,,,,,
+CASE_MEL_001__llm__supporting_evidence__002,CASE_MEL_001,llm,supporting_evidence,支持性医学陈述,皮损的形态学改变和近期快速增大通常被视为需要紧急评估的警示体征,no_external_evidence,,,,,,,,,,,,,,,,
+CASE_MEL_001__llm__differential_diagnosis__001,CASE_MEL_001,llm,differential_diagnosis,鉴别诊断陈述,发育不良痣（Dysplastic Nevus）,no_external_evidence,,,,,,,,,,,,,,,,
+CASE_MEL_001__llm__differential_diagnosis__002,CASE_MEL_001,llm,differential_diagnosis,鉴别诊断陈述,脂溢性角化病（Seborrheic Keratosis）,no_external_evidence,,,,,,,,,,,,,,,,
+CASE_MEL_001__llm__differential_diagnosis__003,CASE_MEL_001,llm,differential_diagnosis,鉴别诊断陈述,色素性基底细胞癌（Pigmented Basal Cell Carcinoma）,no_external_evidence,,,,,,,,,,,,,,,,
+CASE_MEL_001__llm__differential_diagnosis__004,CASE_MEL_001,llm,differential_diagnosis,鉴别诊断陈述,良性色素痣（Benign Melanocytic Nevus）,no_external_evidence,,,,,,,,,,,,,,,,
+CASE_MEL_001__llm__risk_warning__001,CASE_MEL_001,llm,risk_warning,风险医学陈述,黑色素瘤具有侵袭性和转移潜力，早期发现对预后至关重要,no_external_evidence,,,,,,,,,,,,,,,,
+CASE_MEL_001__llm__risk_warning__002,CASE_MEL_001,llm,risk_warning,风险医学陈述,仅凭外观描述无法排除其他恶性皮肤肿瘤或良性病变，存在误判风险,no_external_evidence,,,,,,,,,,,,,,,,
+CASE_MEL_001__llm__risk_warning__003,CASE_MEL_001,llm,risk_warning,风险医学陈述,延误专业评估可能导致病情进展,no_external_evidence,,,,,,,,,,,,,,,,
+CASE_MEL_001__llm__medical_advice__001,CASE_MEL_001,llm,medical_advice,医疗建议,建议尽快前往正规医院皮肤科就诊,not_applicable,,,,,,,,,,,,,,,,
+CASE_MEL_001__llm__medical_advice__002,CASE_MEL_001,llm,medical_advice,医疗建议,医生可能会建议进行皮肤镜检查以辅助评估皮损结构,not_applicable,,,,,,,,,,,,,,,,
+CASE_MEL_001__llm__medical_advice__003,CASE_MEL_001,llm,medical_advice,医疗建议,如有必要，需通过组织病理学活检确诊，请勿自行处理或观察等待,not_applicable,,,,,,,,,,,,,,,,
+CASE_MEL_001__llm__evidence_gap__001,CASE_MEL_001,llm,evidence_gap,证据缺口说明,本方法未接入外部可追溯证据，所有解释基于模型内部通用医学知识,not_applicable,,,,,,,,,,,,,,,,
+CASE_MEL_001__llm__evidence_gap__002,CASE_MEL_001,llm,evidence_gap,证据缺口说明,缺乏患者年龄、家族史、日晒史等关键背景信息,not_applicable,,,,,,,,,,,,,,,,
+CASE_MEL_001__llm__evidence_gap__003,CASE_MEL_001,llm,evidence_gap,证据缺口说明,缺乏皮损的具体尺寸、部位及触感等详细临床数据,not_applicable,,,,,,,,,,,,,,,,
+CASE_MEL_001__llm__evidence_gap__004,CASE_MEL_001,llm,evidence_gap,证据缺口说明,无皮肤镜图像或病理检查结果作为客观依据,not_applicable,,,,,,,,,,,,,,,,
+CASE_MEL_001__llm__evidence_gap__005,CASE_MEL_001,llm,evidence_gap,证据缺口说明,纯 LLM 基线未接入外部检索证据，回答中的医学内容不具备本次运行级别的来源追溯能力。,not_applicable,,,,,,,,,,,,,,,,
+CASE_MEL_001__rag__observation_match__001,CASE_MEL_001,rag,observation_match,观察匹配陈述,用户观察到的'形态不对称'与黑色素瘤的ABCDE特征中的Asymmetry（不对称）相符,candidate_generated,1,DOC_0003,retrieved_text_document,ABCDE 特征包括 Asymmetry，可支持“形态不对称”。,DermNet - ABCDEFG of melanoma,40.216641,0.292585,weak,0.341463,0.28,0.5,False,False,False,False,False
+CASE_MEL_001__rag__observation_match__001,CASE_MEL_001,rag,observation_match,观察匹配陈述,用户观察到的'形态不对称'与黑色素瘤的ABCDE特征中的Asymmetry（不对称）相符,candidate_generated,2,DOC_0005,retrieved_text_document,黑色素瘤评估中可出现不规则色素或异常皮肤镜结构。,DermNet - Dermoscopy / Melanoma,23.625946,0.228796,weak,0.219512,0.121622,0.083333,False,False,False,True,False
+CASE_MEL_001__rag__observation_match__001,CASE_MEL_001,rag,observation_match,观察匹配陈述,用户观察到的'形态不对称'与黑色素瘤的ABCDE特征中的Asymmetry（不对称）相符,candidate_generated,3,DOC_0077,retrieved_text_document,若存在近期增大、溃疡或皮肤镜下结构和颜色不对称等不典型特征，可进行诊断性切除或皮肤活检。,DermNet - Dermatofibroma,34.49268,0.121614,weak,0.219512,0.085714,0.083333,False,False,False,False,False
+CASE_MEL_001__rag__observation_match__002,CASE_MEL_001,rag,observation_match,观察匹配陈述,用户观察到的'边界不规则'与黑色素瘤的ABCDE特征中的Border irregularity（边界不规则）相符,candidate_generated,1,DOC_0001,retrieved_text_document,ABCDE 特征包括 Border irregularity，可支持“边界不规则”。,DermNet - ABCDEFG of melanoma,34.173209,0.315317,moderate,0.357143,0.294118,0.568182,False,False,False,False,False
+CASE_MEL_001__rag__observation_match__002,CASE_MEL_001,rag,observation_match,观察匹配陈述,用户观察到的'边界不规则'与黑色素瘤的ABCDE特征中的Border irregularity（边界不规则）相符,candidate_generated,2,DOC_0005,retrieved_text_document,黑色素瘤评估中可出现不规则色素或异常皮肤镜结构。,DermNet - Dermoscopy / Melanoma,23.625946,0.283157,weak,0.309524,0.183099,0.113636,False,False,False,True,False
+CASE_MEL_001__rag__observation_match__002,CASE_MEL_001,rag,observation_match,观察匹配陈述,用户观察到的'边界不规则'与黑色素瘤的ABCDE特征中的Border irregularity（边界不规则）相符,candidate_generated,3,DOC_0014,retrieved_text_document,良性色素性皮损通常表现为较规则、较清楚的边界。,DermNet - Benign Melanocytic Lesions,26.171147,0.141991,weak,0.238095,0.142857,0.090909,False,False,False,False,False
+CASE_MEL_001__rag__observation_match__003,CASE_MEL_001,rag,observation_match,观察匹配陈述,用户观察到的'颜色深浅不一'对应黑色素瘤评估中可能出现的不规则色素或异常结构,candidate_generated,1,DOC_0005,retrieved_text_document,黑色素瘤评估中可出现不规则色素或异常皮肤镜结构。,DermNet - Dermoscopy / Melanoma,23.625946,0.489426,moderate,0.52381,0.458333,0.441176,False,False,False,True,False
+CASE_MEL_001__rag__observation_match__003,CASE_MEL_001,rag,observation_match,观察匹配陈述,用户观察到的'颜色深浅不一'对应黑色素瘤评估中可能出现的不规则色素或异常结构,candidate_generated,2,DOC_0077,retrieved_text_document,若存在近期增大、溃疡或皮肤镜下结构和颜色不对称等不典型特征，可进行诊断性切除或皮肤活检。,DermNet - Dermatofibroma,34.49268,0.09113,weak,0.15873,0.079365,0.058824,False,False,False,False,False
+CASE_MEL_001__rag__observation_match__003,CASE_MEL_001,rag,observation_match,观察匹配陈述,用户观察到的'颜色深浅不一'对应黑色素瘤评估中可能出现的不规则色素或异常结构,candidate_generated,3,DOC_0014,retrieved_text_document,良性色素性皮损通常表现为较规则、较清楚的边界。,DermNet - Benign Melanocytic Lesions,26.171147,0.088473,weak,0.142857,0.097826,0.058824,False,False,False,False,False
+CASE_MEL_001__rag__observation_match__004,CASE_MEL_001,rag,observation_match,观察匹配陈述,用户观察到的'近期有增大趋势'属于黑色素瘤评估中的不典型特征之一,candidate_generated,1,DOC_0005,retrieved_text_document,黑色素瘤评估中可出现不规则色素或异常皮肤镜结构。,DermNet - Dermoscopy / Melanoma,23.625946,0.274713,weak,0.25,0.166667,0.206897,False,False,False,True,False
+CASE_MEL_001__rag__observation_match__004,CASE_MEL_001,rag,observation_match,观察匹配陈述,用户观察到的'近期有增大趋势'属于黑色素瘤评估中的不典型特征之一,candidate_generated,2,DOC_0077,retrieved_text_document,若存在近期增大、溃疡或皮肤镜下结构和颜色不对称等不典型特征，可进行诊断性切除或皮肤活检。,DermNet - Dermatofibroma,34.49268,0.183984,weak,0.285714,0.141593,0.206897,False,False,False,False,False
+CASE_MEL_001__rag__observation_match__004,CASE_MEL_001,rag,observation_match,观察匹配陈述,用户观察到的'近期有增大趋势'属于黑色素瘤评估中的不典型特征之一,candidate_generated,3,DOC_0003,retrieved_text_document,ABCDE 特征包括 Asymmetry，可支持“形态不对称”。,DermNet - ABCDEFG of melanoma,40.216641,0.046135,weak,0.071429,0.053333,0.034483,False,False,False,False,False
+CASE_MEL_001__rag__supporting_evidence__001,CASE_MEL_001,rag,supporting_evidence,支持性医学陈述,根据DermNet关于黑色素瘤ABCDEFG的描述，ABCDE特征包括Asymmetry（不对称），可支持用户观察到的形态不对称 [DOC_0003],candidate_generated,1,DOC_0003,retrieved_text_document,ABCDE 特征包括 Asymmetry，可支持“形态不对称”。,DermNet - ABCDEFG of melanoma,40.216641,0.572807,strong,0.403509,0.403509,0.403509,True,False,False,False,False
+CASE_MEL_001__rag__supporting_evidence__001,CASE_MEL_001,rag,supporting_evidence,支持性医学陈述,根据DermNet关于黑色素瘤ABCDEFG的描述，ABCDE特征包括Asymmetry（不对称），可支持用户观察到的形态不对称 [DOC_0003],candidate_generated,2,DOC_0005,retrieved_text_document,黑色素瘤评估中可出现不规则色素或异常皮肤镜结构。,DermNet - Dermoscopy / Melanoma,23.625946,0.193684,weak,0.157895,0.1,0.052632,False,False,False,True,False
+CASE_MEL_001__rag__supporting_evidence__001,CASE_MEL_001,rag,supporting_evidence,支持性医学陈述,根据DermNet关于黑色素瘤ABCDEFG的描述，ABCDE特征包括Asymmetry（不对称），可支持用户观察到的形态不对称 [DOC_0003],candidate_generated,3,DOC_0001,retrieved_text_document,ABCDE 特征包括 Border irregularity，可支持“边界不规则”。,DermNet - ABCDEFG of melanoma,34.173209,0.178633,weak,0.245614,0.208955,0.192982,False,False,False,False,False
+CASE_MEL_001__rag__supporting_evidence__002,CASE_MEL_001,rag,supporting_evidence,支持性医学陈述,根据DermNet关于黑色素瘤ABCDEFG的描述，ABCDE特征包括Border irregularity（边界不规则），可支持用户观察到的边界不规则 [DOC_0001],candidate_generated,1,DOC_0001,retrieved_text_document,ABCDE 特征包括 Border irregularity，可支持“边界不规则”。,DermNet - ABCDEFG of melanoma,34.173209,0.592026,strong,0.413793,0.413793,0.46875,True,False,False,False,False
+CASE_MEL_001__rag__supporting_evidence__002,CASE_MEL_001,rag,supporting_evidence,支持性医学陈述,根据DermNet关于黑色素瘤ABCDEFG的描述，ABCDE特征包括Border irregularity（边界不规则），可支持用户观察到的边界不规则 [DOC_0001],candidate_generated,2,DOC_0005,retrieved_text_document,黑色素瘤评估中可出现不规则色素或异常皮肤镜结构。,DermNet - Dermoscopy / Melanoma,23.625946,0.235165,weak,0.224138,0.149425,0.078125,False,False,False,True,False
+CASE_MEL_001__rag__supporting_evidence__002,CASE_MEL_001,rag,supporting_evidence,支持性医学陈述,根据DermNet关于黑色素瘤ABCDEFG的描述，ABCDE特征包括Border irregularity（边界不规则），可支持用户观察到的边界不规则 [DOC_0001],candidate_generated,3,DOC_0003,retrieved_text_document,ABCDE 特征包括 Asymmetry，可支持“形态不对称”。,DermNet - ABCDEFG of melanoma,40.216641,0.172718,weak,0.241379,0.208955,0.171875,False,False,False,False,False
+CASE_MEL_001__rag__supporting_evidence__003,CASE_MEL_001,rag,supporting_evidence,支持性医学陈述,在黑色素瘤评估中，可出现不规则色素或异常皮肤镜结构，这与用户描述的颜色深浅不一具有相关性 [DOC_0005],candidate_generated,1,DOC_0005,retrieved_text_document,黑色素瘤评估中可出现不规则色素或异常皮肤镜结构。,DermNet - Dermoscopy / Melanoma,23.625946,0.75942,strong,0.532468,0.525641,0.456522,True,False,False,True,False
+CASE_MEL_001__rag__supporting_evidence__003,CASE_MEL_001,rag,supporting_evidence,支持性医学陈述,在黑色素瘤评估中，可出现不规则色素或异常皮肤镜结构，这与用户描述的颜色深浅不一具有相关性 [DOC_0005],candidate_generated,2,DOC_0077,retrieved_text_document,若存在近期增大、溃疡或皮肤镜下结构和颜色不对称等不典型特征，可进行诊断性切除或皮肤活检。,DermNet - Dermatofibroma,34.49268,0.124389,weak,0.207792,0.119403,0.086957,False,False,False,False,False
+CASE_MEL_001__rag__supporting_evidence__003,CASE_MEL_001,rag,supporting_evidence,支持性医学陈述,在黑色素瘤评估中，可出现不规则色素或异常皮肤镜结构，这与用户描述的颜色深浅不一具有相关性 [DOC_0005],candidate_generated,3,DOC_0014,retrieved_text_document,良性色素性皮损通常表现为较规则、较清楚的边界。,DermNet - Benign Melanocytic Lesions,26.171147,0.086992,weak,0.142857,0.105769,0.043478,False,False,False,False,False
+CASE_MEL_001__rag__supporting_evidence__004,CASE_MEL_001,rag,supporting_evidence,支持性医学陈述,若存在近期增大等不典型特征，可能提示需要进一步的诊断性评估 [DOC_0077],candidate_generated,1,DOC_0077,retrieved_text_document,若存在近期增大、溃疡或皮肤镜下结构和颜色不对称等不典型特征，可进行诊断性切除或皮肤活检。,DermNet - Dermatofibroma,34.49268,0.621725,strong,0.563636,0.319588,0.411765,True,False,False,False,False
+CASE_MEL_001__rag__supporting_evidence__004,CASE_MEL_001,rag,supporting_evidence,支持性医学陈述,若存在近期增大等不典型特征，可能提示需要进一步的诊断性评估 [DOC_0077],candidate_generated,2,DOC_0003,retrieved_text_document,ABCDE 特征包括 Asymmetry，可支持“形态不对称”。,DermNet - ABCDEFG of melanoma,40.216641,0.055945,weak,0.090909,0.068493,0.029412,False,False,False,False,False
+CASE_MEL_001__rag__supporting_evidence__004,CASE_MEL_001,rag,supporting_evidence,支持性医学陈述,若存在近期增大等不典型特征，可能提示需要进一步的诊断性评估 [DOC_0077],candidate_generated,3,DOC_0001,retrieved_text_document,ABCDE 特征包括 Border irregularity，可支持“边界不规则”。,DermNet - ABCDEFG of melanoma,34.173209,0.05576,weak,0.090909,0.067568,0.029412,False,False,False,False,False
+CASE_MEL_001__rag__differential_diagnosis__001,CASE_MEL_001,rag,differential_diagnosis,鉴别诊断陈述,良性色素性皮损通常表现为较规则、较清楚的边界，与用户描述的边界不规则形成对比，需进行鉴别 [DOC_0004],candidate_generated,1,DOC_0014,retrieved_text_document,良性色素性皮损通常表现为较规则、较清楚的边界。,DermNet - Benign Melanocytic Lesions,26.171147,0.423458,moderate,0.550725,0.550725,0.465116,False,False,False,False,False
+CASE_MEL_001__rag__differential_diagnosis__001,CASE_MEL_001,rag,differential_diagnosis,鉴别诊断陈述,良性色素性皮损通常表现为较规则、较清楚的边界，与用户描述的边界不规则形成对比，需进行鉴别 [DOC_0004],candidate_generated,2,DOC_0005,retrieved_text_document,黑色素瘤评估中可出现不规则色素或异常皮肤镜结构。,DermNet - Dermoscopy / Melanoma,23.625946,0.099722,weak,0.15942,0.11,0.069767,False,False,False,False,False
+CASE_MEL_001__rag__differential_diagnosis__001,CASE_MEL_001,rag,differential_diagnosis,鉴别诊断陈述,良性色素性皮损通常表现为较规则、较清楚的边界，与用户描述的边界不规则形成对比，需进行鉴别 [DOC_0004],candidate_generated,3,DOC_0001,retrieved_text_document,ABCDE 特征包括 Border irregularity，可支持“边界不规则”。,DermNet - ABCDEFG of melanoma,34.173209,0.092207,weak,0.130435,0.107143,0.093023,False,False,False,False,False
+CASE_MEL_001__rag__risk_warning__001,CASE_MEL_001,rag,risk_warning,风险医学陈述,皮损呈现不对称、边界不规则、颜色不均及近期增大，符合黑色素瘤筛查中的高风险警示特征,candidate_generated,1,DOC_0005,retrieved_text_document,黑色素瘤评估中可出现不规则色素或异常皮肤镜结构。,DermNet - Dermoscopy / Melanoma,23.625946,0.25887,weak,0.231884,0.168421,0.162162,False,False,False,True,False
+CASE_MEL_001__rag__risk_warning__001,CASE_MEL_001,rag,risk_warning,风险医学陈述,皮损呈现不对称、边界不规则、颜色不均及近期增大，符合黑色素瘤筛查中的高风险警示特征,candidate_generated,2,DOC_0077,retrieved_text_document,若存在近期增大、溃疡或皮肤镜下结构和颜色不对称等不典型特征，可进行诊断性切除或皮肤活检。,DermNet - Dermatofibroma,34.49268,0.191972,weak,0.289855,0.163934,0.216216,False,False,False,False,False
+CASE_MEL_001__rag__risk_warning__001,CASE_MEL_001,rag,risk_warning,风险医学陈述,皮损呈现不对称、边界不规则、颜色不均及近期增大，符合黑色素瘤筛查中的高风险警示特征,candidate_generated,3,DOC_0014,retrieved_text_document,良性色素性皮损通常表现为较规则、较清楚的边界。,DermNet - Benign Melanocytic Lesions,26.171147,0.132889,weak,0.202899,0.150538,0.108108,False,False,False,False,False
+CASE_MEL_001__rag__risk_warning__002,CASE_MEL_001,rag,risk_warning,风险医学陈述,存在近期增大趋势属于不典型特征，可能提示病变活跃或性质改变,candidate_generated,1,DOC_0077,retrieved_text_document,若存在近期增大、溃疡或皮肤镜下结构和颜色不对称等不典型特征，可进行诊断性切除或皮肤活检。,DermNet - Dermatofibroma,34.49268,0.302265,moderate,0.45283,0.235294,0.37037,False,False,False,False,False
+CASE_MEL_001__rag__risk_warning__002,CASE_MEL_001,rag,risk_warning,风险医学陈述,存在近期增大趋势属于不典型特征，可能提示病变活跃或性质改变,candidate_generated,2,DOC_0003,retrieved_text_document,ABCDE 特征包括 Asymmetry，可支持“形态不对称”。,DermNet - ABCDEFG of melanoma,40.216641,0.059228,weak,0.09434,0.070423,0.037037,False,False,False,False,False
+CASE_MEL_001__rag__risk_warning__002,CASE_MEL_001,rag,risk_warning,风险医学陈述,存在近期增大趋势属于不典型特征，可能提示病变活跃或性质改变,candidate_generated,3,DOC_0001,retrieved_text_document,ABCDE 特征包括 Border irregularity，可支持“边界不规则”。,DermNet - ABCDEFG of melanoma,34.173209,0.059032,weak,0.09434,0.069444,0.037037,False,False,False,False,False
+CASE_MEL_001__rag__medical_advice__001,CASE_MEL_001,rag,medical_advice,医疗建议,建议尽快前往皮肤科就诊，由专业医生进行临床评估,not_applicable,,,,,,,,,,,,,,,,
+CASE_MEL_001__rag__medical_advice__002,CASE_MEL_001,rag,medical_advice,医疗建议,医生可能会根据情况建议进行皮肤镜检查以观察微观结构,not_applicable,,,,,,,,,,,,,,,,
+CASE_MEL_001__rag__medical_advice__003,CASE_MEL_001,rag,medical_advice,医疗建议,若临床怀疑恶性可能，医生可能会建议进行诊断性切除或皮肤活检以明确病理性质 [DOC_0077],not_applicable,,,,,,,,,,,,,,,,
+CASE_MEL_001__rag__evidence_gap__001,CASE_MEL_001,rag,evidence_gap,证据缺口说明,检索文本未提供关于患者年龄、家族史、日晒史或既往皮肤病史的信息,not_applicable,,,,,,,,,,,,,,,,
+CASE_MEL_001__rag__evidence_gap__002,CASE_MEL_001,rag,evidence_gap,证据缺口说明,检索文本未提供皮损的具体大小、厚度或是否伴有出血、瘙痒、疼痛等症状,not_applicable,,,,,,,,,,,,,,,,
+CASE_MEL_001__rag__evidence_gap__003,CASE_MEL_001,rag,evidence_gap,证据缺口说明,检索文本未提供皮肤镜下的具体结构细节（如网状结构、球状结构等）,not_applicable,,,,,,,,,,,,,,,,
+CASE_MEL_001__rag__evidence_gap__004,CASE_MEL_001,rag,evidence_gap,证据缺口说明,缺乏其他良性病变（如脂溢性角化病、发育不良痣）与该特定临床表现对比的详细排除依据,not_applicable,,,,,,,,,,,,,,,,
+CASE_MEL_001__kg_rag__observation_match__001,CASE_MEL_001,kg_rag,observation_match,观察匹配陈述,用户观察到的'形态不对称'与黑色素瘤的ABCDE特征中的Asymmetry（不对称）相符,candidate_generated,1,PATH_TRI_003,ranked_kg_evidence_path,"黑色素瘤 → 表现为 → 形态不对称
+ABCDE 特征包括 Asymmetry，可支持“形态不对称”。",DermNet - ABCDEFG of melanoma,4.42,0.697908,strong,0.512195,0.381818,0.583333,False,False,True,True,False
+CASE_MEL_001__kg_rag__observation_match__001,CASE_MEL_001,kg_rag,observation_match,观察匹配陈述,用户观察到的'形态不对称'与黑色素瘤的ABCDE特征中的Asymmetry（不对称）相符,candidate_generated,2,PATH_TRI_002,ranked_kg_evidence_path,"黑色素瘤 → 表现为 → 颜色不均
+ABCDE 特征包括 Colour variability / Change，可支持“颜色不均”。",DermNet - ABCDEFG of melanoma,4.34,0.505168,moderate,0.292683,0.190476,0.25,False,False,True,True,False
+CASE_MEL_001__kg_rag__observation_match__001,CASE_MEL_001,kg_rag,observation_match,观察匹配陈述,用户观察到的'形态不对称'与黑色素瘤的ABCDE特征中的Asymmetry（不对称）相符,candidate_generated,3,PATH_TRI_001,ranked_kg_evidence_path,"黑色素瘤 → 表现为 → 边界不规则
+ABCDE 特征包括 Border irregularity，可支持“边界不规则”。",DermNet - ABCDEFG of melanoma,4.42,0.503996,moderate,0.292683,0.184615,0.25,False,False,True,True,False
+CASE_MEL_001__kg_rag__observation_match__002,CASE_MEL_001,kg_rag,observation_match,观察匹配陈述,用户观察到的'边界不规则'与黑色素瘤的ABCDE特征中的Border irregularity（边界不规则）相符,candidate_generated,1,PATH_TRI_001,ranked_kg_evidence_path,"黑色素瘤 → 表现为 → 边界不规则
+ABCDE 特征包括 Border irregularity，可支持“边界不规则”。",DermNet - ABCDEFG of melanoma,4.42,0.715368,strong,0.52381,0.392857,0.636364,False,False,True,True,False
+CASE_MEL_001__kg_rag__observation_match__002,CASE_MEL_001,kg_rag,observation_match,观察匹配陈述,用户观察到的'边界不规则'与黑色素瘤的ABCDE特征中的Border irregularity（边界不规则）相符,candidate_generated,2,PATH_TRI_002,ranked_kg_evidence_path,"黑色素瘤 → 表现为 → 颜色不均
+ABCDE 特征包括 Colour variability / Change，可支持“颜色不均”。",DermNet - ABCDEFG of melanoma,4.34,0.510877,moderate,0.285714,0.1875,0.295455,False,False,True,True,False
+CASE_MEL_001__kg_rag__observation_match__002,CASE_MEL_001,kg_rag,observation_match,观察匹配陈述,用户观察到的'边界不规则'与黑色素瘤的ABCDE特征中的Border irregularity（边界不规则）相符,candidate_generated,3,PATH_TRI_003,ranked_kg_evidence_path,"黑色素瘤 → 表现为 → 形态不对称
+ABCDE 特征包括 Asymmetry，可支持“形态不对称”。",DermNet - ABCDEFG of melanoma,4.42,0.492118,moderate,0.285714,0.184615,0.204545,False,False,True,True,False
+CASE_MEL_001__kg_rag__observation_match__003,CASE_MEL_001,kg_rag,observation_match,观察匹配陈述,用户观察到的'颜色深浅不一'与黑色素瘤的ABCDE特征中的Colour variability（颜色不均）相符,candidate_generated,1,PATH_TRI_002,ranked_kg_evidence_path,"黑色素瘤 → 表现为 → 颜色不均
+ABCDE 特征包括 Colour variability / Change，可支持“颜色不均”。",DermNet - ABCDEFG of melanoma,4.34,0.642406,strong,0.413043,0.311475,0.574468,False,False,True,True,False
+CASE_MEL_001__kg_rag__observation_match__003,CASE_MEL_001,kg_rag,observation_match,观察匹配陈述,用户观察到的'颜色深浅不一'与黑色素瘤的ABCDE特征中的Colour variability（颜色不均）相符,candidate_generated,2,PATH_TRI_001,ranked_kg_evidence_path,"黑色素瘤 → 表现为 → 边界不规则
+ABCDE 特征包括 Border irregularity，可支持“边界不规则”。",DermNet - ABCDEFG of melanoma,4.42,0.493953,moderate,0.26087,0.171429,0.276596,False,False,True,True,False
+CASE_MEL_001__kg_rag__observation_match__003,CASE_MEL_001,kg_rag,observation_match,观察匹配陈述,用户观察到的'颜色深浅不一'与黑色素瘤的ABCDE特征中的Colour variability（颜色不均）相符,candidate_generated,3,PATH_TRI_003,ranked_kg_evidence_path,"黑色素瘤 → 表现为 → 形态不对称
+ABCDE 特征包括 Asymmetry，可支持“形态不对称”。",DermNet - ABCDEFG of melanoma,4.42,0.477428,moderate,0.26087,0.173913,0.191489,False,False,True,True,False
+CASE_MEL_001__kg_rag__observation_match__004,CASE_MEL_001,kg_rag,observation_match,观察匹配陈述,用户观察到的'近期有增大趋势'与黑色素瘤的ABCDE特征中的Evolving（变化/进展）相符,candidate_generated,1,PATH_TRI_004,ranked_kg_evidence_path,"黑色素瘤 → 表现为 → 直径增大
+ABCDE 特征包括 Diameter / Evolving，可支持“直径增大或变化”。",DermNet - ABCDEFG of melanoma,2.5,0.578296,strong,0.352941,0.246575,0.439024,False,False,True,True,False
+CASE_MEL_001__kg_rag__observation_match__004,CASE_MEL_001,kg_rag,observation_match,观察匹配陈述,用户观察到的'近期有增大趋势'与黑色素瘤的ABCDE特征中的Evolving（变化/进展）相符,candidate_generated,2,PATH_TRI_002,ranked_kg_evidence_path,"黑色素瘤 → 表现为 → 颜色不均
+ABCDE 特征包括 Colour variability / Change，可支持“颜色不均”。",DermNet - ABCDEFG of melanoma,4.34,0.469663,moderate,0.215686,0.148649,0.268293,False,False,True,True,False
+CASE_MEL_001__kg_rag__observation_match__004,CASE_MEL_001,kg_rag,observation_match,观察匹配陈述,用户观察到的'近期有增大趋势'与黑色素瘤的ABCDE特征中的Evolving（变化/进展）相符,candidate_generated,3,PATH_TRI_003,ranked_kg_evidence_path,"黑色素瘤 → 表现为 → 形态不对称
+ABCDE 特征包括 Asymmetry，可支持“形态不对称”。",DermNet - ABCDEFG of melanoma,4.42,0.45951,moderate,0.215686,0.146667,0.219512,False,False,True,True,False
+CASE_MEL_001__kg_rag__supporting_evidence__001,CASE_MEL_001,kg_rag,supporting_evidence,支持性医学陈述,根据DermNet资料，黑色素瘤的ABCDE特征包括Asymmetry（不对称），支持用户观察到的形态不对称表现,candidate_generated,1,PATH_TRI_003,ranked_kg_evidence_path,"黑色素瘤 → 表现为 → 形态不对称
+ABCDE 特征包括 Asymmetry，可支持“形态不对称”。",DermNet - ABCDEFG of melanoma,4.42,0.753372,strong,0.584906,0.54386,0.553191,False,False,True,True,False
+CASE_MEL_001__kg_rag__supporting_evidence__001,CASE_MEL_001,kg_rag,supporting_evidence,支持性医学陈述,根据DermNet资料，黑色素瘤的ABCDE特征包括Asymmetry（不对称），支持用户观察到的形态不对称表现,candidate_generated,2,PATH_TRI_001,ranked_kg_evidence_path,"黑色素瘤 → 表现为 → 边界不规则
+ABCDE 特征包括 Border irregularity，可支持“边界不规则”。",DermNet - ABCDEFG of melanoma,4.42,0.591284,strong,0.415094,0.328358,0.297872,False,False,True,True,False
+CASE_MEL_001__kg_rag__supporting_evidence__001,CASE_MEL_001,kg_rag,supporting_evidence,支持性医学陈述,根据DermNet资料，黑色素瘤的ABCDE特征包括Asymmetry（不对称），支持用户观察到的形态不对称表现,candidate_generated,3,PATH_TRI_002,ranked_kg_evidence_path,"黑色素瘤 → 表现为 → 颜色不均
+ABCDE 特征包括 Colour variability / Change，可支持“颜色不均”。",DermNet - ABCDEFG of melanoma,4.34,0.589049,strong,0.415094,0.338462,0.276596,False,False,True,True,False
+CASE_MEL_001__kg_rag__supporting_evidence__002,CASE_MEL_001,kg_rag,supporting_evidence,支持性医学陈述,根据DermNet资料，黑色素瘤的ABCDE特征包括Border irregularity（边界不规则），支持用户观察到的边界不规则表现,candidate_generated,1,PATH_TRI_001,ranked_kg_evidence_path,"黑色素瘤 → 表现为 → 边界不规则
+ABCDE 特征包括 Border irregularity，可支持“边界不规则”。",DermNet - ABCDEFG of melanoma,4.42,0.769604,strong,0.592593,0.551724,0.611111,False,False,True,True,False
+CASE_MEL_001__kg_rag__supporting_evidence__002,CASE_MEL_001,kg_rag,supporting_evidence,支持性医学陈述,根据DermNet资料，黑色素瘤的ABCDE特征包括Border irregularity（边界不规则），支持用户观察到的边界不规则表现,candidate_generated,2,PATH_TRI_002,ranked_kg_evidence_path,"黑色素瘤 → 表现为 → 颜色不均
+ABCDE 特征包括 Colour variability / Change，可支持“颜色不均”。",DermNet - ABCDEFG of melanoma,4.34,0.592593,strong,0.407407,0.333333,0.314815,False,False,True,True,False
+CASE_MEL_001__kg_rag__supporting_evidence__002,CASE_MEL_001,kg_rag,supporting_evidence,支持性医学陈述,根据DermNet资料，黑色素瘤的ABCDE特征包括Border irregularity（边界不规则），支持用户观察到的边界不规则表现,candidate_generated,3,PATH_TRI_003,ranked_kg_evidence_path,"黑色素瘤 → 表现为 → 形态不对称
+ABCDE 特征包括 Asymmetry，可支持“形态不对称”。",DermNet - ABCDEFG of melanoma,4.42,0.580486,strong,0.407407,0.328358,0.259259,False,False,True,True,False
+CASE_MEL_001__kg_rag__supporting_evidence__003,CASE_MEL_001,kg_rag,supporting_evidence,支持性医学陈述,根据DermNet资料，黑色素瘤的ABCDE特征包括Colour variability（颜色不均），支持用户观察到的颜色深浅不一表现,candidate_generated,1,PATH_TRI_002,ranked_kg_evidence_path,"黑色素瘤 → 表现为 → 颜色不均
+ABCDE 特征包括 Colour variability / Change，可支持“颜色不均”。",DermNet - ABCDEFG of melanoma,4.34,0.702408,strong,0.5,0.460317,0.551724,False,False,True,True,False
+CASE_MEL_001__kg_rag__supporting_evidence__003,CASE_MEL_001,kg_rag,supporting_evidence,支持性医学陈述,根据DermNet资料，黑色素瘤的ABCDE特征包括Colour variability（颜色不均），支持用户观察到的颜色深浅不一表现,candidate_generated,2,PATH_TRI_001,ranked_kg_evidence_path,"黑色素瘤 → 表现为 → 边界不规则
+ABCDE 特征包括 Border irregularity，可支持“边界不规则”。",DermNet - ABCDEFG of melanoma,4.42,0.574904,strong,0.37931,0.305556,0.310345,False,False,True,True,False
+CASE_MEL_001__kg_rag__supporting_evidence__003,CASE_MEL_001,kg_rag,supporting_evidence,支持性医学陈述,根据DermNet资料，黑色素瘤的ABCDE特征包括Colour variability（颜色不均），支持用户观察到的颜色深浅不一表现,candidate_generated,3,PATH_TRI_003,ranked_kg_evidence_path,"黑色素瘤 → 表现为 → 形态不对称
+ABCDE 特征包括 Asymmetry，可支持“形态不对称”。",DermNet - ABCDEFG of melanoma,4.42,0.561972,strong,0.37931,0.309859,0.241379,False,False,True,True,False
+CASE_MEL_001__kg_rag__supporting_evidence__004,CASE_MEL_001,kg_rag,supporting_evidence,支持性医学陈述,根据DermNet资料，黑色素瘤的ABCDE特征包括Evolving（变化），支持用户观察到的皮损近期增大趋势,candidate_generated,1,PATH_TRI_004,ranked_kg_evidence_path,"黑色素瘤 → 表现为 → 直径增大
+ABCDE 特征包括 Diameter / Evolving，可支持“直径增大或变化”。",DermNet - ABCDEFG of melanoma,2.5,0.634784,strong,0.431034,0.342466,0.469388,False,False,True,True,False
+CASE_MEL_001__kg_rag__supporting_evidence__004,CASE_MEL_001,kg_rag,supporting_evidence,支持性医学陈述,根据DermNet资料，黑色素瘤的ABCDE特征包括Evolving（变化），支持用户观察到的皮损近期增大趋势,candidate_generated,2,PATH_TRI_002,ranked_kg_evidence_path,"黑色素瘤 → 表现为 → 颜色不均
+ABCDE 特征包括 Colour variability / Change，可支持“颜色不均”。",DermNet - ABCDEFG of melanoma,4.34,0.529929,moderate,0.310345,0.243243,0.285714,False,False,True,True,False
+CASE_MEL_001__kg_rag__supporting_evidence__004,CASE_MEL_001,kg_rag,supporting_evidence,支持性医学陈述,根据DermNet资料，黑色素瘤的ABCDE特征包括Evolving（变化），支持用户观察到的皮损近期增大趋势,candidate_generated,3,PATH_TRI_003,ranked_kg_evidence_path,"黑色素瘤 → 表现为 → 形态不对称
+ABCDE 特征包括 Asymmetry，可支持“形态不对称”。",DermNet - ABCDEFG of melanoma,4.42,0.525199,moderate,0.310345,0.24,0.265306,False,False,True,True,False
+CASE_MEL_001__kg_rag__differential_diagnosis__001,CASE_MEL_001,kg_rag,differential_diagnosis,鉴别诊断陈述,发育不良痣（Dysplastic Nevus）：可能表现为不对称、边界不清和颜色不均，需通过皮肤镜或病理检查鉴别,candidate_generated,1,PATH_TRI_002,ranked_kg_evidence_path,"黑色素瘤 → 表现为 → 颜色不均
+ABCDE 特征包括 Colour variability / Change，可支持“颜色不均”。",DermNet - ABCDEFG of melanoma,4.34,0.380641,moderate,0.2,0.151163,0.102041,False,False,True,False,True
+CASE_MEL_001__kg_rag__differential_diagnosis__001,CASE_MEL_001,kg_rag,differential_diagnosis,鉴别诊断陈述,发育不良痣（Dysplastic Nevus）：可能表现为不对称、边界不清和颜色不均，需通过皮肤镜或病理检查鉴别,candidate_generated,2,PATH_TRI_005,ranked_kg_evidence_path,"黑色素瘤 → 表现为 → 结构不规则
+黑色素瘤评估中可出现不规则色素或异常皮肤镜结构。",DermNet - Dermoscopy / Melanoma,2.5,0.181052,weak,0.215385,0.142857,0.081633,False,False,False,False,True
+CASE_MEL_001__kg_rag__differential_diagnosis__001,CASE_MEL_001,kg_rag,differential_diagnosis,鉴别诊断陈述,发育不良痣（Dysplastic Nevus）：可能表现为不对称、边界不清和颜色不均，需通过皮肤镜或病理检查鉴别,candidate_generated,3,PATH_TRI_003,ranked_kg_evidence_path,"黑色素瘤 → 表现为 → 形态不对称
+ABCDE 特征包括 Asymmetry，可支持“形态不对称”。",DermNet - ABCDEFG of melanoma,4.42,0.171527,weak,0.184615,0.136364,0.102041,False,False,False,False,True
+CASE_MEL_001__kg_rag__differential_diagnosis__002,CASE_MEL_001,kg_rag,differential_diagnosis,鉴别诊断陈述,脂溢性角化病（Seborrheic Keratosis）：有时可呈现不规则形态和颜色变化，但通常表面呈蜡样或疣状,candidate_generated,1,PATH_TRI_005,ranked_kg_evidence_path,"黑色素瘤 → 表现为 → 结构不规则
+黑色素瘤评估中可出现不规则色素或异常皮肤镜结构。",DermNet - Dermoscopy / Melanoma,2.5,0.115689,weak,0.196721,0.125,0.06,False,False,False,False,False
+CASE_MEL_001__kg_rag__differential_diagnosis__002,CASE_MEL_001,kg_rag,differential_diagnosis,鉴别诊断陈述,脂溢性角化病（Seborrheic Keratosis）：有时可呈现不规则形态和颜色变化，但通常表面呈蜡样或疣状,candidate_generated,2,PATH_TRI_001,ranked_kg_evidence_path,"黑色素瘤 → 表现为 → 边界不规则
+ABCDE 特征包括 Border irregularity，可支持“边界不规则”。",DermNet - ABCDEFG of melanoma,4.42,0.103471,weak,0.147541,0.102273,0.12,False,False,False,False,False
+CASE_MEL_001__kg_rag__differential_diagnosis__002,CASE_MEL_001,kg_rag,differential_diagnosis,鉴别诊断陈述,脂溢性角化病（Seborrheic Keratosis）：有时可呈现不规则形态和颜色变化，但通常表面呈蜡样或疣状,candidate_generated,3,PATH_TRI_004,ranked_kg_evidence_path,"黑色素瘤 → 表现为 → 直径增大
+ABCDE 特征包括 Diameter / Evolving，可支持“直径增大或变化”。",DermNet - ABCDEFG of melanoma,2.5,0.077663,weak,0.131148,0.086022,0.04,False,False,False,False,False
+CASE_MEL_001__kg_rag__differential_diagnosis__003,CASE_MEL_001,kg_rag,differential_diagnosis,鉴别诊断陈述,色素性基底细胞癌：可能表现为色素沉着和边界不规则，但通常伴有其他特定临床特征,candidate_generated,1,PATH_TRI_001,ranked_kg_evidence_path,"黑色素瘤 → 表现为 → 边界不规则
+ABCDE 特征包括 Border irregularity，可支持“边界不规则”。",DermNet - ABCDEFG of melanoma,4.42,0.47879,moderate,0.323077,0.2625,0.235294,False,False,True,False,True
+CASE_MEL_001__kg_rag__differential_diagnosis__003,CASE_MEL_001,kg_rag,differential_diagnosis,鉴别诊断陈述,色素性基底细胞癌：可能表现为色素沉着和边界不规则，但通常伴有其他特定临床特征,candidate_generated,2,PATH_TRI_005,ranked_kg_evidence_path,"黑色素瘤 → 表现为 → 结构不规则
+黑色素瘤评估中可出现不规则色素或异常皮肤镜结构。",DermNet - Dermoscopy / Melanoma,2.5,0.202647,weak,0.230769,0.154639,0.147059,False,False,False,False,True
+CASE_MEL_001__kg_rag__differential_diagnosis__003,CASE_MEL_001,kg_rag,differential_diagnosis,鉴别诊断陈述,色素性基底细胞癌：可能表现为色素沉着和边界不规则，但通常伴有其他特定临床特征,candidate_generated,3,PATH_TRI_002,ranked_kg_evidence_path,"黑色素瘤 → 表现为 → 颜色不均
+ABCDE 特征包括 Colour variability / Change，可支持“颜色不均”。",DermNet - ABCDEFG of melanoma,4.34,0.183762,weak,0.2,0.151163,0.117647,False,False,False,False,True
+CASE_MEL_001__kg_rag__risk_warning__001,CASE_MEL_001,kg_rag,risk_warning,风险医学陈述,皮损出现不对称、边界不规则、颜色不均及近期增大，符合黑色素瘤的高危预警信号（ABCDE原则）,candidate_generated,1,PATH_TRI_001,ranked_kg_evidence_path,"黑色素瘤 → 表现为 → 边界不规则
+ABCDE 特征包括 Border irregularity，可支持“边界不规则”。",DermNet - ABCDEFG of melanoma,4.42,0.511402,moderate,0.28125,0.219512,0.275,False,False,True,True,False
+CASE_MEL_001__kg_rag__risk_warning__001,CASE_MEL_001,kg_rag,risk_warning,风险医学陈述,皮损出现不对称、边界不规则、颜色不均及近期增大，符合黑色素瘤的高危预警信号（ABCDE原则）,candidate_generated,2,PATH_TRI_002,ranked_kg_evidence_path,"黑色素瘤 → 表现为 → 颜色不均
+ABCDE 特征包括 Colour variability / Change，可支持“颜色不均”。",DermNet - ABCDEFG of melanoma,4.34,0.479895,moderate,0.234375,0.180723,0.25,False,False,True,True,False
+CASE_MEL_001__kg_rag__risk_warning__001,CASE_MEL_001,kg_rag,risk_warning,风险医学陈述,皮损出现不对称、边界不规则、颜色不均及近期增大，符合黑色素瘤的高危预警信号（ABCDE原则）,candidate_generated,3,PATH_TRI_005,ranked_kg_evidence_path,"黑色素瘤 → 表现为 → 结构不规则
+黑色素瘤评估中可出现不规则色素或异常皮肤镜结构。",DermNet - Dermoscopy / Melanoma,2.5,0.47742,moderate,0.265625,0.180851,0.175,False,False,True,True,False
+CASE_MEL_001__kg_rag__risk_warning__002,CASE_MEL_001,kg_rag,risk_warning,风险医学陈述,黑色素瘤若未及时诊断和治疗，可能发生转移，危及生命,candidate_generated,1,PATH_TRI_002,ranked_kg_evidence_path,"黑色素瘤 → 表现为 → 颜色不均
+ABCDE 特征包括 Colour variability / Change，可支持“颜色不均”。",DermNet - ABCDEFG of melanoma,4.34,0.429202,moderate,0.195122,0.119403,0.136364,False,False,True,True,False
+CASE_MEL_001__kg_rag__risk_warning__002,CASE_MEL_001,kg_rag,risk_warning,风险医学陈述,黑色素瘤若未及时诊断和治疗，可能发生转移，危及生命,candidate_generated,2,PATH_TRI_003,ranked_kg_evidence_path,"黑色素瘤 → 表现为 → 形态不对称
+ABCDE 特征包括 Asymmetry，可支持“形态不对称”。",DermNet - ABCDEFG of melanoma,4.42,0.428851,moderate,0.195122,0.117647,0.136364,False,False,True,True,False
+CASE_MEL_001__kg_rag__risk_warning__002,CASE_MEL_001,kg_rag,risk_warning,风险医学陈述,黑色素瘤若未及时诊断和治疗，可能发生转移，危及生命,candidate_generated,3,PATH_TRI_001,ranked_kg_evidence_path,"黑色素瘤 → 表现为 → 边界不规则
+ABCDE 特征包括 Border irregularity，可支持“边界不规则”。",DermNet - ABCDEFG of melanoma,4.42,0.42851,moderate,0.195122,0.115942,0.136364,False,False,True,True,False
+CASE_MEL_001__kg_rag__risk_warning__003,CASE_MEL_001,kg_rag,risk_warning,风险医学陈述,任何快速变化的色素性皮损都应引起高度重视，不应自行观察等待,candidate_generated,1,PATH_TRI_004,ranked_kg_evidence_path,"黑色素瘤 → 表现为 → 直径增大
+ABCDE 特征包括 Diameter / Evolving，可支持“直径增大或变化”。",DermNet - ABCDEFG of melanoma,2.5,0.073891,weak,0.113208,0.068966,0.074074,False,False,False,False,False
+CASE_MEL_001__kg_rag__risk_warning__003,CASE_MEL_001,kg_rag,risk_warning,风险医学陈述,任何快速变化的色素性皮损都应引起高度重视，不应自行观察等待,candidate_generated,2,PATH_TRI_005,ranked_kg_evidence_path,"黑色素瘤 → 表现为 → 结构不规则
+黑色素瘤评估中可出现不规则色素或异常皮肤镜结构。",DermNet - Dermoscopy / Melanoma,2.5,0.05567,weak,0.09434,0.052632,0.037037,False,False,False,False,False
+CASE_MEL_001__kg_rag__risk_warning__003,CASE_MEL_001,kg_rag,risk_warning,风险医学陈述,任何快速变化的色素性皮损都应引起高度重视，不应自行观察等待,candidate_generated,3,PATH_TRI_002,ranked_kg_evidence_path,"黑色素瘤 → 表现为 → 颜色不均
+ABCDE 特征包括 Colour variability / Change，可支持“颜色不均”。",DermNet - ABCDEFG of melanoma,4.34,0.047235,weak,0.075472,0.048193,0.037037,False,False,False,False,False
+CASE_MEL_001__kg_rag__medical_advice__001,CASE_MEL_001,kg_rag,medical_advice,医疗建议,建议尽快前往正规医院皮肤科就诊，进行专业评估,not_applicable,,,,,,,,,,,,,,,,
+CASE_MEL_001__kg_rag__medical_advice__002,CASE_MEL_001,kg_rag,medical_advice,医疗建议,建议进行皮肤镜检查（Dermoscopy）以辅助初步判断皮损性质,not_applicable,,,,,,,,,,,,,,,,
+CASE_MEL_001__kg_rag__medical_advice__003,CASE_MEL_001,kg_rag,medical_advice,医疗建议,若医生怀疑恶性可能，可能建议进行切除活检以获取病理学确诊依据,not_applicable,,,,,,,,,,,,,,,,
+CASE_MEL_001__kg_rag__medical_advice__004,CASE_MEL_001,kg_rag,medical_advice,医疗建议,在就医前，避免搔抓、刺激或使用不明药物涂抹患处,not_applicable,,,,,,,,,,,,,,,,
+CASE_MEL_001__kg_rag__evidence_gap__001,CASE_MEL_001,kg_rag,evidence_gap,证据缺口说明,缺乏皮损的具体直径数值，无法完全评估'Diameter'（直径>6mm）这一指标,not_applicable,,,,,,,,,,,,,,,,
+CASE_MEL_001__kg_rag__evidence_gap__002,CASE_MEL_001,kg_rag,evidence_gap,证据缺口说明,缺乏患者既往病史、家族史及个人日晒史等风险因素信息,not_applicable,,,,,,,,,,,,,,,,
+CASE_MEL_001__kg_rag__evidence_gap__003,CASE_MEL_001,kg_rag,evidence_gap,证据缺口说明,缺乏皮肤镜下的具体结构特征描述（如色素网、蓝白幕等）,not_applicable,,,,,,,,,,,,,,,,
+CASE_MEL_001__kg_rag__evidence_gap__004,CASE_MEL_001,kg_rag,evidence_gap,证据缺口说明,缺乏病理组织学检查结果，目前仅基于临床表现进行推测，无法确诊,not_applicable,,,,,,,,,,,,,,,,
+CASE_NV_001__llm__observation_match__001,CASE_NV_001,llm,observation_match,观察匹配陈述,用户描述的‘长期存在’、‘形状较规则’、‘边界清楚’以及‘近期无明显变化’的特征，符合良性黑色素细胞痣常见的临床表现。,no_external_evidence,,,,,,,,,,,,,,,,
+CASE_NV_001__llm__observation_match__002,CASE_NV_001,llm,observation_match,观察匹配陈述,棕色小斑的颜色特征与黑色素细胞痣中色素沉着的典型表现一致。,no_external_evidence,,,,,,,,,,,,,,,,
+CASE_NV_001__llm__supporting_evidence__001,CASE_NV_001,llm,supporting_evidence,支持性医学陈述,根据一般医学知识，良性黑色素细胞痣通常表现为边界清晰、对称、颜色均匀且长期稳定的色素性皮损。,no_external_evidence,,,,,,,,,,,,,,,,
+CASE_NV_001__llm__supporting_evidence__002,CASE_NV_001,llm,supporting_evidence,支持性医学陈述,ABCDE原则（不对称、边界不规则、颜色不均、直径过大、演变）常用于评估色素性病变，用户描述的病灶缺乏这些恶性警示特征。,no_external_evidence,,,,,,,,,,,,,,,,
+CASE_NV_001__llm__differential_diagnosis__001,CASE_NV_001,llm,differential_diagnosis,鉴别诊断陈述,脂溢性角化病（老年斑）：常见于中老年人，表现为褐色或黑色斑块，表面可能略显粗糙。,no_external_evidence,,,,,,,,,,,,,,,,
+CASE_NV_001__llm__differential_diagnosis__002,CASE_NV_001,llm,differential_diagnosis,鉴别诊断陈述,雀斑样痣：表现为边界清楚的褐色斑点，通常与日晒有关，长期稳定。,no_external_evidence,,,,,,,,,,,,,,,,
+CASE_NV_001__llm__differential_diagnosis__003,CASE_NV_001,llm,differential_diagnosis,鉴别诊断陈述,早期黑色素瘤：虽然用户描述特征偏向良性，但任何色素性病变均需警惕恶性变化的可能性，需专业鉴别。,no_external_evidence,,,,,,,,,,,,,,,,
+CASE_NV_001__llm__risk_warning__001,CASE_NV_001,llm,risk_warning,风险医学陈述,尽管目前描述符合良性特征，但自我观察可能存在偏差，不能完全排除恶性病变的早期微小变化。,no_external_evidence,,,,,,,,,,,,,,,,
+CASE_NV_001__llm__risk_warning__002,CASE_NV_001,llm,risk_warning,风险医学陈述,若病灶出现快速增大、颜色改变、出血、瘙痒或边界变得模糊，应立即就医。,no_external_evidence,,,,,,,,,,,,,,,,
+CASE_NV_001__llm__medical_advice__001,CASE_NV_001,llm,medical_advice,医疗建议,建议定期（如每3-6个月）对病灶进行拍照记录，以便对比观察是否有形态或颜色的变化。,not_applicable,,,,,,,,,,,,,,,,
+CASE_NV_001__llm__medical_advice__002,CASE_NV_001,llm,medical_advice,医疗建议,建议前往皮肤科进行专业皮肤镜检查，以获得更准确的评估。,not_applicable,,,,,,,,,,,,,,,,
+CASE_NV_001__llm__medical_advice__003,CASE_NV_001,llm,medical_advice,医疗建议,避免自行抠抓或使用非处方药物处理该部位，以免刺激病灶或干扰后续医生判断。,not_applicable,,,,,,,,,,,,,,,,
+CASE_NV_001__llm__evidence_gap__001,CASE_NV_001,llm,evidence_gap,证据缺口说明,本方法未接入外部可追溯证据，所有解释基于模型内部的一般医学知识库。,not_applicable,,,,,,,,,,,,,,,,
+CASE_NV_001__llm__evidence_gap__002,CASE_NV_001,llm,evidence_gap,证据缺口说明,缺乏皮肤镜图像、病理活检结果或专业医生的体格检查数据，无法进行确诊。,not_applicable,,,,,,,,,,,,,,,,
+CASE_NV_001__llm__evidence_gap__003,CASE_NV_001,llm,evidence_gap,证据缺口说明,未提供患者的年龄、家族史、日晒史等背景信息，这些因素可能影响风险评估。,not_applicable,,,,,,,,,,,,,,,,
+CASE_NV_001__llm__evidence_gap__004,CASE_NV_001,llm,evidence_gap,证据缺口说明,纯 LLM 基线未接入外部检索证据，回答中的医学内容不具备本次运行级别的来源追溯能力。,not_applicable,,,,,,,,,,,,,,,,
+CASE_NV_001__rag__observation_match__001,CASE_NV_001,rag,observation_match,观察匹配陈述,用户观察到的“棕色小斑”与黑色素细胞痣含有黑色素的特征相符,candidate_generated,1,DOC_0015,retrieved_text_document,棕色或黑色黑色素细胞痣含有黑色素，也可称为色素痣。,DermNet - Melanocytic Naevus,31.897124,0.401794,moderate,0.409091,0.315789,0.375,False,False,False,True,False
+CASE_NV_001__rag__observation_match__001,CASE_NV_001,rag,observation_match,观察匹配陈述,用户观察到的“棕色小斑”与黑色素细胞痣含有黑色素的特征相符,candidate_generated,2,DOC_0022,retrieved_text_document,黑色素细胞痣通常为良性皮损；若出现大小、形状、结构、颜色变化，或出血、结痂、瘙痒等情况，应进一步评估。,DermNet - Melanocytic Naevus,30.532413,0.273834,weak,0.272727,0.115385,0.208333,False,False,False,True,False
+CASE_NV_001__rag__observation_match__001,CASE_NV_001,rag,observation_match,观察匹配陈述,用户观察到的“棕色小斑”与黑色素细胞痣含有黑色素的特征相符,candidate_generated,3,DOC_0037,retrieved_text_document,表皮内鳞状细胞癌可表现为橙红色或棕色的不规则鳞屑性斑块。,DermNet - Intraepidermal Squamous Cell Carcinoma,25.028932,0.107999,weak,0.181818,0.093023,0.083333,False,False,False,False,False
+CASE_NV_001__rag__observation_match__002,CASE_NV_001,rag,observation_match,观察匹配陈述,用户观察到的“形状较规则，边界清楚”符合良性色素性皮损通常表现为较规则、较清楚边界的描述,candidate_generated,1,DOC_0014,retrieved_text_document,良性色素性皮损通常表现为较规则、较清楚的边界。,DermNet - Benign Melanocytic Lesions,45.194645,0.453208,moderate,0.590164,0.571429,0.514286,False,False,False,False,False
+CASE_NV_001__rag__observation_match__002,CASE_NV_001,rag,observation_match,观察匹配陈述,用户观察到的“形状较规则，边界清楚”符合良性色素性皮损通常表现为较规则、较清楚边界的描述,candidate_generated,2,DOC_0084,retrieved_text_document,HAM10000 中血管瘤类皮损在皮肤镜下可表现为红色或紫色、实性且边界清楚的 red clods 或 lacunes。,HAM10000 Scientific Data,27.880655,0.187962,weak,0.295082,0.178218,0.171429,False,False,False,False,False
+CASE_NV_001__rag__observation_match__002,CASE_NV_001,rag,observation_match,观察匹配陈述,用户观察到的“形状较规则，边界清楚”符合良性色素性皮损通常表现为较规则、较清楚边界的描述,candidate_generated,3,DOC_0022,retrieved_text_document,黑色素细胞痣通常为良性皮损；若出现大小、形状、结构、颜色变化，或出血、结痂、瘙痒等情况，应进一步评估。,DermNet - Melanocytic Naevus,30.532413,0.183623,weak,0.295082,0.156522,0.171429,False,False,False,False,False
+CASE_NV_001__rag__supporting_evidence__001,CASE_NV_001,rag,supporting_evidence,支持性医学陈述,根据DOC_0015，棕色或黑色黑色素细胞痣含有黑色素，也可称为色素痣,candidate_generated,1,DOC_0015,retrieved_text_document,棕色或黑色黑色素细胞痣含有黑色素，也可称为色素痣。,DermNet - Melanocytic Naevus,31.897124,1.0,strong,0.885714,0.885714,0.666667,True,False,False,True,False
+CASE_NV_001__rag__supporting_evidence__001,CASE_NV_001,rag,supporting_evidence,支持性医学陈述,根据DOC_0015，棕色或黑色黑色素细胞痣含有黑色素，也可称为色素痣,candidate_generated,2,DOC_0022,retrieved_text_document,黑色素细胞痣通常为良性皮损；若出现大小、形状、结构、颜色变化，或出血、结痂、瘙痒等情况，应进一步评估。,DermNet - Melanocytic Naevus,30.532413,0.313268,moderate,0.371429,0.138298,0.185185,False,False,False,True,False
+CASE_NV_001__rag__supporting_evidence__001,CASE_NV_001,rag,supporting_evidence,支持性医学陈述,根据DOC_0015，棕色或黑色黑色素细胞痣含有黑色素，也可称为色素痣,candidate_generated,3,DOC_0037,retrieved_text_document,表皮内鳞状细胞癌可表现为橙红色或棕色的不规则鳞屑性斑块。,DermNet - Intraepidermal Squamous Cell Carcinoma,25.028932,0.163175,weak,0.285714,0.133333,0.111111,False,False,False,False,False
+CASE_NV_001__rag__supporting_evidence__002,CASE_NV_001,rag,supporting_evidence,支持性医学陈述,根据DOC_0014，良性色素性皮损通常表现为较规则、较清楚的边界,candidate_generated,1,DOC_0014,retrieved_text_document,良性色素性皮损通常表现为较规则、较清楚的边界。,DermNet - Benign Melanocytic Lesions,45.194645,0.930788,strong,0.904762,0.904762,0.689655,True,False,False,False,False
+CASE_NV_001__rag__supporting_evidence__002,CASE_NV_001,rag,supporting_evidence,支持性医学陈述,根据DOC_0014，良性色素性皮损通常表现为较规则、较清楚的边界,candidate_generated,2,DOC_0084,retrieved_text_document,HAM10000 中血管瘤类皮损在皮肤镜下可表现为红色或紫色、实性且边界清楚的 red clods 或 lacunes。,HAM10000 Scientific Data,27.880655,0.263607,weak,0.428571,0.219512,0.241379,False,False,False,False,False
+CASE_NV_001__rag__supporting_evidence__002,CASE_NV_001,rag,supporting_evidence,支持性医学陈述,根据DOC_0014，良性色素性皮损通常表现为较规则、较清楚的边界,candidate_generated,3,DOC_0022,retrieved_text_document,黑色素细胞痣通常为良性皮损；若出现大小、形状、结构、颜色变化，或出血、结痂、瘙痒等情况，应进一步评估。,DermNet - Melanocytic Naevus,30.532413,0.207643,weak,0.357143,0.151515,0.172414,False,False,False,False,False
+CASE_NV_001__rag__supporting_evidence__003,CASE_NV_001,rag,supporting_evidence,支持性医学陈述,根据DOC_0022，黑色素细胞痣通常为良性皮损,candidate_generated,1,DOC_0022,retrieved_text_document,黑色素细胞痣通常为良性皮损；若出现大小、形状、结构、颜色变化，或出血、结痂、瘙痒等情况，应进一步评估。,DermNet - Melanocytic Naevus,30.532413,0.874903,strong,0.862069,0.328947,0.571429,True,False,False,True,False
+CASE_NV_001__rag__supporting_evidence__003,CASE_NV_001,rag,supporting_evidence,支持性医学陈述,根据DOC_0022，黑色素细胞痣通常为良性皮损,candidate_generated,2,DOC_0015,retrieved_text_document,棕色或黑色黑色素细胞痣含有黑色素，也可称为色素痣。,DermNet - Melanocytic Naevus,31.897124,0.363136,moderate,0.413793,0.25,0.238095,False,False,False,True,False
+CASE_NV_001__rag__supporting_evidence__003,CASE_NV_001,rag,supporting_evidence,支持性医学陈述,根据DOC_0022，黑色素细胞痣通常为良性皮损,candidate_generated,3,DOC_0014,retrieved_text_document,良性色素性皮损通常表现为较规则、较清楚的边界。,DermNet - Benign Melanocytic Lesions,45.194645,0.293553,weak,0.482759,0.264151,0.238095,False,False,False,False,False
+CASE_NV_001__rag__differential_diagnosis__001,CASE_NV_001,rag,differential_diagnosis,鉴别诊断陈述,表皮内鳞状细胞癌：可表现为棕色的不规则鳞屑性斑块（DOC_0037），但用户描述的皮损边界清楚且规则，与此典型表现存在差异，仍需鉴别,candidate_generated,1,DOC_0037,retrieved_text_document,表皮内鳞状细胞癌可表现为橙红色或棕色的不规则鳞屑性斑块。,DermNet - Intraepidermal Squamous Cell Carcinoma,25.028932,0.590051,strong,0.455556,0.414141,0.375,True,False,False,False,False
+CASE_NV_001__rag__differential_diagnosis__001,CASE_NV_001,rag,differential_diagnosis,鉴别诊断陈述,表皮内鳞状细胞癌：可表现为棕色的不规则鳞屑性斑块（DOC_0037），但用户描述的皮损边界清楚且规则，与此典型表现存在差异，仍需鉴别,candidate_generated,2,DOC_0084,retrieved_text_document,HAM10000 中血管瘤类皮损在皮肤镜下可表现为红色或紫色、实性且边界清楚的 red clods 或 lacunes。,HAM10000 Scientific Data,27.880655,0.16127,weak,0.244444,0.174603,0.142857,False,False,False,False,False
+CASE_NV_001__rag__differential_diagnosis__001,CASE_NV_001,rag,differential_diagnosis,鉴别诊断陈述,表皮内鳞状细胞癌：可表现为棕色的不规则鳞屑性斑块（DOC_0037），但用户描述的皮损边界清楚且规则，与此典型表现存在差异，仍需鉴别,candidate_generated,3,DOC_0014,retrieved_text_document,良性色素性皮损通常表现为较规则、较清楚的边界。,DermNet - Benign Melanocytic Lesions,45.194645,0.147354,weak,0.222222,0.185185,0.107143,False,False,False,False,False
+CASE_NV_001__rag__risk_warning__001,CASE_NV_001,rag,risk_warning,风险医学陈述,若皮损出现大小、形状、结构、颜色变化，或出血、结痂、瘙痒等情况，应进一步评估（DOC_0022）,candidate_generated,1,DOC_0022,retrieved_text_document,黑色素细胞痣通常为良性皮损；若出现大小、形状、结构、颜色变化，或出血、结痂、瘙痒等情况，应进一步评估。,DermNet - Melanocytic Naevus,30.532413,0.912043,strong,0.943396,0.666667,0.756757,True,False,False,False,False
+CASE_NV_001__rag__risk_warning__001,CASE_NV_001,rag,risk_warning,风险医学陈述,若皮损出现大小、形状、结构、颜色变化，或出血、结痂、瘙痒等情况，应进一步评估（DOC_0022）,candidate_generated,2,DOC_0084,retrieved_text_document,HAM10000 中血管瘤类皮损在皮肤镜下可表现为红色或紫色、实性且边界清楚的 red clods 或 lacunes。,HAM10000 Scientific Data,27.880655,0.077103,weak,0.132075,0.067308,0.054054,False,False,False,False,False
+CASE_NV_001__rag__risk_warning__001,CASE_NV_001,rag,risk_warning,风险医学陈述,若皮损出现大小、形状、结构、颜色变化，或出血、结痂、瘙痒等情况，应进一步评估（DOC_0022）,candidate_generated,3,DOC_0014,retrieved_text_document,良性色素性皮损通常表现为较规则、较清楚的边界。,DermNet - Benign Melanocytic Lesions,45.194645,0.054769,weak,0.09434,0.05814,0.027027,False,False,False,False,False
+CASE_NV_001__rag__medical_advice__001,CASE_NV_001,rag,medical_advice,医疗建议,建议定期观察皮损是否有形态或颜色的变化,not_applicable,,,,,,,,,,,,,,,,
+CASE_NV_001__rag__medical_advice__002,CASE_NV_001,rag,medical_advice,医疗建议,如有疑虑或发现上述风险警示中的变化，建议前往皮肤科进行专业检查,not_applicable,,,,,,,,,,,,,,,,
+CASE_NV_001__rag__evidence_gap__001,CASE_NV_001,rag,evidence_gap,证据缺口说明,检索文本未提供关于皮损具体尺寸、表面是否隆起、是否有毛发等详细形态学信息,not_applicable,,,,,,,,,,,,,,,,
+CASE_NV_001__rag__evidence_gap__002,CASE_NV_001,rag,evidence_gap,证据缺口说明,检索文本未提供皮肤镜检查的具体图像或特征描述以辅助确诊,not_applicable,,,,,,,,,,,,,,,,
+CASE_NV_001__rag__evidence_gap__003,CASE_NV_001,rag,evidence_gap,证据缺口说明,缺乏患者年龄、家族史或个人日晒史等背景信息,not_applicable,,,,,,,,,,,,,,,,
+CASE_NV_001__kg_rag__observation_match__001,CASE_NV_001,kg_rag,observation_match,观察匹配陈述,用户观察到的'边界清楚'特征与黑色素细胞痣的典型临床表现相符，知识图谱证据显示良性色素性皮损通常表现为较规则、较清楚的边界。,candidate_generated,1,PATH_TRI_016,ranked_kg_evidence_path,"黑色素细胞痣 → 表现为 → 边界清楚
+良性色素性皮损通常表现为较规则、较清楚的边界。",DermNet - Benign Melanocytic Lesions,4.42,0.751265,strong,0.505376,0.505376,0.490196,False,False,True,True,True
+CASE_NV_001__kg_rag__observation_match__001,CASE_NV_001,kg_rag,observation_match,观察匹配陈述,用户观察到的'边界清楚'特征与黑色素细胞痣的典型临床表现相符，知识图谱证据显示良性色素性皮损通常表现为较规则、较清楚的边界。,candidate_generated,2,PATH_TRI_018,ranked_kg_evidence_path,"黑色素细胞痣 → 表现为 → 对称性较好
+良性色素性皮损通常具有较一致的结构和外观。",DermNet - Benign Melanocytic Lesions,2.5,0.596318,strong,0.344086,0.268908,0.27451,False,False,True,True,True
+CASE_NV_001__kg_rag__observation_match__001,CASE_NV_001,kg_rag,observation_match,观察匹配陈述,用户观察到的'边界清楚'特征与黑色素细胞痣的典型临床表现相符，知识图谱证据显示良性色素性皮损通常表现为较规则、较清楚的边界。,candidate_generated,3,PATH_TRI_021_TRI_001,ranked_kg_evidence_path,"黑色素细胞痣 → 鉴别诊断 → 黑色素瘤 → 表现为 → 边界不规则
+皮肤镜可帮助识别与其他痣不同的“丑小鸭”病变，并提示黑色素瘤可能。
+ABCDE 特征包括 Border irregularity，可支持“边界不规则”。",DermNet - Melanocytic Naevi: New Classification；DermNet - ABCDEFG of melanoma,2.05,0.557209,strong,0.322581,0.194805,0.196078,False,False,True,True,True
+CASE_NV_001__kg_rag__observation_match__002,CASE_NV_001,kg_rag,observation_match,观察匹配陈述,用户描述的'棕色小斑'与黑色素细胞痣含有黑色素、表现为棕色或黑色斑疹/丘疹的特征一致。,candidate_generated,1,PATH_TRI_017,ranked_kg_evidence_path,"黑色素细胞痣 → 表现为 → 棕色或黑色斑疹/丘疹
+棕色或黑色黑色素细胞痣含有黑色素，也可称为色素痣。",DermNet - Melanocytic Naevus,2.5,0.786124,strong,0.571429,0.492308,0.545455,False,False,True,True,True
+CASE_NV_001__kg_rag__observation_match__002,CASE_NV_001,kg_rag,observation_match,观察匹配陈述,用户描述的'棕色小斑'与黑色素细胞痣含有黑色素、表现为棕色或黑色斑疹/丘疹的特征一致。,candidate_generated,2,PATH_TRI_018,ranked_kg_evidence_path,"黑色素细胞痣 → 表现为 → 对称性较好
+良性色素性皮损通常具有较一致的结构和外观。",DermNet - Benign Melanocytic Lesions,2.5,0.593646,strong,0.375,0.225806,0.242424,False,False,True,True,True
+CASE_NV_001__kg_rag__observation_match__002,CASE_NV_001,kg_rag,observation_match,观察匹配陈述,用户描述的'棕色小斑'与黑色素细胞痣含有黑色素、表现为棕色或黑色斑疹/丘疹的特征一致。,candidate_generated,3,PATH_TRI_021_TRI_001,ranked_kg_evidence_path,"黑色素细胞痣 → 鉴别诊断 → 黑色素瘤 → 表现为 → 边界不规则
+皮肤镜可帮助识别与其他痣不同的“丑小鸭”病变，并提示黑色素瘤可能。
+ABCDE 特征包括 Border irregularity，可支持“边界不规则”。",DermNet - Melanocytic Naevi: New Classification；DermNet - ABCDEFG of melanoma,2.05,0.590828,strong,0.392857,0.176,0.242424,False,False,True,True,True
+CASE_NV_001__kg_rag__observation_match__003,CASE_NV_001,kg_rag,observation_match,观察匹配陈述,用户提到的'形状较规则'与黑色素细胞痣通常具有较好对称性和一致结构的特征相吻合。,candidate_generated,1,PATH_TRI_018,ranked_kg_evidence_path,"黑色素细胞痣 → 表现为 → 对称性较好
+良性色素性皮损通常具有较一致的结构和外观。",DermNet - Benign Melanocytic Lesions,2.5,0.656763,strong,0.507246,0.380435,0.388889,False,False,True,True,False
+CASE_NV_001__kg_rag__observation_match__003,CASE_NV_001,kg_rag,observation_match,观察匹配陈述,用户提到的'形状较规则'与黑色素细胞痣通常具有较好对称性和一致结构的特征相吻合。,candidate_generated,2,PATH_TRI_016,ranked_kg_evidence_path,"黑色素细胞痣 → 表现为 → 边界清楚
+良性色素性皮损通常表现为较规则、较清楚的边界。",DermNet - Benign Melanocytic Lesions,4.42,0.510394,moderate,0.304348,0.221053,0.222222,False,False,True,True,False
+CASE_NV_001__kg_rag__observation_match__003,CASE_NV_001,kg_rag,observation_match,观察匹配陈述,用户提到的'形状较规则'与黑色素细胞痣通常具有较好对称性和一致结构的特征相吻合。,candidate_generated,3,PATH_TRI_021_TRI_001,ranked_kg_evidence_path,"黑色素细胞痣 → 鉴别诊断 → 黑色素瘤 → 表现为 → 边界不规则
+皮肤镜可帮助识别与其他痣不同的“丑小鸭”病变，并提示黑色素瘤可能。
+ABCDE 特征包括 Border irregularity，可支持“边界不规则”。",DermNet - Melanocytic Naevi: New Classification；DermNet - ABCDEFG of melanoma,2.05,0.483402,moderate,0.289855,0.142857,0.194444,False,False,True,True,False
+CASE_NV_001__kg_rag__supporting_evidence__001,CASE_NV_001,kg_rag,supporting_evidence,支持性医学陈述,根据DermNet资料，良性色素性皮损（如黑色素细胞痣）通常表现为较规则、较清楚的边界（证据链 Rank 1）。,candidate_generated,1,PATH_TRI_016,ranked_kg_evidence_path,"黑色素细胞痣 → 表现为 → 边界清楚
+良性色素性皮损通常表现为较规则、较清楚的边界。",DermNet - Benign Melanocytic Lesions,4.42,0.897384,strong,0.75,0.725806,0.511111,False,False,True,True,True
+CASE_NV_001__kg_rag__supporting_evidence__001,CASE_NV_001,kg_rag,supporting_evidence,支持性医学陈述,根据DermNet资料，良性色素性皮损（如黑色素细胞痣）通常表现为较规则、较清楚的边界（证据链 Rank 1）。,candidate_generated,2,PATH_TRI_018,ranked_kg_evidence_path,"黑色素细胞痣 → 表现为 → 对称性较好
+良性色素性皮损通常具有较一致的结构和外观。",DermNet - Benign Melanocytic Lesions,2.5,0.67596,strong,0.5,0.340909,0.288889,False,False,True,True,True
+CASE_NV_001__kg_rag__supporting_evidence__001,CASE_NV_001,kg_rag,supporting_evidence,支持性医学陈述,根据DermNet资料，良性色素性皮损（如黑色素细胞痣）通常表现为较规则、较清楚的边界（证据链 Rank 1）。,candidate_generated,3,PATH_TRI_021_TRI_001,ranked_kg_evidence_path,"黑色素细胞痣 → 鉴别诊断 → 黑色素瘤 → 表现为 → 边界不规则
+皮肤镜可帮助识别与其他痣不同的“丑小鸭”病变，并提示黑色素瘤可能。
+ABCDE 特征包括 Border irregularity，可支持“边界不规则”。",DermNet - Melanocytic Naevi: New Classification；DermNet - ABCDEFG of melanoma,2.05,0.596684,strong,0.4,0.188976,0.244444,False,False,True,True,True
+CASE_NV_001__kg_rag__supporting_evidence__002,CASE_NV_001,kg_rag,supporting_evidence,支持性医学陈述,单一颜色或均匀色素模式的皮损几乎总是良性的，这与用户描述的'棕色小斑'且无明显变化的情况在逻辑上支持良性病变的可能性（证据链 Rank 2）。,candidate_generated,1,PATH_TRI_015,ranked_kg_evidence_path,"黑色素细胞痣 → 表现为 → 色素均匀
+单一颜色或均匀色素模式的皮损几乎总是良性的。",DermNet - Benign Melanocytic Lesions,2.5,0.285756,weak,0.382353,0.336207,0.327869,False,False,False,False,False
+CASE_NV_001__kg_rag__supporting_evidence__002,CASE_NV_001,kg_rag,supporting_evidence,支持性医学陈述,单一颜色或均匀色素模式的皮损几乎总是良性的，这与用户描述的'棕色小斑'且无明显变化的情况在逻辑上支持良性病变的可能性（证据链 Rank 2）。,candidate_generated,2,PATH_TRI_021_TRI_001,ranked_kg_evidence_path,"黑色素细胞痣 → 鉴别诊断 → 黑色素瘤 → 表现为 → 边界不规则
+皮肤镜可帮助识别与其他痣不同的“丑小鸭”病变，并提示黑色素瘤可能。
+ABCDE 特征包括 Border irregularity，可支持“边界不规则”。",DermNet - Melanocytic Naevi: New Classification；DermNet - ABCDEFG of melanoma,2.05,0.093939,weak,0.156863,0.090395,0.065574,False,False,False,False,False
+CASE_NV_001__kg_rag__supporting_evidence__002,CASE_NV_001,kg_rag,supporting_evidence,支持性医学陈述,单一颜色或均匀色素模式的皮损几乎总是良性的，这与用户描述的'棕色小斑'且无明显变化的情况在逻辑上支持良性病变的可能性（证据链 Rank 2）。,candidate_generated,3,PATH_TRI_018,ranked_kg_evidence_path,"黑色素细胞痣 → 表现为 → 对称性较好
+良性色素性皮损通常具有较一致的结构和外观。",DermNet - Benign Melanocytic Lesions,2.5,0.067738,weak,0.107843,0.073826,0.04918,False,False,False,False,False
+CASE_NV_001__kg_rag__supporting_evidence__003,CASE_NV_001,kg_rag,supporting_evidence,支持性医学陈述,黑色素细胞痣含有黑色素，临床常表现为棕色或黑色斑疹或丘疹（证据链 Rank 3）。,candidate_generated,1,PATH_TRI_017,ranked_kg_evidence_path,"黑色素细胞痣 → 表现为 → 棕色或黑色斑疹/丘疹
+棕色或黑色黑色素细胞痣含有黑色素，也可称为色素痣。",DermNet - Melanocytic Naevus,2.5,0.838625,strong,0.666667,0.561404,0.548387,False,False,True,True,True
+CASE_NV_001__kg_rag__supporting_evidence__003,CASE_NV_001,kg_rag,supporting_evidence,支持性医学陈述,黑色素细胞痣含有黑色素，临床常表现为棕色或黑色斑疹或丘疹（证据链 Rank 3）。,candidate_generated,2,PATH_TRI_016,ranked_kg_evidence_path,"黑色素细胞痣 → 表现为 → 边界清楚
+良性色素性皮损通常表现为较规则、较清楚的边界。",DermNet - Benign Melanocytic Lesions,4.42,0.598366,strong,0.375,0.233766,0.258065,False,False,True,True,True
+CASE_NV_001__kg_rag__supporting_evidence__003,CASE_NV_001,kg_rag,supporting_evidence,支持性医学陈述,黑色素细胞痣含有黑色素，临床常表现为棕色或黑色斑疹或丘疹（证据链 Rank 3）。,candidate_generated,3,PATH_TRI_015,ranked_kg_evidence_path,"黑色素细胞痣 → 表现为 → 色素均匀
+单一颜色或均匀色素模式的皮损几乎总是良性的。",DermNet - Benign Melanocytic Lesions,2.5,0.594986,strong,0.375,0.216867,0.258065,False,False,True,True,True
+CASE_NV_001__kg_rag__supporting_evidence__004,CASE_NV_001,kg_rag,supporting_evidence,支持性医学陈述,良性色素性皮损通常具有较一致的结构和外观，即对称性较好（证据链 Rank 4）。,candidate_generated,1,PATH_TRI_018,ranked_kg_evidence_path,"黑色素细胞痣 → 表现为 → 对称性较好
+良性色素性皮损通常具有较一致的结构和外观。",DermNet - Benign Melanocytic Lesions,2.5,0.807056,strong,0.833333,0.671642,0.69697,False,False,True,False,False
+CASE_NV_001__kg_rag__supporting_evidence__004,CASE_NV_001,kg_rag,supporting_evidence,支持性医学陈述,良性色素性皮损通常具有较一致的结构和外观，即对称性较好（证据链 Rank 4）。,candidate_generated,2,PATH_TRI_016,ranked_kg_evidence_path,"黑色素细胞痣 → 表现为 → 边界清楚
+良性色素性皮损通常表现为较规则、较清楚的边界。",DermNet - Benign Melanocytic Lesions,4.42,0.225192,weak,0.333333,0.216867,0.242424,False,False,False,False,False
+CASE_NV_001__kg_rag__supporting_evidence__004,CASE_NV_001,kg_rag,supporting_evidence,支持性医学陈述,良性色素性皮损通常具有较一致的结构和外观，即对称性较好（证据链 Rank 4）。,candidate_generated,3,PATH_TRI_015,ranked_kg_evidence_path,"黑色素细胞痣 → 表现为 → 色素均匀
+单一颜色或均匀色素模式的皮损几乎总是良性的。",DermNet - Benign Melanocytic Lesions,2.5,0.12258,weak,0.203704,0.114583,0.090909,False,False,False,False,False
+CASE_NV_001__kg_rag__differential_diagnosis__001,CASE_NV_001,kg_rag,differential_diagnosis,鉴别诊断陈述,需与黑色素瘤进行鉴别，特别是当皮损出现边界不规则、不对称或颜色不均时（证据链 Rank 5 提示边界不规则是黑色素瘤的ABCDE特征之一）。,candidate_generated,1,PATH_TRI_021_TRI_001,ranked_kg_evidence_path,"黑色素细胞痣 → 鉴别诊断 → 黑色素瘤 → 表现为 → 边界不规则
+皮肤镜可帮助识别与其他痣不同的“丑小鸭”病变，并提示黑色素瘤可能。
+ABCDE 特征包括 Border irregularity，可支持“边界不规则”。",DermNet - Melanocytic Naevi: New Classification；DermNet - ABCDEFG of melanoma,2.05,0.450311,moderate,0.379747,0.214286,0.277778,False,False,True,False,False
+CASE_NV_001__kg_rag__differential_diagnosis__001,CASE_NV_001,kg_rag,differential_diagnosis,鉴别诊断陈述,需与黑色素瘤进行鉴别，特别是当皮损出现边界不规则、不对称或颜色不均时（证据链 Rank 5 提示边界不规则是黑色素瘤的ABCDE特征之一）。,candidate_generated,2,PATH_TRI_016,ranked_kg_evidence_path,"黑色素细胞痣 → 表现为 → 边界清楚
+良性色素性皮损通常表现为较规则、较清楚的边界。",DermNet - Benign Melanocytic Lesions,4.42,0.128622,weak,0.202532,0.145455,0.092593,False,False,False,False,False
+CASE_NV_001__kg_rag__differential_diagnosis__001,CASE_NV_001,kg_rag,differential_diagnosis,鉴别诊断陈述,需与黑色素瘤进行鉴别，特别是当皮损出现边界不规则、不对称或颜色不均时（证据链 Rank 5 提示边界不规则是黑色素瘤的ABCDE特征之一）。,candidate_generated,3,PATH_TRI_015,ranked_kg_evidence_path,"黑色素细胞痣 → 表现为 → 色素均匀
+单一颜色或均匀色素模式的皮损几乎总是良性的。",DermNet - Benign Melanocytic Lesions,2.5,0.123414,weak,0.202532,0.137931,0.074074,False,False,False,False,False
+CASE_NV_001__kg_rag__differential_diagnosis__002,CASE_NV_001,kg_rag,differential_diagnosis,鉴别诊断陈述,其他良性色素性病变也可能表现为类似的棕色斑点，需结合皮肤镜检查进一步区分。,candidate_generated,1,PATH_TRI_021_TRI_001,ranked_kg_evidence_path,"黑色素细胞痣 → 鉴别诊断 → 黑色素瘤 → 表现为 → 边界不规则
+皮肤镜可帮助识别与其他痣不同的“丑小鸭”病变，并提示黑色素瘤可能。
+ABCDE 特征包括 Border irregularity，可支持“边界不规则”。",DermNet - Melanocytic Naevi: New Classification；DermNet - ABCDEFG of melanoma,2.05,0.270781,weak,0.348485,0.171642,0.235294,False,False,False,False,True
+CASE_NV_001__kg_rag__differential_diagnosis__002,CASE_NV_001,kg_rag,differential_diagnosis,鉴别诊断陈述,其他良性色素性病变也可能表现为类似的棕色斑点，需结合皮肤镜检查进一步区分。,candidate_generated,2,PATH_TRI_018,ranked_kg_evidence_path,"黑色素细胞痣 → 表现为 → 对称性较好
+良性色素性皮损通常具有较一致的结构和外观。",DermNet - Benign Melanocytic Lesions,2.5,0.2201,weak,0.257576,0.158879,0.176471,False,False,False,False,True
+CASE_NV_001__kg_rag__differential_diagnosis__002,CASE_NV_001,kg_rag,differential_diagnosis,鉴别诊断陈述,其他良性色素性病变也可能表现为类似的棕色斑点，需结合皮肤镜检查进一步区分。,candidate_generated,3,PATH_TRI_017,ranked_kg_evidence_path,"黑色素细胞痣 → 表现为 → 棕色或黑色斑疹/丘疹
+棕色或黑色黑色素细胞痣含有黑色素，也可称为色素痣。",DermNet - Melanocytic Naevus,2.5,0.208812,weak,0.227273,0.163043,0.176471,False,False,False,False,True
+CASE_NV_001__kg_rag__risk_warning__001,CASE_NV_001,kg_rag,risk_warning,风险医学陈述,虽然当前观察到的特征（边界清楚、形状规则、无变化）倾向于良性，但任何色素性皮损若出现大小、形状、颜色改变或出血、瘙痒等症状，均需警惕恶性转变风险。,candidate_generated,1,PATH_TRI_016,ranked_kg_evidence_path,"黑色素细胞痣 → 表现为 → 边界清楚
+良性色素性皮损通常表现为较规则、较清楚的边界。",DermNet - Benign Melanocytic Lesions,4.42,0.351685,moderate,0.216981,0.176923,0.147541,False,False,True,False,False
+CASE_NV_001__kg_rag__risk_warning__001,CASE_NV_001,kg_rag,risk_warning,风险医学陈述,虽然当前观察到的特征（边界清楚、形状规则、无变化）倾向于良性，但任何色素性皮损若出现大小、形状、颜色改变或出血、瘙痒等症状，均需警惕恶性转变风险。,candidate_generated,2,PATH_TRI_021_TRI_001,ranked_kg_evidence_path,"黑色素细胞痣 → 鉴别诊断 → 黑色素瘤 → 表现为 → 边界不规则
+皮肤镜可帮助识别与其他痣不同的“丑小鸭”病变，并提示黑色素瘤可能。
+ABCDE 特征包括 Border irregularity，可支持“边界不规则”。",DermNet - Melanocytic Naevi: New Classification；DermNet - ABCDEFG of melanoma,2.05,0.096155,weak,0.160377,0.094444,0.065574,False,False,False,False,False
+CASE_NV_001__kg_rag__risk_warning__001,CASE_NV_001,kg_rag,risk_warning,风险医学陈述,虽然当前观察到的特征（边界清楚、形状规则、无变化）倾向于良性，但任何色素性皮损若出现大小、形状、颜色改变或出血、瘙痒等症状，均需警惕恶性转变风险。,candidate_generated,3,PATH_TRI_015,ranked_kg_evidence_path,"黑色素细胞痣 → 表现为 → 色素均匀
+单一颜色或均匀色素模式的皮损几乎总是良性的。",DermNet - Benign Melanocytic Lesions,2.5,0.090552,weak,0.141509,0.104167,0.065574,False,False,False,False,False
+CASE_NV_001__kg_rag__risk_warning__002,CASE_NV_001,kg_rag,risk_warning,风险医学陈述,仅凭肉眼观察无法完全排除恶性病变，尤其是早期黑色素瘤可能模拟良性痣的外观。,candidate_generated,1,PATH_TRI_021_TRI_001,ranked_kg_evidence_path,"黑色素细胞痣 → 鉴别诊断 → 黑色素瘤 → 表现为 → 边界不规则
+皮肤镜可帮助识别与其他痣不同的“丑小鸭”病变，并提示黑色素瘤可能。
+ABCDE 特征包括 Border irregularity，可支持“边界不规则”。",DermNet - Melanocytic Naevi: New Classification；DermNet - ABCDEFG of melanoma,2.05,0.36261,moderate,0.257576,0.121429,0.176471,False,False,True,False,False
+CASE_NV_001__kg_rag__risk_warning__002,CASE_NV_001,kg_rag,risk_warning,风险医学陈述,仅凭肉眼观察无法完全排除恶性病变，尤其是早期黑色素瘤可能模拟良性痣的外观。,candidate_generated,2,PATH_TRI_018,ranked_kg_evidence_path,"黑色素细胞痣 → 表现为 → 对称性较好
+良性色素性皮损通常具有较一致的结构和外观。",DermNet - Benign Melanocytic Lesions,2.5,0.125741,weak,0.19697,0.117117,0.117647,False,False,False,False,False
+CASE_NV_001__kg_rag__risk_warning__002,CASE_NV_001,kg_rag,risk_warning,风险医学陈述,仅凭肉眼观察无法完全排除恶性病变，尤其是早期黑色素瘤可能模拟良性痣的外观。,candidate_generated,3,PATH_TRI_015,ranked_kg_evidence_path,"黑色素细胞痣 → 表现为 → 色素均匀
+单一颜色或均匀色素模式的皮损几乎总是良性的。",DermNet - Benign Melanocytic Lesions,2.5,0.112804,weak,0.181818,0.11215,0.088235,False,False,False,False,False
+CASE_NV_001__kg_rag__medical_advice__001,CASE_NV_001,kg_rag,medical_advice,医疗建议,建议定期自我观察皮损变化，注意ABCDE原则（不对称、边界、颜色、直径、演变）。,not_applicable,,,,,,,,,,,,,,,,
+CASE_NV_001__kg_rag__medical_advice__002,CASE_NV_001,kg_rag,medical_advice,医疗建议,若发现皮损近期有增大、颜色改变、边界变得模糊或不规则，应及时前往皮肤科就诊。,not_applicable,,,,,,,,,,,,,,,,
+CASE_NV_001__kg_rag__medical_advice__003,CASE_NV_001,kg_rag,medical_advice,医疗建议,可考虑进行皮肤镜检查以获取更详细的皮损结构信息，辅助医生判断。,not_applicable,,,,,,,,,,,,,,,,
+CASE_NV_001__kg_rag__evidence_gap__001,CASE_NV_001,kg_rag,evidence_gap,证据缺口说明,缺乏皮损的具体尺寸数据，无法评估是否符合直径大于6mm的风险标准。,not_applicable,,,,,,,,,,,,,,,,
+CASE_NV_001__kg_rag__evidence_gap__002,CASE_NV_001,kg_rag,evidence_gap,证据缺口说明,缺乏皮肤镜下的微观结构证据（如色素网、球状体等），无法从组织学层面确认性质。,not_applicable,,,,,,,,,,,,,,,,
+CASE_NV_001__kg_rag__evidence_gap__003,CASE_NV_001,kg_rag,evidence_gap,证据缺口说明,缺乏患者家族史、个人日晒史或既往皮肤病变史等背景信息。,not_applicable,,,,,,,,,,,,,,,,
+CASE_NV_001__kg_rag__evidence_gap__004,CASE_NV_001,kg_rag,evidence_gap,证据缺口说明,未提供皮损是否隆起、表面是否有毛发或角化等其他形态学细节。,not_applicable,,,,,,,,,,,,,,,,
+CASE_AKIEC_001__llm__observation_match__001,CASE_AKIEC_001,llm,observation_match,观察匹配陈述,用户描述的‘日晒部位’与光化性角化病的好发部位（长期暴露于紫外线的皮肤区域）一致。,no_external_evidence,,,,,,,,,,,,,,,,
+CASE_AKIEC_001__llm__observation_match__002,CASE_AKIEC_001,llm,observation_match,观察匹配陈述,‘粗糙的红色鳞屑性斑片’及‘表面角化明显’符合光化性角化病典型的临床形态特征，即红斑基础上的角化性丘疹或斑块。,no_external_evidence,,,,,,,,,,,,,,,,
+CASE_AKIEC_001__llm__observation_match__003,CASE_AKIEC_001,llm,observation_match,观察匹配陈述,‘持续不消退’的病程特点符合该病变慢性、持续性发展的性质，区别于一般的急性皮炎或暂时性晒伤。,no_external_evidence,,,,,,,,,,,,,,,,
+CASE_AKIEC_001__llm__supporting_evidence__001,CASE_AKIEC_001,llm,supporting_evidence,支持性医学陈述,根据一般医学知识，光化性角化病是一种由长期紫外线照射引起的表皮内角质形成细胞异型增生，被视为皮肤鳞状细胞癌的癌前病变。,no_external_evidence,,,,,,,,,,,,,,,,
+CASE_AKIEC_001__llm__supporting_evidence__002,CASE_AKIEC_001,llm,supporting_evidence,支持性医学陈述,该病典型表现为在日光暴露区出现边界不清、触之粗糙如砂纸感的红斑或鳞屑性斑块。,no_external_evidence,,,,,,,,,,,,,,,,
+CASE_AKIEC_001__llm__supporting_evidence__003,CASE_AKIEC_001,llm,supporting_evidence,支持性医学陈述,若不及时干预，部分光化性角化病可能进展为浸润性鳞状细胞癌。,no_external_evidence,,,,,,,,,,,,,,,,
+CASE_AKIEC_001__llm__differential_diagnosis__001,CASE_AKIEC_001,llm,differential_diagnosis,鉴别诊断陈述,脂溢性角化病：通常表现为褐色或黑色疣状增生，表面呈油脂样，多见于非严格日晒区，但有时需鉴别。,no_external_evidence,,,,,,,,,,,,,,,,
+CASE_AKIEC_001__llm__differential_diagnosis__002,CASE_AKIEC_001,llm,differential_diagnosis,鉴别诊断陈述,Bowen病（原位鳞状细胞癌）：表现为境界清楚的红斑，表面有鳞屑或结痂，生长缓慢，需病理鉴别。,no_external_evidence,,,,,,,,,,,,,,,,
+CASE_AKIEC_001__llm__differential_diagnosis__003,CASE_AKIEC_001,llm,differential_diagnosis,鉴别诊断陈述,盘状红斑狼疮：可表现为日晒部位的盘状红斑和鳞屑，但常伴有毛囊角栓和萎缩性瘢痕。,no_external_evidence,,,,,,,,,,,,,,,,
+CASE_AKIEC_001__llm__differential_diagnosis__004,CASE_AKIEC_001,llm,differential_diagnosis,鉴别诊断陈述,寻常型银屑病：虽可有红斑鳞屑，但通常鳞屑较厚呈银白色，且好发于伸侧，不一定局限于日晒区。,no_external_evidence,,,,,,,,,,,,,,,,
+CASE_AKIEC_001__llm__risk_warning__001,CASE_AKIEC_001,llm,risk_warning,风险医学陈述,光化性角化病具有潜在的恶变风险，可能发展为侵袭性鳞状细胞癌。,no_external_evidence,,,,,,,,,,,,,,,,
+CASE_AKIEC_001__llm__risk_warning__002,CASE_AKIEC_001,llm,risk_warning,风险医学陈述,出现溃疡、出血、快速增大或疼痛等症状时，提示可能已发生恶性转化或继发感染。,no_external_evidence,,,,,,,,,,,,,,,,
+CASE_AKIEC_001__llm__risk_warning__003,CASE_AKIEC_001,llm,risk_warning,风险医学陈述,长期累积的紫外线损伤是主要致病因素，忽视防护可能导致新发病灶出现。,no_external_evidence,,,,,,,,,,,,,,,,
+CASE_AKIEC_001__llm__medical_advice__001,CASE_AKIEC_001,llm,medical_advice,医疗建议,建议前往皮肤科就诊，进行专业的皮肤镜检查以初步评估病变性质。,not_applicable,,,,,,,,,,,,,,,,
+CASE_AKIEC_001__llm__medical_advice__002,CASE_AKIEC_001,llm,medical_advice,医疗建议,确诊通常需要通过皮肤活检进行组织病理学检查，以排除浸润性癌变。,not_applicable,,,,,,,,,,,,,,,,
+CASE_AKIEC_001__llm__medical_advice__003,CASE_AKIEC_001,llm,medical_advice,医疗建议,日常应严格做好防晒措施，包括使用广谱防晒霜、穿戴遮阳衣物和帽子。,not_applicable,,,,,,,,,,,,,,,,
+CASE_AKIEC_001__llm__medical_advice__004,CASE_AKIEC_001,llm,medical_advice,医疗建议,定期自我观察皮损变化，记录大小、颜色、质地及是否有破溃等情况，复诊时提供给医生参考。,not_applicable,,,,,,,,,,,,,,,,
+CASE_AKIEC_001__llm__evidence_gap__001,CASE_AKIEC_001,llm,evidence_gap,证据缺口说明,本方法未接入外部可追溯证据，所有解释基于模型内部的一般医学知识库。,not_applicable,,,,,,,,,,,,,,,,
+CASE_AKIEC_001__llm__evidence_gap__002,CASE_AKIEC_001,llm,evidence_gap,证据缺口说明,缺乏患者的具体年龄、性别、既往皮肤病史及免疫状态信息，这些因素影响风险评估。,not_applicable,,,,,,,,,,,,,,,,
+CASE_AKIEC_001__llm__evidence_gap__003,CASE_AKIEC_001,llm,evidence_gap,证据缺口说明,缺乏皮损的具体持续时间、是否有自觉症状（如瘙痒、疼痛）以及既往治疗反应的详细记录。,not_applicable,,,,,,,,,,,,,,,,
+CASE_AKIEC_001__llm__evidence_gap__004,CASE_AKIEC_001,llm,evidence_gap,证据缺口说明,没有皮肤镜图像或组织病理学结果，无法从微观结构上确认诊断。,not_applicable,,,,,,,,,,,,,,,,
+CASE_AKIEC_001__llm__evidence_gap__005,CASE_AKIEC_001,llm,evidence_gap,证据缺口说明,纯 LLM 基线未接入外部检索证据，回答中的医学内容不具备本次运行级别的来源追溯能力。,not_applicable,,,,,,,,,,,,,,,,
+CASE_AKIEC_001__rag__observation_match__001,CASE_AKIEC_001,rag,observation_match,观察匹配陈述,用户描述的'日晒部位'与光化性角化病常见于日光暴露部位的特征相符,candidate_generated,1,DOC_0041,retrieved_text_document,光化性角化病常见于面部、耳部、手背等日光暴露部位。,DermNet - Actinic Keratosis,29.639002,0.386103,moderate,0.52,0.42623,0.464286,False,False,False,False,False
+CASE_AKIEC_001__rag__observation_match__001,CASE_AKIEC_001,rag,observation_match,观察匹配陈述,用户描述的'日晒部位'与光化性角化病常见于日光暴露部位的特征相符,candidate_generated,2,DOC_0035,retrieved_text_document,光化性角化病是发生在日光损伤皮肤上的癌前性鳞屑性皮损。,DermNet - Actinic Keratosis,31.620616,0.178564,weak,0.26,0.158537,0.214286,False,False,False,False,False
+CASE_AKIEC_001__rag__observation_match__001,CASE_AKIEC_001,rag,observation_match,观察匹配陈述,用户描述的'日晒部位'与光化性角化病常见于日光暴露部位的特征相符,candidate_generated,3,DOC_0036,retrieved_text_document,光化性角化病可表现为白色或黄色、鳞屑性、疣状或角化性表面。,DermNet - Actinic Keratosis,36.467621,0.141031,weak,0.2,0.126582,0.178571,False,False,False,False,False
+CASE_AKIEC_001__rag__observation_match__002,CASE_AKIEC_001,rag,observation_match,观察匹配陈述,用户描述的'粗糙的红色鳞屑性斑片'及'表面角化明显'与光化性角化病表现为鳞屑性、角化性表面的特征相符,candidate_generated,1,DOC_0036,retrieved_text_document,光化性角化病可表现为白色或黄色、鳞屑性、疣状或角化性表面。,DermNet - Actinic Keratosis,36.467621,0.269124,weak,0.365079,0.291139,0.324324,False,False,False,False,False
+CASE_AKIEC_001__rag__observation_match__002,CASE_AKIEC_001,rag,observation_match,观察匹配陈述,用户描述的'粗糙的红色鳞屑性斑片'及'表面角化明显'与光化性角化病表现为鳞屑性、角化性表面的特征相符,candidate_generated,2,DOC_0037,retrieved_text_document,表皮内鳞状细胞癌可表现为橙红色或棕色的不规则鳞屑性斑块。,DermNet - Intraepidermal Squamous Cell Carcinoma,41.096667,0.167009,weak,0.253968,0.164948,0.162162,False,False,False,False,False
+CASE_AKIEC_001__rag__observation_match__002,CASE_AKIEC_001,rag,observation_match,观察匹配陈述,用户描述的'粗糙的红色鳞屑性斑片'及'表面角化明显'与光化性角化病表现为鳞屑性、角化性表面的特征相符,candidate_generated,3,DOC_0035,retrieved_text_document,光化性角化病是发生在日光损伤皮肤上的癌前性鳞屑性皮损。,DermNet - Actinic Keratosis,31.620616,0.165334,weak,0.238095,0.16129,0.189189,False,False,False,False,False
+CASE_AKIEC_001__rag__observation_match__003,CASE_AKIEC_001,rag,observation_match,观察匹配陈述,用户描述的'持续不消退'符合光化性角化病作为癌前病变或表皮内癌的慢性过程,candidate_generated,1,DOC_0035,retrieved_text_document,光化性角化病是发生在日光损伤皮肤上的癌前性鳞屑性皮损。,DermNet - Actinic Keratosis,31.620616,0.169697,weak,0.25,0.166667,0.181818,False,False,False,False,False
+CASE_AKIEC_001__rag__observation_match__003,CASE_AKIEC_001,rag,observation_match,观察匹配陈述,用户描述的'持续不消退'符合光化性角化病作为癌前病变或表皮内癌的慢性过程,candidate_generated,2,DOC_0036,retrieved_text_document,光化性角化病可表现为白色或黄色、鳞屑性、疣状或角化性表面。,DermNet - Actinic Keratosis,36.467621,0.147202,weak,0.216667,0.151163,0.151515,False,False,False,False,False
+CASE_AKIEC_001__rag__observation_match__003,CASE_AKIEC_001,rag,observation_match,观察匹配陈述,用户描述的'持续不消退'符合光化性角化病作为癌前病变或表皮内癌的慢性过程,candidate_generated,3,DOC_0041,retrieved_text_document,光化性角化病常见于面部、耳部、手背等日光暴露部位。,DermNet - Actinic Keratosis,29.639002,0.119958,weak,0.166667,0.114943,0.151515,False,False,False,False,False
+CASE_AKIEC_001__rag__supporting_evidence__001,CASE_AKIEC_001,rag,supporting_evidence,支持性医学陈述,根据DOC_0035，光化性角化病是发生在日光损伤皮肤上的癌前性鳞屑性皮损,candidate_generated,1,DOC_0035,retrieved_text_document,光化性角化病是发生在日光损伤皮肤上的癌前性鳞屑性皮损。,DermNet - Actinic Keratosis,31.620616,0.948079,strong,0.918367,0.918367,0.735294,True,False,False,False,False
+CASE_AKIEC_001__rag__supporting_evidence__001,CASE_AKIEC_001,rag,supporting_evidence,支持性医学陈述,根据DOC_0035，光化性角化病是发生在日光损伤皮肤上的癌前性鳞屑性皮损,candidate_generated,2,DOC_0036,retrieved_text_document,光化性角化病可表现为白色或黄色、鳞屑性、疣状或角化性表面。,DermNet - Actinic Keratosis,36.467621,0.1933,weak,0.285714,0.189189,0.205882,False,False,False,False,False
+CASE_AKIEC_001__rag__supporting_evidence__001,CASE_AKIEC_001,rag,supporting_evidence,支持性医学陈述,根据DOC_0035，光化性角化病是发生在日光损伤皮肤上的癌前性鳞屑性皮损,candidate_generated,3,DOC_0041,retrieved_text_document,光化性角化病常见于面部、耳部、手背等日光暴露部位。,DermNet - Actinic Keratosis,29.639002,0.165686,weak,0.244898,0.162162,0.176471,False,False,False,False,False
+CASE_AKIEC_001__rag__supporting_evidence__002,CASE_AKIEC_001,rag,supporting_evidence,支持性医学陈述,根据DOC_0041，光化性角化病常见于面部、耳部、手背等日光暴露部位,candidate_generated,1,DOC_0041,retrieved_text_document,光化性角化病常见于面部、耳部、手背等日光暴露部位。,DermNet - Actinic Keratosis,29.639002,0.931463,strong,0.902439,0.902439,0.7,True,False,False,False,False
+CASE_AKIEC_001__rag__supporting_evidence__002,CASE_AKIEC_001,rag,supporting_evidence,支持性医学陈述,根据DOC_0041，光化性角化病常见于面部、耳部、手背等日光暴露部位,candidate_generated,2,DOC_0035,retrieved_text_document,光化性角化病是发生在日光损伤皮肤上的癌前性鳞屑性皮损。,DermNet - Actinic Keratosis,31.620616,0.189506,weak,0.292683,0.162162,0.2,False,False,False,False,False
+CASE_AKIEC_001__rag__supporting_evidence__002,CASE_AKIEC_001,rag,supporting_evidence,支持性医学陈述,根据DOC_0041，光化性角化病常见于面部、耳部、手背等日光暴露部位,candidate_generated,3,DOC_0036,retrieved_text_document,光化性角化病可表现为白色或黄色、鳞屑性、疣状或角化性表面。,DermNet - Actinic Keratosis,36.467621,0.172534,weak,0.268293,0.15942,0.166667,False,False,False,False,False
+CASE_AKIEC_001__rag__supporting_evidence__003,CASE_AKIEC_001,rag,supporting_evidence,支持性医学陈述,根据DOC_0036，光化性角化病可表现为白色或黄色、鳞屑性、疣状或角化性表面,candidate_generated,1,DOC_0036,retrieved_text_document,光化性角化病可表现为白色或黄色、鳞屑性、疣状或角化性表面。,DermNet - Actinic Keratosis,36.467621,0.937936,strong,0.906977,0.906977,0.71875,True,False,False,False,False
+CASE_AKIEC_001__rag__supporting_evidence__003,CASE_AKIEC_001,rag,supporting_evidence,支持性医学陈述,根据DOC_0036，光化性角化病可表现为白色或黄色、鳞屑性、疣状或角化性表面,candidate_generated,2,DOC_0037,retrieved_text_document,表皮内鳞状细胞癌可表现为橙红色或棕色的不规则鳞屑性斑块。,DermNet - Intraepidermal Squamous Cell Carcinoma,41.096667,0.227896,weak,0.372093,0.207792,0.1875,False,False,False,False,False
+CASE_AKIEC_001__rag__supporting_evidence__003,CASE_AKIEC_001,rag,supporting_evidence,支持性医学陈述,根据DOC_0036，光化性角化病可表现为白色或黄色、鳞屑性、疣状或角化性表面,candidate_generated,3,DOC_0035,retrieved_text_document,光化性角化病是发生在日光损伤皮肤上的癌前性鳞屑性皮损。,DermNet - Actinic Keratosis,31.620616,0.21182,weak,0.325581,0.189189,0.21875,False,False,False,False,False
+CASE_AKIEC_001__rag__supporting_evidence__004,CASE_AKIEC_001,rag,supporting_evidence,支持性医学陈述,根据DOC_0037和DOC_0038，表皮内鳞状细胞癌可表现为不规则鳞屑性斑块,candidate_generated,1,DOC_0037,retrieved_text_document,表皮内鳞状细胞癌可表现为橙红色或棕色的不规则鳞屑性斑块。,DermNet - Intraepidermal Squamous Cell Carcinoma,41.096667,0.827329,strong,0.837209,0.631579,0.580645,True,False,False,False,False
+CASE_AKIEC_001__rag__supporting_evidence__004,CASE_AKIEC_001,rag,supporting_evidence,支持性医学陈述,根据DOC_0037和DOC_0038，表皮内鳞状细胞癌可表现为不规则鳞屑性斑块,candidate_generated,2,DOC_0038,retrieved_text_document,表皮内鳞状细胞癌表现为一个或多个不规则鳞屑性斑块。,DermNet - Intraepidermal Squamous Cell Carcinoma,35.784902,0.782425,strong,0.767442,0.611111,0.516129,True,False,False,False,False
+CASE_AKIEC_001__rag__supporting_evidence__004,CASE_AKIEC_001,rag,supporting_evidence,支持性医学陈述,根据DOC_0037和DOC_0038，表皮内鳞状细胞癌可表现为不规则鳞屑性斑块,candidate_generated,3,DOC_0036,retrieved_text_document,光化性角化病可表现为白色或黄色、鳞屑性、疣状或角化性表面。,DermNet - Actinic Keratosis,36.467621,0.190869,weak,0.302326,0.188406,0.16129,False,False,False,False,False
+CASE_AKIEC_001__rag__differential_diagnosis__001,CASE_AKIEC_001,rag,differential_diagnosis,鉴别诊断陈述,需要与其他表现为鳞屑性斑块的疾病进行鉴别，如银屑病、脂溢性角化病或扁平苔藓,candidate_generated,1,DOC_0036,retrieved_text_document,光化性角化病可表现为白色或黄色、鳞屑性、疣状或角化性表面。,DermNet - Actinic Keratosis,36.467621,0.189113,weak,0.269841,0.2,0.205882,False,False,False,False,False
+CASE_AKIEC_001__rag__differential_diagnosis__001,CASE_AKIEC_001,rag,differential_diagnosis,鉴别诊断陈述,需要与其他表现为鳞屑性斑块的疾病进行鉴别，如银屑病、脂溢性角化病或扁平苔藓,candidate_generated,2,DOC_0037,retrieved_text_document,表皮内鳞状细胞癌可表现为橙红色或棕色的不规则鳞屑性斑块。,DermNet - Intraepidermal Squamous Cell Carcinoma,41.096667,0.169871,weak,0.253968,0.164948,0.176471,False,False,False,False,False
+CASE_AKIEC_001__rag__differential_diagnosis__001,CASE_AKIEC_001,rag,differential_diagnosis,鉴别诊断陈述,需要与其他表现为鳞屑性斑块的疾病进行鉴别，如银屑病、脂溢性角化病或扁平苔藓,candidate_generated,3,DOC_0038,retrieved_text_document,表皮内鳞状细胞癌表现为一个或多个不规则鳞屑性斑块。,DermNet - Intraepidermal Squamous Cell Carcinoma,35.784902,0.163141,weak,0.238095,0.163043,0.176471,False,False,False,False,False
+CASE_AKIEC_001__rag__differential_diagnosis__002,CASE_AKIEC_001,rag,differential_diagnosis,鉴别诊断陈述,需鉴别是否为侵袭性鳞状细胞癌，因为光化性角化病/表皮内癌属于癌前或早期阶段,candidate_generated,1,DOC_0035,retrieved_text_document,光化性角化病是发生在日光损伤皮肤上的癌前性鳞屑性皮损。,DermNet - Actinic Keratosis,31.620616,0.188632,weak,0.274194,0.188889,0.205882,False,False,False,False,False
+CASE_AKIEC_001__rag__differential_diagnosis__002,CASE_AKIEC_001,rag,differential_diagnosis,鉴别诊断陈述,需鉴别是否为侵袭性鳞状细胞癌，因为光化性角化病/表皮内癌属于癌前或早期阶段,candidate_generated,2,DOC_0038,retrieved_text_document,表皮内鳞状细胞癌表现为一个或多个不规则鳞屑性斑块。,DermNet - Intraepidermal Squamous Cell Carcinoma,35.784902,0.183174,weak,0.274194,0.191011,0.176471,False,False,False,False,False
+CASE_AKIEC_001__rag__differential_diagnosis__002,CASE_AKIEC_001,rag,differential_diagnosis,鉴别诊断陈述,需鉴别是否为侵袭性鳞状细胞癌，因为光化性角化病/表皮内癌属于癌前或早期阶段,candidate_generated,3,DOC_0037,retrieved_text_document,表皮内鳞状细胞癌可表现为橙红色或棕色的不规则鳞屑性斑块。,DermNet - Intraepidermal Squamous Cell Carcinoma,41.096667,0.180761,weak,0.274194,0.178947,0.176471,False,False,False,False,False
+CASE_AKIEC_001__rag__risk_warning__001,CASE_AKIEC_001,rag,risk_warning,风险医学陈述,光化性角化病被视为癌前病变，有发展为侵袭性鳞状细胞癌的风险,candidate_generated,1,DOC_0035,retrieved_text_document,光化性角化病是发生在日光损伤皮肤上的癌前性鳞屑性皮损。,DermNet - Actinic Keratosis,31.620616,0.234783,weak,0.346939,0.220779,0.259259,False,False,False,False,False
+CASE_AKIEC_001__rag__risk_warning__001,CASE_AKIEC_001,rag,risk_warning,风险医学陈述,光化性角化病被视为癌前病变，有发展为侵袭性鳞状细胞癌的风险,candidate_generated,2,DOC_0036,retrieved_text_document,光化性角化病可表现为白色或黄色、鳞屑性、疣状或角化性表面。,DermNet - Actinic Keratosis,36.467621,0.177826,weak,0.265306,0.173333,0.185185,False,False,False,False,False
+CASE_AKIEC_001__rag__risk_warning__001,CASE_AKIEC_001,rag,risk_warning,风险医学陈述,光化性角化病被视为癌前病变，有发展为侵袭性鳞状细胞癌的风险,candidate_generated,3,DOC_0037,retrieved_text_document,表皮内鳞状细胞癌可表现为橙红色或棕色的不规则鳞屑性斑块。,DermNet - Intraepidermal Squamous Cell Carcinoma,41.096667,0.155175,weak,0.244898,0.137931,0.148148,False,False,False,False,False
+CASE_AKIEC_001__rag__risk_warning__002,CASE_AKIEC_001,rag,risk_warning,风险医学陈述,长期日晒损伤是主要风险因素，需注意防晒以避免病情进展或新发皮损,candidate_generated,1,DOC_0035,retrieved_text_document,光化性角化病是发生在日光损伤皮肤上的癌前性鳞屑性皮损。,DermNet - Actinic Keratosis,31.620616,0.097644,weak,0.160714,0.097826,0.068966,False,False,False,False,False
+CASE_AKIEC_001__rag__risk_warning__002,CASE_AKIEC_001,rag,risk_warning,风险医学陈述,长期日晒损伤是主要风险因素，需注意防晒以避免病情进展或新发皮损,candidate_generated,2,DOC_0041,retrieved_text_document,光化性角化病常见于面部、耳部、手背等日光暴露部位。,DermNet - Actinic Keratosis,29.639002,0.018681,weak,0.035714,0.021978,0.0,False,False,False,False,False
+CASE_AKIEC_001__rag__risk_warning__002,CASE_AKIEC_001,rag,risk_warning,风险医学陈述,长期日晒损伤是主要风险因素，需注意防晒以避免病情进展或新发皮损,candidate_generated,3,DOC_0036,retrieved_text_document,光化性角化病可表现为白色或黄色、鳞屑性、疣状或角化性表面。,DermNet - Actinic Keratosis,36.467621,0.018587,weak,0.035714,0.021505,0.0,False,False,False,False,False
+CASE_AKIEC_001__rag__medical_advice__001,CASE_AKIEC_001,rag,medical_advice,医疗建议,建议前往皮肤科进行专业皮肤镜检查或活检以明确诊断,not_applicable,,,,,,,,,,,,,,,,
+CASE_AKIEC_001__rag__medical_advice__002,CASE_AKIEC_001,rag,medical_advice,医疗建议,建议记录皮损的大小、颜色变化及是否出现出血或溃疡,not_applicable,,,,,,,,,,,,,,,,
+CASE_AKIEC_001__rag__medical_advice__003,CASE_AKIEC_001,rag,medical_advice,医疗建议,建议咨询医生关于适当的防晒措施以保护受损皮肤,not_applicable,,,,,,,,,,,,,,,,
+CASE_AKIEC_001__rag__evidence_gap__001,CASE_AKIEC_001,rag,evidence_gap,证据缺口说明,检索文本未提供关于患者年龄、免疫状态或具体日晒历史的信息,not_applicable,,,,,,,,,,,,,,,,
+CASE_AKIEC_001__rag__evidence_gap__002,CASE_AKIEC_001,rag,evidence_gap,证据缺口说明,检索文本未包含确诊所需的组织病理学检查标准,not_applicable,,,,,,,,,,,,,,,,
+CASE_AKIEC_001__rag__evidence_gap__003,CASE_AKIEC_001,rag,evidence_gap,证据缺口说明,检索文本未提及具体的治疗选项或预后数据,not_applicable,,,,,,,,,,,,,,,,
+CASE_AKIEC_001__kg_rag__observation_match__001,CASE_AKIEC_001,kg_rag,observation_match,观察匹配陈述,用户观察到的'粗糙的红色鳞屑性斑片'与光化性角化病/表皮内癌的典型临床表现'粗糙鳞屑性斑片'及'红色或粉红色斑片/斑块'高度吻合。,candidate_generated,1,PATH_TRI_040,ranked_kg_evidence_path,"光化性角化病/表皮内癌 → 表现为 → 红色或粉红色斑片/斑块
+表皮内鳞状细胞癌可表现为橙红色或棕色的不规则鳞屑性斑块。",DermNet - Intraepidermal Squamous Cell Carcinoma,2.5,0.670353,strong,0.513158,0.378641,0.446809,False,False,True,True,False
+CASE_AKIEC_001__kg_rag__observation_match__001,CASE_AKIEC_001,kg_rag,observation_match,观察匹配陈述,用户观察到的'粗糙的红色鳞屑性斑片'与光化性角化病/表皮内癌的典型临床表现'粗糙鳞屑性斑片'及'红色或粉红色斑片/斑块'高度吻合。,candidate_generated,2,PATH_TRI_038,ranked_kg_evidence_path,"光化性角化病/表皮内癌 → 表现为 → 粗糙鳞屑性斑片
+光化性角化病是发生在日光损伤皮肤上的癌前性鳞屑性皮损。",DermNet - Actinic Keratosis,4.34,0.596884,strong,0.421053,0.301887,0.340426,False,False,True,True,False
+CASE_AKIEC_001__kg_rag__observation_match__001,CASE_AKIEC_001,kg_rag,observation_match,观察匹配陈述,用户观察到的'粗糙的红色鳞屑性斑片'与光化性角化病/表皮内癌的典型临床表现'粗糙鳞屑性斑片'及'红色或粉红色斑片/斑块'高度吻合。,candidate_generated,3,PATH_TRI_041,ranked_kg_evidence_path,"光化性角化病/表皮内癌 → 表现为 → 不规则鳞屑性斑块
+表皮内鳞状细胞癌表现为一个或多个不规则鳞屑性斑块。",DermNet - Intraepidermal Squamous Cell Carcinoma,2.5,0.561845,strong,0.368421,0.27451,0.297872,False,False,True,True,False
+CASE_AKIEC_001__kg_rag__observation_match__002,CASE_AKIEC_001,kg_rag,observation_match,观察匹配陈述,用户描述的'表面角化明显'与该疾病可能出现的'白色或黄色角化性表面'特征相符。,candidate_generated,1,PATH_TRI_039,ranked_kg_evidence_path,"光化性角化病/表皮内癌 → 表现为 → 白色或黄色角化性表面
+光化性角化病可表现为白色或黄色、鳞屑性、疣状或角化性表面。",DermNet - Actinic Keratosis,2.5,0.480212,moderate,0.4,0.278481,0.322581,False,False,True,False,False
+CASE_AKIEC_001__kg_rag__observation_match__002,CASE_AKIEC_001,kg_rag,observation_match,观察匹配陈述,用户描述的'表面角化明显'与该疾病可能出现的'白色或黄色角化性表面'特征相符。,candidate_generated,2,PATH_TRI_040,ranked_kg_evidence_path,"光化性角化病/表皮内癌 → 表现为 → 红色或粉红色斑片/斑块
+表皮内鳞状细胞癌可表现为橙红色或棕色的不规则鳞屑性斑块。",DermNet - Intraepidermal Squamous Cell Carcinoma,2.5,0.137974,weak,0.236364,0.12037,0.096774,False,False,False,False,False
+CASE_AKIEC_001__kg_rag__observation_match__002,CASE_AKIEC_001,kg_rag,observation_match,观察匹配陈述,用户描述的'表面角化明显'与该疾病可能出现的'白色或黄色角化性表面'特征相符。,candidate_generated,3,PATH_TRI_042,ranked_kg_evidence_path,"光化性角化病/表皮内癌 → 表现为 → 草莓样皮肤镜模式
+面部非色素性光化性角化病在皮肤镜下可表现为草莓样模式。",DermNet - Actinic Keratosis Dermoscopy,2.5,0.114903,weak,0.2,0.11,0.064516,False,False,False,False,False
+CASE_AKIEC_001__kg_rag__observation_match__003,CASE_AKIEC_001,kg_rag,observation_match,观察匹配陈述,病变位于'日晒部位'且'持续不消退'，符合该疾病由日光损伤引起且为慢性过程的病理背景。,candidate_generated,1,PATH_TRI_038,ranked_kg_evidence_path,"光化性角化病/表皮内癌 → 表现为 → 粗糙鳞屑性斑片
+光化性角化病是发生在日光损伤皮肤上的癌前性鳞屑性皮损。",DermNet - Actinic Keratosis,4.34,0.104547,weak,0.171875,0.095652,0.083333,False,False,False,False,False
+CASE_AKIEC_001__kg_rag__observation_match__003,CASE_AKIEC_001,kg_rag,observation_match,观察匹配陈述,病变位于'日晒部位'且'持续不消退'，符合该疾病由日光损伤引起且为慢性过程的病理背景。,candidate_generated,2,PATH_TRI_040,ranked_kg_evidence_path,"光化性角化病/表皮内癌 → 表现为 → 红色或粉红色斑片/斑块
+表皮内鳞状细胞癌可表现为橙红色或棕色的不规则鳞屑性斑块。",DermNet - Intraepidermal Squamous Cell Carcinoma,2.5,0.047177,weak,0.09375,0.048387,0.0,False,False,False,False,False
+CASE_AKIEC_001__kg_rag__observation_match__003,CASE_AKIEC_001,kg_rag,observation_match,观察匹配陈述,病变位于'日晒部位'且'持续不消退'，符合该疾病由日光损伤引起且为慢性过程的病理背景。,candidate_generated,3,PATH_TRI_041,ranked_kg_evidence_path,"光化性角化病/表皮内癌 → 表现为 → 不规则鳞屑性斑块
+表皮内鳞状细胞癌表现为一个或多个不规则鳞屑性斑块。",DermNet - Intraepidermal Squamous Cell Carcinoma,2.5,0.0401,weak,0.078125,0.044248,0.0,False,False,False,False,False
+CASE_AKIEC_001__kg_rag__supporting_evidence__001,CASE_AKIEC_001,kg_rag,supporting_evidence,支持性医学陈述,证据链 PATH_TRI_038 显示：光化性角化病是发生在日光损伤皮肤上的癌前性鳞屑性皮损，表现为粗糙鳞屑性斑片（来源：DermNet - Actinic Keratosis）。,candidate_generated,1,PATH_TRI_038,ranked_kg_evidence_path,"光化性角化病/表皮内癌 → 表现为 → 粗糙鳞屑性斑片
+光化性角化病是发生在日光损伤皮肤上的癌前性鳞屑性皮损。",DermNet - Actinic Keratosis,4.34,1.0,strong,0.783784,0.74359,0.450704,True,True,True,False,True
+CASE_AKIEC_001__kg_rag__supporting_evidence__001,CASE_AKIEC_001,kg_rag,supporting_evidence,支持性医学陈述,证据链 PATH_TRI_038 显示：光化性角化病是发生在日光损伤皮肤上的癌前性鳞屑性皮损，表现为粗糙鳞屑性斑片（来源：DermNet - Actinic Keratosis）。,candidate_generated,2,PATH_TRI_039,ranked_kg_evidence_path,"光化性角化病/表皮内癌 → 表现为 → 白色或黄色角化性表面
+光化性角化病可表现为白色或黄色、鳞屑性、疣状或角化性表面。",DermNet - Actinic Keratosis,2.5,0.33129,moderate,0.283784,0.212121,0.126761,False,True,False,False,True
+CASE_AKIEC_001__kg_rag__supporting_evidence__001,CASE_AKIEC_001,kg_rag,supporting_evidence,支持性医学陈述,证据链 PATH_TRI_038 显示：光化性角化病是发生在日光损伤皮肤上的癌前性鳞屑性皮损，表现为粗糙鳞屑性斑片（来源：DermNet - Actinic Keratosis）。,candidate_generated,3,PATH_TRI_040,ranked_kg_evidence_path,"光化性角化病/表皮内癌 → 表现为 → 红色或粉红色斑片/斑块
+表皮内鳞状细胞癌可表现为橙红色或棕色的不规则鳞屑性斑块。",DermNet - Intraepidermal Squamous Cell Carcinoma,2.5,0.26714,weak,0.351351,0.22807,0.15493,False,False,False,False,True
+CASE_AKIEC_001__kg_rag__supporting_evidence__002,CASE_AKIEC_001,kg_rag,supporting_evidence,支持性医学陈述,证据链 PATH_TRI_040 显示：表皮内鳞状细胞癌可表现为橙红色或棕色的不规则鳞屑性斑块（来源：DermNet - Intraepidermal Squamous Cell Carcinoma）。,candidate_generated,1,PATH_TRI_040,ranked_kg_evidence_path,"光化性角化病/表皮内癌 → 表现为 → 红色或粉红色斑片/斑块
+表皮内鳞状细胞癌可表现为橙红色或棕色的不规则鳞屑性斑块。",DermNet - Intraepidermal Squamous Cell Carcinoma,2.5,0.884812,strong,0.746269,0.60241,0.329114,True,True,False,False,True
+CASE_AKIEC_001__kg_rag__supporting_evidence__002,CASE_AKIEC_001,kg_rag,supporting_evidence,支持性医学陈述,证据链 PATH_TRI_040 显示：表皮内鳞状细胞癌可表现为橙红色或棕色的不规则鳞屑性斑块（来源：DermNet - Intraepidermal Squamous Cell Carcinoma）。,candidate_generated,2,PATH_TRI_041,ranked_kg_evidence_path,"光化性角化病/表皮内癌 → 表现为 → 不规则鳞屑性斑块
+表皮内鳞状细胞癌表现为一个或多个不规则鳞屑性斑块。",DermNet - Intraepidermal Squamous Cell Carcinoma,2.5,0.671652,strong,0.507463,0.390805,0.202532,False,True,True,False,True
+CASE_AKIEC_001__kg_rag__supporting_evidence__002,CASE_AKIEC_001,kg_rag,supporting_evidence,支持性医学陈述,证据链 PATH_TRI_040 显示：表皮内鳞状细胞癌可表现为橙红色或棕色的不规则鳞屑性斑块（来源：DermNet - Intraepidermal Squamous Cell Carcinoma）。,candidate_generated,3,PATH_TRI_039,ranked_kg_evidence_path,"光化性角化病/表皮内癌 → 表现为 → 白色或黄色角化性表面
+光化性角化病可表现为白色或黄色、鳞屑性、疣状或角化性表面。",DermNet - Actinic Keratosis,2.5,0.241278,weak,0.313433,0.228261,0.101266,False,False,False,False,True
+CASE_AKIEC_001__kg_rag__supporting_evidence__003,CASE_AKIEC_001,kg_rag,supporting_evidence,支持性医学陈述,证据链 PATH_TRI_039 显示：光化性角化病可表现为白色或黄色、鳞屑性、疣状或角化性表面（来源：DermNet - Actinic Keratosis）。,candidate_generated,1,PATH_TRI_039,ranked_kg_evidence_path,"光化性角化病/表皮内癌 → 表现为 → 白色或黄色角化性表面
+光化性角化病可表现为白色或黄色、鳞屑性、疣状或角化性表面。",DermNet - Actinic Keratosis,2.5,0.892168,strong,0.722222,0.639344,0.377049,True,True,False,False,True
+CASE_AKIEC_001__kg_rag__supporting_evidence__003,CASE_AKIEC_001,kg_rag,supporting_evidence,支持性医学陈述,证据链 PATH_TRI_039 显示：光化性角化病可表现为白色或黄色、鳞屑性、疣状或角化性表面（来源：DermNet - Actinic Keratosis）。,candidate_generated,2,PATH_TRI_038,ranked_kg_evidence_path,"光化性角化病/表皮内癌 → 表现为 → 粗糙鳞屑性斑片
+光化性角化病是发生在日光损伤皮肤上的癌前性鳞屑性皮损。",DermNet - Actinic Keratosis,4.34,0.359424,moderate,0.351852,0.195876,0.147541,False,True,False,False,True
+CASE_AKIEC_001__kg_rag__supporting_evidence__003,CASE_AKIEC_001,kg_rag,supporting_evidence,支持性医学陈述,证据链 PATH_TRI_039 显示：光化性角化病可表现为白色或黄色、鳞屑性、疣状或角化性表面（来源：DermNet - Actinic Keratosis）。,candidate_generated,3,PATH_TRI_040,ranked_kg_evidence_path,"光化性角化病/表皮内癌 → 表现为 → 红色或粉红色斑片/斑块
+表皮内鳞状细胞癌可表现为橙红色或棕色的不规则鳞屑性斑块。",DermNet - Intraepidermal Squamous Cell Carcinoma,2.5,0.323882,moderate,0.462963,0.263158,0.180328,False,False,False,False,True
+CASE_AKIEC_001__kg_rag__differential_diagnosis__001,CASE_AKIEC_001,kg_rag,differential_diagnosis,鉴别诊断陈述,需与其他表现为红斑鳞屑的疾病进行鉴别，如银屑病、脂溢性角化病、盘状红斑狼疮或浅表性基底细胞癌。,candidate_generated,1,PATH_TRI_040,ranked_kg_evidence_path,"光化性角化病/表皮内癌 → 表现为 → 红色或粉红色斑片/斑块
+表皮内鳞状细胞癌可表现为橙红色或棕色的不规则鳞屑性斑块。",DermNet - Intraepidermal Squamous Cell Carcinoma,2.5,0.272516,weak,0.337838,0.217391,0.219512,False,False,False,False,True
+CASE_AKIEC_001__kg_rag__differential_diagnosis__001,CASE_AKIEC_001,kg_rag,differential_diagnosis,鉴别诊断陈述,需与其他表现为红斑鳞屑的疾病进行鉴别，如银屑病、脂溢性角化病、盘状红斑狼疮或浅表性基底细胞癌。,candidate_generated,2,PATH_TRI_041,ranked_kg_evidence_path,"光化性角化病/表皮内癌 → 表现为 → 不规则鳞屑性斑块
+表皮内鳞状细胞癌表现为一个或多个不规则鳞屑性斑块。",DermNet - Intraepidermal Squamous Cell Carcinoma,2.5,0.257158,weak,0.310811,0.219048,0.195122,False,False,False,False,True
+CASE_AKIEC_001__kg_rag__differential_diagnosis__001,CASE_AKIEC_001,kg_rag,differential_diagnosis,鉴别诊断陈述,需与其他表现为红斑鳞屑的疾病进行鉴别，如银屑病、脂溢性角化病、盘状红斑狼疮或浅表性基底细胞癌。,candidate_generated,3,PATH_TRI_039,ranked_kg_evidence_path,"光化性角化病/表皮内癌 → 表现为 → 白色或黄色角化性表面
+光化性角化病可表现为白色或黄色、鳞屑性、疣状或角化性表面。",DermNet - Actinic Keratosis,2.5,0.21186,weak,0.243243,0.176471,0.146341,False,False,False,False,True
+CASE_AKIEC_001__kg_rag__differential_diagnosis__002,CASE_AKIEC_001,kg_rag,differential_diagnosis,鉴别诊断陈述,需排除接触性皮炎或其他炎症性皮肤病引起的继发性角化。,candidate_generated,1,PATH_TRI_038,ranked_kg_evidence_path,"光化性角化病/表皮内癌 → 表现为 → 粗糙鳞屑性斑片
+光化性角化病是发生在日光损伤皮肤上的癌前性鳞屑性皮损。",DermNet - Actinic Keratosis,4.34,0.169405,weak,0.272727,0.12766,0.173913,False,False,False,False,False
+CASE_AKIEC_001__kg_rag__differential_diagnosis__002,CASE_AKIEC_001,kg_rag,differential_diagnosis,鉴别诊断陈述,需排除接触性皮炎或其他炎症性皮肤病引起的继发性角化。,candidate_generated,2,PATH_TRI_042,ranked_kg_evidence_path,"光化性角化病/表皮内癌 → 表现为 → 草莓样皮肤镜模式
+面部非色素性光化性角化病在皮肤镜下可表现为草莓样模式。",DermNet - Actinic Keratosis Dermoscopy,2.5,0.127685,weak,0.204545,0.098901,0.130435,False,False,False,False,False
+CASE_AKIEC_001__kg_rag__differential_diagnosis__002,CASE_AKIEC_001,kg_rag,differential_diagnosis,鉴别诊断陈述,需排除接触性皮炎或其他炎症性皮肤病引起的继发性角化。,candidate_generated,3,PATH_TRI_040,ranked_kg_evidence_path,"光化性角化病/表皮内癌 → 表现为 → 红色或粉红色斑片/斑块
+表皮内鳞状细胞癌可表现为橙红色或棕色的不规则鳞屑性斑块。",DermNet - Intraepidermal Squamous Cell Carcinoma,2.5,0.117031,weak,0.204545,0.089109,0.086957,False,False,False,False,False
+CASE_AKIEC_001__kg_rag__risk_warning__001,CASE_AKIEC_001,kg_rag,risk_warning,风险医学陈述,光化性角化病被视为鳞状细胞癌的癌前病变，存在进展为浸润性鳞状细胞癌的风险。,candidate_generated,1,PATH_TRI_040,ranked_kg_evidence_path,"光化性角化病/表皮内癌 → 表现为 → 红色或粉红色斑片/斑块
+表皮内鳞状细胞癌可表现为橙红色或棕色的不规则鳞屑性斑块。",DermNet - Intraepidermal Squamous Cell Carcinoma,2.5,0.266906,weak,0.403846,0.216495,0.310345,False,False,False,False,False
+CASE_AKIEC_001__kg_rag__risk_warning__001,CASE_AKIEC_001,kg_rag,risk_warning,风险医学陈述,光化性角化病被视为鳞状细胞癌的癌前病变，存在进展为浸润性鳞状细胞癌的风险。,candidate_generated,2,PATH_TRI_041,ranked_kg_evidence_path,"光化性角化病/表皮内癌 → 表现为 → 不规则鳞屑性斑块
+表皮内鳞状细胞癌表现为一个或多个不规则鳞屑性斑块。",DermNet - Intraepidermal Squamous Cell Carcinoma,2.5,0.262427,weak,0.384615,0.232558,0.310345,False,False,False,False,False
+CASE_AKIEC_001__kg_rag__risk_warning__001,CASE_AKIEC_001,kg_rag,risk_warning,风险医学陈述,光化性角化病被视为鳞状细胞癌的癌前病变，存在进展为浸润性鳞状细胞癌的风险。,candidate_generated,3,PATH_TRI_038,ranked_kg_evidence_path,"光化性角化病/表皮内癌 → 表现为 → 粗糙鳞屑性斑片
+光化性角化病是发生在日光损伤皮肤上的癌前性鳞屑性皮损。",DermNet - Actinic Keratosis,4.34,0.241326,weak,0.365385,0.2,0.275862,False,False,False,False,False
+CASE_AKIEC_001__kg_rag__risk_warning__002,CASE_AKIEC_001,kg_rag,risk_warning,风险医学陈述,表皮内癌（原位鳞状细胞癌）若不及时干预，可能发展为侵袭性癌症。,candidate_generated,1,PATH_TRI_040,ranked_kg_evidence_path,"光化性角化病/表皮内癌 → 表现为 → 红色或粉红色斑片/斑块
+表皮内鳞状细胞癌可表现为橙红色或棕色的不规则鳞屑性斑块。",DermNet - Intraepidermal Squamous Cell Carcinoma,2.5,0.252179,weak,0.395833,0.2,0.269231,False,False,False,False,False
+CASE_AKIEC_001__kg_rag__risk_warning__002,CASE_AKIEC_001,kg_rag,risk_warning,风险医学陈述,表皮内癌（原位鳞状细胞癌）若不及时干预，可能发展为侵袭性癌症。,candidate_generated,2,PATH_TRI_041,ranked_kg_evidence_path,"光化性角化病/表皮内癌 → 表现为 → 不规则鳞屑性斑块
+表皮内鳞状细胞癌表现为一个或多个不规则鳞屑性斑块。",DermNet - Intraepidermal Squamous Cell Carcinoma,2.5,0.246703,weak,0.375,0.214286,0.269231,False,False,False,False,False
+CASE_AKIEC_001__kg_rag__risk_warning__002,CASE_AKIEC_001,kg_rag,risk_warning,风险医学陈述,表皮内癌（原位鳞状细胞癌）若不及时干预，可能发展为侵袭性癌症。,candidate_generated,3,PATH_TRI_039,ranked_kg_evidence_path,"光化性角化病/表皮内癌 → 表现为 → 白色或黄色角化性表面
+光化性角化病可表现为白色或黄色、鳞屑性、疣状或角化性表面。",DermNet - Actinic Keratosis,2.5,0.152345,weak,0.25,0.146341,0.115385,False,False,False,False,False
+CASE_AKIEC_001__kg_rag__risk_warning__003,CASE_AKIEC_001,kg_rag,risk_warning,风险医学陈述,长期日晒是主要风险因素，提示皮肤已受到累积性光损伤。,candidate_generated,1,PATH_TRI_038,ranked_kg_evidence_path,"光化性角化病/表皮内癌 → 表现为 → 粗糙鳞屑性斑片
+光化性角化病是发生在日光损伤皮肤上的癌前性鳞屑性皮损。",DermNet - Actinic Keratosis,4.34,0.14442,weak,0.23913,0.113402,0.130435,False,False,False,False,False
+CASE_AKIEC_001__kg_rag__risk_warning__003,CASE_AKIEC_001,kg_rag,risk_warning,风险医学陈述,长期日晒是主要风险因素，提示皮肤已受到累积性光损伤。,candidate_generated,2,PATH_TRI_042,ranked_kg_evidence_path,"光化性角化病/表皮内癌 → 表现为 → 草莓样皮肤镜模式
+面部非色素性光化性角化病在皮肤镜下可表现为草莓样模式。",DermNet - Actinic Keratosis Dermoscopy,2.5,0.092998,weak,0.152174,0.073684,0.086957,False,False,False,False,False
+CASE_AKIEC_001__kg_rag__risk_warning__003,CASE_AKIEC_001,kg_rag,risk_warning,风险医学陈述,长期日晒是主要风险因素，提示皮肤已受到累积性光损伤。,candidate_generated,3,PATH_TRI_039,ranked_kg_evidence_path,"光化性角化病/表皮内癌 → 表现为 → 白色或黄色角化性表面
+光化性角化病可表现为白色或黄色、鳞屑性、疣状或角化性表面。",DermNet - Actinic Keratosis,2.5,0.032829,weak,0.065217,0.033708,0.0,False,False,False,False,False
+CASE_AKIEC_001__kg_rag__medical_advice__001,CASE_AKIEC_001,kg_rag,medical_advice,医疗建议,建议前往皮肤科就诊，由专业医生进行肉眼检查及皮肤镜检查以评估病变性质。,not_applicable,,,,,,,,,,,,,,,,
+CASE_AKIEC_001__kg_rag__medical_advice__002,CASE_AKIEC_001,kg_rag,medical_advice,医疗建议,如有必要，医生可能会建议进行皮肤活检以明确病理诊断，区分是光化性角化病还是表皮内癌。,not_applicable,,,,,,,,,,,,,,,,
+CASE_AKIEC_001__kg_rag__medical_advice__003,CASE_AKIEC_001,kg_rag,medical_advice,医疗建议,在确诊前，注意防晒，避免病变部位受到进一步的紫外线伤害。,not_applicable,,,,,,,,,,,,,,,,
+CASE_AKIEC_001__kg_rag__medical_advice__004,CASE_AKIEC_001,kg_rag,medical_advice,医疗建议,记录病变的大小、颜色变化及是否有出血、溃疡等情况，以便就医时提供详细病史。,not_applicable,,,,,,,,,,,,,,,,
+CASE_AKIEC_001__kg_rag__evidence_gap__001,CASE_AKIEC_001,kg_rag,evidence_gap,证据缺口说明,缺乏具体的皮肤病理学检查结果，无法从组织学层面确认是否存在异型角质形成细胞。,not_applicable,,,,,,,,,,,,,,,,
+CASE_AKIEC_001__kg_rag__evidence_gap__002,CASE_AKIEC_001,kg_rag,evidence_gap,证据缺口说明,未提供患者的年龄、免疫状态、既往皮肤癌病史或具体的日晒史细节。,not_applicable,,,,,,,,,,,,,,,,
+CASE_AKIEC_001__kg_rag__evidence_gap__003,CASE_AKIEC_001,kg_rag,evidence_gap,证据缺口说明,未提供皮肤镜下的具体图像或描述（如是否出现草莓样模式），仅凭肉眼观察难以完全排除其他相似病变。,not_applicable,,,,,,,,,,,,,,,,
+CASE_AKIEC_001__kg_rag__evidence_gap__004,CASE_AKIEC_001,kg_rag,evidence_gap,证据缺口说明,未说明病变的具体持续时间（仅知'持续不消退'），以及是否有疼痛、瘙痒或触痛等症状。,not_applicable,,,,,,,,,,,,,,,,
+CASE_BKL_001__llm__observation_match__001,CASE_BKL_001,llm,observation_match,观察匹配陈述,用户描述的'边界清楚的棕褐色隆起性斑块'符合良性角化性病变（如脂溢性角化病）的典型颜色与形态特征。,no_external_evidence,,,,,,,,,,,,,,,,
+CASE_BKL_001__llm__observation_match__002,CASE_BKL_001,llm,observation_match,观察匹配陈述,'表面粗糙'对应此类病变常见的角化过度或疣状表面表现。,no_external_evidence,,,,,,,,,,,,,,,,
+CASE_BKL_001__llm__observation_match__003,CASE_BKL_001,llm,observation_match,观察匹配陈述,'外观像贴在皮肤上一样'是脂溢性角化病极具特征性的临床描述，提示病变位于表皮且界限分明。,no_external_evidence,,,,,,,,,,,,,,,,
+CASE_BKL_001__llm__observation_match__004,CASE_BKL_001,llm,observation_match,观察匹配陈述,发病部位在'躯干部'，这是良性角化性病变的好发区域之一。,no_external_evidence,,,,,,,,,,,,,,,,
+CASE_BKL_001__llm__supporting_evidence__001,CASE_BKL_001,llm,supporting_evidence,支持性医学陈述,根据一般医学知识，脂溢性角化病是一种常见的良性表皮肿瘤，多见于中老年人，常表现为躯干、面部或四肢的褐色、黑色或肤色斑块。,no_external_evidence,,,,,,,,,,,,,,,,
+CASE_BKL_001__llm__supporting_evidence__002,CASE_BKL_001,llm,supporting_evidence,支持性医学陈述,此类病变通常生长缓慢，表面可呈蜡样、疣状或粗糙不平，基底常呈现'贴附'于皮肤的外观，一般无自觉症状或仅有轻微瘙痒。,no_external_evidence,,,,,,,,,,,,,,,,
+CASE_BKL_001__llm__supporting_evidence__003,CASE_BKL_001,llm,supporting_evidence,支持性医学陈述,良性角化性病变通常不具有侵袭性，不会发生远处转移，多数情况下无需特殊治疗，除非出于美容需求或受到摩擦刺激。,no_external_evidence,,,,,,,,,,,,,,,,
+CASE_BKL_001__llm__differential_diagnosis__001,CASE_BKL_001,llm,differential_diagnosis,鉴别诊断陈述,色素痣：通常表面光滑，边界规则，但需通过皮肤镜鉴别。,no_external_evidence,,,,,,,,,,,,,,,,
+CASE_BKL_001__llm__differential_diagnosis__002,CASE_BKL_001,llm,differential_diagnosis,鉴别诊断陈述,黑色素瘤：恶性皮肤肿瘤，可能表现为颜色不均、边界不规则、快速变化的皮损，需严格排除。,no_external_evidence,,,,,,,,,,,,,,,,
+CASE_BKL_001__llm__differential_diagnosis__003,CASE_BKL_001,llm,differential_diagnosis,鉴别诊断陈述,扁平疣：由HPV感染引起，多见于面部和手背，表面扁平光滑，与本例粗糙外观略有不同。,no_external_evidence,,,,,,,,,,,,,,,,
+CASE_BKL_001__llm__differential_diagnosis__004,CASE_BKL_001,llm,differential_diagnosis,鉴别诊断陈述,日光性角化病：癌前病变，多见于曝光部位，表面常有鳞屑，基底可能有红斑。,no_external_evidence,,,,,,,,,,,,,,,,
+CASE_BKL_001__llm__risk_warning__001,CASE_BKL_001,llm,risk_warning,风险医学陈述,虽然描述特征倾向于良性，但任何新出现或发生变化的色素性皮损都应由专业医生评估以排除恶性可能。,no_external_evidence,,,,,,,,,,,,,,,,
+CASE_BKL_001__llm__risk_warning__002,CASE_BKL_001,llm,risk_warning,风险医学陈述,若皮损出现快速增大、出血、溃疡、疼痛或颜色突然改变，应立即就医。,no_external_evidence,,,,,,,,,,,,,,,,
+CASE_BKL_001__llm__risk_warning__003,CASE_BKL_001,llm,risk_warning,风险医学陈述,切勿自行抠抓、切割或使用腐蚀性物质处理皮损，以免引起感染或掩盖病情。,no_external_evidence,,,,,,,,,,,,,,,,
+CASE_BKL_001__llm__medical_advice__001,CASE_BKL_001,llm,medical_advice,医疗建议,建议前往皮肤科进行面诊，医生可通过肉眼观察或皮肤镜检查进一步确认诊断。,not_applicable,,,,,,,,,,,,,,,,
+CASE_BKL_001__llm__medical_advice__002,CASE_BKL_001,llm,medical_advice,医疗建议,记录皮损的大小、颜色变化及出现时间，以便就诊时提供详细病史。,not_applicable,,,,,,,,,,,,,,,,
+CASE_BKL_001__llm__medical_advice__003,CASE_BKL_001,llm,medical_advice,医疗建议,若确诊为良性且无症状，通常只需定期观察；若有美观需求或摩擦不适，可咨询医生关于冷冻、激光或手术切除等非处方性治疗选项。,not_applicable,,,,,,,,,,,,,,,,
+CASE_BKL_001__llm__evidence_gap__001,CASE_BKL_001,llm,evidence_gap,证据缺口说明,本方法没有接入外部可追溯证据，所有解释基于模型内部的一般医学知识库。,not_applicable,,,,,,,,,,,,,,,,
+CASE_BKL_001__llm__evidence_gap__002,CASE_BKL_001,llm,evidence_gap,证据缺口说明,缺乏患者的年龄、性别、既往皮肤病史及家族史信息，这些因素影响疾病概率评估。,not_applicable,,,,,,,,,,,,,,,,
+CASE_BKL_001__llm__evidence_gap__003,CASE_BKL_001,llm,evidence_gap,证据缺口说明,缺乏皮肤镜检查结果或组织病理学检查报告，无法从微观结构上确诊。,not_applicable,,,,,,,,,,,,,,,,
+CASE_BKL_001__llm__evidence_gap__004,CASE_BKL_001,llm,evidence_gap,证据缺口说明,未提供皮损的具体大小、数量、持续时间及是否有瘙痒或疼痛等主观症状。,not_applicable,,,,,,,,,,,,,,,,
+CASE_BKL_001__llm__evidence_gap__005,CASE_BKL_001,llm,evidence_gap,证据缺口说明,纯 LLM 基线未接入外部检索证据，回答中的医学内容不具备本次运行级别的来源追溯能力。,not_applicable,,,,,,,,,,,,,,,,
+CASE_BKL_001__rag__observation_match__001,CASE_BKL_001,rag,observation_match,观察匹配陈述,用户描述的‘外观像贴在皮肤上一样’与脂溢性角化病的典型临床特征高度吻合,candidate_generated,1,DOC_0051,retrieved_text_document,脂溢性角化病常呈贴附在皮肤表面的外观。,DermNet - Seborrhoeic Keratosis,39.523461,0.246997,weak,0.33871,0.276316,0.28125,False,False,False,False,False
+CASE_BKL_001__rag__observation_match__001,CASE_BKL_001,rag,observation_match,观察匹配陈述,用户描述的‘外观像贴在皮肤上一样’与脂溢性角化病的典型临床特征高度吻合,candidate_generated,2,DOC_0039,retrieved_text_document,面部非色素性光化性角化病在皮肤镜下可表现为草莓样模式。,DermNet - Actinic Keratosis Dermoscopy,24.354113,0.141652,weak,0.209677,0.132653,0.15625,False,False,False,False,False
+CASE_BKL_001__rag__observation_match__001,CASE_BKL_001,rag,observation_match,观察匹配陈述,用户描述的‘外观像贴在皮肤上一样’与脂溢性角化病的典型临床特征高度吻合,candidate_generated,3,DOC_0055,retrieved_text_document,扁平苔藓样角化病可表现为小的炎性斑疹或薄的色素性斑块。,DermNet - Lichenoid Keratosis,26.116642,0.079954,weak,0.129032,0.079208,0.0625,False,False,False,False,False
+CASE_BKL_001__rag__observation_match__002,CASE_BKL_001,rag,observation_match,观察匹配陈述,用户描述的‘边界清楚’符合良性色素性皮损的一般特征,candidate_generated,1,DOC_0014,retrieved_text_document,良性色素性皮损通常表现为较规则、较清楚的边界。,DermNet - Benign Melanocytic Lesions,37.481171,0.330517,moderate,0.463415,0.316667,0.409091,False,False,False,False,False
+CASE_BKL_001__rag__observation_match__002,CASE_BKL_001,rag,observation_match,观察匹配陈述,用户描述的‘边界清楚’符合良性色素性皮损的一般特征,candidate_generated,2,DOC_0084,retrieved_text_document,HAM10000 中血管瘤类皮损在皮肤镜下可表现为红色或紫色、实性且边界清楚的 red clods 或 lacunes。,HAM10000 Scientific Data,36.227731,0.193425,weak,0.317073,0.151163,0.181818,False,False,False,False,False
+CASE_BKL_001__rag__observation_match__002,CASE_BKL_001,rag,observation_match,观察匹配陈述,用户描述的‘边界清楚’符合良性色素性皮损的一般特征,candidate_generated,3,DOC_0055,retrieved_text_document,扁平苔藓样角化病可表现为小的炎性斑疹或薄的色素性斑块。,DermNet - Lichenoid Keratosis,26.116642,0.091353,weak,0.146341,0.073171,0.090909,False,False,False,False,False
+CASE_BKL_001__rag__supporting_evidence__001,CASE_BKL_001,rag,supporting_evidence,支持性医学陈述,根据检索到的证据，脂溢性角化病常呈贴附在皮肤表面的外观（来源：DOC_0051）,candidate_generated,1,DOC_0051,retrieved_text_document,脂溢性角化病常呈贴附在皮肤表面的外观。,DermNet - Seborrhoeic Keratosis,39.523461,0.753846,strong,0.673077,0.673077,0.5,True,False,False,False,False
+CASE_BKL_001__rag__supporting_evidence__001,CASE_BKL_001,rag,supporting_evidence,支持性医学陈述,根据检索到的证据，脂溢性角化病常呈贴附在皮肤表面的外观（来源：DOC_0051）,candidate_generated,2,DOC_0039,retrieved_text_document,面部非色素性光化性角化病在皮肤镜下可表现为草莓样模式。,DermNet - Actinic Keratosis Dermoscopy,24.354113,0.169288,weak,0.269231,0.16092,0.147059,False,False,False,False,False
+CASE_BKL_001__rag__supporting_evidence__001,CASE_BKL_001,rag,supporting_evidence,支持性医学陈述,根据检索到的证据，脂溢性角化病常呈贴附在皮肤表面的外观（来源：DOC_0051）,candidate_generated,3,DOC_0084,retrieved_text_document,HAM10000 中血管瘤类皮损在皮肤镜下可表现为红色或紫色、实性且边界清楚的 red clods 或 lacunes。,HAM10000 Scientific Data,36.227731,0.094872,weak,0.153846,0.078431,0.088235,False,False,False,False,False
+CASE_BKL_001__rag__supporting_evidence__002,CASE_BKL_001,rag,supporting_evidence,支持性医学陈述,良性色素性皮损通常表现为较规则、较清楚的边界（来源：DOC_0014）,candidate_generated,1,DOC_0014,retrieved_text_document,良性色素性皮损通常表现为较规则、较清楚的边界。,DermNet - Benign Melanocytic Lesions,37.481171,0.930788,strong,0.904762,0.904762,0.689655,True,False,False,False,False
+CASE_BKL_001__rag__supporting_evidence__002,CASE_BKL_001,rag,supporting_evidence,支持性医学陈述,良性色素性皮损通常表现为较规则、较清楚的边界（来源：DOC_0014）,candidate_generated,2,DOC_0084,retrieved_text_document,HAM10000 中血管瘤类皮损在皮肤镜下可表现为红色或紫色、实性且边界清楚的 red clods 或 lacunes。,HAM10000 Scientific Data,36.227731,0.263607,weak,0.428571,0.219512,0.241379,False,False,False,False,False
+CASE_BKL_001__rag__supporting_evidence__002,CASE_BKL_001,rag,supporting_evidence,支持性医学陈述,良性色素性皮损通常表现为较规则、较清楚的边界（来源：DOC_0014）,candidate_generated,3,DOC_0055,retrieved_text_document,扁平苔藓样角化病可表现为小的炎性斑疹或薄的色素性斑块。,DermNet - Lichenoid Keratosis,26.116642,0.160553,weak,0.261905,0.141026,0.137931,False,False,False,False,False
+CASE_BKL_001__rag__differential_diagnosis__001,CASE_BKL_001,rag,differential_diagnosis,鉴别诊断陈述,扁平苔藓样角化病：可表现为小的炎性斑疹或薄的色素性斑块（来源：DOC_0055）,candidate_generated,1,DOC_0055,retrieved_text_document,扁平苔藓样角化病可表现为小的炎性斑疹或薄的色素性斑块。,DermNet - Lichenoid Keratosis,26.116642,0.943847,strong,0.92,0.901961,0.727273,True,False,False,False,False
+CASE_BKL_001__rag__differential_diagnosis__001,CASE_BKL_001,rag,differential_diagnosis,鉴别诊断陈述,扁平苔藓样角化病：可表现为小的炎性斑疹或薄的色素性斑块（来源：DOC_0055）,candidate_generated,2,DOC_0039,retrieved_text_document,面部非色素性光化性角化病在皮肤镜下可表现为草莓样模式。,DermNet - Actinic Keratosis Dermoscopy,24.354113,0.230869,weak,0.36,0.222222,0.212121,False,False,False,False,False
+CASE_BKL_001__rag__differential_diagnosis__001,CASE_BKL_001,rag,differential_diagnosis,鉴别诊断陈述,扁平苔藓样角化病：可表现为小的炎性斑疹或薄的色素性斑块（来源：DOC_0055）,candidate_generated,3,DOC_0014,retrieved_text_document,良性色素性皮损通常表现为较规则、较清楚的边界。,DermNet - Benign Melanocytic Lesions,37.481171,0.140814,weak,0.22,0.142857,0.121212,False,False,False,False,False
+CASE_BKL_001__rag__differential_diagnosis__002,CASE_BKL_001,rag,differential_diagnosis,鉴别诊断陈述,光化性角化病：虽常见于面部且表现为草莓样模式，但作为角化性病变需纳入鉴别（来源：DOC_0039）,candidate_generated,1,DOC_0039,retrieved_text_document,面部非色素性光化性角化病在皮肤镜下可表现为草莓样模式。,DermNet - Actinic Keratosis Dermoscopy,24.354113,0.566899,strong,0.459016,0.341463,0.325,True,False,False,False,False
+CASE_BKL_001__rag__differential_diagnosis__002,CASE_BKL_001,rag,differential_diagnosis,鉴别诊断陈述,光化性角化病：虽常见于面部且表现为草莓样模式，但作为角化性病变需纳入鉴别（来源：DOC_0039）,candidate_generated,2,DOC_0055,retrieved_text_document,扁平苔藓样角化病可表现为小的炎性斑疹或薄的色素性斑块。,DermNet - Lichenoid Keratosis,26.116642,0.123689,weak,0.196721,0.125,0.1,False,False,False,False,False
+CASE_BKL_001__rag__differential_diagnosis__002,CASE_BKL_001,rag,differential_diagnosis,鉴别诊断陈述,光化性角化病：虽常见于面部且表现为草莓样模式，但作为角化性病变需纳入鉴别（来源：DOC_0039）,candidate_generated,3,DOC_0051,retrieved_text_document,脂溢性角化病常呈贴附在皮肤表面的外观。,DermNet - Seborrhoeic Keratosis,39.523461,0.10383,weak,0.163934,0.116279,0.075,False,False,False,False,False
+CASE_BKL_001__rag__risk_warning__001,CASE_BKL_001,rag,risk_warning,风险医学陈述,虽然临床表现倾向于良性，但任何新发或变化的色素性皮损均需排除恶性可能,candidate_generated,1,DOC_0014,retrieved_text_document,良性色素性皮损通常表现为较规则、较清楚的边界。,DermNet - Benign Melanocytic Lesions,37.481171,0.169568,weak,0.241935,0.176471,0.1875,False,False,False,False,False
+CASE_BKL_001__rag__risk_warning__001,CASE_BKL_001,rag,risk_warning,风险医学陈述,虽然临床表现倾向于良性，但任何新发或变化的色素性皮损均需排除恶性可能,candidate_generated,2,DOC_0055,retrieved_text_document,扁平苔藓样角化病可表现为小的炎性斑疹或薄的色素性斑块。,DermNet - Lichenoid Keratosis,26.116642,0.135954,weak,0.209677,0.135417,0.125,False,False,False,False,False
+CASE_BKL_001__rag__risk_warning__001,CASE_BKL_001,rag,risk_warning,风险医学陈述,虽然临床表现倾向于良性，但任何新发或变化的色素性皮损均需排除恶性可能,candidate_generated,3,DOC_0039,retrieved_text_document,面部非色素性光化性角化病在皮肤镜下可表现为草莓样模式。,DermNet - Actinic Keratosis Dermoscopy,24.354113,0.111718,weak,0.177419,0.11,0.09375,False,False,False,False,False
+CASE_BKL_001__rag__risk_warning__002,CASE_BKL_001,rag,risk_warning,风险医学陈述,仅凭外观描述无法完全确诊，需结合皮肤镜或病理检查确认,candidate_generated,1,DOC_0051,retrieved_text_document,脂溢性角化病常呈贴附在皮肤表面的外观。,DermNet - Seborrhoeic Keratosis,39.523461,0.094908,weak,0.148936,0.093333,0.083333,False,False,False,False,False
+CASE_BKL_001__rag__risk_warning__002,CASE_BKL_001,rag,risk_warning,风险医学陈述,仅凭外观描述无法完全确诊，需结合皮肤镜或病理检查确认,candidate_generated,2,DOC_0039,retrieved_text_document,面部非色素性光化性角化病在皮肤镜下可表现为草莓样模式。,DermNet - Actinic Keratosis Dermoscopy,24.354113,0.081064,weak,0.12766,0.066667,0.083333,False,False,False,False,False
+CASE_BKL_001__rag__risk_warning__002,CASE_BKL_001,rag,risk_warning,风险医学陈述,仅凭外观描述无法完全确诊，需结合皮肤镜或病理检查确认,candidate_generated,3,DOC_0084,retrieved_text_document,HAM10000 中血管瘤类皮损在皮肤镜下可表现为红色或紫色、实性且边界清楚的 red clods 或 lacunes。,HAM10000 Scientific Data,36.227731,0.079852,weak,0.12766,0.060606,0.083333,False,False,False,False,False
+CASE_BKL_001__rag__medical_advice__001,CASE_BKL_001,rag,medical_advice,医疗建议,建议前往皮肤科进行专业面诊,not_applicable,,,,,,,,,,,,,,,,
+CASE_BKL_001__rag__medical_advice__002,CASE_BKL_001,rag,medical_advice,医疗建议,建议进行皮肤镜检查以进一步评估皮损结构,not_applicable,,,,,,,,,,,,,,,,
+CASE_BKL_001__rag__medical_advice__003,CASE_BKL_001,rag,medical_advice,医疗建议,观察皮损是否有快速增大、出血、瘙痒或颜色改变等情况并记录,not_applicable,,,,,,,,,,,,,,,,
+CASE_BKL_001__rag__evidence_gap__001,CASE_BKL_001,rag,evidence_gap,证据缺口说明,检索文本未提供关于躯干部棕褐色隆起性斑块表面粗糙的具体病理机制解释,not_applicable,,,,,,,,,,,,,,,,
+CASE_BKL_001__rag__evidence_gap__002,CASE_BKL_001,rag,evidence_gap,证据缺口说明,检索文本未涵盖除脂溢性角化病、扁平苔藓样角化病和光化性角化病之外的其他良性角化性病变的详细鉴别特征,not_applicable,,,,,,,,,,,,,,,,
+CASE_BKL_001__rag__evidence_gap__003,CASE_BKL_001,rag,evidence_gap,证据缺口说明,缺乏患者年龄、病程长短及既往病史等关键临床背景信息,not_applicable,,,,,,,,,,,,,,,,
+CASE_BKL_001__kg_rag__observation_match__001,CASE_BKL_001,kg_rag,observation_match,观察匹配陈述,用户描述的'外观像贴在皮肤上一样'与知识图谱中良性角化样病变（如脂溢性角化病）典型的'贴附样丘疹或斑块'特征高度匹配。,candidate_generated,1,PATH_TRI_054,ranked_kg_evidence_path,"良性角化样病变 → 表现为 → 贴附样丘疹或斑块
+脂溢性角化病常呈贴附在皮肤表面的外观。",DermNet - Seborrhoeic Keratosis,4.34,0.64975,strong,0.471264,0.398058,0.408163,False,False,True,True,False
+CASE_BKL_001__kg_rag__observation_match__001,CASE_BKL_001,kg_rag,observation_match,观察匹配陈述,用户描述的'外观像贴在皮肤上一样'与知识图谱中良性角化样病变（如脂溢性角化病）典型的'贴附样丘疹或斑块'特征高度匹配。,candidate_generated,2,PATH_TRI_056,ranked_kg_evidence_path,"良性角化样病变 → 表现为 → 粟丘疹样囊肿
+脂溢性角化病皮肤镜下可见粟丘疹样囊肿。",DermNet - Dermoscopy of Seborrhoeic Keratosis,2.5,0.499279,moderate,0.275862,0.220183,0.22449,False,False,True,True,False
+CASE_BKL_001__kg_rag__observation_match__001,CASE_BKL_001,kg_rag,observation_match,观察匹配陈述,用户描述的'外观像贴在皮肤上一样'与知识图谱中良性角化样病变（如脂溢性角化病）典型的'贴附样丘疹或斑块'特征高度匹配。,candidate_generated,3,PATH_TRI_053,ranked_kg_evidence_path,"良性角化样病变 → 表现为 → 蜡样或疣状表面
+脂溢性角化病可表现为光滑、蜡样或疣状表面。",DermNet - Seborrhoeic Keratosis,2.5,0.458953,moderate,0.218391,0.174312,0.183673,False,False,True,True,False
+CASE_BKL_001__kg_rag__observation_match__002,CASE_BKL_001,kg_rag,observation_match,观察匹配陈述,用户观察到的'躯干部'发病部位与良性角化样病变（如扁平苔藓样角化病）的常见好发部位一致。,candidate_generated,1,PATH_TRI_060,ranked_kg_evidence_path,"良性角化样病变 → 常见于 → 躯干
+扁平苔藓样角化病最常见于上躯干，其次为远端上肢。",DermNet - Lichenoid Keratosis,3.92,0.639547,strong,0.47541,0.358025,0.388889,False,False,True,True,False
+CASE_BKL_001__kg_rag__observation_match__002,CASE_BKL_001,kg_rag,observation_match,观察匹配陈述,用户观察到的'躯干部'发病部位与良性角化样病变（如扁平苔藓样角化病）的常见好发部位一致。,candidate_generated,2,PATH_TRI_055,ranked_kg_evidence_path,"良性角化样病变 → 表现为 → 边界清楚的扁平色素斑
+日光性黑子是常见的良性扁平色素性皮损，多见于日光暴露皮肤。",DermNet - Solar Lentigo,2.5,0.511306,moderate,0.327869,0.178571,0.222222,False,False,True,True,False
+CASE_BKL_001__kg_rag__observation_match__002,CASE_BKL_001,kg_rag,observation_match,观察匹配陈述,用户观察到的'躯干部'发病部位与良性角化样病变（如扁平苔藓样角化病）的常见好发部位一致。,candidate_generated,3,PATH_TRI_054,ranked_kg_evidence_path,"良性角化样病变 → 表现为 → 贴附样丘疹或斑块
+脂溢性角化病常呈贴附在皮肤表面的外观。",DermNet - Seborrhoeic Keratosis,4.34,0.484028,moderate,0.278689,0.168317,0.194444,False,False,True,True,False
+CASE_BKL_001__kg_rag__observation_match__003,CASE_BKL_001,kg_rag,observation_match,观察匹配陈述,用户描述的'边界清楚'符合良性角化性病变的一般形态学特征。,candidate_generated,1,PATH_TRI_055,ranked_kg_evidence_path,"良性角化样病变 → 表现为 → 边界清楚的扁平色素斑
+日光性黑子是常见的良性扁平色素性皮损，多见于日光暴露皮肤。",DermNet - Solar Lentigo,2.5,0.345191,moderate,0.382979,0.18,0.28,False,False,False,True,False
+CASE_BKL_001__kg_rag__observation_match__003,CASE_BKL_001,kg_rag,observation_match,观察匹配陈述,用户描述的'边界清楚'符合良性角化性病变的一般形态学特征。,candidate_generated,2,PATH_TRI_054,ranked_kg_evidence_path,"良性角化样病变 → 表现为 → 贴附样丘疹或斑块
+脂溢性角化病常呈贴附在皮肤表面的外观。",DermNet - Seborrhoeic Keratosis,4.34,0.249273,weak,0.234043,0.11828,0.16,False,False,False,True,False
+CASE_BKL_001__kg_rag__observation_match__003,CASE_BKL_001,kg_rag,observation_match,观察匹配陈述,用户描述的'边界清楚'符合良性角化性病变的一般形态学特征。,candidate_generated,3,PATH_TRI_053,ranked_kg_evidence_path,"良性角化样病变 → 表现为 → 蜡样或疣状表面
+脂溢性角化病可表现为光滑、蜡样或疣状表面。",DermNet - Seborrhoeic Keratosis,2.5,0.242747,weak,0.212766,0.128205,0.16,False,False,False,True,False
+CASE_BKL_001__kg_rag__supporting_evidence__001,CASE_BKL_001,kg_rag,supporting_evidence,支持性医学陈述,根据DermNet关于脂溢性角化病的资料，该类病变常呈贴附在皮肤表面的外观，这与用户观察到的'像贴在皮肤上一样'相符。,candidate_generated,1,PATH_TRI_054,ranked_kg_evidence_path,"良性角化样病变 → 表现为 → 贴附样丘疹或斑块
+脂溢性角化病常呈贴附在皮肤表面的外观。",DermNet - Seborrhoeic Keratosis,4.34,0.328756,moderate,0.468354,0.373737,0.333333,False,False,False,False,False
+CASE_BKL_001__kg_rag__supporting_evidence__001,CASE_BKL_001,kg_rag,supporting_evidence,支持性医学陈述,根据DermNet关于脂溢性角化病的资料，该类病变常呈贴附在皮肤表面的外观，这与用户观察到的'像贴在皮肤上一样'相符。,candidate_generated,2,PATH_TRI_056,ranked_kg_evidence_path,"良性角化样病变 → 表现为 → 粟丘疹样囊肿
+脂溢性角化病皮肤镜下可见粟丘疹样囊肿。",DermNet - Dermoscopy of Seborrhoeic Keratosis,2.5,0.152235,weak,0.227848,0.168224,0.137255,False,False,False,False,False
+CASE_BKL_001__kg_rag__supporting_evidence__001,CASE_BKL_001,kg_rag,supporting_evidence,支持性医学陈述,根据DermNet关于脂溢性角化病的资料，该类病变常呈贴附在皮肤表面的外观，这与用户观察到的'像贴在皮肤上一样'相符。,candidate_generated,3,PATH_TRI_053,ranked_kg_evidence_path,"良性角化样病变 → 表现为 → 蜡样或疣状表面
+脂溢性角化病可表现为光滑、蜡样或疣状表面。",DermNet - Seborrhoeic Keratosis,2.5,0.146537,weak,0.21519,0.165049,0.137255,False,False,False,False,False
+CASE_BKL_001__kg_rag__supporting_evidence__002,CASE_BKL_001,kg_rag,supporting_evidence,支持性医学陈述,根据DermNet关于扁平苔藓样角化病的资料，此类病变最常见于上躯干，支持了用户观察到的躯干发病部位。,candidate_generated,1,PATH_TRI_060,ranked_kg_evidence_path,"良性角化样病变 → 常见于 → 躯干
+扁平苔藓样角化病最常见于上躯干，其次为远端上肢。",DermNet - Lichenoid Keratosis,3.92,0.54347,moderate,0.416667,0.32967,0.304348,False,False,True,False,True
+CASE_BKL_001__kg_rag__supporting_evidence__002,CASE_BKL_001,kg_rag,supporting_evidence,支持性医学陈述,根据DermNet关于扁平苔藓样角化病的资料，此类病变最常见于上躯干，支持了用户观察到的躯干发病部位。,candidate_generated,2,PATH_TRI_055,ranked_kg_evidence_path,"良性角化样病变 → 表现为 → 边界清楚的扁平色素斑
+日光性黑子是常见的良性扁平色素性皮损，多见于日光暴露皮肤。",DermNet - Solar Lentigo,2.5,0.135825,weak,0.222222,0.125984,0.108696,False,False,False,False,False
+CASE_BKL_001__kg_rag__supporting_evidence__002,CASE_BKL_001,kg_rag,supporting_evidence,支持性医学陈述,根据DermNet关于扁平苔藓样角化病的资料，此类病变最常见于上躯干，支持了用户观察到的躯干发病部位。,candidate_generated,3,PATH_TRI_054,ranked_kg_evidence_path,"良性角化样病变 → 表现为 → 贴附样丘疹或斑块
+脂溢性角化病常呈贴附在皮肤表面的外观。",DermNet - Seborrhoeic Keratosis,4.34,0.092799,weak,0.152778,0.09322,0.065217,False,False,False,False,False
+CASE_BKL_001__kg_rag__supporting_evidence__003,CASE_BKL_001,kg_rag,supporting_evidence,支持性医学陈述,良性角化样病变可表现为蜡样或疣状表面，虽然用户未直接描述蜡样感，但'表面粗糙'可能与此类质地改变相关。,candidate_generated,1,PATH_TRI_053,ranked_kg_evidence_path,"良性角化样病变 → 表现为 → 蜡样或疣状表面
+脂溢性角化病可表现为光滑、蜡样或疣状表面。",DermNet - Seborrhoeic Keratosis,2.5,0.656722,strong,0.402597,0.356322,0.372093,False,False,True,True,True
+CASE_BKL_001__kg_rag__supporting_evidence__003,CASE_BKL_001,kg_rag,supporting_evidence,支持性医学陈述,良性角化样病变可表现为蜡样或疣状表面，虽然用户未直接描述蜡样感，但'表面粗糙'可能与此类质地改变相关。,candidate_generated,2,PATH_TRI_054,ranked_kg_evidence_path,"良性角化样病变 → 表现为 → 贴附样丘疹或斑块
+脂溢性角化病常呈贴附在皮肤表面的外观。",DermNet - Seborrhoeic Keratosis,4.34,0.53812,moderate,0.272727,0.185841,0.209302,False,False,True,True,True
+CASE_BKL_001__kg_rag__supporting_evidence__003,CASE_BKL_001,kg_rag,supporting_evidence,支持性医学陈述,良性角化样病变可表现为蜡样或疣状表面，虽然用户未直接描述蜡样感，但'表面粗糙'可能与此类质地改变相关。,candidate_generated,3,PATH_TRI_056,ranked_kg_evidence_path,"良性角化样病变 → 表现为 → 粟丘疹样囊肿
+脂溢性角化病皮肤镜下可见粟丘疹样囊肿。",DermNet - Dermoscopy of Seborrhoeic Keratosis,2.5,0.522449,moderate,0.246753,0.182692,0.186047,False,False,True,True,True
+CASE_BKL_001__kg_rag__differential_diagnosis__001,CASE_BKL_001,kg_rag,differential_diagnosis,鉴别诊断陈述,日光性黑子：虽为良性色素性皮损且边界清楚，但通常表现为扁平而非隆起，且多见于日光暴露部位，需结合病史鉴别。,candidate_generated,1,PATH_TRI_055,ranked_kg_evidence_path,"良性角化样病变 → 表现为 → 边界清楚的扁平色素斑
+日光性黑子是常见的良性扁平色素性皮损，多见于日光暴露皮肤。",DermNet - Solar Lentigo,2.5,0.440408,moderate,0.547619,0.422018,0.434783,False,False,False,False,True
+CASE_BKL_001__kg_rag__differential_diagnosis__001,CASE_BKL_001,kg_rag,differential_diagnosis,鉴别诊断陈述,日光性黑子：虽为良性色素性皮损且边界清楚，但通常表现为扁平而非隆起，且多见于日光暴露部位，需结合病史鉴别。,candidate_generated,2,PATH_TRI_056,ranked_kg_evidence_path,"良性角化样病变 → 表现为 → 粟丘疹样囊肿
+脂溢性角化病皮肤镜下可见粟丘疹样囊肿。",DermNet - Dermoscopy of Seborrhoeic Keratosis,2.5,0.133912,weak,0.130952,0.092437,0.065217,False,False,False,False,True
+CASE_BKL_001__kg_rag__differential_diagnosis__001,CASE_BKL_001,kg_rag,differential_diagnosis,鉴别诊断陈述,日光性黑子：虽为良性色素性皮损且边界清楚，但通常表现为扁平而非隆起，且多见于日光暴露部位，需结合病史鉴别。,candidate_generated,3,PATH_TRI_054,ranked_kg_evidence_path,"良性角化样病变 → 表现为 → 贴附样丘疹或斑块
+脂溢性角化病常呈贴附在皮肤表面的外观。",DermNet - Seborrhoeic Keratosis,4.34,0.132348,weak,0.130952,0.084615,0.065217,False,False,False,False,True
+CASE_BKL_001__kg_rag__differential_diagnosis__002,CASE_BKL_001,kg_rag,differential_diagnosis,鉴别诊断陈述,其他良性角化性病变：如寻常疣或其他类型的角化症，需通过皮肤镜或病理检查进一步区分具体亚型。,candidate_generated,1,PATH_TRI_056,ranked_kg_evidence_path,"良性角化样病变 → 表现为 → 粟丘疹样囊肿
+脂溢性角化病皮肤镜下可见粟丘疹样囊肿。",DermNet - Dermoscopy of Seborrhoeic Keratosis,2.5,0.244688,weak,0.211268,0.147059,0.153846,False,False,False,True,False
+CASE_BKL_001__kg_rag__differential_diagnosis__002,CASE_BKL_001,kg_rag,differential_diagnosis,鉴别诊断陈述,其他良性角化性病变：如寻常疣或其他类型的角化症，需通过皮肤镜或病理检查进一步区分具体亚型。,candidate_generated,2,PATH_TRI_054,ranked_kg_evidence_path,"良性角化样病变 → 表现为 → 贴附样丘疹或斑块
+脂溢性角化病常呈贴附在皮肤表面的外观。",DermNet - Seborrhoeic Keratosis,4.34,0.244353,weak,0.225352,0.142857,0.128205,False,False,False,True,False
+CASE_BKL_001__kg_rag__differential_diagnosis__002,CASE_BKL_001,kg_rag,differential_diagnosis,鉴别诊断陈述,其他良性角化性病变：如寻常疣或其他类型的角化症，需通过皮肤镜或病理检查进一步区分具体亚型。,candidate_generated,3,PATH_TRI_055,ranked_kg_evidence_path,"良性角化样病变 → 表现为 → 边界清楚的扁平色素斑
+日光性黑子是常见的良性扁平色素性皮损，多见于日光暴露皮肤。",DermNet - Solar Lentigo,2.5,0.23377,weak,0.211268,0.11811,0.128205,False,False,False,True,False
+CASE_BKL_001__kg_rag__risk_warning__001,CASE_BKL_001,kg_rag,risk_warning,风险医学陈述,虽然候选疾病为良性病变，但若皮损出现快速增大、出血、溃疡、颜色不均或边界模糊等变化，需警惕恶性病变的可能。,candidate_generated,1,PATH_TRI_055,ranked_kg_evidence_path,"良性角化样病变 → 表现为 → 边界清楚的扁平色素斑
+日光性黑子是常见的良性扁平色素性皮损，多见于日光暴露皮肤。",DermNet - Solar Lentigo,2.5,0.128555,weak,0.2125,0.126866,0.090909,False,False,False,False,False
+CASE_BKL_001__kg_rag__risk_warning__001,CASE_BKL_001,kg_rag,risk_warning,风险医学陈述,虽然候选疾病为良性病变，但若皮损出现快速增大、出血、溃疡、颜色不均或边界模糊等变化，需警惕恶性病变的可能。,candidate_generated,2,PATH_TRI_054,ranked_kg_evidence_path,"良性角化样病变 → 表现为 → 贴附样丘疹或斑块
+脂溢性角化病常呈贴附在皮肤表面的外观。",DermNet - Seborrhoeic Keratosis,4.34,0.088291,weak,0.15,0.096,0.045455,False,False,False,False,False
+CASE_BKL_001__kg_rag__risk_warning__001,CASE_BKL_001,kg_rag,risk_warning,风险医学陈述,虽然候选疾病为良性病变，但若皮损出现快速增大、出血、溃疡、颜色不均或边界模糊等变化，需警惕恶性病变的可能。,candidate_generated,3,PATH_TRI_053,ranked_kg_evidence_path,"良性角化样病变 → 表现为 → 蜡样或疣状表面
+脂溢性角化病可表现为光滑、蜡样或疣状表面。",DermNet - Seborrhoeic Keratosis,2.5,0.084091,weak,0.1375,0.1,0.045455,False,False,False,False,False
+CASE_BKL_001__kg_rag__risk_warning__002,CASE_BKL_001,kg_rag,risk_warning,风险医学陈述,仅凭外观描述无法完全排除恶性黑色素瘤或其他皮肤恶性肿瘤，尤其是当皮损表现不典型时。,candidate_generated,1,PATH_TRI_055,ranked_kg_evidence_path,"良性角化样病变 → 表现为 → 边界清楚的扁平色素斑
+日光性黑子是常见的良性扁平色素性皮损，多见于日光暴露皮肤。",DermNet - Solar Lentigo,2.5,0.136551,weak,0.214286,0.119048,0.135135,False,False,False,False,False
+CASE_BKL_001__kg_rag__risk_warning__002,CASE_BKL_001,kg_rag,risk_warning,风险医学陈述,仅凭外观描述无法完全排除恶性黑色素瘤或其他皮肤恶性肿瘤，尤其是当皮损表现不典型时。,candidate_generated,2,PATH_TRI_054,ranked_kg_evidence_path,"良性角化样病变 → 表现为 → 贴附样丘疹或斑块
+脂溢性角化病常呈贴附在皮肤表面的外观。",DermNet - Seborrhoeic Keratosis,4.34,0.098039,weak,0.157143,0.094828,0.081081,False,False,False,False,False
+CASE_BKL_001__kg_rag__risk_warning__002,CASE_BKL_001,kg_rag,risk_warning,风险医学陈述,仅凭外观描述无法完全排除恶性黑色素瘤或其他皮肤恶性肿瘤，尤其是当皮损表现不典型时。,candidate_generated,3,PATH_TRI_056,ranked_kg_evidence_path,"良性角化样病变 → 表现为 → 粟丘疹样囊肿
+脂溢性角化病皮肤镜下可见粟丘疹样囊肿。",DermNet - Dermoscopy of Seborrhoeic Keratosis,2.5,0.07134,weak,0.114286,0.074074,0.054054,False,False,False,False,False
+CASE_BKL_001__kg_rag__medical_advice__001,CASE_BKL_001,kg_rag,medical_advice,医疗建议,建议前往皮肤科就诊，由专业医生进行肉眼视诊及皮肤镜检查以明确诊断。,not_applicable,,,,,,,,,,,,,,,,
+CASE_BKL_001__kg_rag__medical_advice__002,CASE_BKL_001,kg_rag,medical_advice,医疗建议,若医生认为有必要，可能会建议进行皮肤活检以获取病理学确诊依据。,not_applicable,,,,,,,,,,,,,,,,
+CASE_BKL_001__kg_rag__medical_advice__003,CASE_BKL_001,kg_rag,medical_advice,医疗建议,建议定期观察皮损变化，记录大小、颜色、形状的改变情况，以便复诊时提供详细信息。,not_applicable,,,,,,,,,,,,,,,,
+CASE_BKL_001__kg_rag__evidence_gap__001,CASE_BKL_001,kg_rag,evidence_gap,证据缺口说明,缺乏患者年龄信息，因为某些良性角化性病变（如脂溢性角化病）与年龄增长密切相关。,not_applicable,,,,,,,,,,,,,,,,
+CASE_BKL_001__kg_rag__evidence_gap__002,CASE_BKL_001,kg_rag,evidence_gap,证据缺口说明,缺乏皮损持续时间及变化速度的信息，无法评估其稳定性。,not_applicable,,,,,,,,,,,,,,,,
+CASE_BKL_001__kg_rag__evidence_gap__003,CASE_BKL_001,kg_rag,evidence_gap,证据缺口说明,缺乏皮肤镜检查结果或组织病理学证据，目前仅基于形态学描述进行推断。,not_applicable,,,,,,,,,,,,,,,,
+CASE_BKL_001__kg_rag__evidence_gap__004,CASE_BKL_001,kg_rag,evidence_gap,证据缺口说明,用户未提及是否有瘙痒、疼痛等自觉症状，这可能有助于鉴别诊断。,not_applicable,,,,,,,,,,,,,,,,
+CASE_DF_001__llm__observation_match__001,CASE_DF_001,llm,observation_match,观察匹配陈述,用户描述的小腿部位棕褐色小结节与皮肤纤维瘤的好发部位及颜色特征相符,no_external_evidence,,,,,,,,,,,,,,,,
+CASE_DF_001__llm__observation_match__002,CASE_DF_001,llm,observation_match,观察匹配陈述,质地较硬符合皮肤纤维瘤常见的纤维化触感,no_external_evidence,,,,,,,,,,,,,,,,
+CASE_DF_001__llm__observation_match__003,CASE_DF_001,llm,observation_match,观察匹配陈述,按压两侧中央出现凹陷（酒窝征）是皮肤纤维瘤具有较高特异性的临床体征,no_external_evidence,,,,,,,,,,,,,,,,
+CASE_DF_001__llm__supporting_evidence__001,CASE_DF_001,llm,supporting_evidence,支持性医学陈述,根据一般医学知识，皮肤纤维瘤是一种常见的良性真皮结节，常表现为坚硬的丘疹或结节,no_external_evidence,,,,,,,,,,,,,,,,
+CASE_DF_001__llm__supporting_evidence__002,CASE_DF_001,llm,supporting_evidence,支持性医学陈述,酒窝征（Dimple sign）是指横向挤压皮损时中央出现凹陷，这是由于肿瘤周围胶原纤维束的牵拉所致，是辅助识别皮肤纤维瘤的典型物理检查发现,no_external_evidence,,,,,,,,,,,,,,,,
+CASE_DF_001__llm__supporting_evidence__003,CASE_DF_001,llm,supporting_evidence,支持性医学陈述,此类病变多见于四肢伸侧，尤其是小腿，颜色可从粉红、红褐到深褐色不等,no_external_evidence,,,,,,,,,,,,,,,,
+CASE_DF_001__llm__differential_diagnosis__001,CASE_DF_001,llm,differential_diagnosis,鉴别诊断陈述,色素痣：通常表面光滑，缺乏酒窝征，质地相对较软,no_external_evidence,,,,,,,,,,,,,,,,
+CASE_DF_001__llm__differential_diagnosis__002,CASE_DF_001,llm,differential_diagnosis,鉴别诊断陈述,瘢痕疙瘩或增生性瘢痕：常有外伤或手术史，形态可能不规则，通常无酒窝征,no_external_evidence,,,,,,,,,,,,,,,,
+CASE_DF_001__llm__differential_diagnosis__003,CASE_DF_001,llm,differential_diagnosis,鉴别诊断陈述,基底细胞癌：虽较少见于小腿，但需排除，通常伴有溃疡或珍珠样边缘,no_external_evidence,,,,,,,,,,,,,,,,
+CASE_DF_001__llm__differential_diagnosis__004,CASE_DF_001,llm,differential_diagnosis,鉴别诊断陈述,黑色素瘤：若结节颜色不均、边界不清或快速变化，需高度警惕恶性可能,no_external_evidence,,,,,,,,,,,,,,,,
+CASE_DF_001__llm__risk_warning__001,CASE_DF_001,llm,risk_warning,风险医学陈述,虽然皮肤纤维瘤多为良性，但任何新出现或发生变化的色素性皮损均需排除恶性肿瘤,no_external_evidence,,,,,,,,,,,,,,,,
+CASE_DF_001__llm__risk_warning__002,CASE_DF_001,llm,risk_warning,风险医学陈述,若结节出现快速增大、破溃、出血、疼痛或颜色显著改变，应立即就医,no_external_evidence,,,,,,,,,,,,,,,,
+CASE_DF_001__llm__risk_warning__003,CASE_DF_001,llm,risk_warning,风险医学陈述,自行挤压或刺激可能导致感染或炎症反应,no_external_evidence,,,,,,,,,,,,,,,,
+CASE_DF_001__llm__medical_advice__001,CASE_DF_001,llm,medical_advice,医疗建议,建议前往皮肤科进行专业面诊，医生可通过视诊和触诊进一步确认,not_applicable,,,,,,,,,,,,,,,,
+CASE_DF_001__llm__medical_advice__002,CASE_DF_001,llm,medical_advice,医疗建议,如有必要，医生可能会建议进行皮肤镜检查以观察微观结构,not_applicable,,,,,,,,,,,,,,,,
+CASE_DF_001__llm__medical_advice__003,CASE_DF_001,llm,medical_advice,医疗建议,若诊断不明确或出于美容需求，可咨询医生关于手术切除及病理活检的可能性,not_applicable,,,,,,,,,,,,,,,,
+CASE_DF_001__llm__medical_advice__004,CASE_DF_001,llm,medical_advice,医疗建议,日常注意观察皮损大小、形状及颜色的变化，并拍照记录以便对比,not_applicable,,,,,,,,,,,,,,,,
+CASE_DF_001__llm__evidence_gap__001,CASE_DF_001,llm,evidence_gap,证据缺口说明,本方法未接入外部可追溯证据，所有解释基于模型内部训练的一般医学知识,not_applicable,,,,,,,,,,,,,,,,
+CASE_DF_001__llm__evidence_gap__002,CASE_DF_001,llm,evidence_gap,证据缺口说明,缺乏患者的年龄、性别、既往病史、皮损持续时间及变化速度等关键临床信息,not_applicable,,,,,,,,,,,,,,,,
+CASE_DF_001__llm__evidence_gap__003,CASE_DF_001,llm,evidence_gap,证据缺口说明,缺乏皮肤镜图像或组织病理学检查结果，无法进行确诊,not_applicable,,,,,,,,,,,,,,,,
+CASE_DF_001__llm__evidence_gap__004,CASE_DF_001,llm,evidence_gap,证据缺口说明,纯 LLM 基线未接入外部检索证据，回答中的医学内容不具备本次运行级别的来源追溯能力。,not_applicable,,,,,,,,,,,,,,,,
+CASE_DF_001__rag__observation_match__001,CASE_DF_001,rag,observation_match,观察匹配陈述,用户观察到的小腿部位棕褐色硬结与皮肤纤维瘤的好发部位及形态特征相符,candidate_generated,1,DOC_0071,retrieved_text_document,皮肤纤维瘤是常见良性纤维性结节，通常见于小腿皮肤。,DermNet - Dermatofibroma,35.353538,0.249211,weak,0.213115,0.158537,0.16129,False,False,False,True,False
+CASE_DF_001__rag__observation_match__001,CASE_DF_001,rag,observation_match,观察匹配陈述,用户观察到的小腿部位棕褐色硬结与皮肤纤维瘤的好发部位及形态特征相符,candidate_generated,2,DOC_0075,retrieved_text_document,皮肤纤维瘤有时可出现瘙痒。,DermNet - Dermatofibroma,31.329134,0.208823,weak,0.147541,0.12,0.129032,False,False,False,True,False
+CASE_DF_001__rag__observation_match__001,CASE_DF_001,rag,observation_match,观察匹配陈述,用户观察到的小腿部位棕褐色硬结与皮肤纤维瘤的好发部位及形态特征相符,candidate_generated,3,DOC_0074,retrieved_text_document,皮肤纤维瘤有时可出现疼痛或触痛。,DermNet - Dermatofibroma,29.145517,0.207323,weak,0.147541,0.1125,0.129032,False,False,False,True,False
+CASE_DF_001__rag__observation_match__002,CASE_DF_001,rag,observation_match,观察匹配陈述,用户描述的按压两侧中央凹陷现象符合皮肤纤维瘤特有的捏压凹陷征,candidate_generated,1,DOC_0075,retrieved_text_document,皮肤纤维瘤有时可出现瘙痒。,DermNet - Dermatofibroma,31.329134,0.243386,weak,0.203704,0.166667,0.142857,False,False,False,True,False
+CASE_DF_001__rag__observation_match__002,CASE_DF_001,rag,observation_match,观察匹配陈述,用户描述的按压两侧中央凹陷现象符合皮肤纤维瘤特有的捏压凹陷征,candidate_generated,2,DOC_0074,retrieved_text_document,皮肤纤维瘤有时可出现疼痛或触痛。,DermNet - Dermatofibroma,29.145517,0.241039,weak,0.203704,0.15493,0.142857,False,False,False,True,False
+CASE_DF_001__rag__observation_match__002,CASE_DF_001,rag,observation_match,观察匹配陈述,用户描述的按压两侧中央凹陷现象符合皮肤纤维瘤特有的捏压凹陷征,candidate_generated,3,DOC_0071,retrieved_text_document,皮肤纤维瘤是常见良性纤维性结节，通常见于小腿皮肤。,DermNet - Dermatofibroma,35.353538,0.218023,weak,0.166667,0.113924,0.142857,False,False,False,True,False
+CASE_DF_001__rag__supporting_evidence__001,CASE_DF_001,rag,supporting_evidence,支持性医学陈述,皮肤纤维瘤是常见良性纤维性结节，通常见于小腿皮肤,candidate_generated,1,DOC_0071,retrieved_text_document,皮肤纤维瘤是常见良性纤维性结节，通常见于小腿皮肤。,DermNet - Dermatofibroma,35.353538,0.9,strong,1.0,1.0,1.0,False,False,False,True,False
+CASE_DF_001__rag__supporting_evidence__001,CASE_DF_001,rag,supporting_evidence,支持性医学陈述,皮肤纤维瘤是常见良性纤维性结节，通常见于小腿皮肤,candidate_generated,2,DOC_0075,retrieved_text_document,皮肤纤维瘤有时可出现瘙痒。,DermNet - Dermatofibroma,31.329134,0.285488,weak,0.264706,0.1875,0.210526,False,False,False,True,False
+CASE_DF_001__rag__supporting_evidence__001,CASE_DF_001,rag,supporting_evidence,支持性医学陈述,皮肤纤维瘤是常见良性纤维性结节，通常见于小腿皮肤,candidate_generated,3,DOC_0074,retrieved_text_document,皮肤纤维瘤有时可出现疼痛或触痛。,DermNet - Dermatofibroma,29.145517,0.28195,weak,0.264706,0.169811,0.210526,False,False,False,True,False
+CASE_DF_001__rag__supporting_evidence__002,CASE_DF_001,rag,supporting_evidence,支持性医学陈述,捏压皮损时，表面皮肤可出现凹陷，即捏压凹陷征,candidate_generated,1,DOC_0068,retrieved_text_document,捏压皮损时，表面皮肤可出现凹陷，即捏压凹陷征。,DermNet - Dermatofibroma,40.426898,0.8,strong,1.0,1.0,1.0,False,False,False,False,False
+CASE_DF_001__rag__supporting_evidence__002,CASE_DF_001,rag,supporting_evidence,支持性医学陈述,捏压皮损时，表面皮肤可出现凹陷，即捏压凹陷征,candidate_generated,2,DOC_0075,retrieved_text_document,皮肤纤维瘤有时可出现瘙痒。,DermNet - Dermatofibroma,31.329134,0.196203,weak,0.3,0.204545,0.176471,False,False,False,False,False
+CASE_DF_001__rag__supporting_evidence__002,CASE_DF_001,rag,supporting_evidence,支持性医学陈述,捏压皮损时，表面皮肤可出现凹陷，即捏压凹陷征,candidate_generated,3,DOC_0074,retrieved_text_document,皮肤纤维瘤有时可出现疼痛或触痛。,DermNet - Dermatofibroma,29.145517,0.192029,weak,0.3,0.183673,0.176471,False,False,False,False,False
+CASE_DF_001__rag__differential_diagnosis__001,CASE_DF_001,rag,differential_diagnosis,鉴别诊断陈述,基底细胞癌：虽可出现中央凹陷或溃疡，但通常边缘呈卷曲样，与用户描述的捏压凹陷机制不同,candidate_generated,1,DOC_0025,retrieved_text_document,基底细胞癌可出现中央凹陷或溃疡，使边缘呈卷曲样。,DermNet - Basal Cell Carcinoma,28.960534,0.422421,moderate,0.549296,0.527027,0.486486,False,False,False,False,False
+CASE_DF_001__rag__differential_diagnosis__001,CASE_DF_001,rag,differential_diagnosis,鉴别诊断陈述,基底细胞癌：虽可出现中央凹陷或溃疡，但通常边缘呈卷曲样，与用户描述的捏压凹陷机制不同,candidate_generated,2,DOC_0068,retrieved_text_document,捏压皮损时，表面皮肤可出现凹陷，即捏压凹陷征。,DermNet - Dermatofibroma,40.426898,0.121599,weak,0.169014,0.134831,0.135135,False,False,False,False,False
+CASE_DF_001__rag__differential_diagnosis__001,CASE_DF_001,rag,differential_diagnosis,鉴别诊断陈述,基底细胞癌：虽可出现中央凹陷或溃疡，但通常边缘呈卷曲样，与用户描述的捏压凹陷机制不同,candidate_generated,3,DOC_0074,retrieved_text_document,皮肤纤维瘤有时可出现疼痛或触痛。,DermNet - Dermatofibroma,29.145517,0.057517,weak,0.084507,0.064516,0.054054,False,False,False,False,False
+CASE_DF_001__rag__medical_advice__001,CASE_DF_001,rag,medical_advice,医疗建议,建议前往皮肤科进行专业视诊或皮肤镜检查以明确性质,not_applicable,,,,,,,,,,,,,,,,
+CASE_DF_001__rag__medical_advice__002,CASE_DF_001,rag,medical_advice,医疗建议,观察结节是否有快速增大、破溃、出血或颜色显著变化,not_applicable,,,,,,,,,,,,,,,,
+CASE_DF_001__rag__medical_advice__003,CASE_DF_001,rag,medical_advice,医疗建议,记录结节的大小变化及是否出现瘙痒或疼痛症状,not_applicable,,,,,,,,,,,,,,,,
+CASE_DF_001__rag__evidence_gap__001,CASE_DF_001,rag,evidence_gap,证据缺口说明,检索文本未提供关于结节具体大小、存在时长及生长速度的信息,not_applicable,,,,,,,,,,,,,,,,
+CASE_DF_001__rag__evidence_gap__002,CASE_DF_001,rag,evidence_gap,证据缺口说明,检索文本未涵盖除瘙痒和疼痛外的其他潜在伴随症状,not_applicable,,,,,,,,,,,,,,,,
+CASE_DF_001__rag__evidence_gap__003,CASE_DF_001,rag,evidence_gap,证据缺口说明,缺乏组织病理学检查结果作为确诊依据,not_applicable,,,,,,,,,,,,,,,,
+CASE_DF_001__kg_rag__observation_match__001,CASE_DF_001,kg_rag,observation_match,观察匹配陈述,用户观察到的部位“小腿”与知识图谱中皮肤纤维瘤常见于“下肢”的分布特征相符。,candidate_generated,1,PATH_TRI_074,ranked_kg_evidence_path,"皮肤纤维瘤 → 常见于 → 下肢
+皮肤纤维瘤是常见良性纤维性结节，通常见于小腿皮肤。",DermNet - Dermatofibroma,3.84,0.597781,strong,0.333333,0.25974,0.3125,False,False,True,True,True
+CASE_DF_001__kg_rag__observation_match__001,CASE_DF_001,kg_rag,observation_match,观察匹配陈述,用户观察到的部位“小腿”与知识图谱中皮肤纤维瘤常见于“下肢”的分布特征相符。,candidate_generated,2,PATH_TRI_081_TRI_013,ranked_kg_evidence_path,"皮肤纤维瘤 → 鉴别诊断 → 黑色素瘤 → 常见于 → 下肢
+皮肤纤维瘤有时可能被误认为隆突性皮肤纤维肉瘤或硬化性黑色素瘤。
+黑色素瘤可发生在身体任何部位，男性常见于背部，女性常见于腿部。",DermNet - Dermatofibroma；DermNet - Melanoma,3.39,0.584079,strong,0.35,0.157895,0.3125,False,False,True,True,True
+CASE_DF_001__kg_rag__observation_match__001,CASE_DF_001,kg_rag,observation_match,观察匹配陈述,用户观察到的部位“小腿”与知识图谱中皮肤纤维瘤常见于“下肢”的分布特征相符。,candidate_generated,3,PATH_TRI_072,ranked_kg_evidence_path,"皮肤纤维瘤 → 表现为 → 中央白色瘢痕样区域
+皮肤纤维瘤最常见的皮肤镜模式是中央白色区域伴周围淡色素网。",DermNet - Dermatofibroma,2.5,0.450271,moderate,0.233333,0.12844,0.15625,False,False,True,True,False
+CASE_DF_001__kg_rag__observation_match__002,CASE_DF_001,kg_rag,observation_match,观察匹配陈述,用户描述的“质地较硬”与皮肤纤维瘤表现为“坚实丘疹或结节”的特征一致。,candidate_generated,1,PATH_TRI_070,ranked_kg_evidence_path,"皮肤纤维瘤 → 表现为 → 坚实丘疹或结节
+皮肤纤维瘤通常表现为单发、坚实的丘疹或结节。",DermNet - Dermatofibroma,2.5,0.740113,strong,0.518519,0.430769,0.482759,False,False,True,True,True
+CASE_DF_001__kg_rag__observation_match__002,CASE_DF_001,kg_rag,observation_match,观察匹配陈述,用户描述的“质地较硬”与皮肤纤维瘤表现为“坚实丘疹或结节”的特征一致。,candidate_generated,2,PATH_TRI_071,ranked_kg_evidence_path,"皮肤纤维瘤 → 表现为 → 捏压凹陷征
+捏压皮损时，表面皮肤可出现凹陷，即捏压凹陷征。",DermNet - Dermatofibroma,2.5,0.547849,moderate,0.277778,0.192308,0.241379,False,False,True,True,True
+CASE_DF_001__kg_rag__observation_match__002,CASE_DF_001,kg_rag,observation_match,观察匹配陈述,用户描述的“质地较硬”与皮肤纤维瘤表现为“坚实丘疹或结节”的特征一致。,candidate_generated,3,PATH_TRI_072,ranked_kg_evidence_path,"皮肤纤维瘤 → 表现为 → 中央白色瘢痕样区域
+皮肤纤维瘤最常见的皮肤镜模式是中央白色区域伴周围淡色素网。",DermNet - Dermatofibroma,2.5,0.538799,moderate,0.277778,0.147059,0.241379,False,False,True,True,True
+CASE_DF_001__kg_rag__observation_match__003,CASE_DF_001,kg_rag,observation_match,观察匹配陈述,用户描述的“按压两侧时中央可出现凹陷”与皮肤纤维瘤特有的“捏压凹陷征”高度吻合。,candidate_generated,1,PATH_TRI_071,ranked_kg_evidence_path,"皮肤纤维瘤 → 表现为 → 捏压凹陷征
+捏压皮损时，表面皮肤可出现凹陷，即捏压凹陷征。",DermNet - Dermatofibroma,2.5,0.600901,strong,0.416667,0.337838,0.333333,False,False,True,True,False
+CASE_DF_001__kg_rag__observation_match__003,CASE_DF_001,kg_rag,observation_match,观察匹配陈述,用户描述的“按压两侧时中央可出现凹陷”与皮肤纤维瘤特有的“捏压凹陷征”高度吻合。,candidate_generated,2,PATH_TRI_072,ranked_kg_evidence_path,"皮肤纤维瘤 → 表现为 → 中央白色瘢痕样区域
+皮肤纤维瘤最常见的皮肤镜模式是中央白色区域伴周围淡色素网。",DermNet - Dermatofibroma,2.5,0.449324,moderate,0.233333,0.12844,0.151515,False,False,True,True,False
+CASE_DF_001__kg_rag__observation_match__003,CASE_DF_001,kg_rag,observation_match,观察匹配陈述,用户描述的“按压两侧时中央可出现凹陷”与皮肤纤维瘤特有的“捏压凹陷征”高度吻合。,candidate_generated,3,PATH_TRI_070,ranked_kg_evidence_path,"皮肤纤维瘤 → 表现为 → 坚实丘疹或结节
+皮肤纤维瘤通常表现为单发、坚实的丘疹或结节。",DermNet - Dermatofibroma,2.5,0.422576,moderate,0.183333,0.125,0.121212,False,False,True,True,False
+CASE_DF_001__kg_rag__supporting_evidence__001,CASE_DF_001,kg_rag,supporting_evidence,支持性医学陈述,根据DermNet资料，皮肤纤维瘤是常见良性纤维性结节，通常见于小腿皮肤。,candidate_generated,1,PATH_TRI_074,ranked_kg_evidence_path,"皮肤纤维瘤 → 常见于 → 下肢
+皮肤纤维瘤是常见良性纤维性结节，通常见于小腿皮肤。",DermNet - Dermatofibroma,3.84,0.962919,strong,0.829268,0.772727,0.633333,False,False,True,True,True
+CASE_DF_001__kg_rag__supporting_evidence__001,CASE_DF_001,kg_rag,supporting_evidence,支持性医学陈述,根据DermNet资料，皮肤纤维瘤是常见良性纤维性结节，通常见于小腿皮肤。,candidate_generated,2,PATH_TRI_081_TRI_013,ranked_kg_evidence_path,"皮肤纤维瘤 → 鉴别诊断 → 黑色素瘤 → 常见于 → 下肢
+皮肤纤维瘤有时可能被误认为隆突性皮肤纤维肉瘤或硬化性黑色素瘤。
+黑色素瘤可发生在身体任何部位，男性常见于背部，女性常见于腿部。",DermNet - Dermatofibroma；DermNet - Melanoma,3.39,0.572988,strong,0.390244,0.134454,0.2,False,False,True,True,True
+CASE_DF_001__kg_rag__supporting_evidence__001,CASE_DF_001,kg_rag,supporting_evidence,支持性医学陈述,根据DermNet资料，皮肤纤维瘤是常见良性纤维性结节，通常见于小腿皮肤。,candidate_generated,3,PATH_TRI_070,ranked_kg_evidence_path,"皮肤纤维瘤 → 表现为 → 坚实丘疹或结节
+皮肤纤维瘤通常表现为单发、坚实的丘疹或结节。",DermNet - Dermatofibroma,2.5,0.532495,moderate,0.365854,0.230769,0.2,False,False,True,True,False
+CASE_DF_001__kg_rag__supporting_evidence__002,CASE_DF_001,kg_rag,supporting_evidence,支持性医学陈述,根据DermNet资料，皮肤纤维瘤通常表现为单发、坚实的丘疹或结节。,candidate_generated,1,PATH_TRI_070,ranked_kg_evidence_path,"皮肤纤维瘤 → 表现为 → 坚实丘疹或结节
+皮肤纤维瘤通常表现为单发、坚实的丘疹或结节。",DermNet - Dermatofibroma,2.5,0.979662,strong,0.844444,0.826087,0.633333,False,False,True,True,True
+CASE_DF_001__kg_rag__supporting_evidence__002,CASE_DF_001,kg_rag,supporting_evidence,支持性医学陈述,根据DermNet资料，皮肤纤维瘤通常表现为单发、坚实的丘疹或结节。,candidate_generated,2,PATH_TRI_072,ranked_kg_evidence_path,"皮肤纤维瘤 → 表现为 → 中央白色瘢痕样区域
+皮肤纤维瘤最常见的皮肤镜模式是中央白色区域伴周围淡色素网。",DermNet - Dermatofibroma,2.5,0.567005,strong,0.355556,0.173913,0.2,False,False,True,True,True
+CASE_DF_001__kg_rag__supporting_evidence__002,CASE_DF_001,kg_rag,supporting_evidence,支持性医学陈述,根据DermNet资料，皮肤纤维瘤通常表现为单发、坚实的丘疹或结节。,candidate_generated,3,PATH_TRI_071,ranked_kg_evidence_path,"皮肤纤维瘤 → 表现为 → 捏压凹陷征
+捏压皮损时，表面皮肤可出现凹陷，即捏压凹陷征。",DermNet - Dermatofibroma,2.5,0.554444,strong,0.311111,0.2,0.2,False,False,True,True,True
+CASE_DF_001__kg_rag__supporting_evidence__003,CASE_DF_001,kg_rag,supporting_evidence,支持性医学陈述,根据DermNet资料，捏压皮损时，表面皮肤可出现凹陷，即捏压凹陷征，这是该病的典型体征。,candidate_generated,1,PATH_TRI_071,ranked_kg_evidence_path,"皮肤纤维瘤 → 表现为 → 捏压凹陷征
+捏压皮损时，表面皮肤可出现凹陷，即捏压凹陷征。",DermNet - Dermatofibroma,2.5,0.615081,strong,0.566038,0.483871,0.459459,False,False,True,False,False
+CASE_DF_001__kg_rag__supporting_evidence__003,CASE_DF_001,kg_rag,supporting_evidence,支持性医学陈述,根据DermNet资料，捏压皮损时，表面皮肤可出现凹陷，即捏压凹陷征，这是该病的典型体征。,candidate_generated,2,PATH_TRI_072,ranked_kg_evidence_path,"皮肤纤维瘤 → 表现为 → 中央白色瘢痕样区域
+皮肤纤维瘤最常见的皮肤镜模式是中央白色区域伴周围淡色素网。",DermNet - Dermatofibroma,2.5,0.07108,weak,0.132075,0.06422,0.027027,False,False,False,False,False
+CASE_DF_001__kg_rag__supporting_evidence__003,CASE_DF_001,kg_rag,supporting_evidence,支持性医学陈述,根据DermNet资料，捏压皮损时，表面皮肤可出现凹陷，即捏压凹陷征，这是该病的典型体征。,candidate_generated,3,PATH_TRI_070,ranked_kg_evidence_path,"皮肤纤维瘤 → 表现为 → 坚实丘疹或结节
+皮肤纤维瘤通常表现为单发、坚实的丘疹或结节。",DermNet - Dermatofibroma,2.5,0.064642,weak,0.113208,0.069767,0.027027,False,False,False,False,False
+CASE_DF_001__kg_rag__differential_diagnosis__001,CASE_DF_001,kg_rag,differential_diagnosis,鉴别诊断陈述,黑色素瘤：虽然较少见，但硬化性黑色素瘤可能在形态上与皮肤纤维瘤混淆，且也可发生于腿部。,candidate_generated,1,PATH_TRI_081_TRI_013,ranked_kg_evidence_path,"皮肤纤维瘤 → 鉴别诊断 → 黑色素瘤 → 常见于 → 下肢
+皮肤纤维瘤有时可能被误认为隆突性皮肤纤维肉瘤或硬化性黑色素瘤。
+黑色素瘤可发生在身体任何部位，男性常见于背部，女性常见于腿部。",DermNet - Dermatofibroma；DermNet - Melanoma,3.39,0.671504,strong,0.553846,0.292683,0.457143,False,False,True,True,False
+CASE_DF_001__kg_rag__differential_diagnosis__001,CASE_DF_001,kg_rag,differential_diagnosis,鉴别诊断陈述,黑色素瘤：虽然较少见，但硬化性黑色素瘤可能在形态上与皮肤纤维瘤混淆，且也可发生于腿部。,candidate_generated,2,PATH_TRI_074,ranked_kg_evidence_path,"皮肤纤维瘤 → 常见于 → 下肢
+皮肤纤维瘤是常见良性纤维性结节，通常见于小腿皮肤。",DermNet - Dermatofibroma,3.84,0.432071,moderate,0.2,0.146067,0.114286,False,False,True,True,False
+CASE_DF_001__kg_rag__differential_diagnosis__001,CASE_DF_001,kg_rag,differential_diagnosis,鉴别诊断陈述,黑色素瘤：虽然较少见，但硬化性黑色素瘤可能在形态上与皮肤纤维瘤混淆，且也可发生于腿部。,candidate_generated,3,PATH_TRI_072,ranked_kg_evidence_path,"皮肤纤维瘤 → 表现为 → 中央白色瘢痕样区域
+皮肤纤维瘤最常见的皮肤镜模式是中央白色区域伴周围淡色素网。",DermNet - Dermatofibroma,2.5,0.43118,moderate,0.2,0.113043,0.142857,False,False,True,True,False
+CASE_DF_001__kg_rag__differential_diagnosis__002,CASE_DF_001,kg_rag,differential_diagnosis,鉴别诊断陈述,隆突性皮肤纤维肉瘤：在鉴别诊断中提及，需排除此类低度恶性软组织肿瘤。,candidate_generated,1,PATH_TRI_081_TRI_013,ranked_kg_evidence_path,"皮肤纤维瘤 → 鉴别诊断 → 黑色素瘤 → 常见于 → 下肢
+皮肤纤维瘤有时可能被误认为隆突性皮肤纤维肉瘤或硬化性黑色素瘤。
+黑色素瘤可发生在身体任何部位，男性常见于背部，女性常见于腿部。",DermNet - Dermatofibroma；DermNet - Melanoma,3.39,0.338454,moderate,0.438596,0.198413,0.366667,False,False,False,False,True
+CASE_DF_001__kg_rag__differential_diagnosis__002,CASE_DF_001,kg_rag,differential_diagnosis,鉴别诊断陈述,隆突性皮肤纤维肉瘤：在鉴别诊断中提及，需排除此类低度恶性软组织肿瘤。,candidate_generated,2,PATH_TRI_074,ranked_kg_evidence_path,"皮肤纤维瘤 → 常见于 → 下肢
+皮肤纤维瘤是常见良性纤维性结节，通常见于小腿皮肤。",DermNet - Dermatofibroma,3.84,0.104334,weak,0.157895,0.105882,0.1,False,False,False,False,False
+CASE_DF_001__kg_rag__differential_diagnosis__002,CASE_DF_001,kg_rag,differential_diagnosis,鉴别诊断陈述,隆突性皮肤纤维肉瘤：在鉴别诊断中提及，需排除此类低度恶性软组织肿瘤。,candidate_generated,3,PATH_TRI_072,ranked_kg_evidence_path,"皮肤纤维瘤 → 表现为 → 中央白色瘢痕样区域
+皮肤纤维瘤最常见的皮肤镜模式是中央白色区域伴周围淡色素网。",DermNet - Dermatofibroma,2.5,0.099374,weak,0.157895,0.081081,0.1,False,False,False,False,False
+CASE_DF_001__kg_rag__risk_warning__001,CASE_DF_001,kg_rag,risk_warning,风险医学陈述,尽管皮肤纤维瘤多为良性，但任何新出现的、变化的或形态不典型的皮肤结节均需由专业医生评估以排除恶性病变。,candidate_generated,1,PATH_TRI_070,ranked_kg_evidence_path,"皮肤纤维瘤 → 表现为 → 坚实丘疹或结节
+皮肤纤维瘤通常表现为单发、坚实的丘疹或结节。",DermNet - Dermatofibroma,2.5,0.425516,moderate,0.186047,0.146789,0.108696,False,False,True,True,False
+CASE_DF_001__kg_rag__risk_warning__001,CASE_DF_001,kg_rag,risk_warning,风险医学陈述,尽管皮肤纤维瘤多为良性，但任何新出现的、变化的或形态不典型的皮肤结节均需由专业医生评估以排除恶性病变。,candidate_generated,2,PATH_TRI_074,ranked_kg_evidence_path,"皮肤纤维瘤 → 常见于 → 下肢
+皮肤纤维瘤是常见良性纤维性结节，通常见于小腿皮肤。",DermNet - Dermatofibroma,3.84,0.423632,moderate,0.174419,0.138889,0.130435,False,False,True,True,False
+CASE_DF_001__kg_rag__risk_warning__001,CASE_DF_001,kg_rag,risk_warning,风险医学陈述,尽管皮肤纤维瘤多为良性，但任何新出现的、变化的或形态不典型的皮肤结节均需由专业医生评估以排除恶性病变。,candidate_generated,3,PATH_TRI_081_TRI_013,ranked_kg_evidence_path,"皮肤纤维瘤 → 鉴别诊断 → 黑色素瘤 → 常见于 → 下肢
+皮肤纤维瘤有时可能被误认为隆突性皮肤纤维肉瘤或硬化性黑色素瘤。
+黑色素瘤可发生在身体任何部位，男性常见于背部，女性常见于腿部。",DermNet - Dermatofibroma；DermNet - Melanoma,3.39,0.421668,moderate,0.197674,0.104294,0.108696,False,False,True,True,False
+CASE_DF_001__kg_rag__risk_warning__002,CASE_DF_001,kg_rag,risk_warning,风险医学陈述,不可仅凭外观自行确诊，需结合皮肤镜或病理检查确认。,candidate_generated,1,PATH_TRI_081_TRI_013,ranked_kg_evidence_path,"皮肤纤维瘤 → 鉴别诊断 → 黑色素瘤 → 常见于 → 下肢
+皮肤纤维瘤有时可能被误认为隆突性皮肤纤维肉瘤或硬化性黑色素瘤。
+黑色素瘤可发生在身体任何部位，男性常见于背部，女性常见于腿部。",DermNet - Dermatofibroma；DermNet - Melanoma,3.39,0.084976,weak,0.162791,0.053846,0.045455,False,False,False,False,False
+CASE_DF_001__kg_rag__risk_warning__002,CASE_DF_001,kg_rag,risk_warning,风险医学陈述,不可仅凭外观自行确诊，需结合皮肤镜或病理检查确认。,candidate_generated,2,PATH_TRI_072,ranked_kg_evidence_path,"皮肤纤维瘤 → 表现为 → 中央白色瘢痕样区域
+皮肤纤维瘤最常见的皮肤镜模式是中央白色区域伴周围淡色素网。",DermNet - Dermatofibroma,2.5,0.074594,weak,0.116279,0.049505,0.090909,False,False,False,False,False
+CASE_DF_001__kg_rag__risk_warning__002,CASE_DF_001,kg_rag,risk_warning,风险医学陈述,不可仅凭外观自行确诊，需结合皮肤镜或病理检查确认。,candidate_generated,3,PATH_TRI_070,ranked_kg_evidence_path,"皮肤纤维瘤 → 表现为 → 坚实丘疹或结节
+皮肤纤维瘤通常表现为单发、坚实的丘疹或结节。",DermNet - Dermatofibroma,2.5,0.06859,weak,0.116279,0.064935,0.045455,False,False,False,False,False
+CASE_DF_001__kg_rag__medical_advice__001,CASE_DF_001,kg_rag,medical_advice,医疗建议,建议前往皮肤科就诊，由医生进行体格检查。,not_applicable,,,,,,,,,,,,,,,,
+CASE_DF_001__kg_rag__medical_advice__002,CASE_DF_001,kg_rag,medical_advice,医疗建议,医生可能会建议使用皮肤镜检查以观察皮损的微细结构。,not_applicable,,,,,,,,,,,,,,,,
+CASE_DF_001__kg_rag__medical_advice__003,CASE_DF_001,kg_rag,medical_advice,医疗建议,如有必要，医生可能会建议进行皮肤活检以明确病理诊断。,not_applicable,,,,,,,,,,,,,,,,
+CASE_DF_001__kg_rag__medical_advice__004,CASE_DF_001,kg_rag,medical_advice,医疗建议,日常注意观察结节的大小、颜色、形状是否有变化，并记录变化情况供医生参考。,not_applicable,,,,,,,,,,,,,,,,
+CASE_DF_001__kg_rag__evidence_gap__001,CASE_DF_001,kg_rag,evidence_gap,证据缺口说明,用户未提供结节的持续时间及生长速度信息。,not_applicable,,,,,,,,,,,,,,,,
+CASE_DF_001__kg_rag__evidence_gap__002,CASE_DF_001,kg_rag,evidence_gap,证据缺口说明,用户未提供是否有瘙痒、疼痛或出血等症状。,not_applicable,,,,,,,,,,,,,,,,
+CASE_DF_001__kg_rag__evidence_gap__003,CASE_DF_001,kg_rag,evidence_gap,证据缺口说明,用户未提供既往是否有外伤史或昆虫叮咬史（皮肤纤维瘤常与此相关）。,not_applicable,,,,,,,,,,,,,,,,
+CASE_DF_001__kg_rag__evidence_gap__004,CASE_DF_001,kg_rag,evidence_gap,证据缺口说明,缺乏皮肤镜检查图像或病理组织学检查结果作为确诊依据。,not_applicable,,,,,,,,,,,,,,,,
+CASE_VASC_001__llm__observation_match__001,CASE_VASC_001,llm,observation_match,观察匹配陈述,用户描述的‘鲜红色圆形小丘疹’、‘边界清楚’、‘表面光滑’符合血管性病变（如樱桃状血管瘤）的典型形态学特征。,no_external_evidence,,,,,,,,,,,,,,,,
+CASE_VASC_001__llm__observation_match__002,CASE_VASC_001,llm,observation_match,观察匹配陈述,‘按压后颜色可暂时变浅’提示病灶内含有血液成分，且血流动力学改变可影响外观，这与血管源性皮损的生理特性一致。,no_external_evidence,,,,,,,,,,,,,,,,
+CASE_VASC_001__llm__observation_match__003,CASE_VASC_001,llm,observation_match,观察匹配陈述,‘躯干部多发’是某些良性血管增生性病变常见的分布区域。,no_external_evidence,,,,,,,,,,,,,,,,
+CASE_VASC_001__llm__supporting_evidence__001,CASE_VASC_001,llm,supporting_evidence,支持性医学陈述,一般医学知识指出，樱桃状血管瘤（老年性血管瘤）常表现为躯干或四肢近端的鲜红色至深红色圆顶状丘疹，直径通常为数毫米，表面光滑，压之可褪色或变白。,no_external_evidence,,,,,,,,,,,,,,,,
+CASE_VASC_001__llm__supporting_evidence__002,CASE_VASC_001,llm,supporting_evidence,支持性医学陈述,血管性病变通常由毛细血管或小静脉扩张、增生引起，其颜色源于红细胞内的血红蛋白，因此按压排空血液后颜色会变浅。,no_external_evidence,,,,,,,,,,,,,,,,
+CASE_VASC_001__llm__supporting_evidence__003,CASE_VASC_001,llm,supporting_evidence,支持性医学陈述,此类病变在成年人群中极为常见，随年龄增长发病率增加，多为良性过程。,no_external_evidence,,,,,,,,,,,,,,,,
+CASE_VASC_001__llm__differential_diagnosis__001,CASE_VASC_001,llm,differential_diagnosis,鉴别诊断陈述,化脓性肉芽肿：通常生长迅速，易出血，常有外伤史，虽为血管性但临床表现更具侵袭性。,no_external_evidence,,,,,,,,,,,,,,,,
+CASE_VASC_001__llm__differential_diagnosis__002,CASE_VASC_001,llm,differential_diagnosis,鉴别诊断陈述,蜘蛛痣：中心有搏动性小动脉，周围有辐射状毛细血管，按压中心点周围血管网消失，与本例描述的‘圆形小丘疹’形态略有不同。,no_external_evidence,,,,,,,,,,,,,,,,
+CASE_VASC_001__llm__differential_diagnosis__003,CASE_VASC_001,llm,differential_diagnosis,鉴别诊断陈述,紫癜：皮下出血点，按压通常不褪色，与本例‘按压后颜色变浅’不符，但需通过体格检查排除非血管性红斑。,no_external_evidence,,,,,,,,,,,,,,,,
+CASE_VASC_001__llm__differential_diagnosis__004,CASE_VASC_001,llm,differential_diagnosis,鉴别诊断陈述,基底细胞癌或其他皮肤肿瘤：极少数情况下，早期皮肤肿瘤可能呈现红色结节，需专业鉴别。,no_external_evidence,,,,,,,,,,,,,,,,
+CASE_VASC_001__llm__risk_warning__001,CASE_VASC_001,llm,risk_warning,风险医学陈述,虽然多数此类表现倾向于良性血管病变，但若皮损出现快速增大、形状不对称、颜色不均匀、自发性出血、溃疡或疼痛，需警惕恶性病变可能。,no_external_evidence,,,,,,,,,,,,,,,,
+CASE_VASC_001__llm__risk_warning__002,CASE_VASC_001,llm,risk_warning,风险医学陈述,不可自行挑破或挤压皮损，以免引起感染或难以控制的出血。,no_external_evidence,,,,,,,,,,,,,,,,
+CASE_VASC_001__llm__medical_advice__001,CASE_VASC_001,llm,medical_advice,医疗建议,建议前往皮肤科进行面诊，医生可通过皮肤镜检查进一步确认皮损性质。,not_applicable,,,,,,,,,,,,,,,,
+CASE_VASC_001__llm__medical_advice__002,CASE_VASC_001,llm,medical_advice,医疗建议,记录皮损的数量、大小变化及是否有新发皮损，以便就医时提供详细病史。,not_applicable,,,,,,,,,,,,,,,,
+CASE_VASC_001__llm__medical_advice__003,CASE_VASC_001,llm,medical_advice,医疗建议,若皮损无变化且无症状，通常无需紧急处理，但仍建议定期自我观察。,not_applicable,,,,,,,,,,,,,,,,
+CASE_VASC_001__llm__evidence_gap__001,CASE_VASC_001,llm,evidence_gap,证据缺口说明,本方法未接入外部可追溯证据，所有解释基于模型内部的一般医学知识库。,not_applicable,,,,,,,,,,,,,,,,
+CASE_VASC_001__llm__evidence_gap__002,CASE_VASC_001,llm,evidence_gap,证据缺口说明,缺乏患者的年龄、既往病史、皮损持续时间、是否有外伤史等关键临床信息。,not_applicable,,,,,,,,,,,,,,,,
+CASE_VASC_001__llm__evidence_gap__003,CASE_VASC_001,llm,evidence_gap,证据缺口说明,缺乏皮肤镜或组织病理学检查结果，无法从组织学层面确诊。,not_applicable,,,,,,,,,,,,,,,,
+CASE_VASC_001__llm__evidence_gap__004,CASE_VASC_001,llm,evidence_gap,证据缺口说明,无法排除其他罕见血管畸形或非血管性模拟病变。,not_applicable,,,,,,,,,,,,,,,,
+CASE_VASC_001__llm__evidence_gap__005,CASE_VASC_001,llm,evidence_gap,证据缺口说明,纯 LLM 基线未接入外部检索证据，回答中的医学内容不具备本次运行级别的来源追溯能力。,not_applicable,,,,,,,,,,,,,,,,
+CASE_VASC_001__rag__observation_match__001,CASE_VASC_001,rag,observation_match,观察匹配陈述,用户观察到的躯干部位鲜红色圆形小丘疹与樱桃样血管瘤常见于躯干的描述相符,candidate_generated,1,DOC_0089,retrieved_text_document,樱桃样血管瘤是常见的良性红色、蓝色或紫色皮损，常见于躯干。,DermNet - Common Skin Lesions,23.240845,0.264769,weak,0.369231,0.282353,0.30303,False,False,False,False,False
+CASE_VASC_001__rag__observation_match__001,CASE_VASC_001,rag,observation_match,观察匹配陈述,用户观察到的躯干部位鲜红色圆形小丘疹与樱桃样血管瘤常见于躯干的描述相符,candidate_generated,2,DOC_0082,retrieved_text_document,樱桃样血管瘤可表现为无症状、质地较坚实的红色、蓝色或紫色丘疹。,DermNet - Cherry Angioma,23.83196,0.189928,weak,0.276923,0.183673,0.212121,False,False,False,False,False
+CASE_VASC_001__rag__observation_match__001,CASE_VASC_001,rag,observation_match,观察匹配陈述,用户观察到的躯干部位鲜红色圆形小丘疹与樱桃样血管瘤常见于躯干的描述相符,candidate_generated,3,DOC_0084,retrieved_text_document,HAM10000 中血管瘤类皮损在皮肤镜下可表现为红色或紫色、实性且边界清楚的 red clods 或 lacunes。,HAM10000 Scientific Data,35.98667,0.089356,weak,0.138462,0.078947,0.090909,False,False,False,False,False
+CASE_VASC_001__rag__observation_match__002,CASE_VASC_001,rag,observation_match,观察匹配陈述,用户观察到的红色丘疹形态与樱桃样血管瘤表现为红色丘疹的特征一致,candidate_generated,1,DOC_0082,retrieved_text_document,樱桃样血管瘤可表现为无症状、质地较坚实的红色、蓝色或紫色丘疹。,DermNet - Cherry Angioma,23.83196,0.333452,moderate,0.471698,0.316456,0.407407,False,False,False,False,False
+CASE_VASC_001__rag__observation_match__002,CASE_VASC_001,rag,observation_match,观察匹配陈述,用户观察到的红色丘疹形态与樱桃样血管瘤表现为红色丘疹的特征一致,candidate_generated,2,DOC_0089,retrieved_text_document,樱桃样血管瘤是常见的良性红色、蓝色或紫色皮损，常见于躯干。,DermNet - Common Skin Lesions,23.240845,0.194237,weak,0.283019,0.182927,0.222222,False,False,False,False,False
+CASE_VASC_001__rag__observation_match__002,CASE_VASC_001,rag,observation_match,观察匹配陈述,用户观察到的红色丘疹形态与樱桃样血管瘤表现为红色丘疹的特征一致,candidate_generated,3,DOC_0084,retrieved_text_document,HAM10000 中血管瘤类皮损在皮肤镜下可表现为红色或紫色、实性且边界清楚的 red clods 或 lacunes。,HAM10000 Scientific Data,35.98667,0.188902,weak,0.283019,0.15625,0.222222,False,False,False,False,False
+CASE_VASC_001__rag__observation_match__003,CASE_VASC_001,rag,observation_match,观察匹配陈述,用户观察到的边界清楚特征与血管瘤类皮损边界清楚的描述相符,candidate_generated,1,DOC_0084,retrieved_text_document,HAM10000 中血管瘤类皮损在皮肤镜下可表现为红色或紫色、实性且边界清楚的 red clods 或 lacunes。,HAM10000 Scientific Data,35.98667,0.292272,weak,0.425532,0.235294,0.375,False,False,False,False,False
+CASE_VASC_001__rag__observation_match__003,CASE_VASC_001,rag,observation_match,观察匹配陈述,用户观察到的边界清楚特征与血管瘤类皮损边界清楚的描述相符,candidate_generated,2,DOC_0014,retrieved_text_document,良性色素性皮损通常表现为较规则、较清楚的边界。,DermNet - Benign Melanocytic Lesions,26.601108,0.176671,weak,0.255319,0.164384,0.208333,False,False,False,False,False
+CASE_VASC_001__rag__observation_match__003,CASE_VASC_001,rag,observation_match,观察匹配陈述,用户观察到的边界清楚特征与血管瘤类皮损边界清楚的描述相符,candidate_generated,3,DOC_0089,retrieved_text_document,樱桃样血管瘤是常见的良性红色、蓝色或紫色皮损，常见于躯干。,DermNet - Common Skin Lesions,23.240845,0.123547,weak,0.191489,0.109756,0.125,False,False,False,False,False
+CASE_VASC_001__rag__supporting_evidence__001,CASE_VASC_001,rag,supporting_evidence,支持性医学陈述,根据DOC_0089，樱桃样血管瘤是常见的良性红色皮损，且常见于躯干,candidate_generated,1,DOC_0089,retrieved_text_document,樱桃样血管瘤是常见的良性红色、蓝色或紫色皮损，常见于躯干。,DermNet - Common Skin Lesions,23.240845,0.866324,strong,0.860465,0.74,0.62069,True,False,False,False,False
+CASE_VASC_001__rag__supporting_evidence__001,CASE_VASC_001,rag,supporting_evidence,支持性医学陈述,根据DOC_0089，樱桃样血管瘤是常见的良性红色皮损，且常见于躯干,candidate_generated,2,DOC_0082,retrieved_text_document,樱桃样血管瘤可表现为无症状、质地较坚实的红色、蓝色或紫色丘疹。,DermNet - Cherry Angioma,23.83196,0.218889,weak,0.348837,0.189873,0.206897,False,False,False,False,False
+CASE_VASC_001__rag__supporting_evidence__001,CASE_VASC_001,rag,supporting_evidence,支持性医学陈述,根据DOC_0089，樱桃样血管瘤是常见的良性红色皮损，且常见于躯干,candidate_generated,3,DOC_0084,retrieved_text_document,HAM10000 中血管瘤类皮损在皮肤镜下可表现为红色或紫色、实性且边界清楚的 red clods 或 lacunes。,HAM10000 Scientific Data,35.98667,0.196899,weak,0.325581,0.16092,0.172414,False,False,False,False,False
+CASE_VASC_001__rag__supporting_evidence__002,CASE_VASC_001,rag,supporting_evidence,支持性医学陈述,根据DOC_0082，樱桃样血管瘤可表现为无症状、质地较坚实的红色丘疹,candidate_generated,1,DOC_0082,retrieved_text_document,樱桃样血管瘤可表现为无症状、质地较坚实的红色、蓝色或紫色丘疹。,DermNet - Cherry Angioma,23.83196,0.918602,strong,0.916667,0.8,0.709677,True,False,False,False,False
+CASE_VASC_001__rag__supporting_evidence__002,CASE_VASC_001,rag,supporting_evidence,支持性医学陈述,根据DOC_0082，樱桃样血管瘤可表现为无症状、质地较坚实的红色丘疹,candidate_generated,2,DOC_0084,retrieved_text_document,HAM10000 中血管瘤类皮损在皮肤镜下可表现为红色或紫色、实性且边界清楚的 red clods 或 lacunes。,HAM10000 Scientific Data,35.98667,0.22503,weak,0.354167,0.191011,0.225806,False,False,False,False,False
+CASE_VASC_001__rag__supporting_evidence__002,CASE_VASC_001,rag,supporting_evidence,支持性医学陈述,根据DOC_0082，樱桃样血管瘤可表现为无症状、质地较坚实的红色丘疹,candidate_generated,3,DOC_0089,retrieved_text_document,樱桃样血管瘤是常见的良性红色、蓝色或紫色皮损，常见于躯干。,DermNet - Common Skin Lesions,23.240845,0.202671,weak,0.3125,0.194805,0.193548,False,False,False,False,False
+CASE_VASC_001__rag__supporting_evidence__003,CASE_VASC_001,rag,supporting_evidence,支持性医学陈述,根据DOC_0084，HAM10000数据显示血管瘤类皮损在皮肤镜下可表现为红色、实性且边界清楚,candidate_generated,1,DOC_0084,retrieved_text_document,HAM10000 中血管瘤类皮损在皮肤镜下可表现为红色或紫色、实性且边界清楚的 red clods 或 lacunes。,HAM10000 Scientific Data,35.98667,0.842726,strong,0.807018,0.666667,0.682927,True,False,False,False,False
+CASE_VASC_001__rag__supporting_evidence__003,CASE_VASC_001,rag,supporting_evidence,支持性医学陈述,根据DOC_0084，HAM10000数据显示血管瘤类皮损在皮肤镜下可表现为红色、实性且边界清楚,candidate_generated,2,DOC_0014,retrieved_text_document,良性色素性皮损通常表现为较规则、较清楚的边界。,DermNet - Benign Melanocytic Lesions,26.601108,0.177177,weak,0.280702,0.202532,0.121951,False,False,False,False,False
+CASE_VASC_001__rag__supporting_evidence__003,CASE_VASC_001,rag,supporting_evidence,支持性医学陈述,根据DOC_0084，HAM10000数据显示血管瘤类皮损在皮肤镜下可表现为红色、实性且边界清楚,candidate_generated,3,DOC_0082,retrieved_text_document,樱桃样血管瘤可表现为无症状、质地较坚实的红色、蓝色或紫色丘疹。,DermNet - Cherry Angioma,23.83196,0.176332,weak,0.280702,0.173913,0.146341,False,False,False,False,False
+CASE_VASC_001__rag__differential_diagnosis__001,CASE_VASC_001,rag,differential_diagnosis,鉴别诊断陈述,脂溢性角化病：根据DOC_0050，其可表现为光滑表面，需结合颜色和质地进行鉴别,candidate_generated,1,DOC_0050,retrieved_text_document,脂溢性角化病可表现为光滑、蜡样或疣状表面。,DermNet - Seborrhoeic Keratosis,22.439196,0.564481,strong,0.444444,0.369231,0.314286,True,False,False,False,False
+CASE_VASC_001__rag__differential_diagnosis__001,CASE_VASC_001,rag,differential_diagnosis,鉴别诊断陈述,脂溢性角化病：根据DOC_0050，其可表现为光滑表面，需结合颜色和质地进行鉴别,candidate_generated,2,DOC_0082,retrieved_text_document,樱桃样血管瘤可表现为无症状、质地较坚实的红色、蓝色或紫色丘疹。,DermNet - Cherry Angioma,23.83196,0.127743,weak,0.203704,0.117021,0.114286,False,False,False,False,False
+CASE_VASC_001__rag__differential_diagnosis__001,CASE_VASC_001,rag,differential_diagnosis,鉴别诊断陈述,脂溢性角化病：根据DOC_0050，其可表现为光滑表面，需结合颜色和质地进行鉴别,candidate_generated,3,DOC_0084,retrieved_text_document,HAM10000 中血管瘤类皮损在皮肤镜下可表现为红色或紫色、实性且边界清楚的 red clods 或 lacunes。,HAM10000 Scientific Data,35.98667,0.107,weak,0.166667,0.087379,0.114286,False,False,False,False,False
+CASE_VASC_001__rag__risk_warning__001,CASE_VASC_001,rag,risk_warning,风险医学陈述,虽然樱桃样血管瘤通常为良性，但任何新发或变化的皮损均应由专业医生评估以排除恶性病变,candidate_generated,1,DOC_0089,retrieved_text_document,樱桃样血管瘤是常见的良性红色、蓝色或紫色皮损，常见于躯干。,DermNet - Common Skin Lesions,23.240845,0.181161,weak,0.263158,0.2,0.179487,False,False,False,False,False
+CASE_VASC_001__rag__risk_warning__001,CASE_VASC_001,rag,risk_warning,风险医学陈述,虽然樱桃样血管瘤通常为良性，但任何新发或变化的皮损均应由专业医生评估以排除恶性病变,candidate_generated,2,DOC_0082,retrieved_text_document,樱桃样血管瘤可表现为无症状、质地较坚实的红色、蓝色或紫色丘疹。,DermNet - Cherry Angioma,23.83196,0.124104,weak,0.184211,0.123894,0.128205,False,False,False,False,False
+CASE_VASC_001__rag__risk_warning__001,CASE_VASC_001,rag,risk_warning,风险医学陈述,虽然樱桃样血管瘤通常为良性，但任何新发或变化的皮损均应由专业医生评估以排除恶性病变,candidate_generated,3,DOC_0084,retrieved_text_document,HAM10000 中血管瘤类皮损在皮肤镜下可表现为红色或紫色、实性且边界清楚的 red clods 或 lacunes。,HAM10000 Scientific Data,35.98667,0.098215,weak,0.157895,0.098361,0.076923,False,False,False,False,False
+CASE_VASC_001__rag__medical_advice__001,CASE_VASC_001,rag,medical_advice,医疗建议,建议前往皮肤科就诊，由医生进行肉眼检查或皮肤镜检查以明确诊断,not_applicable,,,,,,,,,,,,,,,,
+CASE_VASC_001__rag__medical_advice__002,CASE_VASC_001,rag,medical_advice,医疗建议,建议记录皮损的大小、数量及颜色变化，以便就医时提供详细病史,not_applicable,,,,,,,,,,,,,,,,
+CASE_VASC_001__rag__evidence_gap__001,CASE_VASC_001,rag,evidence_gap,证据缺口说明,检索文本未提供关于‘按压后颜色暂时变浅’（即褪色现象）的特异性证据,not_applicable,,,,,,,,,,,,,,,,
+CASE_VASC_001__rag__evidence_gap__002,CASE_VASC_001,rag,evidence_gap,证据缺口说明,检索文本未提供除樱桃样血管瘤和脂溢性角化病以外的其他血管性病变或非血管性病变的鉴别细节,not_applicable,,,,,,,,,,,,,,,,
+CASE_VASC_001__rag__evidence_gap__003,CASE_VASC_001,rag,evidence_gap,证据缺口说明,缺乏患者年龄、病程长短及是否有出血或瘙痒等伴随症状的信息,not_applicable,,,,,,,,,,,,,,,,
+CASE_VASC_001__kg_rag__observation_match__001,CASE_VASC_001,kg_rag,observation_match,观察匹配陈述,用户观察到的'躯干'部位与血管性皮损常见发生部位一致,candidate_generated,1,PATH_TRI_092,ranked_kg_evidence_path,"血管性皮损 → 常见于 → 躯干
+樱桃样血管瘤是常见的良性红色、蓝色或紫色皮损，常见于躯干。",DermNet - Common Skin Lesions,3.92,0.560462,strong,0.380952,0.222222,0.318182,False,False,True,True,False
+CASE_VASC_001__kg_rag__observation_match__001,CASE_VASC_001,kg_rag,observation_match,观察匹配陈述,用户观察到的'躯干'部位与血管性皮损常见发生部位一致,candidate_generated,2,PATH_TRI_088,ranked_kg_evidence_path,"血管性皮损 → 表现为 → 快速生长的红色肉芽样结节
+化脓性肉芽肿可表现为数周内快速生长的无痛性红色肉芽样结节。",DermNet - Pyogenic Granuloma,2.5,0.465301,moderate,0.261905,0.120879,0.181818,False,False,True,True,False
+CASE_VASC_001__kg_rag__observation_match__001,CASE_VASC_001,kg_rag,observation_match,观察匹配陈述,用户观察到的'躯干'部位与血管性皮损常见发生部位一致,candidate_generated,3,PATH_TRI_085,ranked_kg_evidence_path,"血管性皮损 → 表现为 → 红色、蓝色或紫色丘疹
+樱桃样血管瘤可表现为无症状、质地较坚实的红色、蓝色或紫色丘疹。",DermNet - Cherry Angioma,2.5,0.454074,moderate,0.238095,0.11236,0.181818,False,False,True,True,False
+CASE_VASC_001__kg_rag__observation_match__002,CASE_VASC_001,kg_rag,observation_match,观察匹配陈述,用户观察到的'鲜红色圆形小丘疹'与樱桃样血管瘤描述的红色丘疹形态相符,candidate_generated,1,PATH_TRI_085,ranked_kg_evidence_path,"血管性皮损 → 表现为 → 红色、蓝色或紫色丘疹
+樱桃样血管瘤可表现为无症状、质地较坚实的红色、蓝色或紫色丘疹。",DermNet - Cherry Angioma,2.5,0.257457,weak,0.377358,0.222222,0.310345,False,False,False,False,False
+CASE_VASC_001__kg_rag__observation_match__002,CASE_VASC_001,kg_rag,observation_match,观察匹配陈述,用户观察到的'鲜红色圆形小丘疹'与樱桃样血管瘤描述的红色丘疹形态相符,candidate_generated,2,PATH_TRI_092,ranked_kg_evidence_path,"血管性皮损 → 常见于 → 躯干
+樱桃样血管瘤是常见的良性红色、蓝色或紫色皮损，常见于躯干。",DermNet - Common Skin Lesions,3.92,0.190301,weak,0.283019,0.178571,0.206897,False,False,False,False,False
+CASE_VASC_001__kg_rag__observation_match__002,CASE_VASC_001,kg_rag,observation_match,观察匹配陈述,用户观察到的'鲜红色圆形小丘疹'与樱桃样血管瘤描述的红色丘疹形态相符,candidate_generated,3,PATH_TRI_087,ranked_kg_evidence_path,"血管性皮损 → 表现为 → 边界清楚的红色团块
+HAM10000 中血管瘤类皮损在皮肤镜下可表现为红色或紫色、实性且边界清楚的 red clods 或 lacunes。",HAM10000 Scientific Data,2.5,0.121576,weak,0.188679,0.092593,0.137931,False,False,False,False,False
+CASE_VASC_001__kg_rag__observation_match__003,CASE_VASC_001,kg_rag,observation_match,观察匹配陈述,用户观察到的'边界清楚'特征与血管性皮损在皮肤镜下或肉眼观察下的边界清晰特征相符,candidate_generated,1,PATH_TRI_087,ranked_kg_evidence_path,"血管性皮损 → 表现为 → 边界清楚的红色团块
+HAM10000 中血管瘤类皮损在皮肤镜下可表现为红色或紫色、实性且边界清楚的 red clods 或 lacunes。",HAM10000 Scientific Data,2.5,0.613721,strong,0.457627,0.278351,0.375,False,False,True,True,False
+CASE_VASC_001__kg_rag__observation_match__003,CASE_VASC_001,kg_rag,observation_match,观察匹配陈述,用户观察到的'边界清楚'特征与血管性皮损在皮肤镜下或肉眼观察下的边界清晰特征相符,candidate_generated,2,PATH_TRI_086,ranked_kg_evidence_path,"血管性皮损 → 表现为 → 红色或紫色小腔隙
+血管瘤或血管性皮损在皮肤镜下可表现为广泛红蓝色小腔隙。",DermNet - Dermoscopy of Other Non-melanocytic Lesions,2.5,0.526368,moderate,0.322034,0.206522,0.28125,False,False,True,True,False
+CASE_VASC_001__kg_rag__observation_match__003,CASE_VASC_001,kg_rag,observation_match,观察匹配陈述,用户观察到的'边界清楚'特征与血管性皮损在皮肤镜下或肉眼观察下的边界清晰特征相符,candidate_generated,3,PATH_TRI_092,ranked_kg_evidence_path,"血管性皮损 → 常见于 → 躯干
+樱桃样血管瘤是常见的良性红色、蓝色或紫色皮损，常见于躯干。",DermNet - Common Skin Lesions,3.92,0.422981,moderate,0.186441,0.117021,0.125,False,False,True,True,False
+CASE_VASC_001__kg_rag__supporting_evidence__001,CASE_VASC_001,kg_rag,supporting_evidence,支持性医学陈述,证据链 PATH_TRI_092 显示：樱桃样血管瘤是常见的良性红色、蓝色或紫色皮损，常见于躯干（来源：DermNet - Common Skin Lesions）,candidate_generated,1,PATH_TRI_092,ranked_kg_evidence_path,"血管性皮损 → 常见于 → 躯干
+樱桃样血管瘤是常见的良性红色、蓝色或紫色皮损，常见于躯干。",DermNet - Common Skin Lesions,3.92,1.0,strong,0.733333,0.709677,0.380952,True,True,True,False,True
+CASE_VASC_001__kg_rag__supporting_evidence__001,CASE_VASC_001,kg_rag,supporting_evidence,支持性医学陈述,证据链 PATH_TRI_092 显示：樱桃样血管瘤是常见的良性红色、蓝色或紫色皮损，常见于躯干（来源：DermNet - Common Skin Lesions）,candidate_generated,2,PATH_TRI_085,ranked_kg_evidence_path,"血管性皮损 → 表现为 → 红色、蓝色或紫色丘疹
+樱桃样血管瘤可表现为无症状、质地较坚实的红色、蓝色或紫色丘疹。",DermNet - Cherry Angioma,2.5,0.268571,weak,0.433333,0.285714,0.190476,False,False,False,False,False
+CASE_VASC_001__kg_rag__supporting_evidence__001,CASE_VASC_001,kg_rag,supporting_evidence,支持性医学陈述,证据链 PATH_TRI_092 显示：樱桃样血管瘤是常见的良性红色、蓝色或紫色皮损，常见于躯干（来源：DermNet - Common Skin Lesions）,candidate_generated,3,PATH_TRI_086,ranked_kg_evidence_path,"血管性皮损 → 表现为 → 红色或紫色小腔隙
+血管瘤或血管性皮损在皮肤镜下可表现为广泛红蓝色小腔隙。",DermNet - Dermoscopy of Other Non-melanocytic Lesions,2.5,0.192924,weak,0.316667,0.204301,0.126984,False,False,False,False,False
+CASE_VASC_001__kg_rag__supporting_evidence__002,CASE_VASC_001,kg_rag,supporting_evidence,支持性医学陈述,证据链 PATH_TRI_085 显示：樱桃样血管瘤可表现为无症状、质地较坚实的红色、蓝色或紫色丘疹（来源：DermNet - Cherry Angioma）,candidate_generated,1,PATH_TRI_085,ranked_kg_evidence_path,"血管性皮损 → 表现为 → 红色、蓝色或紫色丘疹
+樱桃样血管瘤可表现为无症状、质地较坚实的红色、蓝色或紫色丘疹。",DermNet - Cherry Angioma,2.5,1.0,strong,0.772727,0.708333,0.428571,True,True,True,False,True
+CASE_VASC_001__kg_rag__supporting_evidence__002,CASE_VASC_001,kg_rag,supporting_evidence,支持性医学陈述,证据链 PATH_TRI_085 显示：樱桃样血管瘤可表现为无症状、质地较坚实的红色、蓝色或紫色丘疹（来源：DermNet - Cherry Angioma）,candidate_generated,2,PATH_TRI_087,ranked_kg_evidence_path,"血管性皮损 → 表现为 → 边界清楚的红色团块
+HAM10000 中血管瘤类皮损在皮肤镜下可表现为红色或紫色、实性且边界清楚的 red clods 或 lacunes。",HAM10000 Scientific Data,2.5,0.266907,weak,0.348485,0.212963,0.174603,False,False,False,False,True
+CASE_VASC_001__kg_rag__supporting_evidence__002,CASE_VASC_001,kg_rag,supporting_evidence,支持性医学陈述,证据链 PATH_TRI_085 显示：樱桃样血管瘤可表现为无症状、质地较坚实的红色、蓝色或紫色丘疹（来源：DermNet - Cherry Angioma）,candidate_generated,3,PATH_TRI_086,ranked_kg_evidence_path,"血管性皮损 → 表现为 → 红色或紫色小腔隙
+血管瘤或血管性皮损在皮肤镜下可表现为广泛红蓝色小腔隙。",DermNet - Dermoscopy of Other Non-melanocytic Lesions,2.5,0.260913,weak,0.333333,0.229167,0.15873,False,False,False,False,True
+CASE_VASC_001__kg_rag__supporting_evidence__003,CASE_VASC_001,kg_rag,supporting_evidence,支持性医学陈述,证据链 PATH_TRI_087 显示：血管瘤类皮损可表现为红色或紫色、实性且边界清楚的团块（来源：HAM10000 Scientific Data）,candidate_generated,1,PATH_TRI_087,ranked_kg_evidence_path,"血管性皮损 → 表现为 → 边界清楚的红色团块
+HAM10000 中血管瘤类皮损在皮肤镜下可表现为红色或紫色、实性且边界清楚的 red clods 或 lacunes。",HAM10000 Scientific Data,2.5,0.900354,strong,0.741935,0.567901,0.45,True,True,False,False,True
+CASE_VASC_001__kg_rag__supporting_evidence__003,CASE_VASC_001,kg_rag,supporting_evidence,支持性医学陈述,证据链 PATH_TRI_087 显示：血管瘤类皮损可表现为红色或紫色、实性且边界清楚的团块（来源：HAM10000 Scientific Data）,candidate_generated,2,PATH_TRI_085,ranked_kg_evidence_path,"血管性皮损 → 表现为 → 红色、蓝色或紫色丘疹
+樱桃样血管瘤可表现为无症状、质地较坚实的红色、蓝色或紫色丘疹。",DermNet - Cherry Angioma,2.5,0.310323,moderate,0.419355,0.27957,0.183333,False,False,False,False,True
+CASE_VASC_001__kg_rag__supporting_evidence__003,CASE_VASC_001,kg_rag,supporting_evidence,支持性医学陈述,证据链 PATH_TRI_087 显示：血管瘤类皮损可表现为红色或紫色、实性且边界清楚的团块（来源：HAM10000 Scientific Data）,candidate_generated,3,PATH_TRI_086,ranked_kg_evidence_path,"血管性皮损 → 表现为 → 红色或紫色小腔隙
+血管瘤或血管性皮损在皮肤镜下可表现为广泛红蓝色小腔隙。",DermNet - Dermoscopy of Other Non-melanocytic Lesions,2.5,0.294839,weak,0.387097,0.266667,0.183333,False,False,False,False,True
+CASE_VASC_001__kg_rag__differential_diagnosis__001,CASE_VASC_001,kg_rag,differential_diagnosis,鉴别诊断陈述,化脓性肉芽肿：通常表现为快速生长的红色肉芽样结节，需结合病程速度鉴别（参考证据链 PATH_TRI_088）,candidate_generated,1,PATH_TRI_088,ranked_kg_evidence_path,"血管性皮损 → 表现为 → 快速生长的红色肉芽样结节
+化脓性肉芽肿可表现为数周内快速生长的无痛性红色肉芽样结节。",DermNet - Pyogenic Granuloma,2.5,0.878182,strong,0.545455,0.4,0.4,True,False,True,False,True
+CASE_VASC_001__kg_rag__differential_diagnosis__001,CASE_VASC_001,kg_rag,differential_diagnosis,鉴别诊断陈述,化脓性肉芽肿：通常表现为快速生长的红色肉芽样结节，需结合病程速度鉴别（参考证据链 PATH_TRI_088）,candidate_generated,2,PATH_TRI_085,ranked_kg_evidence_path,"血管性皮损 → 表现为 → 红色、蓝色或紫色丘疹
+樱桃样血管瘤可表现为无症状、质地较坚实的红色、蓝色或紫色丘疹。",DermNet - Cherry Angioma,2.5,0.162127,weak,0.181818,0.108108,0.088889,False,False,False,False,True
+CASE_VASC_001__kg_rag__differential_diagnosis__001,CASE_VASC_001,kg_rag,differential_diagnosis,鉴别诊断陈述,化脓性肉芽肿：通常表现为快速生长的红色肉芽样结节，需结合病程速度鉴别（参考证据链 PATH_TRI_088）,candidate_generated,3,PATH_TRI_087,ranked_kg_evidence_path,"血管性皮损 → 表现为 → 边界清楚的红色团块
+HAM10000 中血管瘤类皮损在皮肤镜下可表现为红色或紫色、实性且边界清楚的 red clods 或 lacunes。",HAM10000 Scientific Data,2.5,0.152778,weak,0.166667,0.091667,0.088889,False,False,False,False,True
+CASE_VASC_001__kg_rag__differential_diagnosis__002,CASE_VASC_001,kg_rag,differential_diagnosis,鉴别诊断陈述,其他血管畸形或血管肿瘤：需通过皮肤镜检查区分具体亚型,candidate_generated,1,PATH_TRI_086,ranked_kg_evidence_path,"血管性皮损 → 表现为 → 红色或紫色小腔隙
+血管瘤或血管性皮损在皮肤镜下可表现为广泛红蓝色小腔隙。",DermNet - Dermoscopy of Other Non-melanocytic Lesions,2.5,0.158142,weak,0.244444,0.127907,0.173913,False,False,False,False,False
+CASE_VASC_001__kg_rag__differential_diagnosis__002,CASE_VASC_001,kg_rag,differential_diagnosis,鉴别诊断陈述,其他血管畸形或血管肿瘤：需通过皮肤镜检查区分具体亚型,candidate_generated,2,PATH_TRI_087,ranked_kg_evidence_path,"血管性皮损 → 表现为 → 边界清楚的红色团块
+HAM10000 中血管瘤类皮损在皮肤镜下可表现为红色或紫色、实性且边界清楚的 red clods 或 lacunes。",HAM10000 Scientific Data,2.5,0.134976,weak,0.222222,0.1,0.130435,False,False,False,False,False
+CASE_VASC_001__kg_rag__differential_diagnosis__002,CASE_VASC_001,kg_rag,differential_diagnosis,鉴别诊断陈述,其他血管畸形或血管肿瘤：需通过皮肤镜检查区分具体亚型,candidate_generated,3,PATH_TRI_092,ranked_kg_evidence_path,"血管性皮损 → 常见于 → 躯干
+樱桃样血管瘤是常见的良性红色、蓝色或紫色皮损，常见于躯干。",DermNet - Common Skin Lesions,3.92,0.076147,weak,0.133333,0.070588,0.043478,False,False,False,False,False
+CASE_VASC_001__kg_rag__risk_warning__001,CASE_VASC_001,kg_rag,risk_warning,风险医学陈述,虽然樱桃样血管瘤多为良性，但任何新发或变化的皮肤病变均应由专业医生评估以排除恶性可能,candidate_generated,1,PATH_TRI_092,ranked_kg_evidence_path,"血管性皮损 → 常见于 → 躯干
+樱桃样血管瘤是常见的良性红色、蓝色或紫色皮损，常见于躯干。",DermNet - Common Skin Lesions,3.92,0.148955,weak,0.217949,0.158879,0.15,False,False,False,False,False
+CASE_VASC_001__kg_rag__risk_warning__001,CASE_VASC_001,kg_rag,risk_warning,风险医学陈述,虽然樱桃样血管瘤多为良性，但任何新发或变化的皮肤病变均应由专业医生评估以排除恶性可能,candidate_generated,2,PATH_TRI_085,ranked_kg_evidence_path,"血管性皮损 → 表现为 → 红色、蓝色或紫色丘疹
+樱桃样血管瘤可表现为无症状、质地较坚实的红色、蓝色或紫色丘疹。",DermNet - Cherry Angioma,2.5,0.140993,weak,0.217949,0.144068,0.125,False,False,False,False,False
+CASE_VASC_001__kg_rag__risk_warning__001,CASE_VASC_001,kg_rag,risk_warning,风险医学陈述,虽然樱桃样血管瘤多为良性，但任何新发或变化的皮肤病变均应由专业医生评估以排除恶性可能,candidate_generated,3,PATH_TRI_087,ranked_kg_evidence_path,"血管性皮损 → 表现为 → 边界清楚的红色团块
+HAM10000 中血管瘤类皮损在皮肤镜下可表现为红色或紫色、实性且边界清楚的 red clods 或 lacunes。",HAM10000 Scientific Data,2.5,0.101667,weak,0.166667,0.1,0.075,False,False,False,False,False
+CASE_VASC_001__kg_rag__risk_warning__002,CASE_VASC_001,kg_rag,risk_warning,风险医学陈述,若皮损出现快速增大、出血、溃疡或颜色显著改变，应及时就医,candidate_generated,1,PATH_TRI_088,ranked_kg_evidence_path,"血管性皮损 → 表现为 → 快速生长的红色肉芽样结节
+化脓性肉芽肿可表现为数周内快速生长的无痛性红色肉芽样结节。",DermNet - Pyogenic Granuloma,2.5,0.115417,weak,0.2,0.09375,0.083333,False,False,False,False,False
+CASE_VASC_001__kg_rag__risk_warning__002,CASE_VASC_001,kg_rag,risk_warning,风险医学陈述,若皮损出现快速增大、出血、溃疡或颜色显著改变，应及时就医,candidate_generated,2,PATH_TRI_086,ranked_kg_evidence_path,"血管性皮损 → 表现为 → 红色或紫色小腔隙
+血管瘤或血管性皮损在皮肤镜下可表现为广泛红蓝色小腔隙。",DermNet - Dermoscopy of Other Non-melanocytic Lesions,2.5,0.086111,weak,0.155556,0.077778,0.041667,False,False,False,False,False
+CASE_VASC_001__kg_rag__risk_warning__002,CASE_VASC_001,kg_rag,risk_warning,风险医学陈述,若皮损出现快速增大、出血、溃疡或颜色显著改变，应及时就医,candidate_generated,3,PATH_TRI_085,ranked_kg_evidence_path,"血管性皮损 → 表现为 → 红色、蓝色或紫色丘疹
+樱桃样血管瘤可表现为无症状、质地较坚实的红色、蓝色或紫色丘疹。",DermNet - Cherry Angioma,2.5,0.085292,weak,0.155556,0.073684,0.041667,False,False,False,False,False
+CASE_VASC_001__kg_rag__medical_advice__001,CASE_VASC_001,kg_rag,medical_advice,医疗建议,建议前往皮肤科进行面诊，必要时进行皮肤镜检查以明确诊断,not_applicable,,,,,,,,,,,,,,,,
+CASE_VASC_001__kg_rag__medical_advice__002,CASE_VASC_001,kg_rag,medical_advice,医疗建议,日常注意观察皮损大小、颜色及数量的变化，避免搔抓或摩擦导致出血,not_applicable,,,,,,,,,,,,,,,,
+CASE_VASC_001__kg_rag__medical_advice__003,CASE_VASC_001,kg_rag,medical_advice,医疗建议,保留皮损照片记录，以便复诊时对比变化情况,not_applicable,,,,,,,,,,,,,,,,
+CASE_VASC_001__kg_rag__evidence_gap__001,CASE_VASC_001,kg_rag,evidence_gap,证据缺口说明,用户未提供皮损的持续时间及生长速度，无法完全排除化脓性肉芽肿等快速生长病变,not_applicable,,,,,,,,,,,,,,,,
+CASE_VASC_001__kg_rag__evidence_gap__002,CASE_VASC_001,kg_rag,evidence_gap,证据缺口说明,用户未提供年龄信息，而樱桃样血管瘤多见于中老年人，年龄是重要参考因素,not_applicable,,,,,,,,,,,,,,,,
+CASE_VASC_001__kg_rag__evidence_gap__003,CASE_VASC_001,kg_rag,evidence_gap,证据缺口说明,用户描述的'按压后颜色可暂时变浅'这一血管性特征在当前提供的图谱证据链中缺乏直接对应的文本支持,not_applicable,,,,,,,,,,,,,,,,
+CASE_VASC_001__kg_rag__evidence_gap__004,CASE_VASC_001,kg_rag,evidence_gap,证据缺口说明,缺乏皮肤镜检查结果，无法确认是否存在典型的血管腔隙结构,not_applicable,,,,,,,,,,,,,,,,

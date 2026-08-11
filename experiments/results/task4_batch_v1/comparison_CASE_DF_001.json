@@ -1,0 +1,289 @@
+{
+  "experiment_id": "TASK4_CASE_DF_001_20260730_153611",
+  "task": "three_method_baseline_comparison",
+  "experiment_status": "success",
+  "started_at": "2026-07-30T15:35:41+08:00",
+  "finished_at": "2026-07-30T15:36:11+08:00",
+  "total_wall_time_ms": 29767,
+  "case": {
+    "case_id": "CASE_DF_001",
+    "candidate_disease": "皮肤纤维瘤",
+    "user_observation": "患者小腿出现质地较硬的棕褐色小结节，按压两侧时中央可出现凹陷。"
+  },
+  "experiment_settings": {
+    "method_order": [
+      "llm",
+      "rag",
+      "kg_rag"
+    ],
+    "rag_top_k": 5,
+    "kg_rag_top_k": 5,
+    "kg_rag_max_hops": 2,
+    "shared_llm_client": true,
+    "llm_config_path": "configs/llm_config.yaml",
+    "llm_config_sha256": "fc8182b88daaaa12da8b912ea872ffb445c12a3905d6fe28f851fea348ad967b"
+  },
+  "git": {
+    "branch": "phase-3-kg-rag-v1",
+    "commit": "2733c4fcdcacbd93b3e5f23a6fb40b7ae07489ee",
+    "working_tree_dirty": true,
+    "working_tree_status": [
+      "M .env.example",
+      " M .gitignore",
+      " M rag/schemas.py",
+      "?? configs/llm_config.yaml",
+      "?? experiments/cases/",
+      "?? experiments/results/",
+      "?? experiments/run_task4_batch.py",
+      "?? experiments/run_three_method_comparison.py",
+      "?? experiments/validate_baseline_llm.py",
+      "?? experiments/validate_baseline_rag.py",
+      "?? experiments/validate_kg_rag_pipeline.py",
+      "?? experiments/validate_task4_cases.py",
+      "?? experiments/validate_text_retriever.py",
+      "?? rag/baseline_common.py",
+      "?? rag/baseline_llm.py",
+      "?? rag/baseline_rag.py",
+      "?? rag/data/",
+      "?? rag/evidence_corpus.py",
+      "?? rag/kg_rag_pipeline.py",
+      "?? rag/llm_client.py",
+      "?? rag/text_retriever.py",
+      "?? requirements.txt"
+    ]
+  },
+  "fairness_check": {
+    "passed": true,
+    "checks": {
+      "all_use_unified_schema": true,
+      "same_case_input": true,
+      "method_order_correct": true,
+      "same_model_for_successful_runs": true,
+      "same_prompt_version_for_successful_runs": true,
+      "shared_client_instance": true
+    },
+    "successful_model_names": [
+      "qwen3.7-plus-2026-05-26"
+    ],
+    "successful_prompt_versions": [
+      "baseline_v1"
+    ]
+  },
+  "method_results": [
+    {
+      "method": "llm",
+      "started_at": "2026-07-30T15:35:41+08:00",
+      "wall_time_ms": 12594,
+      "result": {
+        "case_id": "CASE_DF_001",
+        "method": "llm",
+        "candidate_disease": "皮肤纤维瘤",
+        "user_observation": "患者小腿出现质地较硬的棕褐色小结节，按压两侧时中央可出现凹陷。",
+        "observation_match": [
+          "用户描述的小腿部位棕褐色小结节与皮肤纤维瘤的好发部位及颜色特征相符",
+          "质地较硬符合皮肤纤维瘤常见的纤维化触感",
+          "按压两侧中央出现凹陷（酒窝征）是皮肤纤维瘤具有较高特异性的临床体征"
+        ],
+        "supporting_evidence": [
+          "根据一般医学知识，皮肤纤维瘤是一种常见的良性真皮结节，常表现为坚硬的丘疹或结节",
+          "酒窝征（Dimple sign）是指横向挤压皮损时中央出现凹陷，这是由于肿瘤周围胶原纤维束的牵拉所致，是辅助识别皮肤纤维瘤的典型物理检查发现",
+          "此类病变多见于四肢伸侧，尤其是小腿，颜色可从粉红、红褐到深褐色不等"
+        ],
+        "differential_diagnosis": [
+          "色素痣：通常表面光滑，缺乏酒窝征，质地相对较软",
+          "瘢痕疙瘩或增生性瘢痕：常有外伤或手术史，形态可能不规则，通常无酒窝征",
+          "基底细胞癌：虽较少见于小腿，但需排除，通常伴有溃疡或珍珠样边缘",
+          "黑色素瘤：若结节颜色不均、边界不清或快速变化，需高度警惕恶性可能"
+        ],
+        "evidence_paths": [],
+        "risk_warning": [
+          "虽然皮肤纤维瘤多为良性，但任何新出现或发生变化的色素性皮损均需排除恶性肿瘤",
+          "若结节出现快速增大、破溃、出血、疼痛或颜色显著改变，应立即就医",
+          "自行挤压或刺激可能导致感染或炎症反应"
+        ],
+        "medical_advice": [
+          "建议前往皮肤科进行专业面诊，医生可通过视诊和触诊进一步确认",
+          "如有必要，医生可能会建议进行皮肤镜检查以观察微观结构",
+          "若诊断不明确或出于美容需求，可咨询医生关于手术切除及病理活检的可能性",
+          "日常注意观察皮损大小、形状及颜色的变化，并拍照记录以便对比"
+        ],
+        "evidence_gap": [
+          "本方法未接入外部可追溯证据，所有解释基于模型内部训练的一般医学知识",
+          "缺乏患者的年龄、性别、既往病史、皮损持续时间及变化速度等关键临床信息",
+          "缺乏皮肤镜图像或组织病理学检查结果，无法进行确诊",
+          "纯 LLM 基线未接入外部检索证据，回答中的医学内容不具备本次运行级别的来源追溯能力。"
+        ],
+        "sources": [],
+        "disclaimer": "本结果仅用于健康信息参考和辅助决策，不构成医学诊断，也不能替代医生面诊、皮肤镜检查或组织病理检查。",
+        "model_name": "qwen3.7-plus-2026-05-26",
+        "prompt_version": "baseline_v1",
+        "response_time_ms": 12594,
+        "token_usage": {
+          "prompt_tokens": 592,
+          "completion_tokens": 525,
+          "total_tokens": 1117
+        },
+        "run_status": "success",
+        "error_message": ""
+      }
+    },
+    {
+      "method": "rag",
+      "started_at": "2026-07-30T15:35:54+08:00",
+      "wall_time_ms": 6975,
+      "result": {
+        "case_id": "CASE_DF_001",
+        "method": "rag",
+        "candidate_disease": "皮肤纤维瘤",
+        "user_observation": "患者小腿出现质地较硬的棕褐色小结节，按压两侧时中央可出现凹陷。",
+        "observation_match": [
+          "用户观察到的小腿部位棕褐色硬结与皮肤纤维瘤的好发部位及形态特征相符",
+          "用户描述的按压两侧中央凹陷现象符合皮肤纤维瘤特有的捏压凹陷征"
+        ],
+        "supporting_evidence": [
+          "皮肤纤维瘤是常见良性纤维性结节，通常见于小腿皮肤",
+          "捏压皮损时，表面皮肤可出现凹陷，即捏压凹陷征"
+        ],
+        "differential_diagnosis": [
+          "基底细胞癌：虽可出现中央凹陷或溃疡，但通常边缘呈卷曲样，与用户描述的捏压凹陷机制不同"
+        ],
+        "evidence_paths": [],
+        "risk_warning": [],
+        "medical_advice": [
+          "建议前往皮肤科进行专业视诊或皮肤镜检查以明确性质",
+          "观察结节是否有快速增大、破溃、出血或颜色显著变化",
+          "记录结节的大小变化及是否出现瘙痒或疼痛症状"
+        ],
+        "evidence_gap": [
+          "检索文本未提供关于结节具体大小、存在时长及生长速度的信息",
+          "检索文本未涵盖除瘙痒和疼痛外的其他潜在伴随症状",
+          "缺乏组织病理学检查结果作为确诊依据"
+        ],
+        "sources": [
+          "DermNet - Dermatofibroma",
+          "DermNet - Basal Cell Carcinoma"
+        ],
+        "disclaimer": "本结果仅用于健康信息参考和辅助决策，不构成医学诊断，也不能替代医生面诊、皮肤镜检查或组织病理检查。",
+        "model_name": "qwen3.7-plus-2026-05-26",
+        "prompt_version": "baseline_v1",
+        "response_time_ms": 6971,
+        "token_usage": {
+          "prompt_tokens": 903,
+          "completion_tokens": 314,
+          "total_tokens": 1217
+        },
+        "run_status": "success",
+        "error_message": ""
+      }
+    },
+    {
+      "method": "kg_rag",
+      "started_at": "2026-07-30T15:36:01+08:00",
+      "wall_time_ms": 10179,
+      "result": {
+        "case_id": "CASE_DF_001",
+        "method": "kg_rag",
+        "candidate_disease": "皮肤纤维瘤",
+        "user_observation": "患者小腿出现质地较硬的棕褐色小结节，按压两侧时中央可出现凹陷。",
+        "observation_match": [
+          "用户观察到的部位“小腿”与知识图谱中皮肤纤维瘤常见于“下肢”的分布特征相符。",
+          "用户描述的“质地较硬”与皮肤纤维瘤表现为“坚实丘疹或结节”的特征一致。",
+          "用户描述的“按压两侧时中央可出现凹陷”与皮肤纤维瘤特有的“捏压凹陷征”高度吻合。"
+        ],
+        "supporting_evidence": [
+          "根据DermNet资料，皮肤纤维瘤是常见良性纤维性结节，通常见于小腿皮肤。",
+          "根据DermNet资料，皮肤纤维瘤通常表现为单发、坚实的丘疹或结节。",
+          "根据DermNet资料，捏压皮损时，表面皮肤可出现凹陷，即捏压凹陷征，这是该病的典型体征。"
+        ],
+        "differential_diagnosis": [
+          "黑色素瘤：虽然较少见，但硬化性黑色素瘤可能在形态上与皮肤纤维瘤混淆，且也可发生于腿部。",
+          "隆突性皮肤纤维肉瘤：在鉴别诊断中提及，需排除此类低度恶性软组织肿瘤。"
+        ],
+        "evidence_paths": [
+          {
+            "head_entity": "皮肤纤维瘤",
+            "relation": "常见于",
+            "tail_entity": "下肢",
+            "evidence_text": "皮肤纤维瘤是常见良性纤维性结节，通常见于小腿皮肤。",
+            "source_id": "TRI_074",
+            "source_name": "DermNet - Dermatofibroma",
+            "score": 3.84
+          },
+          {
+            "head_entity": "皮肤纤维瘤",
+            "relation": "鉴别诊断 → 常见于",
+            "tail_entity": "下肢",
+            "evidence_text": "皮肤纤维瘤有时可能被误认为隆突性皮肤纤维肉瘤或硬化性黑色素瘤。；黑色素瘤可发生在身体任何部位，男性常见于背部，女性常见于腿部。",
+            "source_id": "TRI_081；TRI_013",
+            "source_name": "DermNet - Dermatofibroma；DermNet - Melanoma",
+            "score": 3.39
+          },
+          {
+            "head_entity": "皮肤纤维瘤",
+            "relation": "表现为",
+            "tail_entity": "坚实丘疹或结节",
+            "evidence_text": "皮肤纤维瘤通常表现为单发、坚实的丘疹或结节。",
+            "source_id": "TRI_070",
+            "source_name": "DermNet - Dermatofibroma",
+            "score": 2.5
+          },
+          {
+            "head_entity": "皮肤纤维瘤",
+            "relation": "表现为",
+            "tail_entity": "捏压凹陷征",
+            "evidence_text": "捏压皮损时，表面皮肤可出现凹陷，即捏压凹陷征。",
+            "source_id": "TRI_071",
+            "source_name": "DermNet - Dermatofibroma",
+            "score": 2.5
+          },
+          {
+            "head_entity": "皮肤纤维瘤",
+            "relation": "表现为",
+            "tail_entity": "中央白色瘢痕样区域",
+            "evidence_text": "皮肤纤维瘤最常见的皮肤镜模式是中央白色区域伴周围淡色素网。",
+            "source_id": "TRI_072",
+            "source_name": "DermNet - Dermatofibroma",
+            "score": 2.5
+          }
+        ],
+        "risk_warning": [
+          "尽管皮肤纤维瘤多为良性，但任何新出现的、变化的或形态不典型的皮肤结节均需由专业医生评估以排除恶性病变。",
+          "不可仅凭外观自行确诊，需结合皮肤镜或病理检查确认。"
+        ],
+        "medical_advice": [
+          "建议前往皮肤科就诊，由医生进行体格检查。",
+          "医生可能会建议使用皮肤镜检查以观察皮损的微细结构。",
+          "如有必要，医生可能会建议进行皮肤活检以明确病理诊断。",
+          "日常注意观察结节的大小、颜色、形状是否有变化，并记录变化情况供医生参考。"
+        ],
+        "evidence_gap": [
+          "用户未提供结节的持续时间及生长速度信息。",
+          "用户未提供是否有瘙痒、疼痛或出血等症状。",
+          "用户未提供既往是否有外伤史或昆虫叮咬史（皮肤纤维瘤常与此相关）。",
+          "缺乏皮肤镜检查图像或病理组织学检查结果作为确诊依据。"
+        ],
+        "sources": [
+          "DermNet - Dermatofibroma",
+          "DermNet - Melanoma"
+        ],
+        "disclaimer": "本结果仅用于健康信息参考和辅助决策，不构成医学诊断，也不能替代医生面诊、皮肤镜检查或组织病理检查。",
+        "model_name": "qwen3.7-plus-2026-05-26",
+        "prompt_version": "baseline_v1",
+        "response_time_ms": 10174,
+        "token_usage": {
+          "prompt_tokens": 1502,
+          "completion_tokens": 519,
+          "total_tokens": 2021
+        },
+        "run_status": "success",
+        "error_message": ""
+      }
+    }
+  ],
+  "summary": {
+    "method_count": 3,
+    "success_count": 3,
+    "failed_count": 0,
+    "total_tokens": 4355
+  }
+}

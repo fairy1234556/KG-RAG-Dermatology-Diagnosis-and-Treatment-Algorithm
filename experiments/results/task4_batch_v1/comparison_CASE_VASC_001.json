@@ -1,0 +1,305 @@
+{
+  "experiment_id": "TASK4_CASE_VASC_001_20260730_153945",
+  "task": "three_method_baseline_comparison",
+  "experiment_status": "success",
+  "started_at": "2026-07-30T15:39:23+08:00",
+  "finished_at": "2026-07-31T14:00:45+08:00",
+  "total_wall_time_ms": 33734,
+  "case": {
+    "case_id": "CASE_VASC_001",
+    "candidate_disease": "血管性病变",
+    "user_observation": "患者躯干部出现多个鲜红色圆形小丘疹，边界清楚，表面光滑，按压后颜色可暂时变浅。"
+  },
+  "experiment_settings": {
+    "method_order": [
+      "llm",
+      "rag",
+      "kg_rag"
+    ],
+    "rag_top_k": 5,
+    "kg_rag_top_k": 5,
+    "kg_rag_max_hops": 2,
+    "shared_llm_client": true,
+    "llm_config_path": "configs/llm_config.yaml",
+    "llm_config_sha256": "fc8182b88daaaa12da8b912ea872ffb445c12a3905d6fe28f851fea348ad967b"
+  },
+  "git": {
+    "branch": "phase-3-kg-rag-v1",
+    "commit": "2733c4fcdcacbd93b3e5f23a6fb40b7ae07489ee",
+    "working_tree_dirty": true,
+    "working_tree_status": [
+      "M .env.example",
+      " M .gitignore",
+      " M rag/schemas.py",
+      "?? configs/llm_config.yaml",
+      "?? experiments/cases/",
+      "?? experiments/results/",
+      "?? experiments/run_task4_batch.py",
+      "?? experiments/run_three_method_comparison.py",
+      "?? experiments/validate_baseline_llm.py",
+      "?? experiments/validate_baseline_rag.py",
+      "?? experiments/validate_kg_rag_pipeline.py",
+      "?? experiments/validate_task4_cases.py",
+      "?? experiments/validate_text_retriever.py",
+      "?? rag/baseline_common.py",
+      "?? rag/baseline_llm.py",
+      "?? rag/baseline_rag.py",
+      "?? rag/data/",
+      "?? rag/evidence_corpus.py",
+      "?? rag/kg_rag_pipeline.py",
+      "?? rag/llm_client.py",
+      "?? rag/text_retriever.py",
+      "?? requirements.txt"
+    ]
+  },
+  "fairness_check": {
+    "passed": true,
+    "checks": {
+      "all_use_unified_schema": true,
+      "same_case_input": true,
+      "method_order_correct": true,
+      "same_model_for_successful_runs": true,
+      "same_prompt_version_for_successful_runs": true,
+      "shared_client_instance": true
+    },
+    "successful_model_names": [
+      "qwen3.7-plus-2026-05-26"
+    ],
+    "successful_prompt_versions": [
+      "baseline_v1"
+    ]
+  },
+  "method_results": [
+    {
+      "method": "llm",
+      "started_at": "2026-07-30T15:39:23+08:00",
+      "wall_time_ms": 13746,
+      "result": {
+        "case_id": "CASE_VASC_001",
+        "method": "llm",
+        "candidate_disease": "血管性病变",
+        "user_observation": "患者躯干部出现多个鲜红色圆形小丘疹，边界清楚，表面光滑，按压后颜色可暂时变浅。",
+        "observation_match": [
+          "用户描述的‘鲜红色圆形小丘疹’、‘边界清楚’、‘表面光滑’符合血管性病变（如樱桃状血管瘤）的典型形态学特征。",
+          "‘按压后颜色可暂时变浅’提示病灶内含有血液成分，且血流动力学改变可影响外观，这与血管源性皮损的生理特性一致。",
+          "‘躯干部多发’是某些良性血管增生性病变常见的分布区域。"
+        ],
+        "supporting_evidence": [
+          "一般医学知识指出，樱桃状血管瘤（老年性血管瘤）常表现为躯干或四肢近端的鲜红色至深红色圆顶状丘疹，直径通常为数毫米，表面光滑，压之可褪色或变白。",
+          "血管性病变通常由毛细血管或小静脉扩张、增生引起，其颜色源于红细胞内的血红蛋白，因此按压排空血液后颜色会变浅。",
+          "此类病变在成年人群中极为常见，随年龄增长发病率增加，多为良性过程。"
+        ],
+        "differential_diagnosis": [
+          "化脓性肉芽肿：通常生长迅速，易出血，常有外伤史，虽为血管性但临床表现更具侵袭性。",
+          "蜘蛛痣：中心有搏动性小动脉，周围有辐射状毛细血管，按压中心点周围血管网消失，与本例描述的‘圆形小丘疹’形态略有不同。",
+          "紫癜：皮下出血点，按压通常不褪色，与本例‘按压后颜色变浅’不符，但需通过体格检查排除非血管性红斑。",
+          "基底细胞癌或其他皮肤肿瘤：极少数情况下，早期皮肤肿瘤可能呈现红色结节，需专业鉴别。"
+        ],
+        "evidence_paths": [],
+        "risk_warning": [
+          "虽然多数此类表现倾向于良性血管病变，但若皮损出现快速增大、形状不对称、颜色不均匀、自发性出血、溃疡或疼痛，需警惕恶性病变可能。",
+          "不可自行挑破或挤压皮损，以免引起感染或难以控制的出血。"
+        ],
+        "medical_advice": [
+          "建议前往皮肤科进行面诊，医生可通过皮肤镜检查进一步确认皮损性质。",
+          "记录皮损的数量、大小变化及是否有新发皮损，以便就医时提供详细病史。",
+          "若皮损无变化且无症状，通常无需紧急处理，但仍建议定期自我观察。"
+        ],
+        "evidence_gap": [
+          "本方法未接入外部可追溯证据，所有解释基于模型内部的一般医学知识库。",
+          "缺乏患者的年龄、既往病史、皮损持续时间、是否有外伤史等关键临床信息。",
+          "缺乏皮肤镜或组织病理学检查结果，无法从组织学层面确诊。",
+          "无法排除其他罕见血管畸形或非血管性模拟病变。",
+          "纯 LLM 基线未接入外部检索证据，回答中的医学内容不具备本次运行级别的来源追溯能力。"
+        ],
+        "sources": [],
+        "disclaimer": "本结果仅用于健康信息参考和辅助决策，不构成医学诊断，也不能替代医生面诊、皮肤镜检查或组织病理检查。",
+        "model_name": "qwen3.7-plus-2026-05-26",
+        "prompt_version": "baseline_v1",
+        "response_time_ms": 13746,
+        "token_usage": {
+          "prompt_tokens": 599,
+          "completion_tokens": 621,
+          "total_tokens": 1220
+        },
+        "run_status": "success",
+        "error_message": ""
+      }
+    },
+    {
+      "method": "rag",
+      "started_at": "2026-07-30T15:39:36+08:00",
+      "wall_time_ms": 8924,
+      "result": {
+        "case_id": "CASE_VASC_001",
+        "method": "rag",
+        "candidate_disease": "血管性病变",
+        "user_observation": "患者躯干部出现多个鲜红色圆形小丘疹，边界清楚，表面光滑，按压后颜色可暂时变浅。",
+        "observation_match": [
+          "用户观察到的躯干部位鲜红色圆形小丘疹与樱桃样血管瘤常见于躯干的描述相符",
+          "用户观察到的红色丘疹形态与樱桃样血管瘤表现为红色丘疹的特征一致",
+          "用户观察到的边界清楚特征与血管瘤类皮损边界清楚的描述相符"
+        ],
+        "supporting_evidence": [
+          "根据DOC_0089，樱桃样血管瘤是常见的良性红色皮损，且常见于躯干",
+          "根据DOC_0082，樱桃样血管瘤可表现为无症状、质地较坚实的红色丘疹",
+          "根据DOC_0084，HAM10000数据显示血管瘤类皮损在皮肤镜下可表现为红色、实性且边界清楚"
+        ],
+        "differential_diagnosis": [
+          "脂溢性角化病：根据DOC_0050，其可表现为光滑表面，需结合颜色和质地进行鉴别"
+        ],
+        "evidence_paths": [],
+        "risk_warning": [
+          "虽然樱桃样血管瘤通常为良性，但任何新发或变化的皮损均应由专业医生评估以排除恶性病变"
+        ],
+        "medical_advice": [
+          "建议前往皮肤科就诊，由医生进行肉眼检查或皮肤镜检查以明确诊断",
+          "建议记录皮损的大小、数量及颜色变化，以便就医时提供详细病史"
+        ],
+        "evidence_gap": [
+          "检索文本未提供关于‘按压后颜色暂时变浅’（即褪色现象）的特异性证据",
+          "检索文本未提供除樱桃样血管瘤和脂溢性角化病以外的其他血管性病变或非血管性病变的鉴别细节",
+          "缺乏患者年龄、病程长短及是否有出血或瘙痒等伴随症状的信息"
+        ],
+        "sources": [
+          "HAM10000 Scientific Data",
+          "DermNet - Benign Melanocytic Lesions",
+          "DermNet - Cherry Angioma",
+          "DermNet - Common Skin Lesions",
+          "DermNet - Seborrhoeic Keratosis"
+        ],
+        "disclaimer": "本结果仅用于健康信息参考和辅助决策，不构成医学诊断，也不能替代医生面诊、皮肤镜检查或组织病理检查。",
+        "model_name": "qwen3.7-plus-2026-05-26",
+        "prompt_version": "baseline_v1",
+        "response_time_ms": 8919,
+        "token_usage": {
+          "prompt_tokens": 948,
+          "completion_tokens": 455,
+          "total_tokens": 1403
+        },
+        "run_status": "success",
+        "error_message": ""
+      }
+    },
+    {
+      "method": "kg_rag",
+      "started_at": "2026-07-31T14:00:34+08:00",
+      "wall_time_ms": 11043,
+      "result": {
+        "case_id": "CASE_VASC_001",
+        "method": "kg_rag",
+        "candidate_disease": "血管性病变",
+        "user_observation": "患者躯干部出现多个鲜红色圆形小丘疹，边界清楚，表面光滑，按压后颜色可暂时变浅。",
+        "observation_match": [
+          "用户观察到的'躯干'部位与血管性皮损常见发生部位一致",
+          "用户观察到的'鲜红色圆形小丘疹'与樱桃样血管瘤描述的红色丘疹形态相符",
+          "用户观察到的'边界清楚'特征与血管性皮损在皮肤镜下或肉眼观察下的边界清晰特征相符"
+        ],
+        "supporting_evidence": [
+          "证据链 PATH_TRI_092 显示：樱桃样血管瘤是常见的良性红色、蓝色或紫色皮损，常见于躯干（来源：DermNet - Common Skin Lesions）",
+          "证据链 PATH_TRI_085 显示：樱桃样血管瘤可表现为无症状、质地较坚实的红色、蓝色或紫色丘疹（来源：DermNet - Cherry Angioma）",
+          "证据链 PATH_TRI_087 显示：血管瘤类皮损可表现为红色或紫色、实性且边界清楚的团块（来源：HAM10000 Scientific Data）"
+        ],
+        "differential_diagnosis": [
+          "化脓性肉芽肿：通常表现为快速生长的红色肉芽样结节，需结合病程速度鉴别（参考证据链 PATH_TRI_088）",
+          "其他血管畸形或血管肿瘤：需通过皮肤镜检查区分具体亚型"
+        ],
+        "evidence_paths": [
+          {
+            "head_entity": "血管性皮损",
+            "relation": "常见于",
+            "tail_entity": "躯干",
+            "evidence_text": "樱桃样血管瘤是常见的良性红色、蓝色或紫色皮损，常见于躯干。",
+            "source_id": "TRI_092",
+            "source_name": "DermNet - Common Skin Lesions",
+            "score": 3.92
+          },
+          {
+            "head_entity": "血管性皮损",
+            "relation": "表现为",
+            "tail_entity": "红色、蓝色或紫色丘疹",
+            "evidence_text": "樱桃样血管瘤可表现为无症状、质地较坚实的红色、蓝色或紫色丘疹。",
+            "source_id": "TRI_085",
+            "source_name": "DermNet - Cherry Angioma",
+            "score": 2.5
+          },
+          {
+            "head_entity": "血管性皮损",
+            "relation": "表现为",
+            "tail_entity": "红色或紫色小腔隙",
+            "evidence_text": "血管瘤或血管性皮损在皮肤镜下可表现为广泛红蓝色小腔隙。",
+            "source_id": "TRI_086",
+            "source_name": "DermNet - Dermoscopy of Other Non-melanocytic Lesions",
+            "score": 2.5
+          },
+          {
+            "head_entity": "血管性皮损",
+            "relation": "表现为",
+            "tail_entity": "边界清楚的红色团块",
+            "evidence_text": "HAM10000 中血管瘤类皮损在皮肤镜下可表现为红色或紫色、实性且边界清楚的 red clods 或 lacunes。",
+            "source_id": "TRI_087",
+            "source_name": "HAM10000 Scientific Data",
+            "score": 2.5
+          },
+          {
+            "head_entity": "血管性皮损",
+            "relation": "表现为",
+            "tail_entity": "快速生长的红色肉芽样结节",
+            "evidence_text": "化脓性肉芽肿可表现为数周内快速生长的无痛性红色肉芽样结节。",
+            "source_id": "TRI_088",
+            "source_name": "DermNet - Pyogenic Granuloma",
+            "score": 2.5
+          }
+        ],
+        "risk_warning": [
+          "虽然樱桃样血管瘤多为良性，但任何新发或变化的皮肤病变均应由专业医生评估以排除恶性可能",
+          "若皮损出现快速增大、出血、溃疡或颜色显著改变，应及时就医"
+        ],
+        "medical_advice": [
+          "建议前往皮肤科进行面诊，必要时进行皮肤镜检查以明确诊断",
+          "日常注意观察皮损大小、颜色及数量的变化，避免搔抓或摩擦导致出血",
+          "保留皮损照片记录，以便复诊时对比变化情况"
+        ],
+        "evidence_gap": [
+          "用户未提供皮损的持续时间及生长速度，无法完全排除化脓性肉芽肿等快速生长病变",
+          "用户未提供年龄信息，而樱桃样血管瘤多见于中老年人，年龄是重要参考因素",
+          "用户描述的'按压后颜色可暂时变浅'这一血管性特征在当前提供的图谱证据链中缺乏直接对应的文本支持",
+          "缺乏皮肤镜检查结果，无法确认是否存在典型的血管腔隙结构"
+        ],
+        "sources": [
+          "DermNet - Common Skin Lesions",
+          "DermNet - Cherry Angioma",
+          "DermNet - Dermoscopy of Other Non-melanocytic Lesions",
+          "HAM10000 Scientific Data",
+          "DermNet - Pyogenic Granuloma"
+        ],
+        "disclaimer": "本结果仅用于健康信息参考和辅助决策，不构成医学诊断，也不能替代医生面诊、皮肤镜检查或组织病理检查。",
+        "model_name": "qwen3.7-plus-2026-05-26",
+        "prompt_version": "baseline_v1",
+        "response_time_ms": 11041,
+        "token_usage": {
+          "prompt_tokens": 1555,
+          "completion_tokens": 574,
+          "total_tokens": 2129
+        },
+        "run_status": "success",
+        "error_message": ""
+      }
+    }
+  ],
+  "summary": {
+    "method_count": 3,
+    "success_count": 3,
+    "failed_count": 0,
+    "total_tokens": 4752
+  },
+  "repair_history": [
+    {
+      "repaired_at": "2026-07-31T14:00:45+08:00",
+      "method": "kg_rag",
+      "previous_error": "ValueError: 未找到候选疾病：血管性病变。当前可用疾病包括：黑色素瘤、黑色素细胞痣、基底细胞癌、光化性角化病/表皮内癌、良性角化样病变、皮肤纤维瘤、血管性皮损",
+      "repair_wall_time_ms": 11043,
+      "new_status": "success"
+    }
+  ]
+}

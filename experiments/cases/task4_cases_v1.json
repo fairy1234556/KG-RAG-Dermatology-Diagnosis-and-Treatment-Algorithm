@@ -1,0 +1,94 @@
+{
+    "dataset_name": "task4_three_method_cases_v1",
+    "dataset_version": "1.0",
+    "description": "用于纯LLM、普通RAG和KG-RAG三方法对照实验的固定皮肤病文本病例集。",
+    "case_count": 7,
+    "cases": [
+      {
+        "case_id": "CASE_BCC_001",
+        "candidate_disease": "基底细胞癌",
+        "user_observation": "患者面部出现光亮的珍珠样结节，表面可见细小血管。",
+        "expected_concepts": [
+          "珍珠样结节",
+          "表面毛细血管扩张",
+          "面部"
+        ],
+        "case_type": "typical_positive"
+      },
+      {
+        "case_id": "CASE_MEL_001",
+        "candidate_disease": "黑色素瘤",
+        "user_observation": "患者皮损形态不对称，边界不规则，颜色深浅不一，近期有增大趋势。",
+        "expected_concepts": [
+          "不对称",
+          "边界不规则",
+          "多种颜色",
+          "近期变化"
+        ],
+        "case_type": "typical_positive"
+      },
+      {
+        "case_id": "CASE_NV_001",
+        "candidate_disease": "黑色素细胞痣",
+        "user_observation": "患者皮肤上有一枚长期存在的棕色小斑，形状较规则，边界清楚，近期无明显变化。",
+        "expected_concepts": [
+          "棕色",
+          "形状规则",
+          "边界清楚",
+          "长期稳定"
+        ],
+        "case_type": "typical_positive"
+      },
+      {
+        "case_id": "CASE_AKIEC_001",
+        "candidate_disease": "光化性角化病/表皮内癌",
+        "user_observation": "患者日晒部位出现粗糙的红色鳞屑性斑片，表面角化明显，持续不消退。",
+        "expected_concepts": [
+          "日晒部位",
+          "粗糙",
+          "红色斑片",
+          "鳞屑",
+          "角化"
+        ],
+        "case_type": "typical_positive"
+      },
+      {
+        "case_id": "CASE_BKL_001",
+        "candidate_disease": "良性角化性病变",
+        "user_observation": "患者躯干部出现边界清楚的棕褐色隆起性斑块，表面粗糙，外观像贴在皮肤上一样。",
+        "expected_concepts": [
+          "边界清楚",
+          "棕褐色",
+          "隆起性斑块",
+          "表面粗糙",
+          "贴附样外观"
+        ],
+        "case_type": "typical_positive"
+      },
+      {
+        "case_id": "CASE_DF_001",
+        "candidate_disease": "皮肤纤维瘤",
+        "user_observation": "患者小腿出现质地较硬的棕褐色小结节，按压两侧时中央可出现凹陷。",
+        "expected_concepts": [
+          "小腿",
+          "质地较硬",
+          "棕褐色结节",
+          "中央凹陷"
+        ],
+        "case_type": "typical_positive"
+      },
+      {
+        "case_id": "CASE_VASC_001",
+        "candidate_disease": "血管性病变",
+        "user_observation": "患者躯干部出现多个鲜红色圆形小丘疹，边界清楚，表面光滑，按压后颜色可暂时变浅。",
+        "expected_concepts": [
+          "鲜红色",
+          "圆形丘疹",
+          "边界清楚",
+          "表面光滑",
+          "按压褪色"
+        ],
+        "case_type": "typical_positive"
+      }
+    ]
+  }

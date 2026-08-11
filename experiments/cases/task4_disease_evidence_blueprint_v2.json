@@ -1,0 +1,2829 @@
+{
+  "blueprint_name": "task4_disease_evidence_blueprint_v2",
+  "blueprint_version": "2.0",
+  "generated_at": "2026-08-03T10:04:42+08:00",
+  "description": "基于当前知识图谱自动提取的7 类皮肤疾病正式病例生成证据蓝图。",
+  "disease_count": 7,
+  "source_entity_count": 79,
+  "source_triple_count": 102,
+  "total_disease_evidence_count": 102,
+  "total_observation_support_count": 75,
+  "source_files": {
+    "entity_nodes": {
+      "path": "kg/csv/entity_nodes.csv",
+      "sha256": "eb2043363bc187fc72f394d7cc36dc568c3bfe8e40e5fa0bca4ca8632db97315"
+    },
+    "triples": {
+      "path": "kg/csv/triples.csv",
+      "sha256": "0f1c9d871316d2a63c6da994ad650145311a2bf84376fd19b0e3dadc16e3d605"
+    }
+  },
+  "evidence_category_order": [
+    "lesion_features",
+    "anatomical_sites",
+    "symptoms",
+    "examination_findings",
+    "differential_diagnoses",
+    "risk_warnings",
+    "treatments",
+    "causes_and_risk_factors",
+    "other_evidence"
+  ],
+  "observation_categories": [
+    "anatomical_sites",
+    "examination_findings",
+    "lesion_features",
+    "symptoms"
+  ],
+  "diseases": [
+    {
+      "disease_id": "DIS_001",
+      "disease_name_cn": "黑色素瘤",
+      "disease_name_en": "Melanoma",
+      "alias": "mel",
+      "disease_abbreviation": "MEL",
+      "entity_source": "HAM10000",
+      "outgoing_evidence_count": 14,
+      "observation_support_count": 11,
+      "auxiliary_evidence_count": 3,
+      "relation_distribution": {
+        "伴随症状": 2,
+        "就医建议": 1,
+        "常见于": 2,
+        "建议检查": 2,
+        "表现为": 5,
+        "鉴别诊断": 1,
+        "风险提示": 1
+      },
+      "tail_type_distribution": {
+        "AnatomicalSite": 2,
+        "Disease": 1,
+        "Examination": 2,
+        "LesionFeature": 5,
+        "MedicalAdvice": 1,
+        "RiskWarning": 1,
+        "Symptom": 2
+      },
+      "source_names": [
+        "DermNet - ABCDEFG of melanoma",
+        "DermNet - Dermoscopy / Melanoma",
+        "DermNet - Melanoma",
+        "AAD - Melanoma clinical guideline",
+        "DermNet - Atypical naevi / Superficial spreading melanoma"
+      ],
+      "observation_support_record_ids": [
+        "TRI_007",
+        "TRI_014",
+        "TRI_008",
+        "TRI_009",
+        "TRI_001",
+        "TRI_002",
+        "TRI_003",
+        "TRI_004",
+        "TRI_005",
+        "TRI_006",
+        "TRI_013"
+      ],
+      "auxiliary_record_ids": [
+        "TRI_010",
+        "TRI_011",
+        "TRI_012"
+      ],
+      "evidence_by_category": {
+        "lesion_features": [
+          {
+            "triple_id": "TRI_001",
+            "head_id": "DIS_001",
+            "head_cn": "黑色素瘤",
+            "head_type": "Disease",
+            "relation_cn": "表现为",
+            "relation_en": "has_manifestation",
+            "tail_id": "LF_001",
+            "tail_cn": "边界不规则",
+            "tail_type": "LesionFeature",
+            "source": "DermNet - ABCDEFG of melanoma",
+            "evidence_text": "ABCDE 特征包括 Border irregularity，可支持“边界不规则”。",
+            "note": "黑色素瘤皮损特征",
+            "evidence_category": "lesion_features"
+          },
+          {
+            "triple_id": "TRI_002",
+            "head_id": "DIS_001",
+            "head_cn": "黑色素瘤",
+            "head_type": "Disease",
+            "relation_cn": "表现为",
+            "relation_en": "has_manifestation",
+            "tail_id": "LF_002",
+            "tail_cn": "颜色不均",
+            "tail_type": "LesionFeature",
+            "source": "DermNet - ABCDEFG of melanoma",
+            "evidence_text": "ABCDE 特征包括 Colour variability / Change，可支持“颜色不均”。",
+            "note": "黑色素瘤皮损特征",
+            "evidence_category": "lesion_features"
+          },
+          {
+            "triple_id": "TRI_003",
+            "head_id": "DIS_001",
+            "head_cn": "黑色素瘤",
+            "head_type": "Disease",
+            "relation_cn": "表现为",
+            "relation_en": "has_manifestation",
+            "tail_id": "LF_003",
+            "tail_cn": "形态不对称",
+            "tail_type": "LesionFeature",
+            "source": "DermNet - ABCDEFG of melanoma",
+            "evidence_text": "ABCDE 特征包括 Asymmetry，可支持“形态不对称”。",
+            "note": "黑色素瘤皮损特征",
+            "evidence_category": "lesion_features"
+          },
+          {
+            "triple_id": "TRI_004",
+            "head_id": "DIS_001",
+            "head_cn": "黑色素瘤",
+            "head_type": "Disease",
+            "relation_cn": "表现为",
+            "relation_en": "has_manifestation",
+            "tail_id": "LF_004",
+            "tail_cn": "直径增大",
+            "tail_type": "LesionFeature",
+            "source": "DermNet - ABCDEFG of melanoma",
+            "evidence_text": "ABCDE 特征包括 Diameter / Evolving，可支持“直径增大或变化”。",
+            "note": "黑色素瘤皮损特征",
+            "evidence_category": "lesion_features"
+          },
+          {
+            "triple_id": "TRI_005",
+            "head_id": "DIS_001",
+            "head_cn": "黑色素瘤",
+            "head_type": "Disease",
+            "relation_cn": "表现为",
+            "relation_en": "has_manifestation",
+            "tail_id": "LF_005",
+            "tail_cn": "结构不规则",
+            "tail_type": "LesionFeature",
+            "source": "DermNet - Dermoscopy / Melanoma",
+            "evidence_text": "黑色素瘤评估中可出现不规则色素或异常皮肤镜结构。",
+            "note": "黑色素瘤皮损特征",
+            "evidence_category": "lesion_features"
+          }
+        ],
+        "anatomical_sites": [
+          {
+            "triple_id": "TRI_006",
+            "head_id": "DIS_001",
+            "head_cn": "黑色素瘤",
+            "head_type": "Disease",
+            "relation_cn": "常见于",
+            "relation_en": "commonly_occurs_at",
+            "tail_id": "SITE_003",
+            "tail_cn": "背部",
+            "tail_type": "AnatomicalSite",
+            "source": "DermNet - Melanoma",
+            "evidence_text": "黑色素瘤可发生在身体任何部位，男性常见于背部，女性常见于腿部。",
+            "note": "常见发病部位",
+            "evidence_category": "anatomical_sites"
+          },
+          {
+            "triple_id": "TRI_013",
+            "head_id": "DIS_001",
+            "head_cn": "黑色素瘤",
+            "head_type": "Disease",
+            "relation_cn": "常见于",
+            "relation_en": "commonly_occurs_at",
+            "tail_id": "SITE_002",
+            "tail_cn": "下肢",
+            "tail_type": "AnatomicalSite",
+            "source": "DermNet - Melanoma",
+            "evidence_text": "黑色素瘤可发生在身体任何部位，男性常见于背部，女性常见于腿部。",
+            "note": "常见发病部位",
+            "evidence_category": "anatomical_sites"
+          }
+        ],
+        "symptoms": [
+          {
+            "triple_id": "TRI_007",
+            "head_id": "DIS_001",
+            "head_cn": "黑色素瘤",
+            "head_type": "Disease",
+            "relation_cn": "伴随症状",
+            "relation_en": "has_symptom",
+            "tail_id": "SYM_001",
+            "tail_cn": "出血",
+            "tail_type": "Symptom",
+            "source": "DermNet - Melanoma",
+            "evidence_text": "黑色素瘤早期可表现为异常痣或斑点，并可能出现瘙痒或出血。",
+            "note": "皮损异常变化",
+            "evidence_category": "symptoms"
+          },
+          {
+            "triple_id": "TRI_014",
+            "head_id": "DIS_001",
+            "head_cn": "黑色素瘤",
+            "head_type": "Disease",
+            "relation_cn": "伴随症状",
+            "relation_en": "has_symptom",
+            "tail_id": "SYM_002",
+            "tail_cn": "瘙痒",
+            "tail_type": "Symptom",
+            "source": "DermNet - Melanoma",
+            "evidence_text": "黑色素瘤早期可表现为异常痣或斑点，并可能出现瘙痒或出血。",
+            "note": "皮损异常变化",
+            "evidence_category": "symptoms"
+          }
+        ],
+        "examination_findings": [
+          {
+            "triple_id": "TRI_008",
+            "head_id": "DIS_001",
+            "head_cn": "黑色素瘤",
+            "head_type": "Disease",
+            "relation_cn": "建议检查",
+            "relation_en": "recommended_examination",
+            "tail_id": "EXAM_001",
+            "tail_cn": "皮肤镜检查",
+            "tail_type": "Examination",
+            "source": "DermNet - Dermoscopy / Melanoma",
+            "evidence_text": "皮肤镜可用于黑色素瘤相关皮损评估。",
+            "note": "辅助检查方式",
+            "evidence_category": "examination_findings"
+          },
+          {
+            "triple_id": "TRI_009",
+            "head_id": "DIS_001",
+            "head_cn": "黑色素瘤",
+            "head_type": "Disease",
+            "relation_cn": "建议检查",
+            "relation_en": "recommended_examination",
+            "tail_id": "EXAM_002",
+            "tail_cn": "组织病理检查",
+            "tail_type": "Examination",
+            "source": "AAD - Melanoma clinical guideline",
+            "evidence_text": "活检可提供组织病理信息，用于优化黑色素瘤诊断并指导后续管理。",
+            "note": "确认诊断相关检查",
+            "evidence_category": "examination_findings"
+          }
+        ],
+        "differential_diagnoses": [
+          {
+            "triple_id": "TRI_010",
+            "head_id": "DIS_001",
+            "head_cn": "黑色素瘤",
+            "head_type": "Disease",
+            "relation_cn": "鉴别诊断",
+            "relation_en": "differential_diagnosis",
+            "tail_id": "DIS_002",
+            "tail_cn": "黑色素细胞痣",
+            "tail_type": "Disease",
+            "source": "DermNet - Atypical naevi / Superficial spreading melanoma",
+            "evidence_text": "黑色素瘤早期可能类似黑色素细胞痣，部分情况下很难与非典型痣区分。",
+            "note": "易混淆疾病",
+            "evidence_category": "differential_diagnoses"
+          }
+        ],
+        "risk_warnings": [
+          {
+            "triple_id": "TRI_011",
+            "head_id": "DIS_001",
+            "head_cn": "黑色素瘤",
+            "head_type": "Disease",
+            "relation_cn": "风险提示",
+            "relation_en": "has_risk_warning",
+            "tail_id": "RW_001",
+            "tail_cn": "存在恶性风险，需进一步评估",
+            "tail_type": "RiskWarning",
+            "source": "DermNet - Melanoma",
+            "evidence_text": "黑色素瘤是潜在严重的皮肤癌，需进行进一步评估。",
+            "note": "风险提示",
+            "evidence_category": "risk_warnings"
+          }
+        ],
+        "treatments": [],
+        "causes_and_risk_factors": [],
+        "other_evidence": [
+          {
+            "triple_id": "TRI_012",
+            "head_id": "DIS_001",
+            "head_cn": "黑色素瘤",
+            "head_type": "Disease",
+            "relation_cn": "就医建议",
+            "relation_en": "has_medical_advice",
+            "tail_id": "ADV_001",
+            "tail_cn": "建议皮肤科就诊，必要时行病理活检",
+            "tail_type": "MedicalAdvice",
+            "source": "AAD - Melanoma clinical guideline",
+            "evidence_text": "疑似黑色素瘤时，活检获得的组织病理信息有助于诊断和后续管理。",
+            "note": "非处方性就医建议",
+            "evidence_category": "other_evidence"
+          }
+        ]
+      },
+      "cross_disease_conflict_sources": [
+        {
+          "source_disease_id": "DIS_002",
+          "source_disease_name_cn": "黑色素细胞痣",
+          "source_disease_abbreviation": "NV",
+          "observation_support_record_ids": [
+            "TRI_024",
+            "TRI_020",
+            "TRI_015",
+            "TRI_016",
+            "TRI_017",
+            "TRI_018",
+            "TRI_019"
+          ]
+        },
+        {
+          "source_disease_id": "DIS_003",
+          "source_disease_name_cn": "基底细胞癌",
+          "source_disease_abbreviation": "BCC",
+          "observation_support_record_ids": [
+            "TRI_031",
+            "TRI_032",
+            "TRI_033",
+            "TRI_025",
+            "TRI_026",
+            "TRI_027",
+            "TRI_028",
+            "TRI_029",
+            "TRI_030"
+          ]
+        },
+        {
+          "source_disease_id": "DIS_004",
+          "source_disease_name_cn": "光化性角化病/表皮内癌",
+          "source_disease_abbreviation": "AKIEC",
+          "observation_support_record_ids": [
+            "TRI_046",
+            "TRI_047",
+            "TRI_048",
+            "TRI_038",
+            "TRI_039",
+            "TRI_040",
+            "TRI_041",
+            "TRI_042",
+            "TRI_043",
+            "TRI_044",
+            "TRI_045"
+          ]
+        },
+        {
+          "source_disease_id": "DIS_005",
+          "source_disease_name_cn": "良性角化样病变",
+          "source_disease_abbreviation": "BKL",
+          "observation_support_record_ids": [
+            "TRI_061",
+            "TRI_062",
+            "TRI_063",
+            "TRI_064",
+            "TRI_053",
+            "TRI_054",
+            "TRI_055",
+            "TRI_056",
+            "TRI_057",
+            "TRI_058",
+            "TRI_059",
+            "TRI_060"
+          ]
+        },
+        {
+          "source_disease_id": "DIS_006",
+          "source_disease_name_cn": "皮肤纤维瘤",
+          "source_disease_abbreviation": "DF",
+          "observation_support_record_ids": [
+            "TRI_076",
+            "TRI_077",
+            "TRI_078",
+            "TRI_079",
+            "TRI_080",
+            "TRI_070",
+            "TRI_071",
+            "TRI_072",
+            "TRI_073",
+            "TRI_074",
+            "TRI_075"
+          ]
+        },
+        {
+          "source_disease_id": "DIS_007",
+          "source_disease_name_cn": "血管性皮损",
+          "source_disease_abbreviation": "VASC",
+          "observation_support_record_ids": [
+            "TRI_095",
+            "TRI_096",
+            "TRI_097",
+            "TRI_098",
+            "TRI_085",
+            "TRI_086",
+            "TRI_087",
+            "TRI_088",
+            "TRI_089",
+            "TRI_090",
+            "TRI_091",
+            "TRI_092",
+            "TRI_093",
+            "TRI_094"
+          ]
+        }
+      ]
+    },
+    {
+      "disease_id": "DIS_002",
+      "disease_name_cn": "黑色素细胞痣",
+      "disease_name_en": "Melanocytic Nevus",
+      "alias": "nv",
+      "disease_abbreviation": "NV",
+      "entity_source": "HAM10000",
+      "outgoing_evidence_count": 10,
+      "observation_support_count": 7,
+      "auxiliary_evidence_count": 3,
+      "relation_distribution": {
+        "伴随症状": 1,
+        "就医建议": 1,
+        "常见于": 1,
+        "建议检查": 1,
+        "表现为": 4,
+        "鉴别诊断": 1,
+        "风险提示": 1
+      },
+      "tail_type_distribution": {
+        "AnatomicalSite": 1,
+        "Disease": 1,
+        "Examination": 1,
+        "LesionFeature": 4,
+        "MedicalAdvice": 1,
+        "RiskWarning": 1,
+        "Symptom": 1
+      },
+      "source_names": [
+        "DermNet - Benign Melanocytic Lesions",
+        "DermNet - Melanocytic Naevus",
+        "DermNet - Melanocytic Naevi: New Classification"
+      ],
+      "observation_support_record_ids": [
+        "TRI_024",
+        "TRI_020",
+        "TRI_015",
+        "TRI_016",
+        "TRI_017",
+        "TRI_018",
+        "TRI_019"
+      ],
+      "auxiliary_record_ids": [
+        "TRI_021",
+        "TRI_022",
+        "TRI_023"
+      ],
+      "evidence_by_category": {
+        "lesion_features": [
+          {
+            "triple_id": "TRI_015",
+            "head_id": "DIS_002",
+            "head_cn": "黑色素细胞痣",
+            "head_type": "Disease",
+            "relation_cn": "表现为",
+            "relation_en": "has_manifestation",
+            "tail_id": "LF_006",
+            "tail_cn": "色素均匀",
+            "tail_type": "LesionFeature",
+            "source": "DermNet - Benign Melanocytic Lesions",
+            "evidence_text": "单一颜色或均匀色素模式的皮损几乎总是良性的。",
+            "note": "黑色素细胞痣皮损特征",
+            "evidence_category": "lesion_features"
+          },
+          {
+            "triple_id": "TRI_016",
+            "head_id": "DIS_002",
+            "head_cn": "黑色素细胞痣",
+            "head_type": "Disease",
+            "relation_cn": "表现为",
+            "relation_en": "has_manifestation",
+            "tail_id": "LF_007",
+            "tail_cn": "边界清楚",
+            "tail_type": "LesionFeature",
+            "source": "DermNet - Benign Melanocytic Lesions",
+            "evidence_text": "良性色素性皮损通常表现为较规则、较清楚的边界。",
+            "note": "黑色素细胞痣皮损特征",
+            "evidence_category": "lesion_features"
+          },
+          {
+            "triple_id": "TRI_017",
+            "head_id": "DIS_002",
+            "head_cn": "黑色素细胞痣",
+            "head_type": "Disease",
+            "relation_cn": "表现为",
+            "relation_en": "has_manifestation",
+            "tail_id": "LF_008",
+            "tail_cn": "棕色或黑色斑疹/丘疹",
+            "tail_type": "LesionFeature",
+            "source": "DermNet - Melanocytic Naevus",
+            "evidence_text": "棕色或黑色黑色素细胞痣含有黑色素，也可称为色素痣。",
+            "note": "黑色素细胞痣皮损特征",
+            "evidence_category": "lesion_features"
+          },
+          {
+            "triple_id": "TRI_018",
+            "head_id": "DIS_002",
+            "head_cn": "黑色素细胞痣",
+            "head_type": "Disease",
+            "relation_cn": "表现为",
+            "relation_en": "has_manifestation",
+            "tail_id": "LF_009",
+            "tail_cn": "对称性较好",
+            "tail_type": "LesionFeature",
+            "source": "DermNet - Benign Melanocytic Lesions",
+            "evidence_text": "良性色素性皮损通常具有较一致的结构和外观。",
+            "note": "黑色素细胞痣皮损特征",
+            "evidence_category": "lesion_features"
+          }
+        ],
+        "anatomical_sites": [
+          {
+            "triple_id": "TRI_019",
+            "head_id": "DIS_002",
+            "head_cn": "黑色素细胞痣",
+            "head_type": "Disease",
+            "relation_cn": "常见于",
+            "relation_en": "commonly_occurs_at",
+            "tail_id": "SITE_004",
+            "tail_cn": "全身皮肤",
+            "tail_type": "AnatomicalSite",
+            "source": "DermNet - Melanocytic Naevus",
+            "evidence_text": "黑色素细胞痣可发生在身体任何部位。",
+            "note": "可发生部位",
+            "evidence_category": "anatomical_sites"
+          }
+        ],
+        "symptoms": [
+          {
+            "triple_id": "TRI_024",
+            "head_id": "DIS_002",
+            "head_cn": "黑色素细胞痣",
+            "head_type": "Disease",
+            "relation_cn": "伴随症状",
+            "relation_en": "has_symptom",
+            "tail_id": "SYM_003",
+            "tail_cn": "无明显症状",
+            "tail_type": "Symptom",
+            "source": "DermNet - Melanocytic Naevus",
+            "evidence_text": "黑色素细胞痣通常为良性皮损；若出现大小、形状、结构、颜色变化，或出血、结痂、瘙痒等情况，应进一步评估。",
+            "note": "良性色素痣通常无明显症状，异常变化需关注",
+            "evidence_category": "symptoms"
+          }
+        ],
+        "examination_findings": [
+          {
+            "triple_id": "TRI_020",
+            "head_id": "DIS_002",
+            "head_cn": "黑色素细胞痣",
+            "head_type": "Disease",
+            "relation_cn": "建议检查",
+            "relation_en": "recommended_examination",
+            "tail_id": "EXAM_001",
+            "tail_cn": "皮肤镜检查",
+            "tail_type": "Examination",
+            "source": "DermNet - Melanocytic Naevi: New Classification",
+            "evidence_text": "皮肤镜常可根据色素数量和分布对不同类型黑色素细胞痣进行诊断。",
+            "note": "辅助检查方式",
+            "evidence_category": "examination_findings"
+          }
+        ],
+        "differential_diagnoses": [
+          {
+            "triple_id": "TRI_021",
+            "head_id": "DIS_002",
+            "head_cn": "黑色素细胞痣",
+            "head_type": "Disease",
+            "relation_cn": "鉴别诊断",
+            "relation_en": "differential_diagnosis",
+            "tail_id": "DIS_001",
+            "tail_cn": "黑色素瘤",
+            "tail_type": "Disease",
+            "source": "DermNet - Melanocytic Naevi: New Classification",
+            "evidence_text": "皮肤镜可帮助识别与其他痣不同的“丑小鸭”病变，并提示黑色素瘤可能。",
+            "note": "与黑色素瘤鉴别",
+            "evidence_category": "differential_diagnoses"
+          }
+        ],
+        "risk_warnings": [
+          {
+            "triple_id": "TRI_022",
+            "head_id": "DIS_002",
+            "head_cn": "黑色素细胞痣",
+            "head_type": "Disease",
+            "relation_cn": "风险提示",
+            "relation_en": "has_risk_warning",
+            "tail_id": "RW_002",
+            "tail_cn": "通常为良性，形态变化时需警惕",
+            "tail_type": "RiskWarning",
+            "source": "DermNet - Melanocytic Naevus",
+            "evidence_text": "黑色素细胞痣是一种常见良性皮损。",
+            "note": "风险提示",
+            "evidence_category": "risk_warnings"
+          }
+        ],
+        "treatments": [],
+        "causes_and_risk_factors": [],
+        "other_evidence": [
+          {
+            "triple_id": "TRI_023",
+            "head_id": "DIS_002",
+            "head_cn": "黑色素细胞痣",
+            "head_type": "Disease",
+            "relation_cn": "就医建议",
+            "relation_en": "has_medical_advice",
+            "tail_id": "ADV_002",
+            "tail_cn": "建议观察皮损变化，出现快速增大、颜色改变或出血时就诊",
+            "tail_type": "MedicalAdvice",
+            "source": "DermNet - Melanocytic Naevus",
+            "evidence_text": "皮损变化、颜色改变或异常表现时应进一步评估。",
+            "note": "非处方性就医建议",
+            "evidence_category": "other_evidence"
+          }
+        ]
+      },
+      "cross_disease_conflict_sources": [
+        {
+          "source_disease_id": "DIS_001",
+          "source_disease_name_cn": "黑色素瘤",
+          "source_disease_abbreviation": "MEL",
+          "observation_support_record_ids": [
+            "TRI_007",
+            "TRI_014",
+            "TRI_008",
+            "TRI_009",
+            "TRI_001",
+            "TRI_002",
+            "TRI_003",
+            "TRI_004",
+            "TRI_005",
+            "TRI_006",
+            "TRI_013"
+          ]
+        },
+        {
+          "source_disease_id": "DIS_003",
+          "source_disease_name_cn": "基底细胞癌",
+          "source_disease_abbreviation": "BCC",
+          "observation_support_record_ids": [
+            "TRI_031",
+            "TRI_032",
+            "TRI_033",
+            "TRI_025",
+            "TRI_026",
+            "TRI_027",
+            "TRI_028",
+            "TRI_029",
+            "TRI_030"
+          ]
+        },
+        {
+          "source_disease_id": "DIS_004",
+          "source_disease_name_cn": "光化性角化病/表皮内癌",
+          "source_disease_abbreviation": "AKIEC",
+          "observation_support_record_ids": [
+            "TRI_046",
+            "TRI_047",
+            "TRI_048",
+            "TRI_038",
+            "TRI_039",
+            "TRI_040",
+            "TRI_041",
+            "TRI_042",
+            "TRI_043",
+            "TRI_044",
+            "TRI_045"
+          ]
+        },
+        {
+          "source_disease_id": "DIS_005",
+          "source_disease_name_cn": "良性角化样病变",
+          "source_disease_abbreviation": "BKL",
+          "observation_support_record_ids": [
+            "TRI_061",
+            "TRI_062",
+            "TRI_063",
+            "TRI_064",
+            "TRI_053",
+            "TRI_054",
+            "TRI_055",
+            "TRI_056",
+            "TRI_057",
+            "TRI_058",
+            "TRI_059",
+            "TRI_060"
+          ]
+        },
+        {
+          "source_disease_id": "DIS_006",
+          "source_disease_name_cn": "皮肤纤维瘤",
+          "source_disease_abbreviation": "DF",
+          "observation_support_record_ids": [
+            "TRI_076",
+            "TRI_077",
+            "TRI_078",
+            "TRI_079",
+            "TRI_080",
+            "TRI_070",
+            "TRI_071",
+            "TRI_072",
+            "TRI_073",
+            "TRI_074",
+            "TRI_075"
+          ]
+        },
+        {
+          "source_disease_id": "DIS_007",
+          "source_disease_name_cn": "血管性皮损",
+          "source_disease_abbreviation": "VASC",
+          "observation_support_record_ids": [
+            "TRI_095",
+            "TRI_096",
+            "TRI_097",
+            "TRI_098",
+            "TRI_085",
+            "TRI_086",
+            "TRI_087",
+            "TRI_088",
+            "TRI_089",
+            "TRI_090",
+            "TRI_091",
+            "TRI_092",
+            "TRI_093",
+            "TRI_094"
+          ]
+        }
+      ]
+    },
+    {
+      "disease_id": "DIS_003",
+      "disease_name_cn": "基底细胞癌",
+      "disease_name_en": "Basal Cell Carcinoma",
+      "alias": "bcc",
+      "disease_abbreviation": "BCC",
+      "entity_source": "HAM10000",
+      "outgoing_evidence_count": 13,
+      "observation_support_count": 9,
+      "auxiliary_evidence_count": 4,
+      "relation_distribution": {
+        "伴随症状": 1,
+        "就医建议": 1,
+        "常见于": 1,
+        "建议检查": 2,
+        "表现为": 5,
+        "鉴别诊断": 2,
+        "风险提示": 1
+      },
+      "tail_type_distribution": {
+        "AnatomicalSite": 1,
+        "Disease": 2,
+        "Examination": 2,
+        "LesionFeature": 5,
+        "MedicalAdvice": 1,
+        "RiskWarning": 1,
+        "Symptom": 1
+      },
+      "source_names": [
+        "DermNet - Basal Cell Carcinoma",
+        "DermNet - Basal Cell Carcinoma Dermoscopy",
+        "AAD - Basal Cell Carcinoma Guideline",
+        "DermNet - Seborrhoeic Keratosis"
+      ],
+      "observation_support_record_ids": [
+        "TRI_031",
+        "TRI_032",
+        "TRI_033",
+        "TRI_025",
+        "TRI_026",
+        "TRI_027",
+        "TRI_028",
+        "TRI_029",
+        "TRI_030"
+      ],
+      "auxiliary_record_ids": [
+        "TRI_034",
+        "TRI_035",
+        "TRI_036",
+        "TRI_037"
+      ],
+      "evidence_by_category": {
+        "lesion_features": [
+          {
+            "triple_id": "TRI_025",
+            "head_id": "DIS_003",
+            "head_cn": "基底细胞癌",
+            "head_type": "Disease",
+            "relation_cn": "表现为",
+            "relation_en": "has_manifestation",
+            "tail_id": "LF_010",
+            "tail_cn": "珍珠样结节",
+            "tail_type": "LesionFeature",
+            "source": "DermNet - Basal Cell Carcinoma",
+            "evidence_text": "结节型基底细胞癌可表现为光亮或珍珠样结节。",
+            "note": "基底细胞癌皮损特征",
+            "evidence_category": "lesion_features"
+          },
+          {
+            "triple_id": "TRI_026",
+            "head_id": "DIS_003",
+            "head_cn": "基底细胞癌",
+            "head_type": "Disease",
+            "relation_cn": "表现为",
+            "relation_en": "has_manifestation",
+            "tail_id": "LF_011",
+            "tail_cn": "表面毛细血管扩张",
+            "tail_type": "LesionFeature",
+            "source": "DermNet - Basal Cell Carcinoma",
+            "evidence_text": "基底细胞癌表面可见血管穿过。",
+            "note": "基底细胞癌皮损特征",
+            "evidence_category": "lesion_features"
+          },
+          {
+            "triple_id": "TRI_027",
+            "head_id": "DIS_003",
+            "head_cn": "基底细胞癌",
+            "head_type": "Disease",
+            "relation_cn": "表现为",
+            "relation_en": "has_manifestation",
+            "tail_id": "LF_012",
+            "tail_cn": "边缘隆起或卷曲",
+            "tail_type": "LesionFeature",
+            "source": "DermNet - Basal Cell Carcinoma",
+            "evidence_text": "基底细胞癌可出现中央凹陷或溃疡，使边缘呈卷曲样。",
+            "note": "基底细胞癌皮损特征",
+            "evidence_category": "lesion_features"
+          },
+          {
+            "triple_id": "TRI_028",
+            "head_id": "DIS_003",
+            "head_cn": "基底细胞癌",
+            "head_type": "Disease",
+            "relation_cn": "表现为",
+            "relation_en": "has_manifestation",
+            "tail_id": "LF_013",
+            "tail_cn": "中央凹陷或溃疡",
+            "tail_type": "LesionFeature",
+            "source": "DermNet - Basal Cell Carcinoma",
+            "evidence_text": "基底细胞癌可有中央凹陷或溃疡。",
+            "note": "基底细胞癌皮损特征",
+            "evidence_category": "lesion_features"
+          },
+          {
+            "triple_id": "TRI_029",
+            "head_id": "DIS_003",
+            "head_cn": "基底细胞癌",
+            "head_type": "Disease",
+            "relation_cn": "表现为",
+            "relation_en": "has_manifestation",
+            "tail_id": "LF_014",
+            "tail_cn": "缓慢生长的结节或斑块",
+            "tail_type": "LesionFeature",
+            "source": "DermNet - Basal Cell Carcinoma Dermoscopy",
+            "evidence_text": "基底细胞癌的临床特征包括缓慢生长的不规则结节或斑块。",
+            "note": "基底细胞癌临床表现",
+            "evidence_category": "lesion_features"
+          }
+        ],
+        "anatomical_sites": [
+          {
+            "triple_id": "TRI_030",
+            "head_id": "DIS_003",
+            "head_cn": "基底细胞癌",
+            "head_type": "Disease",
+            "relation_cn": "常见于",
+            "relation_en": "commonly_occurs_at",
+            "tail_id": "SITE_005",
+            "tail_cn": "面部",
+            "tail_type": "AnatomicalSite",
+            "source": "DermNet - Basal Cell Carcinoma",
+            "evidence_text": "结节型基底细胞癌是面部常见的 BCC 类型。",
+            "note": "常见发病部位",
+            "evidence_category": "anatomical_sites"
+          }
+        ],
+        "symptoms": [
+          {
+            "triple_id": "TRI_031",
+            "head_id": "DIS_003",
+            "head_cn": "基底细胞癌",
+            "head_type": "Disease",
+            "relation_cn": "伴随症状",
+            "relation_en": "has_symptom",
+            "tail_id": "SYM_001",
+            "tail_cn": "出血",
+            "tail_type": "Symptom",
+            "source": "DermNet - Basal Cell Carcinoma Dermoscopy",
+            "evidence_text": "基底细胞癌可出现自发性出血、糜烂或溃疡。",
+            "note": "皮损异常表现",
+            "evidence_category": "symptoms"
+          }
+        ],
+        "examination_findings": [
+          {
+            "triple_id": "TRI_032",
+            "head_id": "DIS_003",
+            "head_cn": "基底细胞癌",
+            "head_type": "Disease",
+            "relation_cn": "建议检查",
+            "relation_en": "recommended_examination",
+            "tail_id": "EXAM_001",
+            "tail_cn": "皮肤镜检查",
+            "tail_type": "Examination",
+            "source": "DermNet - Basal Cell Carcinoma Dermoscopy",
+            "evidence_text": "皮肤镜有助于区分色素性基底细胞癌和其他色素性皮损。",
+            "note": "辅助检查方式",
+            "evidence_category": "examination_findings"
+          },
+          {
+            "triple_id": "TRI_033",
+            "head_id": "DIS_003",
+            "head_cn": "基底细胞癌",
+            "head_type": "Disease",
+            "relation_cn": "建议检查",
+            "relation_en": "recommended_examination",
+            "tail_id": "EXAM_002",
+            "tail_cn": "组织病理检查",
+            "tail_type": "Examination",
+            "source": "AAD - Basal Cell Carcinoma Guideline",
+            "evidence_text": "活检用于获得支持准确诊断和管理的组织标本。",
+            "note": "确认诊断相关检查",
+            "evidence_category": "examination_findings"
+          }
+        ],
+        "differential_diagnoses": [
+          {
+            "triple_id": "TRI_034",
+            "head_id": "DIS_003",
+            "head_cn": "基底细胞癌",
+            "head_type": "Disease",
+            "relation_cn": "鉴别诊断",
+            "relation_en": "differential_diagnosis",
+            "tail_id": "DIS_005",
+            "tail_cn": "良性角化样病变",
+            "tail_type": "Disease",
+            "source": "DermNet - Seborrhoeic Keratosis",
+            "evidence_text": "脂溢性角化病有时可类似基底细胞癌、鳞状细胞癌或黑色素瘤。",
+            "note": "易混淆疾病",
+            "evidence_category": "differential_diagnoses"
+          },
+          {
+            "triple_id": "TRI_035",
+            "head_id": "DIS_003",
+            "head_cn": "基底细胞癌",
+            "head_type": "Disease",
+            "relation_cn": "鉴别诊断",
+            "relation_en": "differential_diagnosis",
+            "tail_id": "DIS_001",
+            "tail_cn": "黑色素瘤",
+            "tail_type": "Disease",
+            "source": "DermNet - Basal Cell Carcinoma Dermoscopy",
+            "evidence_text": "皮肤镜有助于区分色素性基底细胞癌和其他色素性皮损。",
+            "note": "色素性皮损鉴别",
+            "evidence_category": "differential_diagnoses"
+          }
+        ],
+        "risk_warnings": [
+          {
+            "triple_id": "TRI_036",
+            "head_id": "DIS_003",
+            "head_cn": "基底细胞癌",
+            "head_type": "Disease",
+            "relation_cn": "风险提示",
+            "relation_en": "has_risk_warning",
+            "tail_id": "RW_003",
+            "tail_cn": "属于皮肤恶性肿瘤，需进一步评估",
+            "tail_type": "RiskWarning",
+            "source": "DermNet - Basal Cell Carcinoma",
+            "evidence_text": "基底细胞癌是常见的局部侵袭性角质形成细胞癌。",
+            "note": "风险提示",
+            "evidence_category": "risk_warnings"
+          }
+        ],
+        "treatments": [],
+        "causes_and_risk_factors": [],
+        "other_evidence": [
+          {
+            "triple_id": "TRI_037",
+            "head_id": "DIS_003",
+            "head_cn": "基底细胞癌",
+            "head_type": "Disease",
+            "relation_cn": "就医建议",
+            "relation_en": "has_medical_advice",
+            "tail_id": "ADV_003",
+            "tail_cn": "建议皮肤科评估，必要时行活检明确诊断",
+            "tail_type": "MedicalAdvice",
+            "source": "AAD - Basal Cell Carcinoma Guideline",
+            "evidence_text": "活检有助于准确诊断和后续管理。",
+            "note": "非处方性就医建议",
+            "evidence_category": "other_evidence"
+          }
+        ]
+      },
+      "cross_disease_conflict_sources": [
+        {
+          "source_disease_id": "DIS_001",
+          "source_disease_name_cn": "黑色素瘤",
+          "source_disease_abbreviation": "MEL",
+          "observation_support_record_ids": [
+            "TRI_007",
+            "TRI_014",
+            "TRI_008",
+            "TRI_009",
+            "TRI_001",
+            "TRI_002",
+            "TRI_003",
+            "TRI_004",
+            "TRI_005",
+            "TRI_006",
+            "TRI_013"
+          ]
+        },
+        {
+          "source_disease_id": "DIS_002",
+          "source_disease_name_cn": "黑色素细胞痣",
+          "source_disease_abbreviation": "NV",
+          "observation_support_record_ids": [
+            "TRI_024",
+            "TRI_020",
+            "TRI_015",
+            "TRI_016",
+            "TRI_017",
+            "TRI_018",
+            "TRI_019"
+          ]
+        },
+        {
+          "source_disease_id": "DIS_004",
+          "source_disease_name_cn": "光化性角化病/表皮内癌",
+          "source_disease_abbreviation": "AKIEC",
+          "observation_support_record_ids": [
+            "TRI_046",
+            "TRI_047",
+            "TRI_048",
+            "TRI_038",
+            "TRI_039",
+            "TRI_040",
+            "TRI_041",
+            "TRI_042",
+            "TRI_043",
+            "TRI_044",
+            "TRI_045"
+          ]
+        },
+        {
+          "source_disease_id": "DIS_005",
+          "source_disease_name_cn": "良性角化样病变",
+          "source_disease_abbreviation": "BKL",
+          "observation_support_record_ids": [
+            "TRI_061",
+            "TRI_062",
+            "TRI_063",
+            "TRI_064",
+            "TRI_053",
+            "TRI_054",
+            "TRI_055",
+            "TRI_056",
+            "TRI_057",
+            "TRI_058",
+            "TRI_059",
+            "TRI_060"
+          ]
+        },
+        {
+          "source_disease_id": "DIS_006",
+          "source_disease_name_cn": "皮肤纤维瘤",
+          "source_disease_abbreviation": "DF",
+          "observation_support_record_ids": [
+            "TRI_076",
+            "TRI_077",
+            "TRI_078",
+            "TRI_079",
+            "TRI_080",
+            "TRI_070",
+            "TRI_071",
+            "TRI_072",
+            "TRI_073",
+            "TRI_074",
+            "TRI_075"
+          ]
+        },
+        {
+          "source_disease_id": "DIS_007",
+          "source_disease_name_cn": "血管性皮损",
+          "source_disease_abbreviation": "VASC",
+          "observation_support_record_ids": [
+            "TRI_095",
+            "TRI_096",
+            "TRI_097",
+            "TRI_098",
+            "TRI_085",
+            "TRI_086",
+            "TRI_087",
+            "TRI_088",
+            "TRI_089",
+            "TRI_090",
+            "TRI_091",
+            "TRI_092",
+            "TRI_093",
+            "TRI_094"
+          ]
+        }
+      ]
+    },
+    {
+      "disease_id": "DIS_004",
+      "disease_name_cn": "光化性角化病/表皮内癌",
+      "disease_name_en": "Actinic Keratosis / Intraepithelial Carcinoma",
+      "alias": "akiec",
+      "disease_abbreviation": "AKIEC",
+      "entity_source": "HAM10000",
+      "outgoing_evidence_count": 15,
+      "observation_support_count": 11,
+      "auxiliary_evidence_count": 4,
+      "relation_distribution": {
+        "伴随症状": 1,
+        "就医建议": 1,
+        "常见于": 3,
+        "建议检查": 2,
+        "表现为": 5,
+        "鉴别诊断": 2,
+        "风险提示": 1
+      },
+      "tail_type_distribution": {
+        "AnatomicalSite": 3,
+        "Disease": 2,
+        "Examination": 2,
+        "LesionFeature": 5,
+        "MedicalAdvice": 1,
+        "RiskWarning": 1,
+        "Symptom": 1
+      },
+      "source_names": [
+        "DermNet - Actinic Keratosis",
+        "DermNet - Intraepidermal Squamous Cell Carcinoma",
+        "DermNet - Actinic Keratosis Dermoscopy",
+        "DermNet - Seborrhoeic Keratosis",
+        "AAD - Actinic Keratosis Guideline"
+      ],
+      "observation_support_record_ids": [
+        "TRI_046",
+        "TRI_047",
+        "TRI_048",
+        "TRI_038",
+        "TRI_039",
+        "TRI_040",
+        "TRI_041",
+        "TRI_042",
+        "TRI_043",
+        "TRI_044",
+        "TRI_045"
+      ],
+      "auxiliary_record_ids": [
+        "TRI_049",
+        "TRI_050",
+        "TRI_051",
+        "TRI_052"
+      ],
+      "evidence_by_category": {
+        "lesion_features": [
+          {
+            "triple_id": "TRI_038",
+            "head_id": "DIS_004",
+            "head_cn": "光化性角化病/表皮内癌",
+            "head_type": "Disease",
+            "relation_cn": "表现为",
+            "relation_en": "has_manifestation",
+            "tail_id": "LF_015",
+            "tail_cn": "粗糙鳞屑性斑片",
+            "tail_type": "LesionFeature",
+            "source": "DermNet - Actinic Keratosis",
+            "evidence_text": "光化性角化病是发生在日光损伤皮肤上的癌前性鳞屑性皮损。",
+            "note": "光化性角化病/表皮内癌皮损特征",
+            "evidence_category": "lesion_features"
+          },
+          {
+            "triple_id": "TRI_039",
+            "head_id": "DIS_004",
+            "head_cn": "光化性角化病/表皮内癌",
+            "head_type": "Disease",
+            "relation_cn": "表现为",
+            "relation_en": "has_manifestation",
+            "tail_id": "LF_016",
+            "tail_cn": "白色或黄色角化性表面",
+            "tail_type": "LesionFeature",
+            "source": "DermNet - Actinic Keratosis",
+            "evidence_text": "光化性角化病可表现为白色或黄色、鳞屑性、疣状或角化性表面。",
+            "note": "光化性角化病皮损特征",
+            "evidence_category": "lesion_features"
+          },
+          {
+            "triple_id": "TRI_040",
+            "head_id": "DIS_004",
+            "head_cn": "光化性角化病/表皮内癌",
+            "head_type": "Disease",
+            "relation_cn": "表现为",
+            "relation_en": "has_manifestation",
+            "tail_id": "LF_017",
+            "tail_cn": "红色或粉红色斑片/斑块",
+            "tail_type": "LesionFeature",
+            "source": "DermNet - Intraepidermal Squamous Cell Carcinoma",
+            "evidence_text": "表皮内鳞状细胞癌可表现为橙红色或棕色的不规则鳞屑性斑块。",
+            "note": "表皮内癌皮损特征",
+            "evidence_category": "lesion_features"
+          },
+          {
+            "triple_id": "TRI_041",
+            "head_id": "DIS_004",
+            "head_cn": "光化性角化病/表皮内癌",
+            "head_type": "Disease",
+            "relation_cn": "表现为",
+            "relation_en": "has_manifestation",
+            "tail_id": "LF_018",
+            "tail_cn": "不规则鳞屑性斑块",
+            "tail_type": "LesionFeature",
+            "source": "DermNet - Intraepidermal Squamous Cell Carcinoma",
+            "evidence_text": "表皮内鳞状细胞癌表现为一个或多个不规则鳞屑性斑块。",
+            "note": "表皮内癌皮损特征",
+            "evidence_category": "lesion_features"
+          },
+          {
+            "triple_id": "TRI_042",
+            "head_id": "DIS_004",
+            "head_cn": "光化性角化病/表皮内癌",
+            "head_type": "Disease",
+            "relation_cn": "表现为",
+            "relation_en": "has_manifestation",
+            "tail_id": "LF_019",
+            "tail_cn": "草莓样皮肤镜模式",
+            "tail_type": "LesionFeature",
+            "source": "DermNet - Actinic Keratosis Dermoscopy",
+            "evidence_text": "面部非色素性光化性角化病在皮肤镜下可表现为草莓样模式。",
+            "note": "皮肤镜表现",
+            "evidence_category": "lesion_features"
+          }
+        ],
+        "anatomical_sites": [
+          {
+            "triple_id": "TRI_043",
+            "head_id": "DIS_004",
+            "head_cn": "光化性角化病/表皮内癌",
+            "head_type": "Disease",
+            "relation_cn": "常见于",
+            "relation_en": "commonly_occurs_at",
+            "tail_id": "SITE_006",
+            "tail_cn": "日光暴露部位",
+            "tail_type": "AnatomicalSite",
+            "source": "DermNet - Actinic Keratosis",
+            "evidence_text": "光化性角化病常见于反复日光暴露部位。",
+            "note": "常见发病部位",
+            "evidence_category": "anatomical_sites"
+          },
+          {
+            "triple_id": "TRI_044",
+            "head_id": "DIS_004",
+            "head_cn": "光化性角化病/表皮内癌",
+            "head_type": "Disease",
+            "relation_cn": "常见于",
+            "relation_en": "commonly_occurs_at",
+            "tail_id": "SITE_005",
+            "tail_cn": "面部",
+            "tail_type": "AnatomicalSite",
+            "source": "DermNet - Actinic Keratosis",
+            "evidence_text": "光化性角化病常见于面部、耳部、手背等日光暴露部位。",
+            "note": "常见发病部位",
+            "evidence_category": "anatomical_sites"
+          },
+          {
+            "triple_id": "TRI_045",
+            "head_id": "DIS_004",
+            "head_cn": "光化性角化病/表皮内癌",
+            "head_type": "Disease",
+            "relation_cn": "常见于",
+            "relation_en": "commonly_occurs_at",
+            "tail_id": "SITE_007",
+            "tail_cn": "手背",
+            "tail_type": "AnatomicalSite",
+            "source": "DermNet - Actinic Keratosis",
+            "evidence_text": "光化性角化病常见于手背和面部等反复日光暴露部位。",
+            "note": "常见发病部位",
+            "evidence_category": "anatomical_sites"
+          }
+        ],
+        "symptoms": [
+          {
+            "triple_id": "TRI_046",
+            "head_id": "DIS_004",
+            "head_cn": "光化性角化病/表皮内癌",
+            "head_type": "Disease",
+            "relation_cn": "伴随症状",
+            "relation_en": "has_symptom",
+            "tail_id": "SYM_004",
+            "tail_cn": "触痛",
+            "tail_type": "Symptom",
+            "source": "DermNet - Actinic Keratosis Dermoscopy",
+            "evidence_text": "光化性角化病可伴有触痛。",
+            "note": "可能伴随症状",
+            "evidence_category": "symptoms"
+          }
+        ],
+        "examination_findings": [
+          {
+            "triple_id": "TRI_047",
+            "head_id": "DIS_004",
+            "head_cn": "光化性角化病/表皮内癌",
+            "head_type": "Disease",
+            "relation_cn": "建议检查",
+            "relation_en": "recommended_examination",
+            "tail_id": "EXAM_001",
+            "tail_cn": "皮肤镜检查",
+            "tail_type": "Examination",
+            "source": "DermNet - Actinic Keratosis Dermoscopy",
+            "evidence_text": "光化性角化病可结合临床和皮肤镜特征进行诊断。",
+            "note": "辅助检查方式",
+            "evidence_category": "examination_findings"
+          },
+          {
+            "triple_id": "TRI_048",
+            "head_id": "DIS_004",
+            "head_cn": "光化性角化病/表皮内癌",
+            "head_type": "Disease",
+            "relation_cn": "建议检查",
+            "relation_en": "recommended_examination",
+            "tail_id": "EXAM_002",
+            "tail_cn": "组织病理检查",
+            "tail_type": "Examination",
+            "source": "DermNet - Intraepidermal Squamous Cell Carcinoma",
+            "evidence_text": "表皮内鳞状细胞癌可通过活检确认诊断，组织学显示表皮全层异型增生。",
+            "note": "确认诊断相关检查",
+            "evidence_category": "examination_findings"
+          }
+        ],
+        "differential_diagnoses": [
+          {
+            "triple_id": "TRI_049",
+            "head_id": "DIS_004",
+            "head_cn": "光化性角化病/表皮内癌",
+            "head_type": "Disease",
+            "relation_cn": "鉴别诊断",
+            "relation_en": "differential_diagnosis",
+            "tail_id": "DIS_003",
+            "tail_cn": "基底细胞癌",
+            "tail_type": "Disease",
+            "source": "DermNet - Actinic Keratosis Dermoscopy",
+            "evidence_text": "光化性角化病有时难以与其他皮损区分，需要结合临床和皮肤镜特征判断。",
+            "note": "易混淆疾病",
+            "evidence_category": "differential_diagnoses"
+          },
+          {
+            "triple_id": "TRI_050",
+            "head_id": "DIS_004",
+            "head_cn": "光化性角化病/表皮内癌",
+            "head_type": "Disease",
+            "relation_cn": "鉴别诊断",
+            "relation_en": "differential_diagnosis",
+            "tail_id": "DIS_005",
+            "tail_cn": "良性角化样病变",
+            "tail_type": "Disease",
+            "source": "DermNet - Seborrhoeic Keratosis",
+            "evidence_text": "脂溢性角化病有时可类似基底细胞癌、鳞状细胞癌或黑色素瘤等皮肤癌。",
+            "note": "易混淆疾病",
+            "evidence_category": "differential_diagnoses"
+          }
+        ],
+        "risk_warnings": [
+          {
+            "triple_id": "TRI_051",
+            "head_id": "DIS_004",
+            "head_cn": "光化性角化病/表皮内癌",
+            "head_type": "Disease",
+            "relation_cn": "风险提示",
+            "relation_en": "has_risk_warning",
+            "tail_id": "RW_004",
+            "tail_cn": "具有癌前病变或表皮内癌相关风险",
+            "tail_type": "RiskWarning",
+            "source": "DermNet - Actinic Keratosis",
+            "evidence_text": "光化性角化病具有癌前性质，皮肤鳞状细胞癌可由光化性角化病发展而来。",
+            "note": "风险提示",
+            "evidence_category": "risk_warnings"
+          }
+        ],
+        "treatments": [],
+        "causes_and_risk_factors": [],
+        "other_evidence": [
+          {
+            "triple_id": "TRI_052",
+            "head_id": "DIS_004",
+            "head_cn": "光化性角化病/表皮内癌",
+            "head_type": "Disease",
+            "relation_cn": "就医建议",
+            "relation_en": "has_medical_advice",
+            "tail_id": "ADV_004",
+            "tail_cn": "建议皮肤科评估，疑似进展或诊断不明确时行进一步检查",
+            "tail_type": "MedicalAdvice",
+            "source": "AAD - Actinic Keratosis Guideline",
+            "evidence_text": "AAD 指南针对光化性角化病管理提供循证治疗建议，且 AK 可进展为角质形成细胞癌。",
+            "note": "非处方性就医建议",
+            "evidence_category": "other_evidence"
+          }
+        ]
+      },
+      "cross_disease_conflict_sources": [
+        {
+          "source_disease_id": "DIS_001",
+          "source_disease_name_cn": "黑色素瘤",
+          "source_disease_abbreviation": "MEL",
+          "observation_support_record_ids": [
+            "TRI_007",
+            "TRI_014",
+            "TRI_008",
+            "TRI_009",
+            "TRI_001",
+            "TRI_002",
+            "TRI_003",
+            "TRI_004",
+            "TRI_005",
+            "TRI_006",
+            "TRI_013"
+          ]
+        },
+        {
+          "source_disease_id": "DIS_002",
+          "source_disease_name_cn": "黑色素细胞痣",
+          "source_disease_abbreviation": "NV",
+          "observation_support_record_ids": [
+            "TRI_024",
+            "TRI_020",
+            "TRI_015",
+            "TRI_016",
+            "TRI_017",
+            "TRI_018",
+            "TRI_019"
+          ]
+        },
+        {
+          "source_disease_id": "DIS_003",
+          "source_disease_name_cn": "基底细胞癌",
+          "source_disease_abbreviation": "BCC",
+          "observation_support_record_ids": [
+            "TRI_031",
+            "TRI_032",
+            "TRI_033",
+            "TRI_025",
+            "TRI_026",
+            "TRI_027",
+            "TRI_028",
+            "TRI_029",
+            "TRI_030"
+          ]
+        },
+        {
+          "source_disease_id": "DIS_005",
+          "source_disease_name_cn": "良性角化样病变",
+          "source_disease_abbreviation": "BKL",
+          "observation_support_record_ids": [
+            "TRI_061",
+            "TRI_062",
+            "TRI_063",
+            "TRI_064",
+            "TRI_053",
+            "TRI_054",
+            "TRI_055",
+            "TRI_056",
+            "TRI_057",
+            "TRI_058",
+            "TRI_059",
+            "TRI_060"
+          ]
+        },
+        {
+          "source_disease_id": "DIS_006",
+          "source_disease_name_cn": "皮肤纤维瘤",
+          "source_disease_abbreviation": "DF",
+          "observation_support_record_ids": [
+            "TRI_076",
+            "TRI_077",
+            "TRI_078",
+            "TRI_079",
+            "TRI_080",
+            "TRI_070",
+            "TRI_071",
+            "TRI_072",
+            "TRI_073",
+            "TRI_074",
+            "TRI_075"
+          ]
+        },
+        {
+          "source_disease_id": "DIS_007",
+          "source_disease_name_cn": "血管性皮损",
+          "source_disease_abbreviation": "VASC",
+          "observation_support_record_ids": [
+            "TRI_095",
+            "TRI_096",
+            "TRI_097",
+            "TRI_098",
+            "TRI_085",
+            "TRI_086",
+            "TRI_087",
+            "TRI_088",
+            "TRI_089",
+            "TRI_090",
+            "TRI_091",
+            "TRI_092",
+            "TRI_093",
+            "TRI_094"
+          ]
+        }
+      ]
+    },
+    {
+      "disease_id": "DIS_005",
+      "disease_name_cn": "良性角化样病变",
+      "disease_name_en": "Benign Keratosis-like Lesion",
+      "alias": "bkl",
+      "disease_abbreviation": "BKL",
+      "entity_source": "HAM10000",
+      "outgoing_evidence_count": 17,
+      "observation_support_count": 12,
+      "auxiliary_evidence_count": 5,
+      "relation_distribution": {
+        "伴随症状": 2,
+        "就医建议": 1,
+        "常见于": 2,
+        "建议检查": 2,
+        "表现为": 6,
+        "鉴别诊断": 3,
+        "风险提示": 1
+      },
+      "tail_type_distribution": {
+        "AnatomicalSite": 2,
+        "Disease": 3,
+        "Examination": 2,
+        "LesionFeature": 6,
+        "MedicalAdvice": 1,
+        "RiskWarning": 1,
+        "Symptom": 2
+      },
+      "source_names": [
+        "DermNet - Seborrhoeic Keratosis",
+        "DermNet - Solar Lentigo",
+        "DermNet - Dermoscopy of Seborrhoeic Keratosis",
+        "DermNet - Lichenoid Keratosis"
+      ],
+      "observation_support_record_ids": [
+        "TRI_061",
+        "TRI_062",
+        "TRI_063",
+        "TRI_064",
+        "TRI_053",
+        "TRI_054",
+        "TRI_055",
+        "TRI_056",
+        "TRI_057",
+        "TRI_058",
+        "TRI_059",
+        "TRI_060"
+      ],
+      "auxiliary_record_ids": [
+        "TRI_065",
+        "TRI_066",
+        "TRI_067",
+        "TRI_068",
+        "TRI_069"
+      ],
+      "evidence_by_category": {
+        "lesion_features": [
+          {
+            "triple_id": "TRI_053",
+            "head_id": "DIS_005",
+            "head_cn": "良性角化样病变",
+            "head_type": "Disease",
+            "relation_cn": "表现为",
+            "relation_en": "has_manifestation",
+            "tail_id": "LF_020",
+            "tail_cn": "蜡样或疣状表面",
+            "tail_type": "LesionFeature",
+            "source": "DermNet - Seborrhoeic Keratosis",
+            "evidence_text": "脂溢性角化病可表现为光滑、蜡样或疣状表面。",
+            "note": "良性角化样病变皮损特征",
+            "evidence_category": "lesion_features"
+          },
+          {
+            "triple_id": "TRI_054",
+            "head_id": "DIS_005",
+            "head_cn": "良性角化样病变",
+            "head_type": "Disease",
+            "relation_cn": "表现为",
+            "relation_en": "has_manifestation",
+            "tail_id": "LF_021",
+            "tail_cn": "贴附样丘疹或斑块",
+            "tail_type": "LesionFeature",
+            "source": "DermNet - Seborrhoeic Keratosis",
+            "evidence_text": "脂溢性角化病常呈贴附在皮肤表面的外观。",
+            "note": "脂溢性角化病典型表现",
+            "evidence_category": "lesion_features"
+          },
+          {
+            "triple_id": "TRI_055",
+            "head_id": "DIS_005",
+            "head_cn": "良性角化样病变",
+            "head_type": "Disease",
+            "relation_cn": "表现为",
+            "relation_en": "has_manifestation",
+            "tail_id": "LF_022",
+            "tail_cn": "边界清楚的扁平色素斑",
+            "tail_type": "LesionFeature",
+            "source": "DermNet - Solar Lentigo",
+            "evidence_text": "日光性黑子是常见的良性扁平色素性皮损，多见于日光暴露皮肤。",
+            "note": "日光性黑子相关表现",
+            "evidence_category": "lesion_features"
+          },
+          {
+            "triple_id": "TRI_056",
+            "head_id": "DIS_005",
+            "head_cn": "良性角化样病变",
+            "head_type": "Disease",
+            "relation_cn": "表现为",
+            "relation_en": "has_manifestation",
+            "tail_id": "LF_023",
+            "tail_cn": "粟丘疹样囊肿",
+            "tail_type": "LesionFeature",
+            "source": "DermNet - Dermoscopy of Seborrhoeic Keratosis",
+            "evidence_text": "脂溢性角化病皮肤镜下可见粟丘疹样囊肿。",
+            "note": "皮肤镜表现",
+            "evidence_category": "lesion_features"
+          },
+          {
+            "triple_id": "TRI_057",
+            "head_id": "DIS_005",
+            "head_cn": "良性角化样病变",
+            "head_type": "Disease",
+            "relation_cn": "表现为",
+            "relation_en": "has_manifestation",
+            "tail_id": "LF_024",
+            "tail_cn": "裂隙或脑回样结构",
+            "tail_type": "LesionFeature",
+            "source": "DermNet - Dermoscopy of Seborrhoeic Keratosis",
+            "evidence_text": "脂溢性角化病皮肤镜下可见裂隙、嵴状结构或脑回样表面。",
+            "note": "皮肤镜表现",
+            "evidence_category": "lesion_features"
+          },
+          {
+            "triple_id": "TRI_058",
+            "head_id": "DIS_005",
+            "head_cn": "良性角化样病变",
+            "head_type": "Disease",
+            "relation_cn": "表现为",
+            "relation_en": "has_manifestation",
+            "tail_id": "LF_025",
+            "tail_cn": "炎性红色或色素性薄斑/斑块",
+            "tail_type": "LesionFeature",
+            "source": "DermNet - Lichenoid Keratosis",
+            "evidence_text": "扁平苔藓样角化病可表现为小的炎性斑疹或薄的色素性斑块。",
+            "note": "扁平苔藓样角化病表现",
+            "evidence_category": "lesion_features"
+          }
+        ],
+        "anatomical_sites": [
+          {
+            "triple_id": "TRI_059",
+            "head_id": "DIS_005",
+            "head_cn": "良性角化样病变",
+            "head_type": "Disease",
+            "relation_cn": "常见于",
+            "relation_en": "commonly_occurs_at",
+            "tail_id": "SITE_006",
+            "tail_cn": "日光暴露部位",
+            "tail_type": "AnatomicalSite",
+            "source": "DermNet - Solar Lentigo",
+            "evidence_text": "日光性黑子主要发生在日光暴露皮肤。",
+            "note": "常见发病部位",
+            "evidence_category": "anatomical_sites"
+          },
+          {
+            "triple_id": "TRI_060",
+            "head_id": "DIS_005",
+            "head_cn": "良性角化样病变",
+            "head_type": "Disease",
+            "relation_cn": "常见于",
+            "relation_en": "commonly_occurs_at",
+            "tail_id": "SITE_001",
+            "tail_cn": "躯干",
+            "tail_type": "AnatomicalSite",
+            "source": "DermNet - Lichenoid Keratosis",
+            "evidence_text": "扁平苔藓样角化病最常见于上躯干，其次为远端上肢。",
+            "note": "常见发病部位",
+            "evidence_category": "anatomical_sites"
+          }
+        ],
+        "symptoms": [
+          {
+            "triple_id": "TRI_061",
+            "head_id": "DIS_005",
+            "head_cn": "良性角化样病变",
+            "head_type": "Disease",
+            "relation_cn": "伴随症状",
+            "relation_en": "has_symptom",
+            "tail_id": "SYM_003",
+            "tail_cn": "无明显症状",
+            "tail_type": "Symptom",
+            "source": "DermNet - Solar Lentigo",
+            "evidence_text": "日光性黑子通常无症状，不引起瘙痒或疼痛。",
+            "note": "常见症状表现",
+            "evidence_category": "symptoms"
+          },
+          {
+            "triple_id": "TRI_062",
+            "head_id": "DIS_005",
+            "head_cn": "良性角化样病变",
+            "head_type": "Disease",
+            "relation_cn": "伴随症状",
+            "relation_en": "has_symptom",
+            "tail_id": "SYM_002",
+            "tail_cn": "瘙痒",
+            "tail_type": "Symptom",
+            "source": "DermNet - Lichenoid Keratosis",
+            "evidence_text": "扁平苔藓样角化病通常无症状，但也可出现瘙痒或轻微刺痛。",
+            "note": "可能伴随症状",
+            "evidence_category": "symptoms"
+          }
+        ],
+        "examination_findings": [
+          {
+            "triple_id": "TRI_063",
+            "head_id": "DIS_005",
+            "head_cn": "良性角化样病变",
+            "head_type": "Disease",
+            "relation_cn": "建议检查",
+            "relation_en": "recommended_examination",
+            "tail_id": "EXAM_001",
+            "tail_cn": "皮肤镜检查",
+            "tail_type": "Examination",
+            "source": "DermNet - Dermoscopy of Seborrhoeic Keratosis",
+            "evidence_text": "皮肤镜有助于区分脂溢性角化病与基底细胞癌、黑色素瘤等病变。",
+            "note": "辅助检查方式",
+            "evidence_category": "examination_findings"
+          },
+          {
+            "triple_id": "TRI_064",
+            "head_id": "DIS_005",
+            "head_cn": "良性角化样病变",
+            "head_type": "Disease",
+            "relation_cn": "建议检查",
+            "relation_en": "recommended_examination",
+            "tail_id": "EXAM_002",
+            "tail_cn": "组织病理检查",
+            "tail_type": "Examination",
+            "source": "DermNet - Lichenoid Keratosis",
+            "evidence_text": "当临床检查和皮肤镜不能区分扁平苔藓样角化病与其他孤立性红斑性病变时，需要皮肤活检。",
+            "note": "确认诊断相关检查",
+            "evidence_category": "examination_findings"
+          }
+        ],
+        "differential_diagnoses": [
+          {
+            "triple_id": "TRI_065",
+            "head_id": "DIS_005",
+            "head_cn": "良性角化样病变",
+            "head_type": "Disease",
+            "relation_cn": "鉴别诊断",
+            "relation_en": "differential_diagnosis",
+            "tail_id": "DIS_001",
+            "tail_cn": "黑色素瘤",
+            "tail_type": "Disease",
+            "source": "DermNet - Dermoscopy of Seborrhoeic Keratosis",
+            "evidence_text": "脂溢性角化病有时可与黑色素瘤等黑色素细胞性病变相似，临床和皮肤镜鉴别并非总是容易。",
+            "note": "易混淆疾病",
+            "evidence_category": "differential_diagnoses"
+          },
+          {
+            "triple_id": "TRI_066",
+            "head_id": "DIS_005",
+            "head_cn": "良性角化样病变",
+            "head_type": "Disease",
+            "relation_cn": "鉴别诊断",
+            "relation_en": "differential_diagnosis",
+            "tail_id": "DIS_003",
+            "tail_cn": "基底细胞癌",
+            "tail_type": "Disease",
+            "source": "DermNet - Dermoscopy of Seborrhoeic Keratosis",
+            "evidence_text": "皮肤镜有助于区分脂溢性角化病与基底细胞癌和黑色素瘤。",
+            "note": "易混淆疾病",
+            "evidence_category": "differential_diagnoses"
+          },
+          {
+            "triple_id": "TRI_067",
+            "head_id": "DIS_005",
+            "head_cn": "良性角化样病变",
+            "head_type": "Disease",
+            "relation_cn": "鉴别诊断",
+            "relation_en": "differential_diagnosis",
+            "tail_id": "DIS_004",
+            "tail_cn": "光化性角化病/表皮内癌",
+            "tail_type": "Disease",
+            "source": "DermNet - Seborrhoeic Keratosis",
+            "evidence_text": "脂溢性角化病有时可与鳞状细胞癌、基底细胞癌或黑色素瘤等皮肤癌相似。",
+            "note": "易混淆疾病",
+            "evidence_category": "differential_diagnoses"
+          }
+        ],
+        "risk_warnings": [
+          {
+            "triple_id": "TRI_068",
+            "head_id": "DIS_005",
+            "head_cn": "良性角化样病变",
+            "head_type": "Disease",
+            "relation_cn": "风险提示",
+            "relation_en": "has_risk_warning",
+            "tail_id": "RW_005",
+            "tail_cn": "通常为良性，但可与皮肤恶性肿瘤相似",
+            "tail_type": "RiskWarning",
+            "source": "DermNet - Seborrhoeic Keratosis",
+            "evidence_text": "脂溢性角化病不是癌前肿瘤，但有时难以与皮肤癌区分。",
+            "note": "风险提示",
+            "evidence_category": "risk_warnings"
+          }
+        ],
+        "treatments": [],
+        "causes_and_risk_factors": [],
+        "other_evidence": [
+          {
+            "triple_id": "TRI_069",
+            "head_id": "DIS_005",
+            "head_cn": "良性角化样病变",
+            "head_type": "Disease",
+            "relation_cn": "就医建议",
+            "relation_en": "has_medical_advice",
+            "tail_id": "ADV_005",
+            "tail_cn": "建议皮肤科评估，诊断不明确或形态异常时进一步检查",
+            "tail_type": "MedicalAdvice",
+            "source": "DermNet - Lichenoid Keratosis",
+            "evidence_text": "若诊断存在疑问，可进行皮肤镜随访；无法区分时需要活检。",
+            "note": "非处方性就医建议",
+            "evidence_category": "other_evidence"
+          }
+        ]
+      },
+      "cross_disease_conflict_sources": [
+        {
+          "source_disease_id": "DIS_001",
+          "source_disease_name_cn": "黑色素瘤",
+          "source_disease_abbreviation": "MEL",
+          "observation_support_record_ids": [
+            "TRI_007",
+            "TRI_014",
+            "TRI_008",
+            "TRI_009",
+            "TRI_001",
+            "TRI_002",
+            "TRI_003",
+            "TRI_004",
+            "TRI_005",
+            "TRI_006",
+            "TRI_013"
+          ]
+        },
+        {
+          "source_disease_id": "DIS_002",
+          "source_disease_name_cn": "黑色素细胞痣",
+          "source_disease_abbreviation": "NV",
+          "observation_support_record_ids": [
+            "TRI_024",
+            "TRI_020",
+            "TRI_015",
+            "TRI_016",
+            "TRI_017",
+            "TRI_018",
+            "TRI_019"
+          ]
+        },
+        {
+          "source_disease_id": "DIS_003",
+          "source_disease_name_cn": "基底细胞癌",
+          "source_disease_abbreviation": "BCC",
+          "observation_support_record_ids": [
+            "TRI_031",
+            "TRI_032",
+            "TRI_033",
+            "TRI_025",
+            "TRI_026",
+            "TRI_027",
+            "TRI_028",
+            "TRI_029",
+            "TRI_030"
+          ]
+        },
+        {
+          "source_disease_id": "DIS_004",
+          "source_disease_name_cn": "光化性角化病/表皮内癌",
+          "source_disease_abbreviation": "AKIEC",
+          "observation_support_record_ids": [
+            "TRI_046",
+            "TRI_047",
+            "TRI_048",
+            "TRI_038",
+            "TRI_039",
+            "TRI_040",
+            "TRI_041",
+            "TRI_042",
+            "TRI_043",
+            "TRI_044",
+            "TRI_045"
+          ]
+        },
+        {
+          "source_disease_id": "DIS_006",
+          "source_disease_name_cn": "皮肤纤维瘤",
+          "source_disease_abbreviation": "DF",
+          "observation_support_record_ids": [
+            "TRI_076",
+            "TRI_077",
+            "TRI_078",
+            "TRI_079",
+            "TRI_080",
+            "TRI_070",
+            "TRI_071",
+            "TRI_072",
+            "TRI_073",
+            "TRI_074",
+            "TRI_075"
+          ]
+        },
+        {
+          "source_disease_id": "DIS_007",
+          "source_disease_name_cn": "血管性皮损",
+          "source_disease_abbreviation": "VASC",
+          "observation_support_record_ids": [
+            "TRI_095",
+            "TRI_096",
+            "TRI_097",
+            "TRI_098",
+            "TRI_085",
+            "TRI_086",
+            "TRI_087",
+            "TRI_088",
+            "TRI_089",
+            "TRI_090",
+            "TRI_091",
+            "TRI_092",
+            "TRI_093",
+            "TRI_094"
+          ]
+        }
+      ]
+    },
+    {
+      "disease_id": "DIS_006",
+      "disease_name_cn": "皮肤纤维瘤",
+      "disease_name_en": "Dermatofibroma",
+      "alias": "df",
+      "disease_abbreviation": "DF",
+      "entity_source": "HAM10000",
+      "outgoing_evidence_count": 15,
+      "observation_support_count": 11,
+      "auxiliary_evidence_count": 4,
+      "relation_distribution": {
+        "伴随症状": 3,
+        "就医建议": 1,
+        "常见于": 2,
+        "建议检查": 2,
+        "表现为": 4,
+        "鉴别诊断": 2,
+        "风险提示": 1
+      },
+      "tail_type_distribution": {
+        "AnatomicalSite": 2,
+        "Disease": 2,
+        "Examination": 2,
+        "LesionFeature": 4,
+        "MedicalAdvice": 1,
+        "RiskWarning": 1,
+        "Symptom": 3
+      },
+      "source_names": [
+        "DermNet - Dermatofibroma",
+        "DermNet - Dermoscopy of Other Non-melanocytic Lesions"
+      ],
+      "observation_support_record_ids": [
+        "TRI_076",
+        "TRI_077",
+        "TRI_078",
+        "TRI_079",
+        "TRI_080",
+        "TRI_070",
+        "TRI_071",
+        "TRI_072",
+        "TRI_073",
+        "TRI_074",
+        "TRI_075"
+      ],
+      "auxiliary_record_ids": [
+        "TRI_081",
+        "TRI_082",
+        "TRI_083",
+        "TRI_084"
+      ],
+      "evidence_by_category": {
+        "lesion_features": [
+          {
+            "triple_id": "TRI_070",
+            "head_id": "DIS_006",
+            "head_cn": "皮肤纤维瘤",
+            "head_type": "Disease",
+            "relation_cn": "表现为",
+            "relation_en": "has_manifestation",
+            "tail_id": "LF_026",
+            "tail_cn": "坚实丘疹或结节",
+            "tail_type": "LesionFeature",
+            "source": "DermNet - Dermatofibroma",
+            "evidence_text": "皮肤纤维瘤通常表现为单发、坚实的丘疹或结节。",
+            "note": "皮肤纤维瘤皮损特征",
+            "evidence_category": "lesion_features"
+          },
+          {
+            "triple_id": "TRI_071",
+            "head_id": "DIS_006",
+            "head_cn": "皮肤纤维瘤",
+            "head_type": "Disease",
+            "relation_cn": "表现为",
+            "relation_en": "has_manifestation",
+            "tail_id": "LF_027",
+            "tail_cn": "捏压凹陷征",
+            "tail_type": "LesionFeature",
+            "source": "DermNet - Dermatofibroma",
+            "evidence_text": "捏压皮损时，表面皮肤可出现凹陷，即捏压凹陷征。",
+            "note": "皮肤纤维瘤典型体征",
+            "evidence_category": "lesion_features"
+          },
+          {
+            "triple_id": "TRI_072",
+            "head_id": "DIS_006",
+            "head_cn": "皮肤纤维瘤",
+            "head_type": "Disease",
+            "relation_cn": "表现为",
+            "relation_en": "has_manifestation",
+            "tail_id": "LF_028",
+            "tail_cn": "中央白色瘢痕样区域",
+            "tail_type": "LesionFeature",
+            "source": "DermNet - Dermatofibroma",
+            "evidence_text": "皮肤纤维瘤最常见的皮肤镜模式是中央白色区域伴周围淡色素网。",
+            "note": "皮肤镜表现",
+            "evidence_category": "lesion_features"
+          },
+          {
+            "triple_id": "TRI_073",
+            "head_id": "DIS_006",
+            "head_cn": "皮肤纤维瘤",
+            "head_type": "Disease",
+            "relation_cn": "表现为",
+            "relation_en": "has_manifestation",
+            "tail_id": "LF_029",
+            "tail_cn": "周围淡色素网",
+            "tail_type": "LesionFeature",
+            "source": "DermNet - Dermoscopy of Other Non-melanocytic Lesions",
+            "evidence_text": "皮肤纤维瘤皮肤镜下可见淡色素网或假性色素网围绕中央苍白无结构区域。",
+            "note": "皮肤镜表现",
+            "evidence_category": "lesion_features"
+          }
+        ],
+        "anatomical_sites": [
+          {
+            "triple_id": "TRI_074",
+            "head_id": "DIS_006",
+            "head_cn": "皮肤纤维瘤",
+            "head_type": "Disease",
+            "relation_cn": "常见于",
+            "relation_en": "commonly_occurs_at",
+            "tail_id": "SITE_002",
+            "tail_cn": "下肢",
+            "tail_type": "AnatomicalSite",
+            "source": "DermNet - Dermatofibroma",
+            "evidence_text": "皮肤纤维瘤是常见良性纤维性结节，通常见于小腿皮肤。",
+            "note": "常见发病部位",
+            "evidence_category": "anatomical_sites"
+          },
+          {
+            "triple_id": "TRI_075",
+            "head_id": "DIS_006",
+            "head_cn": "皮肤纤维瘤",
+            "head_type": "Disease",
+            "relation_cn": "常见于",
+            "relation_en": "commonly_occurs_at",
+            "tail_id": "SITE_004",
+            "tail_cn": "全身皮肤",
+            "tail_type": "AnatomicalSite",
+            "source": "DermNet - Dermatofibroma",
+            "evidence_text": "皮肤纤维瘤可发生于身体任何皮肤部位。",
+            "note": "可发生部位",
+            "evidence_category": "anatomical_sites"
+          }
+        ],
+        "symptoms": [
+          {
+            "triple_id": "TRI_076",
+            "head_id": "DIS_006",
+            "head_cn": "皮肤纤维瘤",
+            "head_type": "Disease",
+            "relation_cn": "伴随症状",
+            "relation_en": "has_symptom",
+            "tail_id": "SYM_003",
+            "tail_cn": "无明显症状",
+            "tail_type": "Symptom",
+            "source": "DermNet - Dermatofibroma",
+            "evidence_text": "皮肤纤维瘤通常不引起症状。",
+            "note": "常见症状表现",
+            "evidence_category": "symptoms"
+          },
+          {
+            "triple_id": "TRI_077",
+            "head_id": "DIS_006",
+            "head_cn": "皮肤纤维瘤",
+            "head_type": "Disease",
+            "relation_cn": "伴随症状",
+            "relation_en": "has_symptom",
+            "tail_id": "SYM_004",
+            "tail_cn": "触痛",
+            "tail_type": "Symptom",
+            "source": "DermNet - Dermatofibroma",
+            "evidence_text": "皮肤纤维瘤有时可出现疼痛或触痛。",
+            "note": "可能伴随症状",
+            "evidence_category": "symptoms"
+          },
+          {
+            "triple_id": "TRI_078",
+            "head_id": "DIS_006",
+            "head_cn": "皮肤纤维瘤",
+            "head_type": "Disease",
+            "relation_cn": "伴随症状",
+            "relation_en": "has_symptom",
+            "tail_id": "SYM_002",
+            "tail_cn": "瘙痒",
+            "tail_type": "Symptom",
+            "source": "DermNet - Dermatofibroma",
+            "evidence_text": "皮肤纤维瘤有时可出现瘙痒。",
+            "note": "可能伴随症状",
+            "evidence_category": "symptoms"
+          }
+        ],
+        "examination_findings": [
+          {
+            "triple_id": "TRI_079",
+            "head_id": "DIS_006",
+            "head_cn": "皮肤纤维瘤",
+            "head_type": "Disease",
+            "relation_cn": "建议检查",
+            "relation_en": "recommended_examination",
+            "tail_id": "EXAM_001",
+            "tail_cn": "皮肤镜检查",
+            "tail_type": "Examination",
+            "source": "DermNet - Dermatofibroma",
+            "evidence_text": "皮肤纤维瘤通常可通过临床表现诊断，并可由皮肤镜辅助支持。",
+            "note": "辅助检查方式",
+            "evidence_category": "examination_findings"
+          },
+          {
+            "triple_id": "TRI_080",
+            "head_id": "DIS_006",
+            "head_cn": "皮肤纤维瘤",
+            "head_type": "Disease",
+            "relation_cn": "建议检查",
+            "relation_en": "recommended_examination",
+            "tail_id": "EXAM_002",
+            "tail_cn": "组织病理检查",
+            "tail_type": "Examination",
+            "source": "DermNet - Dermatofibroma",
+            "evidence_text": "若存在近期增大、溃疡或皮肤镜下结构和颜色不对称等不典型特征，可进行诊断性切除或皮肤活检。",
+            "note": "确认诊断相关检查",
+            "evidence_category": "examination_findings"
+          }
+        ],
+        "differential_diagnoses": [
+          {
+            "triple_id": "TRI_081",
+            "head_id": "DIS_006",
+            "head_cn": "皮肤纤维瘤",
+            "head_type": "Disease",
+            "relation_cn": "鉴别诊断",
+            "relation_en": "differential_diagnosis",
+            "tail_id": "DIS_001",
+            "tail_cn": "黑色素瘤",
+            "tail_type": "Disease",
+            "source": "DermNet - Dermatofibroma",
+            "evidence_text": "皮肤纤维瘤有时可能被误认为隆突性皮肤纤维肉瘤或硬化性黑色素瘤。",
+            "note": "易混淆疾病",
+            "evidence_category": "differential_diagnoses"
+          },
+          {
+            "triple_id": "TRI_082",
+            "head_id": "DIS_006",
+            "head_cn": "皮肤纤维瘤",
+            "head_type": "Disease",
+            "relation_cn": "鉴别诊断",
+            "relation_en": "differential_diagnosis",
+            "tail_id": "DIS_002",
+            "tail_cn": "黑色素细胞痣",
+            "tail_type": "Disease",
+            "source": "DermNet - Dermoscopy of Other Non-melanocytic Lesions",
+            "evidence_text": "皮肤镜有助于区分色素性非黑色素细胞病变与良性或恶性黑色素细胞病变。",
+            "note": "色素性皮损鉴别",
+            "evidence_category": "differential_diagnoses"
+          }
+        ],
+        "risk_warnings": [
+          {
+            "triple_id": "TRI_083",
+            "head_id": "DIS_006",
+            "head_cn": "皮肤纤维瘤",
+            "head_type": "Disease",
+            "relation_cn": "风险提示",
+            "relation_en": "has_risk_warning",
+            "tail_id": "RW_006",
+            "tail_cn": "通常为良性，但不典型变化需进一步评估",
+            "tail_type": "RiskWarning",
+            "source": "DermNet - Dermatofibroma",
+            "evidence_text": "皮肤纤维瘤不会发展为癌，但偶尔可与其他肿瘤相混淆。",
+            "note": "风险提示",
+            "evidence_category": "risk_warnings"
+          }
+        ],
+        "treatments": [],
+        "causes_and_risk_factors": [],
+        "other_evidence": [
+          {
+            "triple_id": "TRI_084",
+            "head_id": "DIS_006",
+            "head_cn": "皮肤纤维瘤",
+            "head_type": "Disease",
+            "relation_cn": "就医建议",
+            "relation_en": "has_medical_advice",
+            "tail_id": "ADV_006",
+            "tail_cn": "典型皮损可观察，诊断不明确或出现异常变化时建议皮肤科评估",
+            "tail_type": "MedicalAdvice",
+            "source": "DermNet - Dermatofibroma",
+            "evidence_text": "皮肤纤维瘤通常无害，典型病例一般仅需解释和观察；若造成困扰或诊断不明确，可进一步处理。",
+            "note": "非处方性就医建议",
+            "evidence_category": "other_evidence"
+          }
+        ]
+      },
+      "cross_disease_conflict_sources": [
+        {
+          "source_disease_id": "DIS_001",
+          "source_disease_name_cn": "黑色素瘤",
+          "source_disease_abbreviation": "MEL",
+          "observation_support_record_ids": [
+            "TRI_007",
+            "TRI_014",
+            "TRI_008",
+            "TRI_009",
+            "TRI_001",
+            "TRI_002",
+            "TRI_003",
+            "TRI_004",
+            "TRI_005",
+            "TRI_006",
+            "TRI_013"
+          ]
+        },
+        {
+          "source_disease_id": "DIS_002",
+          "source_disease_name_cn": "黑色素细胞痣",
+          "source_disease_abbreviation": "NV",
+          "observation_support_record_ids": [
+            "TRI_024",
+            "TRI_020",
+            "TRI_015",
+            "TRI_016",
+            "TRI_017",
+            "TRI_018",
+            "TRI_019"
+          ]
+        },
+        {
+          "source_disease_id": "DIS_003",
+          "source_disease_name_cn": "基底细胞癌",
+          "source_disease_abbreviation": "BCC",
+          "observation_support_record_ids": [
+            "TRI_031",
+            "TRI_032",
+            "TRI_033",
+            "TRI_025",
+            "TRI_026",
+            "TRI_027",
+            "TRI_028",
+            "TRI_029",
+            "TRI_030"
+          ]
+        },
+        {
+          "source_disease_id": "DIS_004",
+          "source_disease_name_cn": "光化性角化病/表皮内癌",
+          "source_disease_abbreviation": "AKIEC",
+          "observation_support_record_ids": [
+            "TRI_046",
+            "TRI_047",
+            "TRI_048",
+            "TRI_038",
+            "TRI_039",
+            "TRI_040",
+            "TRI_041",
+            "TRI_042",
+            "TRI_043",
+            "TRI_044",
+            "TRI_045"
+          ]
+        },
+        {
+          "source_disease_id": "DIS_005",
+          "source_disease_name_cn": "良性角化样病变",
+          "source_disease_abbreviation": "BKL",
+          "observation_support_record_ids": [
+            "TRI_061",
+            "TRI_062",
+            "TRI_063",
+            "TRI_064",
+            "TRI_053",
+            "TRI_054",
+            "TRI_055",
+            "TRI_056",
+            "TRI_057",
+            "TRI_058",
+            "TRI_059",
+            "TRI_060"
+          ]
+        },
+        {
+          "source_disease_id": "DIS_007",
+          "source_disease_name_cn": "血管性皮损",
+          "source_disease_abbreviation": "VASC",
+          "observation_support_record_ids": [
+            "TRI_095",
+            "TRI_096",
+            "TRI_097",
+            "TRI_098",
+            "TRI_085",
+            "TRI_086",
+            "TRI_087",
+            "TRI_088",
+            "TRI_089",
+            "TRI_090",
+            "TRI_091",
+            "TRI_092",
+            "TRI_093",
+            "TRI_094"
+          ]
+        }
+      ]
+    },
+    {
+      "disease_id": "DIS_007",
+      "disease_name_cn": "血管性皮损",
+      "disease_name_en": "Vascular Lesion",
+      "alias": "vasc",
+      "disease_abbreviation": "VASC",
+      "entity_source": "HAM10000",
+      "outgoing_evidence_count": 18,
+      "observation_support_count": 14,
+      "auxiliary_evidence_count": 4,
+      "relation_distribution": {
+        "伴随症状": 2,
+        "就医建议": 1,
+        "常见于": 4,
+        "建议检查": 2,
+        "表现为": 6,
+        "鉴别诊断": 2,
+        "风险提示": 1
+      },
+      "tail_type_distribution": {
+        "AnatomicalSite": 4,
+        "Disease": 2,
+        "Examination": 2,
+        "LesionFeature": 6,
+        "MedicalAdvice": 1,
+        "RiskWarning": 1,
+        "Symptom": 2
+      },
+      "source_names": [
+        "DermNet - Cherry Angioma",
+        "DermNet - Dermoscopy of Other Non-melanocytic Lesions",
+        "HAM10000 Scientific Data",
+        "DermNet - Pyogenic Granuloma",
+        "DermNet - Common Skin Lesions"
+      ],
+      "observation_support_record_ids": [
+        "TRI_095",
+        "TRI_096",
+        "TRI_097",
+        "TRI_098",
+        "TRI_085",
+        "TRI_086",
+        "TRI_087",
+        "TRI_088",
+        "TRI_089",
+        "TRI_090",
+        "TRI_091",
+        "TRI_092",
+        "TRI_093",
+        "TRI_094"
+      ],
+      "auxiliary_record_ids": [
+        "TRI_099",
+        "TRI_100",
+        "TRI_101",
+        "TRI_102"
+      ],
+      "evidence_by_category": {
+        "lesion_features": [
+          {
+            "triple_id": "TRI_085",
+            "head_id": "DIS_007",
+            "head_cn": "血管性皮损",
+            "head_type": "Disease",
+            "relation_cn": "表现为",
+            "relation_en": "has_manifestation",
+            "tail_id": "LF_030",
+            "tail_cn": "红色、蓝色或紫色丘疹",
+            "tail_type": "LesionFeature",
+            "source": "DermNet - Cherry Angioma",
+            "evidence_text": "樱桃样血管瘤可表现为无症状、质地较坚实的红色、蓝色或紫色丘疹。",
+            "note": "血管性皮损临床表现",
+            "evidence_category": "lesion_features"
+          },
+          {
+            "triple_id": "TRI_086",
+            "head_id": "DIS_007",
+            "head_cn": "血管性皮损",
+            "head_type": "Disease",
+            "relation_cn": "表现为",
+            "relation_en": "has_manifestation",
+            "tail_id": "LF_031",
+            "tail_cn": "红色或紫色小腔隙",
+            "tail_type": "LesionFeature",
+            "source": "DermNet - Dermoscopy of Other Non-melanocytic Lesions",
+            "evidence_text": "血管瘤或血管性皮损在皮肤镜下可表现为广泛红蓝色小腔隙。",
+            "note": "皮肤镜表现",
+            "evidence_category": "lesion_features"
+          },
+          {
+            "triple_id": "TRI_087",
+            "head_id": "DIS_007",
+            "head_cn": "血管性皮损",
+            "head_type": "Disease",
+            "relation_cn": "表现为",
+            "relation_en": "has_manifestation",
+            "tail_id": "LF_032",
+            "tail_cn": "边界清楚的红色团块",
+            "tail_type": "LesionFeature",
+            "source": "HAM10000 Scientific Data",
+            "evidence_text": "HAM10000 中血管瘤类皮损在皮肤镜下可表现为红色或紫色、实性且边界清楚的 red clods 或 lacunes。",
+            "note": "皮肤镜表现",
+            "evidence_category": "lesion_features"
+          },
+          {
+            "triple_id": "TRI_088",
+            "head_id": "DIS_007",
+            "head_cn": "血管性皮损",
+            "head_type": "Disease",
+            "relation_cn": "表现为",
+            "relation_en": "has_manifestation",
+            "tail_id": "LF_033",
+            "tail_cn": "快速生长的红色肉芽样结节",
+            "tail_type": "LesionFeature",
+            "source": "DermNet - Pyogenic Granuloma",
+            "evidence_text": "化脓性肉芽肿可表现为数周内快速生长的无痛性红色肉芽样结节。",
+            "note": "化脓性肉芽肿相关表现",
+            "evidence_category": "lesion_features"
+          },
+          {
+            "triple_id": "TRI_089",
+            "head_id": "DIS_007",
+            "head_cn": "血管性皮损",
+            "head_type": "Disease",
+            "relation_cn": "表现为",
+            "relation_en": "has_manifestation",
+            "tail_id": "LF_034",
+            "tail_cn": "白色领圈样边缘",
+            "tail_type": "LesionFeature",
+            "source": "DermNet - Pyogenic Granuloma",
+            "evidence_text": "化脓性肉芽肿在皮肤镜下可见明显角化性边缘或白色领圈样结构。",
+            "note": "皮肤镜表现",
+            "evidence_category": "lesion_features"
+          },
+          {
+            "triple_id": "TRI_090",
+            "head_id": "DIS_007",
+            "head_cn": "血管性皮损",
+            "head_type": "Disease",
+            "relation_cn": "表现为",
+            "relation_en": "has_manifestation",
+            "tail_id": "LF_035",
+            "tail_cn": "溃疡或结痂表面",
+            "tail_type": "LesionFeature",
+            "source": "DermNet - Pyogenic Granuloma",
+            "evidence_text": "化脓性肉芽肿表面可发生溃疡、结痂或疣状改变。",
+            "note": "皮损表面改变",
+            "evidence_category": "lesion_features"
+          }
+        ],
+        "anatomical_sites": [
+          {
+            "triple_id": "TRI_091",
+            "head_id": "DIS_007",
+            "head_cn": "血管性皮损",
+            "head_type": "Disease",
+            "relation_cn": "常见于",
+            "relation_en": "commonly_occurs_at",
+            "tail_id": "SITE_004",
+            "tail_cn": "全身皮肤",
+            "tail_type": "AnatomicalSite",
+            "source": "DermNet - Cherry Angioma",
+            "evidence_text": "樱桃样血管瘤通常散在分布于身体皮肤表面。",
+            "note": "可发生部位",
+            "evidence_category": "anatomical_sites"
+          },
+          {
+            "triple_id": "TRI_092",
+            "head_id": "DIS_007",
+            "head_cn": "血管性皮损",
+            "head_type": "Disease",
+            "relation_cn": "常见于",
+            "relation_en": "commonly_occurs_at",
+            "tail_id": "SITE_001",
+            "tail_cn": "躯干",
+            "tail_type": "AnatomicalSite",
+            "source": "DermNet - Common Skin Lesions",
+            "evidence_text": "樱桃样血管瘤是常见的良性红色、蓝色或紫色皮损，常见于躯干。",
+            "note": "常见发病部位",
+            "evidence_category": "anatomical_sites"
+          },
+          {
+            "triple_id": "TRI_093",
+            "head_id": "DIS_007",
+            "head_cn": "血管性皮损",
+            "head_type": "Disease",
+            "relation_cn": "常见于",
+            "relation_en": "commonly_occurs_at",
+            "tail_id": "SITE_008",
+            "tail_cn": "手指",
+            "tail_type": "AnatomicalSite",
+            "source": "DermNet - Pyogenic Granuloma",
+            "evidence_text": "化脓性肉芽肿最常见的受累部位包括手指和面部。",
+            "note": "常见发病部位",
+            "evidence_category": "anatomical_sites"
+          },
+          {
+            "triple_id": "TRI_094",
+            "head_id": "DIS_007",
+            "head_cn": "血管性皮损",
+            "head_type": "Disease",
+            "relation_cn": "常见于",
+            "relation_en": "commonly_occurs_at",
+            "tail_id": "SITE_005",
+            "tail_cn": "面部",
+            "tail_type": "AnatomicalSite",
+            "source": "DermNet - Pyogenic Granuloma",
+            "evidence_text": "化脓性肉芽肿最常见的受累部位包括手指和面部。",
+            "note": "常见发病部位",
+            "evidence_category": "anatomical_sites"
+          }
+        ],
+        "symptoms": [
+          {
+            "triple_id": "TRI_095",
+            "head_id": "DIS_007",
+            "head_cn": "血管性皮损",
+            "head_type": "Disease",
+            "relation_cn": "伴随症状",
+            "relation_en": "has_symptom",
+            "tail_id": "SYM_003",
+            "tail_cn": "无明显症状",
+            "tail_type": "Symptom",
+            "source": "DermNet - Cherry Angioma",
+            "evidence_text": "樱桃样血管瘤通常为无症状皮损。",
+            "note": "常见症状表现",
+            "evidence_category": "symptoms"
+          },
+          {
+            "triple_id": "TRI_096",
+            "head_id": "DIS_007",
+            "head_cn": "血管性皮损",
+            "head_type": "Disease",
+            "relation_cn": "伴随症状",
+            "relation_en": "has_symptom",
+            "tail_id": "SYM_001",
+            "tail_cn": "出血",
+            "tail_type": "Symptom",
+            "source": "DermNet - Pyogenic Granuloma",
+            "evidence_text": "化脓性肉芽肿轻微外伤后容易出血。",
+            "note": "可能伴随症状",
+            "evidence_category": "symptoms"
+          }
+        ],
+        "examination_findings": [
+          {
+            "triple_id": "TRI_097",
+            "head_id": "DIS_007",
+            "head_cn": "血管性皮损",
+            "head_type": "Disease",
+            "relation_cn": "建议检查",
+            "relation_en": "recommended_examination",
+            "tail_id": "EXAM_001",
+            "tail_cn": "皮肤镜检查",
+            "tail_type": "Examination",
+            "source": "DermNet - Cherry Angioma",
+            "evidence_text": "樱桃样血管瘤通常可临床诊断，皮肤镜下具有红色团块或小叶样模式。",
+            "note": "辅助检查方式",
+            "evidence_category": "examination_findings"
+          },
+          {
+            "triple_id": "TRI_098",
+            "head_id": "DIS_007",
+            "head_cn": "血管性皮损",
+            "head_type": "Disease",
+            "relation_cn": "建议检查",
+            "relation_en": "recommended_examination",
+            "tail_id": "EXAM_002",
+            "tail_cn": "组织病理检查",
+            "tail_type": "Examination",
+            "source": "DermNet - Pyogenic Granuloma",
+            "evidence_text": "当诊断存在疑问时，化脓性肉芽肿可在治疗或切除后提交组织学检查。",
+            "note": "确认诊断相关检查",
+            "evidence_category": "examination_findings"
+          }
+        ],
+        "differential_diagnoses": [
+          {
+            "triple_id": "TRI_099",
+            "head_id": "DIS_007",
+            "head_cn": "血管性皮损",
+            "head_type": "Disease",
+            "relation_cn": "鉴别诊断",
+            "relation_en": "differential_diagnosis",
+            "tail_id": "DIS_001",
+            "tail_cn": "黑色素瘤",
+            "tail_type": "Disease",
+            "source": "DermNet - Pyogenic Granuloma",
+            "evidence_text": "无色素或低色素黑色素瘤是化脓性肉芽肿重要的鉴别诊断，皮肤镜下也可能有相似特征。",
+            "note": "易混淆疾病",
+            "evidence_category": "differential_diagnoses"
+          },
+          {
+            "triple_id": "TRI_100",
+            "head_id": "DIS_007",
+            "head_cn": "血管性皮损",
+            "head_type": "Disease",
+            "relation_cn": "鉴别诊断",
+            "relation_en": "differential_diagnosis",
+            "tail_id": "DIS_003",
+            "tail_cn": "基底细胞癌",
+            "tail_type": "Disease",
+            "source": "DermNet - Cherry Angioma",
+            "evidence_text": "樱桃样血管瘤偶尔可能与结节型基底细胞癌混淆。",
+            "note": "易混淆疾病",
+            "evidence_category": "differential_diagnoses"
+          }
+        ],
+        "risk_warnings": [
+          {
+            "triple_id": "TRI_101",
+            "head_id": "DIS_007",
+            "head_cn": "血管性皮损",
+            "head_type": "Disease",
+            "relation_cn": "风险提示",
+            "relation_en": "has_risk_warning",
+            "tail_id": "RW_007",
+            "tail_cn": "通常为良性血管性病变，但易出血或诊断不明确时需进一步评估",
+            "tail_type": "RiskWarning",
+            "source": "DermNet - Cherry Angioma",
+            "evidence_text": "樱桃样血管瘤通常无害，但有时需排除类似的恶性皮损；化脓性肉芽肿可反复或大量出血。",
+            "note": "风险提示",
+            "evidence_category": "risk_warnings"
+          }
+        ],
+        "treatments": [],
+        "causes_and_risk_factors": [],
+        "other_evidence": [
+          {
+            "triple_id": "TRI_102",
+            "head_id": "DIS_007",
+            "head_cn": "血管性皮损",
+            "head_type": "Disease",
+            "relation_cn": "就医建议",
+            "relation_en": "has_medical_advice",
+            "tail_id": "ADV_007",
+            "tail_cn": "建议皮肤科评估，快速生长、反复出血或诊断不明确时进一步检查",
+            "tail_type": "MedicalAdvice",
+            "source": "DermNet - Pyogenic Granuloma",
+            "evidence_text": "快速生长、反复出血或诊断不明确的血管性皮损应进一步评估，必要时进行组织学检查。",
+            "note": "非处方性就医建议",
+            "evidence_category": "other_evidence"
+          }
+        ]
+      },
+      "cross_disease_conflict_sources": [
+        {
+          "source_disease_id": "DIS_001",
+          "source_disease_name_cn": "黑色素瘤",
+          "source_disease_abbreviation": "MEL",
+          "observation_support_record_ids": [
+            "TRI_007",
+            "TRI_014",
+            "TRI_008",
+            "TRI_009",
+            "TRI_001",
+            "TRI_002",
+            "TRI_003",
+            "TRI_004",
+            "TRI_005",
+            "TRI_006",
+            "TRI_013"
+          ]
+        },
+        {
+          "source_disease_id": "DIS_002",
+          "source_disease_name_cn": "黑色素细胞痣",
+          "source_disease_abbreviation": "NV",
+          "observation_support_record_ids": [
+            "TRI_024",
+            "TRI_020",
+            "TRI_015",
+            "TRI_016",
+            "TRI_017",
+            "TRI_018",
+            "TRI_019"
+          ]
+        },
+        {
+          "source_disease_id": "DIS_003",
+          "source_disease_name_cn": "基底细胞癌",
+          "source_disease_abbreviation": "BCC",
+          "observation_support_record_ids": [
+            "TRI_031",
+            "TRI_032",
+            "TRI_033",
+            "TRI_025",
+            "TRI_026",
+            "TRI_027",
+            "TRI_028",
+            "TRI_029",
+            "TRI_030"
+          ]
+        },
+        {
+          "source_disease_id": "DIS_004",
+          "source_disease_name_cn": "光化性角化病/表皮内癌",
+          "source_disease_abbreviation": "AKIEC",
+          "observation_support_record_ids": [
+            "TRI_046",
+            "TRI_047",
+            "TRI_048",
+            "TRI_038",
+            "TRI_039",
+            "TRI_040",
+            "TRI_041",
+            "TRI_042",
+            "TRI_043",
+            "TRI_044",
+            "TRI_045"
+          ]
+        },
+        {
+          "source_disease_id": "DIS_005",
+          "source_disease_name_cn": "良性角化样病变",
+          "source_disease_abbreviation": "BKL",
+          "observation_support_record_ids": [
+            "TRI_061",
+            "TRI_062",
+            "TRI_063",
+            "TRI_064",
+            "TRI_053",
+            "TRI_054",
+            "TRI_055",
+            "TRI_056",
+            "TRI_057",
+            "TRI_058",
+            "TRI_059",
+            "TRI_060"
+          ]
+        },
+        {
+          "source_disease_id": "DIS_006",
+          "source_disease_name_cn": "皮肤纤维瘤",
+          "source_disease_abbreviation": "DF",
+          "observation_support_record_ids": [
+            "TRI_076",
+            "TRI_077",
+            "TRI_078",
+            "TRI_079",
+            "TRI_080",
+            "TRI_070",
+            "TRI_071",
+            "TRI_072",
+            "TRI_073",
+            "TRI_074",
+            "TRI_075"
+          ]
+        }
+      ]
+    }
+  ]
+}

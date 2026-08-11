@@ -322,6 +322,40 @@ class GraphPathRetriever:
         normalized_query = self.normalize_text(
             disease_query
         )
+        disease_query_aliases = {
+            self.normalize_text(
+                "良性角化性病变"
+            ): self.normalize_text(
+                "良性角化样病变"
+            ),
+            self.normalize_text(
+                "良性角化病变"
+            ): self.normalize_text(
+                "良性角化样病变"
+            ),
+            self.normalize_text(
+                "血管性病变"
+            ): self.normalize_text(
+                "血管性皮损"
+            ),
+            self.normalize_text(
+                "血管病变"
+            ): self.normalize_text(
+                "血管性皮损"
+            ),
+            self.normalize_text(
+                "血管性皮肤病变"
+            ): self.normalize_text(
+                "血管性皮损"
+            ),
+        }
+
+        normalized_query = (
+            disease_query_aliases.get(
+                normalized_query,
+                normalized_query,
+            )
+        )
 
         if not normalized_query:
             raise ValueError(

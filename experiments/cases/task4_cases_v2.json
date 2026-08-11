@@ -1,0 +1,5794 @@
+{
+  "dataset_name": "task4_formal_case_dataset_v2",
+  "dataset_version": "2.0",
+  "generated_at": "2026-08-03T10:10:37+08:00",
+  "description": "用于纯 LLM、普通 RAG 和 KG-RAG 三种方法正式对照实验的皮肤病辅助诊断合成病例集。",
+  "disease_count": 7,
+  "case_type_count": 5,
+  "cases_per_disease": 20,
+  "total_case_count": 140,
+  "data_origin": "synthetic_kg_grounded",
+  "generation_rule": "task4_case_generation_v2",
+  "blueprint": {
+    "path": "experiments/cases/task4_disease_evidence_blueprint_v2.json",
+    "sha256": "ece53871a685d8d9573cf66689bc9938678aea85225f6ccab4a2cbbdfa7399f3"
+  },
+  "cases": [
+    {
+      "case_id": "CASE_MEL_TP_001",
+      "true_label": "黑色素瘤",
+      "candidate_disease": "黑色素瘤",
+      "observation_text": "患者发现背部存在皮损，主要表现为边界不规则、颜色不均、形态不对称。同时可见或自述出血。",
+      "lesion_features": [
+        "边界不规则",
+        "颜色不均",
+        "形态不对称"
+      ],
+      "anatomical_site": "背部",
+      "symptoms": [
+        "出血"
+      ],
+      "duration_change": "",
+      "difficulty_level": "easy",
+      "case_type": "typical_positive",
+      "expected_concepts": [
+        "边界不规则",
+        "颜色不均",
+        "形态不对称",
+        "背部",
+        "出血"
+      ],
+      "supporting_concepts": [
+        "边界不规则",
+        "颜色不均",
+        "形态不对称",
+        "背部",
+        "出血"
+      ],
+      "conflicting_concepts": [],
+      "missing_information": [
+        "皮肤镜检查结果",
+        "组织病理检查结果"
+      ],
+      "evidence_expectation": "sufficient",
+      "data_origin": "synthetic_kg_grounded",
+      "source_basis": [
+        "TRI_001",
+        "TRI_002",
+        "TRI_003",
+        "TRI_006",
+        "TRI_007"
+      ],
+      "generation_rule": "task4_case_generation_v2"
+    },
+    {
+      "case_id": "CASE_MEL_TP_002",
+      "true_label": "黑色素瘤",
+      "candidate_disease": "黑色素瘤",
+      "observation_text": "观察到患者下肢存在皮损，主要表现为颜色不均、形态不对称、直径增大。同时可见或自述瘙痒。",
+      "lesion_features": [
+        "颜色不均",
+        "形态不对称",
+        "直径增大"
+      ],
+      "anatomical_site": "下肢",
+      "symptoms": [
+        "瘙痒"
+      ],
+      "duration_change": "",
+      "difficulty_level": "easy",
+      "case_type": "typical_positive",
+      "expected_concepts": [
+        "颜色不均",
+        "形态不对称",
+        "直径增大",
+        "下肢",
+        "瘙痒"
+      ],
+      "supporting_concepts": [
+        "颜色不均",
+        "形态不对称",
+        "直径增大",
+        "下肢",
+        "瘙痒"
+      ],
+      "conflicting_concepts": [],
+      "missing_information": [
+        "皮肤镜检查结果",
+        "组织病理检查结果"
+      ],
+      "evidence_expectation": "sufficient",
+      "data_origin": "synthetic_kg_grounded",
+      "source_basis": [
+        "TRI_002",
+        "TRI_003",
+        "TRI_004",
+        "TRI_013",
+        "TRI_014"
+      ],
+      "generation_rule": "task4_case_generation_v2"
+    },
+    {
+      "case_id": "CASE_MEL_TP_003",
+      "true_label": "黑色素瘤",
+      "candidate_disease": "黑色素瘤",
+      "observation_text": "患者近期注意到背部存在皮损，主要表现为边界不规则、形态不对称、直径增大。同时可见或自述出血。",
+      "lesion_features": [
+        "边界不规则",
+        "形态不对称",
+        "直径增大"
+      ],
+      "anatomical_site": "背部",
+      "symptoms": [
+        "出血"
+      ],
+      "duration_change": "",
+      "difficulty_level": "medium",
+      "case_type": "typical_positive",
+      "expected_concepts": [
+        "边界不规则",
+        "形态不对称",
+        "直径增大",
+        "背部",
+        "出血"
+      ],
+      "supporting_concepts": [
+        "边界不规则",
+        "形态不对称",
+        "直径增大",
+        "背部",
+        "出血"
+      ],
+      "conflicting_concepts": [],
+      "missing_information": [
+        "皮肤镜检查结果",
+        "组织病理检查结果"
+      ],
+      "evidence_expectation": "sufficient",
+      "data_origin": "synthetic_kg_grounded",
+      "source_basis": [
+        "TRI_001",
+        "TRI_003",
+        "TRI_004",
+        "TRI_006",
+        "TRI_007"
+      ],
+      "generation_rule": "task4_case_generation_v2"
+    },
+    {
+      "case_id": "CASE_MEL_TP_004",
+      "true_label": "黑色素瘤",
+      "candidate_disease": "黑色素瘤",
+      "observation_text": "患者自述发现下肢存在皮损，主要表现为边界不规则、颜色不均、直径增大。同时可见或自述瘙痒。",
+      "lesion_features": [
+        "边界不规则",
+        "颜色不均",
+        "直径增大"
+      ],
+      "anatomical_site": "下肢",
+      "symptoms": [
+        "瘙痒"
+      ],
+      "duration_change": "",
+      "difficulty_level": "medium",
+      "case_type": "typical_positive",
+      "expected_concepts": [
+        "边界不规则",
+        "颜色不均",
+        "直径增大",
+        "下肢",
+        "瘙痒"
+      ],
+      "supporting_concepts": [
+        "边界不规则",
+        "颜色不均",
+        "直径增大",
+        "下肢",
+        "瘙痒"
+      ],
+      "conflicting_concepts": [],
+      "missing_information": [
+        "皮肤镜检查结果",
+        "组织病理检查结果"
+      ],
+      "evidence_expectation": "sufficient",
+      "data_origin": "synthetic_kg_grounded",
+      "source_basis": [
+        "TRI_001",
+        "TRI_002",
+        "TRI_004",
+        "TRI_013",
+        "TRI_014"
+      ],
+      "generation_rule": "task4_case_generation_v2"
+    },
+    {
+      "case_id": "CASE_MEL_PS_001",
+      "true_label": "黑色素瘤",
+      "candidate_disease": "黑色素瘤",
+      "observation_text": "患者发现局部皮肤存在皮损，主要表现为边界不规则。",
+      "lesion_features": [
+        "边界不规则"
+      ],
+      "anatomical_site": "",
+      "symptoms": [],
+      "duration_change": "",
+      "difficulty_level": "medium",
+      "case_type": "partial_support",
+      "expected_concepts": [
+        "边界不规则"
+      ],
+      "supporting_concepts": [
+        "边界不规则"
+      ],
+      "conflicting_concepts": [],
+      "missing_information": [
+        "更多皮损形态特征",
+        "皮肤镜检查结果",
+        "组织病理检查结果"
+      ],
+      "evidence_expectation": "partial",
+      "data_origin": "synthetic_kg_grounded",
+      "source_basis": [
+        "TRI_001"
+      ],
+      "generation_rule": "task4_case_generation_v2"
+    },
+    {
+      "case_id": "CASE_MEL_PS_002",
+      "true_label": "黑色素瘤",
+      "candidate_disease": "黑色素瘤",
+      "observation_text": "观察到患者下肢存在皮损，主要表现为颜色不均。",
+      "lesion_features": [
+        "颜色不均"
+      ],
+      "anatomical_site": "下肢",
+      "symptoms": [],
+      "duration_change": "",
+      "difficulty_level": "medium",
+      "case_type": "partial_support",
+      "expected_concepts": [
+        "颜色不均",
+        "下肢"
+      ],
+      "supporting_concepts": [
+        "颜色不均",
+        "下肢"
+      ],
+      "conflicting_concepts": [],
+      "missing_information": [
+        "更多皮损形态特征",
+        "皮肤镜检查结果",
+        "组织病理检查结果"
+      ],
+      "evidence_expectation": "partial",
+      "data_origin": "synthetic_kg_grounded",
+      "source_basis": [
+        "TRI_002",
+        "TRI_013"
+      ],
+      "generation_rule": "task4_case_generation_v2"
+    },
+    {
+      "case_id": "CASE_MEL_PS_003",
+      "true_label": "黑色素瘤",
+      "candidate_disease": "黑色素瘤",
+      "observation_text": "患者近期注意到局部皮肤存在皮损，主要表现为形态不对称。",
+      "lesion_features": [
+        "形态不对称"
+      ],
+      "anatomical_site": "",
+      "symptoms": [],
+      "duration_change": "",
+      "difficulty_level": "medium",
+      "case_type": "partial_support",
+      "expected_concepts": [
+        "形态不对称"
+      ],
+      "supporting_concepts": [
+        "形态不对称"
+      ],
+      "conflicting_concepts": [],
+      "missing_information": [
+        "更多皮损形态特征",
+        "皮肤镜检查结果",
+        "组织病理检查结果"
+      ],
+      "evidence_expectation": "partial",
+      "data_origin": "synthetic_kg_grounded",
+      "source_basis": [
+        "TRI_003"
+      ],
+      "generation_rule": "task4_case_generation_v2"
+    },
+    {
+      "case_id": "CASE_MEL_PS_004",
+      "true_label": "黑色素瘤",
+      "candidate_disease": "黑色素瘤",
+      "observation_text": "患者自述发现下肢存在皮损，主要表现为直径增大。",
+      "lesion_features": [
+        "直径增大"
+      ],
+      "anatomical_site": "下肢",
+      "symptoms": [],
+      "duration_change": "",
+      "difficulty_level": "medium",
+      "case_type": "partial_support",
+      "expected_concepts": [
+        "直径增大",
+        "下肢"
+      ],
+      "supporting_concepts": [
+        "直径增大",
+        "下肢"
+      ],
+      "conflicting_concepts": [],
+      "missing_information": [
+        "更多皮损形态特征",
+        "皮肤镜检查结果",
+        "组织病理检查结果"
+      ],
+      "evidence_expectation": "partial",
+      "data_origin": "synthetic_kg_grounded",
+      "source_basis": [
+        "TRI_004",
+        "TRI_013"
+      ],
+      "generation_rule": "task4_case_generation_v2"
+    },
+    {
+      "case_id": "CASE_MEL_EI_001",
+      "true_label": "黑色素瘤",
+      "candidate_disease": "黑色素瘤",
+      "observation_text": "患者发现背部存在皮损，主要表现为局部皮肤颜色改变。",
+      "lesion_features": [
+        "局部皮肤颜色改变"
+      ],
+      "anatomical_site": "背部",
+      "symptoms": [],
+      "duration_change": "",
+      "difficulty_level": "medium",
+      "case_type": "evidence_insufficient",
+      "expected_concepts": [
+        "背部"
+      ],
+      "supporting_concepts": [
+        "背部"
+      ],
+      "conflicting_concepts": [],
+      "missing_information": [
+        "更多皮损形态特征",
+        "明确病程信息",
+        "皮肤镜检查结果",
+        "组织病理检查结果"
+      ],
+      "evidence_expectation": "insufficient",
+      "data_origin": "synthetic_kg_grounded",
+      "source_basis": [
+        "TRI_006"
+      ],
+      "generation_rule": "task4_case_generation_v2"
+    },
+    {
+      "case_id": "CASE_MEL_EI_002",
+      "true_label": "黑色素瘤",
+      "candidate_disease": "黑色素瘤",
+      "observation_text": "观察到患者下肢存在皮损，主要表现为局部小丘疹。",
+      "lesion_features": [
+        "局部小丘疹"
+      ],
+      "anatomical_site": "下肢",
+      "symptoms": [],
+      "duration_change": "",
+      "difficulty_level": "medium",
+      "case_type": "evidence_insufficient",
+      "expected_concepts": [
+        "下肢"
+      ],
+      "supporting_concepts": [
+        "下肢"
+      ],
+      "conflicting_concepts": [],
+      "missing_information": [
+        "更多皮损形态特征",
+        "明确病程信息",
+        "皮肤镜检查结果",
+        "组织病理检查结果"
+      ],
+      "evidence_expectation": "insufficient",
+      "data_origin": "synthetic_kg_grounded",
+      "source_basis": [
+        "TRI_013"
+      ],
+      "generation_rule": "task4_case_generation_v2"
+    },
+    {
+      "case_id": "CASE_MEL_EI_003",
+      "true_label": "黑色素瘤",
+      "candidate_disease": "黑色素瘤",
+      "observation_text": "患者近期注意到局部皮肤存在皮损，主要表现为局部斑片样皮损。同时可见或自述出血。",
+      "lesion_features": [
+        "局部斑片样皮损"
+      ],
+      "anatomical_site": "",
+      "symptoms": [
+        "出血"
+      ],
+      "duration_change": "",
+      "difficulty_level": "medium",
+      "case_type": "evidence_insufficient",
+      "expected_concepts": [
+        "出血"
+      ],
+      "supporting_concepts": [
+        "出血"
+      ],
+      "conflicting_concepts": [],
+      "missing_information": [
+        "更多皮损形态特征",
+        "明确病程信息",
+        "皮肤镜检查结果",
+        "组织病理检查结果"
+      ],
+      "evidence_expectation": "insufficient",
+      "data_origin": "synthetic_kg_grounded",
+      "source_basis": [
+        "TRI_007"
+      ],
+      "generation_rule": "task4_case_generation_v2"
+    },
+    {
+      "case_id": "CASE_MEL_EI_004",
+      "true_label": "黑色素瘤",
+      "candidate_disease": "黑色素瘤",
+      "observation_text": "患者自述发现局部皮肤存在皮损，主要表现为局部形态不明确的皮损。同时可见或自述瘙痒。",
+      "lesion_features": [
+        "局部形态不明确的皮损"
+      ],
+      "anatomical_site": "",
+      "symptoms": [
+        "瘙痒"
+      ],
+      "duration_change": "",
+      "difficulty_level": "medium",
+      "case_type": "evidence_insufficient",
+      "expected_concepts": [
+        "瘙痒"
+      ],
+      "supporting_concepts": [
+        "瘙痒"
+      ],
+      "conflicting_concepts": [],
+      "missing_information": [
+        "更多皮损形态特征",
+        "明确病程信息",
+        "皮肤镜检查结果",
+        "组织病理检查结果"
+      ],
+      "evidence_expectation": "insufficient",
+      "data_origin": "synthetic_kg_grounded",
+      "source_basis": [
+        "TRI_014"
+      ],
+      "generation_rule": "task4_case_generation_v2"
+    },
+    {
+      "case_id": "CASE_MEL_DC_001",
+      "true_label": "黑色素细胞痣",
+      "candidate_disease": "黑色素瘤",
+      "observation_text": "患者发现全身皮肤存在皮损，主要表现为边界不规则、色素均匀、边界清楚。",
+      "lesion_features": [
+        "边界不规则",
+        "色素均匀",
+        "边界清楚"
+      ],
+      "anatomical_site": "全身皮肤",
+      "symptoms": [],
+      "duration_change": "",
+      "difficulty_level": "hard",
+      "case_type": "differential_confusion",
+      "expected_concepts": [
+        "边界不规则",
+        "色素均匀",
+        "边界清楚",
+        "全身皮肤"
+      ],
+      "supporting_concepts": [
+        "边界不规则"
+      ],
+      "conflicting_concepts": [
+        "色素均匀",
+        "边界清楚",
+        "全身皮肤"
+      ],
+      "missing_information": [
+        "皮肤镜检查结果",
+        "组织病理检查结果",
+        "病程变化信息"
+      ],
+      "evidence_expectation": "conflicting",
+      "data_origin": "synthetic_kg_grounded",
+      "source_basis": [
+        "TRI_001",
+        "TRI_015",
+        "TRI_016",
+        "TRI_019"
+      ],
+      "generation_rule": "task4_case_generation_v2"
+    },
+    {
+      "case_id": "CASE_MEL_DC_002",
+      "true_label": "良性角化样病变",
+      "candidate_disease": "黑色素瘤",
+      "observation_text": "观察到患者躯干存在皮损，主要表现为颜色不均、贴附样丘疹或斑块、边界清楚的扁平色素斑。",
+      "lesion_features": [
+        "颜色不均",
+        "贴附样丘疹或斑块",
+        "边界清楚的扁平色素斑"
+      ],
+      "anatomical_site": "躯干",
+      "symptoms": [],
+      "duration_change": "",
+      "difficulty_level": "hard",
+      "case_type": "differential_confusion",
+      "expected_concepts": [
+        "颜色不均",
+        "贴附样丘疹或斑块",
+        "边界清楚的扁平色素斑",
+        "躯干"
+      ],
+      "supporting_concepts": [
+        "颜色不均"
+      ],
+      "conflicting_concepts": [
+        "贴附样丘疹或斑块",
+        "边界清楚的扁平色素斑",
+        "躯干"
+      ],
+      "missing_information": [
+        "皮肤镜检查结果",
+        "组织病理检查结果",
+        "病程变化信息"
+      ],
+      "evidence_expectation": "conflicting",
+      "data_origin": "synthetic_kg_grounded",
+      "source_basis": [
+        "TRI_002",
+        "TRI_054",
+        "TRI_055",
+        "TRI_060"
+      ],
+      "generation_rule": "task4_case_generation_v2"
+    },
+    {
+      "case_id": "CASE_MEL_DC_003",
+      "true_label": "黑色素细胞痣",
+      "candidate_disease": "黑色素瘤",
+      "observation_text": "患者近期注意到全身皮肤存在皮损，主要表现为形态不对称、棕色或黑色斑疹/丘疹、对称性较好。",
+      "lesion_features": [
+        "形态不对称",
+        "棕色或黑色斑疹/丘疹",
+        "对称性较好"
+      ],
+      "anatomical_site": "全身皮肤",
+      "symptoms": [],
+      "duration_change": "",
+      "difficulty_level": "hard",
+      "case_type": "differential_confusion",
+      "expected_concepts": [
+        "形态不对称",
+        "棕色或黑色斑疹/丘疹",
+        "对称性较好",
+        "全身皮肤"
+      ],
+      "supporting_concepts": [
+        "形态不对称"
+      ],
+      "conflicting_concepts": [
+        "棕色或黑色斑疹/丘疹",
+        "对称性较好",
+        "全身皮肤"
+      ],
+      "missing_information": [
+        "皮肤镜检查结果",
+        "组织病理检查结果",
+        "病程变化信息"
+      ],
+      "evidence_expectation": "conflicting",
+      "data_origin": "synthetic_kg_grounded",
+      "source_basis": [
+        "TRI_003",
+        "TRI_017",
+        "TRI_018",
+        "TRI_019"
+      ],
+      "generation_rule": "task4_case_generation_v2"
+    },
+    {
+      "case_id": "CASE_MEL_DC_004",
+      "true_label": "良性角化样病变",
+      "candidate_disease": "黑色素瘤",
+      "observation_text": "患者自述发现躯干存在皮损，主要表现为直径增大、蜡样或疣状表面、粟丘疹样囊肿。",
+      "lesion_features": [
+        "直径增大",
+        "蜡样或疣状表面",
+        "粟丘疹样囊肿"
+      ],
+      "anatomical_site": "躯干",
+      "symptoms": [],
+      "duration_change": "",
+      "difficulty_level": "hard",
+      "case_type": "differential_confusion",
+      "expected_concepts": [
+        "直径增大",
+        "蜡样或疣状表面",
+        "粟丘疹样囊肿",
+        "躯干"
+      ],
+      "supporting_concepts": [
+        "直径增大"
+      ],
+      "conflicting_concepts": [
+        "蜡样或疣状表面",
+        "粟丘疹样囊肿",
+        "躯干"
+      ],
+      "missing_information": [
+        "皮肤镜检查结果",
+        "组织病理检查结果",
+        "病程变化信息"
+      ],
+      "evidence_expectation": "conflicting",
+      "data_origin": "synthetic_kg_grounded",
+      "source_basis": [
+        "TRI_004",
+        "TRI_053",
+        "TRI_056",
+        "TRI_060"
+      ],
+      "generation_rule": "task4_case_generation_v2"
+    },
+    {
+      "case_id": "CASE_MEL_CD_001",
+      "true_label": "黑色素瘤",
+      "candidate_disease": "黑色素瘤",
+      "observation_text": "患者发现背部存在皮损，主要表现为边界不规则、颜色不均、贴附样丘疹或斑块、边界清楚的扁平色素斑。",
+      "lesion_features": [
+        "边界不规则",
+        "颜色不均",
+        "贴附样丘疹或斑块",
+        "边界清楚的扁平色素斑"
+      ],
+      "anatomical_site": "背部",
+      "symptoms": [],
+      "duration_change": "",
+      "difficulty_level": "hard",
+      "case_type": "conflict_difficult",
+      "expected_concepts": [
+        "边界不规则",
+        "颜色不均",
+        "贴附样丘疹或斑块",
+        "边界清楚的扁平色素斑",
+        "背部"
+      ],
+      "supporting_concepts": [
+        "边界不规则",
+        "颜色不均",
+        "背部"
+      ],
+      "conflicting_concepts": [
+        "贴附样丘疹或斑块",
+        "边界清楚的扁平色素斑"
+      ],
+      "missing_information": [
+        "皮肤镜检查结果",
+        "组织病理检查结果",
+        "能够解释冲突表现的进一步检查信息"
+      ],
+      "evidence_expectation": "conflicting",
+      "data_origin": "synthetic_kg_grounded",
+      "source_basis": [
+        "TRI_001",
+        "TRI_002",
+        "TRI_054",
+        "TRI_055",
+        "TRI_006"
+      ],
+      "generation_rule": "task4_case_generation_v2"
+    },
+    {
+      "case_id": "CASE_MEL_CD_002",
+      "true_label": "黑色素瘤",
+      "candidate_disease": "黑色素瘤",
+      "observation_text": "观察到患者下肢存在皮损，主要表现为颜色不均、形态不对称、棕色或黑色斑疹/丘疹、对称性较好。",
+      "lesion_features": [
+        "颜色不均",
+        "形态不对称",
+        "棕色或黑色斑疹/丘疹",
+        "对称性较好"
+      ],
+      "anatomical_site": "下肢",
+      "symptoms": [],
+      "duration_change": "",
+      "difficulty_level": "hard",
+      "case_type": "conflict_difficult",
+      "expected_concepts": [
+        "颜色不均",
+        "形态不对称",
+        "棕色或黑色斑疹/丘疹",
+        "对称性较好",
+        "下肢"
+      ],
+      "supporting_concepts": [
+        "颜色不均",
+        "形态不对称",
+        "下肢"
+      ],
+      "conflicting_concepts": [
+        "棕色或黑色斑疹/丘疹",
+        "对称性较好"
+      ],
+      "missing_information": [
+        "皮肤镜检查结果",
+        "组织病理检查结果",
+        "能够解释冲突表现的进一步检查信息"
+      ],
+      "evidence_expectation": "conflicting",
+      "data_origin": "synthetic_kg_grounded",
+      "source_basis": [
+        "TRI_002",
+        "TRI_003",
+        "TRI_017",
+        "TRI_018",
+        "TRI_013"
+      ],
+      "generation_rule": "task4_case_generation_v2"
+    },
+    {
+      "case_id": "CASE_MEL_CD_003",
+      "true_label": "黑色素瘤",
+      "candidate_disease": "黑色素瘤",
+      "observation_text": "患者近期注意到背部存在皮损，主要表现为形态不对称、直径增大、蜡样或疣状表面、粟丘疹样囊肿。",
+      "lesion_features": [
+        "形态不对称",
+        "直径增大",
+        "蜡样或疣状表面",
+        "粟丘疹样囊肿"
+      ],
+      "anatomical_site": "背部",
+      "symptoms": [],
+      "duration_change": "",
+      "difficulty_level": "hard",
+      "case_type": "conflict_difficult",
+      "expected_concepts": [
+        "形态不对称",
+        "直径增大",
+        "蜡样或疣状表面",
+        "粟丘疹样囊肿",
+        "背部"
+      ],
+      "supporting_concepts": [
+        "形态不对称",
+        "直径增大",
+        "背部"
+      ],
+      "conflicting_concepts": [
+        "蜡样或疣状表面",
+        "粟丘疹样囊肿"
+      ],
+      "missing_information": [
+        "皮肤镜检查结果",
+        "组织病理检查结果",
+        "能够解释冲突表现的进一步检查信息"
+      ],
+      "evidence_expectation": "conflicting",
+      "data_origin": "synthetic_kg_grounded",
+      "source_basis": [
+        "TRI_003",
+        "TRI_004",
+        "TRI_053",
+        "TRI_056",
+        "TRI_006"
+      ],
+      "generation_rule": "task4_case_generation_v2"
+    },
+    {
+      "case_id": "CASE_MEL_CD_004",
+      "true_label": "黑色素瘤",
+      "candidate_disease": "黑色素瘤",
+      "observation_text": "患者自述发现下肢存在皮损，主要表现为边界不规则、直径增大、色素均匀、边界清楚。",
+      "lesion_features": [
+        "边界不规则",
+        "直径增大",
+        "色素均匀",
+        "边界清楚"
+      ],
+      "anatomical_site": "下肢",
+      "symptoms": [],
+      "duration_change": "",
+      "difficulty_level": "hard",
+      "case_type": "conflict_difficult",
+      "expected_concepts": [
+        "边界不规则",
+        "直径增大",
+        "色素均匀",
+        "边界清楚",
+        "下肢"
+      ],
+      "supporting_concepts": [
+        "边界不规则",
+        "直径增大",
+        "下肢"
+      ],
+      "conflicting_concepts": [
+        "色素均匀",
+        "边界清楚"
+      ],
+      "missing_information": [
+        "皮肤镜检查结果",
+        "组织病理检查结果",
+        "能够解释冲突表现的进一步检查信息"
+      ],
+      "evidence_expectation": "conflicting",
+      "data_origin": "synthetic_kg_grounded",
+      "source_basis": [
+        "TRI_001",
+        "TRI_004",
+        "TRI_015",
+        "TRI_016",
+        "TRI_013"
+      ],
+      "generation_rule": "task4_case_generation_v2"
+    },
+    {
+      "case_id": "CASE_NV_TP_001",
+      "true_label": "黑色素细胞痣",
+      "candidate_disease": "黑色素细胞痣",
+      "observation_text": "患者发现全身皮肤存在皮损，主要表现为色素均匀、边界清楚、棕色或黑色斑疹/丘疹。同时可见或自述无明显症状。",
+      "lesion_features": [
+        "色素均匀",
+        "边界清楚",
+        "棕色或黑色斑疹/丘疹"
+      ],
+      "anatomical_site": "全身皮肤",
+      "symptoms": [
+        "无明显症状"
+      ],
+      "duration_change": "",
+      "difficulty_level": "easy",
+      "case_type": "typical_positive",
+      "expected_concepts": [
+        "色素均匀",
+        "边界清楚",
+        "棕色或黑色斑疹/丘疹",
+        "全身皮肤",
+        "无明显症状"
+      ],
+      "supporting_concepts": [
+        "色素均匀",
+        "边界清楚",
+        "棕色或黑色斑疹/丘疹",
+        "全身皮肤",
+        "无明显症状"
+      ],
+      "conflicting_concepts": [],
+      "missing_information": [
+        "皮肤镜检查结果",
+        "组织病理检查结果"
+      ],
+      "evidence_expectation": "sufficient",
+      "data_origin": "synthetic_kg_grounded",
+      "source_basis": [
+        "TRI_015",
+        "TRI_016",
+        "TRI_017",
+        "TRI_019",
+        "TRI_024"
+      ],
+      "generation_rule": "task4_case_generation_v2"
+    },
+    {
+      "case_id": "CASE_NV_TP_002",
+      "true_label": "黑色素细胞痣",
+      "candidate_disease": "黑色素细胞痣",
+      "observation_text": "观察到患者全身皮肤存在皮损，主要表现为边界清楚、棕色或黑色斑疹/丘疹、对称性较好。同时可见或自述无明显症状。",
+      "lesion_features": [
+        "边界清楚",
+        "棕色或黑色斑疹/丘疹",
+        "对称性较好"
+      ],
+      "anatomical_site": "全身皮肤",
+      "symptoms": [
+        "无明显症状"
+      ],
+      "duration_change": "",
+      "difficulty_level": "easy",
+      "case_type": "typical_positive",
+      "expected_concepts": [
+        "边界清楚",
+        "棕色或黑色斑疹/丘疹",
+        "对称性较好",
+        "全身皮肤",
+        "无明显症状"
+      ],
+      "supporting_concepts": [
+        "边界清楚",
+        "棕色或黑色斑疹/丘疹",
+        "对称性较好",
+        "全身皮肤",
+        "无明显症状"
+      ],
+      "conflicting_concepts": [],
+      "missing_information": [
+        "皮肤镜检查结果",
+        "组织病理检查结果"
+      ],
+      "evidence_expectation": "sufficient",
+      "data_origin": "synthetic_kg_grounded",
+      "source_basis": [
+        "TRI_016",
+        "TRI_017",
+        "TRI_018",
+        "TRI_019",
+        "TRI_024"
+      ],
+      "generation_rule": "task4_case_generation_v2"
+    },
+    {
+      "case_id": "CASE_NV_TP_003",
+      "true_label": "黑色素细胞痣",
+      "candidate_disease": "黑色素细胞痣",
+      "observation_text": "患者近期注意到全身皮肤存在皮损，主要表现为色素均匀、棕色或黑色斑疹/丘疹、对称性较好。同时可见或自述无明显症状。",
+      "lesion_features": [
+        "色素均匀",
+        "棕色或黑色斑疹/丘疹",
+        "对称性较好"
+      ],
+      "anatomical_site": "全身皮肤",
+      "symptoms": [
+        "无明显症状"
+      ],
+      "duration_change": "",
+      "difficulty_level": "medium",
+      "case_type": "typical_positive",
+      "expected_concepts": [
+        "色素均匀",
+        "棕色或黑色斑疹/丘疹",
+        "对称性较好",
+        "全身皮肤",
+        "无明显症状"
+      ],
+      "supporting_concepts": [
+        "色素均匀",
+        "棕色或黑色斑疹/丘疹",
+        "对称性较好",
+        "全身皮肤",
+        "无明显症状"
+      ],
+      "conflicting_concepts": [],
+      "missing_information": [
+        "皮肤镜检查结果",
+        "组织病理检查结果"
+      ],
+      "evidence_expectation": "sufficient",
+      "data_origin": "synthetic_kg_grounded",
+      "source_basis": [
+        "TRI_015",
+        "TRI_017",
+        "TRI_018",
+        "TRI_019",
+        "TRI_024"
+      ],
+      "generation_rule": "task4_case_generation_v2"
+    },
+    {
+      "case_id": "CASE_NV_TP_004",
+      "true_label": "黑色素细胞痣",
+      "candidate_disease": "黑色素细胞痣",
+      "observation_text": "患者自述发现全身皮肤存在皮损，主要表现为色素均匀、边界清楚、对称性较好。同时可见或自述无明显症状。",
+      "lesion_features": [
+        "色素均匀",
+        "边界清楚",
+        "对称性较好"
+      ],
+      "anatomical_site": "全身皮肤",
+      "symptoms": [
+        "无明显症状"
+      ],
+      "duration_change": "",
+      "difficulty_level": "medium",
+      "case_type": "typical_positive",
+      "expected_concepts": [
+        "色素均匀",
+        "边界清楚",
+        "对称性较好",
+        "全身皮肤",
+        "无明显症状"
+      ],
+      "supporting_concepts": [
+        "色素均匀",
+        "边界清楚",
+        "对称性较好",
+        "全身皮肤",
+        "无明显症状"
+      ],
+      "conflicting_concepts": [],
+      "missing_information": [
+        "皮肤镜检查结果",
+        "组织病理检查结果"
+      ],
+      "evidence_expectation": "sufficient",
+      "data_origin": "synthetic_kg_grounded",
+      "source_basis": [
+        "TRI_015",
+        "TRI_016",
+        "TRI_018",
+        "TRI_019",
+        "TRI_024"
+      ],
+      "generation_rule": "task4_case_generation_v2"
+    },
+    {
+      "case_id": "CASE_NV_PS_001",
+      "true_label": "黑色素细胞痣",
+      "candidate_disease": "黑色素细胞痣",
+      "observation_text": "患者发现局部皮肤存在皮损，主要表现为色素均匀。",
+      "lesion_features": [
+        "色素均匀"
+      ],
+      "anatomical_site": "",
+      "symptoms": [],
+      "duration_change": "",
+      "difficulty_level": "medium",
+      "case_type": "partial_support",
+      "expected_concepts": [
+        "色素均匀"
+      ],
+      "supporting_concepts": [
+        "色素均匀"
+      ],
+      "conflicting_concepts": [],
+      "missing_information": [
+        "更多皮损形态特征",
+        "皮肤镜检查结果",
+        "组织病理检查结果"
+      ],
+      "evidence_expectation": "partial",
+      "data_origin": "synthetic_kg_grounded",
+      "source_basis": [
+        "TRI_015"
+      ],
+      "generation_rule": "task4_case_generation_v2"
+    },
+    {
+      "case_id": "CASE_NV_PS_002",
+      "true_label": "黑色素细胞痣",
+      "candidate_disease": "黑色素细胞痣",
+      "observation_text": "观察到患者全身皮肤存在皮损，主要表现为边界清楚。",
+      "lesion_features": [
+        "边界清楚"
+      ],
+      "anatomical_site": "全身皮肤",
+      "symptoms": [],
+      "duration_change": "",
+      "difficulty_level": "medium",
+      "case_type": "partial_support",
+      "expected_concepts": [
+        "边界清楚",
+        "全身皮肤"
+      ],
+      "supporting_concepts": [
+        "边界清楚",
+        "全身皮肤"
+      ],
+      "conflicting_concepts": [],
+      "missing_information": [
+        "更多皮损形态特征",
+        "皮肤镜检查结果",
+        "组织病理检查结果"
+      ],
+      "evidence_expectation": "partial",
+      "data_origin": "synthetic_kg_grounded",
+      "source_basis": [
+        "TRI_016",
+        "TRI_019"
+      ],
+      "generation_rule": "task4_case_generation_v2"
+    },
+    {
+      "case_id": "CASE_NV_PS_003",
+      "true_label": "黑色素细胞痣",
+      "candidate_disease": "黑色素细胞痣",
+      "observation_text": "患者近期注意到局部皮肤存在皮损，主要表现为棕色或黑色斑疹/丘疹。",
+      "lesion_features": [
+        "棕色或黑色斑疹/丘疹"
+      ],
+      "anatomical_site": "",
+      "symptoms": [],
+      "duration_change": "",
+      "difficulty_level": "medium",
+      "case_type": "partial_support",
+      "expected_concepts": [
+        "棕色或黑色斑疹/丘疹"
+      ],
+      "supporting_concepts": [
+        "棕色或黑色斑疹/丘疹"
+      ],
+      "conflicting_concepts": [],
+      "missing_information": [
+        "更多皮损形态特征",
+        "皮肤镜检查结果",
+        "组织病理检查结果"
+      ],
+      "evidence_expectation": "partial",
+      "data_origin": "synthetic_kg_grounded",
+      "source_basis": [
+        "TRI_017"
+      ],
+      "generation_rule": "task4_case_generation_v2"
+    },
+    {
+      "case_id": "CASE_NV_PS_004",
+      "true_label": "黑色素细胞痣",
+      "candidate_disease": "黑色素细胞痣",
+      "observation_text": "患者自述发现全身皮肤存在皮损，主要表现为对称性较好。",
+      "lesion_features": [
+        "对称性较好"
+      ],
+      "anatomical_site": "全身皮肤",
+      "symptoms": [],
+      "duration_change": "",
+      "difficulty_level": "medium",
+      "case_type": "partial_support",
+      "expected_concepts": [
+        "对称性较好",
+        "全身皮肤"
+      ],
+      "supporting_concepts": [
+        "对称性较好",
+        "全身皮肤"
+      ],
+      "conflicting_concepts": [],
+      "missing_information": [
+        "更多皮损形态特征",
+        "皮肤镜检查结果",
+        "组织病理检查结果"
+      ],
+      "evidence_expectation": "partial",
+      "data_origin": "synthetic_kg_grounded",
+      "source_basis": [
+        "TRI_018",
+        "TRI_019"
+      ],
+      "generation_rule": "task4_case_generation_v2"
+    },
+    {
+      "case_id": "CASE_NV_EI_001",
+      "true_label": "黑色素细胞痣",
+      "candidate_disease": "黑色素细胞痣",
+      "observation_text": "患者发现全身皮肤存在皮损，主要表现为局部皮肤颜色改变。",
+      "lesion_features": [
+        "局部皮肤颜色改变"
+      ],
+      "anatomical_site": "全身皮肤",
+      "symptoms": [],
+      "duration_change": "",
+      "difficulty_level": "medium",
+      "case_type": "evidence_insufficient",
+      "expected_concepts": [
+        "全身皮肤"
+      ],
+      "supporting_concepts": [
+        "全身皮肤"
+      ],
+      "conflicting_concepts": [],
+      "missing_information": [
+        "更多皮损形态特征",
+        "明确病程信息",
+        "皮肤镜检查结果",
+        "组织病理检查结果"
+      ],
+      "evidence_expectation": "insufficient",
+      "data_origin": "synthetic_kg_grounded",
+      "source_basis": [
+        "TRI_019"
+      ],
+      "generation_rule": "task4_case_generation_v2"
+    },
+    {
+      "case_id": "CASE_NV_EI_002",
+      "true_label": "黑色素细胞痣",
+      "candidate_disease": "黑色素细胞痣",
+      "observation_text": "观察到患者局部皮肤存在皮损，主要表现为局部小丘疹。同时可见或自述无明显症状。",
+      "lesion_features": [
+        "局部小丘疹"
+      ],
+      "anatomical_site": "",
+      "symptoms": [
+        "无明显症状"
+      ],
+      "duration_change": "",
+      "difficulty_level": "medium",
+      "case_type": "evidence_insufficient",
+      "expected_concepts": [
+        "无明显症状"
+      ],
+      "supporting_concepts": [
+        "无明显症状"
+      ],
+      "conflicting_concepts": [],
+      "missing_information": [
+        "更多皮损形态特征",
+        "明确病程信息",
+        "皮肤镜检查结果",
+        "组织病理检查结果"
+      ],
+      "evidence_expectation": "insufficient",
+      "data_origin": "synthetic_kg_grounded",
+      "source_basis": [
+        "TRI_024"
+      ],
+      "generation_rule": "task4_case_generation_v2"
+    },
+    {
+      "case_id": "CASE_NV_EI_003",
+      "true_label": "黑色素细胞痣",
+      "candidate_disease": "黑色素细胞痣",
+      "observation_text": "患者近期注意到全身皮肤存在皮损，主要表现为局部斑片样皮损。",
+      "lesion_features": [
+        "局部斑片样皮损"
+      ],
+      "anatomical_site": "全身皮肤",
+      "symptoms": [],
+      "duration_change": "",
+      "difficulty_level": "medium",
+      "case_type": "evidence_insufficient",
+      "expected_concepts": [
+        "全身皮肤"
+      ],
+      "supporting_concepts": [
+        "全身皮肤"
+      ],
+      "conflicting_concepts": [],
+      "missing_information": [
+        "更多皮损形态特征",
+        "明确病程信息",
+        "皮肤镜检查结果",
+        "组织病理检查结果"
+      ],
+      "evidence_expectation": "insufficient",
+      "data_origin": "synthetic_kg_grounded",
+      "source_basis": [
+        "TRI_019"
+      ],
+      "generation_rule": "task4_case_generation_v2"
+    },
+    {
+      "case_id": "CASE_NV_EI_004",
+      "true_label": "黑色素细胞痣",
+      "candidate_disease": "黑色素细胞痣",
+      "observation_text": "患者自述发现局部皮肤存在皮损，主要表现为局部形态不明确的皮损。同时可见或自述无明显症状。",
+      "lesion_features": [
+        "局部形态不明确的皮损"
+      ],
+      "anatomical_site": "",
+      "symptoms": [
+        "无明显症状"
+      ],
+      "duration_change": "",
+      "difficulty_level": "medium",
+      "case_type": "evidence_insufficient",
+      "expected_concepts": [
+        "无明显症状"
+      ],
+      "supporting_concepts": [
+        "无明显症状"
+      ],
+      "conflicting_concepts": [],
+      "missing_information": [
+        "更多皮损形态特征",
+        "明确病程信息",
+        "皮肤镜检查结果",
+        "组织病理检查结果"
+      ],
+      "evidence_expectation": "insufficient",
+      "data_origin": "synthetic_kg_grounded",
+      "source_basis": [
+        "TRI_024"
+      ],
+      "generation_rule": "task4_case_generation_v2"
+    },
+    {
+      "case_id": "CASE_NV_DC_001",
+      "true_label": "黑色素瘤",
+      "candidate_disease": "黑色素细胞痣",
+      "observation_text": "患者发现背部存在皮损，主要表现为色素均匀、边界不规则、颜色不均。",
+      "lesion_features": [
+        "色素均匀",
+        "边界不规则",
+        "颜色不均"
+      ],
+      "anatomical_site": "背部",
+      "symptoms": [],
+      "duration_change": "",
+      "difficulty_level": "hard",
+      "case_type": "differential_confusion",
+      "expected_concepts": [
+        "色素均匀",
+        "边界不规则",
+        "颜色不均",
+        "背部"
+      ],
+      "supporting_concepts": [
+        "色素均匀"
+      ],
+      "conflicting_concepts": [
+        "边界不规则",
+        "颜色不均",
+        "背部"
+      ],
+      "missing_information": [
+        "皮肤镜检查结果",
+        "组织病理检查结果",
+        "病程变化信息"
+      ],
+      "evidence_expectation": "conflicting",
+      "data_origin": "synthetic_kg_grounded",
+      "source_basis": [
+        "TRI_015",
+        "TRI_001",
+        "TRI_002",
+        "TRI_006"
+      ],
+      "generation_rule": "task4_case_generation_v2"
+    },
+    {
+      "case_id": "CASE_NV_DC_002",
+      "true_label": "皮肤纤维瘤",
+      "candidate_disease": "黑色素细胞痣",
+      "observation_text": "观察到患者全身皮肤存在皮损，主要表现为边界清楚、捏压凹陷征、中央白色瘢痕样区域。",
+      "lesion_features": [
+        "边界清楚",
+        "捏压凹陷征",
+        "中央白色瘢痕样区域"
+      ],
+      "anatomical_site": "全身皮肤",
+      "symptoms": [],
+      "duration_change": "",
+      "difficulty_level": "hard",
+      "case_type": "differential_confusion",
+      "expected_concepts": [
+        "边界清楚",
+        "捏压凹陷征",
+        "中央白色瘢痕样区域",
+        "全身皮肤"
+      ],
+      "supporting_concepts": [
+        "边界清楚"
+      ],
+      "conflicting_concepts": [
+        "捏压凹陷征",
+        "中央白色瘢痕样区域",
+        "全身皮肤"
+      ],
+      "missing_information": [
+        "皮肤镜检查结果",
+        "组织病理检查结果",
+        "病程变化信息"
+      ],
+      "evidence_expectation": "conflicting",
+      "data_origin": "synthetic_kg_grounded",
+      "source_basis": [
+        "TRI_016",
+        "TRI_071",
+        "TRI_072",
+        "TRI_075"
+      ],
+      "generation_rule": "task4_case_generation_v2"
+    },
+    {
+      "case_id": "CASE_NV_DC_003",
+      "true_label": "黑色素瘤",
+      "candidate_disease": "黑色素细胞痣",
+      "observation_text": "患者近期注意到背部存在皮损，主要表现为棕色或黑色斑疹/丘疹、形态不对称、直径增大。",
+      "lesion_features": [
+        "棕色或黑色斑疹/丘疹",
+        "形态不对称",
+        "直径增大"
+      ],
+      "anatomical_site": "背部",
+      "symptoms": [],
+      "duration_change": "",
+      "difficulty_level": "hard",
+      "case_type": "differential_confusion",
+      "expected_concepts": [
+        "棕色或黑色斑疹/丘疹",
+        "形态不对称",
+        "直径增大",
+        "背部"
+      ],
+      "supporting_concepts": [
+        "棕色或黑色斑疹/丘疹"
+      ],
+      "conflicting_concepts": [
+        "形态不对称",
+        "直径增大",
+        "背部"
+      ],
+      "missing_information": [
+        "皮肤镜检查结果",
+        "组织病理检查结果",
+        "病程变化信息"
+      ],
+      "evidence_expectation": "conflicting",
+      "data_origin": "synthetic_kg_grounded",
+      "source_basis": [
+        "TRI_017",
+        "TRI_003",
+        "TRI_004",
+        "TRI_006"
+      ],
+      "generation_rule": "task4_case_generation_v2"
+    },
+    {
+      "case_id": "CASE_NV_DC_004",
+      "true_label": "皮肤纤维瘤",
+      "candidate_disease": "黑色素细胞痣",
+      "observation_text": "患者自述发现全身皮肤存在皮损，主要表现为对称性较好、坚实丘疹或结节、周围淡色素网。",
+      "lesion_features": [
+        "对称性较好",
+        "坚实丘疹或结节",
+        "周围淡色素网"
+      ],
+      "anatomical_site": "全身皮肤",
+      "symptoms": [],
+      "duration_change": "",
+      "difficulty_level": "hard",
+      "case_type": "differential_confusion",
+      "expected_concepts": [
+        "对称性较好",
+        "坚实丘疹或结节",
+        "周围淡色素网",
+        "全身皮肤"
+      ],
+      "supporting_concepts": [
+        "对称性较好"
+      ],
+      "conflicting_concepts": [
+        "坚实丘疹或结节",
+        "周围淡色素网",
+        "全身皮肤"
+      ],
+      "missing_information": [
+        "皮肤镜检查结果",
+        "组织病理检查结果",
+        "病程变化信息"
+      ],
+      "evidence_expectation": "conflicting",
+      "data_origin": "synthetic_kg_grounded",
+      "source_basis": [
+        "TRI_018",
+        "TRI_070",
+        "TRI_073",
+        "TRI_075"
+      ],
+      "generation_rule": "task4_case_generation_v2"
+    },
+    {
+      "case_id": "CASE_NV_CD_001",
+      "true_label": "黑色素细胞痣",
+      "candidate_disease": "黑色素细胞痣",
+      "observation_text": "患者发现全身皮肤存在皮损，主要表现为色素均匀、边界清楚、捏压凹陷征、中央白色瘢痕样区域。",
+      "lesion_features": [
+        "色素均匀",
+        "边界清楚",
+        "捏压凹陷征",
+        "中央白色瘢痕样区域"
+      ],
+      "anatomical_site": "全身皮肤",
+      "symptoms": [],
+      "duration_change": "",
+      "difficulty_level": "hard",
+      "case_type": "conflict_difficult",
+      "expected_concepts": [
+        "色素均匀",
+        "边界清楚",
+        "捏压凹陷征",
+        "中央白色瘢痕样区域",
+        "全身皮肤"
+      ],
+      "supporting_concepts": [
+        "色素均匀",
+        "边界清楚",
+        "全身皮肤"
+      ],
+      "conflicting_concepts": [
+        "捏压凹陷征",
+        "中央白色瘢痕样区域"
+      ],
+      "missing_information": [
+        "皮肤镜检查结果",
+        "组织病理检查结果",
+        "能够解释冲突表现的进一步检查信息"
+      ],
+      "evidence_expectation": "conflicting",
+      "data_origin": "synthetic_kg_grounded",
+      "source_basis": [
+        "TRI_015",
+        "TRI_016",
+        "TRI_071",
+        "TRI_072",
+        "TRI_019"
+      ],
+      "generation_rule": "task4_case_generation_v2"
+    },
+    {
+      "case_id": "CASE_NV_CD_002",
+      "true_label": "黑色素细胞痣",
+      "candidate_disease": "黑色素细胞痣",
+      "observation_text": "观察到患者全身皮肤存在皮损，主要表现为边界清楚、棕色或黑色斑疹/丘疹、形态不对称、直径增大。",
+      "lesion_features": [
+        "边界清楚",
+        "棕色或黑色斑疹/丘疹",
+        "形态不对称",
+        "直径增大"
+      ],
+      "anatomical_site": "全身皮肤",
+      "symptoms": [],
+      "duration_change": "",
+      "difficulty_level": "hard",
+      "case_type": "conflict_difficult",
+      "expected_concepts": [
+        "边界清楚",
+        "棕色或黑色斑疹/丘疹",
+        "形态不对称",
+        "直径增大",
+        "全身皮肤"
+      ],
+      "supporting_concepts": [
+        "边界清楚",
+        "棕色或黑色斑疹/丘疹",
+        "全身皮肤"
+      ],
+      "conflicting_concepts": [
+        "形态不对称",
+        "直径增大"
+      ],
+      "missing_information": [
+        "皮肤镜检查结果",
+        "组织病理检查结果",
+        "能够解释冲突表现的进一步检查信息"
+      ],
+      "evidence_expectation": "conflicting",
+      "data_origin": "synthetic_kg_grounded",
+      "source_basis": [
+        "TRI_016",
+        "TRI_017",
+        "TRI_003",
+        "TRI_004",
+        "TRI_019"
+      ],
+      "generation_rule": "task4_case_generation_v2"
+    },
+    {
+      "case_id": "CASE_NV_CD_003",
+      "true_label": "黑色素细胞痣",
+      "candidate_disease": "黑色素细胞痣",
+      "observation_text": "患者近期注意到全身皮肤存在皮损，主要表现为棕色或黑色斑疹/丘疹、对称性较好、坚实丘疹或结节、周围淡色素网。",
+      "lesion_features": [
+        "棕色或黑色斑疹/丘疹",
+        "对称性较好",
+        "坚实丘疹或结节",
+        "周围淡色素网"
+      ],
+      "anatomical_site": "全身皮肤",
+      "symptoms": [],
+      "duration_change": "",
+      "difficulty_level": "hard",
+      "case_type": "conflict_difficult",
+      "expected_concepts": [
+        "棕色或黑色斑疹/丘疹",
+        "对称性较好",
+        "坚实丘疹或结节",
+        "周围淡色素网",
+        "全身皮肤"
+      ],
+      "supporting_concepts": [
+        "棕色或黑色斑疹/丘疹",
+        "对称性较好",
+        "全身皮肤"
+      ],
+      "conflicting_concepts": [
+        "坚实丘疹或结节",
+        "周围淡色素网"
+      ],
+      "missing_information": [
+        "皮肤镜检查结果",
+        "组织病理检查结果",
+        "能够解释冲突表现的进一步检查信息"
+      ],
+      "evidence_expectation": "conflicting",
+      "data_origin": "synthetic_kg_grounded",
+      "source_basis": [
+        "TRI_017",
+        "TRI_018",
+        "TRI_070",
+        "TRI_073",
+        "TRI_019"
+      ],
+      "generation_rule": "task4_case_generation_v2"
+    },
+    {
+      "case_id": "CASE_NV_CD_004",
+      "true_label": "黑色素细胞痣",
+      "candidate_disease": "黑色素细胞痣",
+      "observation_text": "患者自述发现全身皮肤存在皮损，主要表现为色素均匀、对称性较好、边界不规则、颜色不均。",
+      "lesion_features": [
+        "色素均匀",
+        "对称性较好",
+        "边界不规则",
+        "颜色不均"
+      ],
+      "anatomical_site": "全身皮肤",
+      "symptoms": [],
+      "duration_change": "",
+      "difficulty_level": "hard",
+      "case_type": "conflict_difficult",
+      "expected_concepts": [
+        "色素均匀",
+        "对称性较好",
+        "边界不规则",
+        "颜色不均",
+        "全身皮肤"
+      ],
+      "supporting_concepts": [
+        "色素均匀",
+        "对称性较好",
+        "全身皮肤"
+      ],
+      "conflicting_concepts": [
+        "边界不规则",
+        "颜色不均"
+      ],
+      "missing_information": [
+        "皮肤镜检查结果",
+        "组织病理检查结果",
+        "能够解释冲突表现的进一步检查信息"
+      ],
+      "evidence_expectation": "conflicting",
+      "data_origin": "synthetic_kg_grounded",
+      "source_basis": [
+        "TRI_015",
+        "TRI_018",
+        "TRI_001",
+        "TRI_002",
+        "TRI_019"
+      ],
+      "generation_rule": "task4_case_generation_v2"
+    },
+    {
+      "case_id": "CASE_BCC_TP_001",
+      "true_label": "基底细胞癌",
+      "candidate_disease": "基底细胞癌",
+      "observation_text": "患者发现面部存在皮损，主要表现为珍珠样结节、表面毛细血管扩张、边缘隆起或卷曲。同时可见或自述出血。",
+      "lesion_features": [
+        "珍珠样结节",
+        "表面毛细血管扩张",
+        "边缘隆起或卷曲"
+      ],
+      "anatomical_site": "面部",
+      "symptoms": [
+        "出血"
+      ],
+      "duration_change": "",
+      "difficulty_level": "easy",
+      "case_type": "typical_positive",
+      "expected_concepts": [
+        "珍珠样结节",
+        "表面毛细血管扩张",
+        "边缘隆起或卷曲",
+        "面部",
+        "出血"
+      ],
+      "supporting_concepts": [
+        "珍珠样结节",
+        "表面毛细血管扩张",
+        "边缘隆起或卷曲",
+        "面部",
+        "出血"
+      ],
+      "conflicting_concepts": [],
+      "missing_information": [
+        "皮肤镜检查结果",
+        "组织病理检查结果"
+      ],
+      "evidence_expectation": "sufficient",
+      "data_origin": "synthetic_kg_grounded",
+      "source_basis": [
+        "TRI_025",
+        "TRI_026",
+        "TRI_027",
+        "TRI_030",
+        "TRI_031"
+      ],
+      "generation_rule": "task4_case_generation_v2"
+    },
+    {
+      "case_id": "CASE_BCC_TP_002",
+      "true_label": "基底细胞癌",
+      "candidate_disease": "基底细胞癌",
+      "observation_text": "观察到患者面部存在皮损，主要表现为表面毛细血管扩张、边缘隆起或卷曲、中央凹陷或溃疡。同时可见或自述出血。",
+      "lesion_features": [
+        "表面毛细血管扩张",
+        "边缘隆起或卷曲",
+        "中央凹陷或溃疡"
+      ],
+      "anatomical_site": "面部",
+      "symptoms": [
+        "出血"
+      ],
+      "duration_change": "",
+      "difficulty_level": "easy",
+      "case_type": "typical_positive",
+      "expected_concepts": [
+        "表面毛细血管扩张",
+        "边缘隆起或卷曲",
+        "中央凹陷或溃疡",
+        "面部",
+        "出血"
+      ],
+      "supporting_concepts": [
+        "表面毛细血管扩张",
+        "边缘隆起或卷曲",
+        "中央凹陷或溃疡",
+        "面部",
+        "出血"
+      ],
+      "conflicting_concepts": [],
+      "missing_information": [
+        "皮肤镜检查结果",
+        "组织病理检查结果"
+      ],
+      "evidence_expectation": "sufficient",
+      "data_origin": "synthetic_kg_grounded",
+      "source_basis": [
+        "TRI_026",
+        "TRI_027",
+        "TRI_028",
+        "TRI_030",
+        "TRI_031"
+      ],
+      "generation_rule": "task4_case_generation_v2"
+    },
+    {
+      "case_id": "CASE_BCC_TP_003",
+      "true_label": "基底细胞癌",
+      "candidate_disease": "基底细胞癌",
+      "observation_text": "患者近期注意到面部存在皮损，主要表现为珍珠样结节、边缘隆起或卷曲、中央凹陷或溃疡。同时可见或自述出血。",
+      "lesion_features": [
+        "珍珠样结节",
+        "边缘隆起或卷曲",
+        "中央凹陷或溃疡"
+      ],
+      "anatomical_site": "面部",
+      "symptoms": [
+        "出血"
+      ],
+      "duration_change": "",
+      "difficulty_level": "medium",
+      "case_type": "typical_positive",
+      "expected_concepts": [
+        "珍珠样结节",
+        "边缘隆起或卷曲",
+        "中央凹陷或溃疡",
+        "面部",
+        "出血"
+      ],
+      "supporting_concepts": [
+        "珍珠样结节",
+        "边缘隆起或卷曲",
+        "中央凹陷或溃疡",
+        "面部",
+        "出血"
+      ],
+      "conflicting_concepts": [],
+      "missing_information": [
+        "皮肤镜检查结果",
+        "组织病理检查结果"
+      ],
+      "evidence_expectation": "sufficient",
+      "data_origin": "synthetic_kg_grounded",
+      "source_basis": [
+        "TRI_025",
+        "TRI_027",
+        "TRI_028",
+        "TRI_030",
+        "TRI_031"
+      ],
+      "generation_rule": "task4_case_generation_v2"
+    },
+    {
+      "case_id": "CASE_BCC_TP_004",
+      "true_label": "基底细胞癌",
+      "candidate_disease": "基底细胞癌",
+      "observation_text": "患者自述发现面部存在皮损，主要表现为珍珠样结节、表面毛细血管扩张、中央凹陷或溃疡。同时可见或自述出血。",
+      "lesion_features": [
+        "珍珠样结节",
+        "表面毛细血管扩张",
+        "中央凹陷或溃疡"
+      ],
+      "anatomical_site": "面部",
+      "symptoms": [
+        "出血"
+      ],
+      "duration_change": "",
+      "difficulty_level": "medium",
+      "case_type": "typical_positive",
+      "expected_concepts": [
+        "珍珠样结节",
+        "表面毛细血管扩张",
+        "中央凹陷或溃疡",
+        "面部",
+        "出血"
+      ],
+      "supporting_concepts": [
+        "珍珠样结节",
+        "表面毛细血管扩张",
+        "中央凹陷或溃疡",
+        "面部",
+        "出血"
+      ],
+      "conflicting_concepts": [],
+      "missing_information": [
+        "皮肤镜检查结果",
+        "组织病理检查结果"
+      ],
+      "evidence_expectation": "sufficient",
+      "data_origin": "synthetic_kg_grounded",
+      "source_basis": [
+        "TRI_025",
+        "TRI_026",
+        "TRI_028",
+        "TRI_030",
+        "TRI_031"
+      ],
+      "generation_rule": "task4_case_generation_v2"
+    },
+    {
+      "case_id": "CASE_BCC_PS_001",
+      "true_label": "基底细胞癌",
+      "candidate_disease": "基底细胞癌",
+      "observation_text": "患者发现局部皮肤存在皮损，主要表现为珍珠样结节。",
+      "lesion_features": [
+        "珍珠样结节"
+      ],
+      "anatomical_site": "",
+      "symptoms": [],
+      "duration_change": "",
+      "difficulty_level": "medium",
+      "case_type": "partial_support",
+      "expected_concepts": [
+        "珍珠样结节"
+      ],
+      "supporting_concepts": [
+        "珍珠样结节"
+      ],
+      "conflicting_concepts": [],
+      "missing_information": [
+        "更多皮损形态特征",
+        "皮肤镜检查结果",
+        "组织病理检查结果"
+      ],
+      "evidence_expectation": "partial",
+      "data_origin": "synthetic_kg_grounded",
+      "source_basis": [
+        "TRI_025"
+      ],
+      "generation_rule": "task4_case_generation_v2"
+    },
+    {
+      "case_id": "CASE_BCC_PS_002",
+      "true_label": "基底细胞癌",
+      "candidate_disease": "基底细胞癌",
+      "observation_text": "观察到患者面部存在皮损，主要表现为表面毛细血管扩张。",
+      "lesion_features": [
+        "表面毛细血管扩张"
+      ],
+      "anatomical_site": "面部",
+      "symptoms": [],
+      "duration_change": "",
+      "difficulty_level": "medium",
+      "case_type": "partial_support",
+      "expected_concepts": [
+        "表面毛细血管扩张",
+        "面部"
+      ],
+      "supporting_concepts": [
+        "表面毛细血管扩张",
+        "面部"
+      ],
+      "conflicting_concepts": [],
+      "missing_information": [
+        "更多皮损形态特征",
+        "皮肤镜检查结果",
+        "组织病理检查结果"
+      ],
+      "evidence_expectation": "partial",
+      "data_origin": "synthetic_kg_grounded",
+      "source_basis": [
+        "TRI_026",
+        "TRI_030"
+      ],
+      "generation_rule": "task4_case_generation_v2"
+    },
+    {
+      "case_id": "CASE_BCC_PS_003",
+      "true_label": "基底细胞癌",
+      "candidate_disease": "基底细胞癌",
+      "observation_text": "患者近期注意到局部皮肤存在皮损，主要表现为边缘隆起或卷曲。",
+      "lesion_features": [
+        "边缘隆起或卷曲"
+      ],
+      "anatomical_site": "",
+      "symptoms": [],
+      "duration_change": "",
+      "difficulty_level": "medium",
+      "case_type": "partial_support",
+      "expected_concepts": [
+        "边缘隆起或卷曲"
+      ],
+      "supporting_concepts": [
+        "边缘隆起或卷曲"
+      ],
+      "conflicting_concepts": [],
+      "missing_information": [
+        "更多皮损形态特征",
+        "皮肤镜检查结果",
+        "组织病理检查结果"
+      ],
+      "evidence_expectation": "partial",
+      "data_origin": "synthetic_kg_grounded",
+      "source_basis": [
+        "TRI_027"
+      ],
+      "generation_rule": "task4_case_generation_v2"
+    },
+    {
+      "case_id": "CASE_BCC_PS_004",
+      "true_label": "基底细胞癌",
+      "candidate_disease": "基底细胞癌",
+      "observation_text": "患者自述发现面部存在皮损，主要表现为中央凹陷或溃疡。",
+      "lesion_features": [
+        "中央凹陷或溃疡"
+      ],
+      "anatomical_site": "面部",
+      "symptoms": [],
+      "duration_change": "",
+      "difficulty_level": "medium",
+      "case_type": "partial_support",
+      "expected_concepts": [
+        "中央凹陷或溃疡",
+        "面部"
+      ],
+      "supporting_concepts": [
+        "中央凹陷或溃疡",
+        "面部"
+      ],
+      "conflicting_concepts": [],
+      "missing_information": [
+        "更多皮损形态特征",
+        "皮肤镜检查结果",
+        "组织病理检查结果"
+      ],
+      "evidence_expectation": "partial",
+      "data_origin": "synthetic_kg_grounded",
+      "source_basis": [
+        "TRI_028",
+        "TRI_030"
+      ],
+      "generation_rule": "task4_case_generation_v2"
+    },
+    {
+      "case_id": "CASE_BCC_EI_001",
+      "true_label": "基底细胞癌",
+      "candidate_disease": "基底细胞癌",
+      "observation_text": "患者发现面部存在皮损，主要表现为局部皮肤颜色改变。",
+      "lesion_features": [
+        "局部皮肤颜色改变"
+      ],
+      "anatomical_site": "面部",
+      "symptoms": [],
+      "duration_change": "",
+      "difficulty_level": "medium",
+      "case_type": "evidence_insufficient",
+      "expected_concepts": [
+        "面部"
+      ],
+      "supporting_concepts": [
+        "面部"
+      ],
+      "conflicting_concepts": [],
+      "missing_information": [
+        "更多皮损形态特征",
+        "明确病程信息",
+        "皮肤镜检查结果",
+        "组织病理检查结果"
+      ],
+      "evidence_expectation": "insufficient",
+      "data_origin": "synthetic_kg_grounded",
+      "source_basis": [
+        "TRI_030"
+      ],
+      "generation_rule": "task4_case_generation_v2"
+    },
+    {
+      "case_id": "CASE_BCC_EI_002",
+      "true_label": "基底细胞癌",
+      "candidate_disease": "基底细胞癌",
+      "observation_text": "观察到患者局部皮肤存在皮损，主要表现为局部小丘疹。同时可见或自述出血。",
+      "lesion_features": [
+        "局部小丘疹"
+      ],
+      "anatomical_site": "",
+      "symptoms": [
+        "出血"
+      ],
+      "duration_change": "",
+      "difficulty_level": "medium",
+      "case_type": "evidence_insufficient",
+      "expected_concepts": [
+        "出血"
+      ],
+      "supporting_concepts": [
+        "出血"
+      ],
+      "conflicting_concepts": [],
+      "missing_information": [
+        "更多皮损形态特征",
+        "明确病程信息",
+        "皮肤镜检查结果",
+        "组织病理检查结果"
+      ],
+      "evidence_expectation": "insufficient",
+      "data_origin": "synthetic_kg_grounded",
+      "source_basis": [
+        "TRI_031"
+      ],
+      "generation_rule": "task4_case_generation_v2"
+    },
+    {
+      "case_id": "CASE_BCC_EI_003",
+      "true_label": "基底细胞癌",
+      "candidate_disease": "基底细胞癌",
+      "observation_text": "患者近期注意到面部存在皮损，主要表现为局部斑片样皮损。",
+      "lesion_features": [
+        "局部斑片样皮损"
+      ],
+      "anatomical_site": "面部",
+      "symptoms": [],
+      "duration_change": "",
+      "difficulty_level": "medium",
+      "case_type": "evidence_insufficient",
+      "expected_concepts": [
+        "面部"
+      ],
+      "supporting_concepts": [
+        "面部"
+      ],
+      "conflicting_concepts": [],
+      "missing_information": [
+        "更多皮损形态特征",
+        "明确病程信息",
+        "皮肤镜检查结果",
+        "组织病理检查结果"
+      ],
+      "evidence_expectation": "insufficient",
+      "data_origin": "synthetic_kg_grounded",
+      "source_basis": [
+        "TRI_030"
+      ],
+      "generation_rule": "task4_case_generation_v2"
+    },
+    {
+      "case_id": "CASE_BCC_EI_004",
+      "true_label": "基底细胞癌",
+      "candidate_disease": "基底细胞癌",
+      "observation_text": "患者自述发现局部皮肤存在皮损，主要表现为局部形态不明确的皮损。同时可见或自述出血。",
+      "lesion_features": [
+        "局部形态不明确的皮损"
+      ],
+      "anatomical_site": "",
+      "symptoms": [
+        "出血"
+      ],
+      "duration_change": "",
+      "difficulty_level": "medium",
+      "case_type": "evidence_insufficient",
+      "expected_concepts": [
+        "出血"
+      ],
+      "supporting_concepts": [
+        "出血"
+      ],
+      "conflicting_concepts": [],
+      "missing_information": [
+        "更多皮损形态特征",
+        "明确病程信息",
+        "皮肤镜检查结果",
+        "组织病理检查结果"
+      ],
+      "evidence_expectation": "insufficient",
+      "data_origin": "synthetic_kg_grounded",
+      "source_basis": [
+        "TRI_031"
+      ],
+      "generation_rule": "task4_case_generation_v2"
+    },
+    {
+      "case_id": "CASE_BCC_DC_001",
+      "true_label": "良性角化样病变",
+      "candidate_disease": "基底细胞癌",
+      "observation_text": "患者发现日光暴露部位存在皮损，主要表现为珍珠样结节、蜡样或疣状表面、贴附样丘疹或斑块。",
+      "lesion_features": [
+        "珍珠样结节",
+        "蜡样或疣状表面",
+        "贴附样丘疹或斑块"
+      ],
+      "anatomical_site": "日光暴露部位",
+      "symptoms": [],
+      "duration_change": "",
+      "difficulty_level": "hard",
+      "case_type": "differential_confusion",
+      "expected_concepts": [
+        "珍珠样结节",
+        "蜡样或疣状表面",
+        "贴附样丘疹或斑块",
+        "日光暴露部位"
+      ],
+      "supporting_concepts": [
+        "珍珠样结节"
+      ],
+      "conflicting_concepts": [
+        "蜡样或疣状表面",
+        "贴附样丘疹或斑块",
+        "日光暴露部位"
+      ],
+      "missing_information": [
+        "皮肤镜检查结果",
+        "组织病理检查结果",
+        "病程变化信息"
+      ],
+      "evidence_expectation": "conflicting",
+      "data_origin": "synthetic_kg_grounded",
+      "source_basis": [
+        "TRI_025",
+        "TRI_053",
+        "TRI_054",
+        "TRI_059"
+      ],
+      "generation_rule": "task4_case_generation_v2"
+    },
+    {
+      "case_id": "CASE_BCC_DC_002",
+      "true_label": "光化性角化病/表皮内癌",
+      "candidate_disease": "基底细胞癌",
+      "observation_text": "观察到患者面部存在皮损，主要表现为表面毛细血管扩张、白色或黄色角化性表面、红色或粉红色斑片/斑块。",
+      "lesion_features": [
+        "表面毛细血管扩张",
+        "白色或黄色角化性表面",
+        "红色或粉红色斑片/斑块"
+      ],
+      "anatomical_site": "面部",
+      "symptoms": [],
+      "duration_change": "",
+      "difficulty_level": "hard",
+      "case_type": "differential_confusion",
+      "expected_concepts": [
+        "表面毛细血管扩张",
+        "白色或黄色角化性表面",
+        "红色或粉红色斑片/斑块",
+        "面部"
+      ],
+      "supporting_concepts": [
+        "表面毛细血管扩张"
+      ],
+      "conflicting_concepts": [
+        "白色或黄色角化性表面",
+        "红色或粉红色斑片/斑块",
+        "面部"
+      ],
+      "missing_information": [
+        "皮肤镜检查结果",
+        "组织病理检查结果",
+        "病程变化信息"
+      ],
+      "evidence_expectation": "conflicting",
+      "data_origin": "synthetic_kg_grounded",
+      "source_basis": [
+        "TRI_026",
+        "TRI_039",
+        "TRI_040",
+        "TRI_044"
+      ],
+      "generation_rule": "task4_case_generation_v2"
+    },
+    {
+      "case_id": "CASE_BCC_DC_003",
+      "true_label": "良性角化样病变",
+      "candidate_disease": "基底细胞癌",
+      "observation_text": "患者近期注意到日光暴露部位存在皮损，主要表现为边缘隆起或卷曲、边界清楚的扁平色素斑、粟丘疹样囊肿。",
+      "lesion_features": [
+        "边缘隆起或卷曲",
+        "边界清楚的扁平色素斑",
+        "粟丘疹样囊肿"
+      ],
+      "anatomical_site": "日光暴露部位",
+      "symptoms": [],
+      "duration_change": "",
+      "difficulty_level": "hard",
+      "case_type": "differential_confusion",
+      "expected_concepts": [
+        "边缘隆起或卷曲",
+        "边界清楚的扁平色素斑",
+        "粟丘疹样囊肿",
+        "日光暴露部位"
+      ],
+      "supporting_concepts": [
+        "边缘隆起或卷曲"
+      ],
+      "conflicting_concepts": [
+        "边界清楚的扁平色素斑",
+        "粟丘疹样囊肿",
+        "日光暴露部位"
+      ],
+      "missing_information": [
+        "皮肤镜检查结果",
+        "组织病理检查结果",
+        "病程变化信息"
+      ],
+      "evidence_expectation": "conflicting",
+      "data_origin": "synthetic_kg_grounded",
+      "source_basis": [
+        "TRI_027",
+        "TRI_055",
+        "TRI_056",
+        "TRI_059"
+      ],
+      "generation_rule": "task4_case_generation_v2"
+    },
+    {
+      "case_id": "CASE_BCC_DC_004",
+      "true_label": "光化性角化病/表皮内癌",
+      "candidate_disease": "基底细胞癌",
+      "observation_text": "患者自述发现日光暴露部位存在皮损，主要表现为中央凹陷或溃疡、粗糙鳞屑性斑片、不规则鳞屑性斑块。",
+      "lesion_features": [
+        "中央凹陷或溃疡",
+        "粗糙鳞屑性斑片",
+        "不规则鳞屑性斑块"
+      ],
+      "anatomical_site": "日光暴露部位",
+      "symptoms": [],
+      "duration_change": "",
+      "difficulty_level": "hard",
+      "case_type": "differential_confusion",
+      "expected_concepts": [
+        "中央凹陷或溃疡",
+        "粗糙鳞屑性斑片",
+        "不规则鳞屑性斑块",
+        "日光暴露部位"
+      ],
+      "supporting_concepts": [
+        "中央凹陷或溃疡"
+      ],
+      "conflicting_concepts": [
+        "粗糙鳞屑性斑片",
+        "不规则鳞屑性斑块",
+        "日光暴露部位"
+      ],
+      "missing_information": [
+        "皮肤镜检查结果",
+        "组织病理检查结果",
+        "病程变化信息"
+      ],
+      "evidence_expectation": "conflicting",
+      "data_origin": "synthetic_kg_grounded",
+      "source_basis": [
+        "TRI_028",
+        "TRI_038",
+        "TRI_041",
+        "TRI_043"
+      ],
+      "generation_rule": "task4_case_generation_v2"
+    },
+    {
+      "case_id": "CASE_BCC_CD_001",
+      "true_label": "基底细胞癌",
+      "candidate_disease": "基底细胞癌",
+      "observation_text": "患者发现面部存在皮损，主要表现为珍珠样结节、表面毛细血管扩张、白色或黄色角化性表面、红色或粉红色斑片/斑块。",
+      "lesion_features": [
+        "珍珠样结节",
+        "表面毛细血管扩张",
+        "白色或黄色角化性表面",
+        "红色或粉红色斑片/斑块"
+      ],
+      "anatomical_site": "面部",
+      "symptoms": [],
+      "duration_change": "",
+      "difficulty_level": "hard",
+      "case_type": "conflict_difficult",
+      "expected_concepts": [
+        "珍珠样结节",
+        "表面毛细血管扩张",
+        "白色或黄色角化性表面",
+        "红色或粉红色斑片/斑块",
+        "面部"
+      ],
+      "supporting_concepts": [
+        "珍珠样结节",
+        "表面毛细血管扩张",
+        "面部"
+      ],
+      "conflicting_concepts": [
+        "白色或黄色角化性表面",
+        "红色或粉红色斑片/斑块"
+      ],
+      "missing_information": [
+        "皮肤镜检查结果",
+        "组织病理检查结果",
+        "能够解释冲突表现的进一步检查信息"
+      ],
+      "evidence_expectation": "conflicting",
+      "data_origin": "synthetic_kg_grounded",
+      "source_basis": [
+        "TRI_025",
+        "TRI_026",
+        "TRI_039",
+        "TRI_040",
+        "TRI_030"
+      ],
+      "generation_rule": "task4_case_generation_v2"
+    },
+    {
+      "case_id": "CASE_BCC_CD_002",
+      "true_label": "基底细胞癌",
+      "candidate_disease": "基底细胞癌",
+      "observation_text": "观察到患者面部存在皮损，主要表现为表面毛细血管扩张、边缘隆起或卷曲、边界清楚的扁平色素斑、粟丘疹样囊肿。",
+      "lesion_features": [
+        "表面毛细血管扩张",
+        "边缘隆起或卷曲",
+        "边界清楚的扁平色素斑",
+        "粟丘疹样囊肿"
+      ],
+      "anatomical_site": "面部",
+      "symptoms": [],
+      "duration_change": "",
+      "difficulty_level": "hard",
+      "case_type": "conflict_difficult",
+      "expected_concepts": [
+        "表面毛细血管扩张",
+        "边缘隆起或卷曲",
+        "边界清楚的扁平色素斑",
+        "粟丘疹样囊肿",
+        "面部"
+      ],
+      "supporting_concepts": [
+        "表面毛细血管扩张",
+        "边缘隆起或卷曲",
+        "面部"
+      ],
+      "conflicting_concepts": [
+        "边界清楚的扁平色素斑",
+        "粟丘疹样囊肿"
+      ],
+      "missing_information": [
+        "皮肤镜检查结果",
+        "组织病理检查结果",
+        "能够解释冲突表现的进一步检查信息"
+      ],
+      "evidence_expectation": "conflicting",
+      "data_origin": "synthetic_kg_grounded",
+      "source_basis": [
+        "TRI_026",
+        "TRI_027",
+        "TRI_055",
+        "TRI_056",
+        "TRI_030"
+      ],
+      "generation_rule": "task4_case_generation_v2"
+    },
+    {
+      "case_id": "CASE_BCC_CD_003",
+      "true_label": "基底细胞癌",
+      "candidate_disease": "基底细胞癌",
+      "observation_text": "患者近期注意到面部存在皮损，主要表现为边缘隆起或卷曲、中央凹陷或溃疡、粗糙鳞屑性斑片、不规则鳞屑性斑块。",
+      "lesion_features": [
+        "边缘隆起或卷曲",
+        "中央凹陷或溃疡",
+        "粗糙鳞屑性斑片",
+        "不规则鳞屑性斑块"
+      ],
+      "anatomical_site": "面部",
+      "symptoms": [],
+      "duration_change": "",
+      "difficulty_level": "hard",
+      "case_type": "conflict_difficult",
+      "expected_concepts": [
+        "边缘隆起或卷曲",
+        "中央凹陷或溃疡",
+        "粗糙鳞屑性斑片",
+        "不规则鳞屑性斑块",
+        "面部"
+      ],
+      "supporting_concepts": [
+        "边缘隆起或卷曲",
+        "中央凹陷或溃疡",
+        "面部"
+      ],
+      "conflicting_concepts": [
+        "粗糙鳞屑性斑片",
+        "不规则鳞屑性斑块"
+      ],
+      "missing_information": [
+        "皮肤镜检查结果",
+        "组织病理检查结果",
+        "能够解释冲突表现的进一步检查信息"
+      ],
+      "evidence_expectation": "conflicting",
+      "data_origin": "synthetic_kg_grounded",
+      "source_basis": [
+        "TRI_027",
+        "TRI_028",
+        "TRI_038",
+        "TRI_041",
+        "TRI_030"
+      ],
+      "generation_rule": "task4_case_generation_v2"
+    },
+    {
+      "case_id": "CASE_BCC_CD_004",
+      "true_label": "基底细胞癌",
+      "candidate_disease": "基底细胞癌",
+      "observation_text": "患者自述发现面部存在皮损，主要表现为珍珠样结节、中央凹陷或溃疡、蜡样或疣状表面、贴附样丘疹或斑块。",
+      "lesion_features": [
+        "珍珠样结节",
+        "中央凹陷或溃疡",
+        "蜡样或疣状表面",
+        "贴附样丘疹或斑块"
+      ],
+      "anatomical_site": "面部",
+      "symptoms": [],
+      "duration_change": "",
+      "difficulty_level": "hard",
+      "case_type": "conflict_difficult",
+      "expected_concepts": [
+        "珍珠样结节",
+        "中央凹陷或溃疡",
+        "蜡样或疣状表面",
+        "贴附样丘疹或斑块",
+        "面部"
+      ],
+      "supporting_concepts": [
+        "珍珠样结节",
+        "中央凹陷或溃疡",
+        "面部"
+      ],
+      "conflicting_concepts": [
+        "蜡样或疣状表面",
+        "贴附样丘疹或斑块"
+      ],
+      "missing_information": [
+        "皮肤镜检查结果",
+        "组织病理检查结果",
+        "能够解释冲突表现的进一步检查信息"
+      ],
+      "evidence_expectation": "conflicting",
+      "data_origin": "synthetic_kg_grounded",
+      "source_basis": [
+        "TRI_025",
+        "TRI_028",
+        "TRI_053",
+        "TRI_054",
+        "TRI_030"
+      ],
+      "generation_rule": "task4_case_generation_v2"
+    },
+    {
+      "case_id": "CASE_AKIEC_TP_001",
+      "true_label": "光化性角化病/表皮内癌",
+      "candidate_disease": "光化性角化病/表皮内癌",
+      "observation_text": "患者发现日光暴露部位存在皮损，主要表现为粗糙鳞屑性斑片、白色或黄色角化性表面、红色或粉红色斑片/斑块。同时可见或自述触痛。",
+      "lesion_features": [
+        "粗糙鳞屑性斑片",
+        "白色或黄色角化性表面",
+        "红色或粉红色斑片/斑块"
+      ],
+      "anatomical_site": "日光暴露部位",
+      "symptoms": [
+        "触痛"
+      ],
+      "duration_change": "",
+      "difficulty_level": "easy",
+      "case_type": "typical_positive",
+      "expected_concepts": [
+        "粗糙鳞屑性斑片",
+        "白色或黄色角化性表面",
+        "红色或粉红色斑片/斑块",
+        "日光暴露部位",
+        "触痛"
+      ],
+      "supporting_concepts": [
+        "粗糙鳞屑性斑片",
+        "白色或黄色角化性表面",
+        "红色或粉红色斑片/斑块",
+        "日光暴露部位",
+        "触痛"
+      ],
+      "conflicting_concepts": [],
+      "missing_information": [
+        "皮肤镜检查结果",
+        "组织病理检查结果"
+      ],
+      "evidence_expectation": "sufficient",
+      "data_origin": "synthetic_kg_grounded",
+      "source_basis": [
+        "TRI_038",
+        "TRI_039",
+        "TRI_040",
+        "TRI_043",
+        "TRI_046"
+      ],
+      "generation_rule": "task4_case_generation_v2"
+    },
+    {
+      "case_id": "CASE_AKIEC_TP_002",
+      "true_label": "光化性角化病/表皮内癌",
+      "candidate_disease": "光化性角化病/表皮内癌",
+      "observation_text": "观察到患者面部存在皮损，主要表现为白色或黄色角化性表面、红色或粉红色斑片/斑块、不规则鳞屑性斑块。同时可见或自述触痛。",
+      "lesion_features": [
+        "白色或黄色角化性表面",
+        "红色或粉红色斑片/斑块",
+        "不规则鳞屑性斑块"
+      ],
+      "anatomical_site": "面部",
+      "symptoms": [
+        "触痛"
+      ],
+      "duration_change": "",
+      "difficulty_level": "easy",
+      "case_type": "typical_positive",
+      "expected_concepts": [
+        "白色或黄色角化性表面",
+        "红色或粉红色斑片/斑块",
+        "不规则鳞屑性斑块",
+        "面部",
+        "触痛"
+      ],
+      "supporting_concepts": [
+        "白色或黄色角化性表面",
+        "红色或粉红色斑片/斑块",
+        "不规则鳞屑性斑块",
+        "面部",
+        "触痛"
+      ],
+      "conflicting_concepts": [],
+      "missing_information": [
+        "皮肤镜检查结果",
+        "组织病理检查结果"
+      ],
+      "evidence_expectation": "sufficient",
+      "data_origin": "synthetic_kg_grounded",
+      "source_basis": [
+        "TRI_039",
+        "TRI_040",
+        "TRI_041",
+        "TRI_044",
+        "TRI_046"
+      ],
+      "generation_rule": "task4_case_generation_v2"
+    },
+    {
+      "case_id": "CASE_AKIEC_TP_003",
+      "true_label": "光化性角化病/表皮内癌",
+      "candidate_disease": "光化性角化病/表皮内癌",
+      "observation_text": "患者近期注意到手背存在皮损，主要表现为粗糙鳞屑性斑片、红色或粉红色斑片/斑块、不规则鳞屑性斑块。同时可见或自述触痛。",
+      "lesion_features": [
+        "粗糙鳞屑性斑片",
+        "红色或粉红色斑片/斑块",
+        "不规则鳞屑性斑块"
+      ],
+      "anatomical_site": "手背",
+      "symptoms": [
+        "触痛"
+      ],
+      "duration_change": "",
+      "difficulty_level": "medium",
+      "case_type": "typical_positive",
+      "expected_concepts": [
+        "粗糙鳞屑性斑片",
+        "红色或粉红色斑片/斑块",
+        "不规则鳞屑性斑块",
+        "手背",
+        "触痛"
+      ],
+      "supporting_concepts": [
+        "粗糙鳞屑性斑片",
+        "红色或粉红色斑片/斑块",
+        "不规则鳞屑性斑块",
+        "手背",
+        "触痛"
+      ],
+      "conflicting_concepts": [],
+      "missing_information": [
+        "皮肤镜检查结果",
+        "组织病理检查结果"
+      ],
+      "evidence_expectation": "sufficient",
+      "data_origin": "synthetic_kg_grounded",
+      "source_basis": [
+        "TRI_038",
+        "TRI_040",
+        "TRI_041",
+        "TRI_045",
+        "TRI_046"
+      ],
+      "generation_rule": "task4_case_generation_v2"
+    },
+    {
+      "case_id": "CASE_AKIEC_TP_004",
+      "true_label": "光化性角化病/表皮内癌",
+      "candidate_disease": "光化性角化病/表皮内癌",
+      "observation_text": "患者自述发现日光暴露部位存在皮损，主要表现为粗糙鳞屑性斑片、白色或黄色角化性表面、不规则鳞屑性斑块。同时可见或自述触痛。",
+      "lesion_features": [
+        "粗糙鳞屑性斑片",
+        "白色或黄色角化性表面",
+        "不规则鳞屑性斑块"
+      ],
+      "anatomical_site": "日光暴露部位",
+      "symptoms": [
+        "触痛"
+      ],
+      "duration_change": "",
+      "difficulty_level": "medium",
+      "case_type": "typical_positive",
+      "expected_concepts": [
+        "粗糙鳞屑性斑片",
+        "白色或黄色角化性表面",
+        "不规则鳞屑性斑块",
+        "日光暴露部位",
+        "触痛"
+      ],
+      "supporting_concepts": [
+        "粗糙鳞屑性斑片",
+        "白色或黄色角化性表面",
+        "不规则鳞屑性斑块",
+        "日光暴露部位",
+        "触痛"
+      ],
+      "conflicting_concepts": [],
+      "missing_information": [
+        "皮肤镜检查结果",
+        "组织病理检查结果"
+      ],
+      "evidence_expectation": "sufficient",
+      "data_origin": "synthetic_kg_grounded",
+      "source_basis": [
+        "TRI_038",
+        "TRI_039",
+        "TRI_041",
+        "TRI_043",
+        "TRI_046"
+      ],
+      "generation_rule": "task4_case_generation_v2"
+    },
+    {
+      "case_id": "CASE_AKIEC_PS_001",
+      "true_label": "光化性角化病/表皮内癌",
+      "candidate_disease": "光化性角化病/表皮内癌",
+      "observation_text": "患者发现局部皮肤存在皮损，主要表现为粗糙鳞屑性斑片。",
+      "lesion_features": [
+        "粗糙鳞屑性斑片"
+      ],
+      "anatomical_site": "",
+      "symptoms": [],
+      "duration_change": "",
+      "difficulty_level": "medium",
+      "case_type": "partial_support",
+      "expected_concepts": [
+        "粗糙鳞屑性斑片"
+      ],
+      "supporting_concepts": [
+        "粗糙鳞屑性斑片"
+      ],
+      "conflicting_concepts": [],
+      "missing_information": [
+        "更多皮损形态特征",
+        "皮肤镜检查结果",
+        "组织病理检查结果"
+      ],
+      "evidence_expectation": "partial",
+      "data_origin": "synthetic_kg_grounded",
+      "source_basis": [
+        "TRI_038"
+      ],
+      "generation_rule": "task4_case_generation_v2"
+    },
+    {
+      "case_id": "CASE_AKIEC_PS_002",
+      "true_label": "光化性角化病/表皮内癌",
+      "candidate_disease": "光化性角化病/表皮内癌",
+      "observation_text": "观察到患者面部存在皮损，主要表现为白色或黄色角化性表面。",
+      "lesion_features": [
+        "白色或黄色角化性表面"
+      ],
+      "anatomical_site": "面部",
+      "symptoms": [],
+      "duration_change": "",
+      "difficulty_level": "medium",
+      "case_type": "partial_support",
+      "expected_concepts": [
+        "白色或黄色角化性表面",
+        "面部"
+      ],
+      "supporting_concepts": [
+        "白色或黄色角化性表面",
+        "面部"
+      ],
+      "conflicting_concepts": [],
+      "missing_information": [
+        "更多皮损形态特征",
+        "皮肤镜检查结果",
+        "组织病理检查结果"
+      ],
+      "evidence_expectation": "partial",
+      "data_origin": "synthetic_kg_grounded",
+      "source_basis": [
+        "TRI_039",
+        "TRI_044"
+      ],
+      "generation_rule": "task4_case_generation_v2"
+    },
+    {
+      "case_id": "CASE_AKIEC_PS_003",
+      "true_label": "光化性角化病/表皮内癌",
+      "candidate_disease": "光化性角化病/表皮内癌",
+      "observation_text": "患者近期注意到局部皮肤存在皮损，主要表现为红色或粉红色斑片/斑块。",
+      "lesion_features": [
+        "红色或粉红色斑片/斑块"
+      ],
+      "anatomical_site": "",
+      "symptoms": [],
+      "duration_change": "",
+      "difficulty_level": "medium",
+      "case_type": "partial_support",
+      "expected_concepts": [
+        "红色或粉红色斑片/斑块"
+      ],
+      "supporting_concepts": [
+        "红色或粉红色斑片/斑块"
+      ],
+      "conflicting_concepts": [],
+      "missing_information": [
+        "更多皮损形态特征",
+        "皮肤镜检查结果",
+        "组织病理检查结果"
+      ],
+      "evidence_expectation": "partial",
+      "data_origin": "synthetic_kg_grounded",
+      "source_basis": [
+        "TRI_040"
+      ],
+      "generation_rule": "task4_case_generation_v2"
+    },
+    {
+      "case_id": "CASE_AKIEC_PS_004",
+      "true_label": "光化性角化病/表皮内癌",
+      "candidate_disease": "光化性角化病/表皮内癌",
+      "observation_text": "患者自述发现日光暴露部位存在皮损，主要表现为不规则鳞屑性斑块。",
+      "lesion_features": [
+        "不规则鳞屑性斑块"
+      ],
+      "anatomical_site": "日光暴露部位",
+      "symptoms": [],
+      "duration_change": "",
+      "difficulty_level": "medium",
+      "case_type": "partial_support",
+      "expected_concepts": [
+        "不规则鳞屑性斑块",
+        "日光暴露部位"
+      ],
+      "supporting_concepts": [
+        "不规则鳞屑性斑块",
+        "日光暴露部位"
+      ],
+      "conflicting_concepts": [],
+      "missing_information": [
+        "更多皮损形态特征",
+        "皮肤镜检查结果",
+        "组织病理检查结果"
+      ],
+      "evidence_expectation": "partial",
+      "data_origin": "synthetic_kg_grounded",
+      "source_basis": [
+        "TRI_041",
+        "TRI_043"
+      ],
+      "generation_rule": "task4_case_generation_v2"
+    },
+    {
+      "case_id": "CASE_AKIEC_EI_001",
+      "true_label": "光化性角化病/表皮内癌",
+      "candidate_disease": "光化性角化病/表皮内癌",
+      "observation_text": "患者发现日光暴露部位存在皮损，主要表现为局部皮肤颜色改变。",
+      "lesion_features": [
+        "局部皮肤颜色改变"
+      ],
+      "anatomical_site": "日光暴露部位",
+      "symptoms": [],
+      "duration_change": "",
+      "difficulty_level": "medium",
+      "case_type": "evidence_insufficient",
+      "expected_concepts": [
+        "日光暴露部位"
+      ],
+      "supporting_concepts": [
+        "日光暴露部位"
+      ],
+      "conflicting_concepts": [],
+      "missing_information": [
+        "更多皮损形态特征",
+        "明确病程信息",
+        "皮肤镜检查结果",
+        "组织病理检查结果"
+      ],
+      "evidence_expectation": "insufficient",
+      "data_origin": "synthetic_kg_grounded",
+      "source_basis": [
+        "TRI_043"
+      ],
+      "generation_rule": "task4_case_generation_v2"
+    },
+    {
+      "case_id": "CASE_AKIEC_EI_002",
+      "true_label": "光化性角化病/表皮内癌",
+      "candidate_disease": "光化性角化病/表皮内癌",
+      "observation_text": "观察到患者面部存在皮损，主要表现为局部小丘疹。",
+      "lesion_features": [
+        "局部小丘疹"
+      ],
+      "anatomical_site": "面部",
+      "symptoms": [],
+      "duration_change": "",
+      "difficulty_level": "medium",
+      "case_type": "evidence_insufficient",
+      "expected_concepts": [
+        "面部"
+      ],
+      "supporting_concepts": [
+        "面部"
+      ],
+      "conflicting_concepts": [],
+      "missing_information": [
+        "更多皮损形态特征",
+        "明确病程信息",
+        "皮肤镜检查结果",
+        "组织病理检查结果"
+      ],
+      "evidence_expectation": "insufficient",
+      "data_origin": "synthetic_kg_grounded",
+      "source_basis": [
+        "TRI_044"
+      ],
+      "generation_rule": "task4_case_generation_v2"
+    },
+    {
+      "case_id": "CASE_AKIEC_EI_003",
+      "true_label": "光化性角化病/表皮内癌",
+      "candidate_disease": "光化性角化病/表皮内癌",
+      "observation_text": "患者近期注意到手背存在皮损，主要表现为局部斑片样皮损。",
+      "lesion_features": [
+        "局部斑片样皮损"
+      ],
+      "anatomical_site": "手背",
+      "symptoms": [],
+      "duration_change": "",
+      "difficulty_level": "medium",
+      "case_type": "evidence_insufficient",
+      "expected_concepts": [
+        "手背"
+      ],
+      "supporting_concepts": [
+        "手背"
+      ],
+      "conflicting_concepts": [],
+      "missing_information": [
+        "更多皮损形态特征",
+        "明确病程信息",
+        "皮肤镜检查结果",
+        "组织病理检查结果"
+      ],
+      "evidence_expectation": "insufficient",
+      "data_origin": "synthetic_kg_grounded",
+      "source_basis": [
+        "TRI_045"
+      ],
+      "generation_rule": "task4_case_generation_v2"
+    },
+    {
+      "case_id": "CASE_AKIEC_EI_004",
+      "true_label": "光化性角化病/表皮内癌",
+      "candidate_disease": "光化性角化病/表皮内癌",
+      "observation_text": "患者自述发现局部皮肤存在皮损，主要表现为局部形态不明确的皮损。同时可见或自述触痛。",
+      "lesion_features": [
+        "局部形态不明确的皮损"
+      ],
+      "anatomical_site": "",
+      "symptoms": [
+        "触痛"
+      ],
+      "duration_change": "",
+      "difficulty_level": "medium",
+      "case_type": "evidence_insufficient",
+      "expected_concepts": [
+        "触痛"
+      ],
+      "supporting_concepts": [
+        "触痛"
+      ],
+      "conflicting_concepts": [],
+      "missing_information": [
+        "更多皮损形态特征",
+        "明确病程信息",
+        "皮肤镜检查结果",
+        "组织病理检查结果"
+      ],
+      "evidence_expectation": "insufficient",
+      "data_origin": "synthetic_kg_grounded",
+      "source_basis": [
+        "TRI_046"
+      ],
+      "generation_rule": "task4_case_generation_v2"
+    },
+    {
+      "case_id": "CASE_AKIEC_DC_001",
+      "true_label": "基底细胞癌",
+      "candidate_disease": "光化性角化病/表皮内癌",
+      "observation_text": "患者发现面部存在皮损，主要表现为粗糙鳞屑性斑片、珍珠样结节、表面毛细血管扩张。",
+      "lesion_features": [
+        "粗糙鳞屑性斑片",
+        "珍珠样结节",
+        "表面毛细血管扩张"
+      ],
+      "anatomical_site": "面部",
+      "symptoms": [],
+      "duration_change": "",
+      "difficulty_level": "hard",
+      "case_type": "differential_confusion",
+      "expected_concepts": [
+        "粗糙鳞屑性斑片",
+        "珍珠样结节",
+        "表面毛细血管扩张",
+        "面部"
+      ],
+      "supporting_concepts": [
+        "粗糙鳞屑性斑片"
+      ],
+      "conflicting_concepts": [
+        "珍珠样结节",
+        "表面毛细血管扩张",
+        "面部"
+      ],
+      "missing_information": [
+        "皮肤镜检查结果",
+        "组织病理检查结果",
+        "病程变化信息"
+      ],
+      "evidence_expectation": "conflicting",
+      "data_origin": "synthetic_kg_grounded",
+      "source_basis": [
+        "TRI_038",
+        "TRI_025",
+        "TRI_026",
+        "TRI_030"
+      ],
+      "generation_rule": "task4_case_generation_v2"
+    },
+    {
+      "case_id": "CASE_AKIEC_DC_002",
+      "true_label": "良性角化样病变",
+      "candidate_disease": "光化性角化病/表皮内癌",
+      "observation_text": "观察到患者躯干存在皮损，主要表现为白色或黄色角化性表面、贴附样丘疹或斑块、边界清楚的扁平色素斑。",
+      "lesion_features": [
+        "白色或黄色角化性表面",
+        "贴附样丘疹或斑块",
+        "边界清楚的扁平色素斑"
+      ],
+      "anatomical_site": "躯干",
+      "symptoms": [],
+      "duration_change": "",
+      "difficulty_level": "hard",
+      "case_type": "differential_confusion",
+      "expected_concepts": [
+        "白色或黄色角化性表面",
+        "贴附样丘疹或斑块",
+        "边界清楚的扁平色素斑",
+        "躯干"
+      ],
+      "supporting_concepts": [
+        "白色或黄色角化性表面"
+      ],
+      "conflicting_concepts": [
+        "贴附样丘疹或斑块",
+        "边界清楚的扁平色素斑",
+        "躯干"
+      ],
+      "missing_information": [
+        "皮肤镜检查结果",
+        "组织病理检查结果",
+        "病程变化信息"
+      ],
+      "evidence_expectation": "conflicting",
+      "data_origin": "synthetic_kg_grounded",
+      "source_basis": [
+        "TRI_039",
+        "TRI_054",
+        "TRI_055",
+        "TRI_060"
+      ],
+      "generation_rule": "task4_case_generation_v2"
+    },
+    {
+      "case_id": "CASE_AKIEC_DC_003",
+      "true_label": "基底细胞癌",
+      "candidate_disease": "光化性角化病/表皮内癌",
+      "observation_text": "患者近期注意到面部存在皮损，主要表现为红色或粉红色斑片/斑块、边缘隆起或卷曲、中央凹陷或溃疡。",
+      "lesion_features": [
+        "红色或粉红色斑片/斑块",
+        "边缘隆起或卷曲",
+        "中央凹陷或溃疡"
+      ],
+      "anatomical_site": "面部",
+      "symptoms": [],
+      "duration_change": "",
+      "difficulty_level": "hard",
+      "case_type": "differential_confusion",
+      "expected_concepts": [
+        "红色或粉红色斑片/斑块",
+        "边缘隆起或卷曲",
+        "中央凹陷或溃疡",
+        "面部"
+      ],
+      "supporting_concepts": [
+        "红色或粉红色斑片/斑块"
+      ],
+      "conflicting_concepts": [
+        "边缘隆起或卷曲",
+        "中央凹陷或溃疡",
+        "面部"
+      ],
+      "missing_information": [
+        "皮肤镜检查结果",
+        "组织病理检查结果",
+        "病程变化信息"
+      ],
+      "evidence_expectation": "conflicting",
+      "data_origin": "synthetic_kg_grounded",
+      "source_basis": [
+        "TRI_040",
+        "TRI_027",
+        "TRI_028",
+        "TRI_030"
+      ],
+      "generation_rule": "task4_case_generation_v2"
+    },
+    {
+      "case_id": "CASE_AKIEC_DC_004",
+      "true_label": "良性角化样病变",
+      "candidate_disease": "光化性角化病/表皮内癌",
+      "observation_text": "患者自述发现躯干存在皮损，主要表现为不规则鳞屑性斑块、蜡样或疣状表面、粟丘疹样囊肿。",
+      "lesion_features": [
+        "不规则鳞屑性斑块",
+        "蜡样或疣状表面",
+        "粟丘疹样囊肿"
+      ],
+      "anatomical_site": "躯干",
+      "symptoms": [],
+      "duration_change": "",
+      "difficulty_level": "hard",
+      "case_type": "differential_confusion",
+      "expected_concepts": [
+        "不规则鳞屑性斑块",
+        "蜡样或疣状表面",
+        "粟丘疹样囊肿",
+        "躯干"
+      ],
+      "supporting_concepts": [
+        "不规则鳞屑性斑块"
+      ],
+      "conflicting_concepts": [
+        "蜡样或疣状表面",
+        "粟丘疹样囊肿",
+        "躯干"
+      ],
+      "missing_information": [
+        "皮肤镜检查结果",
+        "组织病理检查结果",
+        "病程变化信息"
+      ],
+      "evidence_expectation": "conflicting",
+      "data_origin": "synthetic_kg_grounded",
+      "source_basis": [
+        "TRI_041",
+        "TRI_053",
+        "TRI_056",
+        "TRI_060"
+      ],
+      "generation_rule": "task4_case_generation_v2"
+    },
+    {
+      "case_id": "CASE_AKIEC_CD_001",
+      "true_label": "光化性角化病/表皮内癌",
+      "candidate_disease": "光化性角化病/表皮内癌",
+      "observation_text": "患者发现日光暴露部位存在皮损，主要表现为粗糙鳞屑性斑片、白色或黄色角化性表面、贴附样丘疹或斑块、边界清楚的扁平色素斑。",
+      "lesion_features": [
+        "粗糙鳞屑性斑片",
+        "白色或黄色角化性表面",
+        "贴附样丘疹或斑块",
+        "边界清楚的扁平色素斑"
+      ],
+      "anatomical_site": "日光暴露部位",
+      "symptoms": [],
+      "duration_change": "",
+      "difficulty_level": "hard",
+      "case_type": "conflict_difficult",
+      "expected_concepts": [
+        "粗糙鳞屑性斑片",
+        "白色或黄色角化性表面",
+        "贴附样丘疹或斑块",
+        "边界清楚的扁平色素斑",
+        "日光暴露部位"
+      ],
+      "supporting_concepts": [
+        "粗糙鳞屑性斑片",
+        "白色或黄色角化性表面",
+        "日光暴露部位"
+      ],
+      "conflicting_concepts": [
+        "贴附样丘疹或斑块",
+        "边界清楚的扁平色素斑"
+      ],
+      "missing_information": [
+        "皮肤镜检查结果",
+        "组织病理检查结果",
+        "能够解释冲突表现的进一步检查信息"
+      ],
+      "evidence_expectation": "conflicting",
+      "data_origin": "synthetic_kg_grounded",
+      "source_basis": [
+        "TRI_038",
+        "TRI_039",
+        "TRI_054",
+        "TRI_055",
+        "TRI_043"
+      ],
+      "generation_rule": "task4_case_generation_v2"
+    },
+    {
+      "case_id": "CASE_AKIEC_CD_002",
+      "true_label": "光化性角化病/表皮内癌",
+      "candidate_disease": "光化性角化病/表皮内癌",
+      "observation_text": "观察到患者面部存在皮损，主要表现为白色或黄色角化性表面、红色或粉红色斑片/斑块、边缘隆起或卷曲、中央凹陷或溃疡。",
+      "lesion_features": [
+        "白色或黄色角化性表面",
+        "红色或粉红色斑片/斑块",
+        "边缘隆起或卷曲",
+        "中央凹陷或溃疡"
+      ],
+      "anatomical_site": "面部",
+      "symptoms": [],
+      "duration_change": "",
+      "difficulty_level": "hard",
+      "case_type": "conflict_difficult",
+      "expected_concepts": [
+        "白色或黄色角化性表面",
+        "红色或粉红色斑片/斑块",
+        "边缘隆起或卷曲",
+        "中央凹陷或溃疡",
+        "面部"
+      ],
+      "supporting_concepts": [
+        "白色或黄色角化性表面",
+        "红色或粉红色斑片/斑块",
+        "面部"
+      ],
+      "conflicting_concepts": [
+        "边缘隆起或卷曲",
+        "中央凹陷或溃疡"
+      ],
+      "missing_information": [
+        "皮肤镜检查结果",
+        "组织病理检查结果",
+        "能够解释冲突表现的进一步检查信息"
+      ],
+      "evidence_expectation": "conflicting",
+      "data_origin": "synthetic_kg_grounded",
+      "source_basis": [
+        "TRI_039",
+        "TRI_040",
+        "TRI_027",
+        "TRI_028",
+        "TRI_044"
+      ],
+      "generation_rule": "task4_case_generation_v2"
+    },
+    {
+      "case_id": "CASE_AKIEC_CD_003",
+      "true_label": "光化性角化病/表皮内癌",
+      "candidate_disease": "光化性角化病/表皮内癌",
+      "observation_text": "患者近期注意到手背存在皮损，主要表现为红色或粉红色斑片/斑块、不规则鳞屑性斑块、蜡样或疣状表面、粟丘疹样囊肿。",
+      "lesion_features": [
+        "红色或粉红色斑片/斑块",
+        "不规则鳞屑性斑块",
+        "蜡样或疣状表面",
+        "粟丘疹样囊肿"
+      ],
+      "anatomical_site": "手背",
+      "symptoms": [],
+      "duration_change": "",
+      "difficulty_level": "hard",
+      "case_type": "conflict_difficult",
+      "expected_concepts": [
+        "红色或粉红色斑片/斑块",
+        "不规则鳞屑性斑块",
+        "蜡样或疣状表面",
+        "粟丘疹样囊肿",
+        "手背"
+      ],
+      "supporting_concepts": [
+        "红色或粉红色斑片/斑块",
+        "不规则鳞屑性斑块",
+        "手背"
+      ],
+      "conflicting_concepts": [
+        "蜡样或疣状表面",
+        "粟丘疹样囊肿"
+      ],
+      "missing_information": [
+        "皮肤镜检查结果",
+        "组织病理检查结果",
+        "能够解释冲突表现的进一步检查信息"
+      ],
+      "evidence_expectation": "conflicting",
+      "data_origin": "synthetic_kg_grounded",
+      "source_basis": [
+        "TRI_040",
+        "TRI_041",
+        "TRI_053",
+        "TRI_056",
+        "TRI_045"
+      ],
+      "generation_rule": "task4_case_generation_v2"
+    },
+    {
+      "case_id": "CASE_AKIEC_CD_004",
+      "true_label": "光化性角化病/表皮内癌",
+      "candidate_disease": "光化性角化病/表皮内癌",
+      "observation_text": "患者自述发现日光暴露部位存在皮损，主要表现为粗糙鳞屑性斑片、不规则鳞屑性斑块、珍珠样结节、表面毛细血管扩张。",
+      "lesion_features": [
+        "粗糙鳞屑性斑片",
+        "不规则鳞屑性斑块",
+        "珍珠样结节",
+        "表面毛细血管扩张"
+      ],
+      "anatomical_site": "日光暴露部位",
+      "symptoms": [],
+      "duration_change": "",
+      "difficulty_level": "hard",
+      "case_type": "conflict_difficult",
+      "expected_concepts": [
+        "粗糙鳞屑性斑片",
+        "不规则鳞屑性斑块",
+        "珍珠样结节",
+        "表面毛细血管扩张",
+        "日光暴露部位"
+      ],
+      "supporting_concepts": [
+        "粗糙鳞屑性斑片",
+        "不规则鳞屑性斑块",
+        "日光暴露部位"
+      ],
+      "conflicting_concepts": [
+        "珍珠样结节",
+        "表面毛细血管扩张"
+      ],
+      "missing_information": [
+        "皮肤镜检查结果",
+        "组织病理检查结果",
+        "能够解释冲突表现的进一步检查信息"
+      ],
+      "evidence_expectation": "conflicting",
+      "data_origin": "synthetic_kg_grounded",
+      "source_basis": [
+        "TRI_038",
+        "TRI_041",
+        "TRI_025",
+        "TRI_026",
+        "TRI_043"
+      ],
+      "generation_rule": "task4_case_generation_v2"
+    },
+    {
+      "case_id": "CASE_BKL_TP_001",
+      "true_label": "良性角化样病变",
+      "candidate_disease": "良性角化样病变",
+      "observation_text": "患者发现日光暴露部位存在皮损，主要表现为蜡样或疣状表面、贴附样丘疹或斑块、边界清楚的扁平色素斑。同时可见或自述无明显症状。",
+      "lesion_features": [
+        "蜡样或疣状表面",
+        "贴附样丘疹或斑块",
+        "边界清楚的扁平色素斑"
+      ],
+      "anatomical_site": "日光暴露部位",
+      "symptoms": [
+        "无明显症状"
+      ],
+      "duration_change": "",
+      "difficulty_level": "easy",
+      "case_type": "typical_positive",
+      "expected_concepts": [
+        "蜡样或疣状表面",
+        "贴附样丘疹或斑块",
+        "边界清楚的扁平色素斑",
+        "日光暴露部位",
+        "无明显症状"
+      ],
+      "supporting_concepts": [
+        "蜡样或疣状表面",
+        "贴附样丘疹或斑块",
+        "边界清楚的扁平色素斑",
+        "日光暴露部位",
+        "无明显症状"
+      ],
+      "conflicting_concepts": [],
+      "missing_information": [
+        "皮肤镜检查结果",
+        "组织病理检查结果"
+      ],
+      "evidence_expectation": "sufficient",
+      "data_origin": "synthetic_kg_grounded",
+      "source_basis": [
+        "TRI_053",
+        "TRI_054",
+        "TRI_055",
+        "TRI_059",
+        "TRI_061"
+      ],
+      "generation_rule": "task4_case_generation_v2"
+    },
+    {
+      "case_id": "CASE_BKL_TP_002",
+      "true_label": "良性角化样病变",
+      "candidate_disease": "良性角化样病变",
+      "observation_text": "观察到患者躯干存在皮损，主要表现为贴附样丘疹或斑块、边界清楚的扁平色素斑、粟丘疹样囊肿。同时可见或自述瘙痒。",
+      "lesion_features": [
+        "贴附样丘疹或斑块",
+        "边界清楚的扁平色素斑",
+        "粟丘疹样囊肿"
+      ],
+      "anatomical_site": "躯干",
+      "symptoms": [
+        "瘙痒"
+      ],
+      "duration_change": "",
+      "difficulty_level": "easy",
+      "case_type": "typical_positive",
+      "expected_concepts": [
+        "贴附样丘疹或斑块",
+        "边界清楚的扁平色素斑",
+        "粟丘疹样囊肿",
+        "躯干",
+        "瘙痒"
+      ],
+      "supporting_concepts": [
+        "贴附样丘疹或斑块",
+        "边界清楚的扁平色素斑",
+        "粟丘疹样囊肿",
+        "躯干",
+        "瘙痒"
+      ],
+      "conflicting_concepts": [],
+      "missing_information": [
+        "皮肤镜检查结果",
+        "组织病理检查结果"
+      ],
+      "evidence_expectation": "sufficient",
+      "data_origin": "synthetic_kg_grounded",
+      "source_basis": [
+        "TRI_054",
+        "TRI_055",
+        "TRI_056",
+        "TRI_060",
+        "TRI_062"
+      ],
+      "generation_rule": "task4_case_generation_v2"
+    },
+    {
+      "case_id": "CASE_BKL_TP_003",
+      "true_label": "良性角化样病变",
+      "candidate_disease": "良性角化样病变",
+      "observation_text": "患者近期注意到日光暴露部位存在皮损，主要表现为蜡样或疣状表面、边界清楚的扁平色素斑、粟丘疹样囊肿。同时可见或自述无明显症状。",
+      "lesion_features": [
+        "蜡样或疣状表面",
+        "边界清楚的扁平色素斑",
+        "粟丘疹样囊肿"
+      ],
+      "anatomical_site": "日光暴露部位",
+      "symptoms": [
+        "无明显症状"
+      ],
+      "duration_change": "",
+      "difficulty_level": "medium",
+      "case_type": "typical_positive",
+      "expected_concepts": [
+        "蜡样或疣状表面",
+        "边界清楚的扁平色素斑",
+        "粟丘疹样囊肿",
+        "日光暴露部位",
+        "无明显症状"
+      ],
+      "supporting_concepts": [
+        "蜡样或疣状表面",
+        "边界清楚的扁平色素斑",
+        "粟丘疹样囊肿",
+        "日光暴露部位",
+        "无明显症状"
+      ],
+      "conflicting_concepts": [],
+      "missing_information": [
+        "皮肤镜检查结果",
+        "组织病理检查结果"
+      ],
+      "evidence_expectation": "sufficient",
+      "data_origin": "synthetic_kg_grounded",
+      "source_basis": [
+        "TRI_053",
+        "TRI_055",
+        "TRI_056",
+        "TRI_059",
+        "TRI_061"
+      ],
+      "generation_rule": "task4_case_generation_v2"
+    },
+    {
+      "case_id": "CASE_BKL_TP_004",
+      "true_label": "良性角化样病变",
+      "candidate_disease": "良性角化样病变",
+      "observation_text": "患者自述发现躯干存在皮损，主要表现为蜡样或疣状表面、贴附样丘疹或斑块、粟丘疹样囊肿。同时可见或自述瘙痒。",
+      "lesion_features": [
+        "蜡样或疣状表面",
+        "贴附样丘疹或斑块",
+        "粟丘疹样囊肿"
+      ],
+      "anatomical_site": "躯干",
+      "symptoms": [
+        "瘙痒"
+      ],
+      "duration_change": "",
+      "difficulty_level": "medium",
+      "case_type": "typical_positive",
+      "expected_concepts": [
+        "蜡样或疣状表面",
+        "贴附样丘疹或斑块",
+        "粟丘疹样囊肿",
+        "躯干",
+        "瘙痒"
+      ],
+      "supporting_concepts": [
+        "蜡样或疣状表面",
+        "贴附样丘疹或斑块",
+        "粟丘疹样囊肿",
+        "躯干",
+        "瘙痒"
+      ],
+      "conflicting_concepts": [],
+      "missing_information": [
+        "皮肤镜检查结果",
+        "组织病理检查结果"
+      ],
+      "evidence_expectation": "sufficient",
+      "data_origin": "synthetic_kg_grounded",
+      "source_basis": [
+        "TRI_053",
+        "TRI_054",
+        "TRI_056",
+        "TRI_060",
+        "TRI_062"
+      ],
+      "generation_rule": "task4_case_generation_v2"
+    },
+    {
+      "case_id": "CASE_BKL_PS_001",
+      "true_label": "良性角化样病变",
+      "candidate_disease": "良性角化样病变",
+      "observation_text": "患者发现局部皮肤存在皮损，主要表现为蜡样或疣状表面。",
+      "lesion_features": [
+        "蜡样或疣状表面"
+      ],
+      "anatomical_site": "",
+      "symptoms": [],
+      "duration_change": "",
+      "difficulty_level": "medium",
+      "case_type": "partial_support",
+      "expected_concepts": [
+        "蜡样或疣状表面"
+      ],
+      "supporting_concepts": [
+        "蜡样或疣状表面"
+      ],
+      "conflicting_concepts": [],
+      "missing_information": [
+        "更多皮损形态特征",
+        "皮肤镜检查结果",
+        "组织病理检查结果"
+      ],
+      "evidence_expectation": "partial",
+      "data_origin": "synthetic_kg_grounded",
+      "source_basis": [
+        "TRI_053"
+      ],
+      "generation_rule": "task4_case_generation_v2"
+    },
+    {
+      "case_id": "CASE_BKL_PS_002",
+      "true_label": "良性角化样病变",
+      "candidate_disease": "良性角化样病变",
+      "observation_text": "观察到患者躯干存在皮损，主要表现为贴附样丘疹或斑块。",
+      "lesion_features": [
+        "贴附样丘疹或斑块"
+      ],
+      "anatomical_site": "躯干",
+      "symptoms": [],
+      "duration_change": "",
+      "difficulty_level": "medium",
+      "case_type": "partial_support",
+      "expected_concepts": [
+        "贴附样丘疹或斑块",
+        "躯干"
+      ],
+      "supporting_concepts": [
+        "贴附样丘疹或斑块",
+        "躯干"
+      ],
+      "conflicting_concepts": [],
+      "missing_information": [
+        "更多皮损形态特征",
+        "皮肤镜检查结果",
+        "组织病理检查结果"
+      ],
+      "evidence_expectation": "partial",
+      "data_origin": "synthetic_kg_grounded",
+      "source_basis": [
+        "TRI_054",
+        "TRI_060"
+      ],
+      "generation_rule": "task4_case_generation_v2"
+    },
+    {
+      "case_id": "CASE_BKL_PS_003",
+      "true_label": "良性角化样病变",
+      "candidate_disease": "良性角化样病变",
+      "observation_text": "患者近期注意到局部皮肤存在皮损，主要表现为边界清楚的扁平色素斑。",
+      "lesion_features": [
+        "边界清楚的扁平色素斑"
+      ],
+      "anatomical_site": "",
+      "symptoms": [],
+      "duration_change": "",
+      "difficulty_level": "medium",
+      "case_type": "partial_support",
+      "expected_concepts": [
+        "边界清楚的扁平色素斑"
+      ],
+      "supporting_concepts": [
+        "边界清楚的扁平色素斑"
+      ],
+      "conflicting_concepts": [],
+      "missing_information": [
+        "更多皮损形态特征",
+        "皮肤镜检查结果",
+        "组织病理检查结果"
+      ],
+      "evidence_expectation": "partial",
+      "data_origin": "synthetic_kg_grounded",
+      "source_basis": [
+        "TRI_055"
+      ],
+      "generation_rule": "task4_case_generation_v2"
+    },
+    {
+      "case_id": "CASE_BKL_PS_004",
+      "true_label": "良性角化样病变",
+      "candidate_disease": "良性角化样病变",
+      "observation_text": "患者自述发现躯干存在皮损，主要表现为粟丘疹样囊肿。",
+      "lesion_features": [
+        "粟丘疹样囊肿"
+      ],
+      "anatomical_site": "躯干",
+      "symptoms": [],
+      "duration_change": "",
+      "difficulty_level": "medium",
+      "case_type": "partial_support",
+      "expected_concepts": [
+        "粟丘疹样囊肿",
+        "躯干"
+      ],
+      "supporting_concepts": [
+        "粟丘疹样囊肿",
+        "躯干"
+      ],
+      "conflicting_concepts": [],
+      "missing_information": [
+        "更多皮损形态特征",
+        "皮肤镜检查结果",
+        "组织病理检查结果"
+      ],
+      "evidence_expectation": "partial",
+      "data_origin": "synthetic_kg_grounded",
+      "source_basis": [
+        "TRI_056",
+        "TRI_060"
+      ],
+      "generation_rule": "task4_case_generation_v2"
+    },
+    {
+      "case_id": "CASE_BKL_EI_001",
+      "true_label": "良性角化样病变",
+      "candidate_disease": "良性角化样病变",
+      "observation_text": "患者发现日光暴露部位存在皮损，主要表现为局部皮肤颜色改变。",
+      "lesion_features": [
+        "局部皮肤颜色改变"
+      ],
+      "anatomical_site": "日光暴露部位",
+      "symptoms": [],
+      "duration_change": "",
+      "difficulty_level": "medium",
+      "case_type": "evidence_insufficient",
+      "expected_concepts": [
+        "日光暴露部位"
+      ],
+      "supporting_concepts": [
+        "日光暴露部位"
+      ],
+      "conflicting_concepts": [],
+      "missing_information": [
+        "更多皮损形态特征",
+        "明确病程信息",
+        "皮肤镜检查结果",
+        "组织病理检查结果"
+      ],
+      "evidence_expectation": "insufficient",
+      "data_origin": "synthetic_kg_grounded",
+      "source_basis": [
+        "TRI_059"
+      ],
+      "generation_rule": "task4_case_generation_v2"
+    },
+    {
+      "case_id": "CASE_BKL_EI_002",
+      "true_label": "良性角化样病变",
+      "candidate_disease": "良性角化样病变",
+      "observation_text": "观察到患者躯干存在皮损，主要表现为局部小丘疹。",
+      "lesion_features": [
+        "局部小丘疹"
+      ],
+      "anatomical_site": "躯干",
+      "symptoms": [],
+      "duration_change": "",
+      "difficulty_level": "medium",
+      "case_type": "evidence_insufficient",
+      "expected_concepts": [
+        "躯干"
+      ],
+      "supporting_concepts": [
+        "躯干"
+      ],
+      "conflicting_concepts": [],
+      "missing_information": [
+        "更多皮损形态特征",
+        "明确病程信息",
+        "皮肤镜检查结果",
+        "组织病理检查结果"
+      ],
+      "evidence_expectation": "insufficient",
+      "data_origin": "synthetic_kg_grounded",
+      "source_basis": [
+        "TRI_060"
+      ],
+      "generation_rule": "task4_case_generation_v2"
+    },
+    {
+      "case_id": "CASE_BKL_EI_003",
+      "true_label": "良性角化样病变",
+      "candidate_disease": "良性角化样病变",
+      "observation_text": "患者近期注意到局部皮肤存在皮损，主要表现为局部斑片样皮损。同时可见或自述无明显症状。",
+      "lesion_features": [
+        "局部斑片样皮损"
+      ],
+      "anatomical_site": "",
+      "symptoms": [
+        "无明显症状"
+      ],
+      "duration_change": "",
+      "difficulty_level": "medium",
+      "case_type": "evidence_insufficient",
+      "expected_concepts": [
+        "无明显症状"
+      ],
+      "supporting_concepts": [
+        "无明显症状"
+      ],
+      "conflicting_concepts": [],
+      "missing_information": [
+        "更多皮损形态特征",
+        "明确病程信息",
+        "皮肤镜检查结果",
+        "组织病理检查结果"
+      ],
+      "evidence_expectation": "insufficient",
+      "data_origin": "synthetic_kg_grounded",
+      "source_basis": [
+        "TRI_061"
+      ],
+      "generation_rule": "task4_case_generation_v2"
+    },
+    {
+      "case_id": "CASE_BKL_EI_004",
+      "true_label": "良性角化样病变",
+      "candidate_disease": "良性角化样病变",
+      "observation_text": "患者自述发现局部皮肤存在皮损，主要表现为局部形态不明确的皮损。同时可见或自述瘙痒。",
+      "lesion_features": [
+        "局部形态不明确的皮损"
+      ],
+      "anatomical_site": "",
+      "symptoms": [
+        "瘙痒"
+      ],
+      "duration_change": "",
+      "difficulty_level": "medium",
+      "case_type": "evidence_insufficient",
+      "expected_concepts": [
+        "瘙痒"
+      ],
+      "supporting_concepts": [
+        "瘙痒"
+      ],
+      "conflicting_concepts": [],
+      "missing_information": [
+        "更多皮损形态特征",
+        "明确病程信息",
+        "皮肤镜检查结果",
+        "组织病理检查结果"
+      ],
+      "evidence_expectation": "insufficient",
+      "data_origin": "synthetic_kg_grounded",
+      "source_basis": [
+        "TRI_062"
+      ],
+      "generation_rule": "task4_case_generation_v2"
+    },
+    {
+      "case_id": "CASE_BKL_DC_001",
+      "true_label": "黑色素瘤",
+      "candidate_disease": "良性角化样病变",
+      "observation_text": "患者发现背部存在皮损，主要表现为蜡样或疣状表面、边界不规则、颜色不均。",
+      "lesion_features": [
+        "蜡样或疣状表面",
+        "边界不规则",
+        "颜色不均"
+      ],
+      "anatomical_site": "背部",
+      "symptoms": [],
+      "duration_change": "",
+      "difficulty_level": "hard",
+      "case_type": "differential_confusion",
+      "expected_concepts": [
+        "蜡样或疣状表面",
+        "边界不规则",
+        "颜色不均",
+        "背部"
+      ],
+      "supporting_concepts": [
+        "蜡样或疣状表面"
+      ],
+      "conflicting_concepts": [
+        "边界不规则",
+        "颜色不均",
+        "背部"
+      ],
+      "missing_information": [
+        "皮肤镜检查结果",
+        "组织病理检查结果",
+        "病程变化信息"
+      ],
+      "evidence_expectation": "conflicting",
+      "data_origin": "synthetic_kg_grounded",
+      "source_basis": [
+        "TRI_053",
+        "TRI_001",
+        "TRI_002",
+        "TRI_006"
+      ],
+      "generation_rule": "task4_case_generation_v2"
+    },
+    {
+      "case_id": "CASE_BKL_DC_002",
+      "true_label": "基底细胞癌",
+      "candidate_disease": "良性角化样病变",
+      "observation_text": "观察到患者面部存在皮损，主要表现为贴附样丘疹或斑块、表面毛细血管扩张、边缘隆起或卷曲。",
+      "lesion_features": [
+        "贴附样丘疹或斑块",
+        "表面毛细血管扩张",
+        "边缘隆起或卷曲"
+      ],
+      "anatomical_site": "面部",
+      "symptoms": [],
+      "duration_change": "",
+      "difficulty_level": "hard",
+      "case_type": "differential_confusion",
+      "expected_concepts": [
+        "贴附样丘疹或斑块",
+        "表面毛细血管扩张",
+        "边缘隆起或卷曲",
+        "面部"
+      ],
+      "supporting_concepts": [
+        "贴附样丘疹或斑块"
+      ],
+      "conflicting_concepts": [
+        "表面毛细血管扩张",
+        "边缘隆起或卷曲",
+        "面部"
+      ],
+      "missing_information": [
+        "皮肤镜检查结果",
+        "组织病理检查结果",
+        "病程变化信息"
+      ],
+      "evidence_expectation": "conflicting",
+      "data_origin": "synthetic_kg_grounded",
+      "source_basis": [
+        "TRI_054",
+        "TRI_026",
+        "TRI_027",
+        "TRI_030"
+      ],
+      "generation_rule": "task4_case_generation_v2"
+    },
+    {
+      "case_id": "CASE_BKL_DC_003",
+      "true_label": "黑色素瘤",
+      "candidate_disease": "良性角化样病变",
+      "observation_text": "患者近期注意到背部存在皮损，主要表现为边界清楚的扁平色素斑、形态不对称、直径增大。",
+      "lesion_features": [
+        "边界清楚的扁平色素斑",
+        "形态不对称",
+        "直径增大"
+      ],
+      "anatomical_site": "背部",
+      "symptoms": [],
+      "duration_change": "",
+      "difficulty_level": "hard",
+      "case_type": "differential_confusion",
+      "expected_concepts": [
+        "边界清楚的扁平色素斑",
+        "形态不对称",
+        "直径增大",
+        "背部"
+      ],
+      "supporting_concepts": [
+        "边界清楚的扁平色素斑"
+      ],
+      "conflicting_concepts": [
+        "形态不对称",
+        "直径增大",
+        "背部"
+      ],
+      "missing_information": [
+        "皮肤镜检查结果",
+        "组织病理检查结果",
+        "病程变化信息"
+      ],
+      "evidence_expectation": "conflicting",
+      "data_origin": "synthetic_kg_grounded",
+      "source_basis": [
+        "TRI_055",
+        "TRI_003",
+        "TRI_004",
+        "TRI_006"
+      ],
+      "generation_rule": "task4_case_generation_v2"
+    },
+    {
+      "case_id": "CASE_BKL_DC_004",
+      "true_label": "基底细胞癌",
+      "candidate_disease": "良性角化样病变",
+      "observation_text": "患者自述发现面部存在皮损，主要表现为粟丘疹样囊肿、珍珠样结节、中央凹陷或溃疡。",
+      "lesion_features": [
+        "粟丘疹样囊肿",
+        "珍珠样结节",
+        "中央凹陷或溃疡"
+      ],
+      "anatomical_site": "面部",
+      "symptoms": [],
+      "duration_change": "",
+      "difficulty_level": "hard",
+      "case_type": "differential_confusion",
+      "expected_concepts": [
+        "粟丘疹样囊肿",
+        "珍珠样结节",
+        "中央凹陷或溃疡",
+        "面部"
+      ],
+      "supporting_concepts": [
+        "粟丘疹样囊肿"
+      ],
+      "conflicting_concepts": [
+        "珍珠样结节",
+        "中央凹陷或溃疡",
+        "面部"
+      ],
+      "missing_information": [
+        "皮肤镜检查结果",
+        "组织病理检查结果",
+        "病程变化信息"
+      ],
+      "evidence_expectation": "conflicting",
+      "data_origin": "synthetic_kg_grounded",
+      "source_basis": [
+        "TRI_056",
+        "TRI_025",
+        "TRI_028",
+        "TRI_030"
+      ],
+      "generation_rule": "task4_case_generation_v2"
+    },
+    {
+      "case_id": "CASE_BKL_CD_001",
+      "true_label": "良性角化样病变",
+      "candidate_disease": "良性角化样病变",
+      "observation_text": "患者发现日光暴露部位存在皮损，主要表现为蜡样或疣状表面、贴附样丘疹或斑块、表面毛细血管扩张、边缘隆起或卷曲。",
+      "lesion_features": [
+        "蜡样或疣状表面",
+        "贴附样丘疹或斑块",
+        "表面毛细血管扩张",
+        "边缘隆起或卷曲"
+      ],
+      "anatomical_site": "日光暴露部位",
+      "symptoms": [],
+      "duration_change": "",
+      "difficulty_level": "hard",
+      "case_type": "conflict_difficult",
+      "expected_concepts": [
+        "蜡样或疣状表面",
+        "贴附样丘疹或斑块",
+        "表面毛细血管扩张",
+        "边缘隆起或卷曲",
+        "日光暴露部位"
+      ],
+      "supporting_concepts": [
+        "蜡样或疣状表面",
+        "贴附样丘疹或斑块",
+        "日光暴露部位"
+      ],
+      "conflicting_concepts": [
+        "表面毛细血管扩张",
+        "边缘隆起或卷曲"
+      ],
+      "missing_information": [
+        "皮肤镜检查结果",
+        "组织病理检查结果",
+        "能够解释冲突表现的进一步检查信息"
+      ],
+      "evidence_expectation": "conflicting",
+      "data_origin": "synthetic_kg_grounded",
+      "source_basis": [
+        "TRI_053",
+        "TRI_054",
+        "TRI_026",
+        "TRI_027",
+        "TRI_059"
+      ],
+      "generation_rule": "task4_case_generation_v2"
+    },
+    {
+      "case_id": "CASE_BKL_CD_002",
+      "true_label": "良性角化样病变",
+      "candidate_disease": "良性角化样病变",
+      "observation_text": "观察到患者躯干存在皮损，主要表现为贴附样丘疹或斑块、边界清楚的扁平色素斑、形态不对称、直径增大。",
+      "lesion_features": [
+        "贴附样丘疹或斑块",
+        "边界清楚的扁平色素斑",
+        "形态不对称",
+        "直径增大"
+      ],
+      "anatomical_site": "躯干",
+      "symptoms": [],
+      "duration_change": "",
+      "difficulty_level": "hard",
+      "case_type": "conflict_difficult",
+      "expected_concepts": [
+        "贴附样丘疹或斑块",
+        "边界清楚的扁平色素斑",
+        "形态不对称",
+        "直径增大",
+        "躯干"
+      ],
+      "supporting_concepts": [
+        "贴附样丘疹或斑块",
+        "边界清楚的扁平色素斑",
+        "躯干"
+      ],
+      "conflicting_concepts": [
+        "形态不对称",
+        "直径增大"
+      ],
+      "missing_information": [
+        "皮肤镜检查结果",
+        "组织病理检查结果",
+        "能够解释冲突表现的进一步检查信息"
+      ],
+      "evidence_expectation": "conflicting",
+      "data_origin": "synthetic_kg_grounded",
+      "source_basis": [
+        "TRI_054",
+        "TRI_055",
+        "TRI_003",
+        "TRI_004",
+        "TRI_060"
+      ],
+      "generation_rule": "task4_case_generation_v2"
+    },
+    {
+      "case_id": "CASE_BKL_CD_003",
+      "true_label": "良性角化样病变",
+      "candidate_disease": "良性角化样病变",
+      "observation_text": "患者近期注意到日光暴露部位存在皮损，主要表现为边界清楚的扁平色素斑、粟丘疹样囊肿、珍珠样结节、中央凹陷或溃疡。",
+      "lesion_features": [
+        "边界清楚的扁平色素斑",
+        "粟丘疹样囊肿",
+        "珍珠样结节",
+        "中央凹陷或溃疡"
+      ],
+      "anatomical_site": "日光暴露部位",
+      "symptoms": [],
+      "duration_change": "",
+      "difficulty_level": "hard",
+      "case_type": "conflict_difficult",
+      "expected_concepts": [
+        "边界清楚的扁平色素斑",
+        "粟丘疹样囊肿",
+        "珍珠样结节",
+        "中央凹陷或溃疡",
+        "日光暴露部位"
+      ],
+      "supporting_concepts": [
+        "边界清楚的扁平色素斑",
+        "粟丘疹样囊肿",
+        "日光暴露部位"
+      ],
+      "conflicting_concepts": [
+        "珍珠样结节",
+        "中央凹陷或溃疡"
+      ],
+      "missing_information": [
+        "皮肤镜检查结果",
+        "组织病理检查结果",
+        "能够解释冲突表现的进一步检查信息"
+      ],
+      "evidence_expectation": "conflicting",
+      "data_origin": "synthetic_kg_grounded",
+      "source_basis": [
+        "TRI_055",
+        "TRI_056",
+        "TRI_025",
+        "TRI_028",
+        "TRI_059"
+      ],
+      "generation_rule": "task4_case_generation_v2"
+    },
+    {
+      "case_id": "CASE_BKL_CD_004",
+      "true_label": "良性角化样病变",
+      "candidate_disease": "良性角化样病变",
+      "observation_text": "患者自述发现躯干存在皮损，主要表现为蜡样或疣状表面、粟丘疹样囊肿、边界不规则、颜色不均。",
+      "lesion_features": [
+        "蜡样或疣状表面",
+        "粟丘疹样囊肿",
+        "边界不规则",
+        "颜色不均"
+      ],
+      "anatomical_site": "躯干",
+      "symptoms": [],
+      "duration_change": "",
+      "difficulty_level": "hard",
+      "case_type": "conflict_difficult",
+      "expected_concepts": [
+        "蜡样或疣状表面",
+        "粟丘疹样囊肿",
+        "边界不规则",
+        "颜色不均",
+        "躯干"
+      ],
+      "supporting_concepts": [
+        "蜡样或疣状表面",
+        "粟丘疹样囊肿",
+        "躯干"
+      ],
+      "conflicting_concepts": [
+        "边界不规则",
+        "颜色不均"
+      ],
+      "missing_information": [
+        "皮肤镜检查结果",
+        "组织病理检查结果",
+        "能够解释冲突表现的进一步检查信息"
+      ],
+      "evidence_expectation": "conflicting",
+      "data_origin": "synthetic_kg_grounded",
+      "source_basis": [
+        "TRI_053",
+        "TRI_056",
+        "TRI_001",
+        "TRI_002",
+        "TRI_060"
+      ],
+      "generation_rule": "task4_case_generation_v2"
+    },
+    {
+      "case_id": "CASE_DF_TP_001",
+      "true_label": "皮肤纤维瘤",
+      "candidate_disease": "皮肤纤维瘤",
+      "observation_text": "患者发现下肢存在皮损，主要表现为坚实丘疹或结节、捏压凹陷征、中央白色瘢痕样区域。同时可见或自述无明显症状。",
+      "lesion_features": [
+        "坚实丘疹或结节",
+        "捏压凹陷征",
+        "中央白色瘢痕样区域"
+      ],
+      "anatomical_site": "下肢",
+      "symptoms": [
+        "无明显症状"
+      ],
+      "duration_change": "",
+      "difficulty_level": "easy",
+      "case_type": "typical_positive",
+      "expected_concepts": [
+        "坚实丘疹或结节",
+        "捏压凹陷征",
+        "中央白色瘢痕样区域",
+        "下肢",
+        "无明显症状"
+      ],
+      "supporting_concepts": [
+        "坚实丘疹或结节",
+        "捏压凹陷征",
+        "中央白色瘢痕样区域",
+        "下肢",
+        "无明显症状"
+      ],
+      "conflicting_concepts": [],
+      "missing_information": [
+        "皮肤镜检查结果",
+        "组织病理检查结果"
+      ],
+      "evidence_expectation": "sufficient",
+      "data_origin": "synthetic_kg_grounded",
+      "source_basis": [
+        "TRI_070",
+        "TRI_071",
+        "TRI_072",
+        "TRI_074",
+        "TRI_076"
+      ],
+      "generation_rule": "task4_case_generation_v2"
+    },
+    {
+      "case_id": "CASE_DF_TP_002",
+      "true_label": "皮肤纤维瘤",
+      "candidate_disease": "皮肤纤维瘤",
+      "observation_text": "观察到患者全身皮肤存在皮损，主要表现为捏压凹陷征、中央白色瘢痕样区域、周围淡色素网。同时可见或自述触痛。",
+      "lesion_features": [
+        "捏压凹陷征",
+        "中央白色瘢痕样区域",
+        "周围淡色素网"
+      ],
+      "anatomical_site": "全身皮肤",
+      "symptoms": [
+        "触痛"
+      ],
+      "duration_change": "",
+      "difficulty_level": "easy",
+      "case_type": "typical_positive",
+      "expected_concepts": [
+        "捏压凹陷征",
+        "中央白色瘢痕样区域",
+        "周围淡色素网",
+        "全身皮肤",
+        "触痛"
+      ],
+      "supporting_concepts": [
+        "捏压凹陷征",
+        "中央白色瘢痕样区域",
+        "周围淡色素网",
+        "全身皮肤",
+        "触痛"
+      ],
+      "conflicting_concepts": [],
+      "missing_information": [
+        "皮肤镜检查结果",
+        "组织病理检查结果"
+      ],
+      "evidence_expectation": "sufficient",
+      "data_origin": "synthetic_kg_grounded",
+      "source_basis": [
+        "TRI_071",
+        "TRI_072",
+        "TRI_073",
+        "TRI_075",
+        "TRI_077"
+      ],
+      "generation_rule": "task4_case_generation_v2"
+    },
+    {
+      "case_id": "CASE_DF_TP_003",
+      "true_label": "皮肤纤维瘤",
+      "candidate_disease": "皮肤纤维瘤",
+      "observation_text": "患者近期注意到下肢存在皮损，主要表现为坚实丘疹或结节、中央白色瘢痕样区域、周围淡色素网。同时可见或自述瘙痒。",
+      "lesion_features": [
+        "坚实丘疹或结节",
+        "中央白色瘢痕样区域",
+        "周围淡色素网"
+      ],
+      "anatomical_site": "下肢",
+      "symptoms": [
+        "瘙痒"
+      ],
+      "duration_change": "",
+      "difficulty_level": "medium",
+      "case_type": "typical_positive",
+      "expected_concepts": [
+        "坚实丘疹或结节",
+        "中央白色瘢痕样区域",
+        "周围淡色素网",
+        "下肢",
+        "瘙痒"
+      ],
+      "supporting_concepts": [
+        "坚实丘疹或结节",
+        "中央白色瘢痕样区域",
+        "周围淡色素网",
+        "下肢",
+        "瘙痒"
+      ],
+      "conflicting_concepts": [],
+      "missing_information": [
+        "皮肤镜检查结果",
+        "组织病理检查结果"
+      ],
+      "evidence_expectation": "sufficient",
+      "data_origin": "synthetic_kg_grounded",
+      "source_basis": [
+        "TRI_070",
+        "TRI_072",
+        "TRI_073",
+        "TRI_074",
+        "TRI_078"
+      ],
+      "generation_rule": "task4_case_generation_v2"
+    },
+    {
+      "case_id": "CASE_DF_TP_004",
+      "true_label": "皮肤纤维瘤",
+      "candidate_disease": "皮肤纤维瘤",
+      "observation_text": "患者自述发现全身皮肤存在皮损，主要表现为坚实丘疹或结节、捏压凹陷征、周围淡色素网。同时可见或自述无明显症状。",
+      "lesion_features": [
+        "坚实丘疹或结节",
+        "捏压凹陷征",
+        "周围淡色素网"
+      ],
+      "anatomical_site": "全身皮肤",
+      "symptoms": [
+        "无明显症状"
+      ],
+      "duration_change": "",
+      "difficulty_level": "medium",
+      "case_type": "typical_positive",
+      "expected_concepts": [
+        "坚实丘疹或结节",
+        "捏压凹陷征",
+        "周围淡色素网",
+        "全身皮肤",
+        "无明显症状"
+      ],
+      "supporting_concepts": [
+        "坚实丘疹或结节",
+        "捏压凹陷征",
+        "周围淡色素网",
+        "全身皮肤",
+        "无明显症状"
+      ],
+      "conflicting_concepts": [],
+      "missing_information": [
+        "皮肤镜检查结果",
+        "组织病理检查结果"
+      ],
+      "evidence_expectation": "sufficient",
+      "data_origin": "synthetic_kg_grounded",
+      "source_basis": [
+        "TRI_070",
+        "TRI_071",
+        "TRI_073",
+        "TRI_075",
+        "TRI_076"
+      ],
+      "generation_rule": "task4_case_generation_v2"
+    },
+    {
+      "case_id": "CASE_DF_PS_001",
+      "true_label": "皮肤纤维瘤",
+      "candidate_disease": "皮肤纤维瘤",
+      "observation_text": "患者发现局部皮肤存在皮损，主要表现为坚实丘疹或结节。",
+      "lesion_features": [
+        "坚实丘疹或结节"
+      ],
+      "anatomical_site": "",
+      "symptoms": [],
+      "duration_change": "",
+      "difficulty_level": "medium",
+      "case_type": "partial_support",
+      "expected_concepts": [
+        "坚实丘疹或结节"
+      ],
+      "supporting_concepts": [
+        "坚实丘疹或结节"
+      ],
+      "conflicting_concepts": [],
+      "missing_information": [
+        "更多皮损形态特征",
+        "皮肤镜检查结果",
+        "组织病理检查结果"
+      ],
+      "evidence_expectation": "partial",
+      "data_origin": "synthetic_kg_grounded",
+      "source_basis": [
+        "TRI_070"
+      ],
+      "generation_rule": "task4_case_generation_v2"
+    },
+    {
+      "case_id": "CASE_DF_PS_002",
+      "true_label": "皮肤纤维瘤",
+      "candidate_disease": "皮肤纤维瘤",
+      "observation_text": "观察到患者全身皮肤存在皮损，主要表现为捏压凹陷征。",
+      "lesion_features": [
+        "捏压凹陷征"
+      ],
+      "anatomical_site": "全身皮肤",
+      "symptoms": [],
+      "duration_change": "",
+      "difficulty_level": "medium",
+      "case_type": "partial_support",
+      "expected_concepts": [
+        "捏压凹陷征",
+        "全身皮肤"
+      ],
+      "supporting_concepts": [
+        "捏压凹陷征",
+        "全身皮肤"
+      ],
+      "conflicting_concepts": [],
+      "missing_information": [
+        "更多皮损形态特征",
+        "皮肤镜检查结果",
+        "组织病理检查结果"
+      ],
+      "evidence_expectation": "partial",
+      "data_origin": "synthetic_kg_grounded",
+      "source_basis": [
+        "TRI_071",
+        "TRI_075"
+      ],
+      "generation_rule": "task4_case_generation_v2"
+    },
+    {
+      "case_id": "CASE_DF_PS_003",
+      "true_label": "皮肤纤维瘤",
+      "candidate_disease": "皮肤纤维瘤",
+      "observation_text": "患者近期注意到局部皮肤存在皮损，主要表现为中央白色瘢痕样区域。",
+      "lesion_features": [
+        "中央白色瘢痕样区域"
+      ],
+      "anatomical_site": "",
+      "symptoms": [],
+      "duration_change": "",
+      "difficulty_level": "medium",
+      "case_type": "partial_support",
+      "expected_concepts": [
+        "中央白色瘢痕样区域"
+      ],
+      "supporting_concepts": [
+        "中央白色瘢痕样区域"
+      ],
+      "conflicting_concepts": [],
+      "missing_information": [
+        "更多皮损形态特征",
+        "皮肤镜检查结果",
+        "组织病理检查结果"
+      ],
+      "evidence_expectation": "partial",
+      "data_origin": "synthetic_kg_grounded",
+      "source_basis": [
+        "TRI_072"
+      ],
+      "generation_rule": "task4_case_generation_v2"
+    },
+    {
+      "case_id": "CASE_DF_PS_004",
+      "true_label": "皮肤纤维瘤",
+      "candidate_disease": "皮肤纤维瘤",
+      "observation_text": "患者自述发现全身皮肤存在皮损，主要表现为周围淡色素网。",
+      "lesion_features": [
+        "周围淡色素网"
+      ],
+      "anatomical_site": "全身皮肤",
+      "symptoms": [],
+      "duration_change": "",
+      "difficulty_level": "medium",
+      "case_type": "partial_support",
+      "expected_concepts": [
+        "周围淡色素网",
+        "全身皮肤"
+      ],
+      "supporting_concepts": [
+        "周围淡色素网",
+        "全身皮肤"
+      ],
+      "conflicting_concepts": [],
+      "missing_information": [
+        "更多皮损形态特征",
+        "皮肤镜检查结果",
+        "组织病理检查结果"
+      ],
+      "evidence_expectation": "partial",
+      "data_origin": "synthetic_kg_grounded",
+      "source_basis": [
+        "TRI_073",
+        "TRI_075"
+      ],
+      "generation_rule": "task4_case_generation_v2"
+    },
+    {
+      "case_id": "CASE_DF_EI_001",
+      "true_label": "皮肤纤维瘤",
+      "candidate_disease": "皮肤纤维瘤",
+      "observation_text": "患者发现下肢存在皮损，主要表现为局部皮肤颜色改变。",
+      "lesion_features": [
+        "局部皮肤颜色改变"
+      ],
+      "anatomical_site": "下肢",
+      "symptoms": [],
+      "duration_change": "",
+      "difficulty_level": "medium",
+      "case_type": "evidence_insufficient",
+      "expected_concepts": [
+        "下肢"
+      ],
+      "supporting_concepts": [
+        "下肢"
+      ],
+      "conflicting_concepts": [],
+      "missing_information": [
+        "更多皮损形态特征",
+        "明确病程信息",
+        "皮肤镜检查结果",
+        "组织病理检查结果"
+      ],
+      "evidence_expectation": "insufficient",
+      "data_origin": "synthetic_kg_grounded",
+      "source_basis": [
+        "TRI_074"
+      ],
+      "generation_rule": "task4_case_generation_v2"
+    },
+    {
+      "case_id": "CASE_DF_EI_002",
+      "true_label": "皮肤纤维瘤",
+      "candidate_disease": "皮肤纤维瘤",
+      "observation_text": "观察到患者全身皮肤存在皮损，主要表现为局部小丘疹。",
+      "lesion_features": [
+        "局部小丘疹"
+      ],
+      "anatomical_site": "全身皮肤",
+      "symptoms": [],
+      "duration_change": "",
+      "difficulty_level": "medium",
+      "case_type": "evidence_insufficient",
+      "expected_concepts": [
+        "全身皮肤"
+      ],
+      "supporting_concepts": [
+        "全身皮肤"
+      ],
+      "conflicting_concepts": [],
+      "missing_information": [
+        "更多皮损形态特征",
+        "明确病程信息",
+        "皮肤镜检查结果",
+        "组织病理检查结果"
+      ],
+      "evidence_expectation": "insufficient",
+      "data_origin": "synthetic_kg_grounded",
+      "source_basis": [
+        "TRI_075"
+      ],
+      "generation_rule": "task4_case_generation_v2"
+    },
+    {
+      "case_id": "CASE_DF_EI_003",
+      "true_label": "皮肤纤维瘤",
+      "candidate_disease": "皮肤纤维瘤",
+      "observation_text": "患者近期注意到局部皮肤存在皮损，主要表现为局部斑片样皮损。同时可见或自述无明显症状。",
+      "lesion_features": [
+        "局部斑片样皮损"
+      ],
+      "anatomical_site": "",
+      "symptoms": [
+        "无明显症状"
+      ],
+      "duration_change": "",
+      "difficulty_level": "medium",
+      "case_type": "evidence_insufficient",
+      "expected_concepts": [
+        "无明显症状"
+      ],
+      "supporting_concepts": [
+        "无明显症状"
+      ],
+      "conflicting_concepts": [],
+      "missing_information": [
+        "更多皮损形态特征",
+        "明确病程信息",
+        "皮肤镜检查结果",
+        "组织病理检查结果"
+      ],
+      "evidence_expectation": "insufficient",
+      "data_origin": "synthetic_kg_grounded",
+      "source_basis": [
+        "TRI_076"
+      ],
+      "generation_rule": "task4_case_generation_v2"
+    },
+    {
+      "case_id": "CASE_DF_EI_004",
+      "true_label": "皮肤纤维瘤",
+      "candidate_disease": "皮肤纤维瘤",
+      "observation_text": "患者自述发现局部皮肤存在皮损，主要表现为局部形态不明确的皮损。同时可见或自述触痛。",
+      "lesion_features": [
+        "局部形态不明确的皮损"
+      ],
+      "anatomical_site": "",
+      "symptoms": [
+        "触痛"
+      ],
+      "duration_change": "",
+      "difficulty_level": "medium",
+      "case_type": "evidence_insufficient",
+      "expected_concepts": [
+        "触痛"
+      ],
+      "supporting_concepts": [
+        "触痛"
+      ],
+      "conflicting_concepts": [],
+      "missing_information": [
+        "更多皮损形态特征",
+        "明确病程信息",
+        "皮肤镜检查结果",
+        "组织病理检查结果"
+      ],
+      "evidence_expectation": "insufficient",
+      "data_origin": "synthetic_kg_grounded",
+      "source_basis": [
+        "TRI_077"
+      ],
+      "generation_rule": "task4_case_generation_v2"
+    },
+    {
+      "case_id": "CASE_DF_DC_001",
+      "true_label": "黑色素细胞痣",
+      "candidate_disease": "皮肤纤维瘤",
+      "observation_text": "患者发现全身皮肤存在皮损，主要表现为坚实丘疹或结节、色素均匀、边界清楚。",
+      "lesion_features": [
+        "坚实丘疹或结节",
+        "色素均匀",
+        "边界清楚"
+      ],
+      "anatomical_site": "全身皮肤",
+      "symptoms": [],
+      "duration_change": "",
+      "difficulty_level": "hard",
+      "case_type": "differential_confusion",
+      "expected_concepts": [
+        "坚实丘疹或结节",
+        "色素均匀",
+        "边界清楚",
+        "全身皮肤"
+      ],
+      "supporting_concepts": [
+        "坚实丘疹或结节"
+      ],
+      "conflicting_concepts": [
+        "色素均匀",
+        "边界清楚",
+        "全身皮肤"
+      ],
+      "missing_information": [
+        "皮肤镜检查结果",
+        "组织病理检查结果",
+        "病程变化信息"
+      ],
+      "evidence_expectation": "conflicting",
+      "data_origin": "synthetic_kg_grounded",
+      "source_basis": [
+        "TRI_070",
+        "TRI_015",
+        "TRI_016",
+        "TRI_019"
+      ],
+      "generation_rule": "task4_case_generation_v2"
+    },
+    {
+      "case_id": "CASE_DF_DC_002",
+      "true_label": "良性角化样病变",
+      "candidate_disease": "皮肤纤维瘤",
+      "observation_text": "观察到患者躯干存在皮损，主要表现为捏压凹陷征、贴附样丘疹或斑块、边界清楚的扁平色素斑。",
+      "lesion_features": [
+        "捏压凹陷征",
+        "贴附样丘疹或斑块",
+        "边界清楚的扁平色素斑"
+      ],
+      "anatomical_site": "躯干",
+      "symptoms": [],
+      "duration_change": "",
+      "difficulty_level": "hard",
+      "case_type": "differential_confusion",
+      "expected_concepts": [
+        "捏压凹陷征",
+        "贴附样丘疹或斑块",
+        "边界清楚的扁平色素斑",
+        "躯干"
+      ],
+      "supporting_concepts": [
+        "捏压凹陷征"
+      ],
+      "conflicting_concepts": [
+        "贴附样丘疹或斑块",
+        "边界清楚的扁平色素斑",
+        "躯干"
+      ],
+      "missing_information": [
+        "皮肤镜检查结果",
+        "组织病理检查结果",
+        "病程变化信息"
+      ],
+      "evidence_expectation": "conflicting",
+      "data_origin": "synthetic_kg_grounded",
+      "source_basis": [
+        "TRI_071",
+        "TRI_054",
+        "TRI_055",
+        "TRI_060"
+      ],
+      "generation_rule": "task4_case_generation_v2"
+    },
+    {
+      "case_id": "CASE_DF_DC_003",
+      "true_label": "黑色素细胞痣",
+      "candidate_disease": "皮肤纤维瘤",
+      "observation_text": "患者近期注意到全身皮肤存在皮损，主要表现为中央白色瘢痕样区域、棕色或黑色斑疹/丘疹、对称性较好。",
+      "lesion_features": [
+        "中央白色瘢痕样区域",
+        "棕色或黑色斑疹/丘疹",
+        "对称性较好"
+      ],
+      "anatomical_site": "全身皮肤",
+      "symptoms": [],
+      "duration_change": "",
+      "difficulty_level": "hard",
+      "case_type": "differential_confusion",
+      "expected_concepts": [
+        "中央白色瘢痕样区域",
+        "棕色或黑色斑疹/丘疹",
+        "对称性较好",
+        "全身皮肤"
+      ],
+      "supporting_concepts": [
+        "中央白色瘢痕样区域"
+      ],
+      "conflicting_concepts": [
+        "棕色或黑色斑疹/丘疹",
+        "对称性较好",
+        "全身皮肤"
+      ],
+      "missing_information": [
+        "皮肤镜检查结果",
+        "组织病理检查结果",
+        "病程变化信息"
+      ],
+      "evidence_expectation": "conflicting",
+      "data_origin": "synthetic_kg_grounded",
+      "source_basis": [
+        "TRI_072",
+        "TRI_017",
+        "TRI_018",
+        "TRI_019"
+      ],
+      "generation_rule": "task4_case_generation_v2"
+    },
+    {
+      "case_id": "CASE_DF_DC_004",
+      "true_label": "良性角化样病变",
+      "candidate_disease": "皮肤纤维瘤",
+      "observation_text": "患者自述发现躯干存在皮损，主要表现为周围淡色素网、蜡样或疣状表面、粟丘疹样囊肿。",
+      "lesion_features": [
+        "周围淡色素网",
+        "蜡样或疣状表面",
+        "粟丘疹样囊肿"
+      ],
+      "anatomical_site": "躯干",
+      "symptoms": [],
+      "duration_change": "",
+      "difficulty_level": "hard",
+      "case_type": "differential_confusion",
+      "expected_concepts": [
+        "周围淡色素网",
+        "蜡样或疣状表面",
+        "粟丘疹样囊肿",
+        "躯干"
+      ],
+      "supporting_concepts": [
+        "周围淡色素网"
+      ],
+      "conflicting_concepts": [
+        "蜡样或疣状表面",
+        "粟丘疹样囊肿",
+        "躯干"
+      ],
+      "missing_information": [
+        "皮肤镜检查结果",
+        "组织病理检查结果",
+        "病程变化信息"
+      ],
+      "evidence_expectation": "conflicting",
+      "data_origin": "synthetic_kg_grounded",
+      "source_basis": [
+        "TRI_073",
+        "TRI_053",
+        "TRI_056",
+        "TRI_060"
+      ],
+      "generation_rule": "task4_case_generation_v2"
+    },
+    {
+      "case_id": "CASE_DF_CD_001",
+      "true_label": "皮肤纤维瘤",
+      "candidate_disease": "皮肤纤维瘤",
+      "observation_text": "患者发现下肢存在皮损，主要表现为坚实丘疹或结节、捏压凹陷征、贴附样丘疹或斑块、边界清楚的扁平色素斑。",
+      "lesion_features": [
+        "坚实丘疹或结节",
+        "捏压凹陷征",
+        "贴附样丘疹或斑块",
+        "边界清楚的扁平色素斑"
+      ],
+      "anatomical_site": "下肢",
+      "symptoms": [],
+      "duration_change": "",
+      "difficulty_level": "hard",
+      "case_type": "conflict_difficult",
+      "expected_concepts": [
+        "坚实丘疹或结节",
+        "捏压凹陷征",
+        "贴附样丘疹或斑块",
+        "边界清楚的扁平色素斑",
+        "下肢"
+      ],
+      "supporting_concepts": [
+        "坚实丘疹或结节",
+        "捏压凹陷征",
+        "下肢"
+      ],
+      "conflicting_concepts": [
+        "贴附样丘疹或斑块",
+        "边界清楚的扁平色素斑"
+      ],
+      "missing_information": [
+        "皮肤镜检查结果",
+        "组织病理检查结果",
+        "能够解释冲突表现的进一步检查信息"
+      ],
+      "evidence_expectation": "conflicting",
+      "data_origin": "synthetic_kg_grounded",
+      "source_basis": [
+        "TRI_070",
+        "TRI_071",
+        "TRI_054",
+        "TRI_055",
+        "TRI_074"
+      ],
+      "generation_rule": "task4_case_generation_v2"
+    },
+    {
+      "case_id": "CASE_DF_CD_002",
+      "true_label": "皮肤纤维瘤",
+      "candidate_disease": "皮肤纤维瘤",
+      "observation_text": "观察到患者全身皮肤存在皮损，主要表现为捏压凹陷征、中央白色瘢痕样区域、棕色或黑色斑疹/丘疹、对称性较好。",
+      "lesion_features": [
+        "捏压凹陷征",
+        "中央白色瘢痕样区域",
+        "棕色或黑色斑疹/丘疹",
+        "对称性较好"
+      ],
+      "anatomical_site": "全身皮肤",
+      "symptoms": [],
+      "duration_change": "",
+      "difficulty_level": "hard",
+      "case_type": "conflict_difficult",
+      "expected_concepts": [
+        "捏压凹陷征",
+        "中央白色瘢痕样区域",
+        "棕色或黑色斑疹/丘疹",
+        "对称性较好",
+        "全身皮肤"
+      ],
+      "supporting_concepts": [
+        "捏压凹陷征",
+        "中央白色瘢痕样区域",
+        "全身皮肤"
+      ],
+      "conflicting_concepts": [
+        "棕色或黑色斑疹/丘疹",
+        "对称性较好"
+      ],
+      "missing_information": [
+        "皮肤镜检查结果",
+        "组织病理检查结果",
+        "能够解释冲突表现的进一步检查信息"
+      ],
+      "evidence_expectation": "conflicting",
+      "data_origin": "synthetic_kg_grounded",
+      "source_basis": [
+        "TRI_071",
+        "TRI_072",
+        "TRI_017",
+        "TRI_018",
+        "TRI_075"
+      ],
+      "generation_rule": "task4_case_generation_v2"
+    },
+    {
+      "case_id": "CASE_DF_CD_003",
+      "true_label": "皮肤纤维瘤",
+      "candidate_disease": "皮肤纤维瘤",
+      "observation_text": "患者近期注意到下肢存在皮损，主要表现为中央白色瘢痕样区域、周围淡色素网、蜡样或疣状表面、粟丘疹样囊肿。",
+      "lesion_features": [
+        "中央白色瘢痕样区域",
+        "周围淡色素网",
+        "蜡样或疣状表面",
+        "粟丘疹样囊肿"
+      ],
+      "anatomical_site": "下肢",
+      "symptoms": [],
+      "duration_change": "",
+      "difficulty_level": "hard",
+      "case_type": "conflict_difficult",
+      "expected_concepts": [
+        "中央白色瘢痕样区域",
+        "周围淡色素网",
+        "蜡样或疣状表面",
+        "粟丘疹样囊肿",
+        "下肢"
+      ],
+      "supporting_concepts": [
+        "中央白色瘢痕样区域",
+        "周围淡色素网",
+        "下肢"
+      ],
+      "conflicting_concepts": [
+        "蜡样或疣状表面",
+        "粟丘疹样囊肿"
+      ],
+      "missing_information": [
+        "皮肤镜检查结果",
+        "组织病理检查结果",
+        "能够解释冲突表现的进一步检查信息"
+      ],
+      "evidence_expectation": "conflicting",
+      "data_origin": "synthetic_kg_grounded",
+      "source_basis": [
+        "TRI_072",
+        "TRI_073",
+        "TRI_053",
+        "TRI_056",
+        "TRI_074"
+      ],
+      "generation_rule": "task4_case_generation_v2"
+    },
+    {
+      "case_id": "CASE_DF_CD_004",
+      "true_label": "皮肤纤维瘤",
+      "candidate_disease": "皮肤纤维瘤",
+      "observation_text": "患者自述发现全身皮肤存在皮损，主要表现为坚实丘疹或结节、周围淡色素网、色素均匀、边界清楚。",
+      "lesion_features": [
+        "坚实丘疹或结节",
+        "周围淡色素网",
+        "色素均匀",
+        "边界清楚"
+      ],
+      "anatomical_site": "全身皮肤",
+      "symptoms": [],
+      "duration_change": "",
+      "difficulty_level": "hard",
+      "case_type": "conflict_difficult",
+      "expected_concepts": [
+        "坚实丘疹或结节",
+        "周围淡色素网",
+        "色素均匀",
+        "边界清楚",
+        "全身皮肤"
+      ],
+      "supporting_concepts": [
+        "坚实丘疹或结节",
+        "周围淡色素网",
+        "全身皮肤"
+      ],
+      "conflicting_concepts": [
+        "色素均匀",
+        "边界清楚"
+      ],
+      "missing_information": [
+        "皮肤镜检查结果",
+        "组织病理检查结果",
+        "能够解释冲突表现的进一步检查信息"
+      ],
+      "evidence_expectation": "conflicting",
+      "data_origin": "synthetic_kg_grounded",
+      "source_basis": [
+        "TRI_070",
+        "TRI_073",
+        "TRI_015",
+        "TRI_016",
+        "TRI_075"
+      ],
+      "generation_rule": "task4_case_generation_v2"
+    },
+    {
+      "case_id": "CASE_VASC_TP_001",
+      "true_label": "血管性皮损",
+      "candidate_disease": "血管性皮损",
+      "observation_text": "患者发现全身皮肤存在皮损，主要表现为红色、蓝色或紫色丘疹、红色或紫色小腔隙、边界清楚的红色团块。同时可见或自述无明显症状。",
+      "lesion_features": [
+        "红色、蓝色或紫色丘疹",
+        "红色或紫色小腔隙",
+        "边界清楚的红色团块"
+      ],
+      "anatomical_site": "全身皮肤",
+      "symptoms": [
+        "无明显症状"
+      ],
+      "duration_change": "",
+      "difficulty_level": "easy",
+      "case_type": "typical_positive",
+      "expected_concepts": [
+        "红色、蓝色或紫色丘疹",
+        "红色或紫色小腔隙",
+        "边界清楚的红色团块",
+        "全身皮肤",
+        "无明显症状"
+      ],
+      "supporting_concepts": [
+        "红色、蓝色或紫色丘疹",
+        "红色或紫色小腔隙",
+        "边界清楚的红色团块",
+        "全身皮肤",
+        "无明显症状"
+      ],
+      "conflicting_concepts": [],
+      "missing_information": [
+        "皮肤镜检查结果",
+        "组织病理检查结果"
+      ],
+      "evidence_expectation": "sufficient",
+      "data_origin": "synthetic_kg_grounded",
+      "source_basis": [
+        "TRI_085",
+        "TRI_086",
+        "TRI_087",
+        "TRI_091",
+        "TRI_095"
+      ],
+      "generation_rule": "task4_case_generation_v2"
+    },
+    {
+      "case_id": "CASE_VASC_TP_002",
+      "true_label": "血管性皮损",
+      "candidate_disease": "血管性皮损",
+      "observation_text": "观察到患者躯干存在皮损，主要表现为红色或紫色小腔隙、边界清楚的红色团块、快速生长的红色肉芽样结节。同时可见或自述出血。",
+      "lesion_features": [
+        "红色或紫色小腔隙",
+        "边界清楚的红色团块",
+        "快速生长的红色肉芽样结节"
+      ],
+      "anatomical_site": "躯干",
+      "symptoms": [
+        "出血"
+      ],
+      "duration_change": "",
+      "difficulty_level": "easy",
+      "case_type": "typical_positive",
+      "expected_concepts": [
+        "红色或紫色小腔隙",
+        "边界清楚的红色团块",
+        "快速生长的红色肉芽样结节",
+        "躯干",
+        "出血"
+      ],
+      "supporting_concepts": [
+        "红色或紫色小腔隙",
+        "边界清楚的红色团块",
+        "快速生长的红色肉芽样结节",
+        "躯干",
+        "出血"
+      ],
+      "conflicting_concepts": [],
+      "missing_information": [
+        "皮肤镜检查结果",
+        "组织病理检查结果"
+      ],
+      "evidence_expectation": "sufficient",
+      "data_origin": "synthetic_kg_grounded",
+      "source_basis": [
+        "TRI_086",
+        "TRI_087",
+        "TRI_088",
+        "TRI_092",
+        "TRI_096"
+      ],
+      "generation_rule": "task4_case_generation_v2"
+    },
+    {
+      "case_id": "CASE_VASC_TP_003",
+      "true_label": "血管性皮损",
+      "candidate_disease": "血管性皮损",
+      "observation_text": "患者近期注意到手指存在皮损，主要表现为红色、蓝色或紫色丘疹、边界清楚的红色团块、快速生长的红色肉芽样结节。同时可见或自述无明显症状。",
+      "lesion_features": [
+        "红色、蓝色或紫色丘疹",
+        "边界清楚的红色团块",
+        "快速生长的红色肉芽样结节"
+      ],
+      "anatomical_site": "手指",
+      "symptoms": [
+        "无明显症状"
+      ],
+      "duration_change": "",
+      "difficulty_level": "medium",
+      "case_type": "typical_positive",
+      "expected_concepts": [
+        "红色、蓝色或紫色丘疹",
+        "边界清楚的红色团块",
+        "快速生长的红色肉芽样结节",
+        "手指",
+        "无明显症状"
+      ],
+      "supporting_concepts": [
+        "红色、蓝色或紫色丘疹",
+        "边界清楚的红色团块",
+        "快速生长的红色肉芽样结节",
+        "手指",
+        "无明显症状"
+      ],
+      "conflicting_concepts": [],
+      "missing_information": [
+        "皮肤镜检查结果",
+        "组织病理检查结果"
+      ],
+      "evidence_expectation": "sufficient",
+      "data_origin": "synthetic_kg_grounded",
+      "source_basis": [
+        "TRI_085",
+        "TRI_087",
+        "TRI_088",
+        "TRI_093",
+        "TRI_095"
+      ],
+      "generation_rule": "task4_case_generation_v2"
+    },
+    {
+      "case_id": "CASE_VASC_TP_004",
+      "true_label": "血管性皮损",
+      "candidate_disease": "血管性皮损",
+      "observation_text": "患者自述发现面部存在皮损，主要表现为红色、蓝色或紫色丘疹、红色或紫色小腔隙、快速生长的红色肉芽样结节。同时可见或自述出血。",
+      "lesion_features": [
+        "红色、蓝色或紫色丘疹",
+        "红色或紫色小腔隙",
+        "快速生长的红色肉芽样结节"
+      ],
+      "anatomical_site": "面部",
+      "symptoms": [
+        "出血"
+      ],
+      "duration_change": "",
+      "difficulty_level": "medium",
+      "case_type": "typical_positive",
+      "expected_concepts": [
+        "红色、蓝色或紫色丘疹",
+        "红色或紫色小腔隙",
+        "快速生长的红色肉芽样结节",
+        "面部",
+        "出血"
+      ],
+      "supporting_concepts": [
+        "红色、蓝色或紫色丘疹",
+        "红色或紫色小腔隙",
+        "快速生长的红色肉芽样结节",
+        "面部",
+        "出血"
+      ],
+      "conflicting_concepts": [],
+      "missing_information": [
+        "皮肤镜检查结果",
+        "组织病理检查结果"
+      ],
+      "evidence_expectation": "sufficient",
+      "data_origin": "synthetic_kg_grounded",
+      "source_basis": [
+        "TRI_085",
+        "TRI_086",
+        "TRI_088",
+        "TRI_094",
+        "TRI_096"
+      ],
+      "generation_rule": "task4_case_generation_v2"
+    },
+    {
+      "case_id": "CASE_VASC_PS_001",
+      "true_label": "血管性皮损",
+      "candidate_disease": "血管性皮损",
+      "observation_text": "患者发现局部皮肤存在皮损，主要表现为红色、蓝色或紫色丘疹。",
+      "lesion_features": [
+        "红色、蓝色或紫色丘疹"
+      ],
+      "anatomical_site": "",
+      "symptoms": [],
+      "duration_change": "",
+      "difficulty_level": "medium",
+      "case_type": "partial_support",
+      "expected_concepts": [
+        "红色、蓝色或紫色丘疹"
+      ],
+      "supporting_concepts": [
+        "红色、蓝色或紫色丘疹"
+      ],
+      "conflicting_concepts": [],
+      "missing_information": [
+        "更多皮损形态特征",
+        "皮肤镜检查结果",
+        "组织病理检查结果"
+      ],
+      "evidence_expectation": "partial",
+      "data_origin": "synthetic_kg_grounded",
+      "source_basis": [
+        "TRI_085"
+      ],
+      "generation_rule": "task4_case_generation_v2"
+    },
+    {
+      "case_id": "CASE_VASC_PS_002",
+      "true_label": "血管性皮损",
+      "candidate_disease": "血管性皮损",
+      "observation_text": "观察到患者躯干存在皮损，主要表现为红色或紫色小腔隙。",
+      "lesion_features": [
+        "红色或紫色小腔隙"
+      ],
+      "anatomical_site": "躯干",
+      "symptoms": [],
+      "duration_change": "",
+      "difficulty_level": "medium",
+      "case_type": "partial_support",
+      "expected_concepts": [
+        "红色或紫色小腔隙",
+        "躯干"
+      ],
+      "supporting_concepts": [
+        "红色或紫色小腔隙",
+        "躯干"
+      ],
+      "conflicting_concepts": [],
+      "missing_information": [
+        "更多皮损形态特征",
+        "皮肤镜检查结果",
+        "组织病理检查结果"
+      ],
+      "evidence_expectation": "partial",
+      "data_origin": "synthetic_kg_grounded",
+      "source_basis": [
+        "TRI_086",
+        "TRI_092"
+      ],
+      "generation_rule": "task4_case_generation_v2"
+    },
+    {
+      "case_id": "CASE_VASC_PS_003",
+      "true_label": "血管性皮损",
+      "candidate_disease": "血管性皮损",
+      "observation_text": "患者近期注意到局部皮肤存在皮损，主要表现为边界清楚的红色团块。",
+      "lesion_features": [
+        "边界清楚的红色团块"
+      ],
+      "anatomical_site": "",
+      "symptoms": [],
+      "duration_change": "",
+      "difficulty_level": "medium",
+      "case_type": "partial_support",
+      "expected_concepts": [
+        "边界清楚的红色团块"
+      ],
+      "supporting_concepts": [
+        "边界清楚的红色团块"
+      ],
+      "conflicting_concepts": [],
+      "missing_information": [
+        "更多皮损形态特征",
+        "皮肤镜检查结果",
+        "组织病理检查结果"
+      ],
+      "evidence_expectation": "partial",
+      "data_origin": "synthetic_kg_grounded",
+      "source_basis": [
+        "TRI_087"
+      ],
+      "generation_rule": "task4_case_generation_v2"
+    },
+    {
+      "case_id": "CASE_VASC_PS_004",
+      "true_label": "血管性皮损",
+      "candidate_disease": "血管性皮损",
+      "observation_text": "患者自述发现面部存在皮损，主要表现为快速生长的红色肉芽样结节。",
+      "lesion_features": [
+        "快速生长的红色肉芽样结节"
+      ],
+      "anatomical_site": "面部",
+      "symptoms": [],
+      "duration_change": "",
+      "difficulty_level": "medium",
+      "case_type": "partial_support",
+      "expected_concepts": [
+        "快速生长的红色肉芽样结节",
+        "面部"
+      ],
+      "supporting_concepts": [
+        "快速生长的红色肉芽样结节",
+        "面部"
+      ],
+      "conflicting_concepts": [],
+      "missing_information": [
+        "更多皮损形态特征",
+        "皮肤镜检查结果",
+        "组织病理检查结果"
+      ],
+      "evidence_expectation": "partial",
+      "data_origin": "synthetic_kg_grounded",
+      "source_basis": [
+        "TRI_088",
+        "TRI_094"
+      ],
+      "generation_rule": "task4_case_generation_v2"
+    },
+    {
+      "case_id": "CASE_VASC_EI_001",
+      "true_label": "血管性皮损",
+      "candidate_disease": "血管性皮损",
+      "observation_text": "患者发现全身皮肤存在皮损，主要表现为局部皮肤颜色改变。",
+      "lesion_features": [
+        "局部皮肤颜色改变"
+      ],
+      "anatomical_site": "全身皮肤",
+      "symptoms": [],
+      "duration_change": "",
+      "difficulty_level": "medium",
+      "case_type": "evidence_insufficient",
+      "expected_concepts": [
+        "全身皮肤"
+      ],
+      "supporting_concepts": [
+        "全身皮肤"
+      ],
+      "conflicting_concepts": [],
+      "missing_information": [
+        "更多皮损形态特征",
+        "明确病程信息",
+        "皮肤镜检查结果",
+        "组织病理检查结果"
+      ],
+      "evidence_expectation": "insufficient",
+      "data_origin": "synthetic_kg_grounded",
+      "source_basis": [
+        "TRI_091"
+      ],
+      "generation_rule": "task4_case_generation_v2"
+    },
+    {
+      "case_id": "CASE_VASC_EI_002",
+      "true_label": "血管性皮损",
+      "candidate_disease": "血管性皮损",
+      "observation_text": "观察到患者躯干存在皮损，主要表现为局部小丘疹。",
+      "lesion_features": [
+        "局部小丘疹"
+      ],
+      "anatomical_site": "躯干",
+      "symptoms": [],
+      "duration_change": "",
+      "difficulty_level": "medium",
+      "case_type": "evidence_insufficient",
+      "expected_concepts": [
+        "躯干"
+      ],
+      "supporting_concepts": [
+        "躯干"
+      ],
+      "conflicting_concepts": [],
+      "missing_information": [
+        "更多皮损形态特征",
+        "明确病程信息",
+        "皮肤镜检查结果",
+        "组织病理检查结果"
+      ],
+      "evidence_expectation": "insufficient",
+      "data_origin": "synthetic_kg_grounded",
+      "source_basis": [
+        "TRI_092"
+      ],
+      "generation_rule": "task4_case_generation_v2"
+    },
+    {
+      "case_id": "CASE_VASC_EI_003",
+      "true_label": "血管性皮损",
+      "candidate_disease": "血管性皮损",
+      "observation_text": "患者近期注意到手指存在皮损，主要表现为局部斑片样皮损。",
+      "lesion_features": [
+        "局部斑片样皮损"
+      ],
+      "anatomical_site": "手指",
+      "symptoms": [],
+      "duration_change": "",
+      "difficulty_level": "medium",
+      "case_type": "evidence_insufficient",
+      "expected_concepts": [
+        "手指"
+      ],
+      "supporting_concepts": [
+        "手指"
+      ],
+      "conflicting_concepts": [],
+      "missing_information": [
+        "更多皮损形态特征",
+        "明确病程信息",
+        "皮肤镜检查结果",
+        "组织病理检查结果"
+      ],
+      "evidence_expectation": "insufficient",
+      "data_origin": "synthetic_kg_grounded",
+      "source_basis": [
+        "TRI_093"
+      ],
+      "generation_rule": "task4_case_generation_v2"
+    },
+    {
+      "case_id": "CASE_VASC_EI_004",
+      "true_label": "血管性皮损",
+      "candidate_disease": "血管性皮损",
+      "observation_text": "患者自述发现面部存在皮损，主要表现为局部形态不明确的皮损。",
+      "lesion_features": [
+        "局部形态不明确的皮损"
+      ],
+      "anatomical_site": "面部",
+      "symptoms": [],
+      "duration_change": "",
+      "difficulty_level": "medium",
+      "case_type": "evidence_insufficient",
+      "expected_concepts": [
+        "面部"
+      ],
+      "supporting_concepts": [
+        "面部"
+      ],
+      "conflicting_concepts": [],
+      "missing_information": [
+        "更多皮损形态特征",
+        "明确病程信息",
+        "皮肤镜检查结果",
+        "组织病理检查结果"
+      ],
+      "evidence_expectation": "insufficient",
+      "data_origin": "synthetic_kg_grounded",
+      "source_basis": [
+        "TRI_094"
+      ],
+      "generation_rule": "task4_case_generation_v2"
+    },
+    {
+      "case_id": "CASE_VASC_DC_001",
+      "true_label": "皮肤纤维瘤",
+      "candidate_disease": "血管性皮损",
+      "observation_text": "患者发现下肢存在皮损，主要表现为红色、蓝色或紫色丘疹、坚实丘疹或结节、捏压凹陷征。",
+      "lesion_features": [
+        "红色、蓝色或紫色丘疹",
+        "坚实丘疹或结节",
+        "捏压凹陷征"
+      ],
+      "anatomical_site": "下肢",
+      "symptoms": [],
+      "duration_change": "",
+      "difficulty_level": "hard",
+      "case_type": "differential_confusion",
+      "expected_concepts": [
+        "红色、蓝色或紫色丘疹",
+        "坚实丘疹或结节",
+        "捏压凹陷征",
+        "下肢"
+      ],
+      "supporting_concepts": [
+        "红色、蓝色或紫色丘疹"
+      ],
+      "conflicting_concepts": [
+        "坚实丘疹或结节",
+        "捏压凹陷征",
+        "下肢"
+      ],
+      "missing_information": [
+        "皮肤镜检查结果",
+        "组织病理检查结果",
+        "病程变化信息"
+      ],
+      "evidence_expectation": "conflicting",
+      "data_origin": "synthetic_kg_grounded",
+      "source_basis": [
+        "TRI_085",
+        "TRI_070",
+        "TRI_071",
+        "TRI_074"
+      ],
+      "generation_rule": "task4_case_generation_v2"
+    },
+    {
+      "case_id": "CASE_VASC_DC_002",
+      "true_label": "基底细胞癌",
+      "candidate_disease": "血管性皮损",
+      "observation_text": "观察到患者面部存在皮损，主要表现为红色或紫色小腔隙、表面毛细血管扩张、边缘隆起或卷曲。",
+      "lesion_features": [
+        "红色或紫色小腔隙",
+        "表面毛细血管扩张",
+        "边缘隆起或卷曲"
+      ],
+      "anatomical_site": "面部",
+      "symptoms": [],
+      "duration_change": "",
+      "difficulty_level": "hard",
+      "case_type": "differential_confusion",
+      "expected_concepts": [
+        "红色或紫色小腔隙",
+        "表面毛细血管扩张",
+        "边缘隆起或卷曲",
+        "面部"
+      ],
+      "supporting_concepts": [
+        "红色或紫色小腔隙"
+      ],
+      "conflicting_concepts": [
+        "表面毛细血管扩张",
+        "边缘隆起或卷曲",
+        "面部"
+      ],
+      "missing_information": [
+        "皮肤镜检查结果",
+        "组织病理检查结果",
+        "病程变化信息"
+      ],
+      "evidence_expectation": "conflicting",
+      "data_origin": "synthetic_kg_grounded",
+      "source_basis": [
+        "TRI_086",
+        "TRI_026",
+        "TRI_027",
+        "TRI_030"
+      ],
+      "generation_rule": "task4_case_generation_v2"
+    },
+    {
+      "case_id": "CASE_VASC_DC_003",
+      "true_label": "皮肤纤维瘤",
+      "candidate_disease": "血管性皮损",
+      "observation_text": "患者近期注意到下肢存在皮损，主要表现为边界清楚的红色团块、中央白色瘢痕样区域、周围淡色素网。",
+      "lesion_features": [
+        "边界清楚的红色团块",
+        "中央白色瘢痕样区域",
+        "周围淡色素网"
+      ],
+      "anatomical_site": "下肢",
+      "symptoms": [],
+      "duration_change": "",
+      "difficulty_level": "hard",
+      "case_type": "differential_confusion",
+      "expected_concepts": [
+        "边界清楚的红色团块",
+        "中央白色瘢痕样区域",
+        "周围淡色素网",
+        "下肢"
+      ],
+      "supporting_concepts": [
+        "边界清楚的红色团块"
+      ],
+      "conflicting_concepts": [
+        "中央白色瘢痕样区域",
+        "周围淡色素网",
+        "下肢"
+      ],
+      "missing_information": [
+        "皮肤镜检查结果",
+        "组织病理检查结果",
+        "病程变化信息"
+      ],
+      "evidence_expectation": "conflicting",
+      "data_origin": "synthetic_kg_grounded",
+      "source_basis": [
+        "TRI_087",
+        "TRI_072",
+        "TRI_073",
+        "TRI_074"
+      ],
+      "generation_rule": "task4_case_generation_v2"
+    },
+    {
+      "case_id": "CASE_VASC_DC_004",
+      "true_label": "基底细胞癌",
+      "candidate_disease": "血管性皮损",
+      "observation_text": "患者自述发现面部存在皮损，主要表现为快速生长的红色肉芽样结节、珍珠样结节、中央凹陷或溃疡。",
+      "lesion_features": [
+        "快速生长的红色肉芽样结节",
+        "珍珠样结节",
+        "中央凹陷或溃疡"
+      ],
+      "anatomical_site": "面部",
+      "symptoms": [],
+      "duration_change": "",
+      "difficulty_level": "hard",
+      "case_type": "differential_confusion",
+      "expected_concepts": [
+        "快速生长的红色肉芽样结节",
+        "珍珠样结节",
+        "中央凹陷或溃疡",
+        "面部"
+      ],
+      "supporting_concepts": [
+        "快速生长的红色肉芽样结节"
+      ],
+      "conflicting_concepts": [
+        "珍珠样结节",
+        "中央凹陷或溃疡",
+        "面部"
+      ],
+      "missing_information": [
+        "皮肤镜检查结果",
+        "组织病理检查结果",
+        "病程变化信息"
+      ],
+      "evidence_expectation": "conflicting",
+      "data_origin": "synthetic_kg_grounded",
+      "source_basis": [
+        "TRI_088",
+        "TRI_025",
+        "TRI_028",
+        "TRI_030"
+      ],
+      "generation_rule": "task4_case_generation_v2"
+    },
+    {
+      "case_id": "CASE_VASC_CD_001",
+      "true_label": "血管性皮损",
+      "candidate_disease": "血管性皮损",
+      "observation_text": "患者发现全身皮肤存在皮损，主要表现为红色、蓝色或紫色丘疹、红色或紫色小腔隙、表面毛细血管扩张、边缘隆起或卷曲。",
+      "lesion_features": [
+        "红色、蓝色或紫色丘疹",
+        "红色或紫色小腔隙",
+        "表面毛细血管扩张",
+        "边缘隆起或卷曲"
+      ],
+      "anatomical_site": "全身皮肤",
+      "symptoms": [],
+      "duration_change": "",
+      "difficulty_level": "hard",
+      "case_type": "conflict_difficult",
+      "expected_concepts": [
+        "红色、蓝色或紫色丘疹",
+        "红色或紫色小腔隙",
+        "表面毛细血管扩张",
+        "边缘隆起或卷曲",
+        "全身皮肤"
+      ],
+      "supporting_concepts": [
+        "红色、蓝色或紫色丘疹",
+        "红色或紫色小腔隙",
+        "全身皮肤"
+      ],
+      "conflicting_concepts": [
+        "表面毛细血管扩张",
+        "边缘隆起或卷曲"
+      ],
+      "missing_information": [
+        "皮肤镜检查结果",
+        "组织病理检查结果",
+        "能够解释冲突表现的进一步检查信息"
+      ],
+      "evidence_expectation": "conflicting",
+      "data_origin": "synthetic_kg_grounded",
+      "source_basis": [
+        "TRI_085",
+        "TRI_086",
+        "TRI_026",
+        "TRI_027",
+        "TRI_091"
+      ],
+      "generation_rule": "task4_case_generation_v2"
+    },
+    {
+      "case_id": "CASE_VASC_CD_002",
+      "true_label": "血管性皮损",
+      "candidate_disease": "血管性皮损",
+      "observation_text": "观察到患者躯干存在皮损，主要表现为红色或紫色小腔隙、边界清楚的红色团块、中央白色瘢痕样区域、周围淡色素网。",
+      "lesion_features": [
+        "红色或紫色小腔隙",
+        "边界清楚的红色团块",
+        "中央白色瘢痕样区域",
+        "周围淡色素网"
+      ],
+      "anatomical_site": "躯干",
+      "symptoms": [],
+      "duration_change": "",
+      "difficulty_level": "hard",
+      "case_type": "conflict_difficult",
+      "expected_concepts": [
+        "红色或紫色小腔隙",
+        "边界清楚的红色团块",
+        "中央白色瘢痕样区域",
+        "周围淡色素网",
+        "躯干"
+      ],
+      "supporting_concepts": [
+        "红色或紫色小腔隙",
+        "边界清楚的红色团块",
+        "躯干"
+      ],
+      "conflicting_concepts": [
+        "中央白色瘢痕样区域",
+        "周围淡色素网"
+      ],
+      "missing_information": [
+        "皮肤镜检查结果",
+        "组织病理检查结果",
+        "能够解释冲突表现的进一步检查信息"
+      ],
+      "evidence_expectation": "conflicting",
+      "data_origin": "synthetic_kg_grounded",
+      "source_basis": [
+        "TRI_086",
+        "TRI_087",
+        "TRI_072",
+        "TRI_073",
+        "TRI_092"
+      ],
+      "generation_rule": "task4_case_generation_v2"
+    },
+    {
+      "case_id": "CASE_VASC_CD_003",
+      "true_label": "血管性皮损",
+      "candidate_disease": "血管性皮损",
+      "observation_text": "患者近期注意到手指存在皮损，主要表现为边界清楚的红色团块、快速生长的红色肉芽样结节、珍珠样结节、中央凹陷或溃疡。",
+      "lesion_features": [
+        "边界清楚的红色团块",
+        "快速生长的红色肉芽样结节",
+        "珍珠样结节",
+        "中央凹陷或溃疡"
+      ],
+      "anatomical_site": "手指",
+      "symptoms": [],
+      "duration_change": "",
+      "difficulty_level": "hard",
+      "case_type": "conflict_difficult",
+      "expected_concepts": [
+        "边界清楚的红色团块",
+        "快速生长的红色肉芽样结节",
+        "珍珠样结节",
+        "中央凹陷或溃疡",
+        "手指"
+      ],
+      "supporting_concepts": [
+        "边界清楚的红色团块",
+        "快速生长的红色肉芽样结节",
+        "手指"
+      ],
+      "conflicting_concepts": [
+        "珍珠样结节",
+        "中央凹陷或溃疡"
+      ],
+      "missing_information": [
+        "皮肤镜检查结果",
+        "组织病理检查结果",
+        "能够解释冲突表现的进一步检查信息"
+      ],
+      "evidence_expectation": "conflicting",
+      "data_origin": "synthetic_kg_grounded",
+      "source_basis": [
+        "TRI_087",
+        "TRI_088",
+        "TRI_025",
+        "TRI_028",
+        "TRI_093"
+      ],
+      "generation_rule": "task4_case_generation_v2"
+    },
+    {
+      "case_id": "CASE_VASC_CD_004",
+      "true_label": "血管性皮损",
+      "candidate_disease": "血管性皮损",
+      "observation_text": "患者自述发现面部存在皮损，主要表现为红色、蓝色或紫色丘疹、快速生长的红色肉芽样结节、坚实丘疹或结节、捏压凹陷征。",
+      "lesion_features": [
+        "红色、蓝色或紫色丘疹",
+        "快速生长的红色肉芽样结节",
+        "坚实丘疹或结节",
+        "捏压凹陷征"
+      ],
+      "anatomical_site": "面部",
+      "symptoms": [],
+      "duration_change": "",
+      "difficulty_level": "hard",
+      "case_type": "conflict_difficult",
+      "expected_concepts": [
+        "红色、蓝色或紫色丘疹",
+        "快速生长的红色肉芽样结节",
+        "坚实丘疹或结节",
+        "捏压凹陷征",
+        "面部"
+      ],
+      "supporting_concepts": [
+        "红色、蓝色或紫色丘疹",
+        "快速生长的红色肉芽样结节",
+        "面部"
+      ],
+      "conflicting_concepts": [
+        "坚实丘疹或结节",
+        "捏压凹陷征"
+      ],
+      "missing_information": [
+        "皮肤镜检查结果",
+        "组织病理检查结果",
+        "能够解释冲突表现的进一步检查信息"
+      ],
+      "evidence_expectation": "conflicting",
+      "data_origin": "synthetic_kg_grounded",
+      "source_basis": [
+        "TRI_085",
+        "TRI_088",
+        "TRI_070",
+        "TRI_071",
+        "TRI_094"
+      ],
+      "generation_rule": "task4_case_generation_v2"
+    }
+  ]
+}

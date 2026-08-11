@@ -1,0 +1,2517 @@
+{
+  "snapshot_name": "task5_evidence_snapshot_v1",
+  "snapshot_version": "1.0",
+  "generated_at": "2026-07-31T14:10:30+08:00",
+  "dataset_name": "task4_three_method_cases_v1",
+  "dataset_version": "1.0",
+  "case_count": 7,
+  "settings": {
+    "rag_top_k": 5,
+    "kg_rag_top_k": 5,
+    "kg_rag_max_hops": 2
+  },
+  "source_hashes": {
+    "entity_nodes": {
+      "path": "kg/csv/entity_nodes.csv",
+      "exists": true,
+      "sha256": "eb2043363bc187fc72f394d7cc36dc568c3bfe8e40e5fa0bca4ca8632db97315"
+    },
+    "triples": {
+      "path": "kg/csv/triples.csv",
+      "exists": true,
+      "sha256": "0f1c9d871316d2a63c6da994ad650145311a2bf84376fd19b0e3dadc16e3d605"
+    },
+    "entity_aliases": {
+      "path": "kg/csv/entity_aliases.csv",
+      "exists": true,
+      "sha256": "67ad41c405a7fe9ef5c559cdb75a63aa7bec76efbf13a44f3359bdce5a4ea05a"
+    },
+    "rag_corpus": {
+      "path": "rag/data/evidence_corpus_v1.jsonl",
+      "exists": true,
+      "sha256": "2180686da210410ee4e5ea5da6a0e36ab3feb95f126d01a2d06aacc9bff199fd"
+    },
+    "relation_weights": {
+      "path": "configs/relation_weights.yaml",
+      "exists": true,
+      "sha256": "5e5b73406cc866e243f1dd29a7a64a017bab692bce0bc5ce653885f9de35f70b"
+    },
+    "text_retriever_code": {
+      "path": "rag/text_retriever.py",
+      "exists": true,
+      "sha256": "50e09e71b3c522fd3be240c5ffb47afcacff0b1674b5404fc050b0476cb8f76a"
+    },
+    "path_retriever_code": {
+      "path": "kg/path_retriever.py",
+      "exists": true,
+      "sha256": "eea2254a7ea2d26cce3c2d9fb4ed159919577821e056160e4acf52a96f08026c"
+    },
+    "path_ranker_code": {
+      "path": "kg/path_ranker.py",
+      "exists": true,
+      "sha256": "e9bd96ee94d417c834966a83bc607524814dd747d0c7272686194bceb44e46f3"
+    }
+  },
+  "cases": [
+    {
+      "case_id": "CASE_BCC_001",
+      "candidate_disease": "基底细胞癌",
+      "user_observation": "患者面部出现光亮的珍珠样结节，表面可见细小血管。",
+      "expected_concepts": [
+        "珍珠样结节",
+        "表面毛细血管扩张",
+        "面部"
+      ],
+      "rag": {
+        "retrieval_method": "bm25_with_phrase_overlap",
+        "retrieved_count": 5,
+        "documents": [
+          {
+            "rank": 1,
+            "document_id": "DOC_0023",
+            "text": "结节型基底细胞癌可表现为光亮或珍珠样结节。",
+            "score": 63.671704,
+            "bm25_score": 63.321704,
+            "phrase_overlap_score": 0.35,
+            "matched_terms": [
+              "基",
+              "底",
+              "细",
+              "胞",
+              "癌",
+              "基底",
+              "底细",
+              "细胞",
+              "胞癌",
+              "现",
+              "光",
+              "亮",
+              "珍",
+              "珠",
+              "样",
+              "结",
+              "节",
+              "光亮",
+              "珍珠",
+              "珠样",
+              "样结",
+              "结节",
+              "表",
+              "可",
+              "基底细胞癌"
+            ],
+            "source_names": [
+              "DermNet - Basal Cell Carcinoma"
+            ],
+            "origin_record_ids": [
+              "TRI_025"
+            ]
+          },
+          {
+            "rank": 2,
+            "document_id": "DOC_0024",
+            "text": "基底细胞癌表面可见血管穿过。",
+            "score": 43.848071,
+            "bm25_score": 43.498071,
+            "phrase_overlap_score": 0.35,
+            "matched_terms": [
+              "基",
+              "底",
+              "细",
+              "胞",
+              "癌",
+              "基底",
+              "底细",
+              "细胞",
+              "胞癌",
+              "面",
+              "表",
+              "可",
+              "见",
+              "血",
+              "管",
+              "表面",
+              "面可",
+              "可见",
+              "血管",
+              "基底细胞癌"
+            ],
+            "source_names": [
+              "DermNet - Basal Cell Carcinoma"
+            ],
+            "origin_record_ids": [
+              "TRI_026"
+            ]
+          },
+          {
+            "rank": 3,
+            "document_id": "DOC_0028",
+            "text": "结节型基底细胞癌是面部常见的 BCC 类型。",
+            "score": 36.759728,
+            "bm25_score": 36.409728,
+            "phrase_overlap_score": 0.35,
+            "matched_terms": [
+              "基",
+              "底",
+              "细",
+              "胞",
+              "癌",
+              "基底",
+              "底细",
+              "细胞",
+              "胞癌",
+              "面",
+              "部",
+              "的",
+              "结",
+              "节",
+              "面部",
+              "结节",
+              "见",
+              "基底细胞癌"
+            ],
+            "source_names": [
+              "DermNet - Basal Cell Carcinoma"
+            ],
+            "origin_record_ids": [
+              "TRI_030"
+            ]
+          },
+          {
+            "rank": 4,
+            "document_id": "DOC_0096",
+            "text": "樱桃样血管瘤偶尔可能与结节型基底细胞癌混淆。",
+            "score": 30.78378,
+            "bm25_score": 30.43378,
+            "phrase_overlap_score": 0.35,
+            "matched_terms": [
+              "基",
+              "底",
+              "细",
+              "胞",
+              "癌",
+              "基底",
+              "底细",
+              "细胞",
+              "胞癌",
+              "样",
+              "结",
+              "节",
+              "结节",
+              "可",
+              "血",
+              "管",
+              "血管",
+              "基底细胞癌"
+            ],
+            "source_names": [
+              "DermNet - Cherry Angioma"
+            ],
+            "origin_record_ids": [
+              "TRI_100"
+            ]
+          },
+          {
+            "rank": 5,
+            "document_id": "DOC_0029",
+            "text": "基底细胞癌可出现自发性出血、糜烂或溃疡。",
+            "score": 26.497186,
+            "bm25_score": 26.147186,
+            "phrase_overlap_score": 0.35,
+            "matched_terms": [
+              "基",
+              "底",
+              "细",
+              "胞",
+              "癌",
+              "基底",
+              "底细",
+              "细胞",
+              "胞癌",
+              "出",
+              "现",
+              "出现",
+              "可",
+              "血",
+              "基底细胞癌"
+            ],
+            "source_names": [
+              "DermNet - Basal Cell Carcinoma Dermoscopy"
+            ],
+            "origin_record_ids": [
+              "TRI_031"
+            ]
+          }
+        ]
+      },
+      "kg_rag": {
+        "anchor_count": 3,
+        "anchors": [
+          {
+            "matched_text": "珍珠样结节",
+            "entity_id": "LF_010",
+            "entity_name": "珍珠样结节",
+            "confidence": 0.96
+          },
+          {
+            "matched_text": "表面可见细小血管",
+            "entity_id": "LF_011",
+            "entity_name": "表面毛细血管扩张",
+            "confidence": 0.92
+          },
+          {
+            "matched_text": "面部",
+            "entity_id": "SITE_005",
+            "entity_name": "面部",
+            "confidence": 0.96
+          }
+        ],
+        "retrieved_path_count": 36,
+        "ranked_path_count": 5,
+        "ranked_paths": [
+          {
+            "rank": 1,
+            "path_id": "PATH_TRI_025",
+            "path_text": "基底细胞癌 → 表现为 → 珍珠样结节",
+            "hop_count": 1,
+            "start_disease_name": "基底细胞癌",
+            "end_entity_id": "LF_010",
+            "end_entity_name": "珍珠样结节",
+            "matched_anchor_names": [
+              "珍珠样结节"
+            ],
+            "evidence_texts": [
+              "结节型基底细胞癌可表现为光亮或珍珠样结节。"
+            ],
+            "source_names": [
+              "DermNet - Basal Cell Carcinoma"
+            ],
+            "total_score": 4.42,
+            "entity_match_score": 1.92,
+            "relation_weight_score": 1.5,
+            "disease_match_score": 1.0,
+            "path_length_penalty": 0.0,
+            "edges": [
+              {
+                "triple_id": "TRI_025",
+                "head_name": "基底细胞癌",
+                "relation_cn": "表现为",
+                "tail_name": "珍珠样结节",
+                "evidence_text": "结节型基底细胞癌可表现为光亮或珍珠样结节。"
+              }
+            ]
+          },
+          {
+            "rank": 2,
+            "path_id": "PATH_TRI_026",
+            "path_text": "基底细胞癌 → 表现为 → 表面毛细血管扩张",
+            "hop_count": 1,
+            "start_disease_name": "基底细胞癌",
+            "end_entity_id": "LF_011",
+            "end_entity_name": "表面毛细血管扩张",
+            "matched_anchor_names": [
+              "表面毛细血管扩张"
+            ],
+            "evidence_texts": [
+              "基底细胞癌表面可见血管穿过。"
+            ],
+            "source_names": [
+              "DermNet - Basal Cell Carcinoma"
+            ],
+            "total_score": 4.34,
+            "entity_match_score": 1.84,
+            "relation_weight_score": 1.5,
+            "disease_match_score": 1.0,
+            "path_length_penalty": 0.0,
+            "edges": [
+              {
+                "triple_id": "TRI_026",
+                "head_name": "基底细胞癌",
+                "relation_cn": "表现为",
+                "tail_name": "表面毛细血管扩张",
+                "evidence_text": "基底细胞癌表面可见血管穿过。"
+              }
+            ]
+          },
+          {
+            "rank": 3,
+            "path_id": "PATH_TRI_030",
+            "path_text": "基底细胞癌 → 常见于 → 面部",
+            "hop_count": 1,
+            "start_disease_name": "基底细胞癌",
+            "end_entity_id": "SITE_005",
+            "end_entity_name": "面部",
+            "matched_anchor_names": [
+              "面部"
+            ],
+            "evidence_texts": [
+              "结节型基底细胞癌是面部常见的 BCC 类型。"
+            ],
+            "source_names": [
+              "DermNet - Basal Cell Carcinoma"
+            ],
+            "total_score": 3.92,
+            "entity_match_score": 1.92,
+            "relation_weight_score": 1.0,
+            "disease_match_score": 1.0,
+            "path_length_penalty": 0.0,
+            "edges": [
+              {
+                "triple_id": "TRI_030",
+                "head_name": "基底细胞癌",
+                "relation_cn": "常见于",
+                "tail_name": "面部",
+                "evidence_text": "结节型基底细胞癌是面部常见的 BCC 类型。"
+              }
+            ]
+          },
+          {
+            "rank": 4,
+            "path_id": "PATH_TRI_027",
+            "path_text": "基底细胞癌 → 表现为 → 边缘隆起或卷曲",
+            "hop_count": 1,
+            "start_disease_name": "基底细胞癌",
+            "end_entity_id": "LF_012",
+            "end_entity_name": "边缘隆起或卷曲",
+            "matched_anchor_names": [],
+            "evidence_texts": [
+              "基底细胞癌可出现中央凹陷或溃疡，使边缘呈卷曲样。"
+            ],
+            "source_names": [
+              "DermNet - Basal Cell Carcinoma"
+            ],
+            "total_score": 2.5,
+            "entity_match_score": 0.0,
+            "relation_weight_score": 1.5,
+            "disease_match_score": 1.0,
+            "path_length_penalty": 0.0,
+            "edges": [
+              {
+                "triple_id": "TRI_027",
+                "head_name": "基底细胞癌",
+                "relation_cn": "表现为",
+                "tail_name": "边缘隆起或卷曲",
+                "evidence_text": "基底细胞癌可出现中央凹陷或溃疡，使边缘呈卷曲样。"
+              }
+            ]
+          },
+          {
+            "rank": 5,
+            "path_id": "PATH_TRI_028",
+            "path_text": "基底细胞癌 → 表现为 → 中央凹陷或溃疡",
+            "hop_count": 1,
+            "start_disease_name": "基底细胞癌",
+            "end_entity_id": "LF_013",
+            "end_entity_name": "中央凹陷或溃疡",
+            "matched_anchor_names": [],
+            "evidence_texts": [
+              "基底细胞癌可有中央凹陷或溃疡。"
+            ],
+            "source_names": [
+              "DermNet - Basal Cell Carcinoma"
+            ],
+            "total_score": 2.5,
+            "entity_match_score": 0.0,
+            "relation_weight_score": 1.5,
+            "disease_match_score": 1.0,
+            "path_length_penalty": 0.0,
+            "edges": [
+              {
+                "triple_id": "TRI_028",
+                "head_name": "基底细胞癌",
+                "relation_cn": "表现为",
+                "tail_name": "中央凹陷或溃疡",
+                "evidence_text": "基底细胞癌可有中央凹陷或溃疡。"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "case_id": "CASE_MEL_001",
+      "candidate_disease": "黑色素瘤",
+      "user_observation": "患者皮损形态不对称，边界不规则，颜色深浅不一，近期有增大趋势。",
+      "expected_concepts": [
+        "不对称",
+        "边界不规则",
+        "多种颜色",
+        "近期变化"
+      ],
+      "rag": {
+        "retrieval_method": "bm25_with_phrase_overlap",
+        "retrieved_count": 5,
+        "documents": [
+          {
+            "rank": 1,
+            "document_id": "DOC_0003",
+            "text": "ABCDE 特征包括 Asymmetry，可支持“形态不对称”。",
+            "score": 40.216641,
+            "bm25_score": 40.216641,
+            "phrase_overlap_score": 0.0,
+            "matched_terms": [
+              "形",
+              "态",
+              "不",
+              "对",
+              "称",
+              "形态",
+              "态不",
+              "不对",
+              "对称"
+            ],
+            "source_names": [
+              "DermNet - ABCDEFG of melanoma"
+            ],
+            "origin_record_ids": [
+              "TRI_003"
+            ]
+          },
+          {
+            "rank": 2,
+            "document_id": "DOC_0077",
+            "text": "若存在近期增大、溃疡或皮肤镜下结构和颜色不对称等不典型特征，可进行诊断性切除或皮肤活检。",
+            "score": 34.49268,
+            "bm25_score": 34.49268,
+            "phrase_overlap_score": 0.0,
+            "matched_terms": [
+              "色",
+              "皮",
+              "不",
+              "对",
+              "称",
+              "不对",
+              "对称",
+              "颜",
+              "颜色",
+              "近",
+              "期",
+              "增",
+              "大",
+              "近期",
+              "增大"
+            ],
+            "source_names": [
+              "DermNet - Dermatofibroma"
+            ],
+            "origin_record_ids": [
+              "TRI_080"
+            ]
+          },
+          {
+            "rank": 3,
+            "document_id": "DOC_0001",
+            "text": "ABCDE 特征包括 Border irregularity，可支持“边界不规则”。",
+            "score": 34.173209,
+            "bm25_score": 33.823209,
+            "phrase_overlap_score": 0.35,
+            "matched_terms": [
+              "不",
+              "边",
+              "界",
+              "规",
+              "则",
+              "边界",
+              "界不",
+              "不规",
+              "规则",
+              "边界不规则"
+            ],
+            "source_names": [
+              "DermNet - ABCDEFG of melanoma"
+            ],
+            "origin_record_ids": [
+              "TRI_001"
+            ]
+          },
+          {
+            "rank": 4,
+            "document_id": "DOC_0014",
+            "text": "良性色素性皮损通常表现为较规则、较清楚的边界。",
+            "score": 26.171147,
+            "bm25_score": 26.171147,
+            "phrase_overlap_score": 0.0,
+            "matched_terms": [
+              "色",
+              "素",
+              "色素",
+              "皮",
+              "损",
+              "皮损",
+              "边",
+              "界",
+              "规",
+              "则",
+              "边界",
+              "规则"
+            ],
+            "source_names": [
+              "DermNet - Benign Melanocytic Lesions"
+            ],
+            "origin_record_ids": [
+              "TRI_016"
+            ]
+          },
+          {
+            "rank": 5,
+            "document_id": "DOC_0005",
+            "text": "黑色素瘤评估中可出现不规则色素或异常皮肤镜结构。",
+            "score": 23.625946,
+            "bm25_score": 23.275946,
+            "phrase_overlap_score": 0.35,
+            "matched_terms": [
+              "黑",
+              "色",
+              "素",
+              "瘤",
+              "黑色",
+              "色素",
+              "素瘤",
+              "皮",
+              "不",
+              "规",
+              "则",
+              "不规",
+              "规则",
+              "黑色素瘤"
+            ],
+            "source_names": [
+              "DermNet - Dermoscopy / Melanoma"
+            ],
+            "origin_record_ids": [
+              "TRI_005"
+            ]
+          }
+        ]
+      },
+      "kg_rag": {
+        "anchor_count": 3,
+        "anchors": [
+          {
+            "matched_text": "边界不规则",
+            "entity_id": "LF_001",
+            "entity_name": "边界不规则",
+            "confidence": 0.96
+          },
+          {
+            "matched_text": "颜色深浅不一",
+            "entity_id": "LF_002",
+            "entity_name": "颜色不均",
+            "confidence": 0.92
+          },
+          {
+            "matched_text": "形态不对称",
+            "entity_id": "LF_003",
+            "entity_name": "形态不对称",
+            "confidence": 0.96
+          }
+        ],
+        "retrieved_path_count": 21,
+        "ranked_path_count": 5,
+        "ranked_paths": [
+          {
+            "rank": 1,
+            "path_id": "PATH_TRI_001",
+            "path_text": "黑色素瘤 → 表现为 → 边界不规则",
+            "hop_count": 1,
+            "start_disease_name": "黑色素瘤",
+            "end_entity_id": "LF_001",
+            "end_entity_name": "边界不规则",
+            "matched_anchor_names": [
+              "边界不规则"
+            ],
+            "evidence_texts": [
+              "ABCDE 特征包括 Border irregularity，可支持“边界不规则”。"
+            ],
+            "source_names": [
+              "DermNet - ABCDEFG of melanoma"
+            ],
+            "total_score": 4.42,
+            "entity_match_score": 1.92,
+            "relation_weight_score": 1.5,
+            "disease_match_score": 1.0,
+            "path_length_penalty": 0.0,
+            "edges": [
+              {
+                "triple_id": "TRI_001",
+                "head_name": "黑色素瘤",
+                "relation_cn": "表现为",
+                "tail_name": "边界不规则",
+                "evidence_text": "ABCDE 特征包括 Border irregularity，可支持“边界不规则”。"
+              }
+            ]
+          },
+          {
+            "rank": 2,
+            "path_id": "PATH_TRI_003",
+            "path_text": "黑色素瘤 → 表现为 → 形态不对称",
+            "hop_count": 1,
+            "start_disease_name": "黑色素瘤",
+            "end_entity_id": "LF_003",
+            "end_entity_name": "形态不对称",
+            "matched_anchor_names": [
+              "形态不对称"
+            ],
+            "evidence_texts": [
+              "ABCDE 特征包括 Asymmetry，可支持“形态不对称”。"
+            ],
+            "source_names": [
+              "DermNet - ABCDEFG of melanoma"
+            ],
+            "total_score": 4.42,
+            "entity_match_score": 1.92,
+            "relation_weight_score": 1.5,
+            "disease_match_score": 1.0,
+            "path_length_penalty": 0.0,
+            "edges": [
+              {
+                "triple_id": "TRI_003",
+                "head_name": "黑色素瘤",
+                "relation_cn": "表现为",
+                "tail_name": "形态不对称",
+                "evidence_text": "ABCDE 特征包括 Asymmetry，可支持“形态不对称”。"
+              }
+            ]
+          },
+          {
+            "rank": 3,
+            "path_id": "PATH_TRI_002",
+            "path_text": "黑色素瘤 → 表现为 → 颜色不均",
+            "hop_count": 1,
+            "start_disease_name": "黑色素瘤",
+            "end_entity_id": "LF_002",
+            "end_entity_name": "颜色不均",
+            "matched_anchor_names": [
+              "颜色不均"
+            ],
+            "evidence_texts": [
+              "ABCDE 特征包括 Colour variability / Change，可支持“颜色不均”。"
+            ],
+            "source_names": [
+              "DermNet - ABCDEFG of melanoma"
+            ],
+            "total_score": 4.34,
+            "entity_match_score": 1.84,
+            "relation_weight_score": 1.5,
+            "disease_match_score": 1.0,
+            "path_length_penalty": 0.0,
+            "edges": [
+              {
+                "triple_id": "TRI_002",
+                "head_name": "黑色素瘤",
+                "relation_cn": "表现为",
+                "tail_name": "颜色不均",
+                "evidence_text": "ABCDE 特征包括 Colour variability / Change，可支持“颜色不均”。"
+              }
+            ]
+          },
+          {
+            "rank": 4,
+            "path_id": "PATH_TRI_004",
+            "path_text": "黑色素瘤 → 表现为 → 直径增大",
+            "hop_count": 1,
+            "start_disease_name": "黑色素瘤",
+            "end_entity_id": "LF_004",
+            "end_entity_name": "直径增大",
+            "matched_anchor_names": [],
+            "evidence_texts": [
+              "ABCDE 特征包括 Diameter / Evolving，可支持“直径增大或变化”。"
+            ],
+            "source_names": [
+              "DermNet - ABCDEFG of melanoma"
+            ],
+            "total_score": 2.5,
+            "entity_match_score": 0.0,
+            "relation_weight_score": 1.5,
+            "disease_match_score": 1.0,
+            "path_length_penalty": 0.0,
+            "edges": [
+              {
+                "triple_id": "TRI_004",
+                "head_name": "黑色素瘤",
+                "relation_cn": "表现为",
+                "tail_name": "直径增大",
+                "evidence_text": "ABCDE 特征包括 Diameter / Evolving，可支持“直径增大或变化”。"
+              }
+            ]
+          },
+          {
+            "rank": 5,
+            "path_id": "PATH_TRI_005",
+            "path_text": "黑色素瘤 → 表现为 → 结构不规则",
+            "hop_count": 1,
+            "start_disease_name": "黑色素瘤",
+            "end_entity_id": "LF_005",
+            "end_entity_name": "结构不规则",
+            "matched_anchor_names": [],
+            "evidence_texts": [
+              "黑色素瘤评估中可出现不规则色素或异常皮肤镜结构。"
+            ],
+            "source_names": [
+              "DermNet - Dermoscopy / Melanoma"
+            ],
+            "total_score": 2.5,
+            "entity_match_score": 0.0,
+            "relation_weight_score": 1.5,
+            "disease_match_score": 1.0,
+            "path_length_penalty": 0.0,
+            "edges": [
+              {
+                "triple_id": "TRI_005",
+                "head_name": "黑色素瘤",
+                "relation_cn": "表现为",
+                "tail_name": "结构不规则",
+                "evidence_text": "黑色素瘤评估中可出现不规则色素或异常皮肤镜结构。"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "case_id": "CASE_NV_001",
+      "candidate_disease": "黑色素细胞痣",
+      "user_observation": "患者皮肤上有一枚长期存在的棕色小斑，形状较规则，边界清楚，近期无明显变化。",
+      "expected_concepts": [
+        "棕色",
+        "形状规则",
+        "边界清楚",
+        "长期稳定"
+      ],
+      "rag": {
+        "retrieval_method": "bm25_with_phrase_overlap",
+        "retrieved_count": 5,
+        "documents": [
+          {
+            "rank": 1,
+            "document_id": "DOC_0014",
+            "text": "良性色素性皮损通常表现为较规则、较清楚的边界。",
+            "score": 45.194645,
+            "bm25_score": 45.194645,
+            "phrase_overlap_score": 0.0,
+            "matched_terms": [
+              "色",
+              "素",
+              "色素",
+              "皮",
+              "的",
+              "较",
+              "规",
+              "则",
+              "较规",
+              "规则",
+              "边",
+              "界",
+              "清",
+              "楚",
+              "边界",
+              "清楚"
+            ],
+            "source_names": [
+              "DermNet - Benign Melanocytic Lesions"
+            ],
+            "origin_record_ids": [
+              "TRI_016"
+            ]
+          },
+          {
+            "rank": 2,
+            "document_id": "DOC_0015",
+            "text": "棕色或黑色黑色素细胞痣含有黑色素，也可称为色素痣。",
+            "score": 31.897124,
+            "bm25_score": 31.547124,
+            "phrase_overlap_score": 0.35,
+            "matched_terms": [
+              "黑",
+              "色",
+              "素",
+              "细",
+              "胞",
+              "痣",
+              "黑色",
+              "色素",
+              "素细",
+              "细胞",
+              "胞痣",
+              "有",
+              "棕",
+              "棕色",
+              "黑色素细胞痣"
+            ],
+            "source_names": [
+              "DermNet - Melanocytic Naevus"
+            ],
+            "origin_record_ids": [
+              "TRI_017"
+            ]
+          },
+          {
+            "rank": 3,
+            "document_id": "DOC_0022",
+            "text": "黑色素细胞痣通常为良性皮损；若出现大小、形状、结构、颜色变化，或出血、结痂、瘙痒等情况，应进一步评估。",
+            "score": 30.532413,
+            "bm25_score": 30.182413,
+            "phrase_overlap_score": 0.35,
+            "matched_terms": [
+              "黑",
+              "色",
+              "素",
+              "细",
+              "胞",
+              "痣",
+              "黑色",
+              "色素",
+              "素细",
+              "细胞",
+              "胞痣",
+              "皮",
+              "一",
+              "小",
+              "形",
+              "状",
+              "形状",
+              "变",
+              "化",
+              "变化",
+              "黑色素细胞痣"
+            ],
+            "source_names": [
+              "DermNet - Melanocytic Naevus"
+            ],
+            "origin_record_ids": [
+              "TRI_024"
+            ]
+          },
+          {
+            "rank": 4,
+            "document_id": "DOC_0084",
+            "text": "HAM10000 中血管瘤类皮损在皮肤镜下可表现为红色或紫色、实性且边界清楚的 red clods 或 lacunes。",
+            "score": 27.880655,
+            "bm25_score": 27.530655,
+            "phrase_overlap_score": 0.35,
+            "matched_terms": [
+              "色",
+              "皮",
+              "肤",
+              "在",
+              "的",
+              "皮肤",
+              "边",
+              "界",
+              "清",
+              "楚",
+              "边界",
+              "界清",
+              "清楚",
+              "边界清楚"
+            ],
+            "source_names": [
+              "HAM10000 Scientific Data"
+            ],
+            "origin_record_ids": [
+              "TRI_087"
+            ]
+          },
+          {
+            "rank": 5,
+            "document_id": "DOC_0037",
+            "text": "表皮内鳞状细胞癌可表现为橙红色或棕色的不规则鳞屑性斑块。",
+            "score": 25.028932,
+            "bm25_score": 25.028932,
+            "phrase_overlap_score": 0.0,
+            "matched_terms": [
+              "色",
+              "细",
+              "胞",
+              "细胞",
+              "皮",
+              "的",
+              "棕",
+              "斑",
+              "棕色",
+              "状",
+              "规",
+              "则",
+              "规则"
+            ],
+            "source_names": [
+              "DermNet - Intraepidermal Squamous Cell Carcinoma"
+            ],
+            "origin_record_ids": [
+              "TRI_040"
+            ]
+          }
+        ]
+      },
+      "kg_rag": {
+        "anchor_count": 1,
+        "anchors": [
+          {
+            "matched_text": "边界清楚",
+            "entity_id": "LF_007",
+            "entity_name": "边界清楚",
+            "confidence": 0.96
+          }
+        ],
+        "retrieved_path_count": 21,
+        "ranked_path_count": 5,
+        "ranked_paths": [
+          {
+            "rank": 1,
+            "path_id": "PATH_TRI_016",
+            "path_text": "黑色素细胞痣 → 表现为 → 边界清楚",
+            "hop_count": 1,
+            "start_disease_name": "黑色素细胞痣",
+            "end_entity_id": "LF_007",
+            "end_entity_name": "边界清楚",
+            "matched_anchor_names": [
+              "边界清楚"
+            ],
+            "evidence_texts": [
+              "良性色素性皮损通常表现为较规则、较清楚的边界。"
+            ],
+            "source_names": [
+              "DermNet - Benign Melanocytic Lesions"
+            ],
+            "total_score": 4.42,
+            "entity_match_score": 1.92,
+            "relation_weight_score": 1.5,
+            "disease_match_score": 1.0,
+            "path_length_penalty": 0.0,
+            "edges": [
+              {
+                "triple_id": "TRI_016",
+                "head_name": "黑色素细胞痣",
+                "relation_cn": "表现为",
+                "tail_name": "边界清楚",
+                "evidence_text": "良性色素性皮损通常表现为较规则、较清楚的边界。"
+              }
+            ]
+          },
+          {
+            "rank": 2,
+            "path_id": "PATH_TRI_015",
+            "path_text": "黑色素细胞痣 → 表现为 → 色素均匀",
+            "hop_count": 1,
+            "start_disease_name": "黑色素细胞痣",
+            "end_entity_id": "LF_006",
+            "end_entity_name": "色素均匀",
+            "matched_anchor_names": [],
+            "evidence_texts": [
+              "单一颜色或均匀色素模式的皮损几乎总是良性的。"
+            ],
+            "source_names": [
+              "DermNet - Benign Melanocytic Lesions"
+            ],
+            "total_score": 2.5,
+            "entity_match_score": 0.0,
+            "relation_weight_score": 1.5,
+            "disease_match_score": 1.0,
+            "path_length_penalty": 0.0,
+            "edges": [
+              {
+                "triple_id": "TRI_015",
+                "head_name": "黑色素细胞痣",
+                "relation_cn": "表现为",
+                "tail_name": "色素均匀",
+                "evidence_text": "单一颜色或均匀色素模式的皮损几乎总是良性的。"
+              }
+            ]
+          },
+          {
+            "rank": 3,
+            "path_id": "PATH_TRI_017",
+            "path_text": "黑色素细胞痣 → 表现为 → 棕色或黑色斑疹/丘疹",
+            "hop_count": 1,
+            "start_disease_name": "黑色素细胞痣",
+            "end_entity_id": "LF_008",
+            "end_entity_name": "棕色或黑色斑疹/丘疹",
+            "matched_anchor_names": [],
+            "evidence_texts": [
+              "棕色或黑色黑色素细胞痣含有黑色素，也可称为色素痣。"
+            ],
+            "source_names": [
+              "DermNet - Melanocytic Naevus"
+            ],
+            "total_score": 2.5,
+            "entity_match_score": 0.0,
+            "relation_weight_score": 1.5,
+            "disease_match_score": 1.0,
+            "path_length_penalty": 0.0,
+            "edges": [
+              {
+                "triple_id": "TRI_017",
+                "head_name": "黑色素细胞痣",
+                "relation_cn": "表现为",
+                "tail_name": "棕色或黑色斑疹/丘疹",
+                "evidence_text": "棕色或黑色黑色素细胞痣含有黑色素，也可称为色素痣。"
+              }
+            ]
+          },
+          {
+            "rank": 4,
+            "path_id": "PATH_TRI_018",
+            "path_text": "黑色素细胞痣 → 表现为 → 对称性较好",
+            "hop_count": 1,
+            "start_disease_name": "黑色素细胞痣",
+            "end_entity_id": "LF_009",
+            "end_entity_name": "对称性较好",
+            "matched_anchor_names": [],
+            "evidence_texts": [
+              "良性色素性皮损通常具有较一致的结构和外观。"
+            ],
+            "source_names": [
+              "DermNet - Benign Melanocytic Lesions"
+            ],
+            "total_score": 2.5,
+            "entity_match_score": 0.0,
+            "relation_weight_score": 1.5,
+            "disease_match_score": 1.0,
+            "path_length_penalty": 0.0,
+            "edges": [
+              {
+                "triple_id": "TRI_018",
+                "head_name": "黑色素细胞痣",
+                "relation_cn": "表现为",
+                "tail_name": "对称性较好",
+                "evidence_text": "良性色素性皮损通常具有较一致的结构和外观。"
+              }
+            ]
+          },
+          {
+            "rank": 5,
+            "path_id": "PATH_TRI_021_TRI_001",
+            "path_text": "黑色素细胞痣 → 鉴别诊断 → 黑色素瘤 → 表现为 → 边界不规则",
+            "hop_count": 2,
+            "start_disease_name": "黑色素细胞痣",
+            "end_entity_id": "LF_001",
+            "end_entity_name": "边界不规则",
+            "matched_anchor_names": [],
+            "evidence_texts": [
+              "皮肤镜可帮助识别与其他痣不同的“丑小鸭”病变，并提示黑色素瘤可能。",
+              "ABCDE 特征包括 Border irregularity，可支持“边界不规则”。"
+            ],
+            "source_names": [
+              "DermNet - Melanocytic Naevi: New Classification",
+              "DermNet - ABCDEFG of melanoma"
+            ],
+            "total_score": 2.05,
+            "entity_match_score": 0.0,
+            "relation_weight_score": 1.7,
+            "disease_match_score": 0.7,
+            "path_length_penalty": 0.35,
+            "edges": [
+              {
+                "triple_id": "TRI_021",
+                "head_name": "黑色素细胞痣",
+                "relation_cn": "鉴别诊断",
+                "tail_name": "黑色素瘤",
+                "evidence_text": "皮肤镜可帮助识别与其他痣不同的“丑小鸭”病变，并提示黑色素瘤可能。"
+              },
+              {
+                "triple_id": "TRI_001",
+                "head_name": "黑色素瘤",
+                "relation_cn": "表现为",
+                "tail_name": "边界不规则",
+                "evidence_text": "ABCDE 特征包括 Border irregularity，可支持“边界不规则”。"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "case_id": "CASE_AKIEC_001",
+      "candidate_disease": "光化性角化病/表皮内癌",
+      "user_observation": "患者日晒部位出现粗糙的红色鳞屑性斑片，表面角化明显，持续不消退。",
+      "expected_concepts": [
+        "日晒部位",
+        "粗糙",
+        "红色斑片",
+        "鳞屑",
+        "角化"
+      ],
+      "rag": {
+        "retrieval_method": "bm25_with_phrase_overlap",
+        "retrieved_count": 5,
+        "documents": [
+          {
+            "rank": 1,
+            "document_id": "DOC_0037",
+            "text": "表皮内鳞状细胞癌可表现为橙红色或棕色的不规则鳞屑性斑块。",
+            "score": 41.096667,
+            "bm25_score": 41.096667,
+            "phrase_overlap_score": 0.0,
+            "matched_terms": [
+              "性",
+              "表",
+              "皮",
+              "内",
+              "癌",
+              "表皮",
+              "皮内",
+              "现",
+              "的",
+              "红",
+              "色",
+              "鳞",
+              "屑",
+              "斑",
+              "红色",
+              "鳞屑",
+              "屑性",
+              "性斑",
+              "不"
+            ],
+            "source_names": [
+              "DermNet - Intraepidermal Squamous Cell Carcinoma"
+            ],
+            "origin_record_ids": [
+              "TRI_040"
+            ]
+          },
+          {
+            "rank": 2,
+            "document_id": "DOC_0036",
+            "text": "光化性角化病可表现为白色或黄色、鳞屑性、疣状或角化性表面。",
+            "score": 36.467621,
+            "bm25_score": 36.467621,
+            "phrase_overlap_score": 0.0,
+            "matched_terms": [
+              "光",
+              "化",
+              "性",
+              "角",
+              "病",
+              "光化",
+              "化性",
+              "性角",
+              "角化",
+              "化病",
+              "表",
+              "现",
+              "色",
+              "鳞",
+              "屑",
+              "鳞屑",
+              "屑性",
+              "面",
+              "表面"
+            ],
+            "source_names": [
+              "DermNet - Actinic Keratosis"
+            ],
+            "origin_record_ids": [
+              "TRI_039"
+            ]
+          },
+          {
+            "rank": 3,
+            "document_id": "DOC_0038",
+            "text": "表皮内鳞状细胞癌表现为一个或多个不规则鳞屑性斑块。",
+            "score": 35.784902,
+            "bm25_score": 35.784902,
+            "phrase_overlap_score": 0.0,
+            "matched_terms": [
+              "性",
+              "表",
+              "皮",
+              "内",
+              "癌",
+              "表皮",
+              "皮内",
+              "现",
+              "鳞",
+              "屑",
+              "斑",
+              "鳞屑",
+              "屑性",
+              "性斑",
+              "不"
+            ],
+            "source_names": [
+              "DermNet - Intraepidermal Squamous Cell Carcinoma"
+            ],
+            "origin_record_ids": [
+              "TRI_041"
+            ]
+          },
+          {
+            "rank": 4,
+            "document_id": "DOC_0035",
+            "text": "光化性角化病是发生在日光损伤皮肤上的癌前性鳞屑性皮损。",
+            "score": 31.620616,
+            "bm25_score": 31.620616,
+            "phrase_overlap_score": 0.0,
+            "matched_terms": [
+              "光",
+              "化",
+              "性",
+              "角",
+              "病",
+              "光化",
+              "化性",
+              "性角",
+              "角化",
+              "化病",
+              "皮",
+              "癌",
+              "日",
+              "的",
+              "鳞",
+              "屑",
+              "鳞屑",
+              "屑性"
+            ],
+            "source_names": [
+              "DermNet - Actinic Keratosis"
+            ],
+            "origin_record_ids": [
+              "TRI_038"
+            ]
+          },
+          {
+            "rank": 5,
+            "document_id": "DOC_0041",
+            "text": "光化性角化病常见于面部、耳部、手背等日光暴露部位。",
+            "score": 29.639002,
+            "bm25_score": 29.639002,
+            "phrase_overlap_score": 0.0,
+            "matched_terms": [
+              "光",
+              "化",
+              "性",
+              "角",
+              "病",
+              "光化",
+              "化性",
+              "性角",
+              "角化",
+              "化病",
+              "日",
+              "部",
+              "位",
+              "部位",
+              "面"
+            ],
+            "source_names": [
+              "DermNet - Actinic Keratosis"
+            ],
+            "origin_record_ids": [
+              "TRI_044"
+            ]
+          }
+        ]
+      },
+      "kg_rag": {
+        "anchor_count": 1,
+        "anchors": [
+          {
+            "matched_text": "鳞屑性斑片",
+            "entity_id": "LF_015",
+            "entity_name": "粗糙鳞屑性斑片",
+            "confidence": 0.92
+          }
+        ],
+        "retrieved_path_count": 36,
+        "ranked_path_count": 5,
+        "ranked_paths": [
+          {
+            "rank": 1,
+            "path_id": "PATH_TRI_038",
+            "path_text": "光化性角化病/表皮内癌 → 表现为 → 粗糙鳞屑性斑片",
+            "hop_count": 1,
+            "start_disease_name": "光化性角化病/表皮内癌",
+            "end_entity_id": "LF_015",
+            "end_entity_name": "粗糙鳞屑性斑片",
+            "matched_anchor_names": [
+              "粗糙鳞屑性斑片"
+            ],
+            "evidence_texts": [
+              "光化性角化病是发生在日光损伤皮肤上的癌前性鳞屑性皮损。"
+            ],
+            "source_names": [
+              "DermNet - Actinic Keratosis"
+            ],
+            "total_score": 4.34,
+            "entity_match_score": 1.84,
+            "relation_weight_score": 1.5,
+            "disease_match_score": 1.0,
+            "path_length_penalty": 0.0,
+            "edges": [
+              {
+                "triple_id": "TRI_038",
+                "head_name": "光化性角化病/表皮内癌",
+                "relation_cn": "表现为",
+                "tail_name": "粗糙鳞屑性斑片",
+                "evidence_text": "光化性角化病是发生在日光损伤皮肤上的癌前性鳞屑性皮损。"
+              }
+            ]
+          },
+          {
+            "rank": 2,
+            "path_id": "PATH_TRI_039",
+            "path_text": "光化性角化病/表皮内癌 → 表现为 → 白色或黄色角化性表面",
+            "hop_count": 1,
+            "start_disease_name": "光化性角化病/表皮内癌",
+            "end_entity_id": "LF_016",
+            "end_entity_name": "白色或黄色角化性表面",
+            "matched_anchor_names": [],
+            "evidence_texts": [
+              "光化性角化病可表现为白色或黄色、鳞屑性、疣状或角化性表面。"
+            ],
+            "source_names": [
+              "DermNet - Actinic Keratosis"
+            ],
+            "total_score": 2.5,
+            "entity_match_score": 0.0,
+            "relation_weight_score": 1.5,
+            "disease_match_score": 1.0,
+            "path_length_penalty": 0.0,
+            "edges": [
+              {
+                "triple_id": "TRI_039",
+                "head_name": "光化性角化病/表皮内癌",
+                "relation_cn": "表现为",
+                "tail_name": "白色或黄色角化性表面",
+                "evidence_text": "光化性角化病可表现为白色或黄色、鳞屑性、疣状或角化性表面。"
+              }
+            ]
+          },
+          {
+            "rank": 3,
+            "path_id": "PATH_TRI_040",
+            "path_text": "光化性角化病/表皮内癌 → 表现为 → 红色或粉红色斑片/斑块",
+            "hop_count": 1,
+            "start_disease_name": "光化性角化病/表皮内癌",
+            "end_entity_id": "LF_017",
+            "end_entity_name": "红色或粉红色斑片/斑块",
+            "matched_anchor_names": [],
+            "evidence_texts": [
+              "表皮内鳞状细胞癌可表现为橙红色或棕色的不规则鳞屑性斑块。"
+            ],
+            "source_names": [
+              "DermNet - Intraepidermal Squamous Cell Carcinoma"
+            ],
+            "total_score": 2.5,
+            "entity_match_score": 0.0,
+            "relation_weight_score": 1.5,
+            "disease_match_score": 1.0,
+            "path_length_penalty": 0.0,
+            "edges": [
+              {
+                "triple_id": "TRI_040",
+                "head_name": "光化性角化病/表皮内癌",
+                "relation_cn": "表现为",
+                "tail_name": "红色或粉红色斑片/斑块",
+                "evidence_text": "表皮内鳞状细胞癌可表现为橙红色或棕色的不规则鳞屑性斑块。"
+              }
+            ]
+          },
+          {
+            "rank": 4,
+            "path_id": "PATH_TRI_041",
+            "path_text": "光化性角化病/表皮内癌 → 表现为 → 不规则鳞屑性斑块",
+            "hop_count": 1,
+            "start_disease_name": "光化性角化病/表皮内癌",
+            "end_entity_id": "LF_018",
+            "end_entity_name": "不规则鳞屑性斑块",
+            "matched_anchor_names": [],
+            "evidence_texts": [
+              "表皮内鳞状细胞癌表现为一个或多个不规则鳞屑性斑块。"
+            ],
+            "source_names": [
+              "DermNet - Intraepidermal Squamous Cell Carcinoma"
+            ],
+            "total_score": 2.5,
+            "entity_match_score": 0.0,
+            "relation_weight_score": 1.5,
+            "disease_match_score": 1.0,
+            "path_length_penalty": 0.0,
+            "edges": [
+              {
+                "triple_id": "TRI_041",
+                "head_name": "光化性角化病/表皮内癌",
+                "relation_cn": "表现为",
+                "tail_name": "不规则鳞屑性斑块",
+                "evidence_text": "表皮内鳞状细胞癌表现为一个或多个不规则鳞屑性斑块。"
+              }
+            ]
+          },
+          {
+            "rank": 5,
+            "path_id": "PATH_TRI_042",
+            "path_text": "光化性角化病/表皮内癌 → 表现为 → 草莓样皮肤镜模式",
+            "hop_count": 1,
+            "start_disease_name": "光化性角化病/表皮内癌",
+            "end_entity_id": "LF_019",
+            "end_entity_name": "草莓样皮肤镜模式",
+            "matched_anchor_names": [],
+            "evidence_texts": [
+              "面部非色素性光化性角化病在皮肤镜下可表现为草莓样模式。"
+            ],
+            "source_names": [
+              "DermNet - Actinic Keratosis Dermoscopy"
+            ],
+            "total_score": 2.5,
+            "entity_match_score": 0.0,
+            "relation_weight_score": 1.5,
+            "disease_match_score": 1.0,
+            "path_length_penalty": 0.0,
+            "edges": [
+              {
+                "triple_id": "TRI_042",
+                "head_name": "光化性角化病/表皮内癌",
+                "relation_cn": "表现为",
+                "tail_name": "草莓样皮肤镜模式",
+                "evidence_text": "面部非色素性光化性角化病在皮肤镜下可表现为草莓样模式。"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "case_id": "CASE_BKL_001",
+      "candidate_disease": "良性角化性病变",
+      "user_observation": "患者躯干部出现边界清楚的棕褐色隆起性斑块，表面粗糙，外观像贴在皮肤上一样。",
+      "expected_concepts": [
+        "边界清楚",
+        "棕褐色",
+        "隆起性斑块",
+        "表面粗糙",
+        "贴附样外观"
+      ],
+      "rag": {
+        "retrieval_method": "bm25_with_phrase_overlap",
+        "retrieved_count": 5,
+        "documents": [
+          {
+            "rank": 1,
+            "document_id": "DOC_0051",
+            "text": "脂溢性角化病常呈贴附在皮肤表面的外观。",
+            "score": 39.523461,
+            "bm25_score": 39.523461,
+            "phrase_overlap_score": 0.0,
+            "matched_terms": [
+              "性",
+              "角",
+              "化",
+              "病",
+              "性角",
+              "角化",
+              "的",
+              "表",
+              "面",
+              "表面",
+              "外",
+              "观",
+              "贴",
+              "在",
+              "皮",
+              "肤",
+              "外观",
+              "在皮",
+              "皮肤"
+            ],
+            "source_names": [
+              "DermNet - Seborrhoeic Keratosis"
+            ],
+            "origin_record_ids": [
+              "TRI_054"
+            ]
+          },
+          {
+            "rank": 2,
+            "document_id": "DOC_0014",
+            "text": "良性色素性皮损通常表现为较规则、较清楚的边界。",
+            "score": 37.481171,
+            "bm25_score": 37.481171,
+            "phrase_overlap_score": 0.0,
+            "matched_terms": [
+              "良",
+              "性",
+              "良性",
+              "现",
+              "边",
+              "界",
+              "清",
+              "楚",
+              "的",
+              "色",
+              "边界",
+              "清楚",
+              "楚的",
+              "表",
+              "皮"
+            ],
+            "source_names": [
+              "DermNet - Benign Melanocytic Lesions"
+            ],
+            "origin_record_ids": [
+              "TRI_016"
+            ]
+          },
+          {
+            "rank": 3,
+            "document_id": "DOC_0084",
+            "text": "HAM10000 中血管瘤类皮损在皮肤镜下可表现为红色或紫色、实性且边界清楚的 red clods 或 lacunes。",
+            "score": 36.227731,
+            "bm25_score": 36.227731,
+            "phrase_overlap_score": 0.0,
+            "matched_terms": [
+              "性",
+              "现",
+              "边",
+              "界",
+              "清",
+              "楚",
+              "的",
+              "色",
+              "边界",
+              "界清",
+              "清楚",
+              "楚的",
+              "表",
+              "在",
+              "皮",
+              "肤",
+              "在皮",
+              "皮肤"
+            ],
+            "source_names": [
+              "HAM10000 Scientific Data"
+            ],
+            "origin_record_ids": [
+              "TRI_087"
+            ]
+          },
+          {
+            "rank": 4,
+            "document_id": "DOC_0055",
+            "text": "扁平苔藓样角化病可表现为小的炎性斑疹或薄的色素性斑块。",
+            "score": 26.116642,
+            "bm25_score": 26.116642,
+            "phrase_overlap_score": 0.0,
+            "matched_terms": [
+              "性",
+              "角",
+              "化",
+              "病",
+              "角化",
+              "现",
+              "的",
+              "色",
+              "斑",
+              "块",
+              "性斑",
+              "斑块",
+              "表",
+              "样"
+            ],
+            "source_names": [
+              "DermNet - Lichenoid Keratosis"
+            ],
+            "origin_record_ids": [
+              "TRI_058"
+            ]
+          },
+          {
+            "rank": 5,
+            "document_id": "DOC_0039",
+            "text": "面部非色素性光化性角化病在皮肤镜下可表现为草莓样模式。",
+            "score": 24.354113,
+            "bm25_score": 24.354113,
+            "phrase_overlap_score": 0.0,
+            "matched_terms": [
+              "性",
+              "角",
+              "化",
+              "病",
+              "性角",
+              "角化",
+              "化性",
+              "部",
+              "现",
+              "色",
+              "表",
+              "面",
+              "在",
+              "皮",
+              "肤",
+              "样",
+              "在皮",
+              "皮肤"
+            ],
+            "source_names": [
+              "DermNet - Actinic Keratosis Dermoscopy"
+            ],
+            "origin_record_ids": [
+              "TRI_042"
+            ]
+          }
+        ]
+      },
+      "kg_rag": {
+        "anchor_count": 3,
+        "anchors": [
+          {
+            "matched_text": "边界清楚",
+            "entity_id": "LF_007",
+            "entity_name": "边界清楚",
+            "confidence": 0.96
+          },
+          {
+            "matched_text": "像贴在皮肤上一样",
+            "entity_id": "LF_021",
+            "entity_name": "贴附样丘疹或斑块",
+            "confidence": 0.92
+          },
+          {
+            "matched_text": "躯干",
+            "entity_id": "SITE_001",
+            "entity_name": "躯干",
+            "confidence": 0.96
+          }
+        ],
+        "retrieved_path_count": 48,
+        "ranked_path_count": 5,
+        "ranked_paths": [
+          {
+            "rank": 1,
+            "path_id": "PATH_TRI_054",
+            "path_text": "良性角化样病变 → 表现为 → 贴附样丘疹或斑块",
+            "hop_count": 1,
+            "start_disease_name": "良性角化样病变",
+            "end_entity_id": "LF_021",
+            "end_entity_name": "贴附样丘疹或斑块",
+            "matched_anchor_names": [
+              "贴附样丘疹或斑块"
+            ],
+            "evidence_texts": [
+              "脂溢性角化病常呈贴附在皮肤表面的外观。"
+            ],
+            "source_names": [
+              "DermNet - Seborrhoeic Keratosis"
+            ],
+            "total_score": 4.34,
+            "entity_match_score": 1.84,
+            "relation_weight_score": 1.5,
+            "disease_match_score": 1.0,
+            "path_length_penalty": 0.0,
+            "edges": [
+              {
+                "triple_id": "TRI_054",
+                "head_name": "良性角化样病变",
+                "relation_cn": "表现为",
+                "tail_name": "贴附样丘疹或斑块",
+                "evidence_text": "脂溢性角化病常呈贴附在皮肤表面的外观。"
+              }
+            ]
+          },
+          {
+            "rank": 2,
+            "path_id": "PATH_TRI_060",
+            "path_text": "良性角化样病变 → 常见于 → 躯干",
+            "hop_count": 1,
+            "start_disease_name": "良性角化样病变",
+            "end_entity_id": "SITE_001",
+            "end_entity_name": "躯干",
+            "matched_anchor_names": [
+              "躯干"
+            ],
+            "evidence_texts": [
+              "扁平苔藓样角化病最常见于上躯干，其次为远端上肢。"
+            ],
+            "source_names": [
+              "DermNet - Lichenoid Keratosis"
+            ],
+            "total_score": 3.92,
+            "entity_match_score": 1.92,
+            "relation_weight_score": 1.0,
+            "disease_match_score": 1.0,
+            "path_length_penalty": 0.0,
+            "edges": [
+              {
+                "triple_id": "TRI_060",
+                "head_name": "良性角化样病变",
+                "relation_cn": "常见于",
+                "tail_name": "躯干",
+                "evidence_text": "扁平苔藓样角化病最常见于上躯干，其次为远端上肢。"
+              }
+            ]
+          },
+          {
+            "rank": 3,
+            "path_id": "PATH_TRI_053",
+            "path_text": "良性角化样病变 → 表现为 → 蜡样或疣状表面",
+            "hop_count": 1,
+            "start_disease_name": "良性角化样病变",
+            "end_entity_id": "LF_020",
+            "end_entity_name": "蜡样或疣状表面",
+            "matched_anchor_names": [],
+            "evidence_texts": [
+              "脂溢性角化病可表现为光滑、蜡样或疣状表面。"
+            ],
+            "source_names": [
+              "DermNet - Seborrhoeic Keratosis"
+            ],
+            "total_score": 2.5,
+            "entity_match_score": 0.0,
+            "relation_weight_score": 1.5,
+            "disease_match_score": 1.0,
+            "path_length_penalty": 0.0,
+            "edges": [
+              {
+                "triple_id": "TRI_053",
+                "head_name": "良性角化样病变",
+                "relation_cn": "表现为",
+                "tail_name": "蜡样或疣状表面",
+                "evidence_text": "脂溢性角化病可表现为光滑、蜡样或疣状表面。"
+              }
+            ]
+          },
+          {
+            "rank": 4,
+            "path_id": "PATH_TRI_055",
+            "path_text": "良性角化样病变 → 表现为 → 边界清楚的扁平色素斑",
+            "hop_count": 1,
+            "start_disease_name": "良性角化样病变",
+            "end_entity_id": "LF_022",
+            "end_entity_name": "边界清楚的扁平色素斑",
+            "matched_anchor_names": [],
+            "evidence_texts": [
+              "日光性黑子是常见的良性扁平色素性皮损，多见于日光暴露皮肤。"
+            ],
+            "source_names": [
+              "DermNet - Solar Lentigo"
+            ],
+            "total_score": 2.5,
+            "entity_match_score": 0.0,
+            "relation_weight_score": 1.5,
+            "disease_match_score": 1.0,
+            "path_length_penalty": 0.0,
+            "edges": [
+              {
+                "triple_id": "TRI_055",
+                "head_name": "良性角化样病变",
+                "relation_cn": "表现为",
+                "tail_name": "边界清楚的扁平色素斑",
+                "evidence_text": "日光性黑子是常见的良性扁平色素性皮损，多见于日光暴露皮肤。"
+              }
+            ]
+          },
+          {
+            "rank": 5,
+            "path_id": "PATH_TRI_056",
+            "path_text": "良性角化样病变 → 表现为 → 粟丘疹样囊肿",
+            "hop_count": 1,
+            "start_disease_name": "良性角化样病变",
+            "end_entity_id": "LF_023",
+            "end_entity_name": "粟丘疹样囊肿",
+            "matched_anchor_names": [],
+            "evidence_texts": [
+              "脂溢性角化病皮肤镜下可见粟丘疹样囊肿。"
+            ],
+            "source_names": [
+              "DermNet - Dermoscopy of Seborrhoeic Keratosis"
+            ],
+            "total_score": 2.5,
+            "entity_match_score": 0.0,
+            "relation_weight_score": 1.5,
+            "disease_match_score": 1.0,
+            "path_length_penalty": 0.0,
+            "edges": [
+              {
+                "triple_id": "TRI_056",
+                "head_name": "良性角化样病变",
+                "relation_cn": "表现为",
+                "tail_name": "粟丘疹样囊肿",
+                "evidence_text": "脂溢性角化病皮肤镜下可见粟丘疹样囊肿。"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "case_id": "CASE_DF_001",
+      "candidate_disease": "皮肤纤维瘤",
+      "user_observation": "患者小腿出现质地较硬的棕褐色小结节，按压两侧时中央可出现凹陷。",
+      "expected_concepts": [
+        "小腿",
+        "质地较硬",
+        "棕褐色结节",
+        "中央凹陷"
+      ],
+      "rag": {
+        "retrieval_method": "bm25_with_phrase_overlap",
+        "retrieved_count": 5,
+        "documents": [
+          {
+            "rank": 1,
+            "document_id": "DOC_0068",
+            "text": "捏压皮损时，表面皮肤可出现凹陷，即捏压凹陷征。",
+            "score": 40.426898,
+            "bm25_score": 40.426898,
+            "phrase_overlap_score": 0.0,
+            "matched_terms": [
+              "皮",
+              "肤",
+              "皮肤",
+              "出",
+              "现",
+              "出现",
+              "压",
+              "时",
+              "可",
+              "凹",
+              "陷",
+              "可出",
+              "现凹",
+              "凹陷"
+            ],
+            "source_names": [
+              "DermNet - Dermatofibroma"
+            ],
+            "origin_record_ids": [
+              "TRI_071"
+            ]
+          },
+          {
+            "rank": 2,
+            "document_id": "DOC_0071",
+            "text": "皮肤纤维瘤是常见良性纤维性结节，通常见于小腿皮肤。",
+            "score": 35.353538,
+            "bm25_score": 35.003538,
+            "phrase_overlap_score": 0.35,
+            "matched_terms": [
+              "皮",
+              "肤",
+              "纤",
+              "维",
+              "瘤",
+              "皮肤",
+              "肤纤",
+              "纤维",
+              "维瘤",
+              "小",
+              "腿",
+              "结",
+              "节",
+              "小腿",
+              "结节",
+              "皮肤纤维瘤"
+            ],
+            "source_names": [
+              "DermNet - Dermatofibroma"
+            ],
+            "origin_record_ids": [
+              "TRI_074"
+            ]
+          },
+          {
+            "rank": 3,
+            "document_id": "DOC_0075",
+            "text": "皮肤纤维瘤有时可出现瘙痒。",
+            "score": 31.329134,
+            "bm25_score": 30.979134,
+            "phrase_overlap_score": 0.35,
+            "matched_terms": [
+              "皮",
+              "肤",
+              "纤",
+              "维",
+              "瘤",
+              "皮肤",
+              "肤纤",
+              "纤维",
+              "维瘤",
+              "出",
+              "现",
+              "出现",
+              "时",
+              "可",
+              "可出",
+              "皮肤纤维瘤"
+            ],
+            "source_names": [
+              "DermNet - Dermatofibroma"
+            ],
+            "origin_record_ids": [
+              "TRI_078"
+            ]
+          },
+          {
+            "rank": 4,
+            "document_id": "DOC_0074",
+            "text": "皮肤纤维瘤有时可出现疼痛或触痛。",
+            "score": 29.145517,
+            "bm25_score": 28.795517,
+            "phrase_overlap_score": 0.35,
+            "matched_terms": [
+              "皮",
+              "肤",
+              "纤",
+              "维",
+              "瘤",
+              "皮肤",
+              "肤纤",
+              "纤维",
+              "维瘤",
+              "出",
+              "现",
+              "出现",
+              "时",
+              "可",
+              "可出",
+              "皮肤纤维瘤"
+            ],
+            "source_names": [
+              "DermNet - Dermatofibroma"
+            ],
+            "origin_record_ids": [
+              "TRI_077"
+            ]
+          },
+          {
+            "rank": 5,
+            "document_id": "DOC_0025",
+            "text": "基底细胞癌可出现中央凹陷或溃疡，使边缘呈卷曲样。",
+            "score": 28.960534,
+            "bm25_score": 28.960534,
+            "phrase_overlap_score": 0.0,
+            "matched_terms": [
+              "出",
+              "现",
+              "出现",
+              "中",
+              "央",
+              "可",
+              "凹",
+              "陷",
+              "中央",
+              "可出",
+              "凹陷"
+            ],
+            "source_names": [
+              "DermNet - Basal Cell Carcinoma"
+            ],
+            "origin_record_ids": [
+              "TRI_027"
+            ]
+          }
+        ]
+      },
+      "kg_rag": {
+        "anchor_count": 1,
+        "anchors": [
+          {
+            "matched_text": "小腿",
+            "entity_id": "SITE_002",
+            "entity_name": "下肢",
+            "confidence": 0.92
+          }
+        ],
+        "retrieved_path_count": 33,
+        "ranked_path_count": 5,
+        "ranked_paths": [
+          {
+            "rank": 1,
+            "path_id": "PATH_TRI_074",
+            "path_text": "皮肤纤维瘤 → 常见于 → 下肢",
+            "hop_count": 1,
+            "start_disease_name": "皮肤纤维瘤",
+            "end_entity_id": "SITE_002",
+            "end_entity_name": "下肢",
+            "matched_anchor_names": [
+              "下肢"
+            ],
+            "evidence_texts": [
+              "皮肤纤维瘤是常见良性纤维性结节，通常见于小腿皮肤。"
+            ],
+            "source_names": [
+              "DermNet - Dermatofibroma"
+            ],
+            "total_score": 3.84,
+            "entity_match_score": 1.84,
+            "relation_weight_score": 1.0,
+            "disease_match_score": 1.0,
+            "path_length_penalty": 0.0,
+            "edges": [
+              {
+                "triple_id": "TRI_074",
+                "head_name": "皮肤纤维瘤",
+                "relation_cn": "常见于",
+                "tail_name": "下肢",
+                "evidence_text": "皮肤纤维瘤是常见良性纤维性结节，通常见于小腿皮肤。"
+              }
+            ]
+          },
+          {
+            "rank": 2,
+            "path_id": "PATH_TRI_081_TRI_013",
+            "path_text": "皮肤纤维瘤 → 鉴别诊断 → 黑色素瘤 → 常见于 → 下肢",
+            "hop_count": 2,
+            "start_disease_name": "皮肤纤维瘤",
+            "end_entity_id": "SITE_002",
+            "end_entity_name": "下肢",
+            "matched_anchor_names": [
+              "下肢"
+            ],
+            "evidence_texts": [
+              "皮肤纤维瘤有时可能被误认为隆突性皮肤纤维肉瘤或硬化性黑色素瘤。",
+              "黑色素瘤可发生在身体任何部位，男性常见于背部，女性常见于腿部。"
+            ],
+            "source_names": [
+              "DermNet - Dermatofibroma",
+              "DermNet - Melanoma"
+            ],
+            "total_score": 3.39,
+            "entity_match_score": 1.84,
+            "relation_weight_score": 1.2,
+            "disease_match_score": 0.7,
+            "path_length_penalty": 0.35,
+            "edges": [
+              {
+                "triple_id": "TRI_081",
+                "head_name": "皮肤纤维瘤",
+                "relation_cn": "鉴别诊断",
+                "tail_name": "黑色素瘤",
+                "evidence_text": "皮肤纤维瘤有时可能被误认为隆突性皮肤纤维肉瘤或硬化性黑色素瘤。"
+              },
+              {
+                "triple_id": "TRI_013",
+                "head_name": "黑色素瘤",
+                "relation_cn": "常见于",
+                "tail_name": "下肢",
+                "evidence_text": "黑色素瘤可发生在身体任何部位，男性常见于背部，女性常见于腿部。"
+              }
+            ]
+          },
+          {
+            "rank": 3,
+            "path_id": "PATH_TRI_070",
+            "path_text": "皮肤纤维瘤 → 表现为 → 坚实丘疹或结节",
+            "hop_count": 1,
+            "start_disease_name": "皮肤纤维瘤",
+            "end_entity_id": "LF_026",
+            "end_entity_name": "坚实丘疹或结节",
+            "matched_anchor_names": [],
+            "evidence_texts": [
+              "皮肤纤维瘤通常表现为单发、坚实的丘疹或结节。"
+            ],
+            "source_names": [
+              "DermNet - Dermatofibroma"
+            ],
+            "total_score": 2.5,
+            "entity_match_score": 0.0,
+            "relation_weight_score": 1.5,
+            "disease_match_score": 1.0,
+            "path_length_penalty": 0.0,
+            "edges": [
+              {
+                "triple_id": "TRI_070",
+                "head_name": "皮肤纤维瘤",
+                "relation_cn": "表现为",
+                "tail_name": "坚实丘疹或结节",
+                "evidence_text": "皮肤纤维瘤通常表现为单发、坚实的丘疹或结节。"
+              }
+            ]
+          },
+          {
+            "rank": 4,
+            "path_id": "PATH_TRI_071",
+            "path_text": "皮肤纤维瘤 → 表现为 → 捏压凹陷征",
+            "hop_count": 1,
+            "start_disease_name": "皮肤纤维瘤",
+            "end_entity_id": "LF_027",
+            "end_entity_name": "捏压凹陷征",
+            "matched_anchor_names": [],
+            "evidence_texts": [
+              "捏压皮损时，表面皮肤可出现凹陷，即捏压凹陷征。"
+            ],
+            "source_names": [
+              "DermNet - Dermatofibroma"
+            ],
+            "total_score": 2.5,
+            "entity_match_score": 0.0,
+            "relation_weight_score": 1.5,
+            "disease_match_score": 1.0,
+            "path_length_penalty": 0.0,
+            "edges": [
+              {
+                "triple_id": "TRI_071",
+                "head_name": "皮肤纤维瘤",
+                "relation_cn": "表现为",
+                "tail_name": "捏压凹陷征",
+                "evidence_text": "捏压皮损时，表面皮肤可出现凹陷，即捏压凹陷征。"
+              }
+            ]
+          },
+          {
+            "rank": 5,
+            "path_id": "PATH_TRI_072",
+            "path_text": "皮肤纤维瘤 → 表现为 → 中央白色瘢痕样区域",
+            "hop_count": 1,
+            "start_disease_name": "皮肤纤维瘤",
+            "end_entity_id": "LF_028",
+            "end_entity_name": "中央白色瘢痕样区域",
+            "matched_anchor_names": [],
+            "evidence_texts": [
+              "皮肤纤维瘤最常见的皮肤镜模式是中央白色区域伴周围淡色素网。"
+            ],
+            "source_names": [
+              "DermNet - Dermatofibroma"
+            ],
+            "total_score": 2.5,
+            "entity_match_score": 0.0,
+            "relation_weight_score": 1.5,
+            "disease_match_score": 1.0,
+            "path_length_penalty": 0.0,
+            "edges": [
+              {
+                "triple_id": "TRI_072",
+                "head_name": "皮肤纤维瘤",
+                "relation_cn": "表现为",
+                "tail_name": "中央白色瘢痕样区域",
+                "evidence_text": "皮肤纤维瘤最常见的皮肤镜模式是中央白色区域伴周围淡色素网。"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "case_id": "CASE_VASC_001",
+      "candidate_disease": "血管性病变",
+      "user_observation": "患者躯干部出现多个鲜红色圆形小丘疹，边界清楚，表面光滑，按压后颜色可暂时变浅。",
+      "expected_concepts": [
+        "鲜红色",
+        "圆形丘疹",
+        "边界清楚",
+        "表面光滑",
+        "按压褪色"
+      ],
+      "rag": {
+        "retrieval_method": "bm25_with_phrase_overlap",
+        "retrieved_count": 5,
+        "documents": [
+          {
+            "rank": 1,
+            "document_id": "DOC_0084",
+            "text": "HAM10000 中血管瘤类皮损在皮肤镜下可表现为红色或紫色、实性且边界清楚的 red clods 或 lacunes。",
+            "score": 35.98667,
+            "bm25_score": 35.63667,
+            "phrase_overlap_score": 0.35,
+            "matched_terms": [
+              "血",
+              "管",
+              "性",
+              "血管",
+              "现",
+              "红",
+              "色",
+              "红色",
+              "边",
+              "界",
+              "清",
+              "楚",
+              "边界",
+              "界清",
+              "清楚",
+              "表",
+              "可",
+              "边界清楚"
+            ],
+            "source_names": [
+              "HAM10000 Scientific Data"
+            ],
+            "origin_record_ids": [
+              "TRI_087"
+            ]
+          },
+          {
+            "rank": 2,
+            "document_id": "DOC_0014",
+            "text": "良性色素性皮损通常表现为较规则、较清楚的边界。",
+            "score": 26.601108,
+            "bm25_score": 26.601108,
+            "phrase_overlap_score": 0.0,
+            "matched_terms": [
+              "性",
+              "现",
+              "色",
+              "边",
+              "界",
+              "清",
+              "楚",
+              "边界",
+              "清楚",
+              "表"
+            ],
+            "source_names": [
+              "DermNet - Benign Melanocytic Lesions"
+            ],
+            "origin_record_ids": [
+              "TRI_016"
+            ]
+          },
+          {
+            "rank": 3,
+            "document_id": "DOC_0082",
+            "text": "樱桃样血管瘤可表现为无症状、质地较坚实的红色、蓝色或紫色丘疹。",
+            "score": 23.83196,
+            "bm25_score": 23.83196,
+            "phrase_overlap_score": 0.0,
+            "matched_terms": [
+              "血",
+              "管",
+              "血管",
+              "现",
+              "红",
+              "色",
+              "丘",
+              "疹",
+              "红色",
+              "丘疹",
+              "表",
+              "可"
+            ],
+            "source_names": [
+              "DermNet - Cherry Angioma"
+            ],
+            "origin_record_ids": [
+              "TRI_085"
+            ]
+          },
+          {
+            "rank": 4,
+            "document_id": "DOC_0089",
+            "text": "樱桃样血管瘤是常见的良性红色、蓝色或紫色皮损，常见于躯干。",
+            "score": 23.240845,
+            "bm25_score": 23.240845,
+            "phrase_overlap_score": 0.0,
+            "matched_terms": [
+              "血",
+              "管",
+              "性",
+              "血管",
+              "躯",
+              "干",
+              "红",
+              "色",
+              "躯干",
+              "红色"
+            ],
+            "source_names": [
+              "DermNet - Common Skin Lesions"
+            ],
+            "origin_record_ids": [
+              "TRI_092"
+            ]
+          },
+          {
+            "rank": 5,
+            "document_id": "DOC_0050",
+            "text": "脂溢性角化病可表现为光滑、蜡样或疣状表面。",
+            "score": 22.439196,
+            "bm25_score": 22.439196,
+            "phrase_overlap_score": 0.0,
+            "matched_terms": [
+              "性",
+              "病",
+              "现",
+              "表",
+              "面",
+              "光",
+              "滑",
+              "表面",
+              "光滑",
+              "可"
+            ],
+            "source_names": [
+              "DermNet - Seborrhoeic Keratosis"
+            ],
+            "origin_record_ids": [
+              "TRI_053"
+            ]
+          }
+        ]
+      },
+      "kg_rag": {
+        "anchor_count": 2,
+        "anchors": [
+          {
+            "matched_text": "边界清楚",
+            "entity_id": "LF_007",
+            "entity_name": "边界清楚",
+            "confidence": 0.96
+          },
+          {
+            "matched_text": "躯干",
+            "entity_id": "SITE_001",
+            "entity_name": "躯干",
+            "confidence": 0.96
+          }
+        ],
+        "retrieved_path_count": 38,
+        "ranked_path_count": 5,
+        "ranked_paths": [
+          {
+            "rank": 1,
+            "path_id": "PATH_TRI_092",
+            "path_text": "血管性皮损 → 常见于 → 躯干",
+            "hop_count": 1,
+            "start_disease_name": "血管性皮损",
+            "end_entity_id": "SITE_001",
+            "end_entity_name": "躯干",
+            "matched_anchor_names": [
+              "躯干"
+            ],
+            "evidence_texts": [
+              "樱桃样血管瘤是常见的良性红色、蓝色或紫色皮损，常见于躯干。"
+            ],
+            "source_names": [
+              "DermNet - Common Skin Lesions"
+            ],
+            "total_score": 3.92,
+            "entity_match_score": 1.92,
+            "relation_weight_score": 1.0,
+            "disease_match_score": 1.0,
+            "path_length_penalty": 0.0,
+            "edges": [
+              {
+                "triple_id": "TRI_092",
+                "head_name": "血管性皮损",
+                "relation_cn": "常见于",
+                "tail_name": "躯干",
+                "evidence_text": "樱桃样血管瘤是常见的良性红色、蓝色或紫色皮损，常见于躯干。"
+              }
+            ]
+          },
+          {
+            "rank": 2,
+            "path_id": "PATH_TRI_085",
+            "path_text": "血管性皮损 → 表现为 → 红色、蓝色或紫色丘疹",
+            "hop_count": 1,
+            "start_disease_name": "血管性皮损",
+            "end_entity_id": "LF_030",
+            "end_entity_name": "红色、蓝色或紫色丘疹",
+            "matched_anchor_names": [],
+            "evidence_texts": [
+              "樱桃样血管瘤可表现为无症状、质地较坚实的红色、蓝色或紫色丘疹。"
+            ],
+            "source_names": [
+              "DermNet - Cherry Angioma"
+            ],
+            "total_score": 2.5,
+            "entity_match_score": 0.0,
+            "relation_weight_score": 1.5,
+            "disease_match_score": 1.0,
+            "path_length_penalty": 0.0,
+            "edges": [
+              {
+                "triple_id": "TRI_085",
+                "head_name": "血管性皮损",
+                "relation_cn": "表现为",
+                "tail_name": "红色、蓝色或紫色丘疹",
+                "evidence_text": "樱桃样血管瘤可表现为无症状、质地较坚实的红色、蓝色或紫色丘疹。"
+              }
+            ]
+          },
+          {
+            "rank": 3,
+            "path_id": "PATH_TRI_086",
+            "path_text": "血管性皮损 → 表现为 → 红色或紫色小腔隙",
+            "hop_count": 1,
+            "start_disease_name": "血管性皮损",
+            "end_entity_id": "LF_031",
+            "end_entity_name": "红色或紫色小腔隙",
+            "matched_anchor_names": [],
+            "evidence_texts": [
+              "血管瘤或血管性皮损在皮肤镜下可表现为广泛红蓝色小腔隙。"
+            ],
+            "source_names": [
+              "DermNet - Dermoscopy of Other Non-melanocytic Lesions"
+            ],
+            "total_score": 2.5,
+            "entity_match_score": 0.0,
+            "relation_weight_score": 1.5,
+            "disease_match_score": 1.0,
+            "path_length_penalty": 0.0,
+            "edges": [
+              {
+                "triple_id": "TRI_086",
+                "head_name": "血管性皮损",
+                "relation_cn": "表现为",
+                "tail_name": "红色或紫色小腔隙",
+                "evidence_text": "血管瘤或血管性皮损在皮肤镜下可表现为广泛红蓝色小腔隙。"
+              }
+            ]
+          },
+          {
+            "rank": 4,
+            "path_id": "PATH_TRI_087",
+            "path_text": "血管性皮损 → 表现为 → 边界清楚的红色团块",
+            "hop_count": 1,
+            "start_disease_name": "血管性皮损",
+            "end_entity_id": "LF_032",
+            "end_entity_name": "边界清楚的红色团块",
+            "matched_anchor_names": [],
+            "evidence_texts": [
+              "HAM10000 中血管瘤类皮损在皮肤镜下可表现为红色或紫色、实性且边界清楚的 red clods 或 lacunes。"
+            ],
+            "source_names": [
+              "HAM10000 Scientific Data"
+            ],
+            "total_score": 2.5,
+            "entity_match_score": 0.0,
+            "relation_weight_score": 1.5,
+            "disease_match_score": 1.0,
+            "path_length_penalty": 0.0,
+            "edges": [
+              {
+                "triple_id": "TRI_087",
+                "head_name": "血管性皮损",
+                "relation_cn": "表现为",
+                "tail_name": "边界清楚的红色团块",
+                "evidence_text": "HAM10000 中血管瘤类皮损在皮肤镜下可表现为红色或紫色、实性且边界清楚的 red clods 或 lacunes。"
+              }
+            ]
+          },
+          {
+            "rank": 5,
+            "path_id": "PATH_TRI_088",
+            "path_text": "血管性皮损 → 表现为 → 快速生长的红色肉芽样结节",
+            "hop_count": 1,
+            "start_disease_name": "血管性皮损",
+            "end_entity_id": "LF_033",
+            "end_entity_name": "快速生长的红色肉芽样结节",
+            "matched_anchor_names": [],
+            "evidence_texts": [
+              "化脓性肉芽肿可表现为数周内快速生长的无痛性红色肉芽样结节。"
+            ],
+            "source_names": [
+              "DermNet - Pyogenic Granuloma"
+            ],
+            "total_score": 2.5,
+            "entity_match_score": 0.0,
+            "relation_weight_score": 1.5,
+            "disease_match_score": 1.0,
+            "path_length_penalty": 0.0,
+            "edges": [
+              {
+                "triple_id": "TRI_088",
+                "head_name": "血管性皮损",
+                "relation_cn": "表现为",
+                "tail_name": "快速生长的红色肉芽样结节",
+                "evidence_text": "化脓性肉芽肿可表现为数周内快速生长的无痛性红色肉芽样结节。"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}

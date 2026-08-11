@@ -1,0 +1,98 @@
+{"document_id": "DOC_0001", "text": "ABCDE 特征包括 Border irregularity，可支持“边界不规则”。", "source_names": ["DermNet - ABCDEFG of melanoma"], "origin_record_ids": ["TRI_001"]}
+{"document_id": "DOC_0002", "text": "ABCDE 特征包括 Colour variability / Change，可支持“颜色不均”。", "source_names": ["DermNet - ABCDEFG of melanoma"], "origin_record_ids": ["TRI_002"]}
+{"document_id": "DOC_0003", "text": "ABCDE 特征包括 Asymmetry，可支持“形态不对称”。", "source_names": ["DermNet - ABCDEFG of melanoma"], "origin_record_ids": ["TRI_003"]}
+{"document_id": "DOC_0004", "text": "ABCDE 特征包括 Diameter / Evolving，可支持“直径增大或变化”。", "source_names": ["DermNet - ABCDEFG of melanoma"], "origin_record_ids": ["TRI_004"]}
+{"document_id": "DOC_0005", "text": "黑色素瘤评估中可出现不规则色素或异常皮肤镜结构。", "source_names": ["DermNet - Dermoscopy / Melanoma"], "origin_record_ids": ["TRI_005"]}
+{"document_id": "DOC_0006", "text": "黑色素瘤可发生在身体任何部位，男性常见于背部，女性常见于腿部。", "source_names": ["DermNet - Melanoma"], "origin_record_ids": ["TRI_006", "TRI_013"]}
+{"document_id": "DOC_0007", "text": "黑色素瘤早期可表现为异常痣或斑点，并可能出现瘙痒或出血。", "source_names": ["DermNet - Melanoma"], "origin_record_ids": ["TRI_007", "TRI_014"]}
+{"document_id": "DOC_0008", "text": "皮肤镜可用于黑色素瘤相关皮损评估。", "source_names": ["DermNet - Dermoscopy / Melanoma"], "origin_record_ids": ["TRI_008"]}
+{"document_id": "DOC_0009", "text": "活检可提供组织病理信息，用于优化黑色素瘤诊断并指导后续管理。", "source_names": ["AAD - Melanoma clinical guideline"], "origin_record_ids": ["TRI_009"]}
+{"document_id": "DOC_0010", "text": "黑色素瘤早期可能类似黑色素细胞痣，部分情况下很难与非典型痣区分。", "source_names": ["DermNet - Atypical naevi / Superficial spreading melanoma"], "origin_record_ids": ["TRI_010"]}
+{"document_id": "DOC_0011", "text": "黑色素瘤是潜在严重的皮肤癌，需进行进一步评估。", "source_names": ["DermNet - Melanoma"], "origin_record_ids": ["TRI_011"]}
+{"document_id": "DOC_0012", "text": "疑似黑色素瘤时，活检获得的组织病理信息有助于诊断和后续管理。", "source_names": ["AAD - Melanoma clinical guideline"], "origin_record_ids": ["TRI_012"]}
+{"document_id": "DOC_0013", "text": "单一颜色或均匀色素模式的皮损几乎总是良性的。", "source_names": ["DermNet - Benign Melanocytic Lesions"], "origin_record_ids": ["TRI_015"]}
+{"document_id": "DOC_0014", "text": "良性色素性皮损通常表现为较规则、较清楚的边界。", "source_names": ["DermNet - Benign Melanocytic Lesions"], "origin_record_ids": ["TRI_016"]}
+{"document_id": "DOC_0015", "text": "棕色或黑色黑色素细胞痣含有黑色素，也可称为色素痣。", "source_names": ["DermNet - Melanocytic Naevus"], "origin_record_ids": ["TRI_017"]}
+{"document_id": "DOC_0016", "text": "良性色素性皮损通常具有较一致的结构和外观。", "source_names": ["DermNet - Benign Melanocytic Lesions"], "origin_record_ids": ["TRI_018"]}
+{"document_id": "DOC_0017", "text": "黑色素细胞痣可发生在身体任何部位。", "source_names": ["DermNet - Melanocytic Naevus"], "origin_record_ids": ["TRI_019"]}
+{"document_id": "DOC_0018", "text": "皮肤镜常可根据色素数量和分布对不同类型黑色素细胞痣进行诊断。", "source_names": ["DermNet - Melanocytic Naevi: New Classification"], "origin_record_ids": ["TRI_020"]}
+{"document_id": "DOC_0019", "text": "皮肤镜可帮助识别与其他痣不同的“丑小鸭”病变，并提示黑色素瘤可能。", "source_names": ["DermNet - Melanocytic Naevi: New Classification"], "origin_record_ids": ["TRI_021"]}
+{"document_id": "DOC_0020", "text": "黑色素细胞痣是一种常见良性皮损。", "source_names": ["DermNet - Melanocytic Naevus"], "origin_record_ids": ["TRI_022"]}
+{"document_id": "DOC_0021", "text": "皮损变化、颜色改变或异常表现时应进一步评估。", "source_names": ["DermNet - Melanocytic Naevus"], "origin_record_ids": ["TRI_023"]}
+{"document_id": "DOC_0022", "text": "黑色素细胞痣通常为良性皮损；若出现大小、形状、结构、颜色变化，或出血、结痂、瘙痒等情况，应进一步评估。", "source_names": ["DermNet - Melanocytic Naevus"], "origin_record_ids": ["TRI_024"]}
+{"document_id": "DOC_0023", "text": "结节型基底细胞癌可表现为光亮或珍珠样结节。", "source_names": ["DermNet - Basal Cell Carcinoma"], "origin_record_ids": ["TRI_025"]}
+{"document_id": "DOC_0024", "text": "基底细胞癌表面可见血管穿过。", "source_names": ["DermNet - Basal Cell Carcinoma"], "origin_record_ids": ["TRI_026"]}
+{"document_id": "DOC_0025", "text": "基底细胞癌可出现中央凹陷或溃疡，使边缘呈卷曲样。", "source_names": ["DermNet - Basal Cell Carcinoma"], "origin_record_ids": ["TRI_027"]}
+{"document_id": "DOC_0026", "text": "基底细胞癌可有中央凹陷或溃疡。", "source_names": ["DermNet - Basal Cell Carcinoma"], "origin_record_ids": ["TRI_028"]}
+{"document_id": "DOC_0027", "text": "基底细胞癌的临床特征包括缓慢生长的不规则结节或斑块。", "source_names": ["DermNet - Basal Cell Carcinoma Dermoscopy"], "origin_record_ids": ["TRI_029"]}
+{"document_id": "DOC_0028", "text": "结节型基底细胞癌是面部常见的 BCC 类型。", "source_names": ["DermNet - Basal Cell Carcinoma"], "origin_record_ids": ["TRI_030"]}
+{"document_id": "DOC_0029", "text": "基底细胞癌可出现自发性出血、糜烂或溃疡。", "source_names": ["DermNet - Basal Cell Carcinoma Dermoscopy"], "origin_record_ids": ["TRI_031"]}
+{"document_id": "DOC_0030", "text": "皮肤镜有助于区分色素性基底细胞癌和其他色素性皮损。", "source_names": ["DermNet - Basal Cell Carcinoma Dermoscopy"], "origin_record_ids": ["TRI_032", "TRI_035"]}
+{"document_id": "DOC_0031", "text": "活检用于获得支持准确诊断和管理的组织标本。", "source_names": ["AAD - Basal Cell Carcinoma Guideline"], "origin_record_ids": ["TRI_033"]}
+{"document_id": "DOC_0032", "text": "脂溢性角化病有时可类似基底细胞癌、鳞状细胞癌或黑色素瘤。", "source_names": ["DermNet - Seborrhoeic Keratosis"], "origin_record_ids": ["TRI_034"]}
+{"document_id": "DOC_0033", "text": "基底细胞癌是常见的局部侵袭性角质形成细胞癌。", "source_names": ["DermNet - Basal Cell Carcinoma"], "origin_record_ids": ["TRI_036"]}
+{"document_id": "DOC_0034", "text": "活检有助于准确诊断和后续管理。", "source_names": ["AAD - Basal Cell Carcinoma Guideline"], "origin_record_ids": ["TRI_037"]}
+{"document_id": "DOC_0035", "text": "光化性角化病是发生在日光损伤皮肤上的癌前性鳞屑性皮损。", "source_names": ["DermNet - Actinic Keratosis"], "origin_record_ids": ["TRI_038"]}
+{"document_id": "DOC_0036", "text": "光化性角化病可表现为白色或黄色、鳞屑性、疣状或角化性表面。", "source_names": ["DermNet - Actinic Keratosis"], "origin_record_ids": ["TRI_039"]}
+{"document_id": "DOC_0037", "text": "表皮内鳞状细胞癌可表现为橙红色或棕色的不规则鳞屑性斑块。", "source_names": ["DermNet - Intraepidermal Squamous Cell Carcinoma"], "origin_record_ids": ["TRI_040"]}
+{"document_id": "DOC_0038", "text": "表皮内鳞状细胞癌表现为一个或多个不规则鳞屑性斑块。", "source_names": ["DermNet - Intraepidermal Squamous Cell Carcinoma"], "origin_record_ids": ["TRI_041"]}
+{"document_id": "DOC_0039", "text": "面部非色素性光化性角化病在皮肤镜下可表现为草莓样模式。", "source_names": ["DermNet - Actinic Keratosis Dermoscopy"], "origin_record_ids": ["TRI_042"]}
+{"document_id": "DOC_0040", "text": "光化性角化病常见于反复日光暴露部位。", "source_names": ["DermNet - Actinic Keratosis"], "origin_record_ids": ["TRI_043"]}
+{"document_id": "DOC_0041", "text": "光化性角化病常见于面部、耳部、手背等日光暴露部位。", "source_names": ["DermNet - Actinic Keratosis"], "origin_record_ids": ["TRI_044"]}
+{"document_id": "DOC_0042", "text": "光化性角化病常见于手背和面部等反复日光暴露部位。", "source_names": ["DermNet - Actinic Keratosis"], "origin_record_ids": ["TRI_045"]}
+{"document_id": "DOC_0043", "text": "光化性角化病可伴有触痛。", "source_names": ["DermNet - Actinic Keratosis Dermoscopy"], "origin_record_ids": ["TRI_046"]}
+{"document_id": "DOC_0044", "text": "光化性角化病可结合临床和皮肤镜特征进行诊断。", "source_names": ["DermNet - Actinic Keratosis Dermoscopy"], "origin_record_ids": ["TRI_047"]}
+{"document_id": "DOC_0045", "text": "表皮内鳞状细胞癌可通过活检确认诊断，组织学显示表皮全层异型增生。", "source_names": ["DermNet - Intraepidermal Squamous Cell Carcinoma"], "origin_record_ids": ["TRI_048"]}
+{"document_id": "DOC_0046", "text": "光化性角化病有时难以与其他皮损区分，需要结合临床和皮肤镜特征判断。", "source_names": ["DermNet - Actinic Keratosis Dermoscopy"], "origin_record_ids": ["TRI_049"]}
+{"document_id": "DOC_0047", "text": "脂溢性角化病有时可类似基底细胞癌、鳞状细胞癌或黑色素瘤等皮肤癌。", "source_names": ["DermNet - Seborrhoeic Keratosis"], "origin_record_ids": ["TRI_050"]}
+{"document_id": "DOC_0048", "text": "光化性角化病具有癌前性质，皮肤鳞状细胞癌可由光化性角化病发展而来。", "source_names": ["DermNet - Actinic Keratosis"], "origin_record_ids": ["TRI_051"]}
+{"document_id": "DOC_0049", "text": "AAD 指南针对光化性角化病管理提供循证治疗建议，且 AK 可进展为角质形成细胞癌。", "source_names": ["AAD - Actinic Keratosis Guideline"], "origin_record_ids": ["TRI_052"]}
+{"document_id": "DOC_0050", "text": "脂溢性角化病可表现为光滑、蜡样或疣状表面。", "source_names": ["DermNet - Seborrhoeic Keratosis"], "origin_record_ids": ["TRI_053"]}
+{"document_id": "DOC_0051", "text": "脂溢性角化病常呈贴附在皮肤表面的外观。", "source_names": ["DermNet - Seborrhoeic Keratosis"], "origin_record_ids": ["TRI_054"]}
+{"document_id": "DOC_0052", "text": "日光性黑子是常见的良性扁平色素性皮损，多见于日光暴露皮肤。", "source_names": ["DermNet - Solar Lentigo"], "origin_record_ids": ["TRI_055"]}
+{"document_id": "DOC_0053", "text": "脂溢性角化病皮肤镜下可见粟丘疹样囊肿。", "source_names": ["DermNet - Dermoscopy of Seborrhoeic Keratosis"], "origin_record_ids": ["TRI_056"]}
+{"document_id": "DOC_0054", "text": "脂溢性角化病皮肤镜下可见裂隙、嵴状结构或脑回样表面。", "source_names": ["DermNet - Dermoscopy of Seborrhoeic Keratosis"], "origin_record_ids": ["TRI_057"]}
+{"document_id": "DOC_0055", "text": "扁平苔藓样角化病可表现为小的炎性斑疹或薄的色素性斑块。", "source_names": ["DermNet - Lichenoid Keratosis"], "origin_record_ids": ["TRI_058"]}
+{"document_id": "DOC_0056", "text": "日光性黑子主要发生在日光暴露皮肤。", "source_names": ["DermNet - Solar Lentigo"], "origin_record_ids": ["TRI_059"]}
+{"document_id": "DOC_0057", "text": "扁平苔藓样角化病最常见于上躯干，其次为远端上肢。", "source_names": ["DermNet - Lichenoid Keratosis"], "origin_record_ids": ["TRI_060"]}
+{"document_id": "DOC_0058", "text": "日光性黑子通常无症状，不引起瘙痒或疼痛。", "source_names": ["DermNet - Solar Lentigo"], "origin_record_ids": ["TRI_061"]}
+{"document_id": "DOC_0059", "text": "扁平苔藓样角化病通常无症状，但也可出现瘙痒或轻微刺痛。", "source_names": ["DermNet - Lichenoid Keratosis"], "origin_record_ids": ["TRI_062"]}
+{"document_id": "DOC_0060", "text": "皮肤镜有助于区分脂溢性角化病与基底细胞癌、黑色素瘤等病变。", "source_names": ["DermNet - Dermoscopy of Seborrhoeic Keratosis"], "origin_record_ids": ["TRI_063"]}
+{"document_id": "DOC_0061", "text": "当临床检查和皮肤镜不能区分扁平苔藓样角化病与其他孤立性红斑性病变时，需要皮肤活检。", "source_names": ["DermNet - Lichenoid Keratosis"], "origin_record_ids": ["TRI_064"]}
+{"document_id": "DOC_0062", "text": "脂溢性角化病有时可与黑色素瘤等黑色素细胞性病变相似，临床和皮肤镜鉴别并非总是容易。", "source_names": ["DermNet - Dermoscopy of Seborrhoeic Keratosis"], "origin_record_ids": ["TRI_065"]}
+{"document_id": "DOC_0063", "text": "皮肤镜有助于区分脂溢性角化病与基底细胞癌和黑色素瘤。", "source_names": ["DermNet - Dermoscopy of Seborrhoeic Keratosis"], "origin_record_ids": ["TRI_066"]}
+{"document_id": "DOC_0064", "text": "脂溢性角化病有时可与鳞状细胞癌、基底细胞癌或黑色素瘤等皮肤癌相似。", "source_names": ["DermNet - Seborrhoeic Keratosis"], "origin_record_ids": ["TRI_067"]}
+{"document_id": "DOC_0065", "text": "脂溢性角化病不是癌前肿瘤，但有时难以与皮肤癌区分。", "source_names": ["DermNet - Seborrhoeic Keratosis"], "origin_record_ids": ["TRI_068"]}
+{"document_id": "DOC_0066", "text": "若诊断存在疑问，可进行皮肤镜随访；无法区分时需要活检。", "source_names": ["DermNet - Lichenoid Keratosis"], "origin_record_ids": ["TRI_069"]}
+{"document_id": "DOC_0067", "text": "皮肤纤维瘤通常表现为单发、坚实的丘疹或结节。", "source_names": ["DermNet - Dermatofibroma"], "origin_record_ids": ["TRI_070"]}
+{"document_id": "DOC_0068", "text": "捏压皮损时，表面皮肤可出现凹陷，即捏压凹陷征。", "source_names": ["DermNet - Dermatofibroma"], "origin_record_ids": ["TRI_071"]}
+{"document_id": "DOC_0069", "text": "皮肤纤维瘤最常见的皮肤镜模式是中央白色区域伴周围淡色素网。", "source_names": ["DermNet - Dermatofibroma"], "origin_record_ids": ["TRI_072"]}
+{"document_id": "DOC_0070", "text": "皮肤纤维瘤皮肤镜下可见淡色素网或假性色素网围绕中央苍白无结构区域。", "source_names": ["DermNet - Dermoscopy of Other Non-melanocytic Lesions"], "origin_record_ids": ["TRI_073"]}
+{"document_id": "DOC_0071", "text": "皮肤纤维瘤是常见良性纤维性结节，通常见于小腿皮肤。", "source_names": ["DermNet - Dermatofibroma"], "origin_record_ids": ["TRI_074"]}
+{"document_id": "DOC_0072", "text": "皮肤纤维瘤可发生于身体任何皮肤部位。", "source_names": ["DermNet - Dermatofibroma"], "origin_record_ids": ["TRI_075"]}
+{"document_id": "DOC_0073", "text": "皮肤纤维瘤通常不引起症状。", "source_names": ["DermNet - Dermatofibroma"], "origin_record_ids": ["TRI_076"]}
+{"document_id": "DOC_0074", "text": "皮肤纤维瘤有时可出现疼痛或触痛。", "source_names": ["DermNet - Dermatofibroma"], "origin_record_ids": ["TRI_077"]}
+{"document_id": "DOC_0075", "text": "皮肤纤维瘤有时可出现瘙痒。", "source_names": ["DermNet - Dermatofibroma"], "origin_record_ids": ["TRI_078"]}
+{"document_id": "DOC_0076", "text": "皮肤纤维瘤通常可通过临床表现诊断，并可由皮肤镜辅助支持。", "source_names": ["DermNet - Dermatofibroma"], "origin_record_ids": ["TRI_079"]}
+{"document_id": "DOC_0077", "text": "若存在近期增大、溃疡或皮肤镜下结构和颜色不对称等不典型特征，可进行诊断性切除或皮肤活检。", "source_names": ["DermNet - Dermatofibroma"], "origin_record_ids": ["TRI_080"]}
+{"document_id": "DOC_0078", "text": "皮肤纤维瘤有时可能被误认为隆突性皮肤纤维肉瘤或硬化性黑色素瘤。", "source_names": ["DermNet - Dermatofibroma"], "origin_record_ids": ["TRI_081"]}
+{"document_id": "DOC_0079", "text": "皮肤镜有助于区分色素性非黑色素细胞病变与良性或恶性黑色素细胞病变。", "source_names": ["DermNet - Dermoscopy of Other Non-melanocytic Lesions"], "origin_record_ids": ["TRI_082"]}
+{"document_id": "DOC_0080", "text": "皮肤纤维瘤不会发展为癌，但偶尔可与其他肿瘤相混淆。", "source_names": ["DermNet - Dermatofibroma"], "origin_record_ids": ["TRI_083"]}
+{"document_id": "DOC_0081", "text": "皮肤纤维瘤通常无害，典型病例一般仅需解释和观察；若造成困扰或诊断不明确，可进一步处理。", "source_names": ["DermNet - Dermatofibroma"], "origin_record_ids": ["TRI_084"]}
+{"document_id": "DOC_0082", "text": "樱桃样血管瘤可表现为无症状、质地较坚实的红色、蓝色或紫色丘疹。", "source_names": ["DermNet - Cherry Angioma"], "origin_record_ids": ["TRI_085"]}
+{"document_id": "DOC_0083", "text": "血管瘤或血管性皮损在皮肤镜下可表现为广泛红蓝色小腔隙。", "source_names": ["DermNet - Dermoscopy of Other Non-melanocytic Lesions"], "origin_record_ids": ["TRI_086"]}
+{"document_id": "DOC_0084", "text": "HAM10000 中血管瘤类皮损在皮肤镜下可表现为红色或紫色、实性且边界清楚的 red clods 或 lacunes。", "source_names": ["HAM10000 Scientific Data"], "origin_record_ids": ["TRI_087"]}
+{"document_id": "DOC_0085", "text": "化脓性肉芽肿可表现为数周内快速生长的无痛性红色肉芽样结节。", "source_names": ["DermNet - Pyogenic Granuloma"], "origin_record_ids": ["TRI_088"]}
+{"document_id": "DOC_0086", "text": "化脓性肉芽肿在皮肤镜下可见明显角化性边缘或白色领圈样结构。", "source_names": ["DermNet - Pyogenic Granuloma"], "origin_record_ids": ["TRI_089"]}
+{"document_id": "DOC_0087", "text": "化脓性肉芽肿表面可发生溃疡、结痂或疣状改变。", "source_names": ["DermNet - Pyogenic Granuloma"], "origin_record_ids": ["TRI_090"]}
+{"document_id": "DOC_0088", "text": "樱桃样血管瘤通常散在分布于身体皮肤表面。", "source_names": ["DermNet - Cherry Angioma"], "origin_record_ids": ["TRI_091"]}
+{"document_id": "DOC_0089", "text": "樱桃样血管瘤是常见的良性红色、蓝色或紫色皮损，常见于躯干。", "source_names": ["DermNet - Common Skin Lesions"], "origin_record_ids": ["TRI_092"]}
+{"document_id": "DOC_0090", "text": "化脓性肉芽肿最常见的受累部位包括手指和面部。", "source_names": ["DermNet - Pyogenic Granuloma"], "origin_record_ids": ["TRI_093", "TRI_094"]}
+{"document_id": "DOC_0091", "text": "樱桃样血管瘤通常为无症状皮损。", "source_names": ["DermNet - Cherry Angioma"], "origin_record_ids": ["TRI_095"]}
+{"document_id": "DOC_0092", "text": "化脓性肉芽肿轻微外伤后容易出血。", "source_names": ["DermNet - Pyogenic Granuloma"], "origin_record_ids": ["TRI_096"]}
+{"document_id": "DOC_0093", "text": "樱桃样血管瘤通常可临床诊断，皮肤镜下具有红色团块或小叶样模式。", "source_names": ["DermNet - Cherry Angioma"], "origin_record_ids": ["TRI_097"]}
+{"document_id": "DOC_0094", "text": "当诊断存在疑问时，化脓性肉芽肿可在治疗或切除后提交组织学检查。", "source_names": ["DermNet - Pyogenic Granuloma"], "origin_record_ids": ["TRI_098"]}
+{"document_id": "DOC_0095", "text": "无色素或低色素黑色素瘤是化脓性肉芽肿重要的鉴别诊断，皮肤镜下也可能有相似特征。", "source_names": ["DermNet - Pyogenic Granuloma"], "origin_record_ids": ["TRI_099"]}
+{"document_id": "DOC_0096", "text": "樱桃样血管瘤偶尔可能与结节型基底细胞癌混淆。", "source_names": ["DermNet - Cherry Angioma"], "origin_record_ids": ["TRI_100"]}
+{"document_id": "DOC_0097", "text": "樱桃样血管瘤通常无害，但有时需排除类似的恶性皮损；化脓性肉芽肿可反复或大量出血。", "source_names": ["DermNet - Cherry Angioma"], "origin_record_ids": ["TRI_101"]}
+{"document_id": "DOC_0098", "text": "快速生长、反复出血或诊断不明确的血管性皮损应进一步评估，必要时进行组织学检查。", "source_names": ["DermNet - Pyogenic Granuloma"], "origin_record_ids": ["TRI_102"]}

@@ -412,12 +412,14 @@ def validate_insufficient_evidence(
     ]
 
     if falsely_matched_paths:
+        falsely_matched_path_ids = [
+            result.path_id
+            for result in falsely_matched_paths
+        ]
+
         errors.append(
             "存在没有文本依据却被标记为实体匹配的路径："
-            f"{[
-                result.path_id
-                for result in falsely_matched_paths
-            ]}"
+            f"{falsely_matched_path_ids}"
         )
 
     if retrieved_count <= 0:

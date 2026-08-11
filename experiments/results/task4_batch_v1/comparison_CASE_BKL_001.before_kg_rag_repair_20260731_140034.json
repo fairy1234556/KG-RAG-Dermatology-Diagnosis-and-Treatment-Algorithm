@@ -1,0 +1,226 @@
+{
+  "experiment_id": "TASK4_CASE_BKL_001_20260730_153854",
+  "task": "three_method_baseline_comparison",
+  "experiment_status": "partial_failure",
+  "started_at": "2026-07-30T15:38:30+08:00",
+  "finished_at": "2026-07-30T15:38:54+08:00",
+  "total_wall_time_ms": 24181,
+  "case": {
+    "case_id": "CASE_BKL_001",
+    "candidate_disease": "良性角化性病变",
+    "user_observation": "患者躯干部出现边界清楚的棕褐色隆起性斑块，表面粗糙，外观像贴在皮肤上一样。"
+  },
+  "experiment_settings": {
+    "method_order": [
+      "llm",
+      "rag",
+      "kg_rag"
+    ],
+    "rag_top_k": 5,
+    "kg_rag_top_k": 5,
+    "kg_rag_max_hops": 2,
+    "shared_llm_client": true,
+    "llm_config_path": "configs/llm_config.yaml",
+    "llm_config_sha256": "fc8182b88daaaa12da8b912ea872ffb445c12a3905d6fe28f851fea348ad967b"
+  },
+  "git": {
+    "branch": "phase-3-kg-rag-v1",
+    "commit": "2733c4fcdcacbd93b3e5f23a6fb40b7ae07489ee",
+    "working_tree_dirty": true,
+    "working_tree_status": [
+      "M .env.example",
+      " M .gitignore",
+      " M rag/schemas.py",
+      "?? configs/llm_config.yaml",
+      "?? experiments/cases/",
+      "?? experiments/results/",
+      "?? experiments/run_task4_batch.py",
+      "?? experiments/run_three_method_comparison.py",
+      "?? experiments/validate_baseline_llm.py",
+      "?? experiments/validate_baseline_rag.py",
+      "?? experiments/validate_kg_rag_pipeline.py",
+      "?? experiments/validate_task4_cases.py",
+      "?? experiments/validate_text_retriever.py",
+      "?? rag/baseline_common.py",
+      "?? rag/baseline_llm.py",
+      "?? rag/baseline_rag.py",
+      "?? rag/data/",
+      "?? rag/evidence_corpus.py",
+      "?? rag/kg_rag_pipeline.py",
+      "?? rag/llm_client.py",
+      "?? rag/text_retriever.py",
+      "?? requirements.txt"
+    ]
+  },
+  "fairness_check": {
+    "passed": true,
+    "checks": {
+      "all_use_unified_schema": true,
+      "same_case_input": true,
+      "method_order_correct": true,
+      "same_model_for_successful_runs": true,
+      "same_prompt_version_for_successful_runs": true,
+      "shared_client_instance": true
+    },
+    "successful_model_names": [
+      "qwen3.7-plus-2026-05-26"
+    ],
+    "successful_prompt_versions": [
+      "baseline_v1"
+    ]
+  },
+  "method_results": [
+    {
+      "method": "llm",
+      "started_at": "2026-07-30T15:38:30+08:00",
+      "wall_time_ms": 14452,
+      "result": {
+        "case_id": "CASE_BKL_001",
+        "method": "llm",
+        "candidate_disease": "良性角化性病变",
+        "user_observation": "患者躯干部出现边界清楚的棕褐色隆起性斑块，表面粗糙，外观像贴在皮肤上一样。",
+        "observation_match": [
+          "用户描述的'边界清楚的棕褐色隆起性斑块'符合良性角化性病变（如脂溢性角化病）的典型颜色与形态特征。",
+          "'表面粗糙'对应此类病变常见的角化过度或疣状表面表现。",
+          "'外观像贴在皮肤上一样'是脂溢性角化病极具特征性的临床描述，提示病变位于表皮且界限分明。",
+          "发病部位在'躯干部'，这是良性角化性病变的好发区域之一。"
+        ],
+        "supporting_evidence": [
+          "根据一般医学知识，脂溢性角化病是一种常见的良性表皮肿瘤，多见于中老年人，常表现为躯干、面部或四肢的褐色、黑色或肤色斑块。",
+          "此类病变通常生长缓慢，表面可呈蜡样、疣状或粗糙不平，基底常呈现'贴附'于皮肤的外观，一般无自觉症状或仅有轻微瘙痒。",
+          "良性角化性病变通常不具有侵袭性，不会发生远处转移，多数情况下无需特殊治疗，除非出于美容需求或受到摩擦刺激。"
+        ],
+        "differential_diagnosis": [
+          "色素痣：通常表面光滑，边界规则，但需通过皮肤镜鉴别。",
+          "黑色素瘤：恶性皮肤肿瘤，可能表现为颜色不均、边界不规则、快速变化的皮损，需严格排除。",
+          "扁平疣：由HPV感染引起，多见于面部和手背，表面扁平光滑，与本例粗糙外观略有不同。",
+          "日光性角化病：癌前病变，多见于曝光部位，表面常有鳞屑，基底可能有红斑。"
+        ],
+        "evidence_paths": [],
+        "risk_warning": [
+          "虽然描述特征倾向于良性，但任何新出现或发生变化的色素性皮损都应由专业医生评估以排除恶性可能。",
+          "若皮损出现快速增大、出血、溃疡、疼痛或颜色突然改变，应立即就医。",
+          "切勿自行抠抓、切割或使用腐蚀性物质处理皮损，以免引起感染或掩盖病情。"
+        ],
+        "medical_advice": [
+          "建议前往皮肤科进行面诊，医生可通过肉眼观察或皮肤镜检查进一步确认诊断。",
+          "记录皮损的大小、颜色变化及出现时间，以便就诊时提供详细病史。",
+          "若确诊为良性且无症状，通常只需定期观察；若有美观需求或摩擦不适，可咨询医生关于冷冻、激光或手术切除等非处方性治疗选项。"
+        ],
+        "evidence_gap": [
+          "本方法没有接入外部可追溯证据，所有解释基于模型内部的一般医学知识库。",
+          "缺乏患者的年龄、性别、既往皮肤病史及家族史信息，这些因素影响疾病概率评估。",
+          "缺乏皮肤镜检查结果或组织病理学检查报告，无法从微观结构上确诊。",
+          "未提供皮损的具体大小、数量、持续时间及是否有瘙痒或疼痛等主观症状。",
+          "纯 LLM 基线未接入外部检索证据，回答中的医学内容不具备本次运行级别的来源追溯能力。"
+        ],
+        "sources": [],
+        "disclaimer": "本结果仅用于健康信息参考和辅助决策，不构成医学诊断，也不能替代医生面诊、皮肤镜检查或组织病理检查。",
+        "model_name": "qwen3.7-plus-2026-05-26",
+        "prompt_version": "baseline_v1",
+        "response_time_ms": 14451,
+        "token_usage": {
+          "prompt_tokens": 598,
+          "completion_tokens": 656,
+          "total_tokens": 1254
+        },
+        "run_status": "success",
+        "error_message": ""
+      }
+    },
+    {
+      "method": "rag",
+      "started_at": "2026-07-30T15:38:44+08:00",
+      "wall_time_ms": 9701,
+      "result": {
+        "case_id": "CASE_BKL_001",
+        "method": "rag",
+        "candidate_disease": "良性角化性病变",
+        "user_observation": "患者躯干部出现边界清楚的棕褐色隆起性斑块，表面粗糙，外观像贴在皮肤上一样。",
+        "observation_match": [
+          "用户描述的‘外观像贴在皮肤上一样’与脂溢性角化病的典型临床特征高度吻合",
+          "用户描述的‘边界清楚’符合良性色素性皮损的一般特征"
+        ],
+        "supporting_evidence": [
+          "根据检索到的证据，脂溢性角化病常呈贴附在皮肤表面的外观（来源：DOC_0051）",
+          "良性色素性皮损通常表现为较规则、较清楚的边界（来源：DOC_0014）"
+        ],
+        "differential_diagnosis": [
+          "扁平苔藓样角化病：可表现为小的炎性斑疹或薄的色素性斑块（来源：DOC_0055）",
+          "光化性角化病：虽常见于面部且表现为草莓样模式，但作为角化性病变需纳入鉴别（来源：DOC_0039）"
+        ],
+        "evidence_paths": [],
+        "risk_warning": [
+          "虽然临床表现倾向于良性，但任何新发或变化的色素性皮损均需排除恶性可能",
+          "仅凭外观描述无法完全确诊，需结合皮肤镜或病理检查确认"
+        ],
+        "medical_advice": [
+          "建议前往皮肤科进行专业面诊",
+          "建议进行皮肤镜检查以进一步评估皮损结构",
+          "观察皮损是否有快速增大、出血、瘙痒或颜色改变等情况并记录"
+        ],
+        "evidence_gap": [
+          "检索文本未提供关于躯干部棕褐色隆起性斑块表面粗糙的具体病理机制解释",
+          "检索文本未涵盖除脂溢性角化病、扁平苔藓样角化病和光化性角化病之外的其他良性角化性病变的详细鉴别特征",
+          "缺乏患者年龄、病程长短及既往病史等关键临床背景信息"
+        ],
+        "sources": [
+          "DermNet - Seborrhoeic Keratosis",
+          "DermNet - Benign Melanocytic Lesions",
+          "HAM10000 Scientific Data",
+          "DermNet - Lichenoid Keratosis",
+          "DermNet - Actinic Keratosis Dermoscopy"
+        ],
+        "disclaimer": "本结果仅用于健康信息参考和辅助决策，不构成医学诊断，也不能替代医生面诊、皮肤镜检查或组织病理检查。",
+        "model_name": "qwen3.7-plus-2026-05-26",
+        "prompt_version": "baseline_v1",
+        "response_time_ms": 9696,
+        "token_usage": {
+          "prompt_tokens": 956,
+          "completion_tokens": 513,
+          "total_tokens": 1469
+        },
+        "run_status": "success",
+        "error_message": ""
+      }
+    },
+    {
+      "method": "kg_rag",
+      "started_at": "2026-07-30T15:38:54+08:00",
+      "wall_time_ms": 1,
+      "result": {
+        "case_id": "CASE_BKL_001",
+        "method": "kg_rag",
+        "candidate_disease": "良性角化性病变",
+        "user_observation": "患者躯干部出现边界清楚的棕褐色隆起性斑块，表面粗糙，外观像贴在皮肤上一样。",
+        "observation_match": [],
+        "supporting_evidence": [],
+        "differential_diagnosis": [],
+        "evidence_paths": [],
+        "risk_warning": [],
+        "medical_advice": [],
+        "evidence_gap": [
+          "本次 KG-RAG 运行失败，未生成有效的知识图谱增强解释。"
+        ],
+        "sources": [],
+        "disclaimer": "本结果仅用于健康信息参考和辅助决策，不构成医学诊断，也不能替代医生面诊、皮肤镜检查或组织病理检查。",
+        "model_name": "",
+        "prompt_version": "",
+        "response_time_ms": null,
+        "token_usage": {
+          "prompt_tokens": 0,
+          "completion_tokens": 0,
+          "total_tokens": 0
+        },
+        "run_status": "failed",
+        "error_message": "ValueError: 未找到候选疾病：良性角化性病变。当前可用疾病包括：黑色素瘤、黑色素细胞痣、基底细胞癌、光化性角化病/表皮内癌、良性角化样病变、皮肤纤维瘤、血管性皮损"
+      }
+    }
+  ],
+  "summary": {
+    "method_count": 3,
+    "success_count": 2,
+    "failed_count": 1,
+    "total_tokens": 2723
+  }
+}

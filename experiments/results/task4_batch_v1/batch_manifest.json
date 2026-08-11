@@ -1,0 +1,74 @@
+{
+  "batch_name": "task4_three_method_batch_v1",
+  "dataset_name": "task4_three_method_cases_v1",
+  "dataset_version": "1.0",
+  "case_file": "experiments/cases/task4_cases_v1.json",
+  "started_at": "2026-07-31T14:01:25+08:00",
+  "updated_at": "2026-07-31T14:01:25+08:00",
+  "settings": {
+    "top_k": 5,
+    "max_hops": 2,
+    "retry_count": 1,
+    "sleep_seconds": 0.0,
+    "resume": true
+  },
+  "case_results": [
+    {
+      "case_id": "CASE_BCC_001",
+      "status": "skipped_existing_success",
+      "result_file": "experiments/results/task4_batch_v1/comparison_CASE_BCC_001.json",
+      "attempt_count": 0,
+      "attempts": []
+    },
+    {
+      "case_id": "CASE_MEL_001",
+      "status": "skipped_existing_success",
+      "result_file": "experiments/results/task4_batch_v1/comparison_CASE_MEL_001.json",
+      "attempt_count": 0,
+      "attempts": []
+    },
+    {
+      "case_id": "CASE_NV_001",
+      "status": "skipped_existing_success",
+      "result_file": "experiments/results/task4_batch_v1/comparison_CASE_NV_001.json",
+      "attempt_count": 0,
+      "attempts": []
+    },
+    {
+      "case_id": "CASE_AKIEC_001",
+      "status": "skipped_existing_success",
+      "result_file": "experiments/results/task4_batch_v1/comparison_CASE_AKIEC_001.json",
+      "attempt_count": 0,
+      "attempts": []
+    },
+    {
+      "case_id": "CASE_BKL_001",
+      "status": "skipped_existing_success",
+      "result_file": "experiments/results/task4_batch_v1/comparison_CASE_BKL_001.json",
+      "attempt_count": 0,
+      "attempts": []
+    },
+    {
+      "case_id": "CASE_DF_001",
+      "status": "skipped_existing_success",
+      "result_file": "experiments/results/task4_batch_v1/comparison_CASE_DF_001.json",
+      "attempt_count": 0,
+      "attempts": []
+    },
+    {
+      "case_id": "CASE_VASC_001",
+      "status": "skipped_existing_success",
+      "result_file": "experiments/results/task4_batch_v1/comparison_CASE_VASC_001.json",
+      "attempt_count": 0,
+      "attempts": []
+    }
+  ],
+  "summary": {
+    "selected_case_count": 7,
+    "success_count": 0,
+    "skipped_count": 7,
+    "failed_count": 0,
+    "completed_count": 7
+  },
+  "finished_at": "2026-07-31T14:01:25+08:00"
+}

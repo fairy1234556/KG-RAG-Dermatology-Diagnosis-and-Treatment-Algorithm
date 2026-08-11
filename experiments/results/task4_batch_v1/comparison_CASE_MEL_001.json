@@ -1,0 +1,303 @@
+{
+  "experiment_id": "TASK4_CASE_MEL_001_20260730_153329",
+  "task": "three_method_baseline_comparison",
+  "experiment_status": "success",
+  "started_at": "2026-07-30T15:32:53+08:00",
+  "finished_at": "2026-07-30T15:33:29+08:00",
+  "total_wall_time_ms": 36394,
+  "case": {
+    "case_id": "CASE_MEL_001",
+    "candidate_disease": "黑色素瘤",
+    "user_observation": "患者皮损形态不对称，边界不规则，颜色深浅不一，近期有增大趋势。"
+  },
+  "experiment_settings": {
+    "method_order": [
+      "llm",
+      "rag",
+      "kg_rag"
+    ],
+    "rag_top_k": 5,
+    "kg_rag_top_k": 5,
+    "kg_rag_max_hops": 2,
+    "shared_llm_client": true,
+    "llm_config_path": "configs/llm_config.yaml",
+    "llm_config_sha256": "fc8182b88daaaa12da8b912ea872ffb445c12a3905d6fe28f851fea348ad967b"
+  },
+  "git": {
+    "branch": "phase-3-kg-rag-v1",
+    "commit": "2733c4fcdcacbd93b3e5f23a6fb40b7ae07489ee",
+    "working_tree_dirty": true,
+    "working_tree_status": [
+      "M .env.example",
+      " M .gitignore",
+      " M rag/schemas.py",
+      "?? configs/llm_config.yaml",
+      "?? experiments/cases/",
+      "?? experiments/results/",
+      "?? experiments/run_task4_batch.py",
+      "?? experiments/run_three_method_comparison.py",
+      "?? experiments/validate_baseline_llm.py",
+      "?? experiments/validate_baseline_rag.py",
+      "?? experiments/validate_kg_rag_pipeline.py",
+      "?? experiments/validate_task4_cases.py",
+      "?? experiments/validate_text_retriever.py",
+      "?? rag/baseline_common.py",
+      "?? rag/baseline_llm.py",
+      "?? rag/baseline_rag.py",
+      "?? rag/data/",
+      "?? rag/evidence_corpus.py",
+      "?? rag/kg_rag_pipeline.py",
+      "?? rag/llm_client.py",
+      "?? rag/text_retriever.py",
+      "?? requirements.txt"
+    ]
+  },
+  "fairness_check": {
+    "passed": true,
+    "checks": {
+      "all_use_unified_schema": true,
+      "same_case_input": true,
+      "method_order_correct": true,
+      "same_model_for_successful_runs": true,
+      "same_prompt_version_for_successful_runs": true,
+      "shared_client_instance": true
+    },
+    "successful_model_names": [
+      "qwen3.7-plus-2026-05-26"
+    ],
+    "successful_prompt_versions": [
+      "baseline_v1"
+    ]
+  },
+  "method_results": [
+    {
+      "method": "llm",
+      "started_at": "2026-07-30T15:32:53+08:00",
+      "wall_time_ms": 10779,
+      "result": {
+        "case_id": "CASE_MEL_001",
+        "method": "llm",
+        "candidate_disease": "黑色素瘤",
+        "user_observation": "患者皮损形态不对称，边界不规则，颜色深浅不一，近期有增大趋势。",
+        "observation_match": [
+          "用户描述的皮损形态不对称（Asymmetry）与黑色素瘤的典型特征相符",
+          "边界不规则（Border irregularity）是黑色素瘤的重要临床指征之一",
+          "颜色深浅不一（Color variation）符合黑色素瘤多色性的表现",
+          "近期有增大趋势（Evolution/Diameter change）提示病变处于动态变化中，属于高风险信号"
+        ],
+        "supporting_evidence": [
+          "根据一般医学知识，黑色素瘤的临床筛查常参考ABCDE原则，即不对称性、边界不规则、颜色改变、直径较大及演变过程",
+          "皮损的形态学改变和近期快速增大通常被视为需要紧急评估的警示体征"
+        ],
+        "differential_diagnosis": [
+          "发育不良痣（Dysplastic Nevus）",
+          "脂溢性角化病（Seborrheic Keratosis）",
+          "色素性基底细胞癌（Pigmented Basal Cell Carcinoma）",
+          "良性色素痣（Benign Melanocytic Nevus）"
+        ],
+        "evidence_paths": [],
+        "risk_warning": [
+          "黑色素瘤具有侵袭性和转移潜力，早期发现对预后至关重要",
+          "仅凭外观描述无法排除其他恶性皮肤肿瘤或良性病变，存在误判风险",
+          "延误专业评估可能导致病情进展"
+        ],
+        "medical_advice": [
+          "建议尽快前往正规医院皮肤科就诊",
+          "医生可能会建议进行皮肤镜检查以辅助评估皮损结构",
+          "如有必要，需通过组织病理学活检确诊，请勿自行处理或观察等待"
+        ],
+        "evidence_gap": [
+          "本方法未接入外部可追溯证据，所有解释基于模型内部通用医学知识",
+          "缺乏患者年龄、家族史、日晒史等关键背景信息",
+          "缺乏皮损的具体尺寸、部位及触感等详细临床数据",
+          "无皮肤镜图像或病理检查结果作为客观依据",
+          "纯 LLM 基线未接入外部检索证据，回答中的医学内容不具备本次运行级别的来源追溯能力。"
+        ],
+        "sources": [],
+        "disclaimer": "本结果仅用于健康信息参考和辅助决策，不构成医学诊断，也不能替代医生面诊、皮肤镜检查或组织病理检查。",
+        "model_name": "qwen3.7-plus-2026-05-26",
+        "prompt_version": "baseline_v1",
+        "response_time_ms": 10779,
+        "token_usage": {
+          "prompt_tokens": 589,
+          "completion_tokens": 446,
+          "total_tokens": 1035
+        },
+        "run_status": "success",
+        "error_message": ""
+      }
+    },
+    {
+      "method": "rag",
+      "started_at": "2026-07-30T15:33:04+08:00",
+      "wall_time_ms": 12299,
+      "result": {
+        "case_id": "CASE_MEL_001",
+        "method": "rag",
+        "candidate_disease": "黑色素瘤",
+        "user_observation": "患者皮损形态不对称，边界不规则，颜色深浅不一，近期有增大趋势。",
+        "observation_match": [
+          "用户观察到的'形态不对称'与黑色素瘤的ABCDE特征中的Asymmetry（不对称）相符",
+          "用户观察到的'边界不规则'与黑色素瘤的ABCDE特征中的Border irregularity（边界不规则）相符",
+          "用户观察到的'颜色深浅不一'对应黑色素瘤评估中可能出现的不规则色素或异常结构",
+          "用户观察到的'近期有增大趋势'属于黑色素瘤评估中的不典型特征之一"
+        ],
+        "supporting_evidence": [
+          "根据DermNet关于黑色素瘤ABCDEFG的描述，ABCDE特征包括Asymmetry（不对称），可支持用户观察到的形态不对称 [DOC_0003]",
+          "根据DermNet关于黑色素瘤ABCDEFG的描述，ABCDE特征包括Border irregularity（边界不规则），可支持用户观察到的边界不规则 [DOC_0001]",
+          "在黑色素瘤评估中，可出现不规则色素或异常皮肤镜结构，这与用户描述的颜色深浅不一具有相关性 [DOC_0005]",
+          "若存在近期增大等不典型特征，可能提示需要进一步的诊断性评估 [DOC_0077]"
+        ],
+        "differential_diagnosis": [
+          "良性色素性皮损通常表现为较规则、较清楚的边界，与用户描述的边界不规则形成对比，需进行鉴别 [DOC_0004]"
+        ],
+        "evidence_paths": [],
+        "risk_warning": [
+          "皮损呈现不对称、边界不规则、颜色不均及近期增大，符合黑色素瘤筛查中的高风险警示特征",
+          "存在近期增大趋势属于不典型特征，可能提示病变活跃或性质改变"
+        ],
+        "medical_advice": [
+          "建议尽快前往皮肤科就诊，由专业医生进行临床评估",
+          "医生可能会根据情况建议进行皮肤镜检查以观察微观结构",
+          "若临床怀疑恶性可能，医生可能会建议进行诊断性切除或皮肤活检以明确病理性质 [DOC_0077]"
+        ],
+        "evidence_gap": [
+          "检索文本未提供关于患者年龄、家族史、日晒史或既往皮肤病史的信息",
+          "检索文本未提供皮损的具体大小、厚度或是否伴有出血、瘙痒、疼痛等症状",
+          "检索文本未提供皮肤镜下的具体结构细节（如网状结构、球状结构等）",
+          "缺乏其他良性病变（如脂溢性角化病、发育不良痣）与该特定临床表现对比的详细排除依据"
+        ],
+        "sources": [
+          "DermNet - ABCDEFG of melanoma",
+          "DermNet - Dermatofibroma",
+          "DermNet - Benign Melanocytic Lesions",
+          "DermNet - Dermoscopy / Melanoma"
+        ],
+        "disclaimer": "本结果仅用于健康信息参考和辅助决策，不构成医学诊断，也不能替代医生面诊、皮肤镜检查或组织病理检查。",
+        "model_name": "qwen3.7-plus-2026-05-26",
+        "prompt_version": "baseline_v1",
+        "response_time_ms": 12294,
+        "token_usage": {
+          "prompt_tokens": 922,
+          "completion_tokens": 643,
+          "total_tokens": 1565
+        },
+        "run_status": "success",
+        "error_message": ""
+      }
+    },
+    {
+      "method": "kg_rag",
+      "started_at": "2026-07-30T15:33:16+08:00",
+      "wall_time_ms": 13287,
+      "result": {
+        "case_id": "CASE_MEL_001",
+        "method": "kg_rag",
+        "candidate_disease": "黑色素瘤",
+        "user_observation": "患者皮损形态不对称，边界不规则，颜色深浅不一，近期有增大趋势。",
+        "observation_match": [
+          "用户观察到的'形态不对称'与黑色素瘤的ABCDE特征中的Asymmetry（不对称）相符",
+          "用户观察到的'边界不规则'与黑色素瘤的ABCDE特征中的Border irregularity（边界不规则）相符",
+          "用户观察到的'颜色深浅不一'与黑色素瘤的ABCDE特征中的Colour variability（颜色不均）相符",
+          "用户观察到的'近期有增大趋势'与黑色素瘤的ABCDE特征中的Evolving（变化/进展）相符"
+        ],
+        "supporting_evidence": [
+          "根据DermNet资料，黑色素瘤的ABCDE特征包括Asymmetry（不对称），支持用户观察到的形态不对称表现",
+          "根据DermNet资料，黑色素瘤的ABCDE特征包括Border irregularity（边界不规则），支持用户观察到的边界不规则表现",
+          "根据DermNet资料，黑色素瘤的ABCDE特征包括Colour variability（颜色不均），支持用户观察到的颜色深浅不一表现",
+          "根据DermNet资料，黑色素瘤的ABCDE特征包括Evolving（变化），支持用户观察到的皮损近期增大趋势"
+        ],
+        "differential_diagnosis": [
+          "发育不良痣（Dysplastic Nevus）：可能表现为不对称、边界不清和颜色不均，需通过皮肤镜或病理检查鉴别",
+          "脂溢性角化病（Seborrheic Keratosis）：有时可呈现不规则形态和颜色变化，但通常表面呈蜡样或疣状",
+          "色素性基底细胞癌：可能表现为色素沉着和边界不规则，但通常伴有其他特定临床特征"
+        ],
+        "evidence_paths": [
+          {
+            "head_entity": "黑色素瘤",
+            "relation": "表现为",
+            "tail_entity": "边界不规则",
+            "evidence_text": "ABCDE 特征包括 Border irregularity，可支持“边界不规则”。",
+            "source_id": "TRI_001",
+            "source_name": "DermNet - ABCDEFG of melanoma",
+            "score": 4.42
+          },
+          {
+            "head_entity": "黑色素瘤",
+            "relation": "表现为",
+            "tail_entity": "形态不对称",
+            "evidence_text": "ABCDE 特征包括 Asymmetry，可支持“形态不对称”。",
+            "source_id": "TRI_003",
+            "source_name": "DermNet - ABCDEFG of melanoma",
+            "score": 4.42
+          },
+          {
+            "head_entity": "黑色素瘤",
+            "relation": "表现为",
+            "tail_entity": "颜色不均",
+            "evidence_text": "ABCDE 特征包括 Colour variability / Change，可支持“颜色不均”。",
+            "source_id": "TRI_002",
+            "source_name": "DermNet - ABCDEFG of melanoma",
+            "score": 4.34
+          },
+          {
+            "head_entity": "黑色素瘤",
+            "relation": "表现为",
+            "tail_entity": "直径增大",
+            "evidence_text": "ABCDE 特征包括 Diameter / Evolving，可支持“直径增大或变化”。",
+            "source_id": "TRI_004",
+            "source_name": "DermNet - ABCDEFG of melanoma",
+            "score": 2.5
+          },
+          {
+            "head_entity": "黑色素瘤",
+            "relation": "表现为",
+            "tail_entity": "结构不规则",
+            "evidence_text": "黑色素瘤评估中可出现不规则色素或异常皮肤镜结构。",
+            "source_id": "TRI_005",
+            "source_name": "DermNet - Dermoscopy / Melanoma",
+            "score": 2.5
+          }
+        ],
+        "risk_warning": [
+          "皮损出现不对称、边界不规则、颜色不均及近期增大，符合黑色素瘤的高危预警信号（ABCDE原则）",
+          "黑色素瘤若未及时诊断和治疗，可能发生转移，危及生命",
+          "任何快速变化的色素性皮损都应引起高度重视，不应自行观察等待"
+        ],
+        "medical_advice": [
+          "建议尽快前往正规医院皮肤科就诊，进行专业评估",
+          "建议进行皮肤镜检查（Dermoscopy）以辅助初步判断皮损性质",
+          "若医生怀疑恶性可能，可能建议进行切除活检以获取病理学确诊依据",
+          "在就医前，避免搔抓、刺激或使用不明药物涂抹患处"
+        ],
+        "evidence_gap": [
+          "缺乏皮损的具体直径数值，无法完全评估'Diameter'（直径>6mm）这一指标",
+          "缺乏患者既往病史、家族史及个人日晒史等风险因素信息",
+          "缺乏皮肤镜下的具体结构特征描述（如色素网、蓝白幕等）",
+          "缺乏病理组织学检查结果，目前仅基于临床表现进行推测，无法确诊"
+        ],
+        "sources": [
+          "DermNet - ABCDEFG of melanoma",
+          "DermNet - Dermoscopy / Melanoma"
+        ],
+        "disclaimer": "本结果仅用于健康信息参考和辅助决策，不构成医学诊断，也不能替代医生面诊、皮肤镜检查或组织病理检查。",
+        "model_name": "qwen3.7-plus-2026-05-26",
+        "prompt_version": "baseline_v1",
+        "response_time_ms": 13282,
+        "token_usage": {
+          "prompt_tokens": 1489,
+          "completion_tokens": 648,
+          "total_tokens": 2137
+        },
+        "run_status": "success",
+        "error_message": ""
+      }
+    }
+  ],
+  "summary": {
+    "method_count": 3,
+    "success_count": 3,
+    "failed_count": 0,
+    "total_tokens": 4737
+  }
+}

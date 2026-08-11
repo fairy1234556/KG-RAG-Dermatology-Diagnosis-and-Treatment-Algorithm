@@ -1,0 +1,299 @@
+{
+  "experiment_id": "TASK4_CASE_AKIEC_001_20260730_153449",
+  "task": "three_method_baseline_comparison",
+  "experiment_status": "success",
+  "started_at": "2026-07-30T15:34:09+08:00",
+  "finished_at": "2026-07-30T15:34:49+08:00",
+  "total_wall_time_ms": 39357,
+  "case": {
+    "case_id": "CASE_AKIEC_001",
+    "candidate_disease": "光化性角化病/表皮内癌",
+    "user_observation": "患者日晒部位出现粗糙的红色鳞屑性斑片，表面角化明显，持续不消退。"
+  },
+  "experiment_settings": {
+    "method_order": [
+      "llm",
+      "rag",
+      "kg_rag"
+    ],
+    "rag_top_k": 5,
+    "kg_rag_top_k": 5,
+    "kg_rag_max_hops": 2,
+    "shared_llm_client": true,
+    "llm_config_path": "configs/llm_config.yaml",
+    "llm_config_sha256": "fc8182b88daaaa12da8b912ea872ffb445c12a3905d6fe28f851fea348ad967b"
+  },
+  "git": {
+    "branch": "phase-3-kg-rag-v1",
+    "commit": "2733c4fcdcacbd93b3e5f23a6fb40b7ae07489ee",
+    "working_tree_dirty": true,
+    "working_tree_status": [
+      "M .env.example",
+      " M .gitignore",
+      " M rag/schemas.py",
+      "?? configs/llm_config.yaml",
+      "?? experiments/cases/",
+      "?? experiments/results/",
+      "?? experiments/run_task4_batch.py",
+      "?? experiments/run_three_method_comparison.py",
+      "?? experiments/validate_baseline_llm.py",
+      "?? experiments/validate_baseline_rag.py",
+      "?? experiments/validate_kg_rag_pipeline.py",
+      "?? experiments/validate_task4_cases.py",
+      "?? experiments/validate_text_retriever.py",
+      "?? rag/baseline_common.py",
+      "?? rag/baseline_llm.py",
+      "?? rag/baseline_rag.py",
+      "?? rag/data/",
+      "?? rag/evidence_corpus.py",
+      "?? rag/kg_rag_pipeline.py",
+      "?? rag/llm_client.py",
+      "?? rag/text_retriever.py",
+      "?? requirements.txt"
+    ]
+  },
+  "fairness_check": {
+    "passed": true,
+    "checks": {
+      "all_use_unified_schema": true,
+      "same_case_input": true,
+      "method_order_correct": true,
+      "same_model_for_successful_runs": true,
+      "same_prompt_version_for_successful_runs": true,
+      "shared_client_instance": true
+    },
+    "successful_model_names": [
+      "qwen3.7-plus-2026-05-26"
+    ],
+    "successful_prompt_versions": [
+      "baseline_v1"
+    ]
+  },
+  "method_results": [
+    {
+      "method": "llm",
+      "started_at": "2026-07-30T15:34:09+08:00",
+      "wall_time_ms": 14668,
+      "result": {
+        "case_id": "CASE_AKIEC_001",
+        "method": "llm",
+        "candidate_disease": "光化性角化病/表皮内癌",
+        "user_observation": "患者日晒部位出现粗糙的红色鳞屑性斑片，表面角化明显，持续不消退。",
+        "observation_match": [
+          "用户描述的‘日晒部位’与光化性角化病的好发部位（长期暴露于紫外线的皮肤区域）一致。",
+          "‘粗糙的红色鳞屑性斑片’及‘表面角化明显’符合光化性角化病典型的临床形态特征，即红斑基础上的角化性丘疹或斑块。",
+          "‘持续不消退’的病程特点符合该病变慢性、持续性发展的性质，区别于一般的急性皮炎或暂时性晒伤。"
+        ],
+        "supporting_evidence": [
+          "根据一般医学知识，光化性角化病是一种由长期紫外线照射引起的表皮内角质形成细胞异型增生，被视为皮肤鳞状细胞癌的癌前病变。",
+          "该病典型表现为在日光暴露区出现边界不清、触之粗糙如砂纸感的红斑或鳞屑性斑块。",
+          "若不及时干预，部分光化性角化病可能进展为浸润性鳞状细胞癌。"
+        ],
+        "differential_diagnosis": [
+          "脂溢性角化病：通常表现为褐色或黑色疣状增生，表面呈油脂样，多见于非严格日晒区，但有时需鉴别。",
+          "Bowen病（原位鳞状细胞癌）：表现为境界清楚的红斑，表面有鳞屑或结痂，生长缓慢，需病理鉴别。",
+          "盘状红斑狼疮：可表现为日晒部位的盘状红斑和鳞屑，但常伴有毛囊角栓和萎缩性瘢痕。",
+          "寻常型银屑病：虽可有红斑鳞屑，但通常鳞屑较厚呈银白色，且好发于伸侧，不一定局限于日晒区。"
+        ],
+        "evidence_paths": [],
+        "risk_warning": [
+          "光化性角化病具有潜在的恶变风险，可能发展为侵袭性鳞状细胞癌。",
+          "出现溃疡、出血、快速增大或疼痛等症状时，提示可能已发生恶性转化或继发感染。",
+          "长期累积的紫外线损伤是主要致病因素，忽视防护可能导致新发病灶出现。"
+        ],
+        "medical_advice": [
+          "建议前往皮肤科就诊，进行专业的皮肤镜检查以初步评估病变性质。",
+          "确诊通常需要通过皮肤活检进行组织病理学检查，以排除浸润性癌变。",
+          "日常应严格做好防晒措施，包括使用广谱防晒霜、穿戴遮阳衣物和帽子。",
+          "定期自我观察皮损变化，记录大小、颜色、质地及是否有破溃等情况，复诊时提供给医生参考。"
+        ],
+        "evidence_gap": [
+          "本方法未接入外部可追溯证据，所有解释基于模型内部的一般医学知识库。",
+          "缺乏患者的具体年龄、性别、既往皮肤病史及免疫状态信息，这些因素影响风险评估。",
+          "缺乏皮损的具体持续时间、是否有自觉症状（如瘙痒、疼痛）以及既往治疗反应的详细记录。",
+          "没有皮肤镜图像或组织病理学结果，无法从微观结构上确认诊断。",
+          "纯 LLM 基线未接入外部检索证据，回答中的医学内容不具备本次运行级别的来源追溯能力。"
+        ],
+        "sources": [],
+        "disclaimer": "本结果仅用于健康信息参考和辅助决策，不构成医学诊断，也不能替代医生面诊、皮肤镜检查或组织病理检查。",
+        "model_name": "qwen3.7-plus-2026-05-26",
+        "prompt_version": "baseline_v1",
+        "response_time_ms": 14667,
+        "token_usage": {
+          "prompt_tokens": 602,
+          "completion_tokens": 675,
+          "total_tokens": 1277
+        },
+        "run_status": "success",
+        "error_message": ""
+      }
+    },
+    {
+      "method": "rag",
+      "started_at": "2026-07-30T15:34:24+08:00",
+      "wall_time_ms": 11025,
+      "result": {
+        "case_id": "CASE_AKIEC_001",
+        "method": "rag",
+        "candidate_disease": "光化性角化病/表皮内癌",
+        "user_observation": "患者日晒部位出现粗糙的红色鳞屑性斑片，表面角化明显，持续不消退。",
+        "observation_match": [
+          "用户描述的'日晒部位'与光化性角化病常见于日光暴露部位的特征相符",
+          "用户描述的'粗糙的红色鳞屑性斑片'及'表面角化明显'与光化性角化病表现为鳞屑性、角化性表面的特征相符",
+          "用户描述的'持续不消退'符合光化性角化病作为癌前病变或表皮内癌的慢性过程"
+        ],
+        "supporting_evidence": [
+          "根据DOC_0035，光化性角化病是发生在日光损伤皮肤上的癌前性鳞屑性皮损",
+          "根据DOC_0041，光化性角化病常见于面部、耳部、手背等日光暴露部位",
+          "根据DOC_0036，光化性角化病可表现为白色或黄色、鳞屑性、疣状或角化性表面",
+          "根据DOC_0037和DOC_0038，表皮内鳞状细胞癌可表现为不规则鳞屑性斑块"
+        ],
+        "differential_diagnosis": [
+          "需要与其他表现为鳞屑性斑块的疾病进行鉴别，如银屑病、脂溢性角化病或扁平苔藓",
+          "需鉴别是否为侵袭性鳞状细胞癌，因为光化性角化病/表皮内癌属于癌前或早期阶段"
+        ],
+        "evidence_paths": [],
+        "risk_warning": [
+          "光化性角化病被视为癌前病变，有发展为侵袭性鳞状细胞癌的风险",
+          "长期日晒损伤是主要风险因素，需注意防晒以避免病情进展或新发皮损"
+        ],
+        "medical_advice": [
+          "建议前往皮肤科进行专业皮肤镜检查或活检以明确诊断",
+          "建议记录皮损的大小、颜色变化及是否出现出血或溃疡",
+          "建议咨询医生关于适当的防晒措施以保护受损皮肤"
+        ],
+        "evidence_gap": [
+          "检索文本未提供关于患者年龄、免疫状态或具体日晒历史的信息",
+          "检索文本未包含确诊所需的组织病理学检查标准",
+          "检索文本未提及具体的治疗选项或预后数据"
+        ],
+        "sources": [
+          "DermNet - Intraepidermal Squamous Cell Carcinoma",
+          "DermNet - Actinic Keratosis"
+        ],
+        "disclaimer": "本结果仅用于健康信息参考和辅助决策，不构成医学诊断，也不能替代医生面诊、皮肤镜检查或组织病理检查。",
+        "model_name": "qwen3.7-plus-2026-05-26",
+        "prompt_version": "baseline_v1",
+        "response_time_ms": 11020,
+        "token_usage": {
+          "prompt_tokens": 958,
+          "completion_tokens": 569,
+          "total_tokens": 1527
+        },
+        "run_status": "success",
+        "error_message": ""
+      }
+    },
+    {
+      "method": "kg_rag",
+      "started_at": "2026-07-30T15:34:35+08:00",
+      "wall_time_ms": 13639,
+      "result": {
+        "case_id": "CASE_AKIEC_001",
+        "method": "kg_rag",
+        "candidate_disease": "光化性角化病/表皮内癌",
+        "user_observation": "患者日晒部位出现粗糙的红色鳞屑性斑片，表面角化明显，持续不消退。",
+        "observation_match": [
+          "用户观察到的'粗糙的红色鳞屑性斑片'与光化性角化病/表皮内癌的典型临床表现'粗糙鳞屑性斑片'及'红色或粉红色斑片/斑块'高度吻合。",
+          "用户描述的'表面角化明显'与该疾病可能出现的'白色或黄色角化性表面'特征相符。",
+          "病变位于'日晒部位'且'持续不消退'，符合该疾病由日光损伤引起且为慢性过程的病理背景。"
+        ],
+        "supporting_evidence": [
+          "证据链 PATH_TRI_038 显示：光化性角化病是发生在日光损伤皮肤上的癌前性鳞屑性皮损，表现为粗糙鳞屑性斑片（来源：DermNet - Actinic Keratosis）。",
+          "证据链 PATH_TRI_040 显示：表皮内鳞状细胞癌可表现为橙红色或棕色的不规则鳞屑性斑块（来源：DermNet - Intraepidermal Squamous Cell Carcinoma）。",
+          "证据链 PATH_TRI_039 显示：光化性角化病可表现为白色或黄色、鳞屑性、疣状或角化性表面（来源：DermNet - Actinic Keratosis）。"
+        ],
+        "differential_diagnosis": [
+          "需与其他表现为红斑鳞屑的疾病进行鉴别，如银屑病、脂溢性角化病、盘状红斑狼疮或浅表性基底细胞癌。",
+          "需排除接触性皮炎或其他炎症性皮肤病引起的继发性角化。"
+        ],
+        "evidence_paths": [
+          {
+            "head_entity": "光化性角化病/表皮内癌",
+            "relation": "表现为",
+            "tail_entity": "粗糙鳞屑性斑片",
+            "evidence_text": "光化性角化病是发生在日光损伤皮肤上的癌前性鳞屑性皮损。",
+            "source_id": "TRI_038",
+            "source_name": "DermNet - Actinic Keratosis",
+            "score": 4.34
+          },
+          {
+            "head_entity": "光化性角化病/表皮内癌",
+            "relation": "表现为",
+            "tail_entity": "白色或黄色角化性表面",
+            "evidence_text": "光化性角化病可表现为白色或黄色、鳞屑性、疣状或角化性表面。",
+            "source_id": "TRI_039",
+            "source_name": "DermNet - Actinic Keratosis",
+            "score": 2.5
+          },
+          {
+            "head_entity": "光化性角化病/表皮内癌",
+            "relation": "表现为",
+            "tail_entity": "红色或粉红色斑片/斑块",
+            "evidence_text": "表皮内鳞状细胞癌可表现为橙红色或棕色的不规则鳞屑性斑块。",
+            "source_id": "TRI_040",
+            "source_name": "DermNet - Intraepidermal Squamous Cell Carcinoma",
+            "score": 2.5
+          },
+          {
+            "head_entity": "光化性角化病/表皮内癌",
+            "relation": "表现为",
+            "tail_entity": "不规则鳞屑性斑块",
+            "evidence_text": "表皮内鳞状细胞癌表现为一个或多个不规则鳞屑性斑块。",
+            "source_id": "TRI_041",
+            "source_name": "DermNet - Intraepidermal Squamous Cell Carcinoma",
+            "score": 2.5
+          },
+          {
+            "head_entity": "光化性角化病/表皮内癌",
+            "relation": "表现为",
+            "tail_entity": "草莓样皮肤镜模式",
+            "evidence_text": "面部非色素性光化性角化病在皮肤镜下可表现为草莓样模式。",
+            "source_id": "TRI_042",
+            "source_name": "DermNet - Actinic Keratosis Dermoscopy",
+            "score": 2.5
+          }
+        ],
+        "risk_warning": [
+          "光化性角化病被视为鳞状细胞癌的癌前病变，存在进展为浸润性鳞状细胞癌的风险。",
+          "表皮内癌（原位鳞状细胞癌）若不及时干预，可能发展为侵袭性癌症。",
+          "长期日晒是主要风险因素，提示皮肤已受到累积性光损伤。"
+        ],
+        "medical_advice": [
+          "建议前往皮肤科就诊，由专业医生进行肉眼检查及皮肤镜检查以评估病变性质。",
+          "如有必要，医生可能会建议进行皮肤活检以明确病理诊断，区分是光化性角化病还是表皮内癌。",
+          "在确诊前，注意防晒，避免病变部位受到进一步的紫外线伤害。",
+          "记录病变的大小、颜色变化及是否有出血、溃疡等情况，以便就医时提供详细病史。"
+        ],
+        "evidence_gap": [
+          "缺乏具体的皮肤病理学检查结果，无法从组织学层面确认是否存在异型角质形成细胞。",
+          "未提供患者的年龄、免疫状态、既往皮肤癌病史或具体的日晒史细节。",
+          "未提供皮肤镜下的具体图像或描述（如是否出现草莓样模式），仅凭肉眼观察难以完全排除其他相似病变。",
+          "未说明病变的具体持续时间（仅知'持续不消退'），以及是否有疼痛、瘙痒或触痛等症状。"
+        ],
+        "sources": [
+          "DermNet - Actinic Keratosis",
+          "DermNet - Intraepidermal Squamous Cell Carcinoma",
+          "DermNet - Actinic Keratosis Dermoscopy"
+        ],
+        "disclaimer": "本结果仅用于健康信息参考和辅助决策，不构成医学诊断，也不能替代医生面诊、皮肤镜检查或组织病理检查。",
+        "model_name": "qwen3.7-plus-2026-05-26",
+        "prompt_version": "baseline_v1",
+        "response_time_ms": 13633,
+        "token_usage": {
+          "prompt_tokens": 1587,
+          "completion_tokens": 708,
+          "total_tokens": 2295
+        },
+        "run_status": "success",
+        "error_message": ""
+      }
+    }
+  ],
+  "summary": {
+    "method_count": 3,
+    "success_count": 3,
+    "failed_count": 0,
+    "total_tokens": 5099
+  }
+}

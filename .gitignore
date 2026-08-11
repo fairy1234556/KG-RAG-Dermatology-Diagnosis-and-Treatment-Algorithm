@@ -5,6 +5,8 @@ __pycache__/
 .venv/
 venv/
 .env
+.env.*
+!.env.example
 backend/.env
 backend/.pytest_cache/
 frontend/node_modules/
