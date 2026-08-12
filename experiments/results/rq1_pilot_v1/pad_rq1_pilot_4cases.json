@@ -1,0 +1,1246 @@
+[
+  {
+    "case_id": "PAD_BCC_001_P0",
+    "method": "kg_rag",
+    "candidate_disease": "基底细胞癌",
+    "user_observation": "74岁女性，面部皮损，伴瘙痒、增长、触痛、出血及隆起。",
+    "observation_match": [
+      "用户观察到的面部皮损部位与基底细胞癌常见发病部位一致",
+      "用户观察到的出血症状与基底细胞癌可能出现的自发性出血或溃疡表现相符"
+    ],
+    "supporting_evidence": [
+      "结节型基底细胞癌是面部常见的 BCC 类型（来源：DermNet - Basal Cell Carcinoma）",
+      "基底细胞癌可出现自发性出血、糜烂或溃疡（来源：DermNet - Basal Cell Carcinoma Dermoscopy）"
+    ],
+    "differential_diagnosis": [
+      "良性角化样病变（如脂溢性角化病、扁平苔藓样角化病），此类病变有时可类似基底细胞癌，且部分伴有瘙痒",
+      "黑色素瘤，早期可表现为异常痣或斑点，并可能出现瘙痒或出血，需通过皮肤镜区分"
+    ],
+    "evidence_paths": [
+      {
+        "head_entity": "基底细胞癌",
+        "relation": "常见于",
+        "tail_entity": "面部",
+        "evidence_text": "结节型基底细胞癌是面部常见的 BCC 类型。",
+        "source_id": "TRI_030",
+        "source_name": "DermNet - Basal Cell Carcinoma",
+        "score": 3.92
+      },
+      {
+        "head_entity": "基底细胞癌",
+        "relation": "伴随症状",
+        "tail_entity": "出血",
+        "evidence_text": "基底细胞癌可出现自发性出血、糜烂或溃疡。",
+        "source_id": "TRI_031",
+        "source_name": "DermNet - Basal Cell Carcinoma Dermoscopy",
+        "score": 3.82
+      },
+      {
+        "head_entity": "基底细胞癌",
+        "relation": "鉴别诊断 → 伴随症状",
+        "tail_entity": "瘙痒",
+        "evidence_text": "脂溢性角化病有时可类似基底细胞癌、鳞状细胞癌或黑色素瘤。；扁平苔藓样角化病通常无症状，但也可出现瘙痒或轻微刺痛。",
+        "source_id": "TRI_034；TRI_062",
+        "source_name": "DermNet - Seborrhoeic Keratosis；DermNet - Lichenoid Keratosis",
+        "score": 3.37
+      },
+      {
+        "head_entity": "基底细胞癌",
+        "relation": "鉴别诊断 → 伴随症状",
+        "tail_entity": "出血",
+        "evidence_text": "皮肤镜有助于区分色素性基底细胞癌和其他色素性皮损。；黑色素瘤早期可表现为异常痣或斑点，并可能出现瘙痒或出血。",
+        "source_id": "TRI_035；TRI_007",
+        "source_name": "DermNet - Basal Cell Carcinoma Dermoscopy；DermNet - Melanoma",
+        "score": 3.37
+      },
+      {
+        "head_entity": "基底细胞癌",
+        "relation": "鉴别诊断 → 伴随症状",
+        "tail_entity": "瘙痒",
+        "evidence_text": "皮肤镜有助于区分色素性基底细胞癌和其他色素性皮损。；黑色素瘤早期可表现为异常痣或斑点，并可能出现瘙痒或出血。",
+        "source_id": "TRI_035；TRI_014",
+        "source_name": "DermNet - Basal Cell Carcinoma Dermoscopy；DermNet - Melanoma",
+        "score": 3.37
+      }
+    ],
+    "risk_warning": [
+      "患者年龄较大（74岁），且皮损伴有增长、出血及触痛，提示病变具有活动性或侵袭性风险",
+      "面部皮损若为恶性肿瘤，延误治疗可能导致局部组织破坏或功能受损"
+    ],
+    "medical_advice": [
+      "建议尽快前往皮肤科就诊，进行专业体格检查",
+      "建议进行皮肤镜检查以辅助鉴别色素性及非色素性皮损",
+      "建议遵医嘱考虑进行皮肤活检以明确病理诊断"
+    ],
+    "evidence_gap": [
+      "缺乏皮损的具体形态描述（如颜色、边界、表面特征、是否有珍珠样边缘等）",
+      "缺乏病程持续时间的具体信息",
+      "缺乏既往日晒史、免疫状态或家族肿瘤病史",
+      "触痛和瘙痒在提供的直接证据链中未作为基底细胞癌的典型直接症状被强关联，需进一步临床确认"
+    ],
+    "sources": [
+      "DermNet - Basal Cell Carcinoma",
+      "DermNet - Basal Cell Carcinoma Dermoscopy",
+      "DermNet - Seborrhoeic Keratosis",
+      "DermNet - Lichenoid Keratosis",
+      "DermNet - Melanoma"
+    ],
+    "disclaimer": "本结果仅用于健康信息参考和辅助决策，不构成医学诊断，也不能替代医生面诊、皮肤镜检查或组织病理检查。",
+    "model_name": "qwen3.7-plus-2026-05-26",
+    "prompt_version": "baseline_v1",
+    "response_time_ms": 20227,
+    "token_usage": {
+      "prompt_tokens": 1631,
+      "completion_tokens": 492,
+      "total_tokens": 2123
+    },
+    "run_status": "success",
+    "error_message": "",
+    "pilot_condition": "original",
+    "removed_evidence": []
+  },
+  {
+    "case_id": "PAD_BCC_001_P1",
+    "method": "kg_rag",
+    "candidate_disease": "基底细胞癌",
+    "user_observation": "74岁女性，面部皮损，伴瘙痒、增长、触痛及隆起。",
+    "observation_match": [
+      "用户观察到的'面部'部位与基底细胞癌常见发病部位一致（证据链 Rank 1）。",
+      "用户描述的'隆起'形态可能与基底细胞癌的'珍珠样结节'表现相关，但缺乏直接语义锚点匹配（证据链 Rank 4）。"
+    ],
+    "supporting_evidence": [
+      "根据 DermNet 资料，结节型基底细胞癌是面部常见的 BCC 类型（来源：DermNet - Basal Cell Carcinoma）。",
+      "基底细胞癌可表现为光亮或珍珠样结节（来源：DermNet - Basal Cell Carcinoma）。",
+      "基底细胞癌表面可见血管穿过（来源：DermNet - Basal Cell Carcinoma）。"
+    ],
+    "differential_diagnosis": [
+      "良性角化样病变（如脂溢性角化病、扁平苔藓样角化病）：有时可类似基底细胞癌，且部分类型可伴有瘙痒（证据链 Rank 2）。",
+      "黑色素瘤：早期可表现为异常痣或斑点，并可能出现瘙痒或出血，需通过皮肤镜等工具进行区分（证据链 Rank 3）。"
+    ],
+    "evidence_paths": [
+      {
+        "head_entity": "基底细胞癌",
+        "relation": "常见于",
+        "tail_entity": "面部",
+        "evidence_text": "结节型基底细胞癌是面部常见的 BCC 类型。",
+        "source_id": "TRI_030",
+        "source_name": "DermNet - Basal Cell Carcinoma",
+        "score": 3.92
+      },
+      {
+        "head_entity": "基底细胞癌",
+        "relation": "鉴别诊断 → 伴随症状",
+        "tail_entity": "瘙痒",
+        "evidence_text": "脂溢性角化病有时可类似基底细胞癌、鳞状细胞癌或黑色素瘤。；扁平苔藓样角化病通常无症状，但也可出现瘙痒或轻微刺痛。",
+        "source_id": "TRI_034；TRI_062",
+        "source_name": "DermNet - Seborrhoeic Keratosis；DermNet - Lichenoid Keratosis",
+        "score": 3.37
+      },
+      {
+        "head_entity": "基底细胞癌",
+        "relation": "鉴别诊断 → 伴随症状",
+        "tail_entity": "瘙痒",
+        "evidence_text": "皮肤镜有助于区分色素性基底细胞癌和其他色素性皮损。；黑色素瘤早期可表现为异常痣或斑点，并可能出现瘙痒或出血。",
+        "source_id": "TRI_035；TRI_014",
+        "source_name": "DermNet - Basal Cell Carcinoma Dermoscopy；DermNet - Melanoma",
+        "score": 3.37
+      },
+      {
+        "head_entity": "基底细胞癌",
+        "relation": "表现为",
+        "tail_entity": "珍珠样结节",
+        "evidence_text": "结节型基底细胞癌可表现为光亮或珍珠样结节。",
+        "source_id": "TRI_025",
+        "source_name": "DermNet - Basal Cell Carcinoma",
+        "score": 2.5
+      },
+      {
+        "head_entity": "基底细胞癌",
+        "relation": "表现为",
+        "tail_entity": "表面毛细血管扩张",
+        "evidence_text": "基底细胞癌表面可见血管穿过。",
+        "source_id": "TRI_026",
+        "source_name": "DermNet - Basal Cell Carcinoma",
+        "score": 2.5
+      }
+    ],
+    "risk_warning": [
+      "皮损伴有'增长'和'触痛'，提示病变可能处于活动期或存在炎症/侵袭风险，需警惕恶性肿瘤可能性。",
+      "面部是基底细胞癌高发区域，且患者为74岁高龄，属于皮肤肿瘤高危人群。"
+    ],
+    "medical_advice": [
+      "建议尽快前往皮肤科就诊，进行专业体格检查。",
+      "医生可能会建议进行皮肤镜检查以辅助鉴别色素性或结节性皮损。",
+      "如有必要，医生可能会建议进行组织病理学活检以明确诊断。",
+      "在就医前，避免搔抓或刺激皮损部位，记录皮损大小变化及症状演变情况。"
+    ],
+    "evidence_gap": [
+      "用户未提供皮损的具体形态描述（如颜色、边界、是否有溃疡或出血），无法直接匹配'珍珠样结节'或'表面毛细血管扩张'等典型特征。",
+      "用户提到的'瘙痒'和'触痛'在提供的证据链中主要通过鉴别诊断路径关联，缺乏基底细胞癌直接导致这些症状的强证据支持。",
+      "缺乏患者的既往皮肤病史、日晒史或家族史信息。",
+      "缺乏皮损持续时间及增长速度的具体数据。"
+    ],
+    "sources": [
+      "DermNet - Basal Cell Carcinoma",
+      "DermNet - Seborrhoeic Keratosis",
+      "DermNet - Lichenoid Keratosis",
+      "DermNet - Basal Cell Carcinoma Dermoscopy",
+      "DermNet - Melanoma"
+    ],
+    "disclaimer": "本结果仅用于健康信息参考和辅助决策，不构成医学诊断，也不能替代医生面诊、皮肤镜检查或组织病理检查。",
+    "model_name": "qwen3.7-plus-2026-05-26",
+    "prompt_version": "baseline_v1",
+    "response_time_ms": 12004,
+    "token_usage": {
+      "prompt_tokens": 1574,
+      "completion_tokens": 632,
+      "total_tokens": 2206
+    },
+    "run_status": "success",
+    "error_message": "",
+    "pilot_condition": "remove_bleeding",
+    "removed_evidence": [
+      "bleed"
+    ]
+  },
+  {
+    "case_id": "PAD_BCC_001_P2",
+    "method": "kg_rag",
+    "candidate_disease": "基底细胞癌",
+    "user_observation": "74岁女性，皮损伴瘙痒、增长、触痛及隆起。",
+    "observation_match": [
+      "用户观察到的'隆起'症状与基底细胞癌常见的'边缘隆起或卷曲'及'珍珠样结节'形态特征存在形态学上的对应可能。",
+      "用户提到的'增长'符合基底细胞癌作为恶性肿瘤缓慢进展的病程特点。"
+    ],
+    "supporting_evidence": [
+      "根据DermNet资料，结节型基底细胞癌可表现为光亮或珍珠样结节（证据链 Rank 3）。",
+      "根据DermNet资料，基底细胞癌表面可见血管穿过，即表面毛细血管扩张（证据链 Rank 4）。",
+      "根据DermNet资料，基底细胞癌可出现中央凹陷或溃疡，使边缘呈卷曲样隆起（证据链 Rank 5）。"
+    ],
+    "differential_diagnosis": [
+      "良性角化样病变（如脂溢性角化病、扁平苔藓样角化病）：这些病变有时在外观上类似基底细胞癌，且部分可伴有瘙痒症状（证据链 Rank 1）。",
+      "黑色素瘤：早期可表现为异常痣或斑点，可能出现瘙痒或出血，需通过皮肤镜等工具与色素性基底细胞癌进行区分（证据链 Rank 2）。"
+    ],
+    "evidence_paths": [
+      {
+        "head_entity": "基底细胞癌",
+        "relation": "鉴别诊断 → 伴随症状",
+        "tail_entity": "瘙痒",
+        "evidence_text": "脂溢性角化病有时可类似基底细胞癌、鳞状细胞癌或黑色素瘤。；扁平苔藓样角化病通常无症状，但也可出现瘙痒或轻微刺痛。",
+        "source_id": "TRI_034；TRI_062",
+        "source_name": "DermNet - Seborrhoeic Keratosis；DermNet - Lichenoid Keratosis",
+        "score": 3.37
+      },
+      {
+        "head_entity": "基底细胞癌",
+        "relation": "鉴别诊断 → 伴随症状",
+        "tail_entity": "瘙痒",
+        "evidence_text": "皮肤镜有助于区分色素性基底细胞癌和其他色素性皮损。；黑色素瘤早期可表现为异常痣或斑点，并可能出现瘙痒或出血。",
+        "source_id": "TRI_035；TRI_014",
+        "source_name": "DermNet - Basal Cell Carcinoma Dermoscopy；DermNet - Melanoma",
+        "score": 3.37
+      },
+      {
+        "head_entity": "基底细胞癌",
+        "relation": "表现为",
+        "tail_entity": "珍珠样结节",
+        "evidence_text": "结节型基底细胞癌可表现为光亮或珍珠样结节。",
+        "source_id": "TRI_025",
+        "source_name": "DermNet - Basal Cell Carcinoma",
+        "score": 2.5
+      },
+      {
+        "head_entity": "基底细胞癌",
+        "relation": "表现为",
+        "tail_entity": "表面毛细血管扩张",
+        "evidence_text": "基底细胞癌表面可见血管穿过。",
+        "source_id": "TRI_026",
+        "source_name": "DermNet - Basal Cell Carcinoma",
+        "score": 2.5
+      },
+      {
+        "head_entity": "基底细胞癌",
+        "relation": "表现为",
+        "tail_entity": "边缘隆起或卷曲",
+        "evidence_text": "基底细胞癌可出现中央凹陷或溃疡，使边缘呈卷曲样。",
+        "source_id": "TRI_027",
+        "source_name": "DermNet - Basal Cell Carcinoma",
+        "score": 2.5
+      }
+    ],
+    "risk_warning": [
+      "患者为74岁高龄女性，属于皮肤恶性肿瘤的高发人群。",
+      "皮损伴有触痛和增长，提示病变可能处于活动期或侵犯周围组织，需警惕恶性潜能。",
+      "瘙痒和触痛并非基底细胞癌的特异性症状，也可能见于炎症性皮肤病或其他肿瘤，不可仅凭此确诊。"
+    ],
+    "medical_advice": [
+      "建议尽快前往皮肤科就诊，由专业医生进行体格检查。",
+      "建议进行皮肤镜检查以辅助观察皮损的微细结构。",
+      "如有必要，医生可能会建议进行皮肤活检以明确病理诊断。",
+      "在就医前，避免搔抓皮损部位，记录皮损大小变化及症状演变情况。"
+    ],
+    "evidence_gap": [
+      "用户未提供皮损的具体颜色（如是否有色素沉着、珍珠样光泽）、具体部位及持续时间。",
+      "用户未提供是否有溃疡、出血或既往日晒史、家族史等关键风险因素。",
+      "知识图谱中关于基底细胞癌的直接证据主要指向形态学特征（结节、血管、边缘），缺乏直接关联'瘙痒'和'触痛'的一跳证据，当前瘙痒证据主要来自鉴别诊断的二跳路径，特异性较低。"
+    ],
+    "sources": [
+      "DermNet - Seborrhoeic Keratosis",
+      "DermNet - Lichenoid Keratosis",
+      "DermNet - Basal Cell Carcinoma Dermoscopy",
+      "DermNet - Melanoma",
+      "DermNet - Basal Cell Carcinoma"
+    ],
+    "disclaimer": "本结果仅用于健康信息参考和辅助决策，不构成医学诊断，也不能替代医生面诊、皮肤镜检查或组织病理检查。",
+    "model_name": "qwen3.7-plus-2026-05-26",
+    "prompt_version": "baseline_v1",
+    "response_time_ms": 12244,
+    "token_usage": {
+      "prompt_tokens": 1569,
+      "completion_tokens": 648,
+      "total_tokens": 2217
+    },
+    "run_status": "success",
+    "error_message": "",
+    "pilot_condition": "remove_bleeding_and_site",
+    "removed_evidence": [
+      "bleed",
+      "region"
+    ]
+  },
+  {
+    "case_id": "PAD_BCC_002_P0",
+    "method": "kg_rag",
+    "candidate_disease": "基底细胞癌",
+    "user_observation": "48岁男性，面部皮损，伴瘙痒、增长及出血。",
+    "observation_match": [
+      "用户观察到的面部皮损部位与基底细胞癌的好发部位（面部）相符。",
+      "用户观察到的出血症状与基底细胞癌可能出现的自发性出血、糜烂或溃疡特征相符。"
+    ],
+    "supporting_evidence": [
+      "根据DermNet资料，结节型基底细胞癌是面部常见的BCC类型。",
+      "根据DermNet资料，基底细胞癌可出现自发性出血、糜烂或溃疡。"
+    ],
+    "differential_diagnosis": [
+      "黑色素瘤：早期可表现为异常痣或斑点，并可能出现瘙痒或出血，需通过皮肤镜区分。",
+      "良性角化样病变（如脂溢性角化病、扁平苔藓样角化病）：有时可类似基底细胞癌，部分类型可伴有瘙痒。"
+    ],
+    "evidence_paths": [
+      {
+        "head_entity": "基底细胞癌",
+        "relation": "常见于",
+        "tail_entity": "面部",
+        "evidence_text": "结节型基底细胞癌是面部常见的 BCC 类型。",
+        "source_id": "TRI_030",
+        "source_name": "DermNet - Basal Cell Carcinoma",
+        "score": 3.92
+      },
+      {
+        "head_entity": "基底细胞癌",
+        "relation": "伴随症状",
+        "tail_entity": "出血",
+        "evidence_text": "基底细胞癌可出现自发性出血、糜烂或溃疡。",
+        "source_id": "TRI_031",
+        "source_name": "DermNet - Basal Cell Carcinoma Dermoscopy",
+        "score": 3.82
+      },
+      {
+        "head_entity": "基底细胞癌",
+        "relation": "鉴别诊断 → 伴随症状",
+        "tail_entity": "瘙痒",
+        "evidence_text": "脂溢性角化病有时可类似基底细胞癌、鳞状细胞癌或黑色素瘤。；扁平苔藓样角化病通常无症状，但也可出现瘙痒或轻微刺痛。",
+        "source_id": "TRI_034；TRI_062",
+        "source_name": "DermNet - Seborrhoeic Keratosis；DermNet - Lichenoid Keratosis",
+        "score": 3.37
+      },
+      {
+        "head_entity": "基底细胞癌",
+        "relation": "鉴别诊断 → 伴随症状",
+        "tail_entity": "出血",
+        "evidence_text": "皮肤镜有助于区分色素性基底细胞癌和其他色素性皮损。；黑色素瘤早期可表现为异常痣或斑点，并可能出现瘙痒或出血。",
+        "source_id": "TRI_035；TRI_007",
+        "source_name": "DermNet - Basal Cell Carcinoma Dermoscopy；DermNet - Melanoma",
+        "score": 3.37
+      },
+      {
+        "head_entity": "基底细胞癌",
+        "relation": "鉴别诊断 → 伴随症状",
+        "tail_entity": "瘙痒",
+        "evidence_text": "皮肤镜有助于区分色素性基底细胞癌和其他色素性皮损。；黑色素瘤早期可表现为异常痣或斑点，并可能出现瘙痒或出血。",
+        "source_id": "TRI_035；TRI_014",
+        "source_name": "DermNet - Basal Cell Carcinoma Dermoscopy；DermNet - Melanoma",
+        "score": 3.37
+      }
+    ],
+    "risk_warning": [
+      "皮损伴有增长及出血，提示病变处于活动期或存在组织破坏风险，需警惕恶性皮肤肿瘤的可能性。",
+      "瘙痒虽可见于基底细胞癌，但也常见于其他炎症性或良性皮肤病变，单一症状不足以确诊。"
+    ],
+    "medical_advice": [
+      "建议尽快前往皮肤科就诊，进行专业的皮肤镜检查以评估皮损结构。",
+      "如有必要，医生可能会建议进行皮肤活检以明确病理诊断。",
+      "在就医前，避免抓挠或自行处理皮损，以防感染或加重出血，并记录皮损变化的照片供医生参考。"
+    ],
+    "evidence_gap": [
+      "缺乏皮损的具体形态描述（如颜色、边界、是否呈珍珠样光泽、是否有溃疡面等）。",
+      "缺乏皮损增长的速度和时间跨度的具体信息。",
+      "缺乏患者的日晒史、家族皮肤癌病史或个人免疫状态等背景信息。",
+      "瘙痒和出血的具体频率、诱因及严重程度未明确。"
+    ],
+    "sources": [
+      "DermNet - Basal Cell Carcinoma",
+      "DermNet - Basal Cell Carcinoma Dermoscopy",
+      "DermNet - Seborrhoeic Keratosis",
+      "DermNet - Lichenoid Keratosis",
+      "DermNet - Melanoma"
+    ],
+    "disclaimer": "本结果仅用于健康信息参考和辅助决策，不构成医学诊断，也不能替代医生面诊、皮肤镜检查或组织病理检查。",
+    "model_name": "qwen3.7-plus-2026-05-26",
+    "prompt_version": "baseline_v1",
+    "response_time_ms": 13094,
+    "token_usage": {
+      "prompt_tokens": 1602,
+      "completion_tokens": 509,
+      "total_tokens": 2111
+    },
+    "run_status": "success",
+    "error_message": "",
+    "pilot_condition": "original",
+    "removed_evidence": []
+  },
+  {
+    "case_id": "PAD_BCC_002_P1",
+    "method": "kg_rag",
+    "candidate_disease": "基底细胞癌",
+    "user_observation": "48岁男性，面部皮损，伴瘙痒及增长。",
+    "observation_match": [
+      "用户观察到的面部皮损部位与基底细胞癌的好发部位（面部）相符。",
+      "用户描述的皮损增长趋势符合基底细胞癌作为恶性肿瘤的生物学行为特征。"
+    ],
+    "supporting_evidence": [
+      "根据DermNet资料，结节型基底细胞癌是面部常见的BCC类型，证实了面部为该疾病的高发区域。",
+      "基底细胞癌典型表现为光亮或珍珠样结节，且表面可见血管穿过（毛细血管扩张），这些是重要的临床识别特征。"
+    ],
+    "differential_diagnosis": [
+      "良性角化样病变（如脂溢性角化病、扁平苔藓样角化病）：有时在外观上可类似基底细胞癌，且部分类型（如扁平苔藓样角化病）可伴有瘙痒症状。",
+      "黑色素瘤：早期可能表现为异常痣或斑点，并可能出现瘙痒或出血，需通过皮肤镜等工具与色素性基底细胞癌进行区分。"
+    ],
+    "evidence_paths": [
+      {
+        "head_entity": "基底细胞癌",
+        "relation": "常见于",
+        "tail_entity": "面部",
+        "evidence_text": "结节型基底细胞癌是面部常见的 BCC 类型。",
+        "source_id": "TRI_030",
+        "source_name": "DermNet - Basal Cell Carcinoma",
+        "score": 3.92
+      },
+      {
+        "head_entity": "基底细胞癌",
+        "relation": "鉴别诊断 → 伴随症状",
+        "tail_entity": "瘙痒",
+        "evidence_text": "脂溢性角化病有时可类似基底细胞癌、鳞状细胞癌或黑色素瘤。；扁平苔藓样角化病通常无症状，但也可出现瘙痒或轻微刺痛。",
+        "source_id": "TRI_034；TRI_062",
+        "source_name": "DermNet - Seborrhoeic Keratosis；DermNet - Lichenoid Keratosis",
+        "score": 3.37
+      },
+      {
+        "head_entity": "基底细胞癌",
+        "relation": "鉴别诊断 → 伴随症状",
+        "tail_entity": "瘙痒",
+        "evidence_text": "皮肤镜有助于区分色素性基底细胞癌和其他色素性皮损。；黑色素瘤早期可表现为异常痣或斑点，并可能出现瘙痒或出血。",
+        "source_id": "TRI_035；TRI_014",
+        "source_name": "DermNet - Basal Cell Carcinoma Dermoscopy；DermNet - Melanoma",
+        "score": 3.37
+      },
+      {
+        "head_entity": "基底细胞癌",
+        "relation": "表现为",
+        "tail_entity": "珍珠样结节",
+        "evidence_text": "结节型基底细胞癌可表现为光亮或珍珠样结节。",
+        "source_id": "TRI_025",
+        "source_name": "DermNet - Basal Cell Carcinoma",
+        "score": 2.5
+      },
+      {
+        "head_entity": "基底细胞癌",
+        "relation": "表现为",
+        "tail_entity": "表面毛细血管扩张",
+        "evidence_text": "基底细胞癌表面可见血管穿过。",
+        "source_id": "TRI_026",
+        "source_name": "DermNet - Basal Cell Carcinoma",
+        "score": 2.5
+      }
+    ],
+    "risk_warning": [
+      "虽然基底细胞癌通常生长缓慢且转移风险较低，但若不及时治疗，可能导致局部组织破坏和毁容。",
+      "瘙痒并非基底细胞癌的特异性症状，也可能见于其他炎症性或良性皮肤病变，需结合形态学特征综合判断。"
+    ],
+    "medical_advice": [
+      "建议尽快前往皮肤科就诊，由专业医生进行体格检查。",
+      "医生可能会建议使用皮肤镜检查以辅助鉴别诊断。",
+      "如有必要，医生可能会建议进行皮肤活检以明确病理诊断。",
+      "在就医前，注意观察皮损的大小、颜色、形状变化及是否有出血或溃疡形成，并做好记录。"
+    ],
+    "evidence_gap": [
+      "用户未提供皮损的具体形态描述（如是否为珍珠样结节、是否有溃疡、边缘是否卷曲等），无法直接匹配基底细胞癌的典型体征证据链。",
+      "用户未提供皮损的颜色信息，无法排除或确认色素性基底细胞癌的可能性。",
+      "缺乏既往日晒史、家族史或个人皮肤癌病史等风险因素信息。",
+      "瘙痒的具体性质和持续时间未明确，且该症状在基底细胞癌中不如在其他炎症性皮肤病中常见，需进一步鉴别。"
+    ],
+    "sources": [
+      "DermNet - Basal Cell Carcinoma",
+      "DermNet - Seborrhoeic Keratosis",
+      "DermNet - Lichenoid Keratosis",
+      "DermNet - Basal Cell Carcinoma Dermoscopy",
+      "DermNet - Melanoma"
+    ],
+    "disclaimer": "本结果仅用于健康信息参考和辅助决策，不构成医学诊断，也不能替代医生面诊、皮肤镜检查或组织病理检查。",
+    "model_name": "qwen3.7-plus-2026-05-26",
+    "prompt_version": "baseline_v1",
+    "response_time_ms": 11323,
+    "token_usage": {
+      "prompt_tokens": 1545,
+      "completion_tokens": 592,
+      "total_tokens": 2137
+    },
+    "run_status": "success",
+    "error_message": "",
+    "pilot_condition": "remove_bleeding",
+    "removed_evidence": [
+      "bleed"
+    ]
+  },
+  {
+    "case_id": "PAD_BCC_002_P2",
+    "method": "kg_rag",
+    "candidate_disease": "基底细胞癌",
+    "user_observation": "48岁男性，皮损伴瘙痒及增长。",
+    "observation_match": [
+      "用户观察到的'瘙痒'症状与知识图谱中基底细胞癌的鉴别诊断路径（如良性角化样病变、黑色素瘤）存在关联，提示需通过鉴别排除其他引起瘙痒的皮损。",
+      "用户观察到的'增长'特征符合基底细胞癌作为肿瘤性病变可能出现的渐进性发展特点，但缺乏特异性形态描述支持直接匹配。"
+    ],
+    "supporting_evidence": [
+      "根据知识图谱，基底细胞癌的典型临床表现包括珍珠样结节、表面毛细血管扩张以及边缘隆起或卷曲，这些是临床识别的重要形态学依据。",
+      "虽然基底细胞癌本身常无症状，但其鉴别诊断中的相关病变（如脂溢性角化病、黑色素瘤）可伴随瘙痒，提示瘙痒可能是复杂皮损或合并症的表现，需结合形态学特征综合判断。"
+    ],
+    "differential_diagnosis": [
+      "良性角化样病变（如脂溢性角化病、扁平苔藓样角化病）：有时在外观上类似基底细胞癌，且部分病例可出现瘙痒。",
+      "黑色素瘤：早期可能表现为异常痣或斑点，可能出现瘙痒或出血，需通过皮肤镜等手段与色素性基底细胞癌区分。"
+    ],
+    "evidence_paths": [
+      {
+        "head_entity": "基底细胞癌",
+        "relation": "鉴别诊断 → 伴随症状",
+        "tail_entity": "瘙痒",
+        "evidence_text": "脂溢性角化病有时可类似基底细胞癌、鳞状细胞癌或黑色素瘤。；扁平苔藓样角化病通常无症状，但也可出现瘙痒或轻微刺痛。",
+        "source_id": "TRI_034；TRI_062",
+        "source_name": "DermNet - Seborrhoeic Keratosis；DermNet - Lichenoid Keratosis",
+        "score": 3.37
+      },
+      {
+        "head_entity": "基底细胞癌",
+        "relation": "鉴别诊断 → 伴随症状",
+        "tail_entity": "瘙痒",
+        "evidence_text": "皮肤镜有助于区分色素性基底细胞癌和其他色素性皮损。；黑色素瘤早期可表现为异常痣或斑点，并可能出现瘙痒或出血。",
+        "source_id": "TRI_035；TRI_014",
+        "source_name": "DermNet - Basal Cell Carcinoma Dermoscopy；DermNet - Melanoma",
+        "score": 3.37
+      },
+      {
+        "head_entity": "基底细胞癌",
+        "relation": "表现为",
+        "tail_entity": "珍珠样结节",
+        "evidence_text": "结节型基底细胞癌可表现为光亮或珍珠样结节。",
+        "source_id": "TRI_025",
+        "source_name": "DermNet - Basal Cell Carcinoma",
+        "score": 2.5
+      },
+      {
+        "head_entity": "基底细胞癌",
+        "relation": "表现为",
+        "tail_entity": "表面毛细血管扩张",
+        "evidence_text": "基底细胞癌表面可见血管穿过。",
+        "source_id": "TRI_026",
+        "source_name": "DermNet - Basal Cell Carcinoma",
+        "score": 2.5
+      },
+      {
+        "head_entity": "基底细胞癌",
+        "relation": "表现为",
+        "tail_entity": "边缘隆起或卷曲",
+        "evidence_text": "基底细胞癌可出现中央凹陷或溃疡，使边缘呈卷曲样。",
+        "source_id": "TRI_027",
+        "source_name": "DermNet - Basal Cell Carcinoma",
+        "score": 2.5
+      }
+    ],
+    "risk_warning": [
+      "皮损伴有'增长'趋势属于警示信号，任何持续增大、形态改变或出现新症状的皮肤损伤均需警惕恶性病变的可能。",
+      "仅凭瘙痒和增长无法确诊基底细胞癌，延误诊治可能导致病灶扩大或侵袭加深。"
+    ],
+    "medical_advice": [
+      "建议尽快前往皮肤科就诊，由专业医生进行肉眼检查及皮肤镜检查。",
+      "若医生怀疑恶性病变，可能建议进行皮肤活检以获取病理学确诊依据。",
+      "在就医前，建议记录皮损的大小变化、颜色改变及瘙痒程度，以便向医生提供详细病史。"
+    ],
+    "evidence_gap": [
+      "用户未提供皮损的具体形态特征（如是否为珍珠样结节、是否有毛细血管扩张、边缘是否卷曲），导致无法将观察结果与基底细胞癌的典型一跳证据直接匹配。",
+      "用户未提供皮损的颜色、部位、持续时间及既往病史，缺乏评估恶性风险的关键上下文信息。",
+      "当前证据主要来源于鉴别诊断的二跳路径，缺乏直接证明该特定皮损为基底细胞癌的一跳形态学匹配证据。"
+    ],
+    "sources": [
+      "DermNet - Seborrhoeic Keratosis",
+      "DermNet - Lichenoid Keratosis",
+      "DermNet - Basal Cell Carcinoma Dermoscopy",
+      "DermNet - Melanoma",
+      "DermNet - Basal Cell Carcinoma"
+    ],
+    "disclaimer": "本结果仅用于健康信息参考和辅助决策，不构成医学诊断，也不能替代医生面诊、皮肤镜检查或组织病理检查。",
+    "model_name": "qwen3.7-plus-2026-05-26",
+    "prompt_version": "baseline_v1",
+    "response_time_ms": 12651,
+    "token_usage": {
+      "prompt_tokens": 1540,
+      "completion_tokens": 621,
+      "total_tokens": 2161
+    },
+    "run_status": "success",
+    "error_message": "",
+    "pilot_condition": "remove_bleeding_and_site",
+    "removed_evidence": [
+      "bleed",
+      "region"
+    ]
+  },
+  {
+    "case_id": "PAD_MEL_001_P0",
+    "method": "kg_rag",
+    "candidate_disease": "黑色素瘤",
+    "user_observation": "54岁女性，背部皮损，伴瘙痒、增长、变化及隆起。",
+    "observation_match": [
+      "用户观察到的背部皮损部位与黑色素瘤常见发病部位（尤其是男性，但女性也可发生）存在空间对应关系。",
+      "用户描述的瘙痒症状与黑色素瘤可能伴随的早期症状相符。",
+      "用户提到的皮损增长、变化及隆起符合黑色素瘤演变过程中的动态特征。"
+    ],
+    "supporting_evidence": [
+      "根据DermNet资料，黑色素瘤可发生在身体任何部位，虽然女性更常见于腿部，但背部也是可能的发病区域。",
+      "根据DermNet资料，黑色素瘤早期可表现为异常痣或斑点，并可能出现瘙痒或出血等症状。"
+    ],
+    "differential_diagnosis": [
+      "脂溢性角化病（常表现为隆起、色素沉着，多见于中老年人背部）",
+      "基底细胞癌（可表现为隆起、变化，但通常生长缓慢）",
+      "寻常疣或皮内痣（可表现为隆起，偶伴瘙痒）",
+      "湿疹或皮炎（主要症状为瘙痒，但通常无明显的结构性隆起或快速增大）"
+    ],
+    "evidence_paths": [
+      {
+        "head_entity": "黑色素瘤",
+        "relation": "常见于",
+        "tail_entity": "背部",
+        "evidence_text": "黑色素瘤可发生在身体任何部位，男性常见于背部，女性常见于腿部。",
+        "source_id": "TRI_006",
+        "source_name": "DermNet - Melanoma",
+        "score": 3.92
+      },
+      {
+        "head_entity": "黑色素瘤",
+        "relation": "伴随症状",
+        "tail_entity": "瘙痒",
+        "evidence_text": "黑色素瘤早期可表现为异常痣或斑点，并可能出现瘙痒或出血。",
+        "source_id": "TRI_014",
+        "source_name": "DermNet - Melanoma",
+        "score": 3.82
+      },
+      {
+        "head_entity": "黑色素瘤",
+        "relation": "表现为",
+        "tail_entity": "边界不规则",
+        "evidence_text": "ABCDE 特征包括 Border irregularity，可支持“边界不规则”。",
+        "source_id": "TRI_001",
+        "source_name": "DermNet - ABCDEFG of melanoma",
+        "score": 2.5
+      },
+      {
+        "head_entity": "黑色素瘤",
+        "relation": "表现为",
+        "tail_entity": "颜色不均",
+        "evidence_text": "ABCDE 特征包括 Colour variability / Change，可支持“颜色不均”。",
+        "source_id": "TRI_002",
+        "source_name": "DermNet - ABCDEFG of melanoma",
+        "score": 2.5
+      },
+      {
+        "head_entity": "黑色素瘤",
+        "relation": "表现为",
+        "tail_entity": "形态不对称",
+        "evidence_text": "ABCDE 特征包括 Asymmetry，可支持“形态不对称”。",
+        "source_id": "TRI_003",
+        "source_name": "DermNet - ABCDEFG of melanoma",
+        "score": 2.5
+      }
+    ],
+    "risk_warning": [
+      "皮损出现增长、变化及隆起属于警示信号，需警惕恶性病变可能。",
+      "伴有瘙痒的色素性皮损变化需要专业评估，不可自行忽视。",
+      "54岁年龄段是皮肤肿瘤风险相对较高的时期。"
+    ],
+    "medical_advice": [
+      "建议尽快前往皮肤科就诊，进行专业的皮肤镜检查。",
+      "如有必要，医生可能会建议进行皮肤活检以明确病理诊断。",
+      "在就医前，避免搔抓皮损部位，以免引起感染或干扰医生观察。",
+      "记录皮损变化的具体时间线和照片，以便向医生提供详细病史。"
+    ],
+    "evidence_gap": [
+      "缺乏对皮损ABCDE特征（不对称性、边界不规则、颜色不均、直径、演变）的具体描述，仅提及笼统的'变化'和'隆起'。",
+      "未提供皮损的具体大小、颜色细节（如是否多色、黑色、蓝色等）。",
+      "未提供既往皮肤病史、家族黑色素瘤史或紫外线暴露史。",
+      "未提供皮损是否存在破溃、出血或结痂的情况。"
+    ],
+    "sources": [
+      "DermNet - Melanoma",
+      "DermNet - ABCDEFG of melanoma"
+    ],
+    "disclaimer": "本结果仅用于健康信息参考和辅助决策，不构成医学诊断，也不能替代医生面诊、皮肤镜检查或组织病理检查。",
+    "model_name": "qwen3.7-plus-2026-05-26",
+    "prompt_version": "baseline_v1",
+    "response_time_ms": 10383,
+    "token_usage": {
+      "prompt_tokens": 1458,
+      "completion_tokens": 548,
+      "total_tokens": 2006
+    },
+    "run_status": "success",
+    "error_message": "",
+    "pilot_condition": "original",
+    "removed_evidence": []
+  },
+  {
+    "case_id": "PAD_MEL_001_P1",
+    "method": "kg_rag",
+    "candidate_disease": "黑色素瘤",
+    "user_observation": "54岁女性，背部皮损，伴增长、变化及隆起。",
+    "observation_match": [
+      "用户观察到的“背部”部位与黑色素瘤常见发病部位存在关联（依据证据链 Rank 1）",
+      "用户观察到的“增长、变化”特征与黑色素瘤 ABCDE 原则中的“Evolving（演变/变化）”及“Diameter（直径增大）”特征相符（依据证据链 Rank 5）",
+      "用户观察到的“隆起”可能对应皮损形态改变，但需结合其他 ABCDE 特征综合评估"
+    ],
+    "supporting_evidence": [
+      "证据链 PATH_TRI_006 显示：黑色素瘤可发生在身体任何部位，男性常见于背部，女性常见于腿部。来源：DermNet - Melanoma",
+      "证据链 PATH_TRI_004 显示：ABCDE 特征包括 Diameter / Evolving，可支持“直径增大或变化”。来源：DermNet - ABCDEFG of melanoma",
+      "证据链 PATH_TRI_001 至 PATH_TRI_003 提供了黑色素瘤的其他典型特征（边界不规则、颜色不均、形态不对称），虽用户未直接描述，但作为鉴别参考。来源：DermNet - ABCDEFG of melanoma"
+    ],
+    "differential_diagnosis": [
+      "脂溢性角化病（老年斑）：常表现为隆起、颜色加深，多见于中老年人背部",
+      "色素痣：良性色素性皮损，部分可随时间轻微变化或隆起",
+      "基底细胞癌：皮肤恶性肿瘤之一，有时表现为珍珠样隆起或溃疡"
+    ],
+    "evidence_paths": [
+      {
+        "head_entity": "黑色素瘤",
+        "relation": "常见于",
+        "tail_entity": "背部",
+        "evidence_text": "黑色素瘤可发生在身体任何部位，男性常见于背部，女性常见于腿部。",
+        "source_id": "TRI_006",
+        "source_name": "DermNet - Melanoma",
+        "score": 3.92
+      },
+      {
+        "head_entity": "黑色素瘤",
+        "relation": "表现为",
+        "tail_entity": "边界不规则",
+        "evidence_text": "ABCDE 特征包括 Border irregularity，可支持“边界不规则”。",
+        "source_id": "TRI_001",
+        "source_name": "DermNet - ABCDEFG of melanoma",
+        "score": 2.5
+      },
+      {
+        "head_entity": "黑色素瘤",
+        "relation": "表现为",
+        "tail_entity": "颜色不均",
+        "evidence_text": "ABCDE 特征包括 Colour variability / Change，可支持“颜色不均”。",
+        "source_id": "TRI_002",
+        "source_name": "DermNet - ABCDEFG of melanoma",
+        "score": 2.5
+      },
+      {
+        "head_entity": "黑色素瘤",
+        "relation": "表现为",
+        "tail_entity": "形态不对称",
+        "evidence_text": "ABCDE 特征包括 Asymmetry，可支持“形态不对称”。",
+        "source_id": "TRI_003",
+        "source_name": "DermNet - ABCDEFG of melanoma",
+        "score": 2.5
+      },
+      {
+        "head_entity": "黑色素瘤",
+        "relation": "表现为",
+        "tail_entity": "直径增大",
+        "evidence_text": "ABCDE 特征包括 Diameter / Evolving，可支持“直径增大或变化”。",
+        "source_id": "TRI_004",
+        "source_name": "DermNet - ABCDEFG of melanoma",
+        "score": 2.5
+      }
+    ],
+    "risk_warning": [
+      "皮损出现“增长、变化及隆起”属于动态改变，是皮肤恶性肿瘤的重要警示信号",
+      "黑色素瘤若早期发现并治疗，预后较好；延误诊断可能导致转移风险增加",
+      "仅凭文字描述无法确诊，必须通过专业皮肤镜检查及病理活检确认"
+    ],
+    "medical_advice": [
+      "建议尽快前往正规医院皮肤科就诊",
+      "医生可能会进行皮肤镜检查以评估皮损的微观结构",
+      "如有必要，医生会建议进行切除活检以明确病理诊断",
+      "在就医前，避免搔抓、摩擦或自行处理该皮损",
+      "可拍摄清晰照片记录皮损当前状态，以便医生对比变化"
+    ],
+    "evidence_gap": [
+      "用户未提供皮损的具体颜色特征（如是否颜色不均、多种颜色混合）",
+      "用户未描述皮损边界是否规则或清晰",
+      "用户未说明皮损是否对称",
+      "用户未提供皮损的具体直径大小",
+      "缺乏既往皮肤病史、家族史或日晒史等背景信息",
+      "缺乏皮肤镜或病理学等客观检查结果"
+    ],
+    "sources": [
+      "DermNet - Melanoma",
+      "DermNet - ABCDEFG of melanoma"
+    ],
+    "disclaimer": "本结果仅用于健康信息参考和辅助决策，不构成医学诊断，也不能替代医生面诊、皮肤镜检查或组织病理检查。",
+    "model_name": "qwen3.7-plus-2026-05-26",
+    "prompt_version": "baseline_v1",
+    "response_time_ms": 12856,
+    "token_usage": {
+      "prompt_tokens": 1445,
+      "completion_tokens": 647,
+      "total_tokens": 2092
+    },
+    "run_status": "success",
+    "error_message": "",
+    "pilot_condition": "remove_pruritus",
+    "removed_evidence": [
+      "itch"
+    ]
+  },
+  {
+    "case_id": "PAD_MEL_001_P2",
+    "method": "kg_rag",
+    "candidate_disease": "黑色素瘤",
+    "user_observation": "54岁女性，皮损伴增长、变化及隆起。",
+    "observation_match": [
+      "用户观察到的“增长”与知识图谱中黑色素瘤表现为“直径增大”或“演变（Evolving）”的特征存在概念对应。",
+      "用户观察到的“变化”与知识图谱中黑色素瘤ABCDE特征中的“Change（变化）”存在概念对应。",
+      "用户观察到的“隆起”可能对应皮肤病变的形态改变，但缺乏具体的边界、颜色或对称性描述，无法直接匹配特定的高分值证据锚点。"
+    ],
+    "supporting_evidence": [
+      "根据DermNet资料，黑色素瘤的ABCDE评估标准包括边界不规则（Border irregularity），这是其典型表现之一。",
+      "根据DermNet资料，黑色素瘤常表现为颜色不均（Colour variability）或随时间发生变化（Change）。",
+      "根据DermNet资料，形态不对称（Asymmetry）是黑色素瘤的重要临床特征。",
+      "根据DermNet资料，直径增大（Diameter）或病变演变（Evolving）是提示黑色素瘤风险的关键指标。",
+      "根据DermNet资料，皮肤镜检查中可能出现不规则色素或异常结构，辅助评估黑色素瘤风险。"
+    ],
+    "differential_diagnosis": [
+      "脂溢性角化病（常表现为隆起、颜色变化，但通常边界清晰且生长缓慢）",
+      "基底细胞癌（可表现为结节状隆起和变化，但通常伴有毛细血管扩张）",
+      "发育不良痣（可能具有不对称、边界不规则等特征，需与黑色素瘤鉴别）",
+      "皮内痣（常表现为隆起的皮损，通常稳定但偶有变化）"
+    ],
+    "evidence_paths": [
+      {
+        "head_entity": "黑色素瘤",
+        "relation": "表现为",
+        "tail_entity": "边界不规则",
+        "evidence_text": "ABCDE 特征包括 Border irregularity，可支持“边界不规则”。",
+        "source_id": "TRI_001",
+        "source_name": "DermNet - ABCDEFG of melanoma",
+        "score": 2.5
+      },
+      {
+        "head_entity": "黑色素瘤",
+        "relation": "表现为",
+        "tail_entity": "颜色不均",
+        "evidence_text": "ABCDE 特征包括 Colour variability / Change，可支持“颜色不均”。",
+        "source_id": "TRI_002",
+        "source_name": "DermNet - ABCDEFG of melanoma",
+        "score": 2.5
+      },
+      {
+        "head_entity": "黑色素瘤",
+        "relation": "表现为",
+        "tail_entity": "形态不对称",
+        "evidence_text": "ABCDE 特征包括 Asymmetry，可支持“形态不对称”。",
+        "source_id": "TRI_003",
+        "source_name": "DermNet - ABCDEFG of melanoma",
+        "score": 2.5
+      },
+      {
+        "head_entity": "黑色素瘤",
+        "relation": "表现为",
+        "tail_entity": "直径增大",
+        "evidence_text": "ABCDE 特征包括 Diameter / Evolving，可支持“直径增大或变化”。",
+        "source_id": "TRI_004",
+        "source_name": "DermNet - ABCDEFG of melanoma",
+        "score": 2.5
+      },
+      {
+        "head_entity": "黑色素瘤",
+        "relation": "表现为",
+        "tail_entity": "结构不规则",
+        "evidence_text": "黑色素瘤评估中可出现不规则色素或异常皮肤镜结构。",
+        "source_id": "TRI_005",
+        "source_name": "DermNet - Dermoscopy / Melanoma",
+        "score": 2.5
+      }
+    ],
+    "risk_warning": [
+      "皮损伴随增长、变化及隆起属于需要警惕的临床信号，尤其是对于54岁年龄段人群。",
+      "虽然未提供具体的ABCDE细节，但“变化”和“增长”本身即为黑色素瘤筛查中的高危因素（E代表Evolving）。",
+      "任何新出现或发生变化的色素性皮损都应排除恶性可能，不可自行判断为良性。"
+    ],
+    "medical_advice": [
+      "建议尽快前往皮肤科就诊，进行专业的皮肤镜检查（Dermoscopy）。",
+      "医生可能会根据临床表现决定是否需要切除活检以明确病理诊断。",
+      "在就医前，建议拍摄清晰的照片记录皮损当前状态，以便医生对比变化过程。",
+      "避免搔抓、刺激或自行处理该皮损部位。"
+    ],
+    "evidence_gap": [
+      "未识别出可靠的语义锚点，导致用户观察中的具体形态（如边界是否规则、颜色是否混杂、是否对称）无法与知识图谱中的特定实体直接精确匹配。",
+      "缺乏皮损的具体部位、大小、颜色细节、边界清晰度及对称性等关键ABCDE特征描述。",
+      "缺乏患者的既往皮肤病史、家族史或日晒史等背景信息。",
+      "缺乏皮肤镜图像或组织病理学检查结果作为确诊依据。",
+      "用户观察未识别出可靠语义锚点，当前图谱证据主要属于候选疾病的一般知识，不能视为用户个体的直接匹配证据。"
+    ],
+    "sources": [
+      "DermNet - ABCDEFG of melanoma",
+      "DermNet - Dermoscopy / Melanoma"
+    ],
+    "disclaimer": "本结果仅用于健康信息参考和辅助决策，不构成医学诊断，也不能替代医生面诊、皮肤镜检查或组织病理检查。",
+    "model_name": "qwen3.7-plus-2026-05-26",
+    "prompt_version": "baseline_v1",
+    "response_time_ms": 13085,
+    "token_usage": {
+      "prompt_tokens": 1436,
+      "completion_tokens": 706,
+      "total_tokens": 2142
+    },
+    "run_status": "success",
+    "error_message": "",
+    "pilot_condition": "remove_pruritus_and_site",
+    "removed_evidence": [
+      "itch",
+      "region"
+    ]
+  },
+  {
+    "case_id": "PAD_MEL_002_P0",
+    "method": "kg_rag",
+    "candidate_disease": "黑色素瘤",
+    "user_observation": "58岁男性，背部皮损，伴瘙痒、增长及变化。",
+    "observation_match": [
+      "用户观察到的'背部'皮损部位与黑色素瘤在男性中的常见发病部位相符",
+      "用户观察到的'瘙痒'症状与黑色素瘤可能伴随的早期症状相符",
+      "用户观察到的'增长及变化'提示皮损具有动态演变特征，符合黑色素瘤ABCDE原则中的'Evolving'（演变）特征"
+    ],
+    "supporting_evidence": [
+      "根据DermNet资料，黑色素瘤可发生在身体任何部位，但在男性中常见于背部",
+      "根据DermNet资料，黑色素瘤早期可表现为异常痣或斑点，并可能出现瘙痒或出血",
+      "根据DermNet关于黑色素瘤ABCDE特征的说明，边界不规则、颜色不均和形态不对称是其典型表现，虽用户未直接描述这些细节，但'变化'可能涵盖此类形态学改变"
+    ],
+    "differential_diagnosis": [
+      "脂溢性角化病（老年斑）：常发生于背部，可伴有瘙痒，但通常生长缓慢且表面呈蜡样",
+      "基底细胞癌：可表现为背部结节或斑块，偶有瘙痒，但通常生长较慢",
+      "慢性湿疹或皮炎：可引起背部瘙痒和皮肤增厚，但通常无色素性肿块的快速变化",
+      "良性色素痣：部分良性痣也可随时间轻微变化或受刺激后瘙痒，需专业鉴别"
+    ],
+    "evidence_paths": [
+      {
+        "head_entity": "黑色素瘤",
+        "relation": "常见于",
+        "tail_entity": "背部",
+        "evidence_text": "黑色素瘤可发生在身体任何部位，男性常见于背部，女性常见于腿部。",
+        "source_id": "TRI_006",
+        "source_name": "DermNet - Melanoma",
+        "score": 3.92
+      },
+      {
+        "head_entity": "黑色素瘤",
+        "relation": "伴随症状",
+        "tail_entity": "瘙痒",
+        "evidence_text": "黑色素瘤早期可表现为异常痣或斑点，并可能出现瘙痒或出血。",
+        "source_id": "TRI_014",
+        "source_name": "DermNet - Melanoma",
+        "score": 3.82
+      },
+      {
+        "head_entity": "黑色素瘤",
+        "relation": "表现为",
+        "tail_entity": "边界不规则",
+        "evidence_text": "ABCDE 特征包括 Border irregularity，可支持“边界不规则”。",
+        "source_id": "TRI_001",
+        "source_name": "DermNet - ABCDEFG of melanoma",
+        "score": 2.5
+      },
+      {
+        "head_entity": "黑色素瘤",
+        "relation": "表现为",
+        "tail_entity": "颜色不均",
+        "evidence_text": "ABCDE 特征包括 Colour variability / Change，可支持“颜色不均”。",
+        "source_id": "TRI_002",
+        "source_name": "DermNet - ABCDEFG of melanoma",
+        "score": 2.5
+      },
+      {
+        "head_entity": "黑色素瘤",
+        "relation": "表现为",
+        "tail_entity": "形态不对称",
+        "evidence_text": "ABCDE 特征包括 Asymmetry，可支持“形态不对称”。",
+        "source_id": "TRI_003",
+        "source_name": "DermNet - ABCDEFG of melanoma",
+        "score": 2.5
+      }
+    ],
+    "risk_warning": [
+      "58岁男性属于黑色素瘤较高风险人群",
+      "背部是男性黑色素瘤的高发部位，且因位置隐蔽不易自我监测",
+      "皮损伴有'增长'和'变化'是恶性病变的重要警示信号",
+      "瘙痒可能是炎症反应，也可能是肿瘤生长的伴随症状，不可忽视"
+    ],
+    "medical_advice": [
+      "建议尽快前往皮肤科就诊，进行专业的皮肤镜检查",
+      "医生可能会建议对可疑皮损进行活检以明确病理诊断",
+      "在就医前，避免搔抓皮损部位，以免引起感染或干扰医生观察",
+      "记录皮损变化的具体时间线和照片，以便向医生提供详细病史"
+    ],
+    "evidence_gap": [
+      "用户未提供皮损的具体形态描述（如是否对称、边界是否清晰、颜色是否均匀）",
+      "用户未提供皮损的大小、形状及具体颜色特征",
+      "用户未提供既往皮肤病史、家族黑色素瘤病史或日晒史",
+      "用户未提供皮损变化的具体时间跨度（如几周、几个月或几年）",
+      "缺乏皮肤镜或组织病理学等客观检查结果支持"
+    ],
+    "sources": [
+      "DermNet - Melanoma",
+      "DermNet - ABCDEFG of melanoma"
+    ],
+    "disclaimer": "本结果仅用于健康信息参考和辅助决策，不构成医学诊断，也不能替代医生面诊、皮肤镜检查或组织病理检查。",
+    "model_name": "qwen3.7-plus-2026-05-26",
+    "prompt_version": "baseline_v1",
+    "response_time_ms": 11245,
+    "token_usage": {
+      "prompt_tokens": 1455,
+      "completion_tokens": 605,
+      "total_tokens": 2060
+    },
+    "run_status": "success",
+    "error_message": "",
+    "pilot_condition": "original",
+    "removed_evidence": []
+  },
+  {
+    "case_id": "PAD_MEL_002_P1",
+    "method": "kg_rag",
+    "candidate_disease": "黑色素瘤",
+    "user_observation": "58岁男性，背部皮损，伴增长及变化。",
+    "observation_match": [
+      "用户观察到的'背部'部位与黑色素瘤在男性中的常见发病部位一致",
+      "用户观察到的'增长及变化'符合黑色素瘤ABCDE特征中的'Evolving（演变/变化）'描述"
+    ],
+    "supporting_evidence": [
+      "证据链显示黑色素瘤可发生在身体任何部位，且男性常见于背部（来源：DermNet - Melanoma）",
+      "证据链指出黑色素瘤的ABCDE特征包括直径增大或形态变化（Evolving），这与用户描述的'增长及变化'相符（来源：DermNet - ABCDEFG of melanoma）"
+    ],
+    "differential_diagnosis": [
+      "脂溢性角化病（老年疣）",
+      "发育不良痣",
+      "基底细胞癌",
+      "鳞状细胞癌"
+    ],
+    "evidence_paths": [
+      {
+        "head_entity": "黑色素瘤",
+        "relation": "常见于",
+        "tail_entity": "背部",
+        "evidence_text": "黑色素瘤可发生在身体任何部位，男性常见于背部，女性常见于腿部。",
+        "source_id": "TRI_006",
+        "source_name": "DermNet - Melanoma",
+        "score": 3.92
+      },
+      {
+        "head_entity": "黑色素瘤",
+        "relation": "表现为",
+        "tail_entity": "边界不规则",
+        "evidence_text": "ABCDE 特征包括 Border irregularity，可支持“边界不规则”。",
+        "source_id": "TRI_001",
+        "source_name": "DermNet - ABCDEFG of melanoma",
+        "score": 2.5
+      },
+      {
+        "head_entity": "黑色素瘤",
+        "relation": "表现为",
+        "tail_entity": "颜色不均",
+        "evidence_text": "ABCDE 特征包括 Colour variability / Change，可支持“颜色不均”。",
+        "source_id": "TRI_002",
+        "source_name": "DermNet - ABCDEFG of melanoma",
+        "score": 2.5
+      },
+      {
+        "head_entity": "黑色素瘤",
+        "relation": "表现为",
+        "tail_entity": "形态不对称",
+        "evidence_text": "ABCDE 特征包括 Asymmetry，可支持“形态不对称”。",
+        "source_id": "TRI_003",
+        "source_name": "DermNet - ABCDEFG of melanoma",
+        "score": 2.5
+      },
+      {
+        "head_entity": "黑色素瘤",
+        "relation": "表现为",
+        "tail_entity": "直径增大",
+        "evidence_text": "ABCDE 特征包括 Diameter / Evolving，可支持“直径增大或变化”。",
+        "source_id": "TRI_004",
+        "source_name": "DermNet - ABCDEFG of melanoma",
+        "score": 2.5
+      }
+    ],
+    "risk_warning": [
+      "58岁男性属于皮肤肿瘤高发人群",
+      "皮损伴有增长及变化是皮肤恶性肿瘤的重要警示信号",
+      "背部是男性黑色素瘤的高发部位，需高度警惕"
+    ],
+    "medical_advice": [
+      "建议尽快前往皮肤科就诊，进行专业皮肤镜检查",
+      "如有必要，医生可能会建议进行皮肤活检以明确病理性质",
+      "在就医前，避免搔抓或刺激该皮损部位",
+      "记录皮损变化的具体时间线和照片，以便向医生提供详细病史"
+    ],
+    "evidence_gap": [
+      "缺乏对皮损具体形态的描述（如是否不对称、边界是否不规则、颜色是否不均）",
+      "缺乏皮损的具体大小（直径）信息",
+      "缺乏是否有出血、溃疡、瘙痒或疼痛等症状的描述",
+      "缺乏个人及家族皮肤癌病史、日晒史等风险因素信息"
+    ],
+    "sources": [
+      "DermNet - Melanoma",
+      "DermNet - ABCDEFG of melanoma"
+    ],
+    "disclaimer": "本结果仅用于健康信息参考和辅助决策，不构成医学诊断，也不能替代医生面诊、皮肤镜检查或组织病理检查。",
+    "model_name": "qwen3.7-plus-2026-05-26",
+    "prompt_version": "baseline_v1",
+    "response_time_ms": 8962,
+    "token_usage": {
+      "prompt_tokens": 1442,
+      "completion_tokens": 441,
+      "total_tokens": 1883
+    },
+    "run_status": "success",
+    "error_message": "",
+    "pilot_condition": "remove_pruritus",
+    "removed_evidence": [
+      "itch"
+    ]
+  },
+  {
+    "case_id": "PAD_MEL_002_P2",
+    "method": "kg_rag",
+    "candidate_disease": "黑色素瘤",
+    "user_observation": "58岁男性，皮损伴增长及变化。",
+    "observation_match": [
+      "用户观察到的'皮损伴增长及变化'与黑色素瘤的'Evolving（演变/变化）'特征存在概念上的对应关系，提示病变处于动态发展中。"
+    ],
+    "supporting_evidence": [
+      "根据DermNet提供的ABCDE法则，黑色素瘤的典型特征包括边界不规则（Border irregularity）、颜色不均（Colour variability）、形态不对称（Asymmetry）、直径增大或演变（Diameter/Evolving）。",
+      "皮肤镜评估中，黑色素瘤可能表现为不规则色素或异常皮肤镜结构。"
+    ],
+    "differential_diagnosis": [
+      "脂溢性角化病",
+      "发育不良痣",
+      "基底细胞癌",
+      "色素性日光性角化病"
+    ],
+    "evidence_paths": [
+      {
+        "head_entity": "黑色素瘤",
+        "relation": "表现为",
+        "tail_entity": "边界不规则",
+        "evidence_text": "ABCDE 特征包括 Border irregularity，可支持“边界不规则”。",
+        "source_id": "TRI_001",
+        "source_name": "DermNet - ABCDEFG of melanoma",
+        "score": 2.5
+      },
+      {
+        "head_entity": "黑色素瘤",
+        "relation": "表现为",
+        "tail_entity": "颜色不均",
+        "evidence_text": "ABCDE 特征包括 Colour variability / Change，可支持“颜色不均”。",
+        "source_id": "TRI_002",
+        "source_name": "DermNet - ABCDEFG of melanoma",
+        "score": 2.5
+      },
+      {
+        "head_entity": "黑色素瘤",
+        "relation": "表现为",
+        "tail_entity": "形态不对称",
+        "evidence_text": "ABCDE 特征包括 Asymmetry，可支持“形态不对称”。",
+        "source_id": "TRI_003",
+        "source_name": "DermNet - ABCDEFG of melanoma",
+        "score": 2.5
+      },
+      {
+        "head_entity": "黑色素瘤",
+        "relation": "表现为",
+        "tail_entity": "直径增大",
+        "evidence_text": "ABCDE 特征包括 Diameter / Evolving，可支持“直径增大或变化”。",
+        "source_id": "TRI_004",
+        "source_name": "DermNet - ABCDEFG of melanoma",
+        "score": 2.5
+      },
+      {
+        "head_entity": "黑色素瘤",
+        "relation": "表现为",
+        "tail_entity": "结构不规则",
+        "evidence_text": "黑色素瘤评估中可出现不规则色素或异常皮肤镜结构。",
+        "source_id": "TRI_005",
+        "source_name": "DermNet - Dermoscopy / Melanoma",
+        "score": 2.5
+      }
+    ],
+    "risk_warning": [
+      "58岁男性属于皮肤肿瘤的高风险人群。",
+      "皮损出现'增长及变化'是皮肤恶性肿瘤的重要警示信号，需高度警惕。",
+      "仅凭文字描述无法排除其他良性或恶性皮肤病变，不可自行判断性质。"
+    ],
+    "medical_advice": [
+      "建议尽快前往正规医院皮肤科就诊。",
+      "医生可能会进行皮肤镜检查以评估皮损的微细结构。",
+      "如有必要，医生可能会建议进行皮肤活检以明确病理诊断。",
+      "在就医前，可拍摄清晰照片记录皮损现状，以便对比变化。"
+    ],
+    "evidence_gap": [
+      "未识别出可靠的语义锚点，无法将用户描述的'增长及变化'精确映射到具体的医学实体（如具体的边界、颜色或对称性改变）。",
+      "缺乏皮损的具体视觉特征描述（如颜色、形状、边界清晰度）。",
+      "缺乏皮损的具体部位、大小、持续时间及既往病史信息。",
+      "缺乏皮肤镜检查或病理活检等客观检查结果。",
+      "用户观察未识别出可靠语义锚点，当前图谱证据主要属于候选疾病的一般知识，不能视为用户个体的直接匹配证据。"
+    ],
+    "sources": [
+      "DermNet - ABCDEFG of melanoma",
+      "DermNet - Dermoscopy / Melanoma"
+    ],
+    "disclaimer": "本结果仅用于健康信息参考和辅助决策，不构成医学诊断，也不能替代医生面诊、皮肤镜检查或组织病理检查。",
+    "model_name": "qwen3.7-plus-2026-05-26",
+    "prompt_version": "baseline_v1",
+    "response_time_ms": 10030,
+    "token_usage": {
+      "prompt_tokens": 1433,
+      "completion_tokens": 463,
+      "total_tokens": 1896
+    },
+    "run_status": "success",
+    "error_message": "",
+    "pilot_condition": "remove_pruritus_and_site",
+    "removed_evidence": [
+      "itch",
+      "region"
+    ]
+  }
+]

@@ -1,0 +1,7 @@
+mother_case_id,source_dataset,patient_id,lesion_id,diagnostic,region,age,gender,itch,grew,hurt,changed,bleed,elevation
+PAD_BCC_001,PAD-UFES-20,PAT_117,179,BCC,FACE,74,FEMALE,True,True,True,False,True,True
+PAD_BCC_002,PAD-UFES-20,PAT_126,191,BCC,FACE,48,MALE,True,True,False,False,True,False
+PAD_MEL_001,PAD-UFES-20,PAT_340,714,MEL,BACK,54,FEMALE,True,True,False,True,False,True
+PAD_MEL_002,PAD-UFES-20,PAT_656,1246,MEL,BACK,58,MALE,True,True,False,True,False,False
+PAD_NEV_001,PAD-UFES-20,PAT_1453,1567,NEV,FACE,52,,False,False,False,False,False,True
+PAD_NEV_002,PAD-UFES-20,PAT_759,1433,NEV,BACK,74,MALE,False,False,False,False,False,True

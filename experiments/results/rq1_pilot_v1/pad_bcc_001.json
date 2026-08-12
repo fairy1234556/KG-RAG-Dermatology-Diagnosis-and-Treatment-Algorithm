@@ -1,0 +1,312 @@
+[
+  {
+    "case_id": "PAD_BCC_001_P0",
+    "method": "kg_rag",
+    "candidate_disease": "基底细胞癌",
+    "user_observation": "74岁女性，面部皮损，伴瘙痒、增长、触痛、出血及隆起。",
+    "observation_match": [
+      "用户观察到的面部皮损部位与基底细胞癌常见发病部位一致",
+      "用户观察到的出血症状与基底细胞癌可能出现的自发性出血或溃疡表现相符"
+    ],
+    "supporting_evidence": [
+      "结节型基底细胞癌是面部常见的 BCC 类型（来源：DermNet - Basal Cell Carcinoma）",
+      "基底细胞癌可出现自发性出血、糜烂或溃疡（来源：DermNet - Basal Cell Carcinoma Dermoscopy）"
+    ],
+    "differential_diagnosis": [
+      "良性角化样病变（如脂溢性角化病、扁平苔藓样角化病），此类病变有时可类似基底细胞癌，且部分伴有瘙痒",
+      "黑色素瘤，早期可表现为异常痣或斑点，并可能出现瘙痒或出血，需通过皮肤镜区分"
+    ],
+    "evidence_paths": [
+      {
+        "head_entity": "基底细胞癌",
+        "relation": "常见于",
+        "tail_entity": "面部",
+        "evidence_text": "结节型基底细胞癌是面部常见的 BCC 类型。",
+        "source_id": "TRI_030",
+        "source_name": "DermNet - Basal Cell Carcinoma",
+        "score": 3.92
+      },
+      {
+        "head_entity": "基底细胞癌",
+        "relation": "伴随症状",
+        "tail_entity": "出血",
+        "evidence_text": "基底细胞癌可出现自发性出血、糜烂或溃疡。",
+        "source_id": "TRI_031",
+        "source_name": "DermNet - Basal Cell Carcinoma Dermoscopy",
+        "score": 3.82
+      },
+      {
+        "head_entity": "基底细胞癌",
+        "relation": "鉴别诊断 → 伴随症状",
+        "tail_entity": "瘙痒",
+        "evidence_text": "脂溢性角化病有时可类似基底细胞癌、鳞状细胞癌或黑色素瘤。；扁平苔藓样角化病通常无症状，但也可出现瘙痒或轻微刺痛。",
+        "source_id": "TRI_034；TRI_062",
+        "source_name": "DermNet - Seborrhoeic Keratosis；DermNet - Lichenoid Keratosis",
+        "score": 3.37
+      },
+      {
+        "head_entity": "基底细胞癌",
+        "relation": "鉴别诊断 → 伴随症状",
+        "tail_entity": "出血",
+        "evidence_text": "皮肤镜有助于区分色素性基底细胞癌和其他色素性皮损。；黑色素瘤早期可表现为异常痣或斑点，并可能出现瘙痒或出血。",
+        "source_id": "TRI_035；TRI_007",
+        "source_name": "DermNet - Basal Cell Carcinoma Dermoscopy；DermNet - Melanoma",
+        "score": 3.37
+      },
+      {
+        "head_entity": "基底细胞癌",
+        "relation": "鉴别诊断 → 伴随症状",
+        "tail_entity": "瘙痒",
+        "evidence_text": "皮肤镜有助于区分色素性基底细胞癌和其他色素性皮损。；黑色素瘤早期可表现为异常痣或斑点，并可能出现瘙痒或出血。",
+        "source_id": "TRI_035；TRI_014",
+        "source_name": "DermNet - Basal Cell Carcinoma Dermoscopy；DermNet - Melanoma",
+        "score": 3.37
+      }
+    ],
+    "risk_warning": [
+      "患者年龄较大（74岁），且皮损伴有增长、出血及触痛，属于需要警惕的皮肤恶性肿瘤风险信号",
+      "面部皮损若持续增大或反复出血，可能提示病变具有侵袭性或未及时干预的风险"
+    ],
+    "medical_advice": [
+      "建议尽快前往皮肤科就诊，进行专业体格检查",
+      "建议遵医嘱进行皮肤镜检查或组织病理学活检以明确诊断",
+      "在就医前避免抓挠或自行处理皮损，记录皮损变化情况及照片供医生参考"
+    ],
+    "evidence_gap": [
+      "缺乏皮损的具体形态描述（如颜色、边界、是否呈珍珠状隆起等）",
+      "缺乏既往皮肤病史、日晒史或家族肿瘤史信息",
+      "缺乏组织病理学检查结果，无法确诊",
+      "瘙痒和触痛在提供的直接证据链中未作为基底细胞癌的典型直接特征列出，主要通过鉴别诊断路径关联，特异性需进一步确认"
+    ],
+    "sources": [
+      "DermNet - Basal Cell Carcinoma",
+      "DermNet - Basal Cell Carcinoma Dermoscopy",
+      "DermNet - Seborrhoeic Keratosis",
+      "DermNet - Lichenoid Keratosis",
+      "DermNet - Melanoma"
+    ],
+    "disclaimer": "本结果仅用于健康信息参考和辅助决策，不构成医学诊断，也不能替代医生面诊、皮肤镜检查或组织病理检查。",
+    "model_name": "qwen3.7-plus-2026-05-26",
+    "prompt_version": "baseline_v1",
+    "response_time_ms": 12403,
+    "token_usage": {
+      "prompt_tokens": 1631,
+      "completion_tokens": 509,
+      "total_tokens": 2140
+    },
+    "run_status": "success",
+    "error_message": "",
+    "pilot_condition": "original",
+    "removed_evidence": []
+  },
+  {
+    "case_id": "PAD_BCC_001_P1",
+    "method": "kg_rag",
+    "candidate_disease": "基底细胞癌",
+    "user_observation": "74岁女性，面部皮损，伴瘙痒、增长、触痛及隆起。",
+    "observation_match": [
+      "用户观察到的'面部'部位与基底细胞癌的好发部位一致（证据链 Rank 1）。",
+      "用户描述的'隆起'皮损形态可能与基底细胞癌的'珍珠样结节'表现相关，但缺乏直接语义锚点匹配（证据链 Rank 4）。"
+    ],
+    "supporting_evidence": [
+      "知识图谱显示基底细胞癌常见于面部，结节型基底细胞癌是面部常见的类型（来源：DermNet - Basal Cell Carcinoma）。",
+      "基底细胞癌可表现为光亮或珍珠样结节（来源：DermNet - Basal Cell Carcinoma）。",
+      "基底细胞癌表面可见血管穿过（表面毛细血管扩张）（来源：DermNet - Basal Cell Carcinoma）。"
+    ],
+    "differential_diagnosis": [
+      "良性角化样病变（如脂溢性角化病、扁平苔藓样角化病）：这些病变有时可类似基底细胞癌，且可能伴随瘙痒症状（证据链 Rank 2）。",
+      "黑色素瘤：早期可表现为异常痣或斑点，并可能出现瘙痒，需通过皮肤镜等工具与色素性基底细胞癌区分（证据链 Rank 3）。"
+    ],
+    "evidence_paths": [
+      {
+        "head_entity": "基底细胞癌",
+        "relation": "常见于",
+        "tail_entity": "面部",
+        "evidence_text": "结节型基底细胞癌是面部常见的 BCC 类型。",
+        "source_id": "TRI_030",
+        "source_name": "DermNet - Basal Cell Carcinoma",
+        "score": 3.92
+      },
+      {
+        "head_entity": "基底细胞癌",
+        "relation": "鉴别诊断 → 伴随症状",
+        "tail_entity": "瘙痒",
+        "evidence_text": "脂溢性角化病有时可类似基底细胞癌、鳞状细胞癌或黑色素瘤。；扁平苔藓样角化病通常无症状，但也可出现瘙痒或轻微刺痛。",
+        "source_id": "TRI_034；TRI_062",
+        "source_name": "DermNet - Seborrhoeic Keratosis；DermNet - Lichenoid Keratosis",
+        "score": 3.37
+      },
+      {
+        "head_entity": "基底细胞癌",
+        "relation": "鉴别诊断 → 伴随症状",
+        "tail_entity": "瘙痒",
+        "evidence_text": "皮肤镜有助于区分色素性基底细胞癌和其他色素性皮损。；黑色素瘤早期可表现为异常痣或斑点，并可能出现瘙痒或出血。",
+        "source_id": "TRI_035；TRI_014",
+        "source_name": "DermNet - Basal Cell Carcinoma Dermoscopy；DermNet - Melanoma",
+        "score": 3.37
+      },
+      {
+        "head_entity": "基底细胞癌",
+        "relation": "表现为",
+        "tail_entity": "珍珠样结节",
+        "evidence_text": "结节型基底细胞癌可表现为光亮或珍珠样结节。",
+        "source_id": "TRI_025",
+        "source_name": "DermNet - Basal Cell Carcinoma",
+        "score": 2.5
+      },
+      {
+        "head_entity": "基底细胞癌",
+        "relation": "表现为",
+        "tail_entity": "表面毛细血管扩张",
+        "evidence_text": "基底细胞癌表面可见血管穿过。",
+        "source_id": "TRI_026",
+        "source_name": "DermNet - Basal Cell Carcinoma",
+        "score": 2.5
+      }
+    ],
+    "risk_warning": [
+      "患者年龄74岁，属于皮肤恶性肿瘤的高风险人群。",
+      "皮损伴有'增长'和'触痛'，提示病变处于活动期或具有侵袭性，需警惕恶性可能。",
+      "虽然瘙痒常见于良性病变，但也可能出现在基底细胞癌或黑色素瘤中，不能仅凭瘙痒排除癌症。"
+    ],
+    "medical_advice": [
+      "建议尽快前往皮肤科就诊，进行专业体格检查。",
+      "医生可能会建议进行皮肤镜检查以辅助鉴别诊断。",
+      "如有必要，医生可能会建议进行皮肤活检以明确病理诊断。",
+      "在就医前，避免搔抓皮损部位，记录皮损大小变化及症状演变情况。"
+    ],
+    "evidence_gap": [
+      "用户未提供皮损的具体形态描述（如颜色、边界、是否有溃疡或出血），无法完全匹配'珍珠样结节'或'表面毛细血管扩张'等典型特征。",
+      "用户未提供既往皮肤病史、日晒史或家族史。",
+      "缺乏组织病理学检查结果，无法确诊。",
+      "用户提到的'触痛'和'增长'在提供的Top-k证据链中缺乏直接的疾病特异性关联证据，需结合临床进一步评估。"
+    ],
+    "sources": [
+      "DermNet - Basal Cell Carcinoma",
+      "DermNet - Seborrhoeic Keratosis",
+      "DermNet - Lichenoid Keratosis",
+      "DermNet - Basal Cell Carcinoma Dermoscopy",
+      "DermNet - Melanoma"
+    ],
+    "disclaimer": "本结果仅用于健康信息参考和辅助决策，不构成医学诊断，也不能替代医生面诊、皮肤镜检查或组织病理检查。",
+    "model_name": "qwen3.7-plus-2026-05-26",
+    "prompt_version": "baseline_v1",
+    "response_time_ms": 12679,
+    "token_usage": {
+      "prompt_tokens": 1574,
+      "completion_tokens": 648,
+      "total_tokens": 2222
+    },
+    "run_status": "success",
+    "error_message": "",
+    "pilot_condition": "remove_bleeding",
+    "removed_evidence": [
+      "bleed"
+    ]
+  },
+  {
+    "case_id": "PAD_BCC_001_P2",
+    "method": "kg_rag",
+    "candidate_disease": "基底细胞癌",
+    "user_observation": "74岁女性，皮损伴瘙痒、增长、触痛及隆起。",
+    "observation_match": [
+      "用户观察到的'隆起'症状与基底细胞癌典型表现中的'边缘隆起或卷曲'及'珍珠样结节'形态存在形态学上的对应可能。",
+      "用户提到的'增长'特征符合基底细胞癌作为恶性肿瘤缓慢进展的病程特点。"
+    ],
+    "supporting_evidence": [
+      "根据DermNet资料，结节型基底细胞癌可表现为光亮或珍珠样结节（证据链 Rank 3）。",
+      "根据DermNet资料，基底细胞癌表面可见血管穿过，即表面毛细血管扩张（证据链 Rank 4）。",
+      "根据DermNet资料，基底细胞癌可出现中央凹陷或溃疡，使边缘呈卷曲样隆起（证据链 Rank 5）。"
+    ],
+    "differential_diagnosis": [
+      "良性角化样病变（如脂溢性角化病、扁平苔藓样角化病）：有时在外观上可类似基底细胞癌，且部分病例可伴有瘙痒或轻微刺痛（证据链 Rank 1）。",
+      "黑色素瘤：早期可表现为异常痣或斑点，可能出现瘙痒或出血，需通过皮肤镜等工具与色素性基底细胞癌进行区分（证据链 Rank 2）。"
+    ],
+    "evidence_paths": [
+      {
+        "head_entity": "基底细胞癌",
+        "relation": "鉴别诊断 → 伴随症状",
+        "tail_entity": "瘙痒",
+        "evidence_text": "脂溢性角化病有时可类似基底细胞癌、鳞状细胞癌或黑色素瘤。；扁平苔藓样角化病通常无症状，但也可出现瘙痒或轻微刺痛。",
+        "source_id": "TRI_034；TRI_062",
+        "source_name": "DermNet - Seborrhoeic Keratosis；DermNet - Lichenoid Keratosis",
+        "score": 3.37
+      },
+      {
+        "head_entity": "基底细胞癌",
+        "relation": "鉴别诊断 → 伴随症状",
+        "tail_entity": "瘙痒",
+        "evidence_text": "皮肤镜有助于区分色素性基底细胞癌和其他色素性皮损。；黑色素瘤早期可表现为异常痣或斑点，并可能出现瘙痒或出血。",
+        "source_id": "TRI_035；TRI_014",
+        "source_name": "DermNet - Basal Cell Carcinoma Dermoscopy；DermNet - Melanoma",
+        "score": 3.37
+      },
+      {
+        "head_entity": "基底细胞癌",
+        "relation": "表现为",
+        "tail_entity": "珍珠样结节",
+        "evidence_text": "结节型基底细胞癌可表现为光亮或珍珠样结节。",
+        "source_id": "TRI_025",
+        "source_name": "DermNet - Basal Cell Carcinoma",
+        "score": 2.5
+      },
+      {
+        "head_entity": "基底细胞癌",
+        "relation": "表现为",
+        "tail_entity": "表面毛细血管扩张",
+        "evidence_text": "基底细胞癌表面可见血管穿过。",
+        "source_id": "TRI_026",
+        "source_name": "DermNet - Basal Cell Carcinoma",
+        "score": 2.5
+      },
+      {
+        "head_entity": "基底细胞癌",
+        "relation": "表现为",
+        "tail_entity": "边缘隆起或卷曲",
+        "evidence_text": "基底细胞癌可出现中央凹陷或溃疡，使边缘呈卷曲样。",
+        "source_id": "TRI_027",
+        "source_name": "DermNet - Basal Cell Carcinoma",
+        "score": 2.5
+      }
+    ],
+    "risk_warning": [
+      "患者年龄为74岁，属于皮肤恶性肿瘤的高发人群。",
+      "皮损伴有触痛和持续增长，提示病变可能具有侵袭性或处于活动期，需警惕恶性病变风险。",
+      "瘙痒和触痛虽非基底细胞癌最特异性症状，但结合皮损形态改变，不可忽视潜在病理变化。"
+    ],
+    "medical_advice": [
+      "建议尽快前往皮肤科就诊，由专业医生进行肉眼视诊及皮肤镜检查。",
+      "若临床怀疑恶性病变，医生可能会建议进行皮肤活检以明确病理诊断。",
+      "在就医前，避免搔抓或刺激皮损部位，记录皮损大小、颜色及形态的变化情况供医生参考。"
+    ],
+    "evidence_gap": [
+      "用户未提供皮损的具体颜色（如是否有色素沉着、珍珠样光泽）、具体部位及持续时间。",
+      "用户未提供是否有出血、溃疡或结痂等基底细胞癌常见伴随症状。",
+      "缺乏皮肤镜检查图像或病理组织学检查结果，无法确认皮损的具体性质。",
+      "知识图谱中关于基底细胞癌的直接症状匹配主要集中于形态学（结节、血管、边缘），对用户提到的'瘙痒'和'触痛'的直接关联证据主要通过鉴别诊断路径间接体现，直接证据权重较低。"
+    ],
+    "sources": [
+      "DermNet - Seborrhoeic Keratosis",
+      "DermNet - Lichenoid Keratosis",
+      "DermNet - Basal Cell Carcinoma Dermoscopy",
+      "DermNet - Melanoma",
+      "DermNet - Basal Cell Carcinoma"
+    ],
+    "disclaimer": "本结果仅用于健康信息参考和辅助决策，不构成医学诊断，也不能替代医生面诊、皮肤镜检查或组织病理检查。",
+    "model_name": "qwen3.7-plus-2026-05-26",
+    "prompt_version": "baseline_v1",
+    "response_time_ms": 12965,
+    "token_usage": {
+      "prompt_tokens": 1569,
+      "completion_tokens": 664,
+      "total_tokens": 2233
+    },
+    "run_status": "success",
+    "error_message": "",
+    "pilot_condition": "remove_bleeding_and_site",
+    "removed_evidence": [
+      "bleed",
+      "region"
+    ]
+  }
+]
