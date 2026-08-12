@@ -1,0 +1,21 @@
+source_field,source_value,source_concept,coverage_class,target_entity_id,target_entity_cn,mapping_relation,pilot_usable,rationale
+itch,*,Pruritus,EXACT,SYM_002,瘙痒,equivalent,yes,PAD-UFES-20 的 itch 与当前 KG 的瘙痒语义直接对应
+bleed,*,Bleeding,EXACT,SYM_001,出血,equivalent,yes,PAD-UFES-20 的 bleed 与当前 KG 的出血语义直接对应
+hurt,*,Pain,PARTIAL,SYM_004,触痛,related_but_not_equivalent,no,hurt 表示疼痛而 KG 节点是触痛，不能直接视为同义
+grew,*,Lesion growth,PARTIAL,LF_004,直径增大,related_but_not_equivalent,no,病灶生长可能表现为直径增大但 grew 不限定增长维度且 LF_004 不是通用生长概念
+changed,*,Lesion change,UNMAPPED,,,none,no,当前 KG 没有独立的通用皮损变化实体
+elevation,*,Lesion elevation,UNMAPPED,,,none,no,当前 KG 没有独立的通用隆起或 elevation 实体
+region,FACE,Face,EXACT,SITE_005,面部,equivalent,yes,数据集和 KG 的部位层级一致
+region,BACK,Back,EXACT,SITE_003,背部,equivalent,yes,数据集和 KG 的部位层级一致
+region,NOSE,Nose,PARTIAL,SITE_005,面部,safe_abstraction,yes,鼻部可向上抽象为面部但粒度发生变化
+region,CHEST,Chest,PARTIAL,SITE_001,躯干,safe_abstraction,yes,胸部可向上抽象为躯干
+region,ABDOMEN,Abdomen,PARTIAL,SITE_001,躯干,safe_abstraction,yes,腹部可向上抽象为躯干
+region,THIGH,Thigh,PARTIAL,SITE_002,下肢,safe_abstraction,yes,大腿可向上抽象为下肢
+region,FOOT,Foot,PARTIAL,SITE_002,下肢,safe_abstraction,yes,足部可向上抽象为下肢
+region,FOREARM,Forearm,UNMAPPED,,,none,no,当前 KG 没有上肢或前臂通用部位节点
+region,ARM,Arm,UNMAPPED,,,none,no,当前 KG 没有上肢或上臂通用部位节点
+region,HAND,Hand,UNMAPPED,,,unsafe_specialization,no,KG 只有手背节点而 PAD 的 HAND 未说明掌侧或背侧，不能推断为手背
+region,NECK,Neck,UNMAPPED,,,none,no,当前 KG 没有颈部节点
+region,EAR,Ear,UNMAPPED,,,none,no,当前 KG 没有耳部节点
+region,LIP,Lip,UNMAPPED,,,none,no,当前 KG 没有唇部节点且不应直接等同为面部
+region,SCALP,Scalp,UNMAPPED,,,none,no,当前 KG 没有头皮节点

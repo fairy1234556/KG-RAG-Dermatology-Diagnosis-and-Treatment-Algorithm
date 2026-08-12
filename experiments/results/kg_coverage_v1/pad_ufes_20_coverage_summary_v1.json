@@ -1,0 +1,100 @@
+{
+  "dataset": "PAD-UFES-20",
+  "metadata_rows": 2298,
+  "audited_fields": [
+    "itch",
+    "grew",
+    "hurt",
+    "changed",
+    "bleed",
+    "elevation",
+    "region"
+  ],
+  "audited_field_count": 7,
+  "record_field_opportunities": 16086,
+  "coverage_definition": "Concept-level mapping coverage for each case-field pair. This does not yet imply that positive, negative, and unknown evidence polarity is representable inside the KG.",
+  "class_counts": {
+    "EXACT": 5414,
+    "PARTIAL": 5159,
+    "UNMAPPED": 5513
+  },
+  "strict_exact_rate": 0.3366,
+  "relaxed_exact_plus_partial_rate": 0.6573,
+  "unmapped_rate": 0.3427,
+  "missing_mapping_rule_rate": 0.0,
+  "pilot_usable_rate": 0.3716,
+  "field_class_counts": {
+    "itch": {
+      "EXACT": 2298
+    },
+    "grew": {
+      "PARTIAL": 2298
+    },
+    "hurt": {
+      "PARTIAL": 2298
+    },
+    "changed": {
+      "UNMAPPED": 2298
+    },
+    "bleed": {
+      "EXACT": 2298
+    },
+    "elevation": {
+      "UNMAPPED": 2298
+    },
+    "region": {
+      "EXACT": 818,
+      "UNMAPPED": 917,
+      "PARTIAL": 563
+    }
+  },
+  "field_value_counts": {
+    "itch": {
+      "False": 837,
+      "True": 1455,
+      "UNK": 6
+    },
+    "grew": {
+      "False": 971,
+      "True": 925,
+      "UNK": 402
+    },
+    "hurt": {
+      "False": 1891,
+      "True": 397,
+      "UNK": 10
+    },
+    "changed": {
+      "False": 1700,
+      "True": 202,
+      "UNK": 396
+    },
+    "bleed": {
+      "False": 1678,
+      "True": 614,
+      "UNK": 6
+    },
+    "elevation": {
+      "False": 863,
+      "True": 1433,
+      "UNK": 2
+    },
+    "region": {
+      "ARM": 192,
+      "NECK": 93,
+      "FACE": 570,
+      "HAND": 126,
+      "FOREARM": 392,
+      "CHEST": 280,
+      "NOSE": 158,
+      "THIGH": 73,
+      "SCALP": 18,
+      "EAR": 73,
+      "BACK": 248,
+      "FOOT": 16,
+      "ABDOMEN": 36,
+      "LIP": 23
+    }
+  },
+  "important_limitation": "True/False/UNK states are counted separately in value distributions, but this audit only tests whether the underlying clinical concept has an acceptable KG mapping. Polarity/state representation must be audited separately before the Pilot."
+}

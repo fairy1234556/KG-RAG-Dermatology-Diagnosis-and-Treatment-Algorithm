@@ -1,0 +1,33 @@
+﻿source_field,source_value,record_count,coverage_class,target_entity_id,target_entity_cn,mapping_relation,pilot_usable,rationale
+itch,True,1455,EXACT,SYM_002,瘙痒,equivalent,yes,PAD-UFES-20 的 itch 与当前 KG 的瘙痒语义直接对应
+itch,False,837,EXACT,SYM_002,瘙痒,equivalent,yes,PAD-UFES-20 的 itch 与当前 KG 的瘙痒语义直接对应
+itch,UNK,6,EXACT,SYM_002,瘙痒,equivalent,yes,PAD-UFES-20 的 itch 与当前 KG 的瘙痒语义直接对应
+grew,False,971,PARTIAL,LF_004,直径增大,related_but_not_equivalent,no,病灶生长可能表现为直径增大但 grew 不限定增长维度且 LF_004 不是通用生长概念
+grew,True,925,PARTIAL,LF_004,直径增大,related_but_not_equivalent,no,病灶生长可能表现为直径增大但 grew 不限定增长维度且 LF_004 不是通用生长概念
+grew,UNK,402,PARTIAL,LF_004,直径增大,related_but_not_equivalent,no,病灶生长可能表现为直径增大但 grew 不限定增长维度且 LF_004 不是通用生长概念
+hurt,False,1891,PARTIAL,SYM_004,触痛,related_but_not_equivalent,no,hurt 表示疼痛而 KG 节点是触痛，不能直接视为同义
+hurt,True,397,PARTIAL,SYM_004,触痛,related_but_not_equivalent,no,hurt 表示疼痛而 KG 节点是触痛，不能直接视为同义
+hurt,UNK,10,PARTIAL,SYM_004,触痛,related_but_not_equivalent,no,hurt 表示疼痛而 KG 节点是触痛，不能直接视为同义
+changed,False,1700,UNMAPPED,,,none,no,当前 KG 没有独立的通用皮损变化实体
+changed,UNK,396,UNMAPPED,,,none,no,当前 KG 没有独立的通用皮损变化实体
+changed,True,202,UNMAPPED,,,none,no,当前 KG 没有独立的通用皮损变化实体
+bleed,False,1678,EXACT,SYM_001,出血,equivalent,yes,PAD-UFES-20 的 bleed 与当前 KG 的出血语义直接对应
+bleed,True,614,EXACT,SYM_001,出血,equivalent,yes,PAD-UFES-20 的 bleed 与当前 KG 的出血语义直接对应
+bleed,UNK,6,EXACT,SYM_001,出血,equivalent,yes,PAD-UFES-20 的 bleed 与当前 KG 的出血语义直接对应
+elevation,True,1433,UNMAPPED,,,none,no,当前 KG 没有独立的通用隆起或 elevation 实体
+elevation,False,863,UNMAPPED,,,none,no,当前 KG 没有独立的通用隆起或 elevation 实体
+elevation,UNK,2,UNMAPPED,,,none,no,当前 KG 没有独立的通用隆起或 elevation 实体
+region,FACE,570,EXACT,SITE_005,面部,equivalent,yes,数据集和 KG 的部位层级一致
+region,FOREARM,392,UNMAPPED,,,none,no,当前 KG 没有上肢或前臂通用部位节点
+region,CHEST,280,PARTIAL,SITE_001,躯干,safe_abstraction,yes,胸部可向上抽象为躯干
+region,BACK,248,EXACT,SITE_003,背部,equivalent,yes,数据集和 KG 的部位层级一致
+region,ARM,192,UNMAPPED,,,none,no,当前 KG 没有上肢或上臂通用部位节点
+region,NOSE,158,PARTIAL,SITE_005,面部,safe_abstraction,yes,鼻部可向上抽象为面部但粒度发生变化
+region,HAND,126,UNMAPPED,,,unsafe_specialization,no,KG 只有手背节点而 PAD 的 HAND 未说明掌侧或背侧，不能推断为手背
+region,NECK,93,UNMAPPED,,,none,no,当前 KG 没有颈部节点
+region,EAR,73,UNMAPPED,,,none,no,当前 KG 没有耳部节点
+region,THIGH,73,PARTIAL,SITE_002,下肢,safe_abstraction,yes,大腿可向上抽象为下肢
+region,ABDOMEN,36,PARTIAL,SITE_001,躯干,safe_abstraction,yes,腹部可向上抽象为躯干
+region,LIP,23,UNMAPPED,,,none,no,当前 KG 没有唇部节点且不应直接等同为面部
+region,SCALP,18,UNMAPPED,,,none,no,当前 KG 没有头皮节点
+region,FOOT,16,PARTIAL,SITE_002,下肢,safe_abstraction,yes,足部可向上抽象为下肢
