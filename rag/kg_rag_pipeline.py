@@ -62,10 +62,16 @@ METHOD_DESCRIPTION = """
 1. 只能将下方提供的图谱证据链表述为外部证据。
 2. 不得编造不存在的实体、关系、证据文本或来源。
 3. supporting_evidence 应优先使用与语义锚点直接匹配的路径。
-4. 二跳鉴别路径只能作为辅助鉴别信息，不能当作候选疾病直接证据。
-5. sources 只能来自本次实际使用的图谱证据链。
-6. evidence_gap 必须说明观察中缺失、冲突或无法确认的内容。
-7. 候选疾病不能被表述为已经确诊。
+4. 必须遵守【证据角色账本】中的 claim_usage。
+5. PATIENT_SUPPORT 可用于 observation_match 和 supporting_evidence,
+   表示患者观察与候选疾病的 KG 直接路径相匹配。
+6. BACKGROUND_ONLY 只能表述为候选疾病的一般医学背景知识，
+   不得写成“患者已出现该表现”。
+7. DIFFERENTIAL_ONLY 只能用于 differential_diagnosis 或 evidence_gap,
+   不得作为候选疾病的直接支持证据。
+8. sources 只能来自本次实际使用的图谱证据链。
+9. evidence_gap 必须说明观察中缺失、冲突或无法确认的内容。
+10. 候选疾病不能被表述为已经确诊。
 """.strip()
 
 
@@ -162,12 +168,20 @@ def format_kg_evidence_context(
             else "未标注"
         )
 
+        role_profile = result.role_profile
+
         sections.extend(
             [
                 f"[证据链 Rank {result.rank}]",
                 f"路径编号：{result.path_id}",
                 f"路径：{path_text}",
                 f"路径跳数：{result.hop_count}",
+                 (
+                    "证据角色："
+                    f"structural_role={role_profile.structural_role}，"
+                    f"patient_alignment={role_profile.patient_alignment}，"
+                    f"claim_usage={role_profile.claim_usage}"
+                ),
                 f"终点实体：{result.end_entity_name} "
                 f"({result.end_entity_id})",
                 f"匹配语义锚点：{matched_anchors}",
@@ -187,6 +201,129 @@ def format_kg_evidence_context(
 
     return "\n".join(sections).strip()
 
+def format_evidence_ledger(
+    ranked_paths: List[RankedEvidencePath],
+) -> str:
+    """
+    构造证据角色账本。
+
+    Evidence Ledger 的作用不是重新排序，
+    而是把 Top-k 路径按 claim_usage 分成不同证据池，
+    明确每类证据允许支持的生成内容。
+    """
+
+    if not ranked_paths:
+        return (
+            "本次没有可用证据角色账本，"
+            "因为没有检索到可用的知识图谱路径。"
+        )
+
+    grouped_paths: Dict[
+        str,
+        List[RankedEvidencePath],
+    ] = {
+        "PATIENT_SUPPORT": [],
+        "BACKGROUND_ONLY": [],
+        "DIFFERENTIAL_ONLY": [],
+    }
+
+    for path in ranked_paths:
+        claim_usage = (
+            path.role_profile.claim_usage
+        )
+
+        if claim_usage not in grouped_paths:
+            grouped_paths[claim_usage] = []
+
+        grouped_paths[claim_usage].append(
+            path
+        )
+
+    ledger_sections: List[str] = [
+        "Evidence Ledger 使用规则：",
+        (
+            "1. PATIENT_SUPPORT：可作为患者级支持证据，"
+            "允许进入 observation_match 和 supporting_evidence。"
+        ),
+        (
+            "2. BACKGROUND_ONLY：只能作为候选疾病的一般背景知识，"
+            "不得写成患者已经出现。"
+        ),
+        (
+            "3. DIFFERENTIAL_ONLY：只能作为鉴别诊断辅助信息，"
+            "不得作为候选疾病的直接支持证据。"
+        ),
+        "",
+    ]
+
+    ledger_titles = [
+        (
+            "PATIENT_SUPPORT",
+            "【患者匹配支持证据】",
+        ),
+        (
+            "BACKGROUND_ONLY",
+            "【疾病背景知识】",
+        ),
+        (
+            "DIFFERENTIAL_ONLY",
+            "【鉴别诊断辅助证据】",
+        ),
+    ]
+
+    for claim_usage, title in ledger_titles:
+        paths = grouped_paths.get(
+            claim_usage,
+            [],
+        )
+
+        ledger_sections.append(title)
+
+        if not paths:
+            ledger_sections.append(
+                "无。"
+            )
+            ledger_sections.append("")
+            continue
+
+        for path in paths:
+            path_text = format_path_text(
+                path
+            )
+
+            matched_anchors = (
+                "；".join(
+                    path.matched_anchor_names
+                )
+                if path.matched_anchor_names
+                else "无直接语义锚点匹配"
+            )
+
+            evidence_text = (
+                "；".join(
+                    path.evidence_texts
+                )
+                if path.evidence_texts
+                else "未标注"
+            )
+
+            ledger_sections.extend(
+                [
+                    (
+                        f"- path_id={path.path_id}；"
+                        f"路径={path_text}；"
+                        f"匹配患者事实={matched_anchors}；"
+                        f"允许用途={claim_usage}；"
+                        f"证据文本={evidence_text}"
+                    )
+                ]
+            )
+
+        ledger_sections.append("")
+
+    return "\n".join(
+        ledger_sections
+    ).strip()
 
 def collect_ranked_sources(
     ranked_paths: List[RankedEvidencePath],
@@ -443,6 +580,12 @@ class KGRAGPipeline:
             )
         )
 
+        evidence_ledger = (
+            format_evidence_ledger(
+                ranked_paths=ranked_paths
+            )
+        )
+
         anchor_context = (
             "；".join(
                 (
@@ -461,6 +604,9 @@ class KGRAGPipeline:
             [
                 "【语义锚点识别结果】",
                 anchor_context,
+                "",
+                "【证据角色账本】",
+                evidence_ledger,
                 "",
                 "【Top-k 知识图谱证据链】",
                 evidence_context,
