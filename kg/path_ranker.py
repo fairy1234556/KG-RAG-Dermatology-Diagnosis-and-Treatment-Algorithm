@@ -23,9 +23,9 @@ from __future__ import annotations
 import argparse
 import json
 import sys
-from dataclasses import asdict, dataclass
+from dataclasses import asdict, dataclass, replace
 from pathlib import Path
-from typing import Any
+from typing import Any, Literal
 
 
 PROJECT_ROOT = Path(__file__).resolve().parents[1]
@@ -64,6 +64,26 @@ class RankingConfig:
     default_top_k: int
     max_hops: int
 
+@dataclass(frozen=True)
+class EvidenceRoleProfile:
+    """一条知识图谱证据路径的证据角色证书。"""
+
+    structural_role: Literal[
+        "DIRECT",
+        "DIFFERENTIAL",
+    ]
+
+    patient_alignment: Literal[
+        "MATCHED",
+        "UNMATCHED",
+    ]
+
+    claim_usage: Literal[
+        "PATIENT_SUPPORT",
+        "BACKGROUND_ONLY",
+        "DIFFERENTIAL_ONLY",
+    ]
+
 
 @dataclass(frozen=True)
 class RankedEvidencePath:
@@ -81,6 +101,8 @@ class RankedEvidencePath:
     end_entity_type: str
 
     relation_chain: tuple[str, ...]
+
+    role_profile: EvidenceRoleProfile
 
     matched_anchor_ids: tuple[str, ...]
     matched_anchor_names: tuple[str, ...]
@@ -414,6 +436,45 @@ class EvidencePathRanker:
             == path.end_entity_id
         ]
 
+    @staticmethod
+    def _build_role_profile(
+        path: EvidencePath,
+        matched_anchors: list[SemanticAnchor],
+    ) -> EvidenceRoleProfile:
+        """
+        根据图谱结构和患者语义锚点，
+        为当前路径生成证据角色证书。
+        """
+        is_differential = (
+            "differential_diagnosis"
+            in path.relation_chain
+        )
+        
+        if is_differential:
+            structural_role = "DIFFERENTIAL"
+        else:
+            structural_role = "DIRECT"
+
+        if matched_anchors:
+            patient_alignment = "MATCHED"
+        else:
+            patient_alignment = "UNMATCHED"
+
+        if structural_role == "DIFFERENTIAL":
+            claim_usage = "DIFFERENTIAL_ONLY"
+
+        elif patient_alignment == "MATCHED":
+            claim_usage = "PATIENT_SUPPORT"
+
+        else:
+            claim_usage = "BACKGROUND_ONLY"
+
+        return EvidenceRoleProfile(
+            structural_role=structural_role,
+            patient_alignment=patient_alignment,
+            claim_usage=claim_usage,
+        )
+
     def _calculate_entity_match_score(
         self,
         matched_anchors: list[
@@ -553,6 +614,13 @@ class EvidencePathRanker:
             )
         )
 
+        role_profile = (
+            self._build_role_profile(
+                path,
+                matched_anchors,
+            )
+        )
+
         entity_match_score = (
             self._calculate_entity_match_score(
                 matched_anchors
@@ -607,6 +675,7 @@ class EvidencePathRanker:
             relation_chain=(
                 path.relation_chain
             ),
+            role_profile=role_profile,
             matched_anchor_ids=tuple(
                 anchor.entity_id
                 for anchor in matched_anchors
@@ -646,61 +715,11 @@ class EvidencePathRanker:
         result: RankedEvidencePath,
         rank: int,
     ) -> RankedEvidencePath:
-        """为排序结果写入名次。"""
+        """为排序结果写入名次，同时保留全部证据属性。"""
 
-        return RankedEvidencePath(
-            path_id=result.path_id,
+        return replace(
+            result,
             rank=rank,
-            start_disease_id=(
-                result.start_disease_id
-            ),
-            start_disease_name=(
-                result.start_disease_name
-            ),
-            hop_count=result.hop_count,
-            end_entity_id=(
-                result.end_entity_id
-            ),
-            end_entity_name=(
-                result.end_entity_name
-            ),
-            end_entity_type=(
-                result.end_entity_type
-            ),
-            relation_chain=(
-                result.relation_chain
-            ),
-            matched_anchor_ids=(
-                result.matched_anchor_ids
-            ),
-            matched_anchor_names=(
-                result.matched_anchor_names
-            ),
-            matched_anchor_confidences=(
-                result.matched_anchor_confidences
-            ),
-            entity_match_score=(
-                result.entity_match_score
-            ),
-            relation_weight_score=(
-                result.relation_weight_score
-            ),
-            disease_match_score=(
-                result.disease_match_score
-            ),
-            path_length_penalty=(
-                result.path_length_penalty
-            ),
-            total_score=(
-                result.total_score
-            ),
-            source_names=(
-                result.source_names
-            ),
-            evidence_texts=(
-                result.evidence_texts
-            ),
-            path=result.path,
         )
 
     def rank(
