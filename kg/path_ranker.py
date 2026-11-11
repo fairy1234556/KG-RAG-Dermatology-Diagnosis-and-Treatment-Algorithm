@@ -69,7 +69,10 @@ class RankingConfig:
 @dataclass(frozen=True)
 class EvidenceRoleProfile:
     """
-    一条知识图谱证据路径的角色证书。
+    一条知识图谱证据路径的证据角色证书。
+
+    保留 C2 台账使用的三个核心字段；患者事实状态与确诊标志
+    作为有默认值的补充字段，兼容既有证书构造和台账分组。
 
     structural_role:
         DIRECT
@@ -495,7 +498,10 @@ class EvidencePathRanker:
         """
 
         # 一跳鉴别关系同样不是候选疾病的直接支持。
-        is_differential = "differential_diagnosis" in path.relation_chain
+        is_differential = (
+            "differential_diagnosis"
+            in path.relation_chain
+        )
         matched_anchors = EvidencePathRanker._match_path_anchors(path, anchors)
         states = {
             anchor.fact_state for anchor in anchors
@@ -775,7 +781,7 @@ class EvidencePathRanker:
         result: RankedEvidencePath,
         rank: int,
     ) -> RankedEvidencePath:
-        """为排序结果写入名次。"""
+        """为排序结果写入名次，同时保留全部证据属性。"""
 
         return replace(
             result,
