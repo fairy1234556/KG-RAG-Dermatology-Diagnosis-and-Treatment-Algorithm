@@ -15,9 +15,9 @@ import argparse
 import csv
 import json
 import re
-from dataclasses import asdict, dataclass
+from dataclasses import asdict, dataclass, replace
 from pathlib import Path
-from typing import Iterable
+from typing import Iterable, Literal, Mapping
 
 
 PROJECT_ROOT = Path(__file__).resolve().parents[1]
@@ -35,6 +35,12 @@ DEFAULT_ALIAS_FILE = (
     / "csv"
     / "entity_aliases.csv"
 )
+
+DEFAULT_PAD_MAPPING_FILE = (
+    PROJECT_ROOT / "experiments/mappings/pad_ufes_20_kg_mapping_v1.csv"
+)
+
+FactState = Literal["present", "absent", "missing"]
 
 
 # 任务二 V1.0 只从用户观察文本中识别以下实体类型。
@@ -62,6 +68,13 @@ class SemanticAnchor:
     match_method: str
     confidence: float
     source: str
+    # 状态描述原始患者陈述；非等价映射不能证明目标实体存在。
+    fact_state: FactState = "present"
+    mapping_reliable: bool = True
+
+    @property
+    def is_patient_match(self) -> bool:
+        return self.fact_state == "present" and self.mapping_reliable
 
     def to_dict(self) -> dict[str, object]:
         return asdict(self)
@@ -96,9 +109,11 @@ class SemanticAnchorMapper:
         self,
         entity_file: Path = DEFAULT_ENTITY_FILE,
         alias_file: Path = DEFAULT_ALIAS_FILE,
+        pad_mapping_file: Path = DEFAULT_PAD_MAPPING_FILE,
     ) -> None:
         self.entity_file = Path(entity_file)
         self.alias_file = Path(alias_file)
+        self.pad_mapping_file = Path(pad_mapping_file)
 
         self.entities = self._read_csv(
             self.entity_file
@@ -577,141 +592,183 @@ class SemanticAnchorMapper:
 
         return records
 
+    @staticmethod
+    def _mention_state(
+        clause: str, start: int, end: int, raw_prefix: str,
+    ) -> FactState:
+        """在保留的分句内判断断言，不把否定/未知/一般知识当阳性。"""
+        prefix, suffix = clause[:start], clause[end:]
+        unknown = (
+            r"未提供|没有提供|未说明|未提及|未记录|未报告|未询问|"
+            r"不详|未知|不清楚|不明确|不确定|无法确定|未确认|是否|"
+            r"不能排除|不排除|可能|疑似|考虑|建议|如果|若|"
+            r"一般|通常|常见|可伴|可出现|可有|知识图谱|文献|资料|"
+            r"unknown|notreported|notprovided|uncertain|possible|mayhave"
+        )
+        if re.search(unknown, prefix) or re.match(
+            r"(?:情况|信息|状态)?(?:未提供|未说明|未记录|不详|未知|不明确|不确定|是否|unknown|notreported|notprovided)",
+            suffix,
+        ):
+            return "missing"
+        if re.search(
+            r"未见|没有|否认|无|不伴|不存在|未出现|未发生|未发现|"
+            r"未诉|未伴|并非|不是|不$|未$",
+            prefix,
+        ) or re.search(
+            r"\b(?:no|not|denies|without|negative\s+for)\b", raw_prefix, re.I,
+        ) or re.match(r"(?:为)?(?:阴性|不存在|未见|没有|已排除|absent|negative)", suffix):
+            return "absent"
+        return "present"
+
+    @staticmethod
+    def _pad_state(value: object) -> FactState:
+        # 不使用 bool(value)：CSV 中的 "False"、NaN、空值都不能算阳性。
+        token = str(value).strip().lower()
+        if token in {"true", "1", "1.0", "yes"}:
+            return "present"
+        if token in {"false", "0", "0.0", "no"}:
+            return "absent"
+        return "missing"
+
+    def extract_patient_facts(
+        self,
+        text: str,
+        entity_types: Iterable[str] | None = None,
+        *,
+        structured_fields: Mapping[str, object] | None = None,
+    ) -> list[SemanticAnchor]:
+        """返回 KG 可映射实体的三态患者事实，包括未提供信息的 missing。
+
+        structured_fields 是一条 PAD-UFES-20 原始记录。提供记录时，
+        映射表覆盖的字段以原始记录为准（缺列也为 missing），避免删去
+        字段后从旧观察文本恢复事实。其余实体仍可来自观察文本。
+        PARTIAL 映射只保留来源/状态用于审计，不能形成可靠患者匹配；
+        UNMAPPED 字段不虚构 KG 实体。此方法不读取 KG 三元组的医学描述。
+        """
+        allowed_types = set(DEFAULT_ENTITY_TYPES if entity_types is None else entity_types)
+        facts = {
+            entity_id: SemanticAnchor(
+                entity_id=entity_id,
+                entity_name=row["name_cn"],
+                entity_type=row["entity_type"],
+                matched_text="",
+                normalized_alias="",
+                match_method="missing",
+                confidence=0.0,
+                source="not_provided",
+                fact_state="missing",
+                mapping_reliable=False,
+            )
+            for entity_id, row in self.entities_by_id.items()
+            if row["entity_type"] in allowed_types
+        }
+        mentions: dict[str, list[SemanticAnchor]] = {}
+        # 在归一化前切分，避免“没有出血，伴瘙痒”的否定跨越分句。
+        clauses = re.split(r"[，,。；;！!？?\n]+|但是|然而|不过|但|\bbut\b", text or "", flags=re.I)
+        normalized_text = self.normalize_text(text)
+        for raw_clause in clauses:
+            clause = self.normalize_text(raw_clause)
+            # 归一化位置对应回原文，保留英文词边界供匹配及否定判断。
+            raw_positions = [
+                index for index, char in enumerate(raw_clause)
+                for _ in self.normalize_text(char)
+            ]
+            covered: list[tuple[int, int]] = []
+            for record in self.alias_records:
+                if record.entity_type not in allowed_types:
+                    continue
+                for match in re.finditer(re.escape(record.normalized_alias), clause):
+                    start, end = match.span()
+                    raw_start, raw_end = raw_positions[start], raw_positions[end - 1] + 1
+                    if re.match(r"[a-z]", record.normalized_alias):
+                        if raw_start and re.match(r"[a-z]", raw_clause[raw_start - 1], re.I):
+                            continue
+                    if re.search(r"[a-z]$", record.normalized_alias):
+                        if raw_end < len(raw_clause) and re.match(r"[a-z]", raw_clause[raw_end], re.I):
+                            continue
+                    # 长表达优先，避免 asymmetry 内的 symmetry 等子串反向匹配。
+                    if any(start < right and end > left for left, right in covered):
+                        continue
+                    covered.append((start, end))
+                    exact = record.normalized_alias == normalized_text
+                    anchor = SemanticAnchor(
+                        entity_id=record.entity_id,
+                        entity_name=record.entity_name,
+                        entity_type=record.entity_type,
+                        matched_text=record.alias_text,
+                        normalized_alias=record.normalized_alias,
+                        match_method="exact" if exact else "substring",
+                        confidence=round(max(0.0, record.base_confidence - (0 if exact else 0.04)), 2),
+                        source=record.source,
+                        fact_state=self._mention_state(clause, start, end, raw_clause[:raw_start]),
+                    )
+                    mentions.setdefault(record.entity_id, []).append(anchor)
+
+        for entity_id, items in mentions.items():
+            best = max(items, key=lambda item: (item.confidence, len(item.normalized_alias)))
+            states = {item.fact_state for item in items}
+            # 相互矛盾的陈述不能按置信度选成阳性，也不推断时间顺序。
+            if "present" in states and "absent" in states:
+                best = replace(best, fact_state="missing", mapping_reliable=False)
+            elif "present" in states:
+                best = max((item for item in items if item.fact_state == "present"), key=lambda item: item.confidence)
+            elif "absent" in states:
+                best = max((item for item in items if item.fact_state == "absent"), key=lambda item: item.confidence)
+            facts[entity_id] = best
+
+        if structured_fields is not None:
+            mappings = self._read_csv(self.pad_mapping_file)
+            # 包含缺失字段对应的实体，防止文本回填已删去的 PAD 事实。
+            for row in mappings:
+                entity_id = row["target_entity_id"]
+                if entity_id in facts:
+                    facts[entity_id] = replace(
+                        facts[entity_id], fact_state="missing", mapping_reliable=False,
+                        confidence=0.0, source="pad_ufes_20:" + row["source_field"],
+                        matched_text="", normalized_alias="", match_method="structured",
+                    )
+            for row in mappings:
+                field = row["source_field"]
+                value = structured_fields.get(field)
+                entity_id = row["target_entity_id"]
+                if entity_id not in facts:
+                    continue
+                if row["source_value"] != "*":
+                    if str(value).strip().upper() != row["source_value"]:
+                        continue
+                    state: FactState = "present"
+                else:
+                    state = self._pad_state(value)
+                reliable = (
+                    row["coverage_class"] == "EXACT"
+                    and row["mapping_relation"] == "equivalent"
+                    and row["pilot_usable"] == "yes"
+                )
+                facts[entity_id] = replace(
+                    facts[entity_id], fact_state=state, mapping_reliable=reliable,
+                    confidence=1.0 if reliable and state != "missing" else 0.0,
+                    source="pad_ufes_20:" + field,
+                    matched_text="" if value is None else str(value),
+                    normalized_alias=field, match_method="structured",
+                )
+
+        type_order = {"Disease": 0, "LesionFeature": 1, "AnatomicalSite": 2, "Symptom": 3, "Examination": 4}
+        return sorted(facts.values(), key=lambda item: (type_order.get(item.entity_type, 99), item.entity_id))
+
     def extract(
         self,
         text: str,
-        entity_types: (
-            Iterable[str] | None
-        ) = None,
+        entity_types: Iterable[str] | None = None,
+        *,
+        structured_fields: Mapping[str, object] | None = None,
     ) -> list[SemanticAnchor]:
-        """
-        从用户输入中识别语义锚点。
-        """
-
-        if not text or not text.strip():
-            return []
-
-        if entity_types is None:
-            allowed_types = set(
-                DEFAULT_ENTITY_TYPES
+        """兼容原接口：只返回明确存在且映射可靠的语义锚点。"""
+        return [
+            fact for fact in self.extract_patient_facts(
+                text, entity_types, structured_fields=structured_fields,
             )
-        else:
-            allowed_types = set(
-                entity_types
-            )
-
-        normalized_text = (
-            self.normalize_text(text)
-        )
-
-        if not normalized_text:
-            return []
-
-        best_by_entity: dict[
-            str,
-            SemanticAnchor,
-        ] = {}
-
-        for record in self.alias_records:
-            if (
-                record.entity_type
-                not in allowed_types
-            ):
-                continue
-
-            if (
-                record.normalized_alias
-                not in normalized_text
-            ):
-                continue
-
-            if (
-                record.normalized_alias
-                == normalized_text
-            ):
-                match_method = "exact"
-                confidence = (
-                    record.base_confidence
-                )
-            else:
-                match_method = "substring"
-                confidence = max(
-                    0.0,
-                    record.base_confidence
-                    - 0.04,
-                )
-
-            anchor = SemanticAnchor(
-                entity_id=record.entity_id,
-                entity_name=(
-                    record.entity_name
-                ),
-                entity_type=(
-                    record.entity_type
-                ),
-                matched_text=(
-                    record.alias_text
-                ),
-                normalized_alias=(
-                    record.normalized_alias
-                ),
-                match_method=match_method,
-                confidence=round(
-                    confidence,
-                    2,
-                ),
-                source=record.source,
-            )
-
-            existing = (
-                best_by_entity.get(
-                    record.entity_id
-                )
-            )
-
-            if existing is None:
-                best_by_entity[
-                    record.entity_id
-                ] = anchor
-                continue
-
-            existing_rank = (
-                existing.confidence,
-                len(
-                    existing.normalized_alias
-                ),
-            )
-
-            new_rank = (
-                anchor.confidence,
-                len(
-                    anchor.normalized_alias
-                ),
-            )
-
-            if new_rank > existing_rank:
-                best_by_entity[
-                    record.entity_id
-                ] = anchor
-
-        type_order = {
-            "Disease": 0,
-            "LesionFeature": 1,
-            "AnatomicalSite": 2,
-            "Symptom": 3,
-            "Examination": 4,
-        }
-
-        return sorted(
-            best_by_entity.values(),
-            key=lambda item: (
-                type_order.get(
-                    item.entity_type,
-                    99,
-                ),
-                item.entity_id,
-            ),
-        )
+            if fact.is_patient_match
+        ]
 
 
 def main() -> int:

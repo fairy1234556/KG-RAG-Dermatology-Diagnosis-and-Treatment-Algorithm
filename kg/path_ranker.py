@@ -23,9 +23,9 @@ from __future__ import annotations
 import argparse
 import json
 import sys
-from dataclasses import asdict, dataclass
+from dataclasses import asdict, dataclass, replace
 from pathlib import Path
-from typing import Any
+from typing import Any, Literal, Mapping
 
 
 PROJECT_ROOT = Path(__file__).resolve().parents[1]
@@ -38,6 +38,7 @@ from kg.path_retriever import EvidencePath
 from kg.path_retriever import GraphPathRetriever
 from rag.semantic_anchor import SemanticAnchor
 from rag.semantic_anchor import SemanticAnchorMapper
+from rag.semantic_anchor import FactState
 
 
 DEFAULT_CONFIG_FILE = (
@@ -63,6 +64,57 @@ class RankingConfig:
     hop_2_penalty: float
     default_top_k: int
     max_hops: int
+
+
+@dataclass(frozen=True)
+class EvidenceRoleProfile:
+    """
+    一条知识图谱证据路径的角色证书。
+
+    structural_role:
+        DIRECT
+            候选疾病自身的直接知识路径。
+
+        DIFFERENTIAL
+            经鉴别诊断关系扩展得到的辅助路径。
+
+    patient_alignment:
+        MATCHED
+            路径终点实体与当前患者观察中的
+            语义锚点直接匹配。
+
+        UNMATCHED
+            当前患者观察没有直接匹配该路径终点。
+
+    claim_usage:
+        PATIENT_SUPPORT
+            仅表示患者事实与候选疾病知识相符，不表示确诊。
+
+        BACKGROUND_ONLY
+            只能作为疾病一般背景知识。
+
+        DIFFERENTIAL_ONLY
+            只能作为鉴别诊断辅助知识。
+    """
+
+    structural_role: Literal[
+        "DIRECT",
+        "DIFFERENTIAL",
+    ]
+
+    patient_alignment: Literal[
+        "MATCHED",
+        "UNMATCHED",
+    ]
+
+    claim_usage: Literal[
+        "PATIENT_SUPPORT",
+        "BACKGROUND_ONLY",
+        "DIFFERENTIAL_ONLY",
+    ]
+
+    patient_fact_state: FactState = "missing"
+    diagnosis_confirmed: bool = False
 
 
 @dataclass(frozen=True)
@@ -96,6 +148,11 @@ class RankedEvidencePath:
     evidence_texts: tuple[str, ...]
 
     path: EvidencePath
+
+    # 新增字段置于末尾并提供保守默认值，兼容原有构造调用。
+    role_profile: EvidenceRoleProfile = EvidenceRoleProfile(
+        "DIRECT", "UNMATCHED", "BACKGROUND_ONLY",
+    )
 
     def to_dict(self) -> dict[str, Any]:
         result = asdict(self)
@@ -412,7 +469,71 @@ class EvidencePathRanker:
             for anchor in anchors
             if anchor.entity_id
             == path.end_entity_id
+            and anchor.is_patient_match
         ]
+
+    @staticmethod
+    def _build_role_profile(
+        path: EvidencePath,
+        anchors: list[SemanticAnchor],
+    ) -> EvidenceRoleProfile:
+        """
+        根据图谱结构和患者语义锚点，
+        为当前路径生成证据角色证书。
+
+        判定原则：
+
+        1. 经鉴别诊断关系扩展得到的路径，
+           无论是否匹配患者观察，都只能作为
+           DIFFERENTIAL_ONLY。
+
+        2. 候选疾病直接路径如果与患者观察匹配，
+           才允许成为 PATIENT_SUPPORT。
+
+        3. 候选疾病直接路径如果没有患者匹配，
+           只能作为 BACKGROUND_ONLY。
+        """
+
+        # 一跳鉴别关系同样不是候选疾病的直接支持。
+        is_differential = "differential_diagnosis" in path.relation_chain
+        matched_anchors = EvidencePathRanker._match_path_anchors(path, anchors)
+        states = {
+            anchor.fact_state for anchor in anchors
+            if anchor.entity_id == path.end_entity_id and anchor.mapping_reliable
+        }
+        patient_fact_state: FactState = "missing"
+        if states == {"present"}:
+            patient_fact_state = "present"
+        elif states == {"absent"}:
+            patient_fact_state = "absent"
+
+        if is_differential:
+            structural_role = "DIFFERENTIAL"
+        else:
+            structural_role = "DIRECT"
+
+        if matched_anchors:
+            patient_alignment = "MATCHED"
+        else:
+            patient_alignment = "UNMATCHED"
+
+        if structural_role == "DIFFERENTIAL":
+            claim_usage = "DIFFERENTIAL_ONLY"
+
+        elif patient_alignment == "MATCHED" and path.relation_chain in {
+            ("has_symptom",), ("has_manifestation",), ("commonly_occurs_at",),
+        }:
+            claim_usage = "PATIENT_SUPPORT"
+
+        else:
+            claim_usage = "BACKGROUND_ONLY"
+
+        return EvidenceRoleProfile(
+            structural_role=structural_role,
+            patient_alignment=patient_alignment,
+            claim_usage=claim_usage,
+            patient_fact_state=patient_fact_state,
+        )
 
     def _calculate_entity_match_score(
         self,
@@ -553,6 +674,13 @@ class EvidencePathRanker:
             )
         )
 
+        role_profile = (
+            self._build_role_profile(
+                path,
+                anchors,
+            )
+        )
+
         entity_match_score = (
             self._calculate_entity_match_score(
                 matched_anchors
@@ -607,6 +735,7 @@ class EvidencePathRanker:
             relation_chain=(
                 path.relation_chain
             ),
+            role_profile=role_profile,
             matched_anchor_ids=tuple(
                 anchor.entity_id
                 for anchor in matched_anchors
@@ -648,59 +777,9 @@ class EvidencePathRanker:
     ) -> RankedEvidencePath:
         """为排序结果写入名次。"""
 
-        return RankedEvidencePath(
-            path_id=result.path_id,
+        return replace(
+            result,
             rank=rank,
-            start_disease_id=(
-                result.start_disease_id
-            ),
-            start_disease_name=(
-                result.start_disease_name
-            ),
-            hop_count=result.hop_count,
-            end_entity_id=(
-                result.end_entity_id
-            ),
-            end_entity_name=(
-                result.end_entity_name
-            ),
-            end_entity_type=(
-                result.end_entity_type
-            ),
-            relation_chain=(
-                result.relation_chain
-            ),
-            matched_anchor_ids=(
-                result.matched_anchor_ids
-            ),
-            matched_anchor_names=(
-                result.matched_anchor_names
-            ),
-            matched_anchor_confidences=(
-                result.matched_anchor_confidences
-            ),
-            entity_match_score=(
-                result.entity_match_score
-            ),
-            relation_weight_score=(
-                result.relation_weight_score
-            ),
-            disease_match_score=(
-                result.disease_match_score
-            ),
-            path_length_penalty=(
-                result.path_length_penalty
-            ),
-            total_score=(
-                result.total_score
-            ),
-            source_names=(
-                result.source_names
-            ),
-            evidence_texts=(
-                result.evidence_texts
-            ),
-            path=result.path,
         )
 
     def rank(
@@ -709,6 +788,8 @@ class EvidencePathRanker:
         observation_text: str,
         top_k: int | None = None,
         max_hops: int | None = None,
+        *,
+        structured_fields: Mapping[str, object] | None = None,
     ) -> tuple[
         list[SemanticAnchor],
         list[RankedEvidencePath],
@@ -746,9 +827,11 @@ class EvidencePathRanker:
                 "max_hops 当前只允许为 1 或 2。"
             )
 
-        anchors = self.anchor_mapper.extract(
-            observation_text
+        facts = self.anchor_mapper.extract_patient_facts(
+            observation_text,
+            structured_fields=structured_fields,
         )
+        anchors = [fact for fact in facts if fact.is_patient_match]
 
         paths = self.path_retriever.retrieve_paths(
             disease_query=disease_query,
@@ -758,7 +841,7 @@ class EvidencePathRanker:
         scored_paths = [
             self.score_path(
                 path=path,
-                anchors=anchors,
+                anchors=facts,
             )
             for path in paths
         ]
