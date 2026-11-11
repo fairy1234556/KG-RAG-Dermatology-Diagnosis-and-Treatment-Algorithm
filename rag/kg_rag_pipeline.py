@@ -27,7 +27,7 @@ import argparse
 import json
 import sys
 from pathlib import Path
-from typing import Any, Dict, List, Optional
+from typing import Any, Dict, List, Mapping, Optional
 
 
 PROJECT_ROOT = Path(__file__).resolve().parents[1]
@@ -47,6 +47,7 @@ from rag.llm_client import LLMClientError
 from rag.llm_client import QwenLLMClient
 from rag.schemas import EvidencePath as SchemaEvidencePath
 from rag.schemas import KGRAGResult
+from rag.semantic_anchor import SemanticAnchorMapper
 
 
 METHOD_DESCRIPTION = """
@@ -73,6 +74,41 @@ METHOD_DESCRIPTION = """
 9. evidence_gap 必须说明观察中缺失、冲突或无法确认的内容。
 10. 候选疾病不能被表述为已经确诊。
 """.strip()
+
+
+PAD_SYMPTOM_LABELS = {
+    "itch": "瘙痒",
+    "grew": "皮损增长",
+    "hurt": "疼痛",
+    "changed": "皮损变化",
+    "bleed": "出血",
+    "elevation": "皮损隆起",
+}
+PAD_OBSERVATION_FIELDS = ("age", "gender", "region", *PAD_SYMPTOM_LABELS)
+
+
+def format_pad_observation(structured_fields: Mapping[str, object]) -> str:
+    """从完整 PAD 患者快照生成观察文本；缺列为未知，绝不从旧文本回填。
+
+    仅使用患者观察字段，排除 diagnostic、病例标识和其他标签。
+    疼痛/增长保留原始含义，不翻译为触痛/直径增大。
+    """
+    sections = []
+    for field, label in (("age", "年龄"), ("gender", "性别"), ("region", "皮损部位")):
+        value = str(structured_fields.get(field, "")).strip()
+        if value.lower() in {"", "none", "nan", "unk", "unknown", "n/a"}:
+            sections.append(f"未提供{label}信息。")
+        else:
+            sections.append(f"{label}（{field}）：{value}。")
+    for field, label in PAD_SYMPTOM_LABELS.items():
+        state = SemanticAnchorMapper._pad_state(structured_fields.get(field))
+        if state == "present":
+            sections.append(f"患者存在{label}。")
+        elif state == "absent":
+            sections.append(f"患者未见{label}。")
+        else:
+            sections.append(f"未提供{label}信息。")
+    return "\n".join(sections)
 
 
 def unique_non_empty(
@@ -518,8 +554,15 @@ class KGRAGPipeline:
         user_observation: str,
         top_k: int = 5,
         max_hops: int = 2,
+        *,
+        structured_fields: Mapping[str, object] | None = None,
     ) -> KGRAGResult:
-        """运行一次 KG-RAG 实验。"""
+        """运行一次 KG-RAG 实验。
+
+        不提供 structured_fields 时保留原有文本输入行为；提供时视为
+        完整 PAD 患者快照，以它重建观察并用于排序、提示词和结果记录。
+        即使传入空字典，也不允许从 user_observation 恢复已删除事实。
+        """
 
         cleaned_case_id = (
             case_id or ""
@@ -532,6 +575,12 @@ class KGRAGPipeline:
         cleaned_observation = (
             user_observation or ""
         ).strip()
+        structured_options = {}
+        if structured_fields is not None:
+            # 同一快照同时用于排序与生成，避免调用方后续修改或旧文本泄漏。
+            structured_fields = dict(structured_fields)
+            cleaned_observation = format_pad_observation(structured_fields)
+            structured_options["structured_fields"] = structured_fields
 
         if not cleaned_case_id:
             raise ValueError(
@@ -569,6 +618,7 @@ class KGRAGPipeline:
             ),
             top_k=top_k,
             max_hops=max_hops,
+            **structured_options,
         )
 
         evidence_context = (

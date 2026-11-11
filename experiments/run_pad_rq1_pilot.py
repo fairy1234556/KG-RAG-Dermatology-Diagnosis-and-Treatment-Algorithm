@@ -12,6 +12,7 @@ if str(ROOT) not in sys.path:
 
 
 from rag.kg_rag_pipeline import KGRAGPipeline
+from experiments.pad_case_input import build_pad_input
 
 
 OUTPUT_PATH = (
@@ -31,29 +32,18 @@ CONDITIONS = [
         "candidate_disease": "基底细胞癌",
         "condition": "original",
         "removed_evidence": [],
-        "observation": (
-            "74岁女性，面部皮损，"
-            "伴瘙痒、增长、触痛、出血及隆起。"
-        ),
     },
     {
         "condition_id": "PAD_BCC_001_P1",
         "candidate_disease": "基底细胞癌",
         "condition": "remove_bleeding",
         "removed_evidence": ["bleed"],
-        "observation": (
-            "74岁女性，面部皮损，"
-            "伴瘙痒、增长、触痛及隆起。"
-        ),
     },
     {
         "condition_id": "PAD_BCC_001_P2",
         "candidate_disease": "基底细胞癌",
         "condition": "remove_bleeding_and_site",
         "removed_evidence": ["bleed", "region"],
-        "observation": (
-            "74岁女性，皮损伴瘙痒、增长、触痛及隆起。"
-        ),
     },
 
     # ============================================================
@@ -64,29 +54,18 @@ CONDITIONS = [
         "candidate_disease": "基底细胞癌",
         "condition": "original",
         "removed_evidence": [],
-        "observation": (
-            "48岁男性，面部皮损，"
-            "伴瘙痒、增长及出血。"
-        ),
     },
     {
         "condition_id": "PAD_BCC_002_P1",
         "candidate_disease": "基底细胞癌",
         "condition": "remove_bleeding",
         "removed_evidence": ["bleed"],
-        "observation": (
-            "48岁男性，面部皮损，"
-            "伴瘙痒及增长。"
-        ),
     },
     {
         "condition_id": "PAD_BCC_002_P2",
         "candidate_disease": "基底细胞癌",
         "condition": "remove_bleeding_and_site",
         "removed_evidence": ["bleed", "region"],
-        "observation": (
-            "48岁男性，皮损伴瘙痒及增长。"
-        ),
     },
 
     # ============================================================
@@ -97,29 +76,18 @@ CONDITIONS = [
         "candidate_disease": "黑色素瘤",
         "condition": "original",
         "removed_evidence": [],
-        "observation": (
-            "54岁女性，背部皮损，"
-            "伴瘙痒、增长、变化及隆起。"
-        ),
     },
     {
         "condition_id": "PAD_MEL_001_P1",
         "candidate_disease": "黑色素瘤",
         "condition": "remove_pruritus",
         "removed_evidence": ["itch"],
-        "observation": (
-            "54岁女性，背部皮损，"
-            "伴增长、变化及隆起。"
-        ),
     },
     {
         "condition_id": "PAD_MEL_001_P2",
         "candidate_disease": "黑色素瘤",
         "condition": "remove_pruritus_and_site",
         "removed_evidence": ["itch", "region"],
-        "observation": (
-            "54岁女性，皮损伴增长、变化及隆起。"
-        ),
     },
 
     # ============================================================
@@ -130,29 +98,18 @@ CONDITIONS = [
         "candidate_disease": "黑色素瘤",
         "condition": "original",
         "removed_evidence": [],
-        "observation": (
-            "58岁男性，背部皮损，"
-            "伴瘙痒、增长及变化。"
-        ),
     },
     {
         "condition_id": "PAD_MEL_002_P1",
         "candidate_disease": "黑色素瘤",
         "condition": "remove_pruritus",
         "removed_evidence": ["itch"],
-        "observation": (
-            "58岁男性，背部皮损，"
-            "伴增长及变化。"
-        ),
     },
     {
         "condition_id": "PAD_MEL_002_P2",
         "candidate_disease": "黑色素瘤",
         "condition": "remove_pruritus_and_site",
         "removed_evidence": ["itch", "region"],
-        "observation": (
-            "58岁男性，皮损伴增长及变化。"
-        ),
     },
 ]
 
@@ -170,21 +127,26 @@ def main():
     all_results = []
 
     for condition in CONDITIONS:
+        patient_input = build_pad_input(
+            condition["condition_id"].rsplit("_", 1)[0],
+            removed_fields=condition["removed_evidence"],
+        )
         print()
         print("=" * 70)
         print(condition["condition_id"])
-        print("observation:", condition["observation"])
+        print("observation:", patient_input["user_observation"])
 
         result = pipeline.run(
              case_id=condition["condition_id"],
              candidate_disease=condition["candidate_disease"],
-             user_observation=condition["observation"],
+             **patient_input,
              top_k=5,
              max_hops=2,
         )
 
         data = result_to_dict(result)
 
+        data["structured_fields"] = patient_input["structured_fields"]
         data["pilot_condition"] = condition["condition"]
         data["removed_evidence"] = condition["removed_evidence"]
 

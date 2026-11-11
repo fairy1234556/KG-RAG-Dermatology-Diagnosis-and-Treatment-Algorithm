@@ -16,6 +16,7 @@ if str(ROOT) not in sys.path:
 from kg.path_ranker import EvidencePathRanker
 from kg.path_retriever import GraphPathRetriever
 from rag.kg_rag_pipeline import KGRAGPipeline
+from experiments.pad_case_input import build_pad_input
 
 
 ORIGINAL_TRIPLE_FILE = (
@@ -30,11 +31,6 @@ OUTPUT_PATH = (
     / "pad_bcc_001_kg_intervention.json"
 )
 
-
-OBSERVATION = (
-    "74岁女性，面部皮损，"
-    "伴瘙痒、增长、触痛、出血及隆起。"
-)
 
 CANDIDATE_DISEASE = "基底细胞癌"
 
@@ -122,6 +118,7 @@ def build_pipeline(
 
 
 def main():
+    patient_input = build_pad_input("PAD_BCC_001")
     all_results = []
 
     with tempfile.TemporaryDirectory() as temp_dir:
@@ -158,19 +155,20 @@ def main():
             )
             print(
                 "observation:",
-                OBSERVATION,
+                patient_input["user_observation"],
             )
 
             result = pipeline.run(
                 case_id=condition["condition_id"],
                 candidate_disease=CANDIDATE_DISEASE,
-                user_observation=OBSERVATION,
+                **patient_input,
                 top_k=5,
                 max_hops=2,
             )
 
             data = result_to_dict(result)
 
+            data["structured_fields"] = patient_input["structured_fields"]
             data["kg_condition"] = (
                 condition["kg_condition"]
             )
