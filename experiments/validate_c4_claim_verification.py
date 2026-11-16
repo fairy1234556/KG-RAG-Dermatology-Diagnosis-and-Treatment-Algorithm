@@ -223,6 +223,71 @@ class C4ClaimVerificationTests(unittest.TestCase):
         self.assertEqual(record.final_status, "uncertain")
         self.assertIn("KG 路径原文缺失", record.verification.reasons[0])
 
+    def test_string_reasons_remain_unchanged_and_allow_correction(self):
+        reasons = ["结节未登记，证据引用不完整。", "不能用出血编号代替结节事实。"]
+        record = self.review(self.claim(), [{"status": "failed", "reasons": reasons},
+                                           self.dump(self.claim()), PASSED])
+        self.assertEqual(record.verification.reasons, reasons)
+        self.assertEqual(record.final_status, "corrected")
+        self.assertEqual(json.loads(self.client.calls[1]["user"])["problems"], reasons)
+
+    def test_object_reasons_are_preserved_and_enter_correction(self):
+        reasons = [{
+            "fragment": "患者面部出现结节", "reason": "结节未登记，证据引用不完整。",
+            "evidence_ids": ["TEXT:text:SITE_005", "TEXT:text:SYM_001"],
+            "detail": "不能认定患者没有结节。",
+        }]
+        original = self.claim(claim_text="患者面部出现结节并伴出血。")
+        record = self.review(original, [{"status": "failed", "reasons": reasons},
+                                       self.dump(self.claim()), PASSED])
+        self.assertEqual(record.verification.status, "failed")
+        self.assertEqual(record.final_status, "corrected")
+        self.assertEqual(record.original_claim, original)
+        self.assertEqual(record.corrected_claim.claim_id, original.claim_id)
+        readable = record.verification.reasons[0]
+        for text in ("问题片段：患者面部出现结节", "原因：结节未登记，证据引用不完整。",
+                     "证据编号：", "TEXT:text:SITE_005", "TEXT:text:SYM_001",
+                     "detail：不能认定患者没有结节。"):
+            self.assertIn(text, readable)
+        self.assertEqual(json.loads(self.client.calls[1]["user"])["problems"], [readable])
+        self.assertEqual(len(self.client.calls), 3)
+        self.assertTrue(all(isinstance(reason, str) for reason in self.dump(record)["verification"]["reasons"]))
+
+    def test_mixed_and_nested_reason_fields_are_not_discarded(self):
+        reasons = ["证据存在歧义。", {
+            "fragment": "该表现支持候选疾病", "explanation": "支持范围无法确定。",
+            "details": {"limitation": "缺少检查结果", "evidence": ["PATH_TRI_031"]},
+        }]
+        record = self.review(self.claim(), [{"status": "uncertain", "reasons": reasons}])
+        self.assertEqual(record.verification.status, "uncertain")
+        self.assertEqual(record.verification.reasons[0], reasons[0])
+        self.assertIn("说明：支持范围无法确定。", record.verification.reasons[1])
+        self.assertIn(json.dumps(reasons[1]["details"], ensure_ascii=False), record.verification.reasons[1])
+        self.assertNotIn("语义核验未完成", "".join(record.verification.reasons))
+        self.assertEqual(len(self.client.calls), 1)
+
+    def test_object_reasons_are_also_parsed_during_recheck(self):
+        failed = {"status": "failed", "reasons": [{"reason": "仍然超出证据范围。"}]}
+        record = self.review(self.claim(), [failed, self.dump(self.claim()), failed])
+        self.assertEqual(record.final_status, "unresolved")
+        self.assertEqual(record.recheck.status, "failed")
+        self.assertEqual(record.recheck.reasons, ["原因：仍然超出证据范围。"])
+        self.assertEqual(len(self.client.calls), 3)
+
+    def test_unparseable_reasons_are_uncertain_even_if_model_says_passed(self):
+        invalid_values = [None, "不是列表", {"reason": "不是列表"}, [None], [123], [" "],
+                          [{}], [{"reason": " "}], [{"confidence": 0.9}],
+                          [{"evidence_ids": ["PATH_TRI_031"]}], ["实际错误原因不可丢失", {}]]
+        for status in ("passed", "failed"):
+            for reasons in invalid_values:
+                with self.subTest(status=status, reasons=reasons):
+                    record = self.review(self.claim(), [{"status": status, "reasons": reasons}])
+                    self.assertEqual(record.final_status, "uncertain")
+                    self.assertIn("语义核验未完成", record.verification.reasons[0])
+                    self.assertIn(json.dumps(reasons, ensure_ascii=False), record.verification.reasons[0])
+                    self.assertIsNone(record.corrected_claim)
+                    self.assertEqual(len(self.client.calls), 1)
+
     def test_verification_api_and_format_failures_are_uncertain(self):
         truncated = replace(MockLLMClient().generate("mock"), finish_reason="length")
         for reply in (LLMClientError("离线模拟失败"), "not-json", truncated,

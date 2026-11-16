@@ -77,6 +77,46 @@ def request_json(client: QwenLLMClient, system_prompt: str, payload: dict) -> di
     return extract_json_object(response.content)
 
 
+def _contains_text(value: object) -> bool:
+    if isinstance(value, str):
+        return bool(value.strip())
+    if isinstance(value, dict):
+        return any(_contains_text(item) for item in value.values())
+    if isinstance(value, list):
+        return any(_contains_text(item) for item in value)
+    return False
+
+
+def normalize_reasons(value: object) -> list[str]:
+    """兼容字符串和对象原因，保留所有对象字段，不推断或改变核验状态。"""
+    labels = {"fragment": "问题片段", "reason": "原因", "explanation": "说明",
+              "evidence_ids": "证据编号"}
+    reasons = []
+    if isinstance(value, list):
+        for item in value:
+            if isinstance(item, str) and item.strip():
+                reasons.append(item)
+            elif isinstance(item, dict) and any(
+                _contains_text(content) for key, content in item.items()
+                if key not in {"evidence_ids", "patient_fact_ids", "kg_path_ids"}
+            ):
+                # 不限定原因字段名；未知字段和嵌套内容同样保留，防止真实错误原因丢失。
+                reasons.append("；".join(
+                    f"{labels.get(key, key)}："
+                    + (content if isinstance(content, str) else json.dumps(content, ensure_ascii=False))
+                    for key, content in item.items()
+                ))
+            else:
+                break
+        else:
+            return reasons
+    # 不跳过坏项或将其变为空数组；保留完整输入供人工排查，包括已读到的有效原因。
+    raise ValueError(
+        "reasons 必须为非空字符串或含问题描述的对象组成的列表（无问题时可为空列表）；"
+        f"原始 reasons={json.dumps(value, ensure_ascii=False)}"
+    )
+
+
 def verify_claim(
     claim: EvidenceClaim, ledger: StructuredEvidenceLedger, context: dict, client: QwenLLMClient,
 ) -> ClaimVerification:
@@ -90,6 +130,7 @@ def verify_claim(
         payload = request_json(client, VERIFY_PROMPT, {
             **context, "claim": model_dict(claim), "reference_errors": errors,
         })
+        payload["reasons"] = normalize_reasons(payload.get("reasons"))
         semantic = ClaimVerification(**payload)
         if semantic.status != "passed" and not any(reason.strip() for reason in semantic.reasons):
             raise ValueError("failed/uncertain 核验结果必须包含问题原因。")
