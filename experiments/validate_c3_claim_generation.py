@@ -241,6 +241,43 @@ class C3ClaimGenerationTests(unittest.TestCase):
         self.assertEqual(result.claims[0].kg_path_ids, ["UNKNOWN_PATH"])
         self.assertEqual(self.client.calls, 1)
 
+    def test_truncated_response_is_reported_before_json_parsing(self):
+        response = self.client.generate("mock")
+        # 即使被截断的内容碰巧是合法 JSON，也不能将其当作完整的 C3 输出。
+        for content in ('{"claims": [{"claim_id": "CLAIM_001"}', '{"claims": []}'):
+            with self.subTest(content=content):
+                truncated = replace(response, content=content, finish_reason="length",
+                                    completion_tokens=800, max_completion_tokens=800)
+                with self.assertRaises(BaselineOutputError) as caught:
+                    build_structured_result("LIMIT", "kg_rag", "基底细胞癌", "患者出血",
+                                            truncated, include_claims=True)
+                message = str(caught.exception)
+                self.assertIn("因长度限制被截断", message)
+                self.assertIn("finish_reason='length'", message)
+                self.assertIn("completion_tokens=800", message)
+                self.assertIn("max_completion_tokens=800", message)
+                self.assertIn("configs/llm_config.yaml", message)
+
+    def test_invalid_complete_json_reports_metadata_without_repair_or_raw_content(self):
+        response = replace(self.client.generate("mock"),
+                           content='{"claims": [] "private_patient_text": "do not log"}',
+                           finish_reason="stop", completion_tokens=120,
+                           max_completion_tokens=2400)
+        with self.assertRaises(BaselineOutputError) as caught:
+            build_structured_result("INVALID", "kg_rag", "基底细胞癌", "患者出血",
+                                    response, include_claims=True)
+        message = str(caught.exception)
+        self.assertIn("JSON 格式无效", message)
+        self.assertIn("finish_reason='stop'", message)
+        self.assertIn("completion_tokens=120", message)
+        self.assertIn("max_completion_tokens=2400", message)
+        self.assertNotIn("被截断", message)
+        self.assertNotIn("private_patient_text", message)
+        # 旧方法的默认错误信息不受 C3 诊断信息影响。
+        with self.assertRaises(BaselineOutputError) as legacy:
+            build_structured_result("OLD", "llm", "基底细胞癌", "患者出血", response)
+        self.assertNotIn("finish_reason", str(legacy.exception))
+
 
 if __name__ == "__main__":
     unittest.main(verbosity=2)

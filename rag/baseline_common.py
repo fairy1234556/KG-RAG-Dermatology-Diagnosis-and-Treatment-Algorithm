@@ -326,9 +326,24 @@ def build_structured_result(
 ) -> KGRAGResult:
     """解析模型输出并构造统一实验结果。"""
 
-    payload = extract_json_object(
-        llm_result.content
+    # C3 需要输出旧字段和逐条引用，截断不能作为完整解释解析或自动补全。
+    response_info = (
+        f"finish_reason={llm_result.finish_reason!r}；"
+        f"completion_tokens={llm_result.completion_tokens}；"
+        f"max_completion_tokens={llm_result.max_completion_tokens}"
     )
+    if include_claims and llm_result.finish_reason == "length":
+        raise BaselineOutputError(
+            f"C3 模型输出因长度限制被截断（{response_info}）。"
+            "请提高 configs/llm_config.yaml 中 generation.max_completion_tokens 后重新运行。"
+        )
+
+    try:
+        payload = extract_json_object(llm_result.content)
+    except BaselineOutputError as exc:
+        if not include_claims:
+            raise
+        raise BaselineOutputError(f"{exc}（{response_info}）") from exc
 
     normalized_payload = normalize_model_payload(
         payload
