@@ -43,6 +43,7 @@ from rag.baseline_common import BaselineOutputError
 from rag.baseline_common import build_structured_result
 from rag.baseline_common import build_user_prompt
 from rag.baseline_common import result_to_dict
+from rag.claim_verifier import review_claims
 from rag.llm_client import LLMClientError
 from rag.llm_client import QwenLLMClient
 from rag.schemas import EvidencePath as SchemaEvidencePath
@@ -601,6 +602,7 @@ class KGRAGPipeline:
         *,
         structured_fields: Mapping[str, object] | None = None,
         mother_case_id: Optional[str] = None,
+        enable_c4: bool = False,
     ) -> KGRAGResult:
         """运行一次 KG-RAG 实验。
 
@@ -608,6 +610,7 @@ class KGRAGPipeline:
         完整 PAD 患者快照，以它重建观察并用于排序、提示词和结果记录。
         即使传入空字典，也不允许从 user_observation 恢复已删除事实。
         PAD 入口另传 mother_case_id 用于事实编号；普通调用默认使用 case_id。
+        enable_c4 默认关闭；启用时仅核验 claims，保留原文并单独保存 C4 结果。
         """
 
         cleaned_case_id = (
@@ -769,11 +772,19 @@ class KGRAGPipeline:
         structured_result = _copy_result_with_updates(
             structured_result, {"evidence_ledger": structured_ledger},
         )
-        return enforce_kg_rag_boundary(
+        structured_result = enforce_kg_rag_boundary(
             result=structured_result,
             ranked_paths=ranked_paths,
             anchor_count=len(anchors),
         )
+        if enable_c4:
+            reviews = review_claims(
+                claims=structured_result.claims, ledger=structured_ledger,
+                ranked_paths=ranked_paths, candidate_disease=cleaned_disease,
+                user_observation=cleaned_observation, client=self.client,
+            )
+            structured_result = _copy_result_with_updates(structured_result, {"c4_results": reviews})
+        return structured_result
 
 
 def main() -> int:
@@ -816,6 +827,11 @@ def main() -> int:
         help="图谱最大路径跳数，默认 2",
     )
 
+    parser.add_argument(
+        "--enable-c4", action="store_true",
+        help="启用逐条解释核验与一次定向矫正（额外调用模型，原 claims 保留）",
+    )
+
     args = parser.parse_args()
 
     try:
@@ -831,6 +847,7 @@ def main() -> int:
             ),
             top_k=args.top_k,
             max_hops=args.max_hops,
+            enable_c4=args.enable_c4,
         )
 
     except (

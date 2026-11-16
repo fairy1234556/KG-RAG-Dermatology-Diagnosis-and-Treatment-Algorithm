@@ -94,6 +94,26 @@ class EvidenceClaim(BaseModel):
         extra = "forbid"
 
 
+class ClaimVerification(BaseModel):
+    status: Literal["passed", "failed", "uncertain"]
+    reasons: list[StrictStr]
+
+    class Config:
+        extra = "forbid"
+
+
+class C4ClaimResult(BaseModel):
+    """仅针对一条 claim 的核验记录；passed 不代表医学上绝对正确。"""
+
+    claim_id: str
+    original_claim: EvidenceClaim
+    verification: ClaimVerification
+    corrected_claim: Optional[EvidenceClaim] = None
+    recheck: Optional[ClaimVerification] = None
+    final_status: Literal["passed", "corrected", "unresolved", "uncertain"]
+    correction_error: str = ""
+
+
 class TokenUsage(BaseModel):
     """单次大模型调用的 Token 使用情况。"""
 
@@ -126,6 +146,7 @@ class KGRAGResult(BaseModel):
 
     evidence_ledger: StructuredEvidenceLedger = Field(default_factory=StructuredEvidenceLedger)
     claims: list[EvidenceClaim] = Field(default_factory=list)
+    c4_results: list[C4ClaimResult] = Field(default_factory=list)
 
     case_id: str = Field(
         ...,
