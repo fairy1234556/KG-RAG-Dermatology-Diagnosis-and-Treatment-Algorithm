@@ -127,6 +127,46 @@ class C4ClaimVerificationTests(unittest.TestCase):
         self.assertEqual(payload["problems"], [reason])
         self.assertEqual(payload["claim"], self.dump(original))
 
+    def test_unsupported_exclusion_from_absent_fact_enters_targeted_correction(self):
+        # 固定真实失败案例；预设回答仅证明提示词传递及流程，不证明真实模型能发现错误。
+        original = self.claim(
+            claim_text="患者明确否认瘙痒症状，这有助于排除部分伴有剧烈瘙痒的炎症性或过敏性皮肤病，"
+                       "但不能单独用于确诊或排除基底细胞癌。",
+            patient_fact_ids=["TEXT:text:SYM_002"], kg_path_ids=[],
+        )
+        corrected = self.claim(
+            claim_text="患者明确否认瘙痒症状；现有证据不足以据此作出疾病排除结论。",
+            patient_fact_ids=original.patient_fact_ids, kg_path_ids=[],
+        )
+        reason = "‘有助于排除部分伴有剧烈瘙痒的炎症性或过敏性皮肤病’缺少 KG 证据，瘙痒 absent 事实不能单独支持该推断。"
+        self.assertEqual(reference_errors(original, self.ledger), [])
+        fact = next(f for f in self.ledger.patient_facts if f.fact_id == original.patient_fact_ids[0])
+        self.assertEqual(fact.fact_state, "absent")
+        record = self.review(original, [{"status": "failed", "reasons": [reason]},
+                                       self.dump(corrected), PASSED])
+        verification_call, correction_call, recheck_call = self.client.calls
+        for instruction in (
+            "必须分别核验患者事实描述和由该事实推导的医学结论",
+            "单一症状的存在或不存在，不能在缺少适用 KG 证据时用于确认、排除疾病",
+            "“有助于排除”“提示更可能”等弱化表述仍是医学推断",
+            "属于无依据推断，应返回 failed", "在 reasons 中指出具体推断片段及缺少的证据依据",
+            "句末附加“不能单独确诊或排除”也不能抵消前文缺乏依据的推断",
+        ):
+            self.assertIn(instruction, verification_call["system"])
+        self.assertIn("保留正确的患者事实及其 patient_fact_ids", correction_call["system"])
+        self.assertIn("只删除该推断或改为证据不足的表述", correction_call["system"])
+        self.assertEqual(json.loads(verification_call["user"])["claim"], self.dump(original))
+        self.assertEqual(json.loads(correction_call["user"])["problems"], [reason])
+        self.assertEqual(json.loads(recheck_call["user"])["claim"], self.dump(corrected))
+        self.assertEqual(record.verification.status, "failed")
+        self.assertEqual(record.original_claim, original)
+        self.assertEqual(record.corrected_claim, corrected)
+        self.assertEqual(record.corrected_claim.claim_id, original.claim_id)
+        self.assertEqual(record.corrected_claim.patient_fact_ids, original.patient_fact_ids)
+        self.assertEqual(record.recheck.status, "passed")
+        self.assertEqual(record.final_status, "corrected")
+        self.assertEqual(len(self.client.calls), 3)
+
     def test_simulated_state_and_role_errors_are_routed_to_correction(self):
         cases = [
             (self.claim(claim_text="患者有瘙痒。", patient_fact_ids=["TEXT:text:SYM_002"], kg_path_ids=[]),
