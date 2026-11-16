@@ -225,6 +225,81 @@ class C4ClaimVerificationTests(unittest.TestCase):
                 self.assertEqual(reference_errors(claim, self.ledger), [])
                 self.assertEqual(self.review(claim, [PASSED]).final_status, "passed")
 
+    def test_recheck_accepts_omission_and_truthful_ledger_gap_statement(self):
+        # 固定样例只验证范围约束的传递和流程，不证明真实模型会遵守提示词。
+        original = self.claim(claim_text="患者面部出现结节并伴出血。",
+                              patient_fact_ids=["TEXT:text:SITE_005", "TEXT:text:SYM_001"])
+        corrected = self.claim(
+            claim_text="患者报告的部位为面部，并伴有出血。当前台账未登记结节事实，故不将其作为论证依据。",
+            patient_fact_ids=original.patient_fact_ids,
+        )
+        self.assertEqual({f.entity_id for f in self.ledger.patient_facts},
+                         {"SITE_005", "SYM_001", "SYM_002"})
+        failed = {"status": "failed", "reasons": ["结节作为患者事实直接论证，但未登记对应事实编号。"]}
+        record = self.review(original, [failed, self.dump(corrected), PASSED])
+        self.assertEqual(record.final_status, "corrected")
+        self.assertEqual(record.recheck.status, "passed")
+        self.assertEqual(record.original_claim, original)
+        self.assertEqual(record.corrected_claim, corrected)
+        for call in (self.client.calls[0], self.client.calls[2]):
+            for instruction in (
+                "只核验当前 claim 实际陈述的内容，不要求每条 claim 覆盖原始患者观察的全部信息",
+                "某个特征没有在当前 claim 中陈述，不构成遗漏或引用不完整",
+                "若 claim 仅说明", "应核对台账是否确实缺少该记录",
+                "不应因此再次判为引用不完整，也不得要求补造 fact_id",
+            ):
+                self.assertIn(instruction, call["system"])
+        self.assertEqual(json.loads(self.client.calls[2]["user"])["claim"], self.dump(corrected))
+        # 只陈述出血、或如实说明台账范围，都无需覆盖原始观察中的所有特征。
+        for claim in (self.claim(claim_text="患者报告出血。", kg_path_ids=[]), corrected):
+            with self.subTest(text=claim.claim_text):
+                self.assertEqual(reference_errors(claim, self.ledger), [])
+                result = self.review(claim, [PASSED])
+                self.assertEqual(result.final_status, "passed")
+                self.assertIsNone(result.corrected_claim)
+                self.assertEqual(len(self.client.calls), 1)
+
+    def test_correction_keeps_existing_melanoma_and_keratosis_evidence_separate(self):
+        path_ids = ["PATH_TRI_035_TRI_007", "PATH_TRI_034_TRI_053", "PATH_TRI_034_TRI_054"]
+        original = self.claim(
+            claim_text="患者报告出血；黑色素瘤和良性角化样病变均可能出血，因此直接支持基底细胞癌。",
+            kg_path_ids=path_ids,
+        )
+        corrected = self.claim(
+            claim_text="患者报告出血。图谱显示黑色素瘤可能出血；良性角化样病变可表现为蜡样或疣状表面、"
+                       "贴附样丘疹或斑块。这些知识仅用于鉴别，不能作为基底细胞癌的直接支持。",
+            kg_path_ids=path_ids,
+        )
+        reason = "良性角化样病变的外观证据不能扩展为出血证据；鉴别证据不能当作基底细胞癌的直接支持。"
+        record = self.review(original, [{"status": "failed", "reasons": [reason]},
+                                       self.dump(corrected), PASSED])
+        self.assertEqual(record.final_status, "corrected")
+        self.assertEqual(record.corrected_claim, corrected)
+        self.assertEqual(record.recheck.status, "passed")
+        self.assertEqual(len(self.client.calls), 3)
+        correction_call = self.client.calls[1]
+        for instruction in (
+            "矫正前必须根据实际 kg_paths 逐条核对内容",
+            "不能仅依据问题原因就断言某条 KG 证据不存在",
+            "不得错误否定已有证据", "“证据存在但用途受限”不等于“证据不存在”",
+            "黑色素瘤出血与良性角化样病变的外观特征必须分别判断",
+        ):
+            self.assertIn(instruction, correction_call["system"])
+        # 核对真实 KG 内容确实传给核验、矫正和复核，不能只靠模拟回答声称保留了证据。
+        for call in self.client.calls:
+            context = json.loads(call["user"])
+            melanoma = context["kg_paths"][path_ids[0]][1]
+            self.assertEqual((melanoma["triple_id"], melanoma["head_name"], melanoma["tail_name"]),
+                             ("TRI_007", "黑色素瘤", "出血"))
+            self.assertIn("出血", melanoma["evidence_text"])
+            for path_id, triple_id, feature in ((path_ids[1], "TRI_053", "蜡样或疣状表面"),
+                                                 (path_ids[2], "TRI_054", "贴附样丘疹或斑块")):
+                edge = context["kg_paths"][path_id][1]
+                self.assertEqual((edge["triple_id"], edge["head_name"], edge["tail_name"]),
+                                 (triple_id, "良性角化样病变", feature))
+            roles = {p["path_id"]: p["claim_usage"] for p in context["evidence_ledger"]["paths"]}
+            self.assertTrue(all(roles[path_id] == "DIFFERENTIAL_ONLY" for path_id in path_ids))
+
     def test_still_failed_after_correction_is_unresolved_without_retry(self):
         failed = {"status": "failed", "reasons": ["仍然超出证据范围"]}
         record = self.review(self.claim(), [failed, self.dump(self.claim()), failed])
