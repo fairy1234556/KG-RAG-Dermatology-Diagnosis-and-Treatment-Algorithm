@@ -683,6 +683,12 @@ class KGRAGPipeline:
             structured_fields=structured_fields,
         )
         structured_ledger = build_structured_evidence_ledger(patient_facts, ranked_paths)
+        # C3 直接消费 C2 快照；即使文本台账因无路径提前返回，事实编号仍完整传入。
+        ledger_payload = (
+            structured_ledger.model_dump()
+            if hasattr(structured_ledger, "model_dump")
+            else structured_ledger.dict()
+        )
 
         evidence_ledger = (
             format_evidence_ledger(
@@ -715,6 +721,9 @@ class KGRAGPipeline:
                 "",
                 "【Top-k 知识图谱证据链】",
                 evidence_context,
+                "",
+                "【C2 结构化证据台账】",
+                json.dumps(ledger_payload, ensure_ascii=False),
             ]
         )
 
@@ -731,6 +740,7 @@ class KGRAGPipeline:
             evidence_context=(
                 full_context
             ),
+            include_claims=True,
         )
 
         llm_result = self.client.generate(
@@ -752,6 +762,7 @@ class KGRAGPipeline:
                     cleaned_observation
                 ),
                 llm_result=llm_result,
+                include_claims=True,
             )
         )
 

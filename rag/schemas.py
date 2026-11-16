@@ -2,7 +2,7 @@ from __future__ import annotations
 
 from typing import Literal, Optional
 
-from pydantic import BaseModel, Field
+from pydantic import BaseModel, Field, StrictStr
 
 
 MethodName = Literal[
@@ -82,6 +82,18 @@ class StructuredEvidenceLedger(BaseModel):
     paths: list[EvidenceLedgerPath] = Field(default_factory=list)
 
 
+class EvidenceClaim(BaseModel):
+    """C3 生成的解释及其引用；仅约束格式，不核验证据内容。"""
+
+    claim_id: StrictStr = Field(..., min_length=1)
+    claim_text: StrictStr = Field(..., min_length=1)
+    patient_fact_ids: list[StrictStr]
+    kg_path_ids: list[StrictStr]
+
+    class Config:
+        extra = "forbid"
+
+
 class TokenUsage(BaseModel):
     """单次大模型调用的 Token 使用情况。"""
 
@@ -113,6 +125,7 @@ class KGRAGResult(BaseModel):
     """
 
     evidence_ledger: StructuredEvidenceLedger = Field(default_factory=StructuredEvidenceLedger)
+    claims: list[EvidenceClaim] = Field(default_factory=list)
 
     case_id: str = Field(
         ...,
