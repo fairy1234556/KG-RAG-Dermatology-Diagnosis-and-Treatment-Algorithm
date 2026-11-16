@@ -61,6 +61,27 @@ class EvidencePath(BaseModel):
     )
 
 
+class PatientFactRecord(BaseModel):
+    fact_id: str
+    entity_id: Optional[str] = None
+    fact_text: str
+    fact_state: Literal["present", "absent", "missing"]
+    mapping_reliable: bool
+    source: str
+
+
+class EvidenceLedgerPath(BaseModel):
+    path_id: str
+    triple_ids: list[str]
+    matched_fact_ids: list[str]
+    claim_usage: Literal["PATIENT_SUPPORT", "BACKGROUND_ONLY", "DIFFERENTIAL_ONLY"]
+
+
+class StructuredEvidenceLedger(BaseModel):
+    patient_facts: list[PatientFactRecord] = Field(default_factory=list)
+    paths: list[EvidenceLedgerPath] = Field(default_factory=list)
+
+
 class TokenUsage(BaseModel):
     """单次大模型调用的 Token 使用情况。"""
 
@@ -90,6 +111,8 @@ class KGRAGResult(BaseModel):
     - rag：普通文本检索增强基线；
     - kg_rag：知识图谱增强方法。
     """
+
+    evidence_ledger: StructuredEvidenceLedger = Field(default_factory=StructuredEvidenceLedger)
 
     case_id: str = Field(
         ...,

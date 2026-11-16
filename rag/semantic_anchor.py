@@ -81,6 +81,18 @@ class SemanticAnchor:
 
 
 @dataclass(frozen=True)
+class PatientFact:
+    """C2 事实记录；与 C1 实体锚点分离，不改变其匹配与状态判定。"""
+
+    fact_id: str
+    entity_id: str | None
+    fact_text: str
+    fact_state: FactState
+    mapping_reliable: bool
+    source: str
+
+
+@dataclass(frozen=True)
 class AliasRecord:
     """内部使用的同义表达索引记录。"""
 
@@ -754,6 +766,59 @@ class SemanticAnchorMapper:
 
         type_order = {"Disease": 0, "LesionFeature": 1, "AnatomicalSite": 2, "Symptom": 3, "Examination": 4}
         return sorted(facts.values(), key=lambda item: (type_order.get(item.entity_type, 99), item.entity_id))
+
+    def extract_fact_records(
+        self,
+        text: str,
+        case_id: str,
+        *,
+        structured_fields: Mapping[str, object] | None = None,
+    ) -> list[PatientFact]:
+        """为 C1 结果添加可保存的事实身份，不参与评分或角色判定。
+
+        PAD 的 case_id 应传母病例 ID，每个原始字段只记录一次。
+        文本沿用 C1 的实体级聚合，同一病例/实体的编号保持确定性。
+        """
+        if not case_id.strip():
+            raise ValueError("事实所属病例 ID 不能为空。")
+        case_id = case_id.strip()
+        anchors = self.extract_patient_facts(text, structured_fields=structured_fields)
+        if structured_fields is None:
+            return [
+                PatientFact(
+                    fact_id=f"{case_id}:text:{a.entity_id}", entity_id=a.entity_id,
+                    fact_text=f"{a.matched_text} [{a.fact_state}]",
+                    fact_state=a.fact_state, mapping_reliable=a.mapping_reliable,
+                    source=a.source,
+                )
+                for a in anchors if a.source != "not_provided"
+            ]
+
+        by_entity = {a.entity_id: a for a in anchors}
+        mappings = self._read_csv(self.pad_mapping_file)
+        records = []
+        fields = list(dict.fromkeys(row["source_field"] for row in mappings))
+        for field in [*fields, "age", "gender"]:
+            value = structured_fields.get(field)
+            rules = [row for row in mappings if row["source_field"] == field]
+            rule = next((row for row in rules if row["source_value"] == "*"
+                         or row["source_value"] == str(value).strip().upper()), None)
+            entity_id = (rule["target_entity_id"] or None) if rule else None
+            anchor = by_entity.get(entity_id)
+            if anchor is not None:
+                state, reliable = anchor.fact_state, anchor.mapping_reliable
+            elif any(row["source_value"] == "*" for row in rules):
+                state, reliable = self._pad_state(value), False
+            else:
+                missing = str(value).strip().lower() in {"", "none", "nan", "unk", "unknown", "n/a"}
+                state, reliable = ("missing" if missing else "present"), False
+            records.append(PatientFact(
+                fact_id=f"{case_id}:{field}", entity_id=entity_id,
+                fact_text=f"{field}={value if value is not None else '未提供'}",
+                fact_state=state, mapping_reliable=reliable,
+                source=f"pad_ufes_20:{field}",
+            ))
+        return records
 
     def extract(
         self,

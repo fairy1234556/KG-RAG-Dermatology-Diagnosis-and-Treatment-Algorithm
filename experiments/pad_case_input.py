@@ -37,6 +37,7 @@ def build_pad_input(
         if field not in removed
     }
     return {
+        "mother_case_id": mother_case_id,
         "user_observation": format_pad_observation(fields),
         "structured_fields": fields,
     }

@@ -47,7 +47,8 @@ from rag.llm_client import LLMClientError
 from rag.llm_client import QwenLLMClient
 from rag.schemas import EvidencePath as SchemaEvidencePath
 from rag.schemas import KGRAGResult
-from rag.semantic_anchor import SemanticAnchorMapper
+from rag.schemas import EvidenceLedgerPath, PatientFactRecord, StructuredEvidenceLedger
+from rag.semantic_anchor import PatientFact, SemanticAnchorMapper
 
 
 METHOD_DESCRIPTION = """
@@ -237,8 +238,32 @@ def format_kg_evidence_context(
 
     return "\n".join(sections).strip()
 
+def build_structured_evidence_ledger(
+    patient_facts: List[PatientFact],
+    ranked_paths: List[RankedEvidencePath],
+) -> StructuredEvidenceLedger:
+    """只记录 C1 已得出的匹配与角色，不重新评分或重新分类。"""
+    return StructuredEvidenceLedger(
+        patient_facts=[PatientFactRecord(**vars(fact)) for fact in patient_facts],
+        paths=[
+            EvidenceLedgerPath(
+                path_id=path.path_id,
+                triple_ids=[edge.triple_id for edge in path.path.edges],
+                matched_fact_ids=[
+                    fact.fact_id for fact in patient_facts
+                    if fact.fact_state == "present" and fact.mapping_reliable
+                    and fact.entity_id in path.matched_anchor_ids
+                ],
+                claim_usage=path.role_profile.claim_usage,
+            )
+            for path in ranked_paths
+        ],
+    )
+
+
 def format_evidence_ledger(
     ranked_paths: List[RankedEvidencePath],
+    structured_ledger: Optional[StructuredEvidenceLedger] = None,
 ) -> str:
     """
     构造证据角色账本。
@@ -253,6 +278,10 @@ def format_evidence_ledger(
             "本次没有可用证据角色账本，"
             "因为没有检索到可用的知识图谱路径。"
         )
+
+    associations = {
+        item.path_id: item for item in structured_ledger.paths
+    } if structured_ledger is not None else {}
 
     grouped_paths: Dict[
         str,
@@ -323,6 +352,12 @@ def format_evidence_ledger(
             continue
 
         for path in paths:
+            association = associations.get(path.path_id)
+            reference_text = (
+                f"；triple_ids={json.dumps(association.triple_ids, ensure_ascii=False)}"
+                f"；matched_fact_ids={json.dumps(association.matched_fact_ids, ensure_ascii=False)}"
+                if association is not None else ""
+            )
             path_text = format_path_text(
                 path
             )
@@ -350,12 +385,21 @@ def format_evidence_ledger(
                         f"路径={path_text}；"
                         f"匹配患者事实={matched_anchors}；"
                         f"允许用途={claim_usage}；"
-                        f"证据文本={evidence_text}"
+                        f"证据文本={evidence_text}{reference_text}"
                     )
                 ]
             )
 
         ledger_sections.append("")
+
+    if structured_ledger is not None:
+        ledger_sections.append("【患者事实编号】")
+        for fact in structured_ledger.patient_facts:
+            ledger_sections.append(
+                f"- fact_id={fact.fact_id}；事实={fact.fact_text}；"
+                f"entity_id={fact.entity_id}；fact_state={fact.fact_state}；"
+                f"mapping_reliable={fact.mapping_reliable}；source={fact.source}"
+            )
 
     return "\n".join(
         ledger_sections
@@ -556,12 +600,14 @@ class KGRAGPipeline:
         max_hops: int = 2,
         *,
         structured_fields: Mapping[str, object] | None = None,
+        mother_case_id: Optional[str] = None,
     ) -> KGRAGResult:
         """运行一次 KG-RAG 实验。
 
         不提供 structured_fields 时保留原有文本输入行为；提供时视为
         完整 PAD 患者快照，以它重建观察并用于排序、提示词和结果记录。
         即使传入空字典，也不允许从 user_observation 恢复已删除事实。
+        PAD 入口另传 mother_case_id 用于事实编号；普通调用默认使用 case_id。
         """
 
         cleaned_case_id = (
@@ -630,9 +676,18 @@ class KGRAGPipeline:
             )
         )
 
+        mapper = getattr(self.ranker, "anchor_mapper", None) or SemanticAnchorMapper()
+        patient_facts = mapper.extract_fact_records(
+            cleaned_observation,
+            mother_case_id if mother_case_id is not None else cleaned_case_id,
+            structured_fields=structured_fields,
+        )
+        structured_ledger = build_structured_evidence_ledger(patient_facts, ranked_paths)
+
         evidence_ledger = (
             format_evidence_ledger(
-                ranked_paths=ranked_paths
+                ranked_paths=ranked_paths,
+                structured_ledger=structured_ledger,
             )
         )
 
@@ -700,6 +755,9 @@ class KGRAGPipeline:
             )
         )
 
+        structured_result = _copy_result_with_updates(
+            structured_result, {"evidence_ledger": structured_ledger},
+        )
         return enforce_kg_rag_boundary(
             result=structured_result,
             ranked_paths=ranked_paths,
