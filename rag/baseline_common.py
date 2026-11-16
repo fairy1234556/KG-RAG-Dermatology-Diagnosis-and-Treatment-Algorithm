@@ -105,12 +105,21 @@ C3_OUTPUT_JSON_INSTRUCTION = """
 - patient_fact_ids、kg_path_ids 必须为字符串数组，只能引用输入 C2 结构化证据台账中
   patient_facts 的 fact_id 和 paths 的 path_id，不得编造编号或使用 entity_id、triple_id 替代。
 - 没有引用某类证据时对应数组为空；如果没有 KG 路径，kg_path_ids 必须为 []，不得虚构路径编号。
-- 不得编造患者症状、检查结果或病史。present 表示存在，absent 表示明确否认，missing 表示未提供；
-  absent、missing 只能用于说明否认或信息缺口，不能作为阳性支持，missing 不等于 absent。
+- 不得编造患者症状、检查结果或病史。患者事实状态以 C2 台账的 fact_state 为准：
+  present：患者明确存在该表现，应表述为“存在”“伴有”等。
+  absent：患者明确不存在该表现，应表述为“明确否认”“未见”等，不能写成“未提及”“未知”。
+  missing：患者没有提供该信息，应表述为“未提供”“未知”等，不能写成“没有”“未见”。
+  absent、missing 只能分别用于说明否认或信息缺口，不能作为阳性支持，missing 不等于 absent。
+- claims 中每个涉及患者具体表现的陈述，都必须对应 C2 patient_facts 中已登记的事实，
+  并在该条解释的 patient_fact_ids 中列出所涉及的全部 fact_id；否认或信息缺口的陈述也不例外。
+  引用 absent 事实时同样必须填写对应的 patient_fact_ids，不能因其不属于阳性匹配而省略引用。
+- 即使原始观察包含某个表现，只要 C2 未登记对应患者事实，就不要将该表现写入 claims 的患者陈述；
+  不得为未登记的事实自行编造 fact_id，也不得借用其他事实的编号代替。
 - 只有 present 且 mapping_reliable=true，并与路径 matched_fact_ids 对应的事实，
   才能结合 PATIENT_SUPPORT 路径说明患者匹配支持；非精确映射不能作为可靠阳性匹配。
 - BACKGROUND_ONLY 只能描述 KG 背景知识，不能描述成患者已经出现的表现。
 - DIFFERENTIAL_ONLY 只能用于鉴别说明，不能当作候选疾病的直接支持。
+- BACKGROUND_ONLY 和 DIFFERENTIAL_ONLY 均不能作为候选疾病的患者级直接支持。
 - 证据不足时应在解释及 evidence_gap 中明确说明，不得强行支持候选疾病；
   没有可用证据时可生成说明证据不足的解释，引用数组为空，不要照抄示例占位文字。
 - 事实与知识相符不代表确诊，不能把候选疾病解释成已经确诊。

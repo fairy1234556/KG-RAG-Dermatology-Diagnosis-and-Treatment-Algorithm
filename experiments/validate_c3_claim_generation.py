@@ -112,6 +112,58 @@ class C3ClaimGenerationTests(unittest.TestCase):
         restored = KGRAGResult(**json.loads(json.dumps(payload, ensure_ascii=False)))
         self.assertEqual(result_to_dict(restored), payload)
 
+    def test_prompt_distinguishes_all_three_fact_states(self):
+        # 只检查真实台账和传入模型的约束，不以模拟回答证明模型会遵守约束。
+        self.client.payload = {"claims": []}
+        for fields, state in (({"itch": True}, "present"),
+                              ({"itch": False}, "absent"), ({}, "missing")):
+            with self.subTest(state=state):
+                self.pipeline.run("STATE", "基底细胞癌", "", structured_fields=fields)
+                fact = next(f for f in self.prompt_ledger()["patient_facts"]
+                            if f["fact_id"] == "STATE:itch")
+                self.assertEqual(fact["fact_state"], state)
+                for instruction in (
+                    "present：患者明确存在该表现",
+                    "absent：患者明确不存在该表现",
+                    "不能写成“未提及”“未知”",
+                    "missing：患者没有提供该信息",
+                    "不能写成“没有”“未见”",
+                    "absent、missing 只能分别用于说明否认或信息缺口，不能作为阳性支持",
+                ):
+                    self.assertIn(instruction, self.client.prompt)
+
+    def test_absent_fact_reaches_prompt_with_mandatory_reference_rule(self):
+        self.client.payload = {"claims": []}
+        self.pipeline.run("TEXT", "基底细胞癌", "患者面部出现结节，伴出血，未见瘙痒。")
+        ledger = self.prompt_ledger()
+        itch = next(f for f in ledger["patient_facts"] if f["entity_id"] == "SYM_002")
+        self.assertEqual(itch["fact_state"], "absent")
+        self.assertTrue(itch["fact_id"])
+        self.assertTrue(all(itch["fact_id"] not in p["matched_fact_ids"] for p in ledger["paths"]))
+        for instruction in (
+            "claims 中每个涉及患者具体表现的陈述，都必须对应 C2 patient_facts 中已登记的事实",
+            "patient_fact_ids 中列出所涉及的全部 fact_id",
+            "否认或信息缺口的陈述也不例外",
+            "引用 absent 事实时同样必须填写对应的 patient_fact_ids",
+        ):
+            self.assertIn(instruction, self.client.prompt)
+
+    def test_unregistered_observation_is_not_a_license_to_invent_fact_ids(self):
+        self.client.payload = {"claims": []}
+        observation = "患者面部出现结节，伴出血，未见瘙痒。"
+        result = self.pipeline.run("TEXT", "基底细胞癌", observation)
+        self.assertEqual(result.user_observation, observation)
+        self.assertEqual({f["entity_id"] for f in self.prompt_ledger()["patient_facts"]},
+                         {"SITE_005", "SYM_001", "SYM_002"})
+        for instruction in (
+            "即使原始观察包含某个表现，只要 C2 未登记对应患者事实",
+            "就不要将该表现写入 claims 的患者陈述",
+            "不得为未登记的事实自行编造 fact_id",
+            "不得借用其他事实的编号代替",
+            "BACKGROUND_ONLY 和 DIFFERENTIAL_ONLY 均不能作为候选疾病的患者级直接支持",
+        ):
+            self.assertIn(instruction, self.client.prompt)
+
     def test_no_paths_keeps_facts_and_empty_path_references(self):
         self.client.payload = {"claims": [{
             **self.claim,
