@@ -49,7 +49,7 @@ from rag.llm_client import QwenLLMClient
 from rag.schemas import EvidencePath as SchemaEvidencePath
 from rag.schemas import KGRAGResult
 from rag.schemas import EvidenceLedgerPath, PatientFactRecord, StructuredEvidenceLedger
-from rag.semantic_anchor import PatientFact, SemanticAnchorMapper
+from rag.semantic_anchor import PatientFact, SemanticAnchorMapper, model_case_id
 
 
 METHOD_DESCRIPTION = """
@@ -232,6 +232,7 @@ def format_kg_evidence_context(
                     f"路径惩罚={result.path_length_penalty:.4f}"
                 ),
                 f"证据文本：{evidence_text}",
+                f"适用性：{role_profile.applicability_status}；{role_profile.applicability_reason}",
                 f"来源：{source_text}",
                 "",
             ]
@@ -253,9 +254,13 @@ def build_structured_evidence_ledger(
                 matched_fact_ids=[
                     fact.fact_id for fact in patient_facts
                     if fact.fact_state == "present" and fact.mapping_reliable
+                    and path.role_profile.applicability_status in {"not_required", "satisfied"}
                     and fact.entity_id in path.matched_anchor_ids
                 ],
                 claim_usage=path.role_profile.claim_usage,
+                applicability_status=path.role_profile.applicability_status,
+                applicability_reason=path.role_profile.applicability_reason,
+                applicability_sources=list(path.role_profile.applicability_sources),
             )
             for path in ranked_paths
         ],
@@ -307,6 +312,7 @@ def format_evidence_ledger(
 
     ledger_sections: List[str] = [
         "Evidence Ledger 使用规则：",
+        "适用性 unknown/not_satisfied 的路径不得形成患者支持；只能按其来源范围作背景或鉴别说明，不能据此排除疾病。not_required 仅表示未标注额外条件，不代表医学审核通过。",
         (
             "1. PATIENT_SUPPORT：可作为患者级支持证据，"
             "允许进入 observation_match 和 supporting_evidence。"
@@ -609,7 +615,8 @@ class KGRAGPipeline:
         不提供 structured_fields 时保留原有文本输入行为；提供时视为
         完整 PAD 患者快照，以它重建观察并用于排序、提示词和结果记录。
         即使传入空字典，也不允许从 user_observation 恢复已删除事实。
-        PAD 入口另传 mother_case_id 用于事实编号；普通调用默认使用 case_id。
+        PAD 入口另传原始 mother_case_id 用于稳定编号；普通调用默认使用 case_id。
+        事实编号统一去除研究标签，原始 ID 映射仅保存于结果，不传入模型。
         enable_c4 默认关闭；启用时仅核验 claims，保留原文并单独保存 C4 结果。
         """
 
@@ -680,9 +687,10 @@ class KGRAGPipeline:
         )
 
         mapper = getattr(self.ranker, "anchor_mapper", None) or SemanticAnchorMapper()
+        source_case_id = (mother_case_id if mother_case_id is not None else cleaned_case_id).strip()
         patient_facts = mapper.extract_fact_records(
             cleaned_observation,
-            mother_case_id if mother_case_id is not None else cleaned_case_id,
+            source_case_id,
             structured_fields=structured_fields,
         )
         structured_ledger = build_structured_evidence_ledger(patient_facts, ranked_paths)
@@ -770,7 +778,10 @@ class KGRAGPipeline:
         )
 
         structured_result = _copy_result_with_updates(
-            structured_result, {"evidence_ledger": structured_ledger},
+            structured_result, {
+                "evidence_ledger": structured_ledger,
+                "case_id_mapping": {model_case_id(source_case_id): source_case_id},
+            },
         )
         structured_result = enforce_kg_rag_boundary(
             result=structured_result,

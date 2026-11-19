@@ -23,6 +23,7 @@ from rag.baseline_common import (
     build_structured_result, build_user_prompt, result_to_dict,
 )
 from rag.kg_rag_pipeline import KGRAGPipeline
+from rag.semantic_anchor import model_case_id
 from rag.schemas import KGRAGResult
 
 
@@ -46,7 +47,7 @@ class C3ClaimGenerationTests(unittest.TestCase):
         self.claim = {
             "claim_id": "CLAIM_001",
             "claim_text": "患者报告出血，与候选疾病的相关知识相符，但不能据此确诊。",
-            "patient_fact_ids": ["PAD_BCC_001:bleed"],
+            "patient_fact_ids": [f"{model_case_id('PAD_BCC_001')}:bleed"],
             "kg_path_ids": ["PATH_TRI_031"],
         }
         self.payload = {
@@ -85,7 +86,7 @@ class C3ClaimGenerationTests(unittest.TestCase):
         result = self.run_pad()
         ledger = self.prompt_ledger()
         self.assertEqual(ledger, result_to_dict(result)["evidence_ledger"])
-        fact = next(f for f in ledger["patient_facts"] if f["fact_id"] == "PAD_BCC_001:bleed")
+        fact = next(f for f in ledger["patient_facts"] if f["fact_id"] == f"{model_case_id('PAD_BCC_001')}:bleed")
         path = next(p for p in ledger["paths"] if p["path_id"] == "PATH_TRI_031")
         self.assertEqual(fact["fact_state"], "present")
         self.assertTrue(fact["mapping_reliable"])
@@ -120,7 +121,7 @@ class C3ClaimGenerationTests(unittest.TestCase):
             with self.subTest(state=state):
                 self.pipeline.run("STATE", "基底细胞癌", "", structured_fields=fields)
                 fact = next(f for f in self.prompt_ledger()["patient_facts"]
-                            if f["fact_id"] == "STATE:itch")
+                            if f["fact_id"] == f"{model_case_id('STATE')}:itch")
                 self.assertEqual(fact["fact_state"], state)
                 for instruction in (
                     "present：患者明确存在该表现",
@@ -175,7 +176,7 @@ class C3ClaimGenerationTests(unittest.TestCase):
         ledger = self.prompt_ledger()
         self.assertTrue(ledger["patient_facts"])
         self.assertEqual(ledger["paths"], [])
-        self.assertIn("PAD_BCC_001:bleed", {f["fact_id"] for f in ledger["patient_facts"]})
+        self.assertIn(f"{model_case_id('PAD_BCC_001')}:bleed", {f["fact_id"] for f in ledger["patient_facts"]})
         self.assertEqual(result.claims[0].kg_path_ids, [])
         self.assertEqual(result.evidence_paths, [])
         self.assertNotIn("PATH_TRI_031", self.client.prompt)
@@ -186,7 +187,7 @@ class C3ClaimGenerationTests(unittest.TestCase):
         self.client.payload = {"claims": []}
         result = self.run_pad(["bleed"])
         ledger = self.prompt_ledger()
-        fact = next(f for f in ledger["patient_facts"] if f["fact_id"] == "PAD_BCC_001:bleed")
+        fact = next(f for f in ledger["patient_facts"] if f["fact_id"] == f"{model_case_id('PAD_BCC_001')}:bleed")
         self.assertEqual(fact["fact_state"], "missing")
         self.assertTrue(all(fact["fact_id"] not in p["matched_fact_ids"] for p in ledger["paths"]))
         self.assertEqual(result.claims, [])
@@ -223,7 +224,7 @@ class C3ClaimGenerationTests(unittest.TestCase):
             None, "not-an-array", ["not-an-object"], [missing_field],
             [{**self.claim, "extra": "不允许额外字段"}],
             [{**self.claim, "claim_id": 123}], [{**self.claim, "claim_text": ""}],
-            [{**self.claim, "patient_fact_ids": "PAD_BCC_001:bleed"}],
+            [{**self.claim, "patient_fact_ids": f"{model_case_id('PAD_BCC_001')}:bleed"}],
             [{**self.claim, "kg_path_ids": [123]}],
         ]
         for claims in invalid_values:

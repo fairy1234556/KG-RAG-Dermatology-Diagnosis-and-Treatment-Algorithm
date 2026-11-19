@@ -75,6 +75,9 @@ class EvidenceLedgerPath(BaseModel):
     triple_ids: list[str]
     matched_fact_ids: list[str]
     claim_usage: Literal["PATIENT_SUPPORT", "BACKGROUND_ONLY", "DIFFERENTIAL_ONLY"]
+    applicability_status: Literal["not_required", "satisfied", "not_satisfied", "unknown"] = "not_required"
+    applicability_reason: str = ""
+    applicability_sources: list[str] = Field(default_factory=list)
 
 
 class StructuredEvidenceLedger(BaseModel):
@@ -147,6 +150,10 @@ class KGRAGResult(BaseModel):
     evidence_ledger: StructuredEvidenceLedger = Field(default_factory=StructuredEvidenceLedger)
     claims: list[EvidenceClaim] = Field(default_factory=list)
     c4_results: list[C4ClaimResult] = Field(default_factory=list)
+    case_id_mapping: dict[str, str] = Field(
+        default_factory=dict,
+        description="仅供内部溯源的模型病例编号到原始病例 ID 映射，不传入模型提示词",
+    )
 
     case_id: str = Field(
         ...,

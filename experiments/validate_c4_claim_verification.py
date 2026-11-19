@@ -21,6 +21,7 @@ from rag.baseline_common import result_to_dict
 from rag.claim_verifier import reference_errors, review_claims
 from rag.kg_rag_pipeline import KGRAGPipeline
 from rag.llm_client import LLMClientError, LLMResult
+from rag.semantic_anchor import model_case_id
 from rag.schemas import EvidenceClaim, KGRAGResult
 
 
@@ -61,7 +62,7 @@ class C4ClaimVerificationTests(unittest.TestCase):
     def claim(self, **updates):
         fields = {
             "claim_id": "CLAIM_001", "claim_text": "患者报告出血，与相关知识相符，但不能据此确诊。",
-            "patient_fact_ids": ["TEXT:text:SYM_001"], "kg_path_ids": ["PATH_TRI_031"],
+            "patient_fact_ids": [f"{model_case_id('TEXT')}:text:SYM_001"], "kg_path_ids": ["PATH_TRI_031"],
         }
         fields.update(updates)
         return EvidenceClaim(**fields)
@@ -104,7 +105,7 @@ class C4ClaimVerificationTests(unittest.TestCase):
 
     def test_absent_fact_is_legal_when_described_as_denied(self):
         claim = self.claim(claim_text="患者明确否认瘙痒。",
-                           patient_fact_ids=["TEXT:text:SYM_002"], kg_path_ids=[])
+                           patient_fact_ids=[f"{model_case_id('TEXT')}:text:SYM_002"], kg_path_ids=[])
         self.assertEqual(reference_errors(claim, self.ledger), [])
         record = self.review(claim, [PASSED])
         self.assertEqual(record.final_status, "passed")
@@ -112,9 +113,9 @@ class C4ClaimVerificationTests(unittest.TestCase):
 
     def test_absent_misread_as_missing_is_corrected_once(self):
         original = self.claim(claim_text="患者未提及瘙痒。",
-                              patient_fact_ids=["TEXT:text:SYM_002"], kg_path_ids=[])
+                              patient_fact_ids=[f"{model_case_id('TEXT')}:text:SYM_002"], kg_path_ids=[])
         corrected = self.claim(claim_text="患者明确否认瘙痒。",
-                               patient_fact_ids=["TEXT:text:SYM_002"], kg_path_ids=[])
+                               patient_fact_ids=[f"{model_case_id('TEXT')}:text:SYM_002"], kg_path_ids=[])
         reason = "事实状态错误：瘙痒为 absent，不能说成未提及。"
         record = self.review(original, [{"status": "failed", "reasons": [reason]},
                                        self.dump(corrected), PASSED])
@@ -132,7 +133,7 @@ class C4ClaimVerificationTests(unittest.TestCase):
         original = self.claim(
             claim_text="患者明确否认瘙痒症状，这有助于排除部分伴有剧烈瘙痒的炎症性或过敏性皮肤病，"
                        "但不能单独用于确诊或排除基底细胞癌。",
-            patient_fact_ids=["TEXT:text:SYM_002"], kg_path_ids=[],
+            patient_fact_ids=[f"{model_case_id('TEXT')}:text:SYM_002"], kg_path_ids=[],
         )
         corrected = self.claim(
             claim_text="患者明确否认瘙痒症状；现有证据不足以据此作出疾病排除结论。",
@@ -169,7 +170,7 @@ class C4ClaimVerificationTests(unittest.TestCase):
 
     def test_simulated_state_and_role_errors_are_routed_to_correction(self):
         cases = [
-            (self.claim(claim_text="患者有瘙痒。", patient_fact_ids=["TEXT:text:SYM_002"], kg_path_ids=[]),
+            (self.claim(claim_text="患者有瘙痒。", patient_fact_ids=[f"{model_case_id('TEXT')}:text:SYM_002"], kg_path_ids=[]),
              "absent 被说成存在"),
             (self.claim(claim_text="患者有珍珠样结节。", patient_fact_ids=[], kg_path_ids=["PATH_TRI_025"]),
              "KG 背景知识被描述为患者表现"),
@@ -193,9 +194,9 @@ class C4ClaimVerificationTests(unittest.TestCase):
         self.ledger, self.paths, self.observation = base.evidence_ledger, self.ranker.result[1], base.user_observation
         for text in ("患者有瘙痒。", "患者未见瘙痒。"):
             with self.subTest(text=text):
-                original = self.claim(claim_text=text, patient_fact_ids=["PAD:itch"], kg_path_ids=[])
+                original = self.claim(claim_text=text, patient_fact_ids=[f"{model_case_id('PAD')}:itch"], kg_path_ids=[])
                 corrected = self.claim(claim_text="患者未提供瘙痒信息。",
-                                       patient_fact_ids=["PAD:itch"], kg_path_ids=[])
+                                       patient_fact_ids=[f"{model_case_id('PAD')}:itch"], kg_path_ids=[])
                 record = self.review(original, [{"status": "failed", "reasons": ["missing 事实状态错误"]},
                                                self.dump(corrected), PASSED])
                 self.assertEqual(record.final_status, "corrected")
@@ -203,7 +204,7 @@ class C4ClaimVerificationTests(unittest.TestCase):
 
     def test_unregistered_nodule_is_incomplete_citation_not_absence(self):
         original = self.claim(claim_text="患者面部出现结节并伴出血。",
-                              patient_fact_ids=["TEXT:text:SITE_005", "TEXT:text:SYM_001"])
+                              patient_fact_ids=[f"{model_case_id('TEXT')}:text:SITE_005", f"{model_case_id('TEXT')}:text:SYM_001"])
         self.assertEqual(reference_errors(original, self.ledger), [])
         corrected = self.claim(claim_text="患者报告的部位为面部，并伴有出血，尚不能据此确诊。",
                                patient_fact_ids=original.patient_fact_ids)
@@ -228,7 +229,7 @@ class C4ClaimVerificationTests(unittest.TestCase):
     def test_recheck_accepts_omission_and_truthful_ledger_gap_statement(self):
         # 固定样例只验证范围约束的传递和流程，不证明真实模型会遵守提示词。
         original = self.claim(claim_text="患者面部出现结节并伴出血。",
-                              patient_fact_ids=["TEXT:text:SITE_005", "TEXT:text:SYM_001"])
+                              patient_fact_ids=[f"{model_case_id('TEXT')}:text:SITE_005", f"{model_case_id('TEXT')}:text:SYM_001"])
         corrected = self.claim(
             claim_text="患者报告的部位为面部，并伴有出血。当前台账未登记结节事实，故不将其作为论证依据。",
             patient_fact_ids=original.patient_fact_ids,
@@ -349,7 +350,7 @@ class C4ClaimVerificationTests(unittest.TestCase):
     def test_object_reasons_are_preserved_and_enter_correction(self):
         reasons = [{
             "fragment": "患者面部出现结节", "reason": "结节未登记，证据引用不完整。",
-            "evidence_ids": ["TEXT:text:SITE_005", "TEXT:text:SYM_001"],
+            "evidence_ids": [f"{model_case_id('TEXT')}:text:SITE_005", f"{model_case_id('TEXT')}:text:SYM_001"],
             "detail": "不能认定患者没有结节。",
         }]
         original = self.claim(claim_text="患者面部出现结节并伴出血。")
@@ -361,7 +362,7 @@ class C4ClaimVerificationTests(unittest.TestCase):
         self.assertEqual(record.corrected_claim.claim_id, original.claim_id)
         readable = record.verification.reasons[0]
         for text in ("问题片段：患者面部出现结节", "原因：结节未登记，证据引用不完整。",
-                     "证据编号：", "TEXT:text:SITE_005", "TEXT:text:SYM_001",
+                     "证据编号：", f"{model_case_id('TEXT')}:text:SITE_005", f"{model_case_id('TEXT')}:text:SYM_001",
                      "detail：不能认定患者没有结节。"):
             self.assertIn(text, readable)
         self.assertEqual(json.loads(self.client.calls[1]["user"])["problems"], [readable])
@@ -458,7 +459,7 @@ class C4ClaimVerificationTests(unittest.TestCase):
     def test_only_failed_claim_is_corrected_and_results_roundtrip(self):
         first = self.claim()
         second = self.claim(claim_id="CLAIM_002", claim_text="患者未提及瘙痒。",
-                            patient_fact_ids=["TEXT:text:SYM_002"], kg_path_ids=[])
+                            patient_fact_ids=[f"{model_case_id('TEXT')}:text:SYM_002"], kg_path_ids=[])
         corrected = self.claim(claim_id=second.claim_id, claim_text="患者明确否认瘙痒。",
                                patient_fact_ids=second.patient_fact_ids, kg_path_ids=[])
         failed = {"status": "failed", "reasons": ["absent 被误说成 missing"]}

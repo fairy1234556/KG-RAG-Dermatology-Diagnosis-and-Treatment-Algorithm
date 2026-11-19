@@ -16,6 +16,7 @@ if str(ROOT) not in sys.path:
 from experiments.pad_case_input import build_pad_input
 from experiments.validate_c1_pipeline_integration import MockLLMClient, RecordingRanker
 from rag.kg_rag_pipeline import KGRAGPipeline, format_evidence_ledger
+from rag.semantic_anchor import model_case_id
 from rag.schemas import KGRAGResult
 
 
@@ -41,7 +42,7 @@ class C2EvidenceLedgerTests(unittest.TestCase):
 
     @staticmethod
     def fact(result, field, mother="PAD_BCC_001"):
-        return next(f for f in result.evidence_ledger.patient_facts if f.fact_id == f"{mother}:{field}")
+        return next(f for f in result.evidence_ledger.patient_facts if f.fact_id == f"{model_case_id(mother)}:{field}")
 
     def test_stable_ids_same_case_and_field(self):
         first = self.run_case({"bleed": True, "itch": True})
@@ -49,8 +50,8 @@ class C2EvidenceLedgerTests(unittest.TestCase):
         self.assertEqual(dump(first.evidence_ledger), dump(again.evidence_ledger))
         ids = [f.fact_id for f in first.evidence_ledger.patient_facts]
         self.assertEqual(len(ids), len(set(ids)))
-        self.assertIn("PAD_BCC_001:bleed", ids)
-        self.assertIn("PAD_BCC_001:itch", ids)
+        self.assertIn(f"{model_case_id('PAD_BCC_001')}:bleed", ids)
+        self.assertIn(f"{model_case_id('PAD_BCC_001')}:itch", ids)
 
     def test_different_cases_have_different_fact_ids(self):
         one = self.run_case({"bleed": True})
@@ -68,8 +69,8 @@ class C2EvidenceLedgerTests(unittest.TestCase):
         self.assertEqual(direct.triple_ids, ["TRI_031"])
         self.assertEqual(direct.matched_fact_ids, [fact.fact_id])
         self.assertEqual(direct.claim_usage, "PATIENT_SUPPORT")
-        self.assertIn('matched_fact_ids=["PAD_BCC_001:bleed"]', self.client.prompt)
-        self.assertIn("fact_id=PAD_BCC_001:bleed", self.client.prompt)
+        self.assertIn(f'matched_fact_ids=["{fact.fact_id}"]', self.client.prompt)
+        self.assertIn(f"fact_id={fact.fact_id}", self.client.prompt)
 
     def test_absent_and_missing_are_retained_without_positive_links(self):
         for fields, state in (({"bleed": False}, "absent"), ({}, "missing")):
@@ -95,8 +96,8 @@ class C2EvidenceLedgerTests(unittest.TestCase):
     def test_deleting_fact_removes_old_links_on_reused_pipeline(self):
         before = self.run_case({"bleed": True, "itch": True})
         after = self.run_case({"itch": True}, condition="P1")
-        self.assertTrue(any("PAD_BCC_001:bleed" in p.matched_fact_ids for p in before.evidence_ledger.paths))
-        self.assertFalse(any("PAD_BCC_001:bleed" in p.matched_fact_ids for p in after.evidence_ledger.paths))
+        self.assertTrue(any(f"{model_case_id('PAD_BCC_001')}:bleed" in p.matched_fact_ids for p in before.evidence_ledger.paths))
+        self.assertFalse(any(f"{model_case_id('PAD_BCC_001')}:bleed" in p.matched_fact_ids for p in after.evidence_ledger.paths))
         self.assertEqual(self.fact(after, "bleed").fact_state, "missing")
         self.assertEqual(self.fact(before, "bleed").fact_state, "present")
         self.assertEqual(dump(self.fact(before, "itch")), dump(self.fact(after, "itch")))

@@ -35,7 +35,7 @@ if str(PROJECT_ROOT) not in sys.path:
 
 
 from kg.path_retriever import EvidencePath
-from kg.path_retriever import GraphPathRetriever
+from kg.path_retriever import GraphPathRetriever, path_restriction_reason
 from rag.semantic_anchor import SemanticAnchor
 from rag.semantic_anchor import SemanticAnchorMapper
 from rag.semantic_anchor import FactState
@@ -118,6 +118,9 @@ class EvidenceRoleProfile:
 
     patient_fact_state: FactState = "missing"
     diagnosis_confirmed: bool = False
+    applicability_status: Literal["not_required", "satisfied", "not_satisfied", "unknown"] = "not_required"
+    applicability_reason: str = ""
+    applicability_sources: tuple[str, ...] = ()
 
 
 @dataclass(frozen=True)
@@ -476,9 +479,40 @@ class EvidencePathRanker:
         ]
 
     @staticmethod
+    def _check_applicability(
+        path: EvidencePath, structured_fields: Mapping[str, object] | None,
+    ) -> tuple[str, str, tuple[str, ...]]:
+        """只比较已标注的统计范围；未知不视为满足，不作疾病排除。"""
+        restriction = path_restriction_reason(path)
+        if restriction:
+            raise ValueError(restriction)
+        states, reasons, sources = [], [], []
+        for edge in path.edges:
+            metadata = edge.applicability
+            condition_type = metadata.get("condition_type")
+            if not condition_type:
+                continue
+            if condition_type != "population_statistic" or not metadata.get("required_fields"):
+                raise ValueError(f"{edge.triple_id}: 未支持或不完整的适用条件")
+            for name, expected in metadata["required_fields"].items():
+                actual = str((structured_fields or {}).get(name, "")).strip().upper()
+                state = ("unknown" if actual in {"", "NONE", "NAN", "UNK", "UNKNOWN", "N/A"}
+                         else "satisfied" if actual == expected else "not_satisfied")
+                states.append(state)
+                reasons.append(f"{edge.triple_id} {name}: 要求={expected}，记录={actual or '未提供'}，{state}")
+            reasons.append(str(metadata["scope_note"]))
+            sources.append(str(metadata["source_url"]))
+        if not states:
+            return "not_required", "", ()
+        status = "not_satisfied" if "not_satisfied" in states else "unknown" if "unknown" in states else "satisfied"
+        reasons.append("仅限制该统计论据的患者用途，不用于确诊或排除疾病；不是诊断概率。")
+        return status, "；".join(reasons), tuple(dict.fromkeys(sources))
+
+    @staticmethod
     def _build_role_profile(
         path: EvidencePath,
         anchors: list[SemanticAnchor],
+        structured_fields: Mapping[str, object] | None = None,
     ) -> EvidenceRoleProfile:
         """
         根据图谱结构和患者语义锚点，
@@ -497,6 +531,7 @@ class EvidencePathRanker:
            只能作为 BACKGROUND_ONLY。
         """
 
+        applicability, reason, sources = EvidencePathRanker._check_applicability(path, structured_fields)
         # 一跳鉴别关系同样不是候选疾病的直接支持。
         is_differential = (
             "differential_diagnosis"
@@ -526,7 +561,7 @@ class EvidencePathRanker:
         if structural_role == "DIFFERENTIAL":
             claim_usage = "DIFFERENTIAL_ONLY"
 
-        elif patient_alignment == "MATCHED" and path.relation_chain in {
+        elif applicability in {"not_required", "satisfied"} and patient_alignment == "MATCHED" and path.relation_chain in {
             ("has_symptom",), ("has_manifestation",), ("commonly_occurs_at",),
         }:
             claim_usage = "PATIENT_SUPPORT"
@@ -539,6 +574,9 @@ class EvidencePathRanker:
             patient_alignment=patient_alignment,
             claim_usage=claim_usage,
             patient_fact_state=patient_fact_state,
+            applicability_status=applicability,
+            applicability_reason=reason,
+            applicability_sources=sources,
         )
 
     def _calculate_entity_match_score(
@@ -670,6 +708,8 @@ class EvidencePathRanker:
         self,
         path: EvidencePath,
         anchors: list[SemanticAnchor],
+        *,
+        structured_fields: Mapping[str, object] | None = None,
     ) -> RankedEvidencePath:
         """对单条证据路径进行评分。"""
 
@@ -684,6 +724,7 @@ class EvidencePathRanker:
             self._build_role_profile(
                 path,
                 anchors,
+                structured_fields,
             )
         )
 
@@ -848,6 +889,7 @@ class EvidencePathRanker:
             self.score_path(
                 path=path,
                 anchors=facts,
+                structured_fields=structured_fields,
             )
             for path in paths
         ]

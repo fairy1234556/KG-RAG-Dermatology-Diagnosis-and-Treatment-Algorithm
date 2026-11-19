@@ -13,6 +13,7 @@ from __future__ import annotations
 
 import argparse
 import csv
+import hashlib
 import json
 import re
 from dataclasses import asdict, dataclass, replace
@@ -41,6 +42,19 @@ DEFAULT_PAD_MAPPING_FILE = (
 )
 
 FactState = Literal["present", "absent", "missing"]
+
+
+def model_case_id(source_case_id: str) -> str:
+    """稳定的模型可见编号；不暴露研究 ID 中的诊断或干预标签。
+
+    使用完整摘要，不按病例顺序编号，也不依赖患者事实或候选疾病。
+    原始 ID 的溯源映射由流水线保存在结果元数据中，不进入证据台账。
+    这是研究标签隔离，不是面向隐私攻击的匿名化机制。
+    """
+    source_case_id = source_case_id.strip()
+    if not source_case_id:
+        raise ValueError("事实所属病例 ID 不能为空。")
+    return "CASE_" + hashlib.sha256(source_case_id.encode("utf-8")).hexdigest()
 
 
 # 任务二 V1.0 只从用户观察文本中识别以下实体类型。
@@ -776,12 +790,11 @@ class SemanticAnchorMapper:
     ) -> list[PatientFact]:
         """为 C1 结果添加可保存的事实身份，不参与评分或角色判定。
 
-        PAD 的 case_id 应传母病例 ID，每个原始字段只记录一次。
+        case_id 接收原始研究 ID，统一转换为不含诊断标签的模型编号。
+        PAD 应传母病例 ID，每个原始字段只记录一次。
         文本沿用 C1 的实体级聚合，同一病例/实体的编号保持确定性。
         """
-        if not case_id.strip():
-            raise ValueError("事实所属病例 ID 不能为空。")
-        case_id = case_id.strip()
+        case_id = model_case_id(case_id)
         anchors = self.extract_patient_facts(text, structured_fields=structured_fields)
         if structured_fields is None:
             return [

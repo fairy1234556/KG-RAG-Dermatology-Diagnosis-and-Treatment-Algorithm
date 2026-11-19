@@ -35,6 +35,7 @@ class RankingTestCase:
     expected_entity_ids: tuple[str, ...]
     top_k: int = 5
     max_hops: int = 2
+    expected_ranked_entity_ids: tuple[str, ...] | None = None
 
 
 RANKING_CASES = (
@@ -51,6 +52,8 @@ RANKING_CASES = (
             "LF_011",
             "SITE_005",
         ),
+        # 面部事实仍识别；TRI_030 因来源关系待核查不再作为证据。
+        expected_ranked_entity_ids=("LF_010", "LF_011"),
     ),
     RankingTestCase(
         case_id="RANK_002",
@@ -174,7 +177,7 @@ def validate_ranking_case(
         )
 
     missing_ranked_ids = (
-        expected_ids
+        set(case.expected_ranked_entity_ids if case.expected_ranked_entity_ids is not None else expected_ids)
         - set(ranked_entity_ids)
     )
 

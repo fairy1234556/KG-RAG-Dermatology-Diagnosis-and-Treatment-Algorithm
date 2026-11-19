@@ -1,0 +1,44 @@
+{
+  "TRI_030": {
+    "validity": "pending_source_verification",
+    "restriction_reason": "现有来源说明结节型是面部 BCC 中常见的类型，不能据此推出 BCC 常见于面部；暂不作为有效证据路径。",
+    "source_url": "https://dermnetnz.org/topics/basal-cell-carcinoma",
+    "source_section": "Types of basal cell carcinoma / Nodular BCC",
+    "source_excerpt": "Most common type of facial BCC",
+    "source_review": "2025-08",
+    "checked_on": "2026-11-19"
+  },
+  "TRI_006": {
+    "condition_type": "population_statistic",
+    "required_fields": {"gender": "MALE", "population_context": "NEW ZEALAND"},
+    "scope_note": "新西兰人群中男性最常见部位是背部，约占男性黑色素瘤的 40%；是部位分布，不是患者诊断概率。",
+    "input_note": "population_context 须由调用方依据可核查资料确认属于该统计适用人群；不得从出生地、族裔、诊断标签或数据集名称推断。本次 PAD 入口不补填该字段。",
+    "source_url": "https://dermnetnz.org/topics/melanoma",
+    "source_section": "What are the clinical features of melanoma?",
+    "source_review": "2022-10",
+    "checked_on": "2026-11-19"
+  },
+  "TRI_013": {
+    "condition_type": "population_statistic",
+    "required_fields": {"gender": "FEMALE", "population_context": "NEW ZEALAND"},
+    "scope_note": "新西兰人群中女性最常见部位是腿部，约占女性黑色素瘤的 35%；是部位分布，不是患者诊断概率。",
+    "input_note": "population_context 须有可核查的人群适用依据；不得从国籍、族裔或参考标签自动推断。条件不满足不表示其他部位或人群不可能发生黑色素瘤。",
+    "source_url": "https://dermnetnz.org/topics/melanoma",
+    "source_section": "What are the clinical features of melanoma?",
+    "source_review": "2022-10",
+    "checked_on": "2026-11-19"
+  },
+  "TRI_034": {
+    "target_scope": "seborrhoeic_keratosis",
+    "scope_note": "本地 evidence_text 的鉴别对象是脂溢性角化病，而非所有良性角化样病变。",
+    "source_record": "SRC_012 / DermNet - Seborrhoeic Keratosis；范围依据本地 evidence_text，准确外部出处仍待补齐。"
+  },
+  "TRI_062": {
+    "subject_scope": "lichenoid_keratosis",
+    "scope_note": "瘙痒知识属于扁平苔藓样角化病，不能自动接续脂溢性角化病的鉴别关系。",
+    "source_url": "https://dermnetnz.org/topics/lichenoid-keratosis",
+    "source_section": "What are the clinical features of lichenoid keratosis?",
+    "source_review": "2021-09",
+    "checked_on": "2026-11-19"
+  }
+}

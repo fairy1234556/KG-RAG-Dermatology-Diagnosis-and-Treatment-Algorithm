@@ -23,7 +23,7 @@ import argparse
 import csv
 import json
 import re
-from dataclasses import asdict, dataclass
+from dataclasses import asdict, dataclass, field, replace
 from pathlib import Path
 from typing import Iterable
 
@@ -43,6 +43,8 @@ DEFAULT_TRIPLE_FILE = (
     / "csv"
     / "triples.csv"
 )
+
+DEFAULT_APPLICABILITY_FILE = PROJECT_ROOT / "kg/csv/evidence_applicability_v1.json"
 
 
 # 当前只允许通过“鉴别诊断”关系进入二跳扩展。
@@ -83,6 +85,7 @@ class GraphEdge:
     source: str
     evidence_text: str
     note: str
+    applicability: dict[str, object] = field(default_factory=dict)
 
     def to_dict(self) -> dict[str, object]:
         return asdict(self)
@@ -130,6 +133,19 @@ class EvidencePath:
         return result
 
 
+def path_restriction_reason(path: EvidencePath) -> str:
+    """仅检查明确标注的无效来源和相邻亚类衔接，不推理新的医学知识。"""
+    for edge in path.edges:
+        if edge.applicability.get("validity") == "pending_source_verification":
+            return f"{edge.triple_id}: {edge.applicability['restriction_reason']}"
+    for first, second in zip(path.edges, path.edges[1:]):
+        target = first.applicability.get("target_scope")
+        subject = second.applicability.get("subject_scope")
+        if target and subject and target != subject:
+            return f"{first.triple_id} → {second.triple_id}: 亚类不兼容（{target} / {subject}），不能连续推理。"
+    return ""
+
+
 class GraphPathRetriever:
     """从 CSV 知识图谱中检索一跳和受限二跳路径。"""
 
@@ -137,6 +153,7 @@ class GraphPathRetriever:
         self,
         entity_file: Path = DEFAULT_ENTITY_FILE,
         triple_file: Path = DEFAULT_TRIPLE_FILE,
+        applicability_file: Path = DEFAULT_APPLICABILITY_FILE,
     ) -> None:
         self.entity_file = Path(entity_file)
         self.triple_file = Path(triple_file)
@@ -154,8 +171,10 @@ class GraphPathRetriever:
             if row.get("id")
         }
 
+        # 独立的有限元数据保留历史三元组；文件缺失/损坏时报错，不能静默放开限制。
+        applicability = json.loads(Path(applicability_file).read_text(encoding="utf-8"))
         self.edges = [
-            self._row_to_edge(row)
+            replace(self._row_to_edge(row), applicability=applicability.get(row["triple_id"], {}))
             for row in self.triples
         ]
 
@@ -538,7 +557,7 @@ class GraphPathRetriever:
         ]
 
         return sorted(
-            paths,
+            [path for path in paths if not path_restriction_reason(path)],
             key=lambda path: (
                 path.edges[0].relation_en,
                 path.end_entity_id,
@@ -625,7 +644,7 @@ class GraphPathRetriever:
                 )
 
         return sorted(
-            paths,
+            [path for path in paths if not path_restriction_reason(path)],
             key=lambda path: (
                 path.relation_chain,
                 path.end_entity_id,
